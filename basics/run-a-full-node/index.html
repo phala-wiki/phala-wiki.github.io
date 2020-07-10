@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/wiki.phala.network/images/favicon.png" type="image/png">
+
+    <title>Run a full node :: Phala Network Wiki</title>
+
+    
+    <link href="/wiki.phala.network/css/nucleus.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/fontawesome-all.min.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/hybrid.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/featherlight.min.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/perfect-scrollbar.min.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/auto-complete.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/atom-one-dark-reasonable.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/theme.css?1594395323" rel="stylesheet">
+    <link href="/wiki.phala.network/css/hugo-theme.css?1594395323" rel="stylesheet">
+    
+    <link href="/wiki.phala.network/css/theme-phala.css?1594395323" rel="stylesheet">
+    
+    
+
+    <script src="/wiki.phala.network/js/jquery-3.3.1.min.js?1594395323"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="wiki.phala.network/basics/run-a-full-node/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/">
+    <img src="/images/logo-phala-round@xl.png" style="max-height: 70px;">
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/wiki.phala.network/js/lunr.min.js?1594395323"></script>
+<script type="text/javascript" src="/wiki.phala.network/js/auto-complete.js?1594395323"></script>
+<script type="text/javascript">
+    
+        var baseurl = "wiki.phala.network";
+    
+</script>
+<script type="text/javascript" src="/wiki.phala.network/js/search.js?1594395323"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="wiki.phala.network/basics/" title="Basics" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="wiki.phala.network/basics/">
+          <b>X. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="wiki.phala.network/basics/run-a-gatekeeper/" title="Run a Gatekeeper" class="dd-item ">
+        <a href="wiki.phala.network/basics/run-a-gatekeeper/">
+        Run a Gatekeeper
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="wiki.phala.network/basics/run-a-full-node/" title="Run a full node" class="dd-item active">
+        <a href="wiki.phala.network/basics/run-a-full-node/">
+        Run a full node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='wiki.phala.network/'>Phala Network Wiki</a> > <a href='wiki.phala.network/basics/'>Basics</a> > Run a full node
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#types-of-nodes">Types of Nodes</a></li>
+        <li><a href="#fast-install-instructions-linux">Fast Install Instructions (Linux)</a></li>
+        <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#get-substrate">Get Substrate</a></li>
+    <li><a href="#clone-and-build">Clone and Build</a></li>
+    <li><a href="#run">Run</a></li>
+    <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
+    <li><a href="#using-docker">Using Docker</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Run a full node
+            </h1>
+          
+
+        
+
+
+<p>If you&rsquo;re building dapps or products on a Phala Network,
+you probably want the ability to run a node-as-a-back-end. After all, it&rsquo;s
+always better to rely on your own infrastructure than on a third-party-hosted one in this brave new
+decentralized world.</p>
+<p>This guide will show you how to connect to <a href="https://poc2.phala.network">Phala Network PoC-2</a>. First, let&rsquo;s
+clarify the term <em>full node</em>.</p>
+<h3 id="types-of-nodes">Types of Nodes</h3>
+<p>A blockchain&rsquo;s growth comes from a <em>genesis block</em>, <em>extrinsics</em>, and <em>events</em>.</p>
+<p>When a Gatekeeper seals block 1, it takes the blockchain&rsquo;s state at block 0. It then applies all
+pending changes on top of it, and emits the events that are the result of these changes. Later, the
+state of the chain at block 1 is used in the same way to build the state of the chain at block 2,
+and so on. Once two thirds of the Gatekeepers agree on a specific block being valid, it is finalized.</p>
+<p>An <strong>archive node</strong> keeps all the past blocks. An archive node makes it convenient to query the past
+state of the chain at any point in time. Finding out what an account&rsquo;s balance at a certain block
+was, or which extrinsics resulted in a certain state change are fast operations when using an
+archive node. However, an archive node takes up a lot of disk space - around Kusama&rsquo;s 1.6 millionth
+block this was around 15 to 20GB. When running a Gatekeeper, this requirement doubles as
+<a href="%5Bmaintain-guides-how-to-setup-sentry-node%5D(https://wiki.polkadot.network/docs/en/maintain-guides-how-to-setup-sentry-node)">the sentry node</a> in front of a Gatekeeper should be an
+archive node too.</p>
+<p>A <strong>full node</strong> is <em>pruned</em>, meaning it discards all information older than 256 blocks, but keeps
+the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires
+much less space than an archive node. In order to query past state through a full node, a user would
+have to wait for the node to rebuild the chain up until that block. A full node <em>can</em> rebuild the
+entire chain with no additional input from other nodes and become an archive node. One caveat is
+that if finality stalled for some reason and the last finalized block is more than 256 blocks
+behind, a pruned full node will not be able to sync to the network.</p>
+<p>Archive nodes are used by utilities that need past information - like block explorers, council
+scanners, discussion platforms like <a href="https://polkassembly.io">Polkassembly</a>, and others. They need
+to be able to look at past on-chain data. Full nodes are used by everyone else - they allow you to
+read the current state of the chain and to submit transactions directly to the chain without relying
+on a centralized infrastructure provider.</p>
+<p>Another type of node is a <strong>light node</strong>. A light node has only the runtime and the current state,
+but does not store past extrinsics and so cannot restore the full chain from genesis. Light nodes
+are useful for resource restricted devices. An interesting use-case of light nodes is a Chrome
+extension, which is a node in its own right, running the runtime in WASM format:
+<a href="https://github.com/paritytech/substrate-light-ui">https://github.com/paritytech/substrate-light-ui</a></p>
+<h3 id="fast-install-instructions-linux">Fast Install Instructions (Linux)</h3>
+<blockquote>
+<p>Not recommended if you&rsquo;re a Gatekeeper. Please see
+<a href="maintain-guides-secure-Gatekeeper">secure Gatekeeper setup</a></p>
+</blockquote>
+<p>For the most recent binary please see the
+<a href="https://github.com/Phala-Network/phala-blockchain/releases/">release page</a> on the phala-blockchain repository. The URL
+in the code snippet below may become slightly out-of-date.</p>
+<p>Also please note that the nature of pre-built binaries means that they may not work on your
+particular architecture or Linux distribution. If you see an error like
+<code>cannot execute binary file: Exec format error</code> it likely means the binary is not compatible with
+your system. You will either need to compile the <a href="#clone-and-build">source code yourself</a> or use
+<a href="#using-docker">docker</a>.</p>
+<ul>
+<li>Download Phala Network binary by running:
+<code>curl -sL https://github.com/Phala-Network/phala-blockchain/releases/download/poc2-2.0/phala-node -o phala-node</code></li>
+<li>Run the following: <code>sudo chmod +x phala-node</code></li>
+<li>Run the following: <code>./phala-node --chain poc2 --name &quot;Your Node Name Here&quot;</code></li>
+<li>Find your node at <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">https://telemetry.polkadot.io/#list/Phala%20PoC-2</a></li>
+</ul>
+<h3 id="fast-install-instructions-mac">Fast Install Instructions (Mac)</h3>
+<blockquote>
+<p>Not recommended if you&rsquo;re a Gatekeeper. Please see
+<a href="maintain-guides-secure-Gatekeeper">secure Gatekeeper setup</a></p>
+</blockquote>
+<ul>
+<li>Type terminal in the macOS searchbar/searchlight to open the &lsquo;terminal&rsquo; application</li>
+<li>Install Homebrew within the terminal by running:
+<code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code></li>
+<li>Then run: <code>brew install openssl cmake llvm</code></li>
+<li>Install Rust in your terminal by running:
+<code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+<li>Once Rust is installed, run the following command to clone and build the Phala Network code:
+<pre><code>git clone https://github.com/Phala-Network/phala-blockchain
+cd phala-blockchain
+./scripts/init.sh
+cargo build –-release
+</code></pre></li>
+<li>Run the following command to start your node: <code>./target/release/phala-node --chain poc2 --name &quot;My node's name&quot;</code></li>
+<li>Find your node at <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">https://telemetry.polkadot.io/#list/Phala%20PoC-2</a></li>
+</ul>
+<h2 id="get-substrate">Get Substrate</h2>
+<p>Follow instructions as outlined
+<a href="https://substrate.dev/docs/en/knowledgebase/getting-started">here</a> - note that Windows users will
+have their work cut out for them. It&rsquo;s better to use a virtual machine instead.</p>
+<p>Test if the installation was successful by running <code>cargo --version</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cargo --version
+cargo 1.41.0 <span style="color:#f92672">(</span>626f0f40e 2019-12-03<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="clone-and-build">Clone and Build</h2>
+<p>The <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> repo&rsquo;s master branch contains the
+latest Phala Network code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/Phala-Network/phala-blockchain
+cd phala-blockchain
+./scripts/init.sh
+cargo build --release
+</code></pre></div><h2 id="run">Run</h2>
+<p>The built binary will be in the <code>target/release</code> folder, called <code>phala-node</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span style="color:#e6db74">&#34;My node&#39;s name&#34;</span>
+</code></pre></div><p>Use the <code>--help</code> flag to find out which flags you can use when running the node. For example, if
+<a href="https://wiki.polkadot.network/docs/en/maintain-wss">connecting to your node remotely</a>, you&rsquo;ll probably want to use <code>--ws-external</code> and
+<code>--rpc-cors all</code>.</p>
+<p>The syncing process will take a while depending on your bandwidth, processing power, disk speed and
+RAM. On a $10 DigitalOcean droplet, the process can complete in some 36 hours.</p>
+<p>Congratulations, you&rsquo;re now syncing with Phala Network. Keep in mind that the process is identical when
+using any other Substrate chain.</p>
+<h2 id="running-an-archive-node">Running an Archive Node</h2>
+<p>When running as a simple sync node (above), only the state of the past 256 blocks will be kept. When
+validating, it defaults to <a href="#types-of-nodes">archive mode</a>. To keep the full state use the
+<code>--pruning</code> flag:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span style="color:#e6db74">&#34;My node&#39;s name&#34;</span> --pruning archive
+</code></pre></div><p>It is possible to almost quadruple synchronization speed by using an additional flag:
+<code>--wasm-execution Compiled</code>. Note that this uses much more CPU and RAM, so it should be turned off
+after the node is in sync.</p>
+<h2 id="using-docker">Using Docker</h2>
+<p>Finally, you can use Docker to run your node in a container. Doing this is a bit more advanced so
+it&rsquo;s best left up to those that either already have familiarity with docker, or have completed the
+other set-up instructions in this guide.</p>
+<p>The reference docker file is located <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/Dockerfile">here</a>.
+Please note that by default the docker file only spawn a two nodes local testnet node, not a single
+node connecting to the public blockchain. This is mainly used for development. You can create your
+own docker file for connecting to Phala Network PoC2.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="wiki.phala.network/basics/run-a-gatekeeper/" title="Run a Gatekeeper"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="wiki.phala.network/basics/run-a-gatekeeper/" title="Run a Gatekeeper" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/wiki.phala.network/js/clipboard.min.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/perfect-scrollbar.min.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/perfect-scrollbar.jquery.min.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/jquery.sticky.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/featherlight.min.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/highlight.pack.js?1594395323"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/wiki.phala.network/js/modernizr.custom-3.6.0.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/learn.js?1594395323"></script>
+    <script src="/wiki.phala.network/js/hugo-learn.js?1594395323"></script>
+
+    <link href="/wiki.phala.network/mermaid/mermaid.css?1594395323" rel="stylesheet" />
+    <script src="/wiki.phala.network/mermaid/mermaid.js?1594395323"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
