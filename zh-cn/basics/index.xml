@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础 on Phala Network 百科</title>
+    <link>https://wiki.phala.network/zh-cn/basics/</link>
+    <description>Recent content in 基础 on Phala Network 百科</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jul 2020 22:29:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://wiki.phala.network/zh-cn/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>运行 Gatekeeper</title>
+      <link>https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/</link>
+      <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/</guid>
+      <description>This guide will instruct you how to set up a validator node on the Phala Network.
+Preliminaries Running a Gatekeeper on a live network is a lot of responsibility! You will be accountable for not only your own stake, but also the stake of your current nominators. If you make a mistake and get slashed, your money and your reputation will be at risk. However, running a Gatekeeper can also be very rewarding, knowing that you contribute to the security of a decentralized network while growing your stash.</description>
+    </item>
+    
+    <item>
+      <title>运行全节点</title>
+      <link>https://wiki.phala.network/zh-cn/basics/run-a-full-node/</link>
+      <pubDate>Mon, 06 Jul 2020 22:30:41 +0800</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/basics/run-a-full-node/</guid>
+      <description>这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。如果你有任何疑问，可以扫码回复节点，进入节点答疑群。
+在开始跑节点之前，我们先讲一讲 Phala 上的节点类型。
+节点类型 一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。
+Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。
+这个过程将由以下几种节点参与。
+ 归档节点（Archive Node）：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。 全节点（Full Node）：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。 轻节点（Light Node）：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。  归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 Polkassenbly）等。
+全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。
+轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
+快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
+ 你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
+此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。</description>
+    </item>
+    
+  </channel>
+</rss>

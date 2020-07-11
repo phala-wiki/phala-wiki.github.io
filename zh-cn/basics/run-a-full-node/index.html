@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>运行全节点 :: Phala Network 百科</title>
+
+    
+    <link href="/css/nucleus.css?1594447862" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1594447862" rel="stylesheet">
+    <link href="/css/hybrid.css?1594447862" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1594447862" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1594447862" rel="stylesheet">
+    <link href="/css/auto-complete.css?1594447862" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1594447862" rel="stylesheet">
+    <link href="/css/theme.css?1594447862" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1594447862" rel="stylesheet">
+    
+    <link href="/css/theme-phala.css?1594447862" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1594447862"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/zh-cn/basics/run-a-full-node/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/">
+    <img src="/images/logo-phala-round@xl.png" style="max-height: 70px;">
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="搜索...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1594447862"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1594447862"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/wiki.phala.network\/zh-cn";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1594447862"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh-cn/basics/" title="基础" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/zh-cn/basics/">
+          <b>X. </b>基础
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh-cn/basics/run-a-gatekeeper/" title="运行 Gatekeeper" class="dd-item ">
+        <a href="/zh-cn/basics/run-a-gatekeeper/">
+        运行 Gatekeeper
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh-cn/basics/run-a-full-node/" title="运行全节点" class="dd-item active">
+        <a href="/zh-cn/basics/run-a-full-node/">
+        运行全节点
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en-us" value="https://wiki.phala.network/en-us/basics/run-a-full-node/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="zh-cn" value="https://wiki.phala.network/zh-cn/basics/run-a-full-node/" selected>简体中文</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/zh-cn/'>Phala Network Wiki</a> > <a href='/zh-cn/basics/'>基础</a> > 运行全节点
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#节点类型">节点类型</a></li>
+        <li><a href="#快速安装指南--linux">快速安装指南  (Linux)</a></li>
+        <li><a href="#快速安装指南--mac">快速安装指南  (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#获取-substrate">获取 Substrate</a></li>
+    <li><a href="#克隆代码编译">克隆代码、编译</a></li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#运行归档节点">运行归档节点</a></li>
+    <li><a href="#使用-docker-运行节点">使用 Docker 运行节点</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              运行全节点
+            </h1>
+          
+
+        
+
+
+<p>这是一份关于如何在 <a href="https://app.phala.network/#/staking">Phala PoC-2 测试网</a> 上安装全节点的教程。如果你有任何疑问，可以扫码回复<code>节点</code>，进入节点答疑群。</p>
+<p><img src="https://hackmd.io/_uploads/SJ88NzUJP.jpg" alt=""></p>
+<p>在开始跑节点之前，我们先讲一讲 Phala 上的节点类型。</p>
+<h3 id="节点类型">节点类型</h3>
+<p>一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。</p>
+<p>Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。</p>
+<p>这个过程将由以下几种节点参与。</p>
+<ul>
+<li><strong>归档节点（Archive Node）</strong>：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。</li>
+<li><strong>全节点（Full Node）</strong>：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。</li>
+<li><strong>轻节点（Light Node）</strong>：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。</li>
+</ul>
+<p>归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 <a href="https://kusama.polkassembly.io/">Polkassenbly</a>）等。</p>
+<p>全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。</p>
+<p>轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：<a href="https://github.com/paritytech/substrate-light-ui">https://github.com/paritytech/substrate-light-ui</a></p>
+<h3 id="快速安装指南--linux">快速安装指南  (Linux)</h3>
+<blockquote>
+<p>不建议已经是守门人节点的设备继续此教程。详情请参见 <a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">《如何安全搭建守门人节点》</a></p>
+</blockquote>
+<p>你可以前往 phala-blockchain 的 <a href="https://github.com/Phala-Network/phala-blockchain/releases/">Github 发布页面</a> 获取最新的可执行程序 。下方代码可能会有一点点古老。</p>
+<p>此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似  <code>cannot execute binary file: Exec format error</code> 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要<a href="#%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91">重新编译一遍</a>，或使用 <a href="#%E4%BD%BF%E7%94%A8-docker-%E8%BF%90%E8%A1%8C%E8%8A%82%E7%82%B9">Docker</a>。</p>
+<ul>
+<li>运行 <code>curl -sL https://github.com/Phala-Network/phala-blockchain/releases/download/poc2-2.0/phala-node -o phala-node</code> 来下载可执行程序</li>
+<li>运行 <code>sudo chmod +x phala-node</code></li>
+<li>运行 <code>./phala-node --chain poc2 --name &quot;你的节点名&quot;</code></li>
+<li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
+</ul>
+<h3 id="快速安装指南--mac">快速安装指南  (Mac)</h3>
+<blockquote>
+<p>不建议已经是守门人节点的设备继续此教程。详情请参见 <a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">《如何安全搭建守门人节点》</a></p>
+</blockquote>
+<ul>
+<li>在 macOS 的搜索框中输入“终端”或“terminal”来打开终端程序</li>
+<li>运行 <code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code> 以安装 Homebrew</li>
+<li>运行 <code>brew install openssl cmake llvm</code></li>
+<li>运行 <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code> 以安装 Rust</li>
+<li>然后运行以下代码以克隆 phala-blockchain 代码库并编译：
+<pre><code>git clone https://github.com/Phala-Network/phala-blockchain
+cd phala-blockchain
+./scripts/init.sh
+cargo build –-release
+</code></pre></li>
+<li>运行 <code>./target/release/phala-node --chain poc2 --name &quot;你的节点名&quot;</code> 以启动节点</li>
+<li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
+</ul>
+<h2 id="获取-substrate">获取 Substrate</h2>
+<p>你可以点击 <a href="https://substrate.dev/docs/en/knowledgebase/getting-started">此处</a> 查看官方教程。鉴于 Windows 系统暂时不支持 Substrate，我们建议在一个 Linux 虚拟机里运行全节点。</p>
+<p>运行 <code>cargo --version</code> 指令以检测节点是否安装成功。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cargo --version
+cargo 1.41.0 <span style="color:#f92672">(</span>626f0f40e 2019-12-03<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="克隆代码编译">克隆代码、编译</h2>
+<p><a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> 的 Github 代码库已经包含了最新的 Phala Network 代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/Phala-Network/phala-blockchain
+cd phala-blockchain
+./scripts/init.sh
+cargo build --release
+</code></pre></div><h2 id="运行">运行</h2>
+<p>编译生成的程序位于 <code>target/release</code>，文件名为 <code>phala-node</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span style="color:#e6db74">&#34;你的节点名&#34;</span>
+</code></pre></div><p>你可以使用 <code>--help</code> 选项查看有哪些命令行选项可以在跑节点时使用。如果你想<a href="https://wiki.polkadot.network/docs/en/maintain-wss">连接到远程端的节点</a>，可以开启 <code>--ws-external</code> 和 <code>--rpc-cors all</code> 选项。</p>
+<p>根据网路带宽、CPU性能、硬盘读写速度、RAM 读写速度的不同，区块链的同步时间也会有所不同。</p>
+<p>至此，你已经完成了和 Phala 网络的同步，恭喜 :)</p>
+<h2 id="运行归档节点">运行归档节点</h2>
+<p>如果你只运行一个精简版的同步型节点（如上文所述），只有前 256 个区块的状态会被保留。作为验证人时，节点会默认设为<a href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B">归档模式</a>。此时可以使用 <code>--pruning</code> 参数来强制保存全部链上状态。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span style="color:#e6db74">&#34;你的节点名&#34;</span> --pruning archive
+</code></pre></div><p>你可以用<code>--wasm-execution Compiled</code> 加速同步，最高可能提升四倍速度。但这也会占用更多 CPU 运存和内存。所以记得在同步完后把它恢复到常态。</p>
+<h2 id="使用-docker-运行节点">使用 Docker 运行节点</h2>
+<p>用 Docker 运行节点是可行的，但可能涉及到一些高级的操作。我们建议已经对 Docker 比较熟悉或已经部署过 Docker 的人继续这一步。</p>
+<p>你可以在 <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/Dockerfile">这里</a> 找到 Docker 相关的材料。Docker 默认只产生两个本地测试网节点，更适用于开发。你也可以编写自己的 Docker 文件并连接到 Phala PoC-2 测试网。</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/zh-cn/basics/run-a-gatekeeper/" title="运行 Gatekeeper"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/zh-cn/basics/run-a-gatekeeper/" title="运行 Gatekeeper" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1594447862"></script>
+    <script src="/js/perfect-scrollbar.min.js?1594447862"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1594447862"></script>
+    <script src="/js/jquery.sticky.js?1594447862"></script>
+    <script src="/js/featherlight.min.js?1594447862"></script>
+    <script src="/js/highlight.pack.js?1594447862"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1594447862"></script>
+    <script src="/js/learn.js?1594447862"></script>
+    <script src="/js/hugo-learn.js?1594447862"></script>
+
+    <link href="/mermaid/mermaid.css?1594447862" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1594447862"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

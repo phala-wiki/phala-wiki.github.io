@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/basics/</loc>
+    <lastmod>2020-07-06T22:29:51+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/basics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/basics/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/</loc>
+    <lastmod>2020-07-10T02:27:43+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/</loc>
+    <lastmod>2020-07-10T01:16:05+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/basics/run-a-gatekeeper/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/basics/run-a-full-node/</loc>
+    <lastmod>2020-07-06T22:30:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/basics/run-a-full-node/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/basics/run-a-full-node/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/tags/"
+                />
+  </url>
+  
+</urlset>
