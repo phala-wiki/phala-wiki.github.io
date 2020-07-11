@@ -12,21 +12,21 @@
     <title>运行 Gatekeeper :: Phala Network 百科</title>
 
     
-    <link href="/css/nucleus.css?1594477113" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1594477113" rel="stylesheet">
-    <link href="/css/hybrid.css?1594477113" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1594477113" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1594477113" rel="stylesheet">
-    <link href="/css/auto-complete.css?1594477113" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1594477113" rel="stylesheet">
-    <link href="/css/theme.css?1594477113" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1594477113" rel="stylesheet">
+    <link href="/css/nucleus.css?1594481872" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1594481872" rel="stylesheet">
+    <link href="/css/hybrid.css?1594481872" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1594481872" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1594481872" rel="stylesheet">
+    <link href="/css/auto-complete.css?1594481872" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1594481872" rel="stylesheet">
+    <link href="/css/theme.css?1594481872" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1594481872" rel="stylesheet">
     
-    <link href="/css/theme-phala.css?1594477113" rel="stylesheet">
+    <link href="/css/theme-phala.css?1594481872" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1594477113"></script>
+    <script src="/js/jquery-3.3.1.min.js?1594481872"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1594477113"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1594477113"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1594481872"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1594481872"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wiki.phala.network\/zh-cn";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1594477113"></script>
+<script type="text/javascript" src="/js/search.js?1594481872"></script>
 
     
   </div>
@@ -438,9 +438,6 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-05-15
 </code></pre></div><p>你可以给自己的守门人节点起一个独特又有个性的名字，这个名字将展示在 Telemetry 上。由于可能参与者比较多，因此可以选择一个独特的名字以避免重复。</p>
 <h3 id="生成-session-密钥">生成 Session 密钥</h3>
 <h4 id="方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</h4>
-<p>RPC 可以生成 session key。如果要使用这种方法，==请确保你的守门人节点和 PolkadotJS-Apps Explorer 相关联。make sure that you have the PolkadotJS-Apps explorer attached to your Gatekeeper node.==
-你可以在“设置”中自定义守门人节点的应用数据仪表盘。但如果你接的是 Parity 或 Web3 基金会搭建的节点，就无法使用此功能。具体原因可查看 Polka Wiki.</p>
-<p>连上节点后，设置通信密钥的最简单方法就是调用 <code>author_rotateKeys RPC</code> 以在守门人节点的本地密钥库中创建新密钥。选择“Toolbox” &gt; “PRC Calls”，然后选择 “Author” &gt; “ rotateKeys（）”，会返回一个如图所示的字符串。保存好返回的密钥即可。</p>
 <p>你可以在 App 的 PRC 模块中生成 <a href="https://wiki.polkadot.network/en/latest/polkadot/learn/keys/#session-key">Session 密钥</a>。请确保你已经在设置页面中把 PolkadotJS-Apps 指向你的守门人节点。 你可以在“设置”中自定义守门人节点的地址与端口号。但如果你连接的是官方提供的公用节点，就无法使用此功能，因为它会把 RPC 发送到 <em>公共节点</em>，而不是 <em>你的节点</em>。</p>
 <p>连上节点后，设置 Session 密钥的最简单方法就是调用 <code>author_rotateKeys</code> RPC，在守门人节点的本地密钥库中创建新密钥。选择“Toolbox” &gt; “PRC Calls”，然后选择 “Author” &gt; “ rotateKeys（）”，会返回一个如图所示的字符串。记下好返回的密钥即可。</p>
 <p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-explorer-rotatekeys-rpc.jpg" alt="Explorer RPC call"></p>
@@ -611,19 +608,19 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-05-15
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1594477113"></script>
-    <script src="/js/perfect-scrollbar.min.js?1594477113"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1594477113"></script>
-    <script src="/js/jquery.sticky.js?1594477113"></script>
-    <script src="/js/featherlight.min.js?1594477113"></script>
-    <script src="/js/highlight.pack.js?1594477113"></script>
+    <script src="/js/clipboard.min.js?1594481872"></script>
+    <script src="/js/perfect-scrollbar.min.js?1594481872"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1594481872"></script>
+    <script src="/js/jquery.sticky.js?1594481872"></script>
+    <script src="/js/featherlight.min.js?1594481872"></script>
+    <script src="/js/highlight.pack.js?1594481872"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1594477113"></script>
-    <script src="/js/learn.js?1594477113"></script>
-    <script src="/js/hugo-learn.js?1594477113"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1594481872"></script>
+    <script src="/js/learn.js?1594481872"></script>
+    <script src="/js/hugo-learn.js?1594481872"></script>
 
-    <link href="/mermaid/mermaid.css?1594477113" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1594477113"></script>
+    <link href="/mermaid/mermaid.css?1594481872" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1594481872"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
