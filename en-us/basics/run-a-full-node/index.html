@@ -12,21 +12,21 @@
     <title>Run a full node :: Phala Network Wiki</title>
 
     
-    <link href="/css/nucleus.css?1594720800" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1594720800" rel="stylesheet">
-    <link href="/css/hybrid.css?1594720800" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1594720800" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1594720800" rel="stylesheet">
-    <link href="/css/auto-complete.css?1594720800" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1594720800" rel="stylesheet">
-    <link href="/css/theme.css?1594720800" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1594720800" rel="stylesheet">
+    <link href="/css/nucleus.css?1594792860" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1594792860" rel="stylesheet">
+    <link href="/css/hybrid.css?1594792860" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1594792860" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1594792860" rel="stylesheet">
+    <link href="/css/auto-complete.css?1594792860" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1594792860" rel="stylesheet">
+    <link href="/css/theme.css?1594792860" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1594792860" rel="stylesheet">
     
-    <link href="/css/theme-phala.css?1594720800" rel="stylesheet">
+    <link href="/css/theme-phala.css?1594792860" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1594720800"></script>
+    <script src="/js/jquery-3.3.1.min.js?1594792860"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1594720800"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1594720800"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1594792860"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1594792860"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wiki.phala.network\/en-us";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1594720800"></script>
+<script type="text/javascript" src="/js/search.js?1594792860"></script>
 
     
   </div>
@@ -287,6 +287,7 @@
     <li><a href="#run">Run</a></li>
     <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
     <li><a href="#using-docker">Using Docker</a></li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
   </ul>
 </nav>
     </div>
@@ -429,6 +430,14 @@ other set-up instructions in this guide.</p>
 Please note that by default the docker file only spawn a two nodes local testnet node, not a single
 node connecting to the public blockchain. This is mainly used for development. You can create your
 own docker file for connecting to Phala Network PoC2.</p>
+<h2 id="participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</h2>
+<p>To participate the PoC-2 events, it&rsquo;s required to set your node name in the format below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;Name | Controller account address&#34;</span> &lt;...other arguments&gt;
+</code></pre></div><p>where &ldquo;Controller account address&rdquo; is the address of your Controller account for staking (not Stash account). Please make sure there are two spaces close to the vertical bar symbol.</p>
+<blockquote>
+<p>Example: the command below brings up an archive node with the name &ldquo;PhalaMiner&rdquo; and its controller account</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
+</code></pre></div></blockquote>
 
 
 <footer class="footline">
@@ -536,19 +545,19 @@ own docker file for connecting to Phala Network PoC2.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1594720800"></script>
-    <script src="/js/perfect-scrollbar.min.js?1594720800"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1594720800"></script>
-    <script src="/js/jquery.sticky.js?1594720800"></script>
-    <script src="/js/featherlight.min.js?1594720800"></script>
-    <script src="/js/highlight.pack.js?1594720800"></script>
+    <script src="/js/clipboard.min.js?1594792860"></script>
+    <script src="/js/perfect-scrollbar.min.js?1594792860"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1594792860"></script>
+    <script src="/js/jquery.sticky.js?1594792860"></script>
+    <script src="/js/featherlight.min.js?1594792860"></script>
+    <script src="/js/highlight.pack.js?1594792860"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1594720800"></script>
-    <script src="/js/learn.js?1594720800"></script>
-    <script src="/js/hugo-learn.js?1594720800"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1594792860"></script>
+    <script src="/js/learn.js?1594792860"></script>
+    <script src="/js/hugo-learn.js?1594792860"></script>
 
-    <link href="/mermaid/mermaid.css?1594720800" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1594720800"></script>
+    <link href="/mermaid/mermaid.css?1594792860" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1594792860"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
