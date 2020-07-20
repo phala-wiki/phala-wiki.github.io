@@ -12,21 +12,21 @@
     <title>运行全节点 :: Phala Network 百科</title>
 
     
-    <link href="/css/nucleus.css?1595183164" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1595183164" rel="stylesheet">
-    <link href="/css/hybrid.css?1595183164" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595183164" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595183164" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595183164" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1595183164" rel="stylesheet">
-    <link href="/css/theme.css?1595183164" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595183164" rel="stylesheet">
+    <link href="/css/nucleus.css?1595255909" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1595255909" rel="stylesheet">
+    <link href="/css/hybrid.css?1595255909" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595255909" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595255909" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595255909" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1595255909" rel="stylesheet">
+    <link href="/css/theme.css?1595255909" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595255909" rel="stylesheet">
     
-    <link href="/css/theme-phala.css?1595183164" rel="stylesheet">
+    <link href="/css/theme-phala.css?1595255909" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1595183164"></script>
+    <script src="/js/jquery-3.3.1.min.js?1595255909"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595183164"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595183164"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595255909"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595255909"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wiki.phala.network\/zh-cn";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595183164"></script>
+<script type="text/javascript" src="/js/search.js?1595255909"></script>
 
     
   </div>
@@ -282,12 +282,12 @@
         <li><a href="#快速安装指南--mac">快速安装指南  (Mac)</a></li>
       </ul>
     </li>
+    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
     <li><a href="#获取-substrate">获取 Substrate</a></li>
     <li><a href="#克隆代码编译">克隆代码、编译</a></li>
     <li><a href="#运行">运行</a></li>
     <li><a href="#运行归档节点">运行归档节点</a></li>
     <li><a href="#使用-docker-运行节点">使用 Docker 运行节点</a></li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
   </ul>
 </nav>
     </div>
@@ -336,7 +336,7 @@
 <ul>
 <li>运行 <code>curl -sL https://github.com/Phala-Network/phala-blockchain/releases/download/poc2-3.0-alpha1/phala-node -o phala-node</code> 来下载可执行程序</li>
 <li>运行 <code>sudo chmod +x phala-node</code></li>
-<li>运行 <code>./phala-node --chain poc2 --name &quot;你的节点名&quot;</code></li>
+<li>运行 <code>./phala-node --chain poc2 --name &quot;你的节点名&quot;</code> (如果你在参与<a href="#%E5%8F%82%E4%B8%8E%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C-poc-2-%E6%B4%BB%E5%8A%A8">PoC-2活动</a>，请按标准格式设置名字)</li>
 <li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
 </ul>
 <h3 id="快速安装指南--mac">快速安装指南  (Mac)</h3>
@@ -355,9 +355,17 @@ cd phala-blockchain
 git submodule update --init
 cargo build --release
 </code></pre></li>
-<li>运行 <code>./target/release/phala-node --chain poc2 --name &quot;你的节点名&quot;</code> 以启动节点</li>
+<li>运行 <code>./target/release/phala-node --chain poc2 --name &quot;你的节点名&quot;</code> 以启动节点 (如果你在参与<a href="#%E5%8F%82%E4%B8%8E%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C-poc-2-%E6%B4%BB%E5%8A%A8">PoC-2活动</a>，请按标准格式设置名字)</li>
 <li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
 </ul>
+<h2 id="参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</h2>
+<p>为了参加测试网络 PoC-2 的活动，我们要求运行节点的时候按照以下格式设置自己的名字：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;名字 | Controller地址&#34;</span> &lt;...其他参数&gt;
+</code></pre></div><p>其中 Controller 地址是创建抵押或者 Gatekeeper 账户时所设置的 Controller 地址（注意不是 Stash 账户）。请注意，名字与地址之间间隔的是“空格、半角竖线、空格”。如果没有按照此格式设置，可能会导致参与活动无法被统计。</p>
+<blockquote>
+<p>例如：以下命令会运行一个归档节点，并设置自己的名字为 PhalaMiner</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
+</code></pre></div></blockquote>
 <h2 id="获取-substrate">获取 Substrate</h2>
 <p>你可以点击 <a href="https://substrate.dev/docs/en/knowledgebase/getting-started">此处</a> 查看官方教程。鉴于 Windows 系统暂时不支持 Substrate，我们建议在一个 Linux 虚拟机里运行全节点。</p>
 <p>运行 <code>cargo --version</code> 指令以检测节点是否安装成功。</p>
@@ -383,14 +391,6 @@ cargo build --release
 <h2 id="使用-docker-运行节点">使用 Docker 运行节点</h2>
 <p>用 Docker 运行节点是可行的，但可能涉及到一些高级的操作。我们建议已经对 Docker 比较熟悉或已经部署过 Docker 的人继续这一步。</p>
 <p>你可以在 <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/Dockerfile">这里</a> 找到 Docker 相关的材料。Docker 默认只产生两个本地测试网节点，更适用于开发。你也可以编写自己的 Docker 文件并连接到 Phala PoC-2 测试网。</p>
-<h2 id="参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</h2>
-<p>为了参加测试网络 PoC-2 的活动，我们要求运行节点的时候按照以下格式设置自己的名字：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;名字 | Controller地址&#34;</span> &lt;...其他参数&gt;
-</code></pre></div><p>其中 Controller 地址是创建抵押或者 Gatekeeper 账户时所设置的 Controller 地址（注意不是 Stash 账户）。请注意，名字与地址之间间隔的是“空格、半角竖线、空格”。如果没有按照此格式设置，可能会导致参与活动无法被统计。</p>
-<blockquote>
-<p>例如：以下命令会运行一个归档节点，并设置自己的名字为 PhalaMiner</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
-</code></pre></div></blockquote>
 
 
 <footer class="footline">
@@ -498,19 +498,19 @@ cargo build --release
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595183164"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595183164"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595183164"></script>
-    <script src="/js/jquery.sticky.js?1595183164"></script>
-    <script src="/js/featherlight.min.js?1595183164"></script>
-    <script src="/js/highlight.pack.js?1595183164"></script>
+    <script src="/js/clipboard.min.js?1595255909"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595255909"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595255909"></script>
+    <script src="/js/jquery.sticky.js?1595255909"></script>
+    <script src="/js/featherlight.min.js?1595255909"></script>
+    <script src="/js/highlight.pack.js?1595255909"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1595183164"></script>
-    <script src="/js/learn.js?1595183164"></script>
-    <script src="/js/hugo-learn.js?1595183164"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1595255909"></script>
+    <script src="/js/learn.js?1595255909"></script>
+    <script src="/js/hugo-learn.js?1595255909"></script>
 
-    <link href="/mermaid/mermaid.css?1595183164" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595183164"></script>
+    <link href="/mermaid/mermaid.css?1595255909" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595255909"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

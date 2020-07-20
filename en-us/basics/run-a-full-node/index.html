@@ -12,21 +12,21 @@
     <title>Run a full node :: Phala Network Wiki</title>
 
     
-    <link href="/css/nucleus.css?1595183164" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1595183164" rel="stylesheet">
-    <link href="/css/hybrid.css?1595183164" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595183164" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595183164" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595183164" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1595183164" rel="stylesheet">
-    <link href="/css/theme.css?1595183164" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595183164" rel="stylesheet">
+    <link href="/css/nucleus.css?1595255909" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1595255909" rel="stylesheet">
+    <link href="/css/hybrid.css?1595255909" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595255909" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595255909" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595255909" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1595255909" rel="stylesheet">
+    <link href="/css/theme.css?1595255909" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595255909" rel="stylesheet">
     
-    <link href="/css/theme-phala.css?1595183164" rel="stylesheet">
+    <link href="/css/theme-phala.css?1595255909" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1595183164"></script>
+    <script src="/js/jquery-3.3.1.min.js?1595255909"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595183164"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595183164"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595255909"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595255909"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wiki.phala.network\/en-us";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595183164"></script>
+<script type="text/javascript" src="/js/search.js?1595255909"></script>
 
     
   </div>
@@ -282,12 +282,12 @@
         <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
       </ul>
     </li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
     <li><a href="#get-substrate">Get Substrate</a></li>
     <li><a href="#clone-and-build">Clone and Build</a></li>
     <li><a href="#run">Run</a></li>
     <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
     <li><a href="#using-docker">Using Docker</a></li>
-    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
   </ul>
 </nav>
     </div>
@@ -365,7 +365,7 @@ your system. You will either need to compile the <a href="#clone-and-build">sour
 <li>Download Phala Network binary by running:
 <code>curl -sL https://github.com/Phala-Network/phala-blockchain/releases/download/poc2-3.0-alpha1/phala-node -o phala-node</code></li>
 <li>Run the following: <code>sudo chmod +x phala-node</code></li>
-<li>Run the following: <code>./phala-node --chain poc2 --name &quot;Your Node Name Here&quot;</code></li>
+<li>Run the following: <code>./phala-node --chain poc2 --name &quot;Your Node Name Here&quot;</code> (check <a href="#participate-testnet-poc-2-promotion-events">participating PoC-2 events</a> for naming convention if you are)</li>
 <li>Find your node at <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">https://telemetry.polkadot.io/#list/Phala%20PoC-2</a></li>
 </ul>
 <h3 id="fast-install-instructions-mac">Fast Install Instructions (Mac)</h3>
@@ -387,9 +387,17 @@ cd phala-blockchain
 git submodule update --init
 cargo build --release
 </code></pre></li>
-<li>Run the following command to start your node: <code>./target/release/phala-node --chain poc2 --name &quot;My node's name&quot;</code></li>
+<li>Run the following command to start your node: <code>./target/release/phala-node --chain poc2 --name &quot;My node's name&quot;</code> (check <a href="#participate-testnet-poc-2-promotion-events">participating PoC-2 events</a> for naming convention if you are)</li>
 <li>Find your node at <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">https://telemetry.polkadot.io/#list/Phala%20PoC-2</a></li>
 </ul>
+<h2 id="participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</h2>
+<p>To participate the PoC-2 events, it&rsquo;s required to set your node name in the format below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;Name | Controller account address&#34;</span> &lt;...other arguments&gt;
+</code></pre></div><p>where &ldquo;Controller account address&rdquo; is the address of your Controller account for staking (not Stash account). Please make sure there are two spaces close to the vertical bar symbol.</p>
+<blockquote>
+<p>Example: the command below brings up an archive node with the name &ldquo;PhalaMiner&rdquo; and its controller account</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
+</code></pre></div></blockquote>
 <h2 id="get-substrate">Get Substrate</h2>
 <p>Follow instructions as outlined
 <a href="https://substrate.dev/docs/en/knowledgebase/getting-started">here</a> - note that Windows users will
@@ -408,7 +416,10 @@ cargo build --release
 </code></pre></div><h2 id="run">Run</h2>
 <p>The built binary will be in the <code>target/release</code> folder, called <code>phala-node</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span style="color:#e6db74">&#34;My node&#39;s name&#34;</span>
-</code></pre></div><p>Use the <code>--help</code> flag to find out which flags you can use when running the node. For example, if
+</code></pre></div><blockquote>
+<p>Check <a href="#participate-testnet-poc-2-promotion-events">participating PoC-2 events</a> for naming convention if you are.</p>
+</blockquote>
+<p>Use the <code>--help</code> flag to find out which flags you can use when running the node. For example, if
 <a href="https://wiki.polkadot.network/docs/en/maintain-wss">connecting to your node remotely</a>, you&rsquo;ll probably want to use <code>--ws-external</code> and
 <code>--rpc-cors all</code>.</p>
 <p>The syncing process will take a while depending on your bandwidth, processing power, disk speed and
@@ -431,14 +442,6 @@ other set-up instructions in this guide.</p>
 Please note that by default the docker file only spawn a two nodes local testnet node, not a single
 node connecting to the public blockchain. This is mainly used for development. You can create your
 own docker file for connecting to Phala Network PoC2.</p>
-<h2 id="participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</h2>
-<p>To participate the PoC-2 events, it&rsquo;s required to set your node name in the format below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;Name | Controller account address&#34;</span> &lt;...other arguments&gt;
-</code></pre></div><p>where &ldquo;Controller account address&rdquo; is the address of your Controller account for staking (not Stash account). Please make sure there are two spaces close to the vertical bar symbol.</p>
-<blockquote>
-<p>Example: the command below brings up an archive node with the name &ldquo;PhalaMiner&rdquo; and its controller account</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./phala-node --name <span style="color:#e6db74">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
-</code></pre></div></blockquote>
 
 
 <footer class="footline">
@@ -546,19 +549,19 @@ own docker file for connecting to Phala Network PoC2.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595183164"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595183164"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595183164"></script>
-    <script src="/js/jquery.sticky.js?1595183164"></script>
-    <script src="/js/featherlight.min.js?1595183164"></script>
-    <script src="/js/highlight.pack.js?1595183164"></script>
+    <script src="/js/clipboard.min.js?1595255909"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595255909"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595255909"></script>
+    <script src="/js/jquery.sticky.js?1595255909"></script>
+    <script src="/js/featherlight.min.js?1595255909"></script>
+    <script src="/js/highlight.pack.js?1595255909"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1595183164"></script>
-    <script src="/js/learn.js?1595183164"></script>
-    <script src="/js/hugo-learn.js?1595183164"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1595255909"></script>
+    <script src="/js/learn.js?1595255909"></script>
+    <script src="/js/hugo-learn.js?1595255909"></script>
 
-    <link href="/mermaid/mermaid.css?1595183164" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595183164"></script>
+    <link href="/mermaid/mermaid.css?1595255909" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595255909"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
