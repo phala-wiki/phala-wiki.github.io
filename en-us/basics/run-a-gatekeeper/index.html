@@ -12,21 +12,21 @@
     <title>Run a Gatekeeper :: Phala Network Wiki</title>
 
     
-    <link href="/css/nucleus.css?1595255909" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1595255909" rel="stylesheet">
-    <link href="/css/hybrid.css?1595255909" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595255909" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595255909" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595255909" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1595255909" rel="stylesheet">
-    <link href="/css/theme.css?1595255909" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595255909" rel="stylesheet">
+    <link href="/css/nucleus.css?1595312520" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1595312520" rel="stylesheet">
+    <link href="/css/hybrid.css?1595312520" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1595312520" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1595312520" rel="stylesheet">
+    <link href="/css/auto-complete.css?1595312520" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1595312520" rel="stylesheet">
+    <link href="/css/theme.css?1595312520" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1595312520" rel="stylesheet">
     
-    <link href="/css/theme-phala.css?1595255909" rel="stylesheet">
+    <link href="/css/theme-phala.css?1595312520" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1595255909"></script>
+    <script src="/js/jquery-3.3.1.min.js?1595312520"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595255909"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595255909"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1595312520"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1595312520"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wiki.phala.network\/en-us";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595255909"></script>
+<script type="text/javascript" src="/js/search.js?1595312520"></script>
 
     
   </div>
@@ -374,11 +374,11 @@ optimizations in order to be equal to other Gatekeepers that are running the sta
 <h3 id="install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</h3>
 <p>You can find the latest Linux SGX driver from the <a href="https://01.org/intel-software-guard-extensions/downloads">official download page</a>. Make sure to install:</p>
 <ul>
-<li>SGX Linux DCAP Driver (Under <code>/opt</code>)</li>
-<li>SGX Linux SDK</li>
+<li>SGX Linux DCAP Driver</li>
+<li>SGX Linux SDK (Under <code>/opt</code>)</li>
 <li>SGX Platform Swoftware</li>
 </ul>
-<p>The <a href="https://github.com/apache/incubator-teaclave-sgx-sdk/blob/253b3ac982b2d09d32f5fa5a2011e3c36bcbed1e/dockerfile/Dockerfile.1804.nightly">dockerfile</a> offered by Teaclave SGX SDK is a good reference of how to install the SGX driver, SDK and platform software.</p>
+<p>The <a href="https://github.com/apache/incubator-teaclave-sgx-sdk/blob/253b3ac982b2d09d32f5fa5a2011e3c36bcbed1e/dockerfile/Dockerfile.1804.nightly">dockerfile</a> offered by Teaclave SGX SDK is a good reference of how to install the SGX SDK and platform software. Though it&rsquo;s possible to run SGX apps inside Docker, we don&rsquo;t have a guide for it so far. The driver must be installed on host machine natively.</p>
 <h3 id="install-the-phala-node-binary">Install the <code>phala-node</code> Binary</h3>
 <p>Download the latest Phala Network binary from the Github <a href="https://github.com/Phala-Network/phala-blockchain/releases">release page</a>.</p>
 <p>You can also build the <code>phala-node</code> binary from the
@@ -694,19 +694,19 @@ other peers over the network.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595255909"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595255909"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595255909"></script>
-    <script src="/js/jquery.sticky.js?1595255909"></script>
-    <script src="/js/featherlight.min.js?1595255909"></script>
-    <script src="/js/highlight.pack.js?1595255909"></script>
+    <script src="/js/clipboard.min.js?1595312520"></script>
+    <script src="/js/perfect-scrollbar.min.js?1595312520"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1595312520"></script>
+    <script src="/js/jquery.sticky.js?1595312520"></script>
+    <script src="/js/featherlight.min.js?1595312520"></script>
+    <script src="/js/highlight.pack.js?1595312520"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1595255909"></script>
-    <script src="/js/learn.js?1595255909"></script>
-    <script src="/js/hugo-learn.js?1595255909"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1595312520"></script>
+    <script src="/js/learn.js?1595312520"></script>
+    <script src="/js/hugo-learn.js?1595312520"></script>
 
-    <link href="/mermaid/mermaid.css?1595255909" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595255909"></script>
+    <link href="/mermaid/mermaid.css?1595312520" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1595312520"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
