@@ -13,21 +13,21 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>Troubleshooting | Phala Network Wiki</title><meta property="og:title" content="Troubleshooting" />
-<meta property="og:description" content="phala-blockchain The &quot;duplicate lang item&quot; problem error: duplicate lang item in crate `std`: `f32_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `f64_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `panic_impl`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `begin_panic`." />
+<meta property="og:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/troubleshooting/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Troubleshooting">
-<meta itemprop="description" content="phala-blockchain The &quot;duplicate lang item&quot; problem error: duplicate lang item in crate `std`: `f32_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `f64_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `panic_impl`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `begin_panic`.">
+<meta itemprop="description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression.">
 
-<meta itemprop="wordCount" content="312">
+<meta itemprop="wordCount" content="437">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Troubleshooting"/>
-<meta name="twitter:description" content="phala-blockchain The &quot;duplicate lang item&quot; problem error: duplicate lang item in crate `std`: `f32_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `f64_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `panic_impl`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `begin_panic`."/>
+<meta name="twitter:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.23e091e46e589afa14fc1e744970cde7a851796bf698dd9c8064d5cf82fe28b173b3e912a734acdf26cb0fe7d08882c92a38ae7daa5c1bb26aef730174418e91.css" integrity="sha512-I&#43;CR5G5YmvoU/B50SXDN56hReWv2mN2cgGTVz4L&#43;KLFzs&#43;kSpzSs3ybLD&#43;fQiILJKjiufapcG7Jq73MBdEGOkQ==">
@@ -139,14 +139,15 @@
 </nav>
         <h3 class="section_link active"><a id="docs-troubleshooting" href="https://wiki.phala.network/en-us/docs/troubleshooting/">Troubleshooting</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#phala-blockchain">phala-blockchain</a>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#the-duplicate-lang-item-problem">The &quot;duplicate lang item&quot; problem</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
       </ul>
     </li>
-    <li><a href="#apps-ng">apps-ng</a>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#polkadotdevconfigtsconfig-not-found-while-building">'@polkadot/dev/config/tsconfig' not found while building</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
       </ul>
     </li>
   </ul>
@@ -221,9 +222,39 @@
 
   </div>
   <section class="content">
-    <h1>Troubleshooting</h1><h2 id="phala-blockchain">phala-blockchain</h2>
-<h3 id="the-duplicate-lang-item-problem">The &quot;duplicate lang item&quot; problem</h3>
-<pre><code>error: duplicate lang item in crate `std`: `f32_runtime`.
+    <h1>Troubleshooting</h1><h2 id="phala-blockchain"><code>phala-blockchain</code></h2>
+<h3 id="probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</h3>
+<pre><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
+      --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9
+       |
+  541  |                   let accuracy = P::ACCURACY.saturated_into();
+       |                       ^^^^^^^^ consider giving `accuracy` a type
+  ...
+  1604 | / implement_fixed!(
+  1605 | |     FixedI128,
+  1606 | |     test_fixed_i128,
+  1607 | |     i128,
+  ...    |
+  1611 | |         [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;,
+  1612 | | );
+       | |__- in this macro invocation
+       |
+       = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
+</code></pre><p>This is a <a href="https://github.com/paritytech/substrate/issues/7287">known issue</a> caused by rust nightly regression. To walkaround it, switch to an older nightly toolchain. We recommend <code>nightly-2020-09-27</code>. It can be done like below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">rustup toolchain install nightly-2020-09-27
+rustup default nightly-2020-09-27
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-27
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</h3>
+<pre><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
   |
   = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on)
 
@@ -247,8 +278,8 @@ error: aborting due to 6 previous errors
 </code></pre><p>This is due to accidentally introduced &quot;std&quot; dependencies. Usually there are two common causes of this error.</p>
 <p>Most likely the code has some syntax errors and cannot build. Sometimes these errors can confuse the rust compiler in &quot;no_std&quot; mode and the compiler may accidentally introduce some random dependencies, which breaks our SDK. If this is the case, scroll up and fix the other compiling errors, and then this error should disappear.</p>
 <p>If fixing the other errors doesn't help, you should check if you accidentally introduce the &quot;std&quot; dependency to the runtime code. The hardware enclave sdk Phala is using doesn't allow direct or indirect &quot;std&quot; dependencies. You may consider to switch to a package that supports &quot;no_std&quot; and disable its std feature in <code>Cargo.toml</code>, or manually port the dependency package to use <code>teaclave-sgx-sdk</code>'s <code>tstd</code> instead. <code>tstd</code> is a subset of <code>std</code> but it's enough in the most cases.</p>
-<h2 id="apps-ng">apps-ng</h2>
-<h3 id="polkadotdevconfigtsconfig-not-found-while-building">'@polkadot/dev/config/tsconfig' not found while building</h3>
+<h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
+<h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</h3>
 <pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
 error TS6053: File '@polkadot/dev/config/tsconfig' not found.
 </code></pre><p>You forgot to init the git submodule. Please run <code>git submodule update --init</code>.</p>
@@ -300,7 +331,7 @@ error TS6053: File '@polkadot/dev/config/tsconfig' not found.
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.aaa805acbd032dc9d7bd7f8f161e3362e12d2aa17ba378ff3c616f01bf540577f876a0e778f6c95570395d18075e4fb361b745932311a5baca46abf764996446.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.aa46bcdbefcfd6215e71f9d38248aef7fa7cef27d842ab83d4416916752dca648b43c33cca2403e8fe65b6ec372b4fe50d6ff6e9fff48191aacd26fe34abcd69.js" async defer></script>
 
 </body>
 </html>
