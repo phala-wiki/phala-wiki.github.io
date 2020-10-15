@@ -6,17 +6,13 @@
     <description>Recent content in Phala Network Wiki on Phala Network 百科</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 02:27:43 +0800</lastBuildDate>
-    
-	<atom:link href="https://wiki.phala.network/zh-cn/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jul 2020 01:16:05 +0800</lastBuildDate><atom:link href="https://wiki.phala.network/zh-cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>运行 Gatekeeper</title>
-      <link>https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/</link>
+      <link>https://wiki.phala.network/zh-cn/docs/poc2/run-a-gatekeeper/</link>
       <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
       
-      <guid>https://wiki.phala.network/zh-cn/basics/run-a-gatekeeper/</guid>
+      <guid>https://wiki.phala.network/zh-cn/docs/poc2/run-a-gatekeeper/</guid>
       <description>这份教程将指导您如何安装 Phala 验证人节点。
 什么是守门人 守门人（Gatekeeper）是对 Phala 网络至关重要的角色。守门人负责区块的打包和密钥管理，是意外情况下保证网络可用性的重要途径。守门人需要使用性能较好的设备、在网络情况良好的环境登录，且必须时刻保持在线。因此，守门人可以获得可观的收益，但同时需要对自己和提名人的PHA抵押额负责。如果因为频繁掉线或其他不良行为导致被惩罚，则无论是名誉还是PHA损失都会是巨大的。
 运行守门人节点，安全是第一要素。你可以查看搭建安全Polkadot验证人节点查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的验证人节点参考实现（此处有视频教程)。在配置守门人节点的过程中，可以把这个代码库当作 一个初始模版 ，在上面自行修改、裁剪。
@@ -25,20 +21,21 @@
 点此查看如何领取测试币
 您可以在 这个页面 找到估算所需 PHA 数额的方法。 守门人将根据 Phragmen算法 进行选举。要想入选，您和提名人的保证金之和必须不低于其他守门人。赢得提名人的支持非常重要。此外，也要注意在您的 Stash 账号和 Controlloer 账号上都要留有足够的 PHA。
  例：
- 守门人A抵押了 10 PHA 作为保证金，他的提名人为他抵押了 100 PHA。则守门人A的总保证金为 110 PHA 守门人B抵押了 100 PHA，但没有提名人为他抵押 入选的会是A   需要注意，一旦将您的一部分资金设为保证金，它们可能会因为您的不良行为或操作不当而被罚没。它们可能会因为您的不良行为或操作不当而被罚没。它们可能会因为您的不良行为或操作不当而被罚没。因此再次建议您仔细阅读此篇教程的操作。
+ 守门人A抵押了 10 PHA 作为保证金，他的提名人为他抵押了 100 PHA。则守门人A的总保证金为 110 PHA 守门人B抵押了 100 PHA，但没有提名人为他抵押 入选的会是A   需要注意，一旦将您的一部分资金设为保证金，
+它们可能会因为您的不良行为或操作不当而被罚没。 它们可能会因为您的不良行为或操作不当而被罚没。 它们可能会因为您的不良行为或操作不当而被罚没。
+因此再次建议您仔细阅读此篇教程的操作。
 此外，
-请妥善保管您的助记词。请妥善保管您的助记词。请妥善保管您的助记词。运行守门人节点之前 配置要求 以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。
-交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 最低需求，但更低的配置不能保证稳定的运行。
-标准硬件 完整的细节可以参考这里。
- CPU：英特尔6代或更新的CPU，需支持SGX，至少双核心 内存：8GB（最低 2 G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  此外，网络条件非常重要，其他参数次之。我们强烈建议您在网络良好的地方运行守门人节点。关于如何确定自己的电脑是否支持 SGX ，Phala 为您准备了详细的SGX测试教程，可点击链接观看。</description>
+请妥善保管您的助记词。 请妥善保管您的助记词。 请妥善保管您的助记词。
+运行守门人节点之前 配置要求 以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。
+交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 最低需求，但更低的配置不能保证稳定的运行。</description>
     </item>
     
     <item>
       <title>运行全节点</title>
-      <link>https://wiki.phala.network/zh-cn/basics/run-a-full-node/</link>
+      <link>https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/</link>
       <pubDate>Mon, 06 Jul 2020 22:30:41 +0800</pubDate>
       
-      <guid>https://wiki.phala.network/zh-cn/basics/run-a-full-node/</guid>
+      <guid>https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/</guid>
       <description>这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
 如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
 在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。

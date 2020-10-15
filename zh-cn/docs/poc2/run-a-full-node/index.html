@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
+<link rel="manifest" href='https://wiki.phala.network/favicons/site.webmanifest'>
+<link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
+<link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
+<meta name="theme-color" content="#ffffff">
+
+<title>运行全节点 | Phala Network 百科</title><meta property="og:title" content="运行全节点" />
+<meta property="og:description" content="这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
+如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
+在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。
+节点类型 一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。
+Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。
+这个过程将由以下几种节点参与。
+ 归档节点（Archive Node）：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。 全节点（Full Node）：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。 轻节点（Light Node）：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。  归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 Polkassenbly）等。
+全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。
+轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
+快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
+ 你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
+此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/" />
+<meta property="article:published_time" content="2020-07-06T22:30:41+08:00" />
+<meta property="article:modified_time" content="2020-07-06T22:30:41+08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+<meta itemprop="name" content="运行全节点">
+<meta itemprop="description" content="这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
+如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
+在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。
+节点类型 一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。
+Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。
+这个过程将由以下几种节点参与。
+ 归档节点（Archive Node）：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。 全节点（Full Node）：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。 轻节点（Light Node）：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。  归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 Polkassenbly）等。
+全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。
+轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
+快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
+ 你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
+此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。">
+<meta itemprop="datePublished" content="2020-07-06T22:30:41+08:00" />
+<meta itemprop="dateModified" content="2020-07-06T22:30:41+08:00" />
+<meta itemprop="wordCount" content="302">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="运行全节点"/>
+<meta name="twitter:description" content="这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
+如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
+在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。
+节点类型 一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。
+Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。
+这个过程将由以下几种节点参与。
+ 归档节点（Archive Node）：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。 全节点（Full Node）：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。 轻节点（Light Node）：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。  归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 Polkassenbly）等。
+全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。
+轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
+快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
+ 你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
+此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。"/>
+
+
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.71c26611ac91a7666ae289bfb350bdb4a420177f2da3146363c7e864c434fc352137078ce1256dd1c305f2a10a5ed000596b01c8b253a56ec50b0c204fc35ba0.css" integrity="sha512-ccJmEayRp2Zq4om/s1C9tKQgF38toxRjY8foZMQ0/DUhNweM4SVt0cMF8qEKXtAAWWsByLJTpW7FCwwgT8NboA==">
+
+</head>
+<body class="page-page">
+  <header class="nav_header"><nav class="wrap nav">
+	<a href="https://wiki.phala.network" class="nav_brand">
+		<picture>
+			
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network 百科 Logo'>
+		</picture>
+		<label class="nav_toggle">Menu</label>
+	</a>
+	<ul class="nav_body">
+		<li class="nav-item">
+<div class="search">
+  <label for="find" class="search_label"><svg class="icon">
+  <use xlink:href="#search"></use>
+</svg>
+  </label>
+  <input type="search" class="search_field" placeholder="" id="find" autocomplete="off">
+  <div class="search_results"></div>
+</div>
+
+
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
+		</li>
+		
+		<li class="nav-item">
+			<a class="nav-link" href="https://github.com/Phala-Network/phala-wiki/" target="_blank">GitHub</a>
+		</li>
+		<li class="nav-item"><div class = 'color_mode'>
+  <label for = 'mode'></label>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+</div>
+</li>
+	</ul>
+</nav>
+
+  </header>
+  <main class="main wrap pt-4"><div class="grid-auto">
+  <div><aside class="aside">
+  <section class="section">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Docs</a></h2>
+      <section class="subsection" id="docs-docs">
+  <section class="section">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/poc2/" class="group">历史文档 (PoC-2)</a></h2>
+      <section class="subsection" id="docs-历史文档-poc-2">
+        <h3 class="section_link"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是守门人">什么是守门人</a>
+      <ul>
+        <li><a href="#守门人需要抵押多少-pha">守门人需要抵押多少 PHA</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行守门人节点之前">运行守门人节点之前</a>
+      <ul>
+        <li><a href="#配置要求">配置要求</a>
+          <ul>
+            <li><a href="#标准硬件">标准硬件</a></li>
+          </ul>
+        </li>
+        <li><a href="#安装-intel-sgx-驱动与平台软件">安装 Intel SGX 驱动与平台软件</a></li>
+        <li><a href="#安装-phala-node-可执行程序">安装 <code>phala-node</code> 可执行程序</a></li>
+        <li><a href="#同步链上数据">同步链上数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#抵押-pha">抵押 PHA</a></li>
+    <li><a href="#设置-session-密钥">设置 Session 密钥</a>
+      <ul>
+        <li><a href="#生成-session-密钥">生成 Session 密钥</a>
+          <ul>
+            <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
+            <li><a href="#方法2-cli">方法2: CLI</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交-setkeys-交易">提交 <code>setKeys</code> 交易</a></li>
+      </ul>
+    </li>
+    <li><a href="#注册-tee-设备">注册 TEE 设备</a></li>
+    <li><a href="#开启验证">开启验证</a></li>
+    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
+    <li><a href="#faq">FAQ</a>
+      <ul>
+        <li><a href="#为什么我同步的时候一直显示-0-peers">为什么我同步的时候一直显示 0 peers？</a></li>
+        <li><a href="#怎么清除链上数据">怎么清除链上数据？</a></li>
+        <li><a href="#有没有-docker-部署教程">有没有 Docker 部署教程</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link active"><a id="docs-运行全节点" href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/">运行全节点</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#节点类型">节点类型</a></li>
+        <li><a href="#快速安装指南--linux">快速安装指南  (Linux)</a></li>
+        <li><a href="#快速安装指南--mac">快速安装指南  (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
+    <li><a href="#获取-substrate">获取 Substrate</a></li>
+    <li><a href="#克隆代码编译">克隆代码、编译</a></li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#运行归档节点">运行归档节点</a></li>
+    <li><a href="#使用-docker-运行节点">使用 Docker 运行节点</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+      </section>
+  </section>
+</aside>
+
+  </div>
+  <section class="content">
+    <h1>运行全节点</h1><p>这是一份关于如何在 <a href="https://app.phala.network/#/staking">Phala PoC-2 测试网</a> 上安装全节点的教程。</p>
+<p>如果你有节点相关疑问，请 <a href="https://forum.phala.network/c/9-category/9">点此前往</a> Phala论坛中文区，参照此 <a href="https://forum.phala.network/t/topic/461/3">模板</a> 进行提问。后等待Phala开发人员解答即可。</p>
+<p>在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。</p>
+<h3 id="节点类型">节点类型</h3>
+<p>一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。</p>
+<p>Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。</p>
+<p>这个过程将由以下几种节点参与。</p>
+<ul>
+<li><strong>归档节点（Archive Node）</strong>：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。</li>
+<li><strong>全节点（Full Node）</strong>：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。</li>
+<li><strong>轻节点（Light Node）</strong>：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。</li>
+</ul>
+<p>归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 <a href="https://kusama.polkassembly.io/">Polkassenbly</a>）等。</p>
+<p>全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。</p>
+<p>轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：<a href="https://github.com/paritytech/substrate-light-ui">https://github.com/paritytech/substrate-light-ui</a></p>
+<h3 id="快速安装指南--linux">快速安装指南  (Linux)</h3>
+<blockquote>
+<p>不建议已经是守门人节点的设备继续此教程。详情请参见 <a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">《如何安全搭建守门人节点》</a></p>
+</blockquote>
+<p>你可以前往 phala-blockchain 的 <a href="https://github.com/Phala-Network/phala-blockchain/releases/">Github 发布页面</a> 获取最新的可执行程序 。下方代码可能会有一点点古老。</p>
+<p>此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似  <code>cannot execute binary file: Exec format error</code> 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要<a href="#%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91">重新编译一遍</a>，或使用 <a href="#%E4%BD%BF%E7%94%A8-docker-%E8%BF%90%E8%A1%8C%E8%8A%82%E7%82%B9">Docker</a>。</p>
+<ul>
+<li>运行 <code>curl -sL https://github.com/Phala-Network/phala-blockchain/releases/download/poc2-3.0-alpha1/phala-node -o phala-node</code> 来下载可执行程序</li>
+<li>运行 <code>sudo chmod +x phala-node</code></li>
+<li>运行 <code>./phala-node --chain poc2 --name &quot;你的节点名&quot;</code> (如果你在参与<a href="#%E5%8F%82%E4%B8%8E%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C-poc-2-%E6%B4%BB%E5%8A%A8">PoC-2活动</a>，请按标准格式设置名字)</li>
+<li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
+</ul>
+<h3 id="快速安装指南--mac">快速安装指南  (Mac)</h3>
+<blockquote>
+<p>不建议已经是守门人节点的设备继续此教程。详情请参见 <a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">《如何安全搭建守门人节点》</a></p>
+</blockquote>
+<ul>
+<li>在 macOS 的搜索框中输入“终端”或“terminal”来打开终端程序</li>
+<li>运行 <code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code> 以安装 Homebrew</li>
+<li>运行 <code>brew install openssl cmake llvm</code></li>
+<li>运行 <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code> 以安装 Rust</li>
+<li>然后运行以下代码以克隆 phala-blockchain 代码库并编译：
+<pre><code>git clone https://github.com/Phala-Network/phala-blockchain
+cd phala-blockchain
+./scripts/init.sh
+git submodule update --init
+cargo build --release
+</code></pre></li>
+<li>运行 <code>./target/release/phala-node --chain poc2 --name &quot;你的节点名&quot;</code> 以启动节点 (如果你在参与<a href="#%E5%8F%82%E4%B8%8E%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C-poc-2-%E6%B4%BB%E5%8A%A8">PoC-2活动</a>，请按标准格式设置名字)</li>
+<li>现在，你就可以在 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Polkadot Telemetry</a> 上看见自己的节点了。</li>
+</ul>
+<h2 id="参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</h2>
+<p>为了参加测试网络 PoC-2 的活动，我们要求运行节点的时候按照以下格式设置自己的名字：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./phala-node --name <span class="s2">&#34;名字 | Controller地址&#34;</span> &lt;...其他参数&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>其中 Controller 地址是创建抵押或者 Gatekeeper 账户时所设置的 Controller 地址（注意不是 Stash 账户）。请注意，名字与地址之间间隔的是“空格、半角竖线、空格”。如果没有按照此格式设置，可能会导致参与活动无法被统计。</p>
+<blockquote>
+<p>例如：以下命令会运行一个归档节点，并设置自己的名字为 PhalaMiner</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./phala-node --name <span class="s2">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="获取-substrate">获取 Substrate</h2>
+<p>你可以点击 <a href="https://substrate.dev/docs/en/knowledgebase/getting-started">此处</a> 查看官方教程。鉴于 Windows 系统暂时不支持 Substrate，我们建议在一个 Linux 虚拟机里运行全节点。</p>
+<p>运行 <code>cargo --version</code> 指令以检测节点是否安装成功。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cargo --version
+cargo 1.41.0 <span class="o">(</span>626f0f40e 2019-12-03<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="克隆代码编译">克隆代码、编译</h2>
+<p><a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> 的 Github 代码库已经包含了最新的 Phala Network 代码。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/Phala-Network/phala-blockchain
+<span class="nb">cd</span> phala-blockchain
+./scripts/init.sh
+git submodule update --init
+cargo build --release
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="运行">运行</h2>
+<p>编译生成的程序位于 <code>target/release</code>，文件名为 <code>phala-node</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span class="s2">&#34;你的节点名&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>你可以使用 <code>--help</code> 选项查看有哪些命令行选项可以在跑节点时使用。如果你想<a href="https://wiki.polkadot.network/docs/en/maintain-wss">连接到远程端的节点</a>，可以开启 <code>--ws-external</code> 和 <code>--rpc-cors all</code> 选项。</p>
+<p>根据网路带宽、CPU性能、硬盘读写速度、RAM 读写速度的不同，区块链的同步时间也会有所不同。</p>
+<p>至此，你已经完成了和 Phala 网络的同步，恭喜 :)</p>
+<h2 id="运行归档节点">运行归档节点</h2>
+<p>如果你只运行一个精简版的同步型节点（如上文所述），只有前 256 个区块的状态会被保留。作为验证人时，节点会默认设为<a href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B">归档模式</a>。此时可以使用 <code>--pruning</code> 参数来强制保存全部链上状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./target/release/phala-node --chain poc2 --name <span class="s2">&#34;你的节点名&#34;</span> --pruning archive
+</code></pre></td></tr></table>
+</div>
+</div><p>你可以用<code>--wasm-execution Compiled</code> 加速同步，最高可能提升四倍速度。但这也会占用更多 CPU 运存和内存。所以记得在同步完后把它恢复到常态。</p>
+<h2 id="使用-docker-运行节点">使用 Docker 运行节点</h2>
+<p>用 Docker 运行节点是可行的，但可能涉及到一些高级的操作。我们建议已经对 Docker 比较熟悉或已经部署过 Docker 的人继续这一步。</p>
+<p>你可以在 <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/Dockerfile">这里</a> 找到 Docker 相关的材料。Docker 默认只产生两个本地测试网节点，更适用于开发。你也可以编写自己的 Docker 文件并连接到 Phala PoC-2 测试网。</p>
+
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-gatekeeper/" class="pager_link button" title="运行 Gatekeeper">
+      <span class="pager_label">运行 Gatekeeper</span>
+    </a>
+  </div>
+  
+
+  
+</div>
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+</svg>
+  </section>
+</div>
+
+  </main>
+<footer class="mt-2 pt-2 pb-2">
+  <div class="wrap">
+    <p>&copy; 2020 Phala Network</p>
+  </div>
+</footer>
+
+
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+</svg>
+<script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
+<script src="https://wiki.phala.network/js/search.min.e76103840b85b547a5116bb7aace0747f7946e6386fa3dbf820872bdf8d1d31307a52c29a932f23bfa213b4b6e2a974a344e112cb00cf1a9965bd6850b6424bf.js" async defer></script>
+
+</body>
+</html>

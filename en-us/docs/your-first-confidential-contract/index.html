@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
+<link rel="manifest" href='https://wiki.phala.network/favicons/site.webmanifest'>
+<link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
+<link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
+<meta name="theme-color" content="#ffffff">
+
+<title>Hello World: your first confidential contract | Phala Network Wiki</title><meta property="og:title" content="Hello World: your first confidential contract" />
+<meta property="og:description" content="Basic understanding of Rust lanugage programming and smart contract development knowledge is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidental contract  For a high-level overview of Phala Network, please check the previous chapters." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/your-first-confidential-contract/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
+<meta itemprop="name" content="Hello World: your first confidential contract">
+<meta itemprop="description" content="Basic understanding of Rust lanugage programming and smart contract development knowledge is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidental contract  For a high-level overview of Phala Network, please check the previous chapters.">
+
+<meta itemprop="wordCount" content="276">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hello World: your first confidential contract"/>
+<meta name="twitter:description" content="Basic understanding of Rust lanugage programming and smart contract development knowledge is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidental contract  For a high-level overview of Phala Network, please check the previous chapters."/>
+
+
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.71c26611ac91a7666ae289bfb350bdb4a420177f2da3146363c7e864c434fc352137078ce1256dd1c305f2a10a5ed000596b01c8b253a56ec50b0c204fc35ba0.css" integrity="sha512-ccJmEayRp2Zq4om/s1C9tKQgF38toxRjY8foZMQ0/DUhNweM4SVt0cMF8qEKXtAAWWsByLJTpW7FCwwgT8NboA==">
+
+</head>
+<body class="page-page">
+  <header class="nav_header"><nav class="wrap nav">
+	<a href="https://wiki.phala.network" class="nav_brand">
+		<picture>
+			
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network Wiki Logo'>
+		</picture>
+		<label class="nav_toggle">Menu</label>
+	</a>
+	<ul class="nav_body">
+		<li class="nav-item">
+<div class="search">
+  <label for="find" class="search_label"><svg class="icon">
+  <use xlink:href="#search"></use>
+</svg>
+  </label>
+  <input type="search" class="search_field" placeholder="" id="find" autocomplete="off">
+  <div class="search_results"></div>
+</div>
+
+
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
+		</li>
+		
+		<li class="nav-item">
+			<a class="nav-link" href="https://github.com/Phala-Network/phala-wiki/" target="_blank">GitHub</a>
+		</li>
+		<li class="nav-item"><div class = 'color_mode'>
+  <label for = 'mode'></label>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+</div>
+</li>
+	</ul>
+</nav>
+
+  </header>
+  <main class="main wrap pt-4"><div class="grid-auto">
+  <div><aside class="aside">
+  <section class="section">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Overview</a></h2>
+      <section class="subsection" id="docs-overview">
+        <h3 class="section_link"><a id="docs-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/run-a-local-development-network/">Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link active"><a id="docs-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/your-first-confidential-contract/">Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#the-contract">The contract</a></li>
+        <li><a href="#the-frontend">The frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-troubleshooting" href="https://wiki.phala.network/en-us/docs/troubleshooting/">Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-duplicate-lang-item-problem">The &quot;duplicate lang item&quot; problem</a></li>
+  </ul>
+</nav>
+  <section class="section">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+      <section class="subsection" id="docs-legacy-docs-poc-2">
+        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#preliminaries">Preliminaries</a>
+      <ul>
+        <li><a href="#how-many-pha-do-i-need">How many PHA do I need?</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-set-up">Initial Set-up</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a>
+          <ul>
+            <li><a href="#standard-hardware">Standard Hardware</a></li>
+          </ul>
+        </li>
+        <li><a href="#install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</a></li>
+        <li><a href="#install-the-phala-node-binary">Install the <code>phala-node</code> Binary</a></li>
+        <li><a href="#synchronize-chain-data">Synchronize Chain Data</a></li>
+      </ul>
+    </li>
+    <li><a href="#bond-pha">Bond PHA</a></li>
+    <li><a href="#set-session-keys">Set Session Keys</a>
+      <ul>
+        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
+          <ul>
+            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
+            <li><a href="#option-2-cli">Option 2: CLI</a></li>
+          </ul>
+        </li>
+        <li><a href="#submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</a></li>
+      </ul>
+    </li>
+    <li><a href="#register-tee-worker">Register TEE worker</a></li>
+    <li><a href="#validate">Validate</a></li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
+    <li><a href="#faq">FAQ</a>
+      <ul>
+        <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
+        <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-run-a-full-node" href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/">Run a full node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#types-of-nodes">Types of Nodes</a></li>
+        <li><a href="#fast-install-instructions-linux">Fast Install Instructions (Linux)</a></li>
+        <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
+    <li><a href="#get-substrate">Get Substrate</a></li>
+    <li><a href="#clone-and-build">Clone and Build</a></li>
+    <li><a href="#run">Run</a></li>
+    <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
+    <li><a href="#using-docker">Using Docker</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+      </section>
+  </section>
+</aside>
+
+  </div>
+  <section class="content">
+    <h1>Hello World: your first confidential contract</h1><blockquote>
+<p>Basic understanding of Rust lanugage programming and smart contract development knowledge is necessary to follow this tutorial.</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:</p>
+<ul>
+<li>Learn how to develop a confidential contract</li>
+<li>Interact with the contract from the Web UI</li>
+<li>Build your own confidental contract</li>
+</ul>
+<p>For a high-level overview of Phala Network, please check the previous chapters.</p>
+<h2 id="environment-and-build">Environment and Build</h2>
+<p>Please set up a development environment by following the previous chapter <a href="Run-a-Local-Development-Network">Run a Local Development Network</a>. Make sure you are at the <code>helloworld</code> branch on both <code>phala-blockchain</code> and <code>apps-ng</code> repo.</p>
+<h2 id="walk-through">Walk-through</h2>
+<blockquote>
+<p>More details will be developed soon.</p>
+</blockquote>
+<h3 id="the-contract">The contract</h3>
+<p>Hello World contract commit: <a href="https://github.com/Phala-Network/phala-blockchain/commit/b9c576702ec1b9f0ee4a274b5d7aecc30e40fcb4">https://github.com/Phala-Network/phala-blockchain/commit/b9c576702ec1b9f0ee4a274b5d7aecc30e40fcb4</a></p>
+<ul>
+<li>States</li>
+<li>Commands</li>
+<li>Queries</li>
+</ul>
+<h3 id="the-frontend">The frontend</h3>
+<ul>
+<li>Web UI commit: <a href="https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56">https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56</a></li>
+</ul>
+<p>Interact with the contract: how to send command and queries.</p>
+<h2 id="implement-a-secret-notebook">Implement a secret notebook</h2>
+<h3 id="contract">Contract</h3>
+<ol>
+<li>Add an item to contract state: <code>map&lt;account, string&gt;</code></li>
+<li>Command: <code>SetNote</code></li>
+<li>Query: <code>GetNote</code> with <code>Error::NotAuthorized</code></li>
+</ol>
+<h3 id="frontend">Frontend</h3>
+<ol>
+<li>Set note UI</li>
+<li>Query UI</li>
+<li>Hanlde error</li>
+</ol>
+<h2 id="put-everything-together">Put everything together</h2>
+<h2 id="summary">Summary</h2>
+<h3 id="submit-your-work">Submit your work</h3>
+<p>This tutorial is a part of <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &quot;Hello World&quot; virtual hackathon challenge</a> at gitcoin.co. In order to win the task, please do the followings:</p>
+<ol>
+<li>Fork <a href="https://github.com/Phala-Network/phala-blockchain/tree/helloworld">the core blockchain</a> and <a href="https://github.com/Phala-Network/apps-ng/tree/helloworld">the Web UI</a> repo (helloworld branch) into your own GitHub account</li>
+<li>Develop your own contract on the “helloworld” branch templates</li>
+<li>Launch your full development stack and take screenshots of your dapps</li>
+<li>Make a tweet with the screenshots, describe what you are building and share your feeling on Twitter</li>
+<li>Join our <a href="https://discord.gg/zQKNGv4">Discord server</a> and submit the the link to your tweet</li>
+</ol>
+
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/en-us/docs/run-a-local-development-network/" class="pager_link button" title="Run a Local Development Network">
+      <span class="pager_label">Run a Local Development Network</span>
+    </a>
+  </div>
+  
+
+  
+  <div class="pager_item next">
+    
+    <a href="https://wiki.phala.network/en-us/docs/troubleshooting/" class="pager_link button" title="Troubleshooting">
+      <span class="pager_label">Troubleshooting</span>
+    </a>
+  </div>
+  
+</div>
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+</svg>
+  </section>
+</div>
+
+  </main>
+<footer class="mt-2 pt-2 pb-2">
+  <div class="wrap">
+    <p>&copy; 2020 Phala Network</p>
+  </div>
+</footer>
+
+
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+</svg>
+<script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
+<script src="https://wiki.phala.network/js/search.min.e76103840b85b547a5116bb7aace0747f7946e6386fa3dbf820872bdf8d1d31307a52c29a932f23bfa213b4b6e2a974a344e112cb00cf1a9965bd6850b6424bf.js" async defer></script>
+
+</body>
+</html>
