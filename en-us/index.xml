@@ -35,7 +35,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/troubleshooting/</guid>
-      <description>The &amp;quot;duplicate lang item&amp;quot; problem error: duplicate lang item in crate `std`: `f32_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `f64_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `panic_impl`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `begin_panic`.</description>
+      <description>phala-blockchain The &amp;quot;duplicate lang item&amp;quot; problem error: duplicate lang item in crate `std`: `f32_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `f64_runtime`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `panic_impl`. | = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on) error: duplicate lang item in crate `std`: `begin_panic`.</description>
     </item>
     
     <item>
