@@ -24,7 +24,7 @@
 <meta name="twitter:description" content=""/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1f22473be8ae35f0697e4110ebdfe9c018086f731dbc1570e3ba6bda4b7fa5b05e670296ffecca8c8a7128f403a73db93d0892d031d3806ddd958b739674f58a.css" integrity="sha512-HyJHO&#43;iuNfBpfkEQ69/pwBgIb3MdvBVw47pr2kt/pbBeZwKW/&#43;zKjIpxKPQDpz25PQiS0DHTgG3dlYtzlnT1ig==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.bb19f9af8b45188fe8824b748f40868fa69fd367404e5252be4940031bb188d574226ae6acb8c44169929dbc0ac000887faf743b562246a24e12c6a1e90ba96b.css" integrity="sha512-uxn5r4tFGI/ogkt0j0CGj6af02dATlJSvklAAxuxiNV0ImrmrLjEQWmSnbwKwACIf690O1YiRqJOEsah6Qupaw==">
 
 
   
@@ -294,6 +294,10 @@
 <h2 id="the-root-of-trust-tee">The Root of Trust: TEE</h2>
 <p>Phala provides confidentiality guarantee based on trusted hardwares, or <em>Trusted Execution Environment</em>, which means your code and data are safe even if your operating system is compromised. A contract executing in the TEE is just like the priest in the confessional room: You know who he is, you can tell he what you want and he will reply, but only God knows what's going on there. The most important thing is: All your secrets are safe.</p>
 <p>Phala adopts one of the most popular implementations of TEE, i.e., Intel SGX. Intel SGX introduces a small set of instructions to encrypt the data in memory, and attackers cannot decrypt it without cracking the CPU and extracting the secret key in it. Unlike existing blockchains in which all contract states are public on chain, the states of confidential contracts are encrypted and sealed in SGX.</p>
+<h2 id="phala-network-in-detail">Phala Network in Detail</h2>
+<p>Phala Network is consisted of three components: phala-nodes which make up of Phala blockchain, pRuntime and phost. Among them, only pRuntime lives in TEE. Although attackers cannot peek into TEE, they can trick the contracts in TEE by forging transactions or replaying/reordering valid transactions. It it important to ensure that confidential contracts only accept valid transactions and process transactions in an expected order. That's why we introduce Phala blockchain and phost.</p>
+<p>Phala blockchain serves as a canonical source of valid transactions. Only submitted transactions can be accepted by pRuntime, and they will be processed in the same order as on blockchain. We implement the Simplified Payment Verification protocal in pRuntime so it is able to determine whether valid transactions are accepted in expected order. Also a key rotation mechanism will be introduced to prevent the replay of historical transactions. The great thing is that pRunime hides all these complicated implementation details from you so you can just implement confidential contracts like developing ordinary programs.</p>
+<p>phost works as the bridge between Phala blockchain and pRuntime. It ensures that all the transactions on blockchain are faithfully forwarded to pRuntime and all the TEE instances are running unmodified version of pRuntime.</p>
 
     <div class="pager pager_lean">
   
@@ -328,7 +332,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.aa46bcdbefcfd6215e71f9d38248aef7fa7cef27d842ab83d4416916752dca648b43c33cca2403e8fe65b6ec372b4fe50d6ff6e9fff48191aacd26fe34abcd69.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.48e99a23c74ba5a59ff071a4330cf07da2888c075a1043a988bbeaab9c0c3eee4227110ef6986faf0c1e91f08c5fc086488210ede3aaa508ea5b5e067dc8a9fd.js" async defer></script>
 
 </body>
 </html>
