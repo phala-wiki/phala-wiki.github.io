@@ -14,7 +14,7 @@
       
       <guid>https://wiki.phala.network/en-us/docs/run-a-local-development-network/</guid>
       <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we are going to set up a &amp;quot;Hello World&amp;quot; development environment. We are gonig to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Overview In this tutorial, we are going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
     </item>
     
@@ -24,9 +24,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/your-first-confidential-contract/</guid>
-      <description>Basic understanding of Rust lanugage programming and smart contract development knowledge is necessary to follow this tutorial.
+      <description>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
- Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidental contract  For a high-level overview of Phala Network, please check the previous chapters.</description>
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.</description>
     </item>
     
     <item>
