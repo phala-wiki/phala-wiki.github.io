@@ -24,7 +24,7 @@
  Overview In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
 
-<meta itemprop="wordCount" content="1737">
+<meta itemprop="wordCount" content="1739">
 
 
 
@@ -125,14 +125,14 @@
     <li><a href="#environment-and-build">Environment and Build</a></li>
     <li><a href="#walk-through">Walk-through</a>
       <ul>
-        <li><a href="#the-contract">The contract</a></li>
-        <li><a href="#the-frontend">The frontend</a></li>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
       </ul>
     </li>
     <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
       <ul>
-        <li><a href="#contract">Contract</a></li>
-        <li><a href="#frontend">Frontend</a></li>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
       </ul>
     </li>
     <li><a href="#put-everything-together">Put everything together</a></li>
@@ -512,7 +512,7 @@ event - compiled successfully
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 9944:localhost:9944 8000:localhost:8000
+<pre class="chroma"><code class="language-bash" data-lang="bash">ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
 </code></pre></td></tr></table>
 </div>
 </div><p>This forwards all the necessary ports:</p>
@@ -521,7 +521,7 @@ event - compiled successfully
 <li>9944: Substrate WebSocket RPC port of <code>phala-node</code></li>
 <li>8000: HTTP Restful RPC port of <code>pruntime</code></li>
 </ul>
-<p>so you can visit the Web UI at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+<p>and you can visit the Web UI at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 </blockquote>
 <h2 id="send-some-secret-tokens">Send some secret tokens</h2>
 <p>In the last two sections, we have built and launched <code>phala-node</code>, <code>pruntime</code>, and <code>phost</code> in development mode, and connect the Web UI to the development network. Now we are ready to try the secret wallet feature in Phala Network!</p>
@@ -603,7 +603,7 @@ event - compiled successfully
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.4275c9a8f921f6f6d52c08a1a23ca8bcf001571e9c26b454d4ba0e2c73bc08456fbf7d2d9a3a81101b3dda46cdf3fcb303e41d1652cf87c98ea2b417e1a30777.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.8e3ab04f566fc428183007cdfa6693cbd7f2ac24e7e4c32578c053734fcb3aa18cfdd72801836f79abf98dd0b2097f9d4468b7ebde9cea85153a0be9a907d84d.js" async defer></script>
 
 </body>
 </html>
