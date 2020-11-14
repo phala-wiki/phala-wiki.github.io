@@ -12,16 +12,22 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>Legacy Docs (PoC-2) | Phala Network Wiki</title><meta property="og:title" content="Legacy Docs (PoC-2)" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/" />
-<meta property="og:updated_time" content="2020-07-06T22:29:51+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="Legacy Docs (PoC-2)">
-<meta itemprop="description" content="">
+<title>2.2 Set Commission | Phala Network Wiki</title><meta property="og:title" content="2.2 Set Commission" />
+<meta property="og:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
+<meta itemprop="name" content="2.2 Set Commission">
+<meta itemprop="description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake.">
+
+<meta itemprop="wordCount" content="100">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Legacy Docs (PoC-2)"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="2.2 Set Commission"/>
+<meta name="twitter:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -43,7 +49,7 @@
   <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500|Lato:300,400,500" rel="stylesheet">
 
 </head>
-<body class="page-section">
+<body class="page-page">
   <header class="nav_header"><nav class="wrap nav">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture>
@@ -185,7 +191,7 @@
     <li><a href="#deploying-phost">Deploying pHost</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
@@ -228,7 +234,7 @@
       </section>
   </section>
   <section class="section">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
       <section class="subsection" id="docs-legacy-docs-poc-2">
         <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
@@ -297,13 +303,38 @@
 
   </div>
   <section class="content">
-    <h1>Legacy Docs (PoC-2)</h1><h3 id="legacy-docs-poc-2">Legacy Docs (PoC-2)</h3>
-<h1 id="basics-for-testnet-poc-2">Basics for Testnet PoC-2</h1>
-<p>Run a full node to support the network connectivity, or run a Gatekeeper to serve the network and earn rewards.</p>
+    <h1>2.2 Set Commission</h1><ol>
+<li>Go to <code>Developer</code> -&gt; <code>Extrinsics</code>.</li>
+<li>Choose your <code>Controller</code> account -&gt; <code>phalaModule</code> -&gt; <code>setPayoutPrefs(payout_comission, payout_target)</code></li>
+<li>Fill in <code>commission</code> (from 0 to 100) and choose the account where you want to receive the mining rewards at <code>target</code>.</li>
+</ol>
+<blockquote>
+<p>The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it's all your own stake.</p>
+<p>A lower commission rate will share more of your profits, which means more lenders are likely to support you and lower your staking amount.</p>
+</blockquote>
+<p><img src="/images/docs/poc3/2.2.png" alt=""></p>
 
-    <div class="pager pager_lean">
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/" class="pager_link button" title="2.1 Deploy the Full Stack">
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+      <span class="pager_label">2.1 Deploy the Full Stack</span>
+    </a>
+  </div>
   
 
+  
+  <div class="pager_item next">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/" class="pager_link button" title="2.3 Veirfy the Miner State">
+      <span class="pager_label">2.3 Veirfy the Miner State</span>
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+    </a>
+  </div>
   
 </div>
 <svg width="0" height="0" class="hidden">

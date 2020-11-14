@@ -12,16 +12,28 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>Legacy Docs (PoC-2) | Phala Network Wiki</title><meta property="og:title" content="Legacy Docs (PoC-2)" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/" />
-<meta property="og:updated_time" content="2020-07-06T22:29:51+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="Legacy Docs (PoC-2)">
-<meta itemprop="description" content="">
+<title>1.2 Software Configuration | Phala Network Wiki</title><meta property="og:title" content="1.2 Software Configuration" />
+<meta property="og:description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install SGX driver If you have already installed the SGX driver, you can verify by:
+ Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
+<meta itemprop="name" content="1.2 Software Configuration">
+<meta itemprop="description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install SGX driver If you have already installed the SGX driver, you can verify by:
+ Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready.">
+
+<meta itemprop="wordCount" content="177">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Legacy Docs (PoC-2)"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="1.2 Software Configuration"/>
+<meta name="twitter:description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install SGX driver If you have already installed the SGX driver, you can verify by:
+ Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -43,7 +55,7 @@
   <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500|Lato:300,400,500" rel="stylesheet">
 
 </head>
-<body class="page-section">
+<body class="page-page">
   <header class="nav_header"><nav class="wrap nav">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture>
@@ -155,7 +167,7 @@
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -228,7 +240,7 @@
       </section>
   </section>
   <section class="section">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
       <section class="subsection" id="docs-legacy-docs-poc-2">
         <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
@@ -297,13 +309,60 @@
 
   </div>
   <section class="content">
-    <h1>Legacy Docs (PoC-2)</h1><h3 id="legacy-docs-poc-2">Legacy Docs (PoC-2)</h3>
-<h1 id="basics-for-testnet-poc-2">Basics for Testnet PoC-2</h1>
-<p>Run a full node to support the network connectivity, or run a Gatekeeper to serve the network and earn rewards.</p>
+    <h1>1.2 Software Configuration</h1><h3 id="ubuntu-1804">Ubuntu 18.04</h3>
+<ul>
+<li>Versions other than 18.04 are not supported.</li>
+<li><a href="https://phoenixnap.com/kb/how-to-install-ubuntu-18-04">How to intsall</a></li>
+<li>Make all your packages up-to-date: type <code>sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y</code> in the terminal.</li>
+</ul>
+<blockquote>
+<p>How to open your Terminal: right click on your desktop → <code>Open in Terminal</code></p>
+</blockquote>
+<h3 id="install-sgx-driver">Install SGX driver</h3>
+<p>If you have already installed the SGX driver, you can verify by:</p>
+<ol>
+<li>Type  <code>ls /dev | grep sgx</code> in the terminal</li>
+<li>If there's any output, your SGX driver is ready.</li>
+</ol>
+<p>If there's no output, you have to <a href="https://01.org/intel-software-guard-extensions/downloads"><strong>download and install it</strong></a>. And verify it again. For FLC ready CPUs and motherboards, the DCAP driver is preferred. Othrewise insall the SGX driver.</p>
+<h3 id="install-docker-ce">Install Docker-CE</h3>
+<ol>
+<li>Use commands as below in the terminal:
+<ul>
+<li><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></li>
+<li><code>sudo add-apt-repository &quot;deb [arch=amd64] &lt;https://download.docker.com/linux/ubuntu&gt; $(lsb_release -cs) stable&quot;</code></li>
+<li><code>sudo apt-get install -y docker-ce docker-ce-cli containerd.io</code></li>
+<li><code>sudo usermod -aG docker [YOUR_UBUNTU_USERNAME]</code> (Replace &quot;[YOUR_UBUNTU_USERNAME]&quot; to the user name you are using, without the brackets)</li>
+</ul>
+</li>
+</ol>
+<p>This is how it looks like after it's successfully deployed👇.</p>
+<p><img src="/images/docs/poc3/1.2.png" alt=""></p>
+<blockquote>
+<p>Reference: <a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu</a></p>
+</blockquote>
 
-    <div class="pager pager_lean">
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/" class="pager_link button" title="1.1 Hardware Configuration">
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+      <span class="pager_label">1.1 Hardware Configuration</span>
+    </a>
+  </div>
   
 
+  
+  <div class="pager_item next">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/" class="pager_link button" title="1.3 Set Miner Stash">
+      <span class="pager_label">1.3 Set Miner Stash</span>
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+    </a>
+  </div>
   
 </div>
 <svg width="0" height="0" class="hidden">

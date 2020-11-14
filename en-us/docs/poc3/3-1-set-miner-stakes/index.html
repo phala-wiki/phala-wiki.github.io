@@ -12,16 +12,25 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>Legacy Docs (PoC-2) | Phala Network Wiki</title><meta property="og:title" content="Legacy Docs (PoC-2)" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/" />
-<meta property="og:updated_time" content="2020-07-06T22:29:51+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="Legacy Docs (PoC-2)">
-<meta itemprop="description" content="">
+<title>3.1 Set Miner Stakes | Phala Network Wiki</title><meta property="og:title" content="3.1 Set Miner Stakes" />
+<meta property="og:description" content="As designed in Phala Token Economics, each miner is required to stake at least 1620 PHA per core before mining starts. On testnet Vendetta, to better perform a stress test on Phala network and allow more miners to participate, Phala network will automatically stake for miners after they register.
+However, to score a higher rank in the Miner Race, you can earn more points by using better hardwares, staking more tPHA, or simply running for a longer period, e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
+<meta itemprop="name" content="3.1 Set Miner Stakes">
+<meta itemprop="description" content="As designed in Phala Token Economics, each miner is required to stake at least 1620 PHA per core before mining starts. On testnet Vendetta, to better perform a stress test on Phala network and allow more miners to participate, Phala network will automatically stake for miners after they register.
+However, to score a higher rank in the Miner Race, you can earn more points by using better hardwares, staking more tPHA, or simply running for a longer period, e.">
+
+<meta itemprop="wordCount" content="168">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Legacy Docs (PoC-2)"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="3.1 Set Miner Stakes"/>
+<meta name="twitter:description" content="As designed in Phala Token Economics, each miner is required to stake at least 1620 PHA per core before mining starts. On testnet Vendetta, to better perform a stress test on Phala network and allow more miners to participate, Phala network will automatically stake for miners after they register.
+However, to score a higher rank in the Miner Race, you can earn more points by using better hardwares, staking more tPHA, or simply running for a longer period, e."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -43,7 +52,7 @@
   <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500|Lato:300,400,500" rel="stylesheet">
 
 </head>
-<body class="page-section">
+<body class="page-page">
   <header class="nav_header"><nav class="wrap nav">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture>
@@ -187,7 +196,7 @@
 </nav>
         <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -228,7 +237,7 @@
       </section>
   </section>
   <section class="section">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
       <section class="subsection" id="docs-legacy-docs-poc-2">
         <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
@@ -297,13 +306,33 @@
 
   </div>
   <section class="content">
-    <h1>Legacy Docs (PoC-2)</h1><h3 id="legacy-docs-poc-2">Legacy Docs (PoC-2)</h3>
-<h1 id="basics-for-testnet-poc-2">Basics for Testnet PoC-2</h1>
-<p>Run a full node to support the network connectivity, or run a Gatekeeper to serve the network and earn rewards.</p>
+    <h1>3.1 Set Miner Stakes</h1><p>As designed in <a href="https://files.phala.network/phala-token-economics-en.pdf">Phala Token Economics</a>, each miner is required to stake at least 1620 PHA per core before mining starts. On testnet Vendetta, to better perform a stress test on Phala network and allow more miners to participate, Phala network will automatically stake for miners after they register.</p>
+<p>However, to score a higher rank in the Miner Race, you can earn more points by using better hardwares, staking more tPHA, or simply running for a longer period, e.t.c.. Rules and tutorials of how to stake more PHA to your miner will be published soon before the race is launched.</p>
+<h3 id="the-mining-lending-protocol">The Mining Lending Protocol</h3>
+<p>This protocol is designed to lowered the entrance cost of staking: a miner may turn to other PHA holders, and invite them to stake for him or her. Thus he or she could start mining with less cost. As a payback, part of the mining profits will be shared with the nominators.</p>
+<p>The detailed introduction and tutorial of Mining Nomination will be published shortly.</p>
 
-    <div class="pager pager_lean">
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/" class="pager_link button" title="2.3 Veirfy the Miner State">
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+      <span class="pager_label">2.3 Veirfy the Miner State</span>
+    </a>
+  </div>
   
 
+  
+  <div class="pager_item next">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/" class="pager_link button" title="3.2 Start Mining">
+      <span class="pager_label">3.2 Start Mining</span>
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+    </a>
+  </div>
   
 </div>
 <svg width="0" height="0" class="hidden">
