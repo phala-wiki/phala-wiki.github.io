@@ -117,9 +117,9 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</guid>
       <description>Stop Mining  If your miner is not mining, please go to step 2.
    Refer to this link to stop mining.
+  Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
   Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data
- By default, the Phala node data is stored under $HOME/phala-node-data    Type commands as follows</description>
+1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data</description>
     </item>
     
     <item>
