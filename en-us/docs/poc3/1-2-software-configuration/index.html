@@ -13,27 +13,24 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>1.2 Software Configuration | Phala Network Wiki</title><meta property="og:title" content="1.2 Software Configuration" />
-<meta property="og:description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install SGX driver If you have already installed the SGX driver, you can verify by:
- Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready." />
+<meta property="og:description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install the SGX driver If you have already installed the SGX driver, you can verify by:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.2 Software Configuration">
-<meta itemprop="description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install SGX driver If you have already installed the SGX driver, you can verify by:
- Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready.">
+<meta itemprop="description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install the SGX driver If you have already installed the SGX driver, you can verify by:">
 
-<meta itemprop="wordCount" content="177">
+<meta itemprop="wordCount" content="190">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.2 Software Configuration"/>
-<meta name="twitter:description" content="Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install SGX driver If you have already installed the SGX driver, you can verify by:
- Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready."/>
+<meta name="twitter:description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well. How to intsall Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install the SGX driver If you have already installed the SGX driver, you can verify by:"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -172,7 +169,7 @@
     <li>
       <ul>
         <li><a href="#ubuntu-1804">Ubuntu 18.04</a></li>
-        <li><a href="#install-sgx-driver">Install SGX driver</a></li>
+        <li><a href="#install-the-sgx-driver">Install the SGX driver</a></li>
         <li><a href="#install-docker-ce">Install Docker-CE</a></li>
       </ul>
     </li>
@@ -312,14 +309,14 @@
   <section class="content">
     <h1>1.2 Software Configuration</h1><h3 id="ubuntu-1804">Ubuntu 18.04</h3>
 <ul>
-<li>Versions other than 18.04 are not supported.</li>
+<li>Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well.</li>
 <li><a href="https://phoenixnap.com/kb/how-to-install-ubuntu-18-04">How to intsall</a></li>
 <li>Make all your packages up-to-date: type <code>sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y</code> in the terminal.</li>
 </ul>
 <blockquote>
 <p>How to open your Terminal: right click on your desktop → <code>Open in Terminal</code></p>
 </blockquote>
-<h3 id="install-sgx-driver">Install SGX driver</h3>
+<h3 id="install-the-sgx-driver">Install the SGX driver</h3>
 <p>If you have already installed the SGX driver, you can verify by:</p>
 <ol>
 <li>Type  <code>ls /dev | grep sgx</code> in the terminal</li>
@@ -331,7 +328,7 @@
 <li>Use commands as below in the terminal:
 <ul>
 <li><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></li>
-<li><code>sudo add-apt-repository &quot;deb [arch=amd64] &lt;https://download.docker.com/linux/ubuntu&gt; $(lsb_release -cs) stable&quot;</code></li>
+<li><code>sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</code></li>
 <li><code>sudo apt-get install -y docker-ce docker-ce-cli containerd.io</code></li>
 <li><code>sudo usermod -aG docker [YOUR_UBUNTU_USERNAME]</code> (Replace &quot;[YOUR_UBUNTU_USERNAME]&quot; to the user name you are using, without the brackets)</li>
 </ul>
@@ -394,7 +391,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.5dddba1ef20055d20ebbb235a48446b137ad70b4388b8b9ae9fbd2f64415eb272fdd9433b8ae162ab6cd37d9223f970df2aad9b97d3971b257b462739b62ebae.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.513924aa6eb60db584d4e65ff8c6b8cf457d148655aa71a7cfca216d5c5d076712fc43337312f3f51e8c1eb6708aed85bda1268cc54d4e1bb52fe9bd798743c4.js" async defer></script>
 
 </body>
 </html>

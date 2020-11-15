@@ -75,9 +75,8 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
-      <description>Ubuntu 18.04  Versions other than 18.04 are not supported. How to intsall Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install SGX driver If you have already installed the SGX driver, you can verify by:
- Type ls /dev | grep sgx in the terminal If there&#39;s any output, your SGX driver is ready.</description>
+      <description>Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well. How to intsall Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+ Install the SGX driver If you have already installed the SGX driver, you can verify by:</description>
     </item>
     
     <item>
