@@ -13,21 +13,21 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>2.2 Set Commission | Phala Network Wiki</title><meta property="og:title" content="2.2 Set Commission" />
-<meta property="og:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake." />
+<meta property="og:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="2.2 Set Commission">
-<meta itemprop="description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake.">
+<meta itemprop="description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers.">
 
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="131">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.2 Set Commission"/>
-<meta name="twitter:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake."/>
+<meta name="twitter:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -176,7 +176,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#conneting-to-testnet-vendetta">Conneting to Testnet Vendetta</a></li>
+        <li><a href="#connecting-to-testnet-vendetta">Connecting to Testnet Vendetta</a></li>
         <li><a href="#creating-phala-accounts">Creating Phala Accounts</a></li>
         <li><a href="#obtaining-tpha">Obtaining tPHA</a></li>
         <li><a href="#setting-miner-stash">Setting Miner Stash</a></li>
@@ -192,7 +192,7 @@
   </ul>
 </nav>
         <h3 class="section_link active"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
     <li>
@@ -310,8 +310,8 @@
 <li>Fill in <code>commission</code> (from 0 to 100) and choose the account where you want to receive the mining rewards at <code>target</code>.</li>
 </ol>
 <blockquote>
-<p>The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it's all your own stake.</p>
-<p>A lower commission rate will share more of your profits, which means more lenders are likely to support you and lower your staking amount.</p>
+<p>The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a <code>comission</code> of 100 means all the profits are tranferred to your specified account and a <code>comission</code> of 0 will share all the profits to your mining stakers. Of course you get all if it's all your own stake.</p>
+<p>A lower commission rate will share more of your profits, which means more lenders are likely to support you, thus lowering your staking amount requirement.</p>
 </blockquote>
 <p><img src="/images/docs/poc3/2.2.png" alt=""></p>
 
@@ -330,7 +330,7 @@
   
   <div class="pager_item next">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/" class="pager_link button" title="2.3 Veirfy the Miner State">
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/" class="pager_link button" title="2.3 Veirfy the Miner State">
       <span class="pager_label">2.3 Veirfy the Miner State</span>
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
@@ -366,7 +366,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.513924aa6eb60db584d4e65ff8c6b8cf457d148655aa71a7cfca216d5c5d076712fc43337312f3f51e8c1eb6708aed85bda1268cc54d4e1bb52fe9bd798743c4.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.aaaa2c2566316b7f562ba4c56205bc60e1c3e56dc634082c26bc3266c4e16319d2f7a26b58c7e884662611cfe980c895a6fcb192b2fe8c5848e9b0b0fbb9adbb.js" async defer></script>
 
 </body>
 </html>

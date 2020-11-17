@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
-      <description>Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distribution may be supported as well. How to intsall Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
+      <description>Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
  Install the SGX driver If you have already installed the SGX driver, you can verify by:</description>
     </item>
     
@@ -32,11 +32,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/</guid>
-      <description>Conneting to Testnet Vendetta Open the Phala Network PoC-3 Web UI at: https://poc3.phala.network
-Creating Phala Accounts You may refer to this tutorial.
-Tip: to better manage your stash accounts and according controller accounts, we suggested you naming an account paired with the same prefix. E.g.,
- Emily Stash / Emily Controller
- Obtaining tPHA  Please be aware that you will need to burn ERC20 PHA to obtain tPHA on testnet Vendetta.</description>
+      <description>Connecting to Testnet Vendetta Open the Phala Network PoC-3 Web UI at: https://poc3.phala.network
+Creating Phala Accounts You need to create two accounts: a stash account and a controller account. You may refer to this tutorial about how to create a single account.
+Tip: to better manage your stash accounts and according controller accounts, we recommend to name an account pair with the same prefix. E.g.,
+ Emily Stash / Emily Controller</description>
     </item>
     
     <item>
@@ -45,9 +44,9 @@ Tip: to better manage your stash accounts and according controller accounts, we 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/</guid>
-      <description>ALERT: Operations at this step may reset your previous Phala blockchain data and you will need to re-deploy the mirror files. For more detail, refer to: https://github.com/Phala-Network/phala-docker#usage
-PLEASE DO NOT change the order when deploying the three docker containers below.
- Deploying Phala full-node A Phala full-node helps maintains the backbone of the network. We suggest you to run a Phala full-node on a device with 50+ GB storage.</description>
+      <description>WARNING: Operations at this step may reset your previous Phala blockchain data and you will need to re-deploy the docker containers. For more detail, refer to our Dockerfile Github repo. You can find the latest Phala Network docker images from the official repo.
+PLEASE follow the order of deploying the three docker containers below.
+ Deploying Phala full-node A Phala full-node helps maintain the backbone of the network. We suggest you to run a Phala full-node on a device with 50+ GB storage.</description>
     </item>
     
     <item>
@@ -56,15 +55,15 @@ PLEASE DO NOT change the order when deploying the three docker containers below.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/</guid>
-      <description>Go to Developer -&amp;gt; Extrinsics. Choose your Controller account -&amp;gt; phalaModule -&amp;gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final return. For any mining reward you get, you always take the commission from it, and then distribute the rests propotionally to the mining stakers. Of course you get all if it&#39;s all your own stake.</description>
+      <description>Go to Developer -&amp;gt; Extrinsics. Choose your Controller account -&amp;gt; phalaModule -&amp;gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers.</description>
     </item>
     
     <item>
       <title>2.3 Veirfy the Miner State</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/</link>
+      <link>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/2-3-veirfy-the-miner-state/</guid>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</guid>
       <description>Go to Developer -&amp;gt; Chain state :
  Check miner score: phalaModule - &amp;gt;workerState -&amp;gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  </description>
     </item>

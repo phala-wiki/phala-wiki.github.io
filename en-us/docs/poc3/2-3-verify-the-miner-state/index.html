@@ -12,25 +12,25 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>3.2 Start Mining | Phala Network Wiki</title><meta property="og:title" content="3.2 Start Mining" />
-<meta property="og:description" content=" Go to Develoepr -&gt; Extrinsics Choose your controller account，click phalaModule -&gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
-Mining States Verification  Go to Developer → Chain State Click phalaModule → miningState Choose your stash account  " />
+<title>2.3 Veirfy the Miner State | Phala Network Wiki</title><meta property="og:title" content="2.3 Veirfy the Miner State" />
+<meta property="og:description" content="Go to Developer -&gt; Chain state :
+ Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="3.2 Start Mining">
-<meta itemprop="description" content=" Go to Develoepr -&gt; Extrinsics Choose your controller account，click phalaModule -&gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
-Mining States Verification  Go to Developer → Chain State Click phalaModule → miningState Choose your stash account  ">
+<meta itemprop="name" content="2.3 Veirfy the Miner State">
+<meta itemprop="description" content="Go to Developer -&gt; Chain state :
+ Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  ">
 
-<meta itemprop="wordCount" content="47">
+<meta itemprop="wordCount" content="62">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="3.2 Start Mining"/>
-<meta name="twitter:description" content=" Go to Develoepr -&gt; Extrinsics Choose your controller account，click phalaModule -&gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
-Mining States Verification  Go to Developer → Chain State Click phalaModule → miningState Choose your stash account  "/>
+<meta name="twitter:title" content="2.3 Veirfy the Miner State"/>
+<meta name="twitter:description" content="Go to Developer -&gt; Chain state :
+ Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  "/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.49ffdf82825f1bb57d9145be0b1adeede7e368aaa134eff564c7ff2e780bd054ff1c6bba8d870b8098ead8c08a207d1bb6207930cb1e6381096c8414ed9394b2.css" integrity="sha512-Sf/fgoJfG7V9kUW&#43;Cxre7efjaKqhNO/1ZMf/LngL0FT/HGu6jYcLgJjq2MCKIH0btiB5MMseY4EJbIQU7ZOUsg==">
@@ -195,7 +195,7 @@ Mining States Verification  Go to Developer → Chain State Click phalaModule �
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
     <li>
@@ -205,7 +205,7 @@ Mining States Verification  Go to Developer → Chain State Click phalaModule �
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-32-start-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-32-start-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#mining-states-verification">Mining States Verification</a></li>
   </ul>
@@ -307,28 +307,28 @@ Mining States Verification  Go to Developer → Chain State Click phalaModule �
 
   </div>
   <section class="content">
-    <h1>3.2 Start Mining</h1><ol>
-<li>Go to <code>Develoepr</code> -&gt; <code>Extrinsics</code></li>
-<li>Choose your controller account，click <code>phalaModule</code> -&gt; <code>startMiningIntention()</code> ，and <code>Submit Transaction</code>.</li>
-</ol>
-<p>Then you will wait for the next mining period (every 1 hour) to get started.</p>
-<p><img src="/images/docs/poc3/3.2-1.png" alt=""></p>
-<h2 id="mining-states-verification">Mining States Verification</h2>
-<ol>
-<li>Go to <code>Developer</code> → <code>Chain State</code></li>
-<li>Click <code>phalaModule</code> → <code>miningState</code></li>
-<li>Choose your stash account</li>
-</ol>
-<p><img src="/images/docs/poc3/3.2-2.png" alt=""></p>
+    <h1>2.3 Veirfy the Miner State</h1><p>Go to <code>Developer</code> -&gt; <code>Chain state</code> :</p>
+<ul>
+<li>Check miner score: <code>phalaModule</code> - &gt;<code>workerState</code> -&gt; choose your stash account
+<ul>
+<li><code>score.overallScore</code>: the total points that a miner scores</li>
+<li><code>features</code>: number of enabled cores, and the level of your cores（1-4）.</li>
+</ul>
+</li>
+<li>Check stash state: <code>stashState</code></li>
+<li>Confirm the binding between stash and controller addresses: <code>phalaModule.stash(controller)</code></li>
+<li>An example of all the details of mining state is shown below:</li>
+</ul>
+<p><img src="/images/docs/poc3/2.3.png" alt=""></p>
 
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/" class="pager_link button" title="3.1 Set Miner Stakes">
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/" class="pager_link button" title="2.2 Set Commission">
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-      <span class="pager_label">3.1 Set Miner Stakes</span>
+      <span class="pager_label">2.2 Set Commission</span>
     </a>
   </div>
   
@@ -336,8 +336,8 @@ Mining States Verification  Go to Developer → Chain State Click phalaModule �
   
   <div class="pager_item next">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/" class="pager_link button" title="3.3 Stop Mining">
-      <span class="pager_label">3.3 Stop Mining</span>
+    <a href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/" class="pager_link button" title="3.1 Set Miner Stakes">
+      <span class="pager_label">3.1 Set Miner Stakes</span>
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
     </a>
