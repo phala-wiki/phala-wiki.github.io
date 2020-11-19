@@ -13,17 +13,17 @@
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</guid>
       <description>How to check whether your device is SGX-supported:
- Whether your hardware CPU is SGX-supported Refer to the SGX Hardware List Take the SGX Test  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled (or any other option that is similar as the description varies according to different manufacturers.</description>
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled (or any other option that is similar as the description varies according to different manufacturers.) Go to Boot -&amp;gt; Boot Mode, set it to UEFI.</description>
     </item>
     
     <item>
-      <title>1.2 Software Configuration</title>
+      <title>1.2 Install Docker-CE</title>
       <link>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
       <description>Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install the SGX driver If you have already installed the SGX driver, you can verify by:</description>
+ Install Docker-CE  Use commands as below in the terminal:  curl -fsSL https://download.</description>
     </item>
     
     <item>

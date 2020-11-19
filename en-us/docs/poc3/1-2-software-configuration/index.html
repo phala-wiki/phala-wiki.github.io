@@ -12,25 +12,25 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>1.2 Software Configuration | Phala Network Wiki</title><meta property="og:title" content="1.2 Software Configuration" />
+<title>1.2 Install Docker-CE | Phala Network Wiki</title><meta property="og:title" content="1.2 Install Docker-CE" />
 <meta property="og:description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install the SGX driver If you have already installed the SGX driver, you can verify by:" />
+ Install Docker-CE  Use commands as below in the terminal:  curl -fsSL https://download." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="1.2 Software Configuration">
+<meta itemprop="name" content="1.2 Install Docker-CE">
 <meta itemprop="description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install the SGX driver If you have already installed the SGX driver, you can verify by:">
+ Install Docker-CE  Use commands as below in the terminal:  curl -fsSL https://download.">
 
-<meta itemprop="wordCount" content="190">
+<meta itemprop="wordCount" content="121">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.2 Software Configuration"/>
+<meta name="twitter:title" content="1.2 Install Docker-CE"/>
 <meta name="twitter:description" content="Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install the SGX driver If you have already installed the SGX driver, you can verify by:"/>
+ Install Docker-CE  Use commands as below in the terminal:  curl -fsSL https://download."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.fe6ed0d0f0885b34c79c640a46c7f311513481973009c7da559ff3cb6fc3fcff091818b72eb5a27a1c0fac7e91d7583f03b83d18decd5f5462c799c299516a78.css" integrity="sha512-/m7Q0PCIWzTHnGQKRsfzEVE0gZcwCcfaVZ/zy2/D/P8JGBi3LrWiehwPrH6R11g/A7g9GN7NX1Rix5nCmVFqeA==">
@@ -161,15 +161,24 @@
         <h3 class="section_link"><a id="docs-11-hardware-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#bios-settings">BIOS Settings</a></li>
-    <li><a href="#reference">Reference</a></li>
+    <li><a href="#sgx-driver-verification">SGX Driver Verification</a></li>
+    <li><a href="#mainboard-verification">Mainboard Verification</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#reference">Reference</a></li>
+            <li><a href="#tech-support">Tech Support</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-12-install-docker-ce" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Install Docker-CE</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
         <li><a href="#ubuntu-1804">Ubuntu 18.04</a></li>
-        <li><a href="#install-the-sgx-driver">Install the SGX driver</a></li>
         <li><a href="#install-docker-ce">Install Docker-CE</a></li>
       </ul>
     </li>
@@ -307,7 +316,7 @@
 
   </div>
   <section class="content">
-    <h1>1.2 Software Configuration</h1><h3 id="ubuntu-1804">Ubuntu 18.04</h3>
+    <h1>1.2 Install Docker-CE</h1><h3 id="ubuntu-1804">Ubuntu 18.04</h3>
 <ul>
 <li>Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well.</li>
 <li><a href="https://phoenixnap.com/kb/how-to-install-ubuntu-18-04">How to install Ubuntu 18.04</a></li>
@@ -316,13 +325,6 @@
 <blockquote>
 <p>How to open your Terminal: right click on your desktop → <code>Open in Terminal</code></p>
 </blockquote>
-<h3 id="install-the-sgx-driver">Install the SGX driver</h3>
-<p>If you have already installed the SGX driver, you can verify by:</p>
-<ol>
-<li>Type  <code>ls /dev | grep sgx</code> in the terminal</li>
-<li>If there's any output, your SGX driver is ready.</li>
-</ol>
-<p>If there's no output, you have to <a href="https://01.org/intel-software-guard-extensions/downloads"><strong>download and install it</strong></a>. And verify it again. For FLC ready CPUs and motherboards, the DCAP driver is preferred. Othrewise insall the SGX driver.</p>
 <h3 id="install-docker-ce">Install Docker-CE</h3>
 <ol>
 <li>Use commands as below in the terminal:
@@ -330,7 +332,7 @@
 <li><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></li>
 <li><code>sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</code></li>
 <li><code>sudo apt-get install -y docker-ce docker-ce-cli containerd.io</code></li>
-<li><code>sudo usermod -aG docker [YOUR_UBUNTU_USERNAME]</code> (Replace &quot;[YOUR_UBUNTU_USERNAME]&quot; with the user name you are using, without the brackets)</li>
+<li><code>sudo usermod -aG docker YOUR_UBUNTU_USERNAME</code> (Replace <code>YOUR_UBUNTU_USERNAME</code> with the username you are using)</li>
 </ul>
 </li>
 </ol>
@@ -391,7 +393,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.aaaa2c2566316b7f562ba4c56205bc60e1c3e56dc634082c26bc3266c4e16319d2f7a26b58c7e884662611cfe980c895a6fcb192b2fe8c5848e9b0b0fbb9adbb.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.223a1af76ef8db667cbaddd178e4fd64654314b90bc6e811791994f684c62ca45fd23859753e2fea006d9827d1f90bc98a07cb6f8521078ce9968c144f1d0823.js" async defer></script>
 
 </body>
 </html>

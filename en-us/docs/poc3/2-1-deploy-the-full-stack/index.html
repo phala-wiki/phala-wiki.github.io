@@ -24,7 +24,7 @@ PLEASE follow the order of deploying the three docker containers below.
 PLEASE follow the order of deploying the three docker containers below.
  Deploying Phala full-node A Phala full-node helps maintain the backbone of the network. We suggest you to run a Phala full-node on a device with 50&#43; GB storage.">
 
-<meta itemprop="wordCount" content="525">
+<meta itemprop="wordCount" content="601">
 
 
 
@@ -164,15 +164,24 @@ PLEASE follow the order of deploying the three docker containers below.
         <h3 class="section_link"><a id="docs-11-hardware-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#bios-settings">BIOS Settings</a></li>
-    <li><a href="#reference">Reference</a></li>
+    <li><a href="#sgx-driver-verification">SGX Driver Verification</a></li>
+    <li><a href="#mainboard-verification">Mainboard Verification</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#reference">Reference</a></li>
+            <li><a href="#tech-support">Tech Support</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-12-install-docker-ce" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Install Docker-CE</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
         <li><a href="#ubuntu-1804">Ubuntu 18.04</a></li>
-        <li><a href="#install-the-sgx-driver">Install the SGX driver</a></li>
         <li><a href="#install-docker-ce">Install Docker-CE</a></li>
       </ul>
     </li>
@@ -342,6 +351,32 @@ PLEASE follow the order of deploying the three docker containers below.
 <p><code>$HOME/phala-pruntime-data</code> is the default path to the data of pRuntime. It's set in the <code>phala-pruntime-data</code> folder by default, which can be changed to another folder that the system admin has full access to. To run multiple pRuntime containers on one device (which is unnecessary and not suggested), please set different path for each container.</p>
 <p>If the data was deleted, please re-register the miner from the beginning.</p>
 </blockquote>
+<p>If the pRuntime docker fails to run, please recheck its installation according to the suggestions below:</p>
+<ol>
+<li>Please ensure there's no typo in your commands;</li>
+<li>Please ensure your drivers are installed correctly and successfully;</li>
+<li>Type in the command below to check whether your port is accessible:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl http://127.0.0.1:8000
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Type in the command below to check whether the docker container is running:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker attach --sig-proxy<span class="o">=</span><span class="nb">false</span> --detach-keys<span class="o">=</span>ctrl-c phala-pruntime
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li><a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">Check whether your mainboard is able to mine PHA</a></li>
+</ol>
 <h2 id="deploying-phost">Deploying pHost</h2>
 <p>Please replace the <code>YOUR-CONTROLLER-MNEMONIC</code> in the second command with the mnemonic of your controller. If you didn't fill in mnemonic at this step, you would receive &quot;<strong>NotController</strong>&quot; error when submitting transactions related to <code>phalaModule: setStash(controller)</code>.</p>
 <p>It costs a tiny amount of tPHA as well. Before deploying pHost, please make sure there are a certain amount of tPHA in your Stash account and controller account. <a href="https://forum.phala.network/t/how-to-obtain-tpha-on-testnet-vendetta/1254">Click here to learn how to obtain tPHA.</a></p>
@@ -407,7 +442,7 @@ PLEASE follow the order of deploying the three docker containers below.
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.aaaa2c2566316b7f562ba4c56205bc60e1c3e56dc634082c26bc3266c4e16319d2f7a26b58c7e884662611cfe980c895a6fcb192b2fe8c5848e9b0b0fbb9adbb.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.223a1af76ef8db667cbaddd178e4fd64654314b90bc6e811791994f684c62ca45fd23859753e2fea006d9827d1f90bc98a07cb6f8521078ce9968c144f1d0823.js" async defer></script>
 
 </body>
 </html>
