@@ -60,23 +60,23 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
     </item>
     
     <item>
-      <title>1.1 Hardware Configuration</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</link>
+      <title>1.1 Install Docker-CE</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-1-software-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</guid>
-      <description>How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&amp;gt; Boot Mode, and make sure it was set to UEFI.</description>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-software-configuration/</guid>
+      <description>Ubuntu 18.04  Versions other than 18.04 are not covered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date:  1  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y   Install Docker-CE Run the commands as below in the terminal
+1 2 3  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;#34;deb [arch=amd64] https://download.</description>
     </item>
     
     <item>
-      <title>1.2 Install Docker-CE</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</link>
+      <title>1.2 Hardware Configuration</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-2-hardware-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
-      <description>Ubuntu 18.04  Versions other than 18.04 are not considered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date: type sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y in the terminal.   How to open your Terminal: right click on your desktop → Open in Terminal
- Install Docker-CE  Use commands as below in the terminal:  curl -fsSL https://download.</description>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-hardware-configuration/</guid>
+      <description>How to check whether your device supports SGX:
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&amp;gt; Boot Mode, and make sure it was set to UEFI.</description>
     </item>
     
     <item>
