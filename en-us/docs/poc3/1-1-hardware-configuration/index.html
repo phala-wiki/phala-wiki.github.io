@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,24 +13,24 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>1.1 Hardware Configuration | Phala Network Wiki</title><meta property="og:title" content="1.1 Hardware Configuration" />
-<meta property="og:description" content="How to check whether your device is SGX-supported:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled (or any other option that is similar as the description varies according to different manufacturers.) Go to Boot -&gt; Boot Mode, set it to UEFI." />
+<meta property="og:description" content="How to check whether your device supports SGX:
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.1 Hardware Configuration">
-<meta itemprop="description" content="How to check whether your device is SGX-supported:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled (or any other option that is similar as the description varies according to different manufacturers.) Go to Boot -&gt; Boot Mode, set it to UEFI.">
+<meta itemprop="description" content="How to check whether your device supports SGX:
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI.">
 
-<meta itemprop="wordCount" content="757">
+<meta itemprop="wordCount" content="887">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.1 Hardware Configuration"/>
-<meta name="twitter:description" content="How to check whether your device is SGX-supported:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled (or any other option that is similar as the description varies according to different manufacturers.) Go to Boot -&gt; Boot Mode, set it to UEFI."/>
+<meta name="twitter:description" content="How to check whether your device supports SGX:
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.fe6ed0d0f0885b34c79c640a46c7f311513481973009c7da559ff3cb6fc3fcff091818b72eb5a27a1c0fac7e91d7583f03b83d18decd5f5462c799c299516a78.css" integrity="sha512-/m7Q0PCIWzTHnGQKRsfzEVE0gZcwCcfaVZ/zy2/D/P8JGBi3LrWiehwPrH6R11g/A7g9GN7NX1Rix5nCmVFqeA==">
@@ -162,7 +162,7 @@
   <ul>
     <li><a href="#bios-settings">BIOS Settings</a></li>
     <li><a href="#sgx-driver-verification">SGX Driver Verification</a></li>
-    <li><a href="#mainboard-verification">Mainboard Verification</a>
+    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a>
       <ul>
         <li>
           <ul>
@@ -316,80 +316,70 @@
 
   </div>
   <section class="content">
-    <h1>1.1 Hardware Configuration</h1><p><img src="https://imgur.com/yhzVlUs.png" alt=""></p>
-<p>How to check whether your device is SGX-supported:</p>
+    <h1>1.1 Hardware Configuration</h1><p><img src="/images/docs/poc3/1.1.png" alt=""></p>
+<p>How to check whether your device supports SGX:</p>
 <ul>
 <li><a href="https://forum.phala.network/t/how-to-check-whether-your-cpu-is-sgx-supported/1252">Whether your hardware CPU is SGX-supported</a></li>
 </ul>
-<br>
 <h2 id="bios-settings">BIOS Settings</h2>
 <ol>
 <li>Google how to enter your BIOS Settings.</li>
 <li>Enter BIOS after reboot.</li>
 <li>Go to <code>Security</code> -&gt; <code>Secure Boot</code>, set it to <code>Disabled</code>.</li>
-<li>Go to <code>Security</code> -&gt; <code>SGX</code>, set it to <code>Enabled</code> (or any other option that is similar as the description varies according to different manufacturers.)</li>
-<li>Go to <code>Boot</code> -&gt; <code>Boot Mode</code>, set it to <code>UEFI</code>.</li>
-<li>Press <code>F10</code> and wait for rebooting.</li>
+<li>Go to <code>Security</code> -&gt; <code>SGX</code>, set it to <code>Enabled</code> or <code>Software Control</code> (the name of the option may vary according to the different manufacturers)</li>
+<li>Go to <code>Boot</code> -&gt; <code>Boot Mode</code>, and make sure its set to <code>UEFI</code>. (You also need to make sure the Linux is installed in UEFI mode)</li>
+<li>Save and reboot.</li>
 </ol>
-<br>
 <h2 id="sgx-driver-verification">SGX Driver Verification</h2>
-<p>First, identify your driver type:</p>
+<p>First, check if you already have some type of the driver installed:</p>
 <ul>
-<li>Type in command <code>ls /dev | grep isgx</code> and if there comes a feedback, your computer is SGX-driver-driven and it works.</li>
-<li>Type in command <code>ls /dev | grep sgx</code> and if there comes a feedback, your computer is DCAP-driver-driven and it works.</li>
+<li>Type in command <code>ls /dev/isgx</code> and if the file exists: you have SGX driver installed</li>
+<li>Type in command <code>ls /dev/sgx</code> and if the directory exists: you have DCAP driver installed</li>
 </ul>
 <p>As long as either type of driver works, your computer will be ready to mine PHA.</p>
-<p>If neither of the types works, please type in the commands below to install DCAP driver:</p>
+<p>If neither of the types works, please try to install the DCAP driver first. Type in the commands below to install DCAP driver:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install dkms
-
 wget https://download.01.org/intel-sgx/sgx-dcap/1.9/linux/distro/ubuntu18.04-server/sgx_linux_x64_driver_1.36.2.bin
-
 chmod +x sgx_linux_x64_driver_1.36.2.bin
-
 sudo ./sgx_linux_x64_driver_1.36.2.bin
 </code></pre></td></tr></table>
 </div>
-</div><p>After installation, retype <code>ls /dev | grep sgx</code> to check whether the installation succeeds. If the DCAP driver is not enabled, please try following commands to install SGX driver.</p>
+</div><p>After installation, retry <code>ls /dev/sgx</code> to check whether the installation succeeds. If the DCAP driver doesn't work, please <strong>uninstall the DCAP driver</strong> and then switch to the SGX driver. To uninstall the DCAP driver, run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo /opt/intel/sgxdriver/uninstall.sh
+</code></pre></td></tr></table>
+</div>
+</div><p>Then try following commands to install the SGX driver:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">wget https://download.01.org/intel-sgx/sgx-linux/2.11/distro/ubuntu18.04-server/sgx_linux_x64_driver_2.6.0_b0a445b.bin
-
 chmod +x sgx_linux_x64_driver_2.6.0_b0a445b.bin
-
 sudo ./sgx_linux_x64_driver_2.6.0_b0a445b.bin
 </code></pre></td></tr></table>
 </div>
-</div><p>Use <code>ls /dev | grep isgx</code> again to ensure that SGX driver works.</p>
-<br>
-<h2 id="mainboard-verification">Mainboard Verification</h2>
-<p>After the installation of your driver, there are two more items to be verified on your mainboard:</p>
-<ol>
-<li>the <strong>Production Mode</strong></li>
-<li>the <strong>FLC (Flexible Launch Control)</strong></li>
-</ol>
-<p>Among them, <strong>the former is a must to enble Phala pRuntime docker</strong>. If it's not supported (tagged as ✘ in the report example below), we are afraid you can't mine PHA with this mainboard.</p>
-<p>The latter is not a must though, it is suggested to be checked as it would be essential to install the DCAP driver. And DCAP driver can be a necessary requirement to mine PHA in the future.</p>
-<p>If you can't run Phala pRuntime docker with both of them tagged as ✔, you may have to check whether your BIOS is the latest version with latest security patches.
-If you still can't run Phala pRuntime docker with the latest BIOS of your mainboard manufacturer, we are afraid you can't mine PHA with this mainboard.</p>
-<p>To testify your mainboard, please type in the following command for DCAP driver:</p>
+</div><p>Run <code>ls /dev/isgx</code> again to check if the SGX driver works.</p>
+<h2 id="double-check-the-sgx-capability">Double check the SGX capability</h2>
+<p>After the installation of your driver, please use the following utility to double check if everything goes well. Docker is required.</p>
+<ul>
+<li>
+<p>If you are using the DCAP driver:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -398,7 +388,9 @@ If you still can't run Phala pRuntime docker with the latest BIOS of your mainbo
 <pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect --device /dev/sgx/enclave --device /dev/sgx/provision phalanetwork/phala-sgx_detect
 </code></pre></td></tr></table>
 </div>
-</div><p>or the following one for SGX driver:</p>
+</div></li>
+<li>
+<p>If you are using the SGX driver:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -407,8 +399,55 @@ If you still can't run Phala pRuntime docker with the latest BIOS of your mainbo
 <pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect --device /dev/isgx phalanetwork/phala-sgx_detect
 </code></pre></td></tr></table>
 </div>
-</div><p>The report below would be a positive result:</p>
-<pre><code>Detecting SGX, this may take a minute...
+</div></li>
+<li>
+<p>Even if there's no <code>/dev/sgx</code> or <code>/dev/isgx</code>, you can still run the utility to collect some diagnose information:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect phalanetwork/phala-sgx_detect
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>Please pay attention to the following checks:</p>
+<ol>
+<li>SGX system software → Able to launch enclaves → <code>Production Mode</code></li>
+<li>Flexible launch control → <code>Able to launch production mode enclave</code></li>
+</ol>
+<p>Among them, <strong>the former one is a must to run Phala Network pRuntime</strong>. If it's not supported (tagged as ✘ in the report example below), we are afraid you can't mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
+<p>The latter is not a must though, it is suggested to be checked as it would be essential to install the DCAP driver. The DCAP driver is future-proof and thus more recommended.</p>
+<p>The report below would be a positive result:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
 ✔  SGX instruction set
   ✔  CPU support
   ✔  CPU configuration
@@ -430,9 +469,50 @@ If you still can't run Phala pRuntime docker with the latest BIOS of your mainbo
     ✔  Production mode
     ✔  Production mode (Intel whitelisted)
 
-You're all set to start running SGX programs!
-</code></pre><p>If your got a report as below, please screenshort it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala developers</a> for help:</p>
-<pre><code>Detecting SGX, this may take a minute...
+You&#39;re all set to start running SGX programs!
+</code></pre></td></tr></table>
+</div>
+</div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
 ✔  SGX instruction set
   ✔  CPU support
   ✔  CPU configuration
@@ -454,7 +534,7 @@ You're all set to start running SGX programs!
     ✔  Production mode (Intel whitelisted)
 
 🕮  Flexible launch control &gt; CPU configuration
-Your hardware supports Flexible Launch Control, but it's not enabled in the BIOS. Reboot your machine and try to enable FLC in your BIOS. Alternatively, try updating your BIOS to the latest version or contact your BIOS vendor.
+Your hardware supports Flexible Launch Control, but it&#39;s not enabled in the BIOS. Reboot your machine and try to enable FLC in your BIOS. Alternatively, try updating your BIOS to the latest version or contact your BIOS vendor.
 
 debug: MSR 3Ah IA32_FEATURE_CONTROL.SGX_LC = 0
 
@@ -465,15 +545,11 @@ The enclave could not be launched. This might indicate a problem with FLC.
 
 debug: failed to load report enclave
 debug: cause: failed to load report enclave
-debug: cause: The EINITTOKEN provider didn't provide a token
+debug: cause: The EINITTOKEN provider didn&#39;t provide a token
 debug: cause: aesm error code GetLicensetokenError_6
-
-More information: https://edp.fortanix.com/docs/installation/help/#run-enclave-prod
-
-You're all set to start running SGX programs!
-</code></pre><br>
-<br>
-<br>
+</code></pre></td></tr></table>
+</div>
+</div><p>If you can't run Phala pRuntime with both of them tagged as ✔, you may have to check whether your BIOS is the latest version with latest security patches. If you still can't run Phala pRuntime docker with the latest BIOS of your motherboard manufacturer, we are afraid you can't mine PHA with this motherboard.</p>
 <hr>
 <h4 id="reference">Reference</h4>
 <ol>
@@ -534,7 +610,7 @@ You're all set to start running SGX programs!
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.47cd6c2614214ccb3467aed4e3fe83c425193687bb99d55aeb1d6cf54a7657e2a5d1fb188ebdc62198ad109f8e9d4449286d597e1b009761abed85dbabce76c8.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.f1baea7291c21a60ff2494c98a4340e4a38d947ba4024a0e64e762a014bb4656ff7e8806a79b0ddfd6c790881f6b08cce3b9ef72508d7070d2338e626f63ed7c.js" async defer></script>
 
 </body>
 </html>
