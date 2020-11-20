@@ -14,15 +14,15 @@
 
 <title>1.1 Hardware Configuration | Phala Network Wiki</title><meta property="og:title" content="1.1 Hardware Configuration" />
 <meta property="og:description" content="How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI." />
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure it was set to UEFI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.1 Hardware Configuration">
 <meta itemprop="description" content="How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI.">
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure it was set to UEFI.">
 
-<meta itemprop="wordCount" content="887">
+<meta itemprop="wordCount" content="971">
 
 
 
@@ -30,10 +30,10 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.1 Hardware Configuration"/>
 <meta name="twitter:description" content="How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure its set to UEFI."/>
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&gt; Secure Boot, set it to Disabled. Go to Security -&gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&gt; Boot Mode, and make sure it was set to UEFI."/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.fe6ed0d0f0885b34c79c640a46c7f311513481973009c7da559ff3cb6fc3fcff091818b72eb5a27a1c0fac7e91d7583f03b83d18decd5f5462c799c299516a78.css" integrity="sha512-/m7Q0PCIWzTHnGQKRsfzEVE0gZcwCcfaVZ/zy2/D/P8JGBi3LrWiehwPrH6R11g/A7g9GN7NX1Rix5nCmVFqeA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.c9dac90835d9a9214f19c943cc84dba419d2bfebd4782a39b7ba4a9133088bb4343cb91b08d93639f4d1e48b01e49fe1472ead5bccf3c8a09dc2f0ddcd917350.css" integrity="sha512-ydrJCDXZqSFPGclDzITbpBnSv&#43;vUeCo5t7pKkTMIi7Q0PLkbCNk2OfTR5IsB5J/hRy6tW8zzyKCdwvDdzZFzUA==">
 
 
   
@@ -49,7 +49,7 @@
     
   
   
-  <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500|Lato:300,400,500" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500,600|Lato:300,400,500,600" rel="stylesheet">
 
 </head>
 <body class="page-page">
@@ -161,7 +161,7 @@
         <h3 class="section_link active"><a id="docs-11-hardware-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#bios-settings">BIOS Settings</a></li>
-    <li><a href="#sgx-driver-verification">SGX Driver Verification</a></li>
+    <li><a href="#sgx-driver">SGX Driver</a></li>
     <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a>
       <ul>
         <li>
@@ -326,18 +326,19 @@
 <li>Google how to enter your BIOS Settings.</li>
 <li>Enter BIOS after reboot.</li>
 <li>Go to <code>Security</code> -&gt; <code>Secure Boot</code>, set it to <code>Disabled</code>.</li>
-<li>Go to <code>Security</code> -&gt; <code>SGX</code>, set it to <code>Enabled</code> or <code>Software Control</code> (the name of the option may vary according to the different manufacturers)</li>
-<li>Go to <code>Boot</code> -&gt; <code>Boot Mode</code>, and make sure its set to <code>UEFI</code>. (You also need to make sure the Linux is installed in UEFI mode)</li>
+<li>Go to <code>Security</code> -&gt; <code>SGX</code>, set it to <code>Enabled</code> or <code>Software Control</code> (The name of the option may vary according to the different manufacturers)</li>
+<li>Go to <code>Boot</code> -&gt; <code>Boot Mode</code>, and make sure it was set to <code>UEFI</code>.</li>
 <li>Save and reboot.</li>
 </ol>
-<h2 id="sgx-driver-verification">SGX Driver Verification</h2>
+<p>If you only found <code>SGX: Software Control</code> in your BIOS settings, you may need to run <a href="https://github.com/intel/sgx-software-enable">sgx-software-enable</a>, the tool provided by Intel with only its source code available. If you don't want to build it from the source code, we also provide a prebuilt file for Ubuntu 18.04 / 20.04 that can be found <a href="https://github.com/Phala-Network/sgx-tools/releases/tag/0.1">here</a>.</p>
+<p>You also need to make sure the Linux is installed in UEFI mode. SGX is not guaranteed to work properly on the OS installed in legacy mode. In such case you may want to reinstall the Linux in UEFI mode.</p>
+<h2 id="sgx-driver">SGX Driver</h2>
 <p>First, check if you already have some type of the driver installed:</p>
 <ul>
-<li>Type in command <code>ls /dev/isgx</code> and if the file exists: you have SGX driver installed</li>
-<li>Type in command <code>ls /dev/sgx</code> and if the directory exists: you have DCAP driver installed</li>
+<li>Type in command <code>ls /dev/isgx</code> and if the file exists: you have the SGX driver installed</li>
+<li>Type in command <code>ls /dev/sgx</code> and if the directory exists: you have the DCAP driver installed</li>
 </ul>
-<p>As long as either type of driver works, your computer will be ready to mine PHA.</p>
-<p>If neither of the types works, please try to install the DCAP driver first. Type in the commands below to install DCAP driver:</p>
+<p>As long as either type of driver works, your computer will be ready to mine PHA. If neither of the types works, please try to install the DCAP driver first. Type in the commands below to install DCAP driver:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -610,7 +611,7 @@ debug: cause: aesm error code GetLicensetokenError_6
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.f1baea7291c21a60ff2494c98a4340e4a38d947ba4024a0e64e762a014bb4656ff7e8806a79b0ddfd6c790881f6b08cce3b9ef72508d7070d2338e626f63ed7c.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.be863ad7e2ffcc865b0cb5899e6210eeb606d9b01a469a19eb771abe50199aea16e95ad9c8820a8ce732b5d7a4c2d87bd7664df75db31d0486739527adf5a3f5.js" async defer></script>
 
 </body>
 </html>

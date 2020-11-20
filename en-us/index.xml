@@ -66,7 +66,7 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</guid>
       <description>How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled or Software Control (the name of the option may vary according to the different manufacturers) Go to Boot -&amp;gt; Boot Mode, and make sure its set to UEFI.</description>
+ Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&amp;gt; Boot Mode, and make sure it was set to UEFI.</description>
     </item>
     
     <item>
