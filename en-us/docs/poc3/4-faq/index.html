@@ -16,7 +16,7 @@
 <meta property="og:description" content="Get connected Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
  Discord #miner channel: https://discord.gg/zjdJ7d844d Telegram miner group: https://t.me/phalaminer  Q: It says &quot;no such command&quot; after I typed docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4 Please check the installation of Docker-CE.
 Q: It says &quot;permission denied&quot; Add sudo in front of your commands.
-Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  " />
+Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  Q: Where are the code releases / native build?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/4-faq/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
@@ -24,9 +24,9 @@ Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if t
 <meta itemprop="description" content="Get connected Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
  Discord #miner channel: https://discord.gg/zjdJ7d844d Telegram miner group: https://t.me/phalaminer  Q: It says &quot;no such command&quot; after I typed docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4 Please check the installation of Docker-CE.
 Q: It says &quot;permission denied&quot; Add sudo in front of your commands.
-Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  ">
+Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  Q: Where are the code releases / native build?">
 
-<meta itemprop="wordCount" content="86">
+<meta itemprop="wordCount" content="300">
 
 
 
@@ -36,10 +36,10 @@ Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if t
 <meta name="twitter:description" content="Get connected Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
  Discord #miner channel: https://discord.gg/zjdJ7d844d Telegram miner group: https://t.me/phalaminer  Q: It says &quot;no such command&quot; after I typed docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4 Please check the installation of Docker-CE.
 Q: It says &quot;permission denied&quot; Add sudo in front of your commands.
-Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  "/>
+Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  Q: Where are the code releases / native build?"/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.c9dac90835d9a9214f19c943cc84dba419d2bfebd4782a39b7ba4a9133088bb4343cb91b08d93639f4d1e48b01e49fe1472ead5bccf3c8a09dc2f0ddcd917350.css" integrity="sha512-ydrJCDXZqSFPGclDzITbpBnSv&#43;vUeCo5t7pKkTMIi7Q0PLkbCNk2OfTR5IsB5J/hRy6tW8zzyKCdwvDdzZFzUA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
 
 
   
@@ -246,6 +246,7 @@ Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if t
         <li><a href="#q-it-says-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: It says &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
         <li><a href="#q-it-says-permission-denied">Q: It says &quot;permission denied&quot;</a></li>
         <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP</a></li>
+        <li><a href="#q-where-are-the-code-releases--native-build-how-can-i-run-it-natively-instead-of-using-a-docker">Q: Where are the code releases / native build? How can I run it natively instead of using a Docker?</a></li>
       </ul>
     </li>
   </ul>
@@ -337,6 +338,10 @@ Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if t
 <li>Run <code>ls /dev/isgx</code> and if the file exists: SGX-driver</li>
 <li>Run <code>ls /dev/sgx</code> and if the directory exists: DCAP-driver</li>
 </ul>
+<h3 id="q-where-are-the-code-releases--native-build-how-can-i-run-it-natively-instead-of-using-a-docker">Q: Where are the code releases / native build? How can I run it natively instead of using a Docker?</h3>
+<p>We didn’t prepare a native binary release, though theoretically the Docker image contains the native binary for Ubuntu 18.04. There are three core components in Phala Network: the full node, the bridge (phost), and pRuntime. You can build the first two from the source directly (master branch, maybe we will create a dedicated release branch like &quot;poc3&quot; soon).</p>
+<p>pRuntime can also be build from the source. However, your own pRuntime build cannot join the network because only the official builds are whitelisted on the blockchain. The reason behind is that the official builds are signed with Intel’s SGX certificates. We understand it's important that everyone should be able to reproduce the binary from the source. So in the future, we would like to publish the detached signature on Github so that everyone can reproduce the exact same build as ours, and therefore make sure the binary actually comes from the open source code. There are existing reproducible build systems like Bitcoin Core's Gitian builder that can do the exact same thing as we just described.</p>
+<p>In the future, we should also release the binary build (with PGP signatures) directly on the Github release page.</p>
 
     <div class="pager">
   
@@ -380,7 +385,7 @@ Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if t
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.d97331aa2a104b03cfad8789e113a567e6920b95d2c34f6375faba743e5a0b7c5bd407dde55f0f74e64bd5bd91e49b3d9eefbc189468d4c9c5c34bfd2b5cc518.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.1ca7a61b0c2a0667d0c573e548f55de41b705a8d73b0de27082d44b163b582776d412bfb373eeddf0cf3a310b6f5e528439a644f58a599a3fd1e2f994a11f3b1.js" async defer></script>
 
 </body>
 </html>
