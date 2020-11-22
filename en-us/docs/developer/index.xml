@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contract Development Tutorial on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/developer/</link>
+    <description>Recent content in Contract Development Tutorial on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/developer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.1 Run a Local Development Network</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
+      <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
+    </item>
+    
+    <item>
+      <title>1.2 Hello World: your first confidential contract</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</guid>
+      <description>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.</description>
+    </item>
+    
+    <item>
+      <title>1.3 Troubleshooting</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</guid>
+      <description>phala-blockchain Probelm: &amp;quot;consider giving accuracy a type&amp;quot; when building substrate error[E0282]: type annotations needed --&amp;gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&amp;quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression.</description>
+    </item>
+    
+  </channel>
+</rss>

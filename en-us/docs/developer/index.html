@@ -12,25 +12,16 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>2.3 Veirfy the Miner State | Phala Network Wiki</title><meta property="og:title" content="2.3 Veirfy the Miner State" />
-<meta property="og:description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/" />
+<title>Contract Development Tutorial | Phala Network Wiki</title><meta property="og:title" content="Contract Development Tutorial" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="2.3 Veirfy the Miner State">
-<meta itemprop="description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  ">
-
-<meta itemprop="wordCount" content="62">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="name" content="Contract Development Tutorial">
+<meta itemprop="description" content="">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2.3 Veirfy the Miner State"/>
-<meta name="twitter:description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  "/>
+<meta name="twitter:title" content="Contract Development Tutorial"/>
+<meta name="twitter:description" content=""/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -52,7 +43,7 @@
   <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500,600|Lato:300,400,500,600" rel="stylesheet">
 
 </head>
-<body class="page-page">
+<body class="page-section">
   <header class="nav_header"><nav class="wrap nav">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture>
@@ -103,7 +94,7 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Overview</a></h2>
       <section class="subsection" id="docs-overview">
   <section class="section">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
       <section class="subsection" id="docs-contract-development-tutorial">
         <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
@@ -214,7 +205,7 @@
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link active"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
     <li>
@@ -327,41 +318,10 @@
 
   </div>
   <section class="content">
-    <h1>2.3 Veirfy the Miner State</h1><p>Go to <code>Developer</code> -&gt; <code>Chain state</code> :</p>
-<ul>
-<li>Check miner score: <code>phalaModule</code> - &gt;<code>workerState</code> -&gt; choose your stash account
-<ul>
-<li><code>score.overallScore</code>: the total points that a miner scores</li>
-<li><code>features</code>: number of enabled cores, and the level of your cores（1-4）.</li>
-</ul>
-</li>
-<li>Check stash state: <code>stashState</code></li>
-<li>Confirm the binding between stash and controller addresses: <code>phalaModule.stash(controller)</code></li>
-<li>An example of all the details of mining state is shown below:</li>
-</ul>
-<p><img src="/images/docs/poc3/2.3.png" alt=""></p>
-
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/" class="pager_link button" title="2.2 Set Commission">
-      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-      <span class="pager_label">2.2 Set Commission</span>
-    </a>
-  </div>
+    <h1>Contract Development Tutorial</h1>
+    <div class="pager pager_lean">
   
 
-  
-  <div class="pager_item next">
-    
-    <a href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/" class="pager_link button" title="3.1 Set Miner Stakes">
-      <span class="pager_label">3.1 Set Miner Stakes</span>
-      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-    </a>
-  </div>
   
 </div>
 <svg width="0" height="0" class="hidden">

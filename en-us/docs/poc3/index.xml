@@ -7,23 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/poc3/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1.1 Software Configuration</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-1-software-configuration/</link>
+      <title>1.1 Hardware Requirement and Configuration</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-software-configuration/</guid>
-      <description>Ubuntu 18.04  Versions other than 18.04 are not covered in this tutorial, though other Linux distributions may work as well. How to install Ubuntu 18.04 Make all your packages up-to-date:  1  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y   Install Docker-CE Run the commands as below in the terminal
-1 2 3  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;#34;deb [arch=amd64] https://download.</description>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</guid>
+      <description>Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations. In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.
+General Hardware Requirements CPU Requirement You can refer to the following tutorial to ensure that your CPU is SGX-supported.</description>
     </item>
     
     <item>
-      <title>1.2 Hardware Configuration</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-2-hardware-configuration/</link>
+      <title>1.2 Software Configuration</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-hardware-configuration/</guid>
-      <description>How to check whether your device supports SGX:
- Whether your hardware CPU is SGX-supported  BIOS Settings  Google how to enter your BIOS Settings. Enter BIOS after reboot. Go to Security -&amp;gt; Secure Boot, set it to Disabled. Go to Security -&amp;gt; SGX, set it to Enabled or Software Control (The name of the option may vary according to the different manufacturers) Go to Boot -&amp;gt; Boot Mode, and make sure it was set to UEFI.</description>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
+      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure all your packages are up-to-date:  1  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y   Install Docker-CE Uninstall the older versions of Docker if they exist</description>
     </item>
     
     <item>

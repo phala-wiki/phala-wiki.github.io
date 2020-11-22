@@ -18,15 +18,7 @@
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/run-a-local-development-network/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wiki.phala.network/en-us/docs/your-first-confidential-contract/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wiki.phala.network/en-us/docs/troubleshooting/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
   </url>
   
   <url>
@@ -94,15 +86,27 @@
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/poc3/1-1-software-configuration/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/poc3/1-2-hardware-configuration/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</loc>
   </url>
   
   <url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</loc>
   </url>
   
   <url>

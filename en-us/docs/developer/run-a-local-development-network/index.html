@@ -12,25 +12,28 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>1.1 Hardware Requirement and Configuration | Phala Network Wiki</title><meta property="og:title" content="1.1 Hardware Requirement and Configuration" />
-<meta property="og:description" content="Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations. In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.
-General Hardware Requirements CPU Requirement You can refer to the following tutorial to ensure that your CPU is SGX-supported." />
+<title>1.1 Run a Local Development Network | Phala Network Wiki</title><meta property="og:title" content="1.1 Run a Local Development Network" />
+<meta property="og:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="1.1 Hardware Requirement and Configuration">
-<meta itemprop="description" content="Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations. In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.
-General Hardware Requirements CPU Requirement You can refer to the following tutorial to ensure that your CPU is SGX-supported.">
+<meta itemprop="name" content="1.1 Run a Local Development Network">
+<meta itemprop="description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
 
-<meta itemprop="wordCount" content="1139">
+<meta itemprop="wordCount" content="1739">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.1 Hardware Requirement and Configuration"/>
-<meta name="twitter:description" content="Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations. In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.
-General Hardware Requirements CPU Requirement You can refer to the following tutorial to ensure that your CPU is SGX-supported."/>
+<meta name="twitter:title" content="1.1 Run a Local Development Network"/>
+<meta name="twitter:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -105,7 +108,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
   <section class="section">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
       <section class="subsection" id="docs-contract-development-tutorial">
-        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#environment">Environment</a></li>
@@ -163,7 +166,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
   <section class="section">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
       <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
-        <h3 class="section_link active"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-hardware-requirements">General Hardware Requirements</a>
       <ul>
@@ -327,50 +330,59 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
 
   </div>
   <section class="content">
-    <h1>1.1 Hardware Requirement and Configuration</h1><p>Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations.
-In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.</p>
-<h2 id="general-hardware-requirements">General Hardware Requirements</h2>
-<p><img src="/images/docs/poc3/1.2.png" alt=""></p>
-<h3 id="cpu-requirement">CPU Requirement</h3>
-<p>You can refer to the following tutorial to ensure that your CPU is SGX-supported.</p>
+    <h1>1.1 Run a Local Development Network</h1><blockquote>
+<p>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:</p>
 <ul>
-<li><a href="https://forum.phala.network/t/how-to-check-whether-your-cpu-is-sgx-supported/1252">Whether your CPU is SGX-supported</a></li>
+<li>Send confidential transactions</li>
+<li>Get a ready-to-hack version of Phala Network for building your own confidential Dapps</li>
 </ul>
-<h3 id="bios-settings">BIOS Settings</h3>
-<p>First of all, we recommand to update your BIOS to the latest version.</p>
-<ol>
-<li><strong>Enter BIOS</strong>. The method varies for different motherboards, and Google is always at your service about this.</li>
-<li><strong>Disable Secure Boot</strong>. Go to <code>Security</code> -&gt; <code>Secure Boot</code>, set it to <code>Disabled</code>.</li>
-<li><strong>Enable SGX Extension</strong>. Go to <code>Security</code> -&gt; <code>SGX</code> (This name  may vary according to the different manufacturers), set it to <code>Enabled</code>.</li>
-</ol>
-<blockquote>
-<p>If you can only find <code>SGX: Software Controlled</code> option, you will have to run <a href="https://github.com/intel/sgx-software-enable">sgx-software-enable</a> in Ubuntu. You can follow the Intel's instructions, build it from source and execute it. Also, we provide a prebuilt file for Ubuntu 18.04 / 20.04 that can be found <a href="https://github.com/Phala-Network/sgx-tools/releases/tag/0.1">here</a>. You can download and execute it with the following commands:</p>
+<p>A full Phala Network stack has three components plus a Web UI. The core components are at <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a>:</p>
+<ul>
+<li><code>phala-node</code>: The Substrate blockchain node</li>
+<li><code>pRuntime</code>: The TEE runtime. Contracts runs in pRuntime</li>
+<li><code>phost</code>: The Substrate-TEE bridge relayer. Connects the blockchain and pRuntime</li>
+</ul>
+<p>The Web UI is at <a href="https://github.com/Phala-Network/apps-ng">Phala-Network/apps-ng</a>. The Web UI needs to connect to both the blockchain and the pRuntime in order to send transaction and queries.</p>
+<h2 id="environment">Environment</h2>
+<p>The development environment of Phala Network requires Linux, because it relies on <a href="https://01.org/intel-software-guard-extensions/downloads">Linux Intel SGX SDK</a>. Virtual machines should generally work. Phala Network doesn't work on Windows or macOS natively (sorry, Mac lovers), but we haven't tested WLS yet. Please let us know if you are the first to run it on WLS successfully!</p>
+<p>In this tutorial we assume the operating system is <em>Ubuntu 18.04</em>. Though not tested yet, it should work with Ubuntu 20.04 out-of-box. Other Linux distributions should also work, but the instructions may vary.</p>
+<p>It's required to have at least 4 cores and 8GB ram to build the project including the core blockchain and the Web UI. Less than 4GB ram may fail to build the Web UI.</p>
+<p>Follow the commands below to prepare the environment. Some can be skipped if already installed.</p>
+<ul>
+<li>
+<p>Install the system level dependencies</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable
-chmod +x sgx_enable
-sudo ./sgx_enable
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev git cmake perl pkg-config curl llvm-10 clang-10 libclang-10-dev
 </code></pre></td></tr></table>
 </div>
-</div></blockquote>
-<ol start="5">
-<li><strong>Use UEFI Boot</strong>. Go to <code>Boot</code> -&gt; <code>Boot Mode</code>, and make sure it was set to <code>UEFI</code>.</li>
-<li>Save and reboot.</li>
-</ol>
-<p>You also need to make sure that Ubuntu is installed in UEFI mode. SGX is not guaranteed to work properly on the OS installed in legacy mode. In such case you may want to reinstall the system.</p>
-<h2 id="sgx-driver-installation">SGX Driver Installation</h2>
-<p>Intel provides two kinds of SGX drivers: SGX driver and DCAP driver. The latter one is preferred since it provides more security-related features which can be utilized by Phala in the future, while the former one provides better compatibility and supports old CPUs without FLC support. For now, both drivers work for Phala.</p>
-<p>First, check if you already have either of the drivers installed:</p>
-<ul>
-<li>Type in command <code>ls /dev/isgx</code>. If the file exists, you have the SGX driver installed</li>
-<li>Type in command <code>ls /dev/sgx</code>. If the directory exists, you have the DCAP driver installed</li>
-</ul>
-<p>As long as either type of driver works, your computer will be ready to mine PHA. If neither of the types works, please try to install the DCAP driver first. Type in the commands below to install DCAP driver:</p>
+</div><blockquote>
+<p>Notes on LLVM: We require at least LLVM-9, but higher versions are also supported. Older version like LLVM 6.0 breaks the core blockchain compilation.</p>
+</blockquote>
+</li>
+<li>
+<p>Install Rust. Please choose the default toolchain</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
+<span class="nb">source</span> ~/.cargo/env
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Install Intel SGX SDK</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -379,22 +391,18 @@ sudo ./sgx_enable
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install dkms
-wget https://download.01.org/intel-sgx/sgx-dcap/1.9/linux/distro/ubuntu18.04-server/sgx_linux_x64_driver_1.36.2.bin
-chmod +x sgx_linux_x64_driver_1.36.2.bin
-sudo ./sgx_linux_x64_driver_1.36.2.bin
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://download.01.org/intel-sgx/sgx-linux/2.11/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.11.100.2.bin
+chmod +x ./sgx_linux_x64_sdk_2.11.100.2.bin
+<span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.11.100.2.bin
+<span class="nb">source</span> /opt/intel/sgxsdk/environment
 </code></pre></td></tr></table>
 </div>
-</div><p>After installation, retry <code>ls /dev/sgx</code> to check whether the installation succeeds. If the DCAP driver doesn't work, please <strong>FIRST UNINSTALL DCAP DRIVER</strong> and then switch to the SGX driver. To uninstall the DCAP driver, run:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo /opt/intel/sgxdriver/uninstall.sh
-</code></pre></td></tr></table>
-</div>
-</div><p>Then try following commands to install the SGX driver:</p>
+</div><blockquote>
+<p>You can add <code>source /opt/sgxsdk/environment</code> to your <code>~/.bashrc</code> (or <code>~/.zshrc</code> depends on which shell you're using).</p>
+</blockquote>
+</li>
+<li>
+<p>Install Node.js (&gt;= v12) &amp; yarn 2</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -402,57 +410,14 @@ sudo ./sgx_linux_x64_driver_1.36.2.bin
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://download.01.org/intel-sgx/sgx-linux/2.11/distro/ubuntu18.04-server/sgx_linux_x64_driver_2.6.0_b0a445b.bin
-chmod +x sgx_linux_x64_driver_2.6.0_b0a445b.bin
-sudo ./sgx_linux_x64_driver_2.6.0_b0a445b.bin
-</code></pre></td></tr></table>
-</div>
-</div><p>Run <code>ls /dev/isgx</code> again to check if the SGX driver works.</p>
-<h2 id="double-check-the-sgx-capability">Double check the SGX capability</h2>
-<p>After the installation of your driver, please use the following utility to double check if everything goes well. Docker is required for this step, and you can peek at how to install it in the <a href="/en-us/docs/poc3/1-2-software-configuration/">next secton</a>.</p>
-<ul>
-<li>
-<p>If you are using the DCAP driver:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect --device /dev/sgx/enclave --device /dev/sgx/provision phalanetwork/phala-sgx_detect
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>If you are using the SGX driver:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect --device /dev/isgx phalanetwork/phala-sgx_detect
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>Even if there's no <code>/dev/sgx</code> or <code>/dev/isgx</code>, you can still run the utility to collect some diagnose information:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -ti --rm --name phala-sgx_detect phalanetwork/phala-sgx_detect
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g yarn
 </code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
-<p>Please pay attention to the following checks:</p>
-<ol>
-<li>SGX system software → Able to launch enclaves → <code>Production Mode</code></li>
-<li>Flexible launch control → <code>Able to launch production mode enclave</code></li>
-</ol>
-<p>Among them, <strong>the former one is a must to run Phala Network pRuntime</strong>. If it's not supported (tagged as ✘ in the report example below), we are afraid you can't mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
-<p>The latter is not a must though, it is suggested to be checked as it would be essential to install the DCAP driver.</p>
-<p>The report below would be a positive result:</p>
+<p>You can test the installation by running the following commands. The output should match the sample outputs, or with a slightly higher version.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -474,38 +439,30 @@ sudo ./sgx_linux_x64_driver_2.6.0_b0a445b.bin
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
-✔  SGX instruction set
-  ✔  CPU support
-  ✔  CPU configuration
-  ✔  Enclave attributes
-  ✔  Enclave Page Cache
-  SGX features
-    ✔  SGX2  ✔  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS
-    Total EPC size: 94.0MiB
-✔  Flexible launch control
-  ✔  CPU support
-  ？ CPU configuration
-  ✔  Able to launch production mode enclave
-✔  SGX system software
-  ✔  SGX kernel device (/dev/sgx/enclave)
-  ✔  libsgx_enclave_common
-  ✔  AESM service
-  ✔  Able to launch enclaves
-    ✔  Debug mode
-    ✔  Production mode
-    ✔  Production mode (Intel whitelisted)
+<pre class="chroma"><code class="language-bash" data-lang="bash">rustup --version
+<span class="c1"># rustup 1.22.1 (b01adbbc3 2020-07-08)</span>
 
-You&#39;re all set to start running SGX programs!
+cargo --version
+<span class="c1"># cargo 1.46.0 (149022b1d 2020-07-17)</span>
+
+<span class="nb">echo</span> <span class="nv">$SGX_SDK</span>
+<span class="c1"># /opt/intel/sgxsdk</span>
+
+<span class="c1"># LLVM-9 or higher versions are fine</span>
+llvm-ar-10 --version
+<span class="c1"># LLVM (http://llvm.org/):</span>
+<span class="c1">#   LLVM version 10.0.0</span>
+
+node --version
+<span class="c1"># v12.16.3</span>
+
+yarn --version
+<span class="c1"># 2.1.1</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
+</div><p>Finally let's clone the code and run the initialization script to update the rust toolchain. Please note that the entire tutorial is on the <strong><code>helloworld</code> branch</strong> for both the blockchain and the Web UI repo.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -522,84 +479,198 @@ You&#39;re all set to start running SGX programs!
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
-✔  SGX instruction set
-  ✔  CPU support
-  ✔  CPU configuration
-  ✔  Enclave attributes
-  ✔  Enclave Page Cache
-  SGX features
-    ✘  SGX2  ✘  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS
-    Total EPC size: 94.0MiB
-✘  Flexible launch control
-  ✔  CPU support
-  ✘  CPU configuration
-✔  SGX system software
-  ✔  SGX kernel device (/dev/isgx)
-  ✔  libsgx_enclave_common
-  ✔  AESM service
-  ✔  Able to launch enclaves
-    ✔  Debug mode
-    ✘  Production mode
-    ✔  Production mode (Intel whitelisted)
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Clone the core blockchain repo</span>
+git clone --branch helloworld https://github.com/Phala-Network/phala-blockchain.git
+<span class="c1"># Clone the Web UI repo</span>
+git clone --branch helloworld https://github.com/Phala-Network/apps-ng.git
 
-🕮  Flexible launch control &gt; CPU configuration
-Your hardware supports Flexible Launch Control, but it&#39;s not enabled in the BIOS. Reboot your machine and try to enable FLC in your BIOS. Alternatively, try updating your BIOS to the latest version or contact your BIOS vendor.
+<span class="c1"># Run the init script to update rust toolchain and git submodule</span>
+<span class="nb">cd</span> phala-blockchain/
+git submodule update --init
+./scripts/init.sh
+<span class="nb">cd</span> ..
 
-debug: MSR 3Ah IA32_FEATURE_CONTROL.SGX_LC = 0
-
-More information: https://edp.fortanix.com/docs/installation/help/#flc-cpu-configuration
-
-🕮  SGX system software &gt; Able to launch enclaves &gt; Production mode
-The enclave could not be launched. This might indicate a problem with FLC.
-
-debug: failed to load report enclave
-debug: cause: failed to load report enclave
-debug: cause: The EINITTOKEN provider didn&#39;t provide a token
-debug: cause: aesm error code GetLicensetokenError_6
+<span class="c1"># Update the git submodule</span>
+<span class="nb">cd</span> apps-ng/
+git submodule update --init
 </code></pre></td></tr></table>
 </div>
-</div><p>If you can't run Phala pRuntime with both of them tagged as ✔, you may have to check whether your BIOS is the latest version with latest security patches. If you still can't run Phala pRuntime docker with the latest BIOS of your motherboard manufacturer, we are afraid you can't mine PHA for now with this motherboard.</p>
-<hr>
-<h4 id="reference">Reference</h4>
+</div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
+<p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let's start to build the the core blockchain first.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Build the core blockchain</span>
+<span class="nb">cd</span> phala-blockchain/
+cargo build --release
+
+<span class="c1"># Build pRuntime (TEE Enclave)</span>
+<span class="nb">cd</span> ./pruntime/
+<span class="nv">SGX_MODE</span><span class="o">=</span>SW make
+</code></pre></td></tr></table>
+</div>
+</div><p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
+<ul>
+<li><code>./target/release/phala-node</code>: The Substrate node</li>
+<li><code>./target/release/phost</code>: The Substrate-to-TEE bridge relayer</li>
+<li><code>./pruntime/bin/app</code>: The TEE worker</li>
+</ul>
+<blockquote>
+<p><strong>Notes on <code>SGX_MODE</code></strong></p>
+<p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD cpu. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.8/linux/distro/ubuntu18.04-server/">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
+</blockquote>
+<p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>phost</code> follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># In terminal window 1: phala-node</span>
+./target/release/phala-node --dev
+
+<span class="c1"># In terminal window 2: pruntime</span>
+<span class="nb">cd</span> pruntime/bin
+./app
+
+<span class="c1"># In terminal window 3: phost</span>
+./target/release/phost --dev
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/docs/core-terminal.gif" alt=""></p>
+<p>(Core components running and producing logs)</p>
+<p>Once they are launched successfully, they should output logs as shown in the GIF above. Notice that we pass the <code>--dev</code> flag to <code>phala-node</code> and <code>phost</code> to indicate we are in the development network.</p>
+<p>The three core blockchain components are connected via TCP (WebSocket and HTTP). Please make sure your system have the TCP ports not occupied with other programs. By default they use the following ports:</p>
+<ul>
+<li><code>phala-node</code>
+<ul>
+<li>9944: Substrate WebSocket RPC port</li>
+<li>30333: Substrate P2P network port</li>
+</ul>
+</li>
+<li><code>pruntime</code>
+<ul>
+<li>8000: HTTP Restful RPC port</li>
+</ul>
+</li>
+</ul>
+<p><code>phost</code> doesn't listen to any ports but connect to <code>phala-node</code>'s WebSocket port and <code>pruntime</code>'s HTTP RPC port.</p>
+<p>You can safely shutdown the three program by <kbd>Ctrl</kbd> + <kbd>C</kbd>. <code>phala-node</code> saves the blockchain database on your disk. So if the blockchain gets messed up, you may want to reset it by:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./target/release/phala-node purge-chain --dev
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="build-the-web-ui">Build the Web UI</h2>
+<p>The Web UI frontend is developed with <code>node.js</code>, <code>yarn</code> and <code>react</code>. It's easy to build and launch the frontend.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> apps-ng
+yarn
+yarn dev
+</code></pre></td></tr></table>
+</div>
+</div><p>It may take a few minutes to download the dependencies and build the frontend. By default the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
+<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
+&gt; Using &quot;webpackDevMiddleware&quot; config function defined in default.
+&gt; Using external babel configuration
+event - compiled successfully
+event - build page: /[...slug]
+event - build page: /
+event - compiled successfully
+</code></pre><p><img src="/images/docs/apps-ng-landing.png" alt="">
+(Web UI landing page)</p>
+<p>The Web UI connects to both <code>phala-node</code> and <code>pruntime</code> by their default RPC endpoints. If everything is configured correctly, you will see the wallet unlock screen in the landing page as shown above. You should be able to select the well-known development accounts (Alice, Bob, etc) in the drop box.</p>
+<blockquote>
+<p><strong>Notes for Remote Access</strong></p>
+<p>In a case where you run your blockchain and WEB UI on your REMOTE_SERVER and try to access them elsewhere, you can forward the ports with <code>ssh</code> command. For example,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
+</code></pre></td></tr></table>
+</div>
+</div><p>This forwards all the necessary ports:</p>
+<ul>
+<li>3000: HTTP port of Web UI</li>
+<li>9944: Substrate WebSocket RPC port of <code>phala-node</code></li>
+<li>8000: HTTP Restful RPC port of <code>pruntime</code></li>
+</ul>
+<p>and you can visit the Web UI at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+</blockquote>
+<h2 id="send-some-secret-tokens">Send some secret tokens</h2>
+<p>In the last two sections, we have built and launched <code>phala-node</code>, <code>pruntime</code>, and <code>phost</code> in development mode, and connect the Web UI to the development network. Now we are ready to try the secret wallet feature in Phala Network!</p>
+<p>Let's select Alice and unlock the wallet. Alice is a built-in test account with 10,000 PHA on the blockchain. This PHA token is the native token. It's transparent on-chain like a typical Substrate blockchain, managed by Balances pallet.</p>
+<p><img src="/images/docs/apps-ng-init-wallet.png" alt="">
+(Secret wallet dapp)</p>
+<p>However, the &quot;secret assets&quot; wallet below is very different. Secret assets are stored in confidential contracts inside TEE enclaves. Like what the name says, the secret assets are private and invisible on the blockchain.</p>
+<p>Click &quot;Convert to Secret PHA&quot; button to transfer <strong>PHA</strong> to <strong>Secret PHA</strong>. You will see your PHA balance reduced first, and after around ten seconds, the Secret PHA balance will increase by the same amount, except some transaction fee.</p>
+<blockquote>
+<p>What just happend?</p>
+<p>You created a Substrate transaction to send some funds to the Phala pallet. The funds are stored in the pallet, and it triggered a <strong>confidential transaction</strong> to issue the same amount of the token in the secret wallet in TEE enclaves.</p>
+<p>It takes ~6s to include a Substrate transaction in the blockchain, and then another 6s to finalize the block. Once the transaction is finalized, it triggers a &quot;TransferToTee&quot; event, relayed to <code>pruntime</code> via the relayer, and the confidential contract increases the balance. Finally the Web UI queries the confidential contract to get the updated balance.</p>
+</blockquote>
+<p>There are plenty of things you can play with the secret wallet:</p>
+<ul>
+<li>convert the secret assets back to on-chain assets;</li>
+<li>transfer secret assets just like ordinary assets on every Substrate blockchain;</li>
+<li>and even issue or destroy your own secret tokens</li>
+</ul>
+<p>All the above functions are made by confidential transaction. Nobody can see the content of the transaction because the body is encrypted. By clicking &quot;Polkadot UI&quot; button in the navigation bar, it will bring you to the polkadot.js apps you are familiar with. After sending an encrypted transaction by clicking the &quot;Secret Transfer&quot; button, you can find the encrypted transaction wrapped by <code>phalaModel.pushCommand</code> extrinsic from the block explorer as shown below.</p>
+<img src="/images/docs/polkadotjs-pushCommand.png" style="max-height: 200px;">
+<p>(An encrypted confidential transaction on a blockchain explorer)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! Finally, you have followed the tutorial to:</p>
+<ul>
+<li>Prepare a ready-to-hack development environment</li>
+<li>Download, build, and started a full stack development mode Phala Network</li>
+<li>Connect to the network via the Web UI and try the secret wallet dapp</li>
+</ul>
+<p>Now you are familiar with building and running a development network. Hold tight! In the next chapter, we are going to build the first confidential contract together!</p>
+<h3 id="submit-your-work">Submit your work</h3>
+<p>This tutorial is a part of <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &quot;Hello World&quot; virtual hackathon challenge</a> at gitcoin.co. In order to win the task, please do the followings:</p>
 <ol>
-<li><a href="https://www.trustonic.com/technical-articles/what-is-a-trusted-execution-environment-tee/">What is Trusted Execution Environment</a></li>
-<li><a href="https://software.intel.com/content/www/us/en/develop/topics/software-guard-extensions.html">What is SGX</a></li>
+<li>Take screenshots of the terminal window with the running core blockchain (<code>phala-node</code>, <code>pruntime</code>, and <code>phost</code>)</li>
+<li>Take a screenshot of your user-issued secret token</li>
+<li>Send the screenshot and share your feeling on Twitter</li>
+<li>Join our <a href="https://discord.gg/zzhfUjU">Discord server</a> and submit the the link to your tweet</li>
 </ol>
-<h4 id="tech-support">Tech Support</h4>
-<p><a href="https://discord.gg/zzhfUjU"><img src="https://img.shields.io/discord/697726436211163147?label=Phala%20Discord" alt=""></a> <a href="https://t.me/phalaminer"><img src="https://img.shields.io/badge/Join-Telegram-blue" alt=""></a></p>
 
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/" class="pager_link button" title="Run a full node">
+    <a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/" class="pager_link button" title="1.1 Hardware Requirement and Configuration">
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-      <span class="pager_label">Run a full node</span>
+      <span class="pager_label">1.1 Hardware Requirement and Configuration</span>
     </a>
   </div>
   
@@ -607,8 +678,8 @@ debug: cause: aesm error code GetLicensetokenError_6
   
   <div class="pager_item next">
     
-    <a href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" class="pager_link button" title="1.1 Run a Local Development Network">
-      <span class="pager_label">1.1 Run a Local Development Network</span>
+    <a href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/" class="pager_link button" title="1.2 Hello World: your first confidential contract">
+      <span class="pager_label">1.2 Hello World: your first confidential contract</span>
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
     </a>
