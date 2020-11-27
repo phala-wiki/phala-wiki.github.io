@@ -13,8 +13,8 @@
       <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</guid>
-      <description>Before Starting Running a Gatekeeper (GK) in Phala Network means a lot of responsibility. You will be accountable for not only your own stake but also the stake of your current nominators. Numbers of Gatekeepers can vary in different phases; and when Phala launches its mainnet, there will be 100 Gatekeepers and they share the inflation return of Phala economic system.
-Once you&#39;ve raised enough stakes (nominations) in current Era, you will automatically be enrolled as a Gatekeeper when the next Era starts.</description>
+      <description>Initial Set-up Requirements You will likely run your Gatekeeper on a server with TEE hardware running Linux. For this guide we will be using Ubuntu 18.04, but the instructions should be similar for other platforms.
+The transaction weights in Phala Network were benchmarked on standard hardware. It is recommended that Gatekeepers run at least the standard hardware in order to ensure they are able to process all blocks in time. The following requirements are not necessarily minimum requirements.</description>
     </item>
     
   </channel>
