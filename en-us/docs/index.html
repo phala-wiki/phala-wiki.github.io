@@ -152,6 +152,54 @@
       </section>
   </section>
   <section class="section">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">GateKeeper Guide</a></h2>
+      <section class="subsection" id="docs-gatekeeper-guide">
+        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#before-starting">Before Starting</a></li>
+        <li><a href="#how-many-pha-do-i-need">How many PHA do I need?</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-set-up">Initial Set-up</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a>
+          <ul>
+            <li><a href="#standard-hardware">Standard Hardware</a></li>
+          </ul>
+        </li>
+        <li><a href="#install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</a></li>
+        <li><a href="#install-the-phala-node-binary">Install the <code>phala-node</code> Binary</a></li>
+        <li><a href="#synchronize-chain-data">Synchronize Chain Data</a></li>
+      </ul>
+    </li>
+    <li><a href="#bond-pha">Bond PHA</a></li>
+    <li><a href="#set-session-keys">Set Session Keys</a>
+      <ul>
+        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
+          <ul>
+            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
+            <li><a href="#option-2-cli">Option 2: CLI</a></li>
+          </ul>
+        </li>
+        <li><a href="#submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</a></li>
+      </ul>
+    </li>
+    <li><a href="#register-tee-worker">Register TEE worker</a></li>
+    <li><a href="#validate">Validate</a></li>
+    <li><a href="#faq">FAQ</a>
+      <ul>
+        <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
+        <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
+        <li><a href="#tech-support">Tech Support</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
       <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
         <h3 class="section_link"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
@@ -258,49 +306,6 @@
   <section class="section">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
       <section class="subsection" id="docs-legacy-docs-poc-2">
-        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#before-starting">Before Starting</a></li>
-        <li><a href="#how-many-pha-do-i-need">How many PHA do I need?</a></li>
-      </ul>
-    </li>
-    <li><a href="#initial-set-up">Initial Set-up</a>
-      <ul>
-        <li><a href="#requirements">Requirements</a>
-          <ul>
-            <li><a href="#standard-hardware">Standard Hardware</a></li>
-          </ul>
-        </li>
-        <li><a href="#install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</a></li>
-        <li><a href="#install-the-phala-node-binary">Install the <code>phala-node</code> Binary</a></li>
-        <li><a href="#synchronize-chain-data">Synchronize Chain Data</a></li>
-      </ul>
-    </li>
-    <li><a href="#bond-pha">Bond PHA</a></li>
-    <li><a href="#set-session-keys">Set Session Keys</a>
-      <ul>
-        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
-          <ul>
-            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
-            <li><a href="#option-2-cli">Option 2: CLI</a></li>
-          </ul>
-        </li>
-        <li><a href="#submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</a></li>
-      </ul>
-    </li>
-    <li><a href="#register-tee-worker">Register TEE worker</a></li>
-    <li><a href="#validate">Validate</a></li>
-    <li><a href="#faq">FAQ</a>
-      <ul>
-        <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
-        <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
-        <li><a href="#tech-support">Tech Support</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
         <h3 class="section_link"><a id="docs-run-a-full-node" href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/">Run a full node</a></h3><nav id="TableOfContents">
   <ul>
     <li>
@@ -442,7 +447,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.75bc7e1418435ca3e31ee6475b95cee5da4220c506fbce47058123ab0f2601c0decf5eb90e1bae613079168e4fbbf3ebd9a0e60c9f06af8bf2c341677ab5f632.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.5f70a264d5ecb95fd9837778c4b820caf3eaff2711412f49e663b6e7d56100c37cb85aa79857f3b0c8bb73b9cc7f835d35d55e6ac327c8e0ea7119398f78930e.js" async defer></script>
 
 </body>
 </html>

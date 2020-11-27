@@ -22,6 +22,21 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/en-us/docs/gatekeeper/</loc>
+    <lastmod>2020-07-10T01:16:05+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/gatekeeper/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/gatekeeper/"
+                />
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/</loc>
   </url>
   
@@ -56,17 +71,17 @@
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-gatekeeper/"
+                href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/"
+                href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/"
                 />
   </url>
   

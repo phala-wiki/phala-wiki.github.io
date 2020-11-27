@@ -12,15 +12,15 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>Docs | Phala Network 百科</title><meta property="og:title" content="Docs" />
+<title>守门人教程 | Phala Network 百科</title><meta property="og:title" content="守门人教程" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/" />
 <meta property="og:updated_time" content="2020-07-10T01:16:05+08:00" /><meta property="og:site_name" content="Phala Network 百科" />
-<meta itemprop="name" content="Docs">
+<meta itemprop="name" content="守门人教程">
 <meta itemprop="description" content="">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docs"/>
+<meta name="twitter:title" content="守门人教程"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -91,10 +91,10 @@
   <main class="main wrap pt-4"><div class="grid-auto">
   <div><aside class="aside">
   <section class="section">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Docs</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Docs</a></h2>
       <section class="subsection" id="docs-docs">
   <section class="section">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">守门人教程</a></h2>
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">守门人教程</a></h2>
       <section class="subsection" id="docs-守门人教程">
         <h3 class="section_link"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
@@ -169,7 +169,33 @@
 
   </div>
   <section class="content">
-    <h1>Docs</h1>
+    <h1>守门人教程</h1><h2 id="什么是守门人">什么是守门人</h2>
+<p>守门人（Gatekeeper）是对 Phala 网络至关重要的角色。守门人负责区块的打包和密钥管理，是意外情况下保证网络可用性的重要途径。守门人需要使用性能较好的设备、在网络情况良好的环境登录，且必须时刻保持在线。因此，<strong>守门人可以获得可观的收益</strong>，但同时需要对自己和提名人的PHA抵押额负责。如果因为频繁掉线或其他不良行为导致被惩罚，则无论是名誉还是PHA损失都会是巨大的。</p>
+<p>运行守门人节点，安全是第一要素。你可以查看<a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">搭建安全Polkadot验证人节点</a>查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的<a href="https://github.com/w3f/polkadot-secure-validator">验证人节点参考实现</a>（<a href="https://www.youtube.com/watch?v=tTn8P6t7JYc">此处</a>有视频教程)。在配置守门人节点的过程中，可以把这个代码库当作 <em>一个初始模版</em> ，在上面自行修改、裁剪。</p>
+<p>如果您有任何疑问，可前往 <a href="https://forum.phala.network/c/9-category/9">Phala论坛中文区</a> ，按照此 <a href="https://forum.phala.network/t/topic/461/2">模板</a> 进行提问，我们将在看到后第一时间回复您。</p>
+<h3 id="守门人需要抵押多少-pha">守门人需要抵押多少 PHA</h3>
+<p>在测试网上做守门人需要抵押 <strong>10</strong> 个测试币。</p>
+<p><a href="https://www.yuque.com/docs/share/e016c4c3-bc63-4689-920e-6f7c0434e4c0?#">点此查看如何领取测试币</a></p>
+<p>您可以在 <a href="https://wiki.polkadot.network/docs/en/faq#what-are-the-ways-to-find-out-the-minimum-stake-necessary-for-the-validators">这个页面</a> 找到估算所需 PHA 数额的方法。
+守门人将根据 <a href="https://wiki.polkadot.network/docs/en/learn-phragmen">Phragmen算法</a> 进行选举。要想入选，您和<a href="https://wiki.polkadot.network/docs/en/maintain-nominator">提名人</a>的保证金之和必须不低于其他守门人。赢得提名人的支持非常重要。此外，也要注意在您的 Stash 账号和 <a href="https://wiki.polkadot.network/docs/en/learn-keys">Controlloer 账号</a>上都要留有足够的 PHA。</p>
+<blockquote>
+<p>例：</p>
+<ul>
+<li>守门人A抵押了 10 PHA 作为保证金，他的提名人为他抵押了 100 PHA。则守门人A的总保证金为 110 PHA</li>
+<li>守门人B抵押了 100 PHA，但没有提名人为他抵押</li>
+<li>入选的会是A</li>
+</ul>
+</blockquote>
+<p>需要注意，一旦将您的一部分资金设为保证金，</br></p>
+<p><strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br>
+<strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br>
+<strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br></p>
+<p>因此再次建议您仔细阅读此篇教程的操作。</p>
+<p>此外，</p>
+<p><strong>请妥善保管您的助记词</strong>。</br>
+<strong>请妥善保管您的助记词</strong>。</br>
+<strong>请妥善保管您的助记词</strong>。</br></p>
+
     <div class="pager pager_lean">
   
 

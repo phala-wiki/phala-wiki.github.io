@@ -8,16 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Jul 2020 22:29:51 +0800</lastBuildDate><atom:link href="https://wiki.phala.network/en-us/docs/poc2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Run a Gatekeeper</title>
-      <link>https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/</link>
-      <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/</guid>
-      <description>Before Starting Running a Gatekeeper (GK) in Phala Network means a lot of responsibility. You will be accountable for not only your own stake but also the stake of your current nominators. Numbers of Gatekeepers can vary in different phases; and when Phala launches its mainnet, there will be 100 Gatekeepers and they share the inflation return of Phala economic system.
-Once you&#39;ve raised enough stakes (nominations) in current Era, you will automatically be enrolled as a Gatekeeper when the next Era starts.</description>
-    </item>
-    
-    <item>
       <title>Run a full node</title>
       <link>https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/</link>
       <pubDate>Mon, 06 Jul 2020 22:30:41 +0800</pubDate>
