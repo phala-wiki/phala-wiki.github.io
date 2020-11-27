@@ -103,7 +103,7 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</guid>
-      <description> Go to Developer → Chain State Click phalaModule → credits → choose your stash account  </description>
+      <description> Go to Developer → Chain State Click phalaModule → fire(Accountld): BalanceOf  </description>
     </item>
     
     <item>
@@ -112,11 +112,11 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</guid>
-      <description>Stop Mining  If your miner is not mining, please go to step 2.
+      <description>Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data</description>
+  Run the following commands to kill the original containers:
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data.</description>
     </item>
     
     <item>

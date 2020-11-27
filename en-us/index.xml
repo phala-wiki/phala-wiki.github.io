@@ -13,8 +13,8 @@
       <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/</guid>
-      <description>This guide will instruct you how to set up a validator node on the Phala Network.
-Preliminaries Running a Gatekeeper on a live network is a lot of responsibility! You will be accountable for not only your own stake, but also the stake of your current nominators. If you make a mistake and get slashed, your money and your reputation will be at risk. However, running a Gatekeeper can also be very rewarding, knowing that you contribute to the security of a decentralized network while growing your stash.</description>
+      <description>Before Starting Running a Gatekeeper (GK) in Phala Network means a lot of responsibility. You will be accountable for not only your own stake but also the stake of your current nominators. Numbers of Gatekeepers can vary in different phases; and when Phala launches its mainnet, there will be 100 Gatekeepers and they share the inflation return of Phala economic system.
+Once you&#39;ve raised enough stakes (nominations) in current Era, you will automatically be enrolled as a Gatekeeper when the next Era starts.</description>
     </item>
     
     <item>
@@ -156,7 +156,7 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</guid>
-      <description> Go to Developer → Chain State Click phalaModule → credits → choose your stash account  </description>
+      <description> Go to Developer → Chain State Click phalaModule → fire(Accountld): BalanceOf  </description>
     </item>
     
     <item>
@@ -165,11 +165,11 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</guid>
-      <description>Stop Mining  If your miner is not mining, please go to step 2.
+      <description>Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data</description>
+  Run the following commands to kill the original containers:
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data.</description>
     </item>
     
     <item>

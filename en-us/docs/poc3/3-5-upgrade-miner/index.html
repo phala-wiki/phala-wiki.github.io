@@ -13,33 +13,33 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>3.5 Upgrade Miner | Phala Network Wiki</title><meta property="og:title" content="3.5 Upgrade Miner" />
-<meta property="og:description" content="Stop Mining  If your miner is not mining, please go to step 2.
+<meta property="og:description" content="Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data" />
+  Run the following commands to kill the original containers:
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="3.5 Upgrade Miner">
-<meta itemprop="description" content="Stop Mining  If your miner is not mining, please go to step 2.
+<meta itemprop="description" content="Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data">
+  Run the following commands to kill the original containers:
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data.">
 
-<meta itemprop="wordCount" content="200">
+<meta itemprop="wordCount" content="369">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3.5 Upgrade Miner"/>
-<meta name="twitter:description" content="Stop Mining  If your miner is not mining, please go to step 2.
+<meta name="twitter:description" content="Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands:
-1 2 3 4  docker kill phala-phost docker kill phala-pruntime docker kill phala-node sudo docker image prune -a # type `y` to confirm the deletion     Reset Docker Containers   sudo rm -rf /PATH/TO/YOUR/phala-node-data"/>
+  Run the following commands to kill the original containers:
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -248,7 +248,14 @@
   <ul>
     <li><a href="#stop-mining">Stop Mining</a></li>
     <li><a href="#reset-docker-containers">Reset Docker Containers</a></li>
-    <li><a href="#restart-mining">Restart Mining</a></li>
+    <li><a href="#reclaim-test-tokens">Reclaim test tokens</a></li>
+    <li><a href="#reset-miner-stash">Reset Miner Stash</a></li>
+    <li><a href="#pull-and-run-new-docker-containers">Pull and Run New Docker Containers</a></li>
+    <li><a href="#on-chain-operations">On-chain Operations</a>
+      <ul>
+        <li><a href="#tech-support">Tech Support</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/poc3/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
@@ -271,8 +278,9 @@
       <section class="subsection" id="docs-legacy-docs-poc-2">
         <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/poc2/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#preliminaries">Preliminaries</a>
+    <li>
       <ul>
+        <li><a href="#before-starting">Before Starting</a></li>
         <li><a href="#how-many-pha-do-i-need">How many PHA do I need?</a></li>
       </ul>
     </li>
@@ -302,11 +310,11 @@
     </li>
     <li><a href="#register-tee-worker">Register TEE worker</a></li>
     <li><a href="#validate">Validate</a></li>
-    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
     <li><a href="#faq">FAQ</a>
       <ul>
         <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
         <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
+        <li><a href="#tech-support">Tech Support</a></li>
       </ul>
     </li>
   </ul>
@@ -338,7 +346,7 @@
   <section class="content">
     <h1>3.5 Upgrade Miner</h1><h2 id="stop-mining">Stop Mining</h2>
 <blockquote>
-<p>If your miner is not mining, please go to step 2.</p>
+<p>If your miner is not in mining status, please start the upgrade from step 2.</p>
 </blockquote>
 <ol>
 <li>
@@ -348,19 +356,17 @@
 <p>Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.</p>
 </li>
 <li>
-<p>Run the following commands:</p>
+<p>Run the following commands to kill the original containers:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">kill</span> phala-phost
 docker <span class="nb">kill</span> phala-pruntime
 docker <span class="nb">kill</span> phala-node
-sudo docker image prune -a  <span class="c1"># type `y` to confirm the deletion</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -368,13 +374,38 @@ sudo docker image prune -a  <span class="c1"># type `y` to confirm the deletion
 <h2 id="reset-docker-containers">Reset Docker Containers</h2>
 <ol>
 <li>
-<p><code>sudo rm -rf /PATH/TO/YOUR/phala-node-data</code></p>
-<ul>
-<li>By default, the Phala node data is stored under <code>$HOME/phala-node-data</code></li>
-</ul>
-</li>
-<li>
-<p>Type commands as follows</p>
+<p>Run the commands below to remove cached data. By default, the Phala node data is stored under <code>$HOME/phala-node-data</code>. If the path was changed in registration, please replace it with your path.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo rm -r <span class="nv">$HOME</span>/phala-node-data
+sudo rm -r <span class="nv">$HOME</span>/phala-pruntime-data
+sudo docker image prune -a
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="reclaim-test-tokens">Reclaim test tokens</h2>
+<blockquote>
+<p>From this step, the following operations are literally the same as when you register a new miner. You may refer to relevant pages for more details.</p>
+</blockquote>
+<p>There's no needs to burn more PHA. You can claim test tokens with the TXHash before by following steps below:</p>
+<ol>
+<li>Go to <a href="https://etherscan.io/">https://etherscan.io/</a> (or any other Ethereum explorer);</li>
+<li>Search your ETH account and find the TXHash of PHA swap before;</li>
+<li>Go to <a href="https://poc3-swap.phala.network/">https://poc3-swap.phala.network/</a></li>
+<li>Click <code>Claim Tokens</code>, paste the TXHash at the first line, your testnet address at the second line;</li>
+<li>Click <code>Click to Claim</code>.</li>
+</ol>
+<p>You may also follow these steps if there's an error when you burn PHA to claim test tokens.</p>
+<h2 id="reset-miner-stash">Reset Miner Stash</h2>
+<p>Go to <code>Developer</code> → <code>Extrinsics</code> → choose your Stash account → choose <code>phalaModule</code> → choose <code>SetStash(controller)</code>. And click <code>Submit Transaction</code>.</p>
+<h2 id="pull-and-run-new-docker-containers">Pull and Run New Docker Containers</h2>
+<p>Pull:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -387,31 +418,26 @@ sudo docker pull phalanetwork/phala-poc3-pruntime
 sudo docker pull phalanetwork/phala-poc3-phost
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>Type commands as follows:</p>
+</div><p>Run:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># start the full node</span>
-sudo docker run -ti --rm --name phala-node -d -e <span class="nv">NODE_NAME</span><span class="o">=</span>YOUR_NODE_NAME -p 9933:9933 -p 9944:9944 -p 30333:30333 -v <span class="nv">$HOME</span>/phala-node-data:/root/data phalanetwork/phala-poc3-node
-<span class="c1"># start pRuntime</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo docker run -ti --rm --name phala-node -d -e <span class="nv">NODE_NAME</span><span class="o">=</span>YOUR_NODE_NAME -p 9933:9933 -p 9944:9944 -p 30333:30333 -v <span class="nv">$HOME</span>/phala-node-data:/root/data phalanetwork/phala-poc3-node
 sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v <span class="nv">$HOME</span>/phala-pruntime-data:/root/data --device /dev/isgx phalanetwork/phala-poc3-pruntime
-<span class="c1"># start the bridge (wait for 30s after started the full node and pRuntime)</span>
+<span class="c1"># wait for 30s after started the full node and pRuntime</span>
 sudo docker run -d -ti --rm --name phala-phost -e <span class="nv">PRUNTIME_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;http://IP-ADDRESS:8000&#34;</span> -e <span class="nv">PHALA_NODE_WS_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;ws://IP-ADDRESS:9944&#34;</span> -e <span class="nv">MNEMONIC</span><span class="o">=</span><span class="s2">&#34;THE-MNEMONIC-OF-YOUR-CONTROLLER&#34;</span> -e <span class="nv">EXTRA_OPTS</span><span class="o">=</span><span class="s2">&#34;-r&#34;</span> phalanetwork/phala-poc3-phost
 </code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-<h2 id="restart-mining">Restart Mining</h2>
-<p>Refer to <a href="/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a>.</p>
+</div><h2 id="on-chain-operations">On-chain Operations</h2>
+<p>To set your mission and miner stash, check miner status, or start mining and check on-chain profits, please refer to relevant pages.</p>
+<br>
+<h3 id="tech-support">Tech Support</h3>
+<p><a href="https://discord.gg/zjdJ7d844d"><img src="https://img.shields.io/discord/697726436211163147?label=Phala%20Discord" alt=""></a> <a href="https://t.me/phalaminer"><img src="https://img.shields.io/badge/Join-Telegram-blue" alt=""></a></p>
 
     <div class="pager">
   
@@ -464,7 +490,7 @@ sudo docker run -d -ti --rm --name phala-phost -e <span class="nv">PRUNTIME_ENDP
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.93b1999f90d46a5da593cea4b3556c191c520f6214f066de1590448048f56ae289a6b461b090751dbdc6f1f9ac1317d2f425467977d425e16140469632f3228a.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.75bc7e1418435ca3e31ee6475b95cee5da4220c506fbce47058123ab0f2601c0decf5eb90e1bae613079168e4fbbf3ebd9a0e60c9f06af8bf2c341677ab5f632.js" async defer></script>
 
 </body>
 </html>
