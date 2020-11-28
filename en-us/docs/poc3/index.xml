@@ -83,8 +83,8 @@ However, to score a higher rank in the Miner Race, you can earn more points by u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/</guid>
-      <description> Go to Develoepr -&amp;gt; Extrinsics Choose your controller account，click phalaModule -&amp;gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
-Mining States Verification  Go to Developer → Chain State Click phalaModule → miningState Choose your stash account  </description>
+      <description>Go to Develoepr -&amp;gt; Extrinsics Choose your controller account，click phalaModule -&amp;gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
+Mining States Verification  Go to Developer → Chain State Choose phalaModule → workerState, and choose your stash account If there&#39;s a Mining with block height after state, congratulations, your miner is working. If there&#39;s a Miningpending, it means your miner will start mining from the next round (600 blocks later).</description>
     </item>
     
     <item>
