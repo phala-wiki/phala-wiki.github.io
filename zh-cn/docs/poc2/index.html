@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -98,38 +98,40 @@
       <section class="subsection" id="docs-守门人教程">
         <h3 class="section_link"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#运行守门人节点之前">运行守门人节点之前</a>
+    <li><a href="#配置要求">配置要求</a>
       <ul>
-        <li><a href="#配置要求">配置要求</a>
-          <ul>
-            <li><a href="#标准硬件">标准硬件</a></li>
-          </ul>
-        </li>
-        <li><a href="#安装-intel-sgx-驱动与平台软件">安装 Intel SGX 驱动与平台软件</a></li>
-        <li><a href="#安装-phala-node-可执行程序">安装 <code>phala-node</code> 可执行程序</a></li>
-        <li><a href="#同步链上数据">同步链上数据</a></li>
+        <li><a href="#硬件">硬件</a></li>
+        <li><a href="#软件">软件</a></li>
       </ul>
     </li>
-    <li><a href="#抵押-pha">抵押 PHA</a></li>
-    <li><a href="#设置-session-密钥">设置 Session 密钥</a>
+    <li><a href="#同步链上数据">同步链上数据</a></li>
+    <li><a href="#抵押pha和设置-session-key">抵押PHA和设置 Session Key</a>
       <ul>
-        <li><a href="#生成-session-密钥">生成 Session 密钥</a>
+        <li><a href="#抵押-pha">抵押 PHA</a></li>
+        <li><a href="#获取-session-密钥">获取 Session 密钥</a>
           <ul>
             <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
             <li><a href="#方法2-cli">方法2: CLI</a></li>
           </ul>
         </li>
-        <li><a href="#提交-setkeys-交易">提交 <code>setKeys</code> 交易</a></li>
+        <li><a href="#提交session-key">提交Session Key</a></li>
       </ul>
     </li>
-    <li><a href="#注册-tee-设备">注册 TEE 设备</a></li>
-    <li><a href="#开启验证">开启验证</a></li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
-    <li><a href="#faq">FAQ</a>
+    <li><a href="#启动-pruntime">启动 pRuntime</a>
       <ul>
-        <li><a href="#为什么我同步的时候一直显示-0-peers">为什么我同步的时候一直显示 0 peers？</a></li>
-        <li><a href="#怎么清除链上数据">怎么清除链上数据？</a></li>
-        <li><a href="#有没有-docker-部署教程">有没有 Docker 部署教程</a></li>
+        <li>
+          <ul>
+            <li><a href="#dcap-驱动">DCAP 驱动：</a></li>
+            <li><a href="#sgx-驱动">SGX 驱动：</a></li>
+            <li><a href="#不知道自己的驱动是什么">不知道自己的驱动是什么：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#启动-phost">启动 pHost</a></li>
+    <li><a href="#启动守门人身份"><strong>启动守门人身份</strong></a>
+      <ul>
+        <li><a href="#技术支持">技术支持</a></li>
       </ul>
     </li>
   </ul>
@@ -201,7 +203,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.48361fe58ad10d68d02918a846dd2944b9d33640652c472c9ceefa1d542a25b38210b440724b8952231bfaa3c208314beedf621f1c56a826bada395a66cd2144.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.9b3a9c9183408117f568858c48530753e942ce14bf0e25e6d8cfa0b910fb86cd164fbf3ceba45ed96a2fb1a0eeb8579efb33b15e376851d255657a4f0d7ff843.js" async defer></script>
 
 </body>
 </html>

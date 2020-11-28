@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,26 +13,26 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>Run a Gatekeeper | Phala Network Wiki</title><meta property="og:title" content="Run a Gatekeeper" />
-<meta property="og:description" content="Initial Set-up Requirements You will likely run your Gatekeeper on a server with TEE hardware running Linux. For this guide we will be using Ubuntu 18.04, but the instructions should be similar for other platforms.
-The transaction weights in Phala Network were benchmarked on standard hardware. It is recommended that Gatekeepers run at least the standard hardware in order to ensure they are able to process all blocks in time. The following requirements are not necessarily minimum requirements." />
+<meta property="og:description" content="Setup Environment   Hardware
+ CPU: 6th generation or newer Intel Core/Pentium/Celeron/Atom series. Memory: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory. Mainboard: SGX-supported mainboard, and newer mainboards can support more SGX features." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/" />
 <meta property="article:published_time" content="2020-07-10T01:16:05+08:00" />
 <meta property="article:modified_time" content="2020-07-10T01:16:05+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Run a Gatekeeper">
-<meta itemprop="description" content="Initial Set-up Requirements You will likely run your Gatekeeper on a server with TEE hardware running Linux. For this guide we will be using Ubuntu 18.04, but the instructions should be similar for other platforms.
-The transaction weights in Phala Network were benchmarked on standard hardware. It is recommended that Gatekeepers run at least the standard hardware in order to ensure they are able to process all blocks in time. The following requirements are not necessarily minimum requirements.">
+<meta itemprop="description" content="Setup Environment   Hardware
+ CPU: 6th generation or newer Intel Core/Pentium/Celeron/Atom series. Memory: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory. Mainboard: SGX-supported mainboard, and newer mainboards can support more SGX features.">
 <meta itemprop="datePublished" content="2020-07-10T01:16:05+08:00" />
 <meta itemprop="dateModified" content="2020-07-10T01:16:05+08:00" />
-<meta itemprop="wordCount" content="2443">
+<meta itemprop="wordCount" content="1923">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Run a Gatekeeper"/>
-<meta name="twitter:description" content="Initial Set-up Requirements You will likely run your Gatekeeper on a server with TEE hardware running Linux. For this guide we will be using Ubuntu 18.04, but the instructions should be similar for other platforms.
-The transaction weights in Phala Network were benchmarked on standard hardware. It is recommended that Gatekeepers run at least the standard hardware in order to ensure they are able to process all blocks in time. The following requirements are not necessarily minimum requirements."/>
+<meta name="twitter:description" content="Setup Environment   Hardware
+ CPU: 6th generation or newer Intel Core/Pentium/Celeron/Atom series. Memory: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory. Mainboard: SGX-supported mainboard, and newer mainboards can support more SGX features."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -167,16 +167,10 @@ The transaction weights in Phala Network were benchmarked on standard hardware. 
       <section class="subsection" id="docs-gatekeeper-guide">
         <h3 class="section_link active"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#initial-set-up">Initial Set-up</a>
+    <li><a href="#setup-environment">Setup Environment</a></li>
+    <li><a href="#synchronize-chain-data">Synchronize Chain Data</a>
       <ul>
-        <li><a href="#requirements">Requirements</a>
-          <ul>
-            <li><a href="#standard-hardware">Standard Hardware</a></li>
-          </ul>
-        </li>
-        <li><a href="#install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</a></li>
-        <li><a href="#install-the-phala-node-binary">Install the <code>phala-node</code> Binary</a></li>
-        <li><a href="#synchronize-chain-data">Synchronize Chain Data</a></li>
+        <li><a href="#to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</a></li>
       </ul>
     </li>
     <li><a href="#bond-pha">Bond PHA</a></li>
@@ -188,15 +182,13 @@ The transaction weights in Phala Network were benchmarked on standard hardware. 
             <li><a href="#option-2-cli">Option 2: CLI</a></li>
           </ul>
         </li>
-        <li><a href="#submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</a></li>
+        <li><a href="#set-your-sessions-keys">Set Your Sessions Keys</a></li>
       </ul>
     </li>
-    <li><a href="#register-tee-worker">Register TEE worker</a></li>
-    <li><a href="#validate">Validate</a></li>
-    <li><a href="#faq">FAQ</a>
+    <li><a href="#pruntime-setup">pRuntime Setup</a></li>
+    <li><a href="#phost-setup">pHost Setup</a></li>
+    <li><a href="#validate-your-gatekeeper">Validate Your Gatekeeper</a>
       <ul>
-        <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
-        <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
         <li><a href="#tech-support">Tech Support</a></li>
       </ul>
     </li>
@@ -336,36 +328,66 @@ The transaction weights in Phala Network were benchmarked on standard hardware. 
 
   </div>
   <section class="content">
-    <h1>Run a Gatekeeper</h1><h2 id="initial-set-up">Initial Set-up</h2>
-<h3 id="requirements">Requirements</h3>
-<p>You will likely run your Gatekeeper on a server with TEE hardware running Linux. For this guide we will be using Ubuntu 18.04, but the instructions should be similar for other platforms.</p>
-<p>The transaction weights in Phala Network were benchmarked on standard hardware. It is recommended that Gatekeepers run at least the standard hardware in order to ensure they are able to process all blocks in time. The following requirements are not necessarily <em>minimum requirements</em>. But if you try to run with less than this, beware that you might have performance issue.</p>
-<h4 id="standard-hardware">Standard Hardware</h4>
-<p>For the full details of the standard hardware please see
-<a href="https://github.com/paritytech/substrate/pull/5848">here</a>.</p>
+    <h1>Run a Gatekeeper</h1><h2 id="setup-environment">Setup Environment</h2>
 <ul>
-<li><strong>CPU</strong> - 2 cores, with Intel SGX capability.</li>
-<li><strong>Storage</strong> - A NVMe solid state drive. Should be reasonably sized to deal with blockchain growth.
-Starting around 80GB - 160GB will be okay for the first six months of Phala Network, but will need to
-be re-evaluated every six months.</li>
-<li><strong>Memory</strong> - 2GB - 8GB. 2GB is really the minimum memory you should operate your Gatekeeper with, anything less than this make build times too inconvenient. For better performance you can bump it up to 4GB or 8GB, but anything more than that is probably over-kill. In order to compile the binary yourself you will likely need ~8GB.</li>
+<li>
+<p><strong>Hardware</strong></p>
+<ul>
+<li><strong>CPU</strong>: 6th generation or newer Intel Core/Pentium/Celeron/Atom series.</li>
+<li><strong>Memory</strong>: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory.</li>
+<li><strong>Mainboard</strong>: SGX-supported mainboard, and newer mainboards can support more SGX features. <strong>We strongly recommend you to consult our tech support team about the SGX module before purchasing a board to mine PHA.</strong></li>
+<li><strong>Storage</strong> - A NVMe solid state drive, and should be reasonably sized to deal with blockchain growth. A SSD of 80GB - 160GB will be enough for the first six months of Phala Network, but this requirement needs to be re-evaluated every six months.
+For more detail, you may refer to the <a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">miner node requirement</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Software</strong></p>
+<ul>
+<li>Ubuntu 18.04/20.04</li>
+<li>Install <a href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/#install-docker-ce">Docker-CE</a></li>
+<li>Install <a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/#sgx-driver-installation">SGX drivers</a></li>
+<li>Bandwidth：the stabler, the better</li>
+</ul>
+</li>
 </ul>
 <p>The specs posted above are by no means the minimum specs that you could use when running a
-Gatekeeper, however you should be aware that if you are using less you may need to toggle some extra
-optimizations in order to be equal to other Gatekeepers that are running the standard.</p>
-<h3 id="install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</h3>
-<p>You can find the latest Linux SGX driver from the <a href="https://01.org/intel-software-guard-extensions/downloads">official download page</a>. Make sure to install:</p>
-<ul>
-<li>SGX Linux DCAP Driver</li>
-<li>SGX Linux SDK (Under <code>/opt</code>)</li>
-<li>SGX Platform Swoftware</li>
-</ul>
-<p>The <a href="https://github.com/apache/incubator-teaclave-sgx-sdk/blob/253b3ac982b2d09d32f5fa5a2011e3c36bcbed1e/dockerfile/Dockerfile.1804.nightly">dockerfile</a> offered by Teaclave SGX SDK is a good reference of how to install the SGX SDK and platform software. Though it's possible to run SGX apps inside Docker, we don't have a guide for it so far. The driver must be installed on host machine natively.</p>
-<h3 id="install-the-phala-node-binary">Install the <code>phala-node</code> Binary</h3>
+<strong>Gatekeeper</strong>.</p>
+<br>
+<h2 id="synchronize-chain-data">Synchronize Chain Data</h2>
+<ol>
+<li>
+<p>Download the <a href="https://drive.google.com/file/d/1hbvLm4KpyRIp9C3g_arYhbC7xaT2r3bg/view?usp=sharing">GK setup package</a>.</p>
+</li>
+<li>
+<p>Open your Terminal and run the commands below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo cp ./poc3_validator.service /etc/systemd/system
+sudo systemctl <span class="nb">enable</span> poc3_validator.service
+sudo systemctl start poc3_validator.service
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Type in <code>vim validator.sh</code> , press <code>a</code>, and replace <code>YOUR NAME</code> with a cool node name you like. 🤟</p>
+</li>
+<li>
+<p>Press <code>ESC</code>,  and press <code>Shift</code> + <code>;</code> , type in <code>wq</code> , and press <code>Enter</code> to save and return.</p>
+</li>
+<li>
+<p>Go to <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-3">https://telemetry.polkadot.io/#list/Phala PoC-3</a>, find your node name, and wait for its block synchronization until it's the same with others. The synchronization may take 1-2 hours and the exact duration depends on your bandwidth.</p>
+</li>
+</ol>
+<h3 id="to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</h3>
 <p>Download the latest Phala Network binary from the Github <a href="https://github.com/Phala-Network/phala-blockchain/releases">release page</a>.</p>
 <p>You can also build the <code>phala-node</code> binary from the
 <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> repository on GitHub using the source
-code available in the <strong>master</strong> branch. You will need to prepare the rust build environment described in the <a href="/en-us/docs/poc2/run-a-full-node/">Run a Full Node</a> tutorial.</p>
+code available in the <strong>master</strong> branch. You will need to prepare the Rust build environment described in the <a href="/en-us/docs/poc2/run-a-full-node/">Run a Full Node</a> tutorial.</p>
 <blockquote>
 <p>Note: If you prefer to use SSH rather than HTTPS, you can replace the first line of the below with
 <code>git clone git@github.com/Phala-Network/phala-blockchain.git</code>.</p>
@@ -388,7 +410,7 @@ code available in the <strong>master</strong> branch. You will need to prepare t
 </div>
 </div><p>This step will take a while (generally 10 - 40 minutes, depending on your hardware).</p>
 <blockquote>
-<p>Note if you run into compile errors, you may have to switch to a less recent nightly. This can be
+<p><strong>Note</strong>: If you run into compile errors, you may have to switch to a less recent nightly Rust compiler. This can be
 done by running:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -397,9 +419,9 @@ done by running:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">rustup install nightly-2020-11-10
-rustup override <span class="nb">set</span> nightly-2020-11-10
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
+<pre class="chroma"><code class="language-sh" data-lang="sh">rustup install nightly-2020-05-15
+rustup override <span class="nb">set</span> nightly-2020-05-15
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-05-15
 </code></pre></td></tr></table>
 </div>
 </div></blockquote>
@@ -414,9 +436,8 @@ machine for extra security.</p>
 <pre class="chroma"><code class="language-sh" data-lang="sh">cargo install --force --git https://github.com/paritytech/substrate subkey
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="synchronize-chain-data">Synchronize Chain Data</h3>
-<blockquote>
-<p><strong>Note:</strong> By default, Gatekeeper nodes are in archive mode. If you've already synced the chain not
+</div><blockquote>
+<p><strong>Note</strong>: By default, Gatekeeper nodes are in archive mode. If you've already synced the chain not
 in archive mode, you must first remove the database with <code>phala-node purge-chain</code> and then ensure
 that you run Phala Network with the <code>--pruning=archive</code> option.</p>
 <p>You may run a Gatekeeper node in non-archive mode by adding the following flags:
@@ -438,13 +459,13 @@ required explicitly if you start your node without one of these two options. If 
 pruning to archive node, even when not running in Gatekeeper and sentry mode, you will need to
 re-sync your database when you switch.</p>
 <blockquote>
-<p><strong>Note:</strong> Gatekeepers should sync using the RocksDb backend. This is implicit by default, but can
+<p><strong>Note</strong>: Gatekeepers should sync using the RocksDb backend. This is implicit by default, but can
 be explicit by passing the <code>--database RocksDb</code> flag. In the future, it is recommended to switch
 to using the faster and more efficient ParityDb option. Switching between database backends will
 require a resync.</p>
 <p>If you want to test out ParityDB you can add the flag <code>--database paritydb</code>.</p>
 </blockquote>
-<p>Depending on the size of the chain when you do this, this step may take anywhere from a few minutes
+<p>Depending on the size of the chain when you do this, this step may take a few minutes
 to a few hours.</p>
 <p>If you are interested in determining how much longer you have to go, your server logs (printed to
 STDOUT from the <code>phala-node</code> process) will tell you the latest block your node has processed and
@@ -452,90 +473,53 @@ verified. You can then compare that to the current highest block via
 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Telemetry</a> or the
 <a href="https://app.phala.network/#/explorer">Phala Web App</a>.</p>
 <blockquote>
-<p><strong>Note:</strong> If you do not already have PHA, this is as far as you will be able to go until the end
+<p><strong>Note</strong>: If you do not already have PHA, this is as far as you will be able to go until the end
 of the soft launch period. You can still run a node, but you will need to have a minimal amount of
 PHA to continue, as balance transfers are disabled during the soft launch. Please keep in mind
-that even for those with PHA, they will only be indicating their <em>intent</em> to validate; they will
-also not be able to run a Gatekeeper until the NPoS phase starts.</p>
+that Gatekeepers will be re-elected when the NPoS phase starts.</p>
 </blockquote>
+<br>
 <h2 id="bond-pha">Bond PHA</h2>
-<p>It is highly recommended that you make your controller and stash accounts be two separate accounts.
-For this, you will create two accounts and make sure each of them have at least enough funds to pay
-the fees for making transactions. Keep most of your funds in the stash account since it is meant to
-be the custodian of your staking funds.</p>
-<p>Make sure not to bond all your PHA balance since you will be unable to pay transaction fees from
-your bonded balance.</p>
-<p>It is now time to set up our Gatekeeper. We will do the following:</p>
+<blockquote>
+<p>The steps below have to be processed on the device you have set up.</p>
+</blockquote>
+<ol>
+<li><a href="https://www.notion.so/Create-Accounts-710e6dccac6f45d2953f5ea84206a58e">Create 2 accounts</a> and be ensured that you have saved <strong>the mnemonics of your controller</strong> account correctly.</li>
+<li><a href="https://www.notion.so/Claim-Test-Tokens-9f53f6b805634f84bd44f202ef53b11c">Claim test tokens</a> and be ensured that there are over <code>100 tPHA</code> in the stash account and the controller account.</li>
+<li>Go to <code>Network</code> → <code>Staking</code> → <code>Account Actions</code> → <code>+Stash</code></li>
+<li>Type in an amount of tPHA that you would like to bond.</li>
+<li>Click <code>Bond</code> and Sign.</li>
+</ol>
+<blockquote>
 <ul>
-<li>Bond the PHA of the Stash account. These PHA will be put at stake for the security of the
-network and can be slashed.</li>
-<li>Select the Controller. This is the account that will decide when to start or stop validating.</li>
+<li><strong>Stash account</strong> - Select your Stash account. In this example, we will bond 100 PHA - make sure that your Stash account contains <em>at least</em> this much. You can, of course, stake more than this.</li>
+<li><strong>Controller account</strong> - Select the Controller account created earlier. This account will also need a small amount of PHA in order to start and stop validating.</li>
+<li><strong>Value bonded</strong> - How much PHA from the Stash account you want to bond/stake. Note that you do not need to bond all of the PHA in that account, and you can always bond <em>more</em> PHA later. However, <em>withdrawing</em> any bonded amount requires the duration of the unbonding period. In Phala Network, the unbonding period is 7 days.</li>
+<li><strong>Payment destination</strong> - The account to which the rewards from validating are sent. More info <a href="https://wiki.polkadot.network/en/latest/polkadot/learn/staking/#reward-distribution">here</a>.</li>
 </ul>
-<p>First, go to the <a href="https://app.phala.network/#/staking/actions">Staking</a> section. Click on
-&quot;Account Actions&quot;, and then the &quot;Stash&quot; button.</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-bonding.jpg" alt="dashboard bonding"></p>
-<ul>
-<li><strong>Stash account</strong> - Select your Stash account. In this example, we will bond 100 milliPHA - make
-sure that your Stash account contains <em>at least</em> this much. You can, of course, stake more than
-this.</li>
-<li><strong>Controller account</strong> - Select the Controller account created earlier. This account will also
-need a small amount of PHA in order to start and stop validating.</li>
-<li><strong>Value bonded</strong> - How much PHA from the Stash account you want to bond/stake. Note that you do
-not need to bond all of the PHA in that account. Also note that you can always bond <em>more</em> PHA
-later. However, <em>withdrawing</em> any bonded amount requires the duration of the unbonding period. On
-Phala Network, the unbonding period is 7 days.</li>
-<li><strong>Payment destination</strong> - The account where the rewards from validating are sent. More info
-<a href="https://wiki.polkadot.network/en/latest/polkadot/learn/staking/#reward-distribution">here</a>.</li>
-</ul>
-<p>Once everything is filled in properly, click <code>Bond</code> and sign the transaction with your Stash
-account.</p>
-<p>After a few seconds, you should see an &quot;ExtrinsicSuccess&quot; message. You should now see a new card
-with all your accounts (note: you may need to refresh the screen). The bonded amount on the right
-corresponds to the funds bonded by the Stash account.</p>
+</blockquote>
+<p>After a few seconds, you should see an &quot;ExtrinsicSuccess&quot; message. You should now see a list with all your accounts (you may need to refresh the web page). The bonded amount on the right corresponds to the funds bonded by the Stash account.</p>
+<p><img src="/images/docs/gatekeeper/1.png" alt="">
+<img src="/images/docs/gatekeeper/2.png" alt="">
+<img src="/images/docs/gatekeeper/3.png" alt=""></p>
+<br>
 <h2 id="set-session-keys">Set Session Keys</h2>
 <blockquote>
-<p><strong>Note:</strong> The session keys are consensus critical, so if you are not sure if your node has the
-current session keys that you made the <code>setKeys</code> transaction then you can use one of the two
-available RPC methods to query your node:
-<a href="https://polkadot.js.org/api/substrate/rpc.html#haskey-publickey-bytes-keytype-text-bool">hasKey</a>
-to check for a specific key or
-<a href="https://polkadot.js.org/api/substrate/rpc.html#hassessionkeys-sessionkeys-bytes-bool">hasSessionKeys</a>
-to check the full session key public key string.</p>
+<p><strong>Note</strong>: The session keys are consensus critical, so if you are not sure if your node has the
+current session keys that you made the <code>setKeys</code> transaction then you can use one of the two available RPC methods to query your node: <a href="https://polkadot.js.org/api/substrate/rpc.html#haskey-publickey-bytes-keytype-text-bool">hasKey</a> to check for a specific key or <a href="https://polkadot.js.org/api/substrate/rpc.html#hassessionkeys-sessionkeys-bytes-bool">hasSessionKeys</a> to check the full session key public key string.</p>
 </blockquote>
-<p>Once your node is fully synced, stop the process by pressing Ctrl-C. At your terminal prompt, you
-will now start running the node in validator mode with a flag allowing unsafe RPC calls, needed for
-some advanced operations.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./phala-node --validator --name <span class="s2">&#34;name on telemetry&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>You can give your Gatekeeper any name that you like, but note that others will be able to see it, and
-it will be included in the list of all servers using the same telemetry server. Since numerous
-people are using telemetry, it is recommended that you choose something likely to be unique.</p>
 <h3 id="generating-the-session-keys">Generating the Session Keys</h3>
-<p>You need to tell the chain your Session keys by signing and submitting an extrinsic. This is what
-associates your Gatekeeper node with your Controller account on Phala Network.</p>
+<p>You need to tell the chain your Session keys by signing and submitting an extrinsic. This is what associates your Gatekeeper node with your Controller account in Phala Network.</p>
 <h4 id="option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</h4>
-<p>You can generate your
-<a href="https://wiki.polkadot.network/en/latest/polkadot/learn/keys/#session-key">Session keys</a> in the
-client via the apps RPC. If you are doing this, make sure that you have the PolkadotJS-Apps explorer
-attached to your Gatekeeper node. You can configure the apps dashboard to connect to the endpoint of
-your Gatekeeper in the Settings tab. If you are connected to a default endpoint hosted by Parity of
-Web3 Foundation, you will not be able to use this method since making RPC requests to this node
-would effect the local keystore hosted on a <em>public node</em> and you want to make sure you are
-interacting with the keystore for <em>your node</em>.</p>
-<p>Once ensuring that you have connected to your node, the easiest way to set session keys for your
-node is by calling the <code>author_rotateKeys</code> RPC request to create new keys in your Gatekeeper's
-keystore. Navigate to Toolbox tab and select RPC Calls then select the author &gt; rotateKeys() option
-and remember to save the output that you get back for a later step.</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-explorer-rotatekeys-rpc.jpg" alt="Explorer RPC call"></p>
+<ol>
+<li>Click the Phala logo → <code>DEVELOPMENT</code>, and type in <code>ws://127.0.0.1:9944</code> , and click <code>Switch</code>.</li>
+<li>Go to <code>Developers</code> → <code>RPC Calls</code>, choose <code>author</code> → <code>rotateKeys()</code>, and click <code>Submit</code>. The number string on the page is exactly your session key. Copy your session key.</li>
+<li>Go back to <code>Network</code> → <code>Staking</code> → <code>Account Actions</code>, click <code>Set Sessionkey</code> right next to your bonded accounts. Paste the session key and save.</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/4.png" alt="">
+<img src="/images/docs/gatekeeper/5.png" alt=""></p>
 <h4 id="option-2-cli">Option 2: CLI</h4>
-<p>If you are on a remote server, it is easier to run this command on the same machine (while the node
-is running with the default HTTP RPC port configured):</p>
+<p>If you are on a remote server, it is easier to run this command on the same machine (while the node is running with the default HTTP RPC port configured):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -545,82 +529,87 @@ is running with the default HTTP RPC port configured):</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>The output will have a hex-encoded &quot;result&quot; field. The result is the concatenation of the four
-public keys. Save this result for a later step.</p>
-<p>You can restart your node at this point, omitting the <code>--unsafe-rpc-expose</code> flag as it is no longer
-needed.</p>
-<h3 id="submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</h3>
-<p>You need to tell the chain your Session keys by signing and submitting an extrinsic. This is what
-associates your validator with your Controller account.</p>
-<p>Go to <a href="https://app.phala.network/#/staking/actions">Staking &gt; Account Actions</a>, and click &quot;Set
-Session Key&quot; on the bonding account you generated earlier. Enter the output from <code>author_rotateKeys</code>
-in the field and click &quot;Set Session Key&quot;.</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/set-session-key-1.jpg" alt="staking-change-session">
-<img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/set-session-key-2.jpg" alt="staking-session-result"></p>
-<p>Submit this extrinsic and you are now ready to start validating.</p>
-<h2 id="register-tee-worker">Register TEE worker</h2>
-<p>Gatekeepers utilize TEE to manage the secret keys in Phala Network. Before starting validating, you need to attach the TEE hardware to your Gatekeeper accounts. As long as the Gatekeeper is running and validating the blockchain, the TEE worker is always connected to the blockchain and support the network.</p>
-<p>The TEE worker is handled by two components: <code>pHost</code> and <code>pRuntime</code>. The latest prebuilt binaries can be found from the Github <a href="https://github.com/Phala-Network/phala-blockchain/releases">release page</a> in <code>tee-release.zip</code>. Instead, you can also compile it on your own.</p>
-<p>Assuming you have extracted the prebuilt binares in a directory and have a running and fully synced <code>phala-node</code>, you can take the following steps to attach the TEE components to the blockchain:</p>
+public keys. Save this result for a later step.
+You can restart your node at this point, omitting the <code>--unsafe-rpc-expose</code> flag as it is no longer needed.</p>
+<h3 id="set-your-sessions-keys">Set Your Sessions Keys</h3>
 <ol>
-<li>Start pRuntime: <code>./app</code></li>
-<li>Start pHost with proper flags:</li>
+<li>Go to <code>Network</code> → <code>Staking</code> → <code>Account Actions</code>, click <code>Set Sessionkey</code> right next to your bonded accounts. Paste the number string and save.</li>
+<li>Now we go to <code>Developers</code> → <code>Extrinsics</code>, choose your stash account at the first line, choose <code>phalaModule</code> → <code>setStash(controller)</code> at the second line, choose your controller account at the third line. Click <code>Submit Transaction</code>.</li>
 </ol>
-<pre><code>./phost \
-      --mnemonic '&lt;the-mnenomic-of-your-controller-account&gt;' \
-      --no-sync \
-      --no-write-back \
-      --remote-attestation \
-      --substrate-ws-endpoint 'ws://localhost:9944'
-</code></pre><p>The mnenomic of your controller account is needed because <code>phost</code> will send transactions to register your TEE hardware on behalve of your controller account.</p>
-<p>The prebuilt release also includes <code>bridge.sh</code>, a convinient script to bring up <code>phost</code> in the same way described above. With the script file, you can save the mnemonic permanently, avoding typing it everytime you run it.</p>
-<blockquote>
-<p>Note: In Phala Network Testnet PoC-2, the TEE worker registration is an one-shot job. <code>phost</code> will exit right after a successful registeration. However in future version, since TEE supports the TEE network in the full life-time of a Gatekeeper, it must be always up and running until the Gatekeeper is retired.</p>
-</blockquote>
-<h2 id="validate">Validate</h2>
-<p>To verify that your node is live and synchronized, head to
-<a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Telemetry</a> and find your node. Note that this
-will show all nodes on the Phala Network, which is why it is important to select a unique name!</p>
-<p>If everything looks good, go ahead and click on &quot;Validate&quot; in Phala Network UI.</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-validate.jpg" alt="dashboard validate">
-<img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-validate-modal.jpg" alt="dashboard validate"></p>
-<ul>
-<li><strong>Payment preferences</strong> - You can specify the percentage of the rewards that will get paid to you.
-The remaining will be split among your nominators.</li>
-</ul>
-<p>Click &quot;Validate&quot;.</p>
-<blockquote>
-<p>Note: This step will fail if you haven't successfully registered a TEE worker on your controller account. Please double check <a href="#register-tee-worker">Register TEE worker</a> to make sure your TEE hardware is registered.</p>
-</blockquote>
-<p>If you go to the &quot;Staking&quot; tab, you will see a list of active Gatekeepers currently running on the
-network. At the top of the page, it shows the number of Gatekeeper slots that are available as well
-as the number of nodes that have signaled their intention to be a Gatekeeper. You can go to the
-&quot;Waiting&quot; tab to double check to see whether your node is listed there.</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-staking.jpg" alt="staking queue"></p>
-<p>The Gatekeeper set is refreshed every era. In the next era, if there is a slot available and your
-node is selected to join the Gatekeeper set, your node will become an active Gatekeeper. Until then,
-it will remain in the <em>waiting</em> queue. If your Gatekeeper is not selected to become part of the
-Gatekeeper set, it will remain in the <em>waiting</em> queue until it is. There is no need to re-start if
-you are not selected for the Gatekeeper set in a particular era. However, it may be necessary to
-increase the number of PHA staked or seek out nominators for your Gatekeeper in order to join the
-Gatekeeper set.</p>
-<p><strong>Congratulations!</strong> If you have followed all of these steps, and been selected to be a part of the
-Gatekeeper set, you are now running a Phala Network Gatekeeper! If you need help, reach out on the
-<a href="https://t.me/phalanetwork">Phala Network Telegram group</a>.</p>
-<h2 id="faq">FAQ</h2>
-<h3 id="why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</h3>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-zero-peer.jpg" alt="zero-peer"></p>
-<p>Make sure to enable <code>30333</code> libp2p port. Eventually, it will take a little bit of time to discover
-other peers over the network.</p>
-<h3 id="how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</h3>
+<p><img src="/images/docs/gatekeeper/6.png" alt="">
+<img src="/images/docs/gatekeeper/7.png" alt=""></p>
+<br>
+<h2 id="pruntime-setup">pRuntime Setup</h2>
+<ol>
+<li>
+<p>Type in <code>sudo docker pull phalanetwork/phala-poc3-pruntime</code> to pull Phala pRuntime mirror files. It may take 10-30 mins according to the bandwidth of your network.</p>
+</li>
+<li>
+<p>Choose and type the commands below based on your driver.
+<strong>DCAP driver:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./phala-node purge-chain
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v <span class="nv">$HOME</span>/phala-pruntime-data:/root/data --device /dev/sgx/enclave --device /dev/sgx/provision phalanetwork/phala-poc3-pruntime
 </code></pre></td></tr></table>
 </div>
-</div><br>
+</div><p><strong>SGX driver:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v <span class="nv">$HOME</span>/phala-pruntime-data:/root/data --device /dev/isgx phalanetwork/phala-poc3-pruntime
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<blockquote>
+<p>How to check the driver type of your computer?</p>
+<ul>
+<li>Run <code>ls /dev/isgx</code> and it returns feedback: you are using <strong>SGX driver</strong>;</li>
+<li>Run <code>ls /dev/sgx</code> and it returns feedback: you are using <strong>DCAP driver</strong></li>
+</ul>
+<p>If both of the commands work, use the commands of the DCAP driver in the following steps.
+If none of them work, please refer to <a href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/#sgx-driver-installation">the SGX driver installation</a> in Phala Guide.</p>
+</blockquote>
+<br>
+<h2 id="phost-setup">pHost Setup</h2>
+<ol>
+<li>Type in <code>vim runphost.sh</code> in your Terminal.</li>
+<li>Press <code>a</code> until there's an <code>INSERT</code> tag at the lower-left corner. Replace the <code>Key Key Key ... Key</code> with <strong>your controller mnemonics</strong>. Press <code>ESC</code>, then press <code>Shift</code> + <code>;</code> , type in <code>wq</code> , and press <code>Enter</code> to save and return.</li>
+<li>Type in <code>./runphost.sh</code> . Wait for a moment until it reads <code>OK(())</code> .</li>
+</ol>
+<blockquote>
+<p>If it returns errors as below:
+<code>...FailedToCallRegisterWorker: Err(Rpc(Request(Error { code: ServerError(1010), message: &quot;Invalid Transaction&quot;, data: Some(String(&quot;Inability to pay some fees (e.g. account balance too low)&quot;)) }))) bridge() exited with result: Err(FailedToCallRegisterWorker)</code>
+Please kindly check your mnemonics written in <code>vim runphost.sh</code> or your operations in step 2 &amp; step 3.</p>
+</blockquote>
+<p><img src="/images/docs/gatekeeper/8.png" alt="">
+<img src="/images/docs/gatekeeper/9.png" alt="">
+<img src="/images/docs/gatekeeper/10.png" alt=""></p>
+<br>
+<h2 id="validate-your-gatekeeper">Validate Your Gatekeeper</h2>
+<ol>
+<li>Go to <code>Network</code> → <code>Staking</code> → <code>Account Actions</code></li>
+<li>Click the <code>Validate</code> button right next to your bonded accounts.</li>
+<li>Set the commission rate and sign.</li>
+<li>Your controller node will be on the <a href="https://poc3.phala.network/#/staking/waiting">waiting list</a> in the next <a href="https://wiki.polkadot.network/docs/en/glossary#epoch">Epoch</a>.</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/11.png" alt="">
+<img src="/images/docs/gatekeeper/12.png" alt="">
+<img src="/images/docs/gatekeeper/13.png" alt=""></p>
+<blockquote>
+<p><strong>Note</strong>: This step will fail if you haven't successfully registered an SGX-enabled worker on your controller account. Please double check the steps before to make sure your hardware is correctly registered.</p>
+</blockquote>
+<p>If you go to the &quot;Staking&quot; tab, you will see a list of active Gatekeepers currently running on the
+network. At the top of the page, it shows the number of Gatekeeper slots that are available as well as the number of nodes that have signaled their intention to be a Gatekeeper. You can go to the &quot;Waiting&quot; tab to double check to see whether your node is listed there.</p>
+<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-staking.jpg" alt="staking queue"></p>
+<p>The Gatekeeper set is refreshed every era. In the next era, if there is a slot available and your
+node is selected to join the Gatekeeper set, your node will become an active Gatekeeper. Until then, it will remain in the <em>waiting</em> queue. If your Gatekeeper is not selected to become part of the Gatekeeper set, it will remain in the <em>waiting</em> queue until it is. There is no need to re-start if you are not selected for the Gatekeeper set in a particular era. However, it may be necessary to increase the number of PHA staked or seek out nominators for your Gatekeeper in order to join the Gatekeeper set.</p>
+<br>
 <h3 id="tech-support">Tech Support</h3>
 <p><a href="https://discord.gg/FUtZzYH"><img src="https://img.shields.io/discord/697726436211163147?label=Phala%20Discord" alt=""></a> <a href="https://t.me/joinchat/PDXFHFI9RXcOKMaumhTTvw"><img src="https://img.shields.io/badge/Join-Telegram-blue" alt=""></a></p>
 
@@ -666,7 +655,7 @@ other peers over the network.</p>
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.48361fe58ad10d68d02918a846dd2944b9d33640652c472c9ceefa1d542a25b38210b440724b8952231bfaa3c208314beedf621f1c56a826bada395a66cd2144.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.9b3a9c9183408117f568858c48530753e942ce14bf0e25e6d8cfa0b910fb86cd164fbf3ceba45ed96a2fb1a0eeb8579efb33b15e376851d255657a4f0d7ff843.js" async defer></script>
 
 </body>
 </html>

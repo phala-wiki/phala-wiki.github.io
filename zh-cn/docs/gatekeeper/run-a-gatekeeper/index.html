@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,41 +13,23 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>运行 Gatekeeper | Phala Network 百科</title><meta property="og:title" content="运行 Gatekeeper" />
-<meta property="og:description" content="这份教程将指导您如何安装 Phala 验证人节点。
-运行守门人节点之前 配置要求 以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。
-交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 最低需求，但更低的配置不能保证稳定的运行。
-标准硬件 完整的细节可以参考这里。
- CPU：英特尔6代或更新的CPU，需支持SGX，至少双核心 内存：8GB（最低 2 G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  此外，网络条件非常重要，其他参数次之。我们强烈建议您在网络良好的地方运行守门人节点。关于如何确定自己的电脑是否支持 SGX ，Phala 为您准备了详细的SGX测试教程，可点击链接观看。
-安装 Intel SGX 驱动与平台软件 可以从 官方下载页面 找到最新的 Linux SGX 相关软件下载。确保系统中安装了如下软件：
- SGX Linux DCAP 驱动 SGX Linux SDK (安装至 /opt 目录) SGX PSW (平台软件)  具体安装方法请参见 Intel 官方指南。也可以参考 Teaclave SGX SDK 提供的 Dockerfile 来安装 SDK 和 PSW 套件。虽然在 Docker 内运行 SGX 应用是的确可行的，但我们暂时还没有提供任何指南可供参考。此外，驱动必须直接原生地安装在宿主机上。" />
+<meta property="og:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1 2 3 4 5  cd ~/phala sudo cp ./poc3_validator.service /etc/systemd/system sudo systemctl enable poc3_validator.service sudo systemctl start poc3_validator.service sudo vim validator.sh   再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/" />
 <meta property="article:published_time" content="2020-07-10T01:16:05+08:00" />
 <meta property="article:modified_time" content="2020-07-10T01:16:05+08:00" /><meta property="og:site_name" content="Phala Network 百科" />
 <meta itemprop="name" content="运行 Gatekeeper">
-<meta itemprop="description" content="这份教程将指导您如何安装 Phala 验证人节点。
-运行守门人节点之前 配置要求 以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。
-交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 最低需求，但更低的配置不能保证稳定的运行。
-标准硬件 完整的细节可以参考这里。
- CPU：英特尔6代或更新的CPU，需支持SGX，至少双核心 内存：8GB（最低 2 G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  此外，网络条件非常重要，其他参数次之。我们强烈建议您在网络良好的地方运行守门人节点。关于如何确定自己的电脑是否支持 SGX ，Phala 为您准备了详细的SGX测试教程，可点击链接观看。
-安装 Intel SGX 驱动与平台软件 可以从 官方下载页面 找到最新的 Linux SGX 相关软件下载。确保系统中安装了如下软件：
- SGX Linux DCAP 驱动 SGX Linux SDK (安装至 /opt 目录) SGX PSW (平台软件)  具体安装方法请参见 Intel 官方指南。也可以参考 Teaclave SGX SDK 提供的 Dockerfile 来安装 SDK 和 PSW 套件。虽然在 Docker 内运行 SGX 应用是的确可行的，但我们暂时还没有提供任何指南可供参考。此外，驱动必须直接原生地安装在宿主机上。">
+<meta itemprop="description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1 2 3 4 5  cd ~/phala sudo cp ./poc3_validator.service /etc/systemd/system sudo systemctl enable poc3_validator.service sudo systemctl start poc3_validator.service sudo vim validator.sh   再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.">
 <meta itemprop="datePublished" content="2020-07-10T01:16:05+08:00" />
 <meta itemprop="dateModified" content="2020-07-10T01:16:05+08:00" />
-<meta itemprop="wordCount" content="527">
+<meta itemprop="wordCount" content="443">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="运行 Gatekeeper"/>
-<meta name="twitter:description" content="这份教程将指导您如何安装 Phala 验证人节点。
-运行守门人节点之前 配置要求 以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。
-交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 最低需求，但更低的配置不能保证稳定的运行。
-标准硬件 完整的细节可以参考这里。
- CPU：英特尔6代或更新的CPU，需支持SGX，至少双核心 内存：8GB（最低 2 G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  此外，网络条件非常重要，其他参数次之。我们强烈建议您在网络良好的地方运行守门人节点。关于如何确定自己的电脑是否支持 SGX ，Phala 为您准备了详细的SGX测试教程，可点击链接观看。
-安装 Intel SGX 驱动与平台软件 可以从 官方下载页面 找到最新的 Linux SGX 相关软件下载。确保系统中安装了如下软件：
- SGX Linux DCAP 驱动 SGX Linux SDK (安装至 /opt 目录) SGX PSW (平台软件)  具体安装方法请参见 Intel 官方指南。也可以参考 Teaclave SGX SDK 提供的 Dockerfile 来安装 SDK 和 PSW 套件。虽然在 Docker 内运行 SGX 应用是的确可行的，但我们暂时还没有提供任何指南可供参考。此外，驱动必须直接原生地安装在宿主机上。"/>
+<meta name="twitter:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1 2 3 4 5  cd ~/phala sudo cp ./poc3_validator.service /etc/systemd/system sudo systemctl enable poc3_validator.service sudo systemctl start poc3_validator.service sudo vim validator.sh   再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -124,38 +106,40 @@
       <section class="subsection" id="docs-守门人教程">
         <h3 class="section_link active"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#运行守门人节点之前">运行守门人节点之前</a>
+    <li><a href="#配置要求">配置要求</a>
       <ul>
-        <li><a href="#配置要求">配置要求</a>
-          <ul>
-            <li><a href="#标准硬件">标准硬件</a></li>
-          </ul>
-        </li>
-        <li><a href="#安装-intel-sgx-驱动与平台软件">安装 Intel SGX 驱动与平台软件</a></li>
-        <li><a href="#安装-phala-node-可执行程序">安装 <code>phala-node</code> 可执行程序</a></li>
-        <li><a href="#同步链上数据">同步链上数据</a></li>
+        <li><a href="#硬件">硬件</a></li>
+        <li><a href="#软件">软件</a></li>
       </ul>
     </li>
-    <li><a href="#抵押-pha">抵押 PHA</a></li>
-    <li><a href="#设置-session-密钥">设置 Session 密钥</a>
+    <li><a href="#同步链上数据">同步链上数据</a></li>
+    <li><a href="#抵押pha和设置-session-key">抵押PHA和设置 Session Key</a>
       <ul>
-        <li><a href="#生成-session-密钥">生成 Session 密钥</a>
+        <li><a href="#抵押-pha">抵押 PHA</a></li>
+        <li><a href="#获取-session-密钥">获取 Session 密钥</a>
           <ul>
             <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
             <li><a href="#方法2-cli">方法2: CLI</a></li>
           </ul>
         </li>
-        <li><a href="#提交-setkeys-交易">提交 <code>setKeys</code> 交易</a></li>
+        <li><a href="#提交session-key">提交Session Key</a></li>
       </ul>
     </li>
-    <li><a href="#注册-tee-设备">注册 TEE 设备</a></li>
-    <li><a href="#开启验证">开启验证</a></li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
-    <li><a href="#faq">FAQ</a>
+    <li><a href="#启动-pruntime">启动 pRuntime</a>
       <ul>
-        <li><a href="#为什么我同步的时候一直显示-0-peers">为什么我同步的时候一直显示 0 peers？</a></li>
-        <li><a href="#怎么清除链上数据">怎么清除链上数据？</a></li>
-        <li><a href="#有没有-docker-部署教程">有没有 Docker 部署教程</a></li>
+        <li>
+          <ul>
+            <li><a href="#dcap-驱动">DCAP 驱动：</a></li>
+            <li><a href="#sgx-驱动">SGX 驱动：</a></li>
+            <li><a href="#不知道自己的驱动是什么">不知道自己的驱动是什么：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#启动-phost">启动 pHost</a></li>
+    <li><a href="#启动守门人身份"><strong>启动守门人身份</strong></a>
+      <ul>
+        <li><a href="#技术支持">技术支持</a></li>
       </ul>
     </li>
   </ul>
@@ -190,32 +174,49 @@
 
   </div>
   <section class="content">
-    <h1>运行 Gatekeeper</h1><p>这份教程将指导您如何安装 Phala 验证人节点。</p>
-<h2 id="运行守门人节点之前">运行守门人节点之前</h2>
-<h3 id="配置要求">配置要求</h3>
-<p>以下所有教程均基于 Ubuntu 18.04，但理论上其他操作系统也遵循类似的要求与操作规范。</p>
-<p>交易的权重取决于 Phala Network 在标准硬件上的性能基准测试得来。因此我们推荐在标准硬件或更好配置的机器上运行守门人节点，以满足性能要求。下面描述的并不是运行节点的 <em>最低需求</em>，但更低的配置不能保证稳定的运行。</p>
-<h4 id="标准硬件">标准硬件</h4>
-<p>完整的细节可以参考<a href="https://github.com/paritytech/substrate/pull/5848">这里</a>。</p>
+    <h1>运行 Gatekeeper</h1><h2 id="配置要求">配置要求</h2>
+<h3 id="硬件">硬件</h3>
 <ul>
-<li><strong>CPU</strong>：英特尔6代或更新的CPU，需支持SGX，至少双核心</li>
-<li><strong>内存</strong>：8GB（最低 2 G）</li>
+<li><strong>CPU</strong>：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片</li>
+<li><strong>内存</strong>：2G（最好8G）</li>
 <li><strong>磁盘空间</strong>：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）</li>
 </ul>
-<p>此外，<strong>网络条件</strong>非常重要，其他参数次之。我们强烈建议您在网络良好的地方运行守门人节点。关于如何确定自己的电脑是否支持 SGX ，Phala 为您准备了详细的<a href="https://shimo.im/docs/GVc6vTykhrVcYD9P/">SGX测试教程</a>，可点击链接观看。</p>
-<h3 id="安装-intel-sgx-驱动与平台软件">安装 Intel SGX 驱动与平台软件</h3>
-<p>可以从 <a href="https://01.org/intel-software-guard-extensions/downloads">官方下载页面</a> 找到最新的 Linux SGX 相关软件下载。确保系统中安装了如下软件：</p>
+<h3 id="软件">软件</h3>
 <ul>
-<li>SGX Linux DCAP 驱动</li>
-<li>SGX Linux SDK (安装至 <code>/opt</code> 目录)</li>
-<li>SGX PSW (平台软件)</li>
+<li><strong>系统</strong>：Ubuntu 18.04 / 20.04</li>
+<li><strong><a href="https://www.yuque.com/fagephalanetwork/miner/hyrrwa">安装 Docker-CE</a></strong></li>
+<li><strong><a href="https://www.yuque.com/fagephalanetwork/miner/yylp17">安装并启动 SGX 驱动</a></strong></li>
+<li><strong>网络环境</strong>：建议使用一级运营商的网络，有公网更好。</li>
 </ul>
-<p>具体安装方法请参见 Intel 官方指南。也可以参考 Teaclave SGX SDK 提供的 <a href="https://github.com/apache/incubator-teaclave-sgx-sdk/blob/253b3ac982b2d09d32f5fa5a2011e3c36bcbed1e/dockerfile/Dockerfile.1804.nightly">Dockerfile</a> 来安装 SDK 和 PSW 套件。虽然在 Docker 内运行 SGX 应用是的确可行的，但我们暂时还没有提供任何指南可供参考。此外，驱动必须直接原生地安装在宿主机上。</p>
-<h3 id="安装-phala-node-可执行程序">安装 <code>phala-node</code> 可执行程序</h3>
-<p>你可以直接从 Phala Network 的 <a href="https://github.com/Phala-Network/phala-blockchain/releases">Github 发布页面</a> 下载 <code>phala-node</code> 可执行程序。</p>
-<p>也可以直接从 <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> 代码库的 <strong>master分支</strong> 上直接编译 <code>phala-node</code>。你可以参照 <a href="/zh-cn/docs/poc2/run-a-full-node/">运行全节点</a> 教程中的步骤编译节点：</p>
+<br>
+<h2 id="同步链上数据">同步链上数据</h2>
+<ol>
+<li>下载 Phala Gatekeeper <a href="https://drive.google.com/file/d/1lIuB_PI-GTRrPISIyS8mPkjCQle213GR/view?usp=sharing">资源包</a>。</li>
+<li>将该文件放到 /home（家） 文件夹内。</li>
+<li>输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 <code>a</code> ，进入可编辑的状态）。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/phala
+sudo cp ./poc3_validator.service /etc/systemd/system
+sudo systemctl <span class="nb">enable</span> poc3_validator.service
+sudo systemctl start poc3_validator.service
+sudo vim validator.sh
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>再次确认当前输入法为英文输入法。按下 <code>ESC</code> 再按 <code>Shift</code> + <code>;</code> ，底部出现光标，输入 <code>wq</code> ，回车保存退出；</li>
+<li>打开 <a href="https://telemetry.polkadot.io/#list/Phala%2520PoC-3">https://telemetry.polkadot.io/#list/Phala%20PoC-3</a> ，点击 <code>BEST BLOCK</code> 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。</li>
+</ol>
 <blockquote>
-<p>注意：如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为
+<p>也可以直接从 <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> 代码库的 <strong>master分支</strong> 上直接编译 <code>phala-node</code>。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为
 <code>git clone git@github.com/Phala-Network/phala-blockchain.git</code>.</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -234,7 +235,7 @@
   cargo build --release
 </code></pre></td></tr></table>
 </div>
-</div><p>这一步会比较消耗时间（大约 10 - 40 分钟，取决于硬件配置）。</p>
+</div><p>这一步会比较消耗时间（大约 10 - 40 分钟，取决于硬件配置和网速）。</p>
 <blockquote>
 <p>如果你在编译的时候遇到编译错误，就可能需要切换到一个稍旧一点的 Nightly Rust 版本，可以通过以下命令实现：</p>
 <div class="highlight"><div class="chroma">
@@ -246,22 +247,21 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">rustup install nightly-2020-11-10
 rustup override <span class="nb">set</span> nightly-2020-11-10
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-05-15
 </code></pre></td></tr></table>
 </div>
-</div></blockquote>
-<p>如果你希望在本地生成密钥，也可以在同一目录下安装 <code>subkey</code>。如果想进一步提高安全性，则可以把编译好的 <code>subkey</code> 程序发送到一台全新且断网的电脑上进行操作。</p>
+</div><p>如果你希望在本地生成密钥，也可以在同一目录下安装 <code>subkey</code>。如果想进一步提高安全性，则可以把编译好的 <code>subkey</code> 程序发送到一台全新且断网的电脑上进行操作。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">cargo install --force --git https://github.com/paritytech/substrate subkey
+<pre class="chroma"><code class="language-sh" data-lang="sh">cargo install --force --git https://github.com/paritytech/substrate &gt; subkey
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="同步链上数据">同步链上数据</h3>
+</div></blockquote>
+<p>默认情况下，Gatekeeper节点处于归档模式(Archive)。 如果您以非归档模式同步了链上数据，需要先使用 <code>phala-node purge-chain</code> 删除数据库，然后启用 <code>--pruning=archive</code> 命令行选项。</p>
 <blockquote>
-<p><strong>注意</strong>：默认情况下，Gatekeeper节点处于归档模式(Archive)。 如果您以非归档模式同步了链上数据，需要先使用 <code>phala-node purge-chain</code> 删除数据库，然后启用 <code>--pruning=archive</code> 命令行选项。</p>
 <p>您可以使用以下指令在非归档模式下运行 Gatekeeper 节点：<code>-unsafe-pruning --pruning &lt;块数&gt;</code>。但是请注意，归档节点和非归档节点的数据库彼此不兼容。要进行切换，需要清除链上数据。</p>
 </blockquote>
 <p>如果你不想立即以守门人模式启动节点，可以运行以下指令同步节点：</p>
@@ -270,38 +270,28 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./phala-node --pruning<span class="o">=</span>archive
+<pre class="chroma"><code class="language-bash" data-lang="bash">./phala-node --pruning<span class="o">=</span>archive
 </code></pre></td></tr></table>
 </div>
-</div><p><code>--validator</code> 和 <code>--sentry</code> 选项中已经包含了 <code>--pruning=archive</code> 选项。所以，只有在没有启用上述选项的情况下，才需要特殊指定该选项。如果你没有运行存档节点，或未以守门人、哨兵身份运行节点，当你切换的时候，需要重新同步数据库。</p>
-<blockquote>
-<p><strong>注意</strong>：守门人需要用 RocksDb 后端进行同步。RocksDb 是一个默认设置，但可以用 <code>--database RocksDb</code> 选项来明确声明。将来，我们建议使用更快和更高效的 ParityDb。在不同数据库后端之间切换，同样也需要重新同步。</p>
+</div><blockquote>
+<p><code>--validator</code> 和 <code>--sentry</code> 选项中已经包含了 <code>--pruning=archive</code> 选项。所以，只有在没有启用上述选项的情况下，才需要特殊指定该选项。如果你没有运行存档节点，或未以守门人、哨兵身份运行节点，当你切换的时候，需要重新同步数据库。</p>
+<p>*守门人需要用 RocksDb 后端进行同步。RocksDb 是一个默认设置，但可以用 <code>--database RocksDb</code> 选项来明确声明。将来，我们建议使用更快和更高效的 ParityDb。在不同数据库后端之间切换，同样也需要重新同步。</p>
 <p>如果你现在就想测试 ParityDB，可以开启 <code>--database paritydb</code> 参数。</p>
+<p>在主网“软启动”的过程中（测试网络不受此影响），如果你没有 PHA 代币，基本上就只能跟着教程做到这一步了。你可以运行一个节点，但接下来的操作必须有一定的 PHA 才可以继续。由于在“软启动”过程中，PHA 的转账还是禁用状态，你无法接受别人的转账从而得到 PHA 代币。此时，即使拥有 PHA 且参与守门人抵押，也只是表明了自己成为守门人的 <em>意愿</em>，直到 NPoS 阶段启用才会真正开始选举。</p>
 </blockquote>
-<p>同步时间跟区块链的大小有关，可能需要几分钟到几小时不等。</p>
-<p>如果你想知道同步具体需要多少时间，可以查看服务器日志，上面记录了最新被打包和验证的区块编号。将其与 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Telemetry</a> 和 <a href="https://app.phala.network/#/explorer">Phala Web App</a> 上的最新区块高度做一个对比即可推算出大致需要的同步时间。</p>
-<blockquote>
-<p><strong>注意：</strong> 在主网“软启动”的过程中（测试网络不受此影响），如果你没有 PHA 代币，基本上就只能跟着教程做到这一步了。你可以运行一个节点，但接下来的操作必须有一定的 PHA 才可以继续。由于在“软启动”过程中，PHA 的转账还是禁用状态，你无法接受别人的转账从而得到 PHA 代币。此时，即使拥有 PHA 且参与守门人抵押，也只是表明了自己成为守门人的 <em>意愿</em>，知道 NPoS 阶段启用才会真正开始选举。</p>
-</blockquote>
-<h2 id="抵押-pha">抵押 PHA</h2>
-<p>我们强烈建议将 Controllor 账号和 Stash 账号设置成两个账号。所以，请创建<strong>两个</strong>账号，并在两个账号上都留有一定资金用以支付交易手续费。而后将大部分资金存入 Stash 账号。</p>
-<p>请务必注意留一点资金用作交易手续费，不要绑定所有的资金。</p>
-<p>现在可以开始设置守门人。进行如下操作：</p>
-<ul>
-<li>绑定 Stash 账号的 PHA 。<strong>这个账号将负责保管你的保证金。</strong></li>
-<li>选择 Controllor 账号。<strong>这个账号将用于开启或暂停守门人的验证行为。</strong></li>
-</ul>
-<p>首先，点击 <code>质押</code> &gt; <code>Account Actions</code> &gt; <code>Stash</code> （按照截图进行操作）。</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-bonding.jpg" alt="dashboard bonding"></p>
-<ul>
-<li><strong>Stash account</strong>：选择你的 Stash 账号。这个账号上需要至少留有 100 milli PHA。当然，你也可以多留一些。</li>
-<li><strong>Controller account</strong>：选择之前创建的 Controller 账号，这个账号上也需要保留一点 PHA 用于后续支付手续费。</li>
-<li><strong>Value bonded</strong>：在这里输入你想抵押的金额。再次提醒，<strong>请不要绑定你所有的PHA</strong>。之后，你随时可以追加押金，但取回押金有一定冷冻期。冷冻期在 Phala Network 上是 7 天。</li>
-<li><strong>Payment destination</strong>: 选择你打算用来收取收益的账号。详情可 <a href="https://wiki.polkadot.network/en/latest/polkadot/learn/staking/#reward-distribution">点此</a> 了解更多。</li>
-</ul>
-<p>然后点击 <code>Bond</code>，使用你的 Stash 账号签名并广播交易。</p>
-<p>稍候片刻，页面中就会跳出 <code>ExtrinsicSuccess</code> 的通知。刷新后，页面上会出现一个新卡片，在这里你可以看见自己抵押的 PHA 数量。</p>
-<h2 id="设置-session-密钥">设置 Session 密钥</h2>
+<br>
+<h2 id="抵押pha和设置-session-key">抵押PHA和设置 Session Key</h2>
+<h3 id="抵押-pha">抵押 PHA</h3>
+<ol>
+<li>注册两个账号，并在两个账号上都留有一定资金用以支付交易手续费。而后将大部分资金存入 Stash 账号。Stash 账号将负责保管保证金，而controller账号则类似一个负责开启或关闭身份的开关。</li>
+<li>点击  <code>网络</code> — <code>质押</code> — <code>账户操作</code> — <code>存储账户</code></li>
+<li>第一排选 Stash 账号，第二排选 Controller 账号。下方输入你想抵押的金额。然后点 <code>Bond</code>。</li>
+<li>稍等片刻，就可以看见页面出现了刚刚操作的账号对。</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/1.png" alt="">
+<img src="/images/docs/gatekeeper/2.png" alt="">
+<img src="/images/docs/gatekeeper/3.png" alt=""></p>
+<h3 id="获取-session-密钥">获取 Session 密钥</h3>
 <blockquote>
 <p>注意：Session 密钥对于共识至关重要。如果不确定节点是否有密钥的话，可以使用两种方法来检查：</p>
 <ul>
@@ -309,21 +299,13 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
 <li><a href="https://polkadot.js.org/api/substrate/rpc.html#hassessionkeys-sessionkeys-bytes-bool">hasSessionKeys</a> 来查看所有的 Session 公钥</li>
 </ul>
 </blockquote>
-<p>待节点完全同步后，按Ctrl+C停止同步。现在，你可以开始以守门人身份运行节点。你的节点将使用命令行选项启用 Unsafe RPC 来进行一些高级操作。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./phala-node --validator --name <span class="s2">&#34;你的节点名&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>你可以给自己的守门人节点起一个独特又有个性的名字，这个名字将展示在 Telemetry 上。由于可能参与者比较多，因此可以选择一个独特的名字以避免重复。</p>
-<h3 id="生成-session-密钥">生成 Session 密钥</h3>
 <h4 id="方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</h4>
-<p>你可以在 App 的 PRC 模块中生成 <a href="https://wiki.polkadot.network/en/latest/polkadot/learn/keys/#session-key">Session 密钥</a>。请确保你已经在设置页面中把 PolkadotJS-Apps 指向你的守门人节点。 你可以在“设置”中自定义守门人节点的地址与端口号。但如果你连接的是官方提供的公用节点，就无法使用此功能，因为它会把 RPC 发送到 <em>公共节点</em>，而不是 <em>你的节点</em>。</p>
-<p>连上节点后，设置 Session 密钥的最简单方法就是调用 <code>author_rotateKeys</code> RPC，在守门人节点的本地密钥库中创建新密钥。选择“Toolbox” &gt; “PRC Calls”，然后选择 “Author” &gt; “ rotateKeys（）”，会返回一个如图所示的字符串。记下好返回的密钥即可。</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-explorer-rotatekeys-rpc.jpg" alt="Explorer RPC call"></p>
+<ol>
+<li>点击左上角的 <code>logo</code> — <code>DEVELOPMENT</code>，在 <code>custom endpoint</code> 里把端口替换为 <code>ws://127.0.0.1:9944</code> ，然后点 <code>Switch</code>。</li>
+<li>点 <code>开发者</code> — <code>RPC Calls</code> ，下面的模块选 <code>author</code> — <code>rotateKeys()</code>，点提交 <code>RPC 调用</code>，就会获得一串数字。</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/4.png" alt="">
+<img src="/images/docs/gatekeeper/5.png" alt=""></p>
 <h4 id="方法2-cli">方法2: CLI</h4>
 <p>如果你在远端服务器上运行守门人节点，可能运行这个指令会更简单（假设你没有修改默认 HTTP PRC 端口号）：</p>
 <div class="highlight"><div class="chroma">
@@ -331,84 +313,82 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">curl -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;id&#34;:1, &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;method&#34;: &#34;author_rotateKeys&#34;, &#34;params&#34;:[]}&#39;</span> http://localhost:9933
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;id&#34;:1, &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;method&#34;: &#34;author_rotateKeys&#34;, &#34;params&#34;:[]}&#39;</span> http://localhost:9933
 </code></pre></td></tr></table>
 </div>
-</div><p>它会返回一个十六进制编码的 “result” 字段，由4个公钥串联而成。记下即可。</p>
-<p>现在，你可以重启节点并且去掉 <code>--unsafe-rpc-expose</code> 选项，此后就不再需要这个选项。</p>
-<h3 id="提交-setkeys-交易">提交 <code>setKeys</code> 交易</h3>
-<p>你需要提交一个交易并签名，来向区块链提交你的 Session 密钥（公钥），他实现了守门人节点和你的 Controller 账号的关联。</p>
-<ul>
-<li>点击 <a href="https://app.phala.network/#/staking/actions">质押 &gt; Account Actions</a></li>
-<li>然后在之前生成的绑定帐户上单击 <code>Set Session Key</code></li>
-<li>输入 <code>author_rotateKeys</code> 返回的结果</li>
-<li>点击 <code>Set Session Key</code> 。</li>
-</ul>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/set-session-key-1.jpg" alt="staking-change-session">
-<img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/set-session-key-2.jpg" alt="staking-session-result"></p>
-<p>现在，你可以开始运行守门人身份了。</p>
-<h2 id="注册-tee-设备">注册 TEE 设备</h2>
-<p>守门人利用 TEE 管理 Phala Network 中的密钥。在开始启用验证前，你需要在为守门人账号注册 TEE 硬件。在守门人运行的整个生命周期之中，TEE 设备都需要时刻保持与区块链相连，来支持网络上的各种活动。</p>
-<p>TEE 模块由 <code>pHost</code> 与 <code>pRuntime</code> 构成。可以在我们的 Github <a href="https://github.com/Phala-Network/phala-blockchain/releases">发布页</a> 中的 <code>tee-release.zip</code> 文件中找到最新的预编译程序。当然，也可以自行编译。</p>
-<p>假设你已经解压了预编译的程序，并且已经运行了一个同步好的 <code>phala-node</code>，就可以采用以下步骤在链上注册你的 TEE 设备：</p>
+</div><p>它会返回一个十六进制编码的 “result” 字段，由4个公钥串联而成。记下即可。
+现在，你可以重启节点并且去掉 <code>--unsafe-rpc-expose</code> 选项，此后就不再需要这个选项。</p>
+<h3 id="提交session-key">提交Session Key</h3>
 <ol>
-<li>启动 pRuntime: <code>./app</code></li>
-<li>设好命令行参数并启动 pHost:</li>
+<li>返回 <code>网络</code> — <code>质押</code> — <code>账户操作</code>，在刚刚生成的账户对旁边点击 Session 密钥 ，把刚刚生成的数字填进来。</li>
+<li>点击 <code>开发者</code> — <code>交易</code> ，第一排选择你的 stash 账号，第二排选择 <code>phalaModule</code> — <code>setStash(controller)</code>，第三排选择你的 controller ，最后点 <code>submit Transaction</code>（两个按钮中右边的那一个）。</li>
 </ol>
-<pre><code>./phost \
-      --mnemonic '&lt;你的 Controller 账号私钥助记词&gt;' \
-      --no-sync \
-      --no-write-back \
-      --remote-attestation \
-      --substrate-ws-endpoint 'ws://localhost:9944'
-</code></pre><p>这一步需要指定 Controller 的私钥助记词，因为 <code>phost</code> 会以 Controller 的身份发送一笔交易到链上，来注册 TEE 设备。</p>
-<p>预编译的发布包中也包含了一个脚本文件 <code>bridge.sh</code>，作为以上方法的替代，可以较为方便的启动 <code>phost</code>。你可以在脚本中设置私钥，就不用每次启动都输入一次。</p>
-<blockquote>
-<p>注意：在 Phala Network Testnet PoC-2 中，TEE 只需要进行一次注册即可。<code>phost</code> 会在成功注册后自动退出。但是在未来的正式主网上线后，只要节点还在以守门人身份运行， TEE 组件就需要时刻保证在线，因为在完整的生命周期中 TEE 都需要对网络提供不间断的支持。</p>
-</blockquote>
-<h2 id="开启验证">开启验证</h2>
-<p>可以通过 <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-2">Telemetry</a> 查看自己的节点是否在线且完成同步。Telemetry 将显示所有在线的节点，因此，有一个个性的名字会帮助您更快找到您的节点 :)</p>
-<p>如果一切正常，请在 Phala Network UI 中点击 <code>Validate</code> 。</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-validate.jpg" alt="dashboard validate">
-<img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-validate-modal.jpg" alt="dashboard validate"></p>
+<p><img src="/images/docs/gatekeeper/6.png" alt=""></p>
+<p><img src="/images/docs/gatekeeper/7.png" alt=""></p>
+<br>
+<h2 id="启动-pruntime">启动 pRuntime</h2>
+<ol>
+<li>输入以下指令拉取 pRuntime 镜像。根据网速不同，这一步可能需要 30~60 分钟。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo docker pull phalanetwork/phala-poc3-pruntime
+</code></pre></td></tr></table>
+</div>
+</div><p>``</p>
+</li>
+<li>根据你的驱动型号，输入对应的指令启动 pRuntime 容器。</li>
+</ol>
+<h4 id="dcap-驱动">DCAP 驱动：</h4>
+<pre><code>```bash
+sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pruntime-data:/root/data --device /dev/sgx/enclave --device /dev/sgx/provision phalanetwork/phala-poc3-pruntime
+```
+</code></pre>
+<h4 id="sgx-驱动">SGX 驱动：</h4>
+<pre><code>```bash
+sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pruntime-data:/root/data --device /dev/isgx phalanetwork/phala-poc3-pruntime
+```
+</code></pre>
+<h4 id="不知道自己的驱动是什么">不知道自己的驱动是什么：</h4>
 <ul>
-<li>收款偏好设置：在此设置你想保留的奖励百分比作为手续费，而剩余的部分将由您和提名人共享。</li>
+<li>输入 ls /dev/isgx 有返回：<strong>SGX 驱动</strong></li>
+<li>输入 ls /dev/sgx 有返回：<strong>DCAP 驱动</strong></li>
+<li>如果两个驱动都有，则运行 DCAP 驱动的命令。</li>
+<li>如果两个驱动都没有，请参考<a href="https://www.yuque.com/fagephalanetwork/miner/yylp17">这个教程</a>安装驱动。</li>
 </ul>
-<p>点击 <code>Validate</code> 。</p>
-<blockquote>
-<p>注意: 如果你没有遵循上面的步骤注册 TEE 设备，或者注册没有成功，这一步就会执行失败。请仔细阅读 <a href="#%E6%B3%A8%E5%86%8C-tee-%E8%AE%BE%E5%A4%87">注册 TEE 设备</a> 一节，确保 Controller 账号已经与 TEE 成功关联。</p>
-</blockquote>
-<p>进入 <code>质押</code> 页面就可以看到所有正在运行的守门人。同时也可以在页面的顶端看到，目前守门人席位还有多少，以及多少节点正在申请成为守门人。点击 <code>Waiting</code> 可以查看您的节点是否仍在候选列表之中。</p>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-dashboard-staking.jpg" alt="staking queue"></p>
-<p>被选中的守门人不是一成不变的。每一个区块 Era 都会刷新。如果你已经通过投票算法入选守门人，但目前没有空位但，而下个 Era 有了空位，你将在下个 Era 自动成为守门人。在那之前，你将处于 <em>候选状态</em>。如果这一轮没有入选，则你将处于 <em>候选状态</em>。可以试试抵押更多 PHA 或招募更多提名人以提高排名。</p>
-<p><strong>恭喜!</strong> 如果你已经按照以上步骤操作并入选，你就成功成为了一个 Phala Network 守门人! 如果需要任何帮助，可以加入我们的
-<a href="https://t.me/phalanetwork">Phala Network Telegram 群组</a>.</p>
-<h2 id="参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</h2>
-<p>为了参加测试网络 PoC-2 的活动，我们要求运行节点的时候按照以下格式设置自己的名字：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">./phala-node --name <span class="s2">&#34;名字 | Controller地址&#34;</span> &lt;...其他参数&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>详情请见<a href="/zh-cn/docs/poc2/run-a-full-node/">运行全节点</a> 教程中的同名章节。</p>
-<h2 id="faq">FAQ</h2>
-<h3 id="为什么我同步的时候一直显示-0-peers">为什么我同步的时候一直显示 0 peers？</h3>
-<p><img src="https://wiki.polkadot.network/docs/assets/guides/how-to-validate/polkadot-zero-peer.jpg" alt="zero-peer"></p>
-<p>请您检查是否启用 <code>30333</code> libp2p 端口。启用后，需要再等待一段时间来发现新的节点。</p>
-<h3 id="怎么清除链上数据">怎么清除链上数据？</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./phala-node purge-chain
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="有没有-docker-部署教程">有没有 Docker 部署教程</h3>
-<p>正在准备中。</p>
+<br>
+<h2 id="启动-phost">启动 pHost</h2>
+<ol>
+<li>输入vim runphost.sh 进入一个子页面。</li>
+<li>确认当前输入法为英文输入法，按下 <code>a</code> ，看到底部出现 <code>INSERT</code> 字样，即可进入编辑状态。</li>
+<li>把所有 Key Key Key 的字符替换成自己的 controller 助记词。</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/8.png" alt=""></p>
+<ol start="4">
+<li>再次确认当前输入法为英文输入法，按下 <code>ESC</code> 再按 <code>Shift</code> + <code>;</code> ，底部出现光标，输入 <code>wq</code> ，回车保存退出；</li>
+<li>输入 <code>./runphost.sh</code> （句号前面没有空格），稍等一下，直到末尾显示 <code>OK(())</code>。</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/9.png" alt="">
+<img src="/images/docs/gatekeeper/10.png" alt=""></p>
+<p><strong>如果这里报错如下：</strong>
+<code>FailedToCallRegisterWorker: Err(Rpc(Request(Error { code: ServerError(1010), message: &quot;Invalid Transaction&quot;, data: Some(String(&quot;Inability to pay some fees (e.g. account balance too low)&quot;)) }))) bridge() exited with result: Err(FailedToCallRegisterWorker)</code></p>
+<p><strong>说明是助记词不对，或者你第三步没有做完（需要在</strong> <strong>staking</strong> <strong>界面和</strong> <strong>extrinsics</strong> <strong>界面都操作完成）。</strong></p>
+<p><strong>如果助记词不对，可以****直接</strong> <strong>vim runphost.sh</strong> <strong>进去按照刚刚步骤修改助记词。</strong></p>
+<br>
+<h2 id="启动守门人身份"><strong>启动守门人身份</strong></h2>
+<ol>
+<li>去到<code>质押</code>—<code>账户操作</code>板块，传送门：<a href="https://poc3.phala.network/?rpc=wss%3A%2F%2Fpoc3.phala.network%2Fws#/staking/actions">https://poc3.phala.network/?rpc=wss%3A%2F%2Fpoc3.phala.network%2Fws#/staking/actions</a></li>
+<li>点击你绑定好的账号旁边的 <code>Validate</code>。之后按照引导提交 validate 请求。</li>
+<li>等进入下一个 Epoch 的时候，就可以看到你的守门人在 Waiting 列表里了。</li>
+</ol>
+<p><img src="/images/docs/gatekeeper/11.png" alt="">
+<img src="/images/docs/gatekeeper/12.png" alt="">
+<img src="/images/docs/gatekeeper/13.png" alt=""></p>
+<br>
+<h3 id="技术支持">技术支持</h3>
+<p><a href="https://mp.weixin.qq.com/s/j0ggxgvwqCeNO6v0mgHkzw"><img src="https://img.shields.io/badge/Join-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen" alt=""></a></p>
 
     <div class="pager pager_lean">
   
@@ -452,7 +432,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-11-10
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.48361fe58ad10d68d02918a846dd2944b9d33640652c472c9ceefa1d542a25b38210b440724b8952231bfaa3c208314beedf621f1c56a826bada395a66cd2144.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.9b3a9c9183408117f568858c48530753e942ce14bf0e25e6d8cfa0b910fb86cd164fbf3ceba45ed96a2fb1a0eeb8579efb33b15e376851d255657a4f0d7ff843.js" async defer></script>
 
 </body>
 </html>

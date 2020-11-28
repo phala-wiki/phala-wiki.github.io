@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,12 +13,12 @@
 <meta name="theme-color" content="#ffffff">
 
 <title>1.3 Troubleshooting | Phala Network Wiki</title><meta property="og:title" content="1.3 Troubleshooting" />
-<meta property="og:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression." />
+<meta property="og:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by Rust nightly regression." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/troubleshooting/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.3 Troubleshooting">
-<meta itemprop="description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression.">
+<meta itemprop="description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by Rust nightly regression.">
 
 <meta itemprop="wordCount" content="437">
 
@@ -27,7 +27,7 @@
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 Troubleshooting"/>
-<meta name="twitter:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by rust nightly regression."/>
+<meta name="twitter:description" content="phala-blockchain Probelm: &quot;consider giving accuracy a type&quot; when building substrate error[E0282]: type annotations needed --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9 | 541 | let accuracy = P::ACCURACY.saturated_into(); | ^^^^^^^^ consider giving `accuracy` a type ... 1604 | / implement_fixed!( 1605 | | FixedI128, 1606 | | test_fixed_i128, 1607 | | i128, ... | 1611 | | [-170141183460469231731.687303715884105728, 170141183460469231731.687303715884105727]_&quot;, 1612 | | ); | |__- in this macro invocation | = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info) This is a known issue caused by Rust nightly regression."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -162,16 +162,10 @@
       <section class="subsection" id="docs-gatekeeper-guide">
         <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#initial-set-up">Initial Set-up</a>
+    <li><a href="#setup-environment">Setup Environment</a></li>
+    <li><a href="#synchronize-chain-data">Synchronize Chain Data</a>
       <ul>
-        <li><a href="#requirements">Requirements</a>
-          <ul>
-            <li><a href="#standard-hardware">Standard Hardware</a></li>
-          </ul>
-        </li>
-        <li><a href="#install-intel-sgx-driver--platform-software">Install Intel SGX driver &amp; platform software</a></li>
-        <li><a href="#install-the-phala-node-binary">Install the <code>phala-node</code> Binary</a></li>
-        <li><a href="#synchronize-chain-data">Synchronize Chain Data</a></li>
+        <li><a href="#to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</a></li>
       </ul>
     </li>
     <li><a href="#bond-pha">Bond PHA</a></li>
@@ -183,15 +177,13 @@
             <li><a href="#option-2-cli">Option 2: CLI</a></li>
           </ul>
         </li>
-        <li><a href="#submitting-the-setkeys-transaction">Submitting the <code>setKeys</code> Transaction</a></li>
+        <li><a href="#set-your-sessions-keys">Set Your Sessions Keys</a></li>
       </ul>
     </li>
-    <li><a href="#register-tee-worker">Register TEE worker</a></li>
-    <li><a href="#validate">Validate</a></li>
-    <li><a href="#faq">FAQ</a>
+    <li><a href="#pruntime-setup">pRuntime Setup</a></li>
+    <li><a href="#phost-setup">pHost Setup</a></li>
+    <li><a href="#validate-your-gatekeeper">Validate Your Gatekeeper</a>
       <ul>
-        <li><a href="#why-am-i-unable-to-synchronize-the-chain-with-0-peers">Why am I unable to synchronize the chain with 0 peers?</a></li>
-        <li><a href="#how-do-i-clear-all-my-chain-data">How do I clear all my chain data?</a></li>
         <li><a href="#tech-support">Tech Support</a></li>
       </ul>
     </li>
@@ -349,7 +341,7 @@
        | |__- in this macro invocation
        |
        = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
-</code></pre><p>This is a <a href="https://github.com/paritytech/substrate/issues/7287">known issue</a> caused by rust nightly regression. To walkaround it, switch to an older nightly toolchain. We recommend <code>nightly-2020-09-27</code>. It can be done like below:</p>
+</code></pre><p>This is a <a href="https://github.com/paritytech/substrate/issues/7287">known issue</a> caused by Rust nightly regression. To walkaround it, switch to an older nightly toolchain. We recommend <code>nightly-2020-09-27</code>. It can be done like below:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -385,7 +377,7 @@ error: duplicate lang item in crate `std`: `oom`.
 
 error: aborting due to 6 previous errors
 </code></pre><p>This is due to accidentally introduced &quot;std&quot; dependencies. Usually there are two common causes of this error.</p>
-<p>Most likely the code has some syntax errors and cannot build. Sometimes these errors can confuse the rust compiler in &quot;no_std&quot; mode and the compiler may accidentally introduce some random dependencies, which breaks our SDK. If this is the case, scroll up and fix the other compiling errors, and then this error should disappear.</p>
+<p>Most likely the code has some syntax errors and cannot build. Sometimes these errors can confuse the Rust compiler in &quot;no_std&quot; mode and the compiler may accidentally introduce some random dependencies, which breaks our SDK. If this is the case, scroll up and fix the other compiling errors, and then this error should disappear.</p>
 <p>If fixing the other errors doesn't help, you should check if you accidentally introduce the &quot;std&quot; dependency to the runtime code. The hardware enclave sdk Phala is using doesn't allow direct or indirect &quot;std&quot; dependencies. You may consider to switch to a package that supports &quot;no_std&quot; and disable its std feature in <code>Cargo.toml</code>, or manually port the dependency package to use <code>teaclave-sgx-sdk</code>'s <code>tstd</code> instead. <code>tstd</code> is a subset of <code>std</code> but it's enough in the most cases.</p>
 <h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
 <h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</h3>
@@ -444,7 +436,7 @@ error TS6053: File '@polkadot/dev/config/tsconfig' not found.
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.48361fe58ad10d68d02918a846dd2944b9d33640652c472c9ceefa1d542a25b38210b440724b8952231bfaa3c208314beedf621f1c56a826bada395a66cd2144.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.9b3a9c9183408117f568858c48530753e942ce14bf0e25e6d8cfa0b910fb86cd164fbf3ceba45ed96a2fb1a0eeb8579efb33b15e376851d255657a4f0d7ff843.js" async defer></script>
 
 </body>
 </html>

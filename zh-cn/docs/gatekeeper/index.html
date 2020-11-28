@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -98,38 +98,40 @@
       <section class="subsection" id="docs-守门人教程">
         <h3 class="section_link"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#运行守门人节点之前">运行守门人节点之前</a>
+    <li><a href="#配置要求">配置要求</a>
       <ul>
-        <li><a href="#配置要求">配置要求</a>
-          <ul>
-            <li><a href="#标准硬件">标准硬件</a></li>
-          </ul>
-        </li>
-        <li><a href="#安装-intel-sgx-驱动与平台软件">安装 Intel SGX 驱动与平台软件</a></li>
-        <li><a href="#安装-phala-node-可执行程序">安装 <code>phala-node</code> 可执行程序</a></li>
-        <li><a href="#同步链上数据">同步链上数据</a></li>
+        <li><a href="#硬件">硬件</a></li>
+        <li><a href="#软件">软件</a></li>
       </ul>
     </li>
-    <li><a href="#抵押-pha">抵押 PHA</a></li>
-    <li><a href="#设置-session-密钥">设置 Session 密钥</a>
+    <li><a href="#同步链上数据">同步链上数据</a></li>
+    <li><a href="#抵押pha和设置-session-key">抵押PHA和设置 Session Key</a>
       <ul>
-        <li><a href="#生成-session-密钥">生成 Session 密钥</a>
+        <li><a href="#抵押-pha">抵押 PHA</a></li>
+        <li><a href="#获取-session-密钥">获取 Session 密钥</a>
           <ul>
             <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
             <li><a href="#方法2-cli">方法2: CLI</a></li>
           </ul>
         </li>
-        <li><a href="#提交-setkeys-交易">提交 <code>setKeys</code> 交易</a></li>
+        <li><a href="#提交session-key">提交Session Key</a></li>
       </ul>
     </li>
-    <li><a href="#注册-tee-设备">注册 TEE 设备</a></li>
-    <li><a href="#开启验证">开启验证</a></li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
-    <li><a href="#faq">FAQ</a>
+    <li><a href="#启动-pruntime">启动 pRuntime</a>
       <ul>
-        <li><a href="#为什么我同步的时候一直显示-0-peers">为什么我同步的时候一直显示 0 peers？</a></li>
-        <li><a href="#怎么清除链上数据">怎么清除链上数据？</a></li>
-        <li><a href="#有没有-docker-部署教程">有没有 Docker 部署教程</a></li>
+        <li>
+          <ul>
+            <li><a href="#dcap-驱动">DCAP 驱动：</a></li>
+            <li><a href="#sgx-驱动">SGX 驱动：</a></li>
+            <li><a href="#不知道自己的驱动是什么">不知道自己的驱动是什么：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#启动-phost">启动 pHost</a></li>
+    <li><a href="#启动守门人身份"><strong>启动守门人身份</strong></a>
+      <ul>
+        <li><a href="#技术支持">技术支持</a></li>
       </ul>
     </li>
   </ul>
@@ -166,30 +168,19 @@
   <section class="content">
     <h1>守门人教程</h1><h2 id="什么是守门人">什么是守门人</h2>
 <p>守门人（Gatekeeper）是对 Phala 网络至关重要的角色。守门人负责区块的打包和密钥管理，是意外情况下保证网络可用性的重要途径。守门人需要使用性能较好的设备、在网络情况良好的环境登录，且必须时刻保持在线。因此，<strong>守门人可以获得可观的收益</strong>，但同时需要对自己和提名人的PHA抵押额负责。如果因为频繁掉线或其他不良行为导致被惩罚，则无论是名誉还是PHA损失都会是巨大的。</p>
-<p>运行守门人节点，安全是第一要素。你可以查看<a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">搭建安全Polkadot验证人节点</a>查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的<a href="https://github.com/w3f/polkadot-secure-validator">验证人节点参考实现</a>（<a href="https://www.youtube.com/watch?v=tTn8P6t7JYc">此处</a>有视频教程)。在配置守门人节点的过程中，可以把这个代码库当作 <em>一个初始模版</em> ，在上面自行修改、裁剪。</p>
-<p>如果您有任何疑问，可前往 <a href="https://forum.phala.network/c/9-category/9">Phala论坛中文区</a> ，按照此 <a href="https://forum.phala.network/t/topic/461/2">模板</a> 进行提问，我们将在看到后第一时间回复您。</p>
-<h3 id="守门人需要抵押多少-pha">守门人需要抵押多少 PHA</h3>
-<p>在测试网上做守门人需要抵押 <strong>10</strong> 个测试币。</p>
-<p><a href="https://www.yuque.com/docs/share/e016c4c3-bc63-4689-920e-6f7c0434e4c0?#">点此查看如何领取测试币</a></p>
-<p>您可以在 <a href="https://wiki.polkadot.network/docs/en/faq#what-are-the-ways-to-find-out-the-minimum-stake-necessary-for-the-validators">这个页面</a> 找到估算所需 PHA 数额的方法。
-守门人将根据 <a href="https://wiki.polkadot.network/docs/en/learn-phragmen">Phragmen算法</a> 进行选举。要想入选，您和<a href="https://wiki.polkadot.network/docs/en/maintain-nominator">提名人</a>的保证金之和必须不低于其他守门人。赢得提名人的支持非常重要。此外，也要注意在您的 Stash 账号和 <a href="https://wiki.polkadot.network/docs/en/learn-keys">Controlloer 账号</a>上都要留有足够的 PHA。</p>
+<p>运行守门人节点，安全是第一要素。鉴于 Phala 采用了和 Polkadot 一样的NPoS共识机制，你可以参考<a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">“如何搭建Polkadot验证人节点”</a>查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的<a href="https://github.com/w3f/polkadot-secure-validator">验证人节点参考实现</a>（<a href="https://www.youtube.com/watch?v=tTn8P6t7JYc">Web3基金会视频教程</a>）。你可以把这个代码库当作 <code>一个初始模版</code>，根据需要自行修改相关代码。</p>
+<br>
+<h2 id="vendetta-测试网上的守门人">Vendetta 测试网上的守门人</h2>
+<p>当选守门人需要目前有守门人空位且有足够的提名人为你抵押押金。守门人空位不是无上限的，Phala 预计主网上只有 100 个守门人空位。</p>
 <blockquote>
-<p>例：</p>
-<ul>
-<li>守门人A抵押了 10 PHA 作为保证金，他的提名人为他抵押了 100 PHA。则守门人A的总保证金为 110 PHA</li>
-<li>守门人B抵押了 100 PHA，但没有提名人为他抵押</li>
-<li>入选的会是A</li>
-</ul>
+<p><strong>在当前版本，守门人名额只有 <code>21</code> 位，且当选守门人需要完成 GKOL工作坊报名：https://www.yuque.com/fagephalanetwork/vendettatutorial/llm05v</strong></p>
 </blockquote>
-<p>需要注意，一旦将您的一部分资金设为保证金，</br></p>
-<p><strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br>
-<strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br>
-<strong>它们可能会因为您的不良行为或操作不当而被罚没</strong>。</br></p>
-<p>因此再次建议您仔细阅读此篇教程的操作。</p>
-<p>此外，</p>
-<p><strong>请妥善保管您的助记词</strong>。</br>
-<strong>请妥善保管您的助记词</strong>。</br>
-<strong>请妥善保管您的助记词</strong>。</br></p>
+<p>选举为守门人所需的最低PHA是动态的，并且会随着时间而变化。这不仅取决于每个守门人被提名的PHA数量，还取决于被选中的守门人+排队中守门人的总数量。</p>
+<p>只要你收到了足够多的提名，即便这个 Era（6小时/Era） 没有空位，那么在下个 Era 你会自动入选。但如果下个 Era 仍然没有足够的人为你提名或押金不足，你将一直处在 等待 状态。你可以尝试追加绑定金，或号召更多 PHA 持有者为你提名。</p>
+<p>所有守门人的收益来自 Phala 5% 的网络通胀。在系统扣除守门人佣金后，守门人的提名人将按照提名比例共享这部分收益。需要注意的是，守门人如果表现不佳（如经常掉线），可能会被“削（Slash）”。提名人的押金也会跟着受损，所以寻找靠谱的守门人非常重要。</p>
+<br>
+<h3 id="技术支持">技术支持</h3>
+<p><a href="https://mp.weixin.qq.com/s/j0ggxgvwqCeNO6v0mgHkzw"><img src="https://img.shields.io/badge/Join-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen" alt=""></a></p>
 
     <div class="pager pager_lean">
   
@@ -224,7 +215,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.48361fe58ad10d68d02918a846dd2944b9d33640652c472c9ceefa1d542a25b38210b440724b8952231bfaa3c208314beedf621f1c56a826bada395a66cd2144.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.9b3a9c9183408117f568858c48530753e942ce14bf0e25e6d8cfa0b910fb86cd164fbf3ceba45ed96a2fb1a0eeb8579efb33b15e376851d255657a4f0d7ff843.js" async defer></script>
 
 </body>
 </html>
