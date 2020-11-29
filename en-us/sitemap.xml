@@ -38,6 +38,16 @@
   
   <url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/poc3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/poc3/"
+                />
   </url>
   
   <url>
