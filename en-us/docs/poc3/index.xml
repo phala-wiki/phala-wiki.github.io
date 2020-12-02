@@ -125,7 +125,7 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/4-faq/</guid>
-      <description>Tech Support Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
+      <description>Miner Community Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
 
 I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment. Full-node. A full node is pruned, meaning it discards all information older than 256 blocks, but keeps the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires much less space than an archive node.</description>
     </item>
