@@ -245,7 +245,11 @@
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mining-state-references">Mining State References</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
   <ul>
     <li>
@@ -269,12 +273,10 @@
         <h3 class="section_link"><a id="docs-34-check-miner-profits" href="https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/">3.4 Check Miner Profits</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-35-upgrade-miner" href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#stop-mining">Stop Mining</a></li>
-    <li><a href="#reset-docker-containers">Reset Docker Containers</a></li>
-    <li><a href="#reclaim-test-tokens">Reclaim test tokens</a></li>
-    <li><a href="#reset-miner-stash">Reset Miner Stash</a></li>
-    <li><a href="#pull-and-run-new-docker-containers">Pull and Run New Docker Containers</a></li>
-    <li><a href="#on-chain-operations">On-chain Operations</a>
+    <li><a href="#stop-mining">Stop mining</a></li>
+    <li><a href="#purge-the-docker-containers-and-local-files">Purge the docker containers and local files</a></li>
+    <li><a href="#pull-the-new-docker-image">Pull the new docker image</a></li>
+    <li><a href="#bring-up-the-full-stack">Bring up the full stack</a>
       <ul>
         <li><a href="#tech-support">Tech Support</a></li>
       </ul>
@@ -285,11 +287,49 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#get-connected">Get connected</a></li>
-        <li><a href="#q-it-says-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: It says &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
-        <li><a href="#q-it-says-permission-denied">Q: It says &quot;permission denied&quot;</a></li>
-        <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP</a></li>
-        <li><a href="#q-where-are-the-code-releases--native-build-how-can-i-run-it-natively-instead-of-using-a-docker">Q: Where are the code releases / native build? How can I run it natively instead of using a Docker?</a></li>
+        <li><a href="#tech-support">Tech Support</a></li>
+      </ul>
+    </li>
+    <li><a href="#i-glossary">I. Glossary</a></li>
+    <li><a href="#ii-setting-up-multiple-miners">II. Setting up Multiple Miners</a>
+      <ul>
+        <li><a href="#q-shall-i-set-up-multiple-full-nodes-as-well-if-i-have-several-miner-workers">Q: Shall I set up multiple full-nodes as well if I have several miner workers?</a></li>
+        <li><a href="#q-can-i-use-the-same-ip-address-if-i-have-multiple-computer">Q: Can I use the same IP address if I have multiple computer?</a></li>
+        <li><a href="#q-is-a-public-internet-ip-address-necessary-and-will-it-gain-more-points-in-mining">Q: Is a public Internet IP address necessary and will it gain more points in mining?</a></li>
+        <li><a href="#q-can-i-use-the-same-phala-account-for-multiple-miners">Q: Can I use the same Phala account for multiple miners?</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-linux-updates--sgx-driver">III. Linux Updates &amp; SGX Driver</a>
+      <ul>
+        <li><a href="#q-got-error-apt-install---fix-broken">Q: Got error: <code>apt install --fix-broken</code></a></li>
+        <li><a href="#q-got-error-need-install-curl-">Q: Got error: <code>need install curl </code></a></li>
+        <li><a href="#q-it-got-stuck-after-docker-pull-commands">Q: It got stuck after <code>docker pull...</code> commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-issues-related-to-phala-node-pruntime-phost">IV. Issues related to phala-node, pRuntime, pHost</a>
+      <ul>
+        <li><a href="#q-got-error-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: Got error &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
+        <li><a href="#q-got-error-permission-denied">Q: Got error <code>permission denied</code></a></li>
+        <li><a href="#q-got-error-docker-error-response-from-darmon-conflict-the-container-name-phala-node-is-already-in-use-by-container">Q: Got error <code>docker: Error response from darmon: Conflict. The container name &quot;/phala-node&quot; is already in use by container</code></a></li>
+        <li><a href="#q-got-errors-as-blow">Q: Got errors as blow:</a></li>
+        <li><a href="#q-got-error-devsgxenclave-no-such-file-or-directory-or-devisgx-no-such-file-or-directory">Q: Got error: <code>/dev/sgx/enclave No such file or directory</code> or <code>/dev/isgx No such file or directory</code></a></li>
+        <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP?</a></li>
+        <li><a href="#q-i-suspect-some-docker-container-dies--hangs--doesnt-run-correctly-but-how-can-i-debug">Q: I suspect some docker container dies / hangs / doesn't run correctly but how can I debug?</a></li>
+        <li><a href="#q-how-can-i-dump-the-logs-from-the-containers">Q: How can I dump the logs from the containers?</a></li>
+        <li><a href="#q-what-if-my-machine-id-is-empty-after-ive-run-all-the-commands">Q: What if my Machine ID is empty after I've run all the commands?</a></li>
+      </ul>
+    </li>
+    <li><a href="#v-operations-on-chain">V. Operations On-chain</a>
+      <ul>
+        <li><a href="#q-can-i-bond-the-controller-account-with-multiple-stash-accounts">Q: Can I bond the controller account with multiple stash accounts?</a></li>
+        <li><a href="#q-why-my-balance-didnt-change-after-i-have-started-mining">Q: Why my balance didn't change after I have started mining?</a></li>
+        <li><a href="#q-got-error-not-controller-while-setting-commission">Q: Got error <code>Not Controller</code> while setting commission</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-other">VI. Other</a>
+      <ul>
+        <li><a href="#q-i-cant-claim-test-tokens-after-clicking-click-to-burn-or-click-to-claim">Q: I can't claim test tokens after clicking <code>Click to burn</code> or <code>Click to claim</code></a></li>
+        <li><a href="#q-error-happens-when-i-tried-to-run-the-self-examination-program">Q: Error happens when I tried to run the self-examination program</a></li>
       </ul>
     </li>
   </ul>
@@ -437,7 +477,7 @@ error TS6053: File '@polkadot/dev/config/tsconfig' not found.
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.497ea453266aaaebcad2c10879d65d32d43f1e7f5023dd12e046b25bf9f9de6e798325f93b60e60bf1c5f6ce6f3eceef223106f2a0402b5a31024d850ac3c934.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.7a03b6f0924fbf8782c0db0bbbfed770eb849aa69783780ba69686b275d5714f9129a91c2a97942ef003be6921c0bcc429e2e41f587845a85ad97d382640ef23.js" async defer></script>
 
 </body>
 </html>

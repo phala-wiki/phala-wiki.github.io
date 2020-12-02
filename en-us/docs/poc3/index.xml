@@ -64,7 +64,7 @@ PLEASE follow the order of deploying the three docker containers below.
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</guid>
       <description>Go to Developer -&amp;gt; Chain state :
- Check miner score: phalaModule - &amp;gt;workerState -&amp;gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  </description>
+ Check miner score: phalaModule - &amp;gt;workerState -&amp;gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free).</description>
     </item>
     
     <item>
@@ -112,11 +112,11 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</guid>
-      <description>Stop Mining  If your miner is not in mining status, please start the upgrade from step 2.
+      <description>Stop mining  If your miner is not in mining status, feel free to skip this step.
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
   Run the following commands to kill the original containers:
-1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Reset Docker Containers   Run the commands below to remove cached data.</description>
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Purge the docker containers and local files Run the commands below to remove cached data.</description>
     </item>
     
     <item>
@@ -125,10 +125,9 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/4-faq/</guid>
-      <description>Get connected Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
- Discord #miner channel: https://discord.gg/zjdJ7d844d Telegram miner group: https://t.me/phalaminer  Q: It says &amp;quot;no such command&amp;quot; after I typed docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4 Please check the installation of Docker-CE.
-Q: It says &amp;quot;permission denied&amp;quot; Add sudo in front of your commands.
-Q: How to check if my installed driver is SGX or DCAP  Run ls /dev/isgx and if the file exists: SGX-driver Run ls /dev/sgx and if the directory exists: DCAP-driver  Q: Where are the code releases / native build?</description>
+      <description>Tech Support Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
+
+I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment. Full-node. A full node is pruned, meaning it discards all information older than 256 blocks, but keeps the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires much less space than an archive node.</description>
     </item>
     
   </channel>
