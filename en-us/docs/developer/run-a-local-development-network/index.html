@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -24,7 +24,7 @@
  Overview In this tutorial, we are going to set up a &quot;Hello World&quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
 
-<meta itemprop="wordCount" content="1739">
+<meta itemprop="wordCount" content="1828">
 
 
 
@@ -448,11 +448,13 @@ chmod +x ./sgx_linux_x64_sdk_2.12.100.3.bin
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g yarn
+yarn <span class="nb">set</span> version berry
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -519,6 +521,7 @@ yarn --version
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Clone the core blockchain repo</span>
@@ -535,10 +538,11 @@ git submodule update --init
 <span class="c1"># Update the git submodule</span>
 <span class="nb">cd</span> apps-ng/
 git submodule update --init
+<span class="nb">cd</span> ..
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
-<p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let's start to build the the core blockchain first.</p>
+<p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let's start to build the the core blockchain first. The blockchain on the <strong><code>helloworld</code> branch</strong> is based on an old version of Substrate, therefore we'll use an old version of Rust to build it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -548,18 +552,38 @@ git submodule update --init
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Build the core blockchain</span>
+rustup install nightly-2020-10-01-x86_64-unknown-linux-gnu
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-01
 <span class="nb">cd</span> phala-blockchain/
-cargo build --release
+cargo +nightly-2020-10-01 build --release
 
 <span class="c1"># Build pRuntime (TEE Enclave)</span>
 <span class="nb">cd</span> ./pruntime/
 <span class="nv">SGX_MODE</span><span class="o">=</span>SW make
 </code></pre></td></tr></table>
 </div>
-</div><p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
+</div><blockquote>
+<p><strong>Notes on Build the core blockchain</strong></p>
+<p>You would usually use the latest version of Substrate and the Rust compiler to build the core blockchain. The build would therefore be simplified to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Build the core blockchain</span>
+<span class="nb">cd</span> phala-blockchain/
+cargo build --release
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
 <ul>
 <li><code>./target/release/phala-node</code>: The Substrate node</li>
 <li><code>./target/release/phost</code>: The Substrate-to-TEE bridge relayer</li>
@@ -754,7 +778,7 @@ event - compiled successfully
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.c12794a9fcce1eb94fbaa1cceee8f925d1ee0531dc94f9cef4437e06488394990be468886105e3f6b350b27a004abb4dc30dce5dab1e137fb45a60bf46fb0e85.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.37b736fd4349ea11ea2476e9379f4d0b9c44256c2d25b336762594bcae5fa53ed3a571851d3c2b22c07336b5fa16957e618934d947a2746c1e271f14b85fd046.js" async defer></script>
 
 </body>
 </html>
