@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.79.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -22,7 +22,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
 <meta itemprop="description" content="Phala Network operates on trusted hardwares, in this case, Intel CPUs which support SGX feature. SGX was first introduced in 2015 with the sixth generation Intel Core microprocessors based on the Skylake microarchitecture. In practice, the support of SGX feature also relies on your motherboard and BIOS configurations. In this section, we will first ensure that necessary hardware requirements are satisfied and all your hardwares are correcly configured.
 General Hardware Requirements CPU Requirement You can refer to the following tutorial to ensure that your CPU is SGX-supported.">
 
-<meta itemprop="wordCount" content="1139">
+<meta itemprop="wordCount" content="1596">
 
 
 
@@ -300,6 +300,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
         <li><a href="#q-can-i-use-the-same-ip-address-if-i-have-multiple-computer">Q: Can I use the same IP address if I have multiple computer?</a></li>
         <li><a href="#q-is-a-public-internet-ip-address-necessary-and-will-it-gain-more-points-in-mining">Q: Is a public Internet IP address necessary and will it gain more points in mining?</a></li>
         <li><a href="#q-can-i-use-the-same-phala-account-for-multiple-miners">Q: Can I use the same Phala account for multiple miners?</a></li>
+        <li><a href="#q-will-there-be-a-solution-to-registering-multiple-miner-accounts-in-a-short-time">Q: Will there be a solution to registering multiple miner accounts in a short time?</a></li>
       </ul>
     </li>
     <li><a href="#iii-linux-updates--sgx-driver">III. Linux Updates &amp; SGX Driver</a>
@@ -337,6 +338,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
     </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section">
@@ -518,31 +520,99 @@ sudo ./sgx_linux_x64_driver_2.11.0_4505f07.bin
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
+aesm_service[15]: Malformed request received (May be forged for attack)
 ✔  SGX instruction set
   ✔  CPU support
   ✔  CPU configuration
   ✔  Enclave attributes
   ✔  Enclave Page Cache
   SGX features
-    ✔  SGX2  ✔  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS
+    ✘  SGX2  ✘  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS
     Total EPC size: 94.0MiB
-✔  Flexible launch control
+✘  Flexible launch control
   ✔  CPU support
   ？ CPU configuration
-  ✔  Able to launch production mode enclave
+  ✘  Able to launch production mode enclave
 ✔  SGX system software
-  ✔  SGX kernel device (/dev/sgx/enclave)
+  ✔  SGX kernel device (/dev/isgx)
   ✔  libsgx_enclave_common
   ✔  AESM service
   ✔  Able to launch enclaves
     ✔  Debug mode
-    ✔  Production mode
+    ✘  Production mode
     ✔  Production mode (Intel whitelisted)
 
+🕮  Flexible launch control &gt; CPU configuration
+Your hardware supports Flexible Launch Control, but whether it&#39;s enabled could not be determined. More information might be available by re-running this program with sudo. Would you like to do that?
+(not supported yet)
+
+debug: Error reading MSR 3Ah: Failed to load MSR kernel module
+debug: cause: Failed to load MSR kernel module
+debug: cause: Failed executing modprobe
+debug: cause: No such file or directory (os error 2)
+
+More information: https://edp.fortanix.com/docs/installation/help/#flc-cpu-configuration
+
+🕮  SGX system software &gt; Able to launch enclaves &gt; Production mode
+The enclave could not be launched. This might indicate a problem with FLC.
+
+debug: failed to load report enclave
+debug: cause: failed to load report enclave
+debug: cause: The EINITTOKEN provider didn&#39;t provide a token
+debug: cause: aesm error code GetLicensetokenError_6
+
+More information: https://edp.fortanix.com/docs/installation/help/#run-enclave-prod
+
 You&#39;re all set to start running SGX programs!
+Generated machine id:
+[162, 154, 220, 15, 163, 137, 184, 233, 251, 203, 145, 36, 214, 55, 32, 54]
+
+Testing RA...
+aesm_service[15]: [ADMIN]EPID Provisioning initiated
+aesm_service[15]: The Request ID is 09a2bed647d24f909d4a3990f8e28b4a
+aesm_service[15]: The Request ID is 8d1aa4104b304e12b7312fce06881260
+aesm_service[15]: [ADMIN]EPID Provisioning successful
+isvEnclaveQuoteStatus = GROUP_OUT_OF_DATE
+platform_info_blob { sgx_epid_group_flags: 4, sgx_tcb_evaluation_flags: 2304, pse_evaluation_flags: 0, latest_equivalent_tcb_psvn: [15, 15, 2, 4, 1, 128, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0], latest_pse_isvsvn: [0, 11], latest_psda_svn: [0, 0, 0, 2], xeid: 0, gid: 2919956480, signature: sgx_ec256_signature_t { gx: [99, 239, 225, 171, 96, 219, 216, 210, 246, 211, 20, 101, 254, 193, 246, 66, 170, 40, 255, 197, 80, 203, 17, 34, 164, 2, 127, 95, 41, 79, 233, 58], gy: [141, 126, 227, 92, 128, 3, 10, 32, 239, 92, 240, 58, 94, 167, 203, 150, 166, 168, 180, 191, 126, 196, 107, 132, 19, 84, 217, 14, 124, 14, 245, 179] } }
+advisoryURL = https://security-center.intel.com
+advisoryIDs = &#34;INTEL-SA-00219&#34;, &#34;INTEL-SA-00289&#34;, &#34;INTEL-SA-00320&#34;, &#34;INTEL-SA-00329&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
@@ -587,23 +657,23 @@ You&#39;re all set to start running SGX programs!
 <td class="lntd">
 <pre class="chroma"><code class="language-txt" data-lang="txt">Detecting SGX, this may take a minute...
 ✔  SGX instruction set
-  ✔  CPU support
-  ✔  CPU configuration
-  ✔  Enclave attributes
-  ✔  Enclave Page Cache
+  ✔  CPU support // if tagged with ❌: it does not suppoort SGX function, you would need to use other types of CPU.
+  ✔  CPU configuration // if tagged with ❌: you would need to check BIOS updates.
+  ✔  Enclave attributes // if tagged with ❌: probably caused by [CPU support issue] and [CPU configuration]
+  ✔  Enclave Page Cache // if tagged with ❌: probably caused by [CPU support issue] and [CPU configuration]
   SGX features
-    ✘  SGX2  ✘  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS
+    ✘  SGX2  ✘  EXINFO  ✘  ENCLV  ✘  OVERSUB  ✘  KSS // It&#39;s OK if SGX2 was tagged with ❌. Phala has not integrated with SGX2 technology in the current stage.
     Total EPC size: 94.0MiB
 ✘  Flexible launch control
   ✔  CPU support
-  ✘  CPU configuration
+  ✘  CPU configuration // if tagged with ❌: you can give it a try but your miner might be affected when the SGX driver upgrades in the future.
 ✔  SGX system software
   ✔  SGX kernel device (/dev/isgx)
   ✔  libsgx_enclave_common
   ✔  AESM service
   ✔  Able to launch enclaves
     ✔  Debug mode
-    ✘  Production mode
+    ✘  Production mode // if tagged with ❌: you would need to check BIOS updates.
     ✔  Production mode (Intel whitelisted)
 
 🕮  Flexible launch control &gt; CPU configuration
@@ -683,7 +753,7 @@ debug: cause: aesm error code GetLicensetokenError_6
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.37b736fd4349ea11ea2476e9379f4d0b9c44256c2d25b336762594bcae5fa53ed3a571851d3c2b22c07336b5fa16957e618934d947a2746c1e271f14b85fd046.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.00b5d69fa551b2f817fbe61f601c0817b724330ecd2ccf606bac46588f38519b908c4abff71e08c8dc79a20ad622e2a3a30b3d9e4cbc3b97bf5c2b378d34f6ad.js" async defer></script>
 
 </body>
 </html>

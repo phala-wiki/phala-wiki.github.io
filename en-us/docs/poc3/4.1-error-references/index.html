@@ -12,16 +12,28 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <meta name="theme-color" content="#ffffff">
 
-<title>Contract Development Tutorial | Phala Network Wiki</title><meta property="og:title" content="Contract Development Tutorial" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" />
+<title>4.1 Error References | Phala Network Wiki</title><meta property="og:title" content="4.1 Error References" />
+<meta property="og:description" content="Error How to Fix     No genesis block Please upgrade your miner node following these steps.   Failed to decode signature Please kindly check whether your node has finished syncing.   FailedToCallRegisterWorker You may refer to:
+1. Go to https://telemetry.polkadot.io/#list/Phala%20PoC-3 and check whether your node has finished sycning;
+2. type in sudo docker attach --sig-proxy=false --detach-keys=ctrl-c phala-pruntime to learn whether your pRuntime has been launched" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="Contract Development Tutorial">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="4.1 Error References">
+<meta itemprop="description" content="Error How to Fix     No genesis block Please upgrade your miner node following these steps.   Failed to decode signature Please kindly check whether your node has finished syncing.   FailedToCallRegisterWorker You may refer to:
+1. Go to https://telemetry.polkadot.io/#list/Phala%20PoC-3 and check whether your node has finished sycning;
+2. type in sudo docker attach --sig-proxy=false --detach-keys=ctrl-c phala-pruntime to learn whether your pRuntime has been launched">
+
+<meta itemprop="wordCount" content="160">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Contract Development Tutorial"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="4.1 Error References"/>
+<meta name="twitter:description" content="Error How to Fix     No genesis block Please upgrade your miner node following these steps.   Failed to decode signature Please kindly check whether your node has finished syncing.   FailedToCallRegisterWorker You may refer to:
+1. Go to https://telemetry.polkadot.io/#list/Phala%20PoC-3 and check whether your node has finished sycning;
+2. type in sudo docker attach --sig-proxy=false --detach-keys=ctrl-c phala-pruntime to learn whether your pRuntime has been launched"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
@@ -43,7 +55,7 @@
   <link href="//fonts.googleapis.com/css?family=Recursive:300,400,500,600|Lato:300,400,500,600" rel="stylesheet">
 
 </head>
-<body class="page-section">
+<body class="page-page">
   <header class="nav_header"><nav class="wrap nav">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture>
@@ -94,7 +106,7 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Overview</a></h2>
       <section class="subsection" id="docs-overview">
   <section class="section">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
       <section class="subsection" id="docs-contract-development-tutorial">
         <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
@@ -329,7 +341,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section">
@@ -360,8 +372,55 @@
 
   </div>
   <section class="content">
-    <h1>Contract Development Tutorial</h1>
-    <div class="pager pager_lean">
+    <h1>4.1 Error References</h1><table>
+<thead>
+<tr>
+<th><strong>Error</strong></th>
+<th><strong>How to Fix</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No genesis block</strong></td>
+<td>Please upgrade your miner node following <a href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">these steps</a>.</td>
+</tr>
+<tr>
+<td><strong>Failed to decode signature</strong></td>
+<td>Please kindly check whether your node has finished syncing.</td>
+</tr>
+<tr>
+<td><strong>FailedToCallRegisterWorker</strong></td>
+<td>You may refer to:<br />1. Go to <a href="https://telemetry.polkadot.io/#list/Phala%20PoC-3">https://telemetry.polkadot.io/#list/Phala%20PoC-3</a> and check whether your node has finished sycning;<br />2. type in <code>sudo docker attach --sig-proxy=false --detach-keys=ctrl-c phala-pruntime</code> to learn whether your pRuntime has been launched<br />3. type in <code>sudo docker logs phala-pruntime</code> to check your pRuntime logs and send them to the miner group for further tech support.</td>
+</tr>
+<tr>
+<td><strong>Bad privkey derive path</strong></td>
+<td>Please kindly check your mnemonics in <code>sudo docker run -d -ti --rm --name phala-phost -e PRUNTIME_ENDPOINT=&quot;http://IP-ADDRESS:8000&quot; -e PHALA_NODE_WS_ENDPOINT=&quot;ws://IP-ADDRESS:9944&quot; -e MNEMONIC=&quot;YOUR-CONTROLLER-MNEMONIC&quot; -e EXTRA_OPTS=&quot;-r&quot; phalanetwork/phala-poc3-phost</code></td>
+</tr>
+<tr>
+<td><strong>BlockHeaderMismatch</strong></td>
+<td>Please upgrade your miner node following <a href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">these steps</a>.</td>
+</tr>
+<tr>
+<td><strong>HyperError(hyper::error::Error)</strong><br /><strong>HttpError(hyper::http::Error)</strong><br /><strong>SubxtRpcError(subxt::Error)</strong></td>
+<td>Type in <code>sudo docker kill phala-pruntime</code> to kill your pRuntime container and re-run it according to <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/#deploying-pruntime">this section</a>.</td>
+</tr>
+<tr>
+<td><strong>ConnectionRefused</strong></td>
+<td>Please kindly check your pRuntime following the commands in <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/#deploying-pruntime">2.1 Deploy the Full Stack -&gt; Deploying pRuntime</a></td>
+</tr>
+</tbody>
+</table>
+
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="https://wiki.phala.network/en-us/docs/poc3/4-faq/" class="pager_link button" title="4 Frequently Asked Questions">
+      <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+      <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+      <span class="pager_label">4 Frequently Asked Questions</span>
+    </a>
+  </div>
   
 
   
