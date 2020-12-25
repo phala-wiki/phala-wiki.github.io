@@ -116,7 +116,7 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
   Run the following commands to kill the original containers:
-1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Purge the docker containers and local files Run the commands below to remove cached data.</description>
+1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Pull the new docker image 1 2 3  sudo docker pull phalanetwork/phala-poc3-node:latest sudo docker pull phalanetwork/phala-poc3-pruntime:latest sudo docker pull phalanetwork/phala-poc3-phost:latest   Bring up the full stack Please re-do 2-1 Deploy the Full Stack</description>
     </item>
     
     <item>
