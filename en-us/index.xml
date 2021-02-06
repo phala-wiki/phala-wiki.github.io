@@ -66,7 +66,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
-      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure all your packages are up-to-date:  1  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y   Install Docker-CE Uninstall the older versions of Docker if they exist</description>
+      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1 2  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y sudo apt install wget   Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github</description>
     </item>
     
     <item>
@@ -91,14 +91,33 @@ Tip: to better manage your stash accounts and according controller accounts, we 
     </item>
     
     <item>
-      <title>2.1 Deploy the Full Stack</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/</link>
+      <title>1.4 On-Chain Staking</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/</guid>
-      <description>WARNING: Operations at this step may reset your previous Phala blockchain data and you will need to re-deploy the docker containers. For more detail, refer to our Dockerfile Github repo. You can find the latest Phala Network docker images from the official repo.
-PLEASE follow the order of deploying the three docker containers below.
- Deploying Phala full-node A Phala full-node helps maintain the backbone of the network. We suggest you to run a Phala full-node on a device with 50+ GB storage.</description>
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/</guid>
+      <description>Over Staking for Computing Task Process of Staking  Stake Transfer to your stath acount, nominator your or other gatekeeper, the token will be locked in this round and become effective in next round. Withdraw Stake The token will be pre-unlocked, and be unlocked in next round.  How to Operating  Ready to work  Open the following two pages and select the corresponding transaction or query
+ Select the stath account，select “miningStaking” in &amp;quot;submit the following extrinsic&amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>1.5 Introduction of 1605 Race Privacy Computing Task</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/</guid>
+      <description>Introduction of 1605 Race Privacy Computing Task Who are familiar with Phala Tokenomics know that Phala&#39;s mining rewards are divided into online rewards and computing task rewards. In this 1605 Race V2, on the basis of online rewards, the emphasis is on the introduction of computing task rewards. This article is an introduction to the computing tasks of the Vendetta testnet.
+Background summary  The computing tasks in this testnet are generated virtually by the system, and 5 computing tasks are fixed for each Round (600 blocks).</description>
+    </item>
+    
+    <item>
+      <title>2.1 Start the Phala miner</title>
+      <link>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</guid>
+      <description>Start the Phala miner 1  sudo phala start    The scripts will run for a long time.The pruntime and phost will start until the full node got the highest block.
+ It costs a tiny amount of tPHA as well. Before deploying pHost, please make sure there are a certain amount of tPHA in your Stash account and controller account. Click here to learn how to obtain tPHA.</description>
     </item>
     
     <item>
@@ -146,8 +165,8 @@ Mining States Verification  Go to Developer → Chain State Choose phalaModule �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</guid>
-      <description> Go to Developer → Extrinsics Choose your controller account，clickphalaModule → stopMiningIntention() → Submit Transaction  Then you will wait for the next mining period (every 1 hour) to get stopped.
-Miner State Verification  Go toDeveloper → Chain State phalaModule → workerState → Stash account phalaModule → miningState → Stash account  </description>
+      <description>Go to Developer → Extrinsics Choose your controller account，clickphalaModule → stopMiningIntention() → Submit Transaction  Then you will wait for the next mining period (every 1 hour) to get stopped.
+Miner State Verification onchain  Go toDeveloper → Chain State phalaModule → workerState → Stash account phalaModule → miningState → Stash account  Miner State Verification 1  sudo phala status   Stop the Phala miner You can stop your phala miner as this command:</description>
     </item>
     
     <item>
@@ -169,7 +188,7 @@ Miner State Verification  Go toDeveloper → Chain State phalaModule → workerS
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
   Run the following commands to kill the original containers:
-1 2 3  docker kill phala-phost docker kill phala-pruntime docker kill phala-node     Pull the new docker image 1 2 3  sudo docker pull phalanetwork/phala-poc3-node:latest sudo docker pull phalanetwork/phala-poc3-pruntime:latest sudo docker pull phalanetwork/phala-poc3-phost:latest   Bring up the full stack Please re-do 2-1 Deploy the Full Stack</description>
+1  sudo phala stop     Update the Phala miner and clean the local files Run the commands below to remove cached data.</description>
     </item>
     
     <item>

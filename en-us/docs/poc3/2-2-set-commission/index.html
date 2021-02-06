@@ -199,13 +199,7 @@
     <li><a href="#general-hardware-requirements">General Hardware Requirements</a>
       <ul>
         <li><a href="#cpu-requirement">CPU Requirement</a></li>
-        <li><a href="#bios-settings">BIOS Settings</a></li>
-      </ul>
-    </li>
-    <li><a href="#sgx-driver-installation">SGX Driver Installation</a></li>
-    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a>
-      <ul>
-        <li>
+        <li><a href="#bios-settings">BIOS Settings</a>
           <ul>
             <li><a href="#reference">Reference</a></li>
             <li><a href="#miner-community">Miner Community</a></li>
@@ -220,9 +214,10 @@
     <li>
       <ul>
         <li><a href="#system-requirement">System Requirement</a></li>
-        <li><a href="#install-docker-ce">Install Docker-CE</a></li>
+        <li><a href="#install-phala-solo-scripts">Install Phala-solo-Scripts</a></li>
       </ul>
     </li>
+    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-13-set-miner-stash" href="https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/">1.3 Set Miner Stash</a></h3><nav id="TableOfContents">
@@ -237,11 +232,47 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-21-deploy-the-full-stack" href="https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/">2.1 Deploy the Full Stack</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-14-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/">1.4 On-Chain Staking</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#deploying-phala-full-node">Deploying Phala full-node</a></li>
-    <li><a href="#deploying-pruntime">Deploying pRuntime</a></li>
-    <li><a href="#deploying-phost">Deploying pHost</a></li>
+    <li><a href="#over-staking-for-computing-task">Over Staking for Computing Task</a>
+      <ul>
+        <li><a href="#process-of-staking">Process of Staking</a></li>
+        <li><a href="#how-to-operating">How to Operating</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-15-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/">1.5 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-of-1605-race-privacy-computing-task">Introduction of 1605 Race Privacy Computing Task</a>
+      <ul>
+        <li><a href="#background-summary">Background summary</a></li>
+        <li><a href="#privacy-computing-task-dispatch-algorithm">Privacy computing task dispatch algorithm</a>
+          <ul>
+            <li><a href="#core-logic">Core logic</a></li>
+            <li><a href="#tee-worker-task-score">TEE worker task score</a></li>
+            <li><a href="#weighted-random-sampling-without-replacement">Weighted random sampling without replacement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#data-simulation-of-dispatching-algorithm">Data simulation of dispatching algorithm</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#the-correlation-between-the-amount-of-extra-stake-and-the-probability-of-selection">The correlation between the amount of extra stake and the probability of selection</a></li>
+            <li><a href="#correlation-between-machine-performance-and-selection-probability">Correlation between machine performance and selection probability</a></li>
+            <li><a href="#how-to-allocate-additional-mortgage-for-multiple-miners">How to allocate additional mortgage for multiple miners</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-start-the-phala-miner" href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/">2.1 Start the Phala miner</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-the-phala-miner">Start the Phala miner</a></li>
+    <li><a href="#check-the-phala-miner-status">Check the phala miner status</a></li>
   </ul>
 </nav>
         <h3 class="section_link active"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
@@ -267,15 +298,19 @@
 </nav>
         <h3 class="section_link"><a id="docs-33-stop-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/">3.3 Stop Mining</a></h3><nav id="TableOfContents">
   <ul>
+    <li><a href="#miner-state-verification-onchain">Miner State Verification onchain</a></li>
     <li><a href="#miner-state-verification">Miner State Verification</a></li>
+    <li><a href="#stop-the-phala-miner">Stop the Phala miner</a></li>
+    <li><a href="#uninstall-the-phala-scripts">Uninstall the Phala scripts</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-34-check-miner-profits" href="https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/">3.4 Check Miner Profits</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-35-upgrade-miner" href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#stop-mining">Stop mining</a></li>
-    <li><a href="#pull-the-new-docker-image">Pull the new docker image</a></li>
-    <li><a href="#bring-up-the-full-stack">Bring up the full stack</a></li>
+    <li><a href="#update-the-phala-miner-and-clean-the-local-files">Update the Phala miner and clean the local files</a></li>
+    <li><a href="#update-the-phala-miner-without-clean-the-local-files">Update the Phala miner without clean the local files</a></li>
+    <li><a href="#restart-the-phala-miner">Restart the Phala miner</a></li>
     <li><a href="#reset-database-for-troubleshooting-only">Reset database (for troubleshooting only)</a>
       <ul>
         <li><a href="#miner-community">Miner Community</a></li>
@@ -329,8 +364,10 @@
     </li>
     <li><a href="#vi-restart-your-phost">VI. Restart your pHost</a>
       <ul>
-        <li><a href="#q-it-reads-errblockheadermismatch-after-i-restarted-the-phost">Q: It reads <code>Err(BlockHeaderMismatch)</code> after I restarted the pHost.</a></li>
-        <li><a href="#q-can-i-run-the-restart-command-directly-instead-of-using-kill-and-run-">Q: Can I run the <code>restart</code> command directly instead of using <code>kill</code> and <code>run</code> ?</a></li>
+        <li><a href="#q-got-errblockheadermismatch-after-restarting-phost">Q: Got <code>Err(BlockHeaderMismatch)</code> after restarting phost</a></li>
+        <li><a href="#q-is-it-ok-to-use-docker-restart-instead">Q: Is it ok to use <code>docker restart</code> instead?</a></li>
+        <li><a href="#q-how-can-i-make-sure-the-restart-is-done">Q: How can I make sure the restart is done?</a></li>
+        <li><a href="#q-what-will-happen-if-i-didnt-restart-phost">Q: What will happen if I didn't restart phost?</a></li>
       </ul>
     </li>
     <li><a href="#vii-other">VII. Other</a>
@@ -387,10 +424,10 @@
   
   <div class="pager_item prev">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-deploy-the-full-stack/" class="pager_link button" title="2.1 Deploy the Full Stack">
+    <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/" class="pager_link button" title="2.1 Start the Phala miner">
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-      <span class="pager_label">2.1 Deploy the Full Stack</span>
+      <span class="pager_label">2.1 Start the Phala miner</span>
     </a>
   </div>
   
@@ -420,7 +457,7 @@
   </main>
 <footer class="mt-2 pt-2 pb-2">
   <div class="wrap">
-    <p>&copy; 2020 Phala Network</p>
+    <p>&copy; 2021 Phala Network</p>
   </div>
 </footer>
 
@@ -434,7 +471,7 @@
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.8a97009604c86da25bb1bc70c485931bb43dfb67e8b0c76e0c16e4fdc46848948c31371b49e048ab3906f430443f93a3f00c8f73867cd232c71fe3bebe391cd3.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.142c4a8c80fbab912e726409bfda15e998d7b75c41936bf4c11199b7e621f87ed6dc95bb0fde9c1776b036075a37c1b2e56e0be02a564c0ef6c98832e7e0a53f.js" async defer></script>
 
 </body>
 </html>
