@@ -43,7 +43,7 @@ Tip: to better manage your stash accounts and according controller accounts, we 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/</guid>
-      <description>Over Staking for Computing Task Process of Staking  Stake Transfer to your stath acount, nominator your or other gatekeeper, the token will be locked in this round and become effective in next round. Withdraw Stake The token will be pre-unlocked, and be unlocked in next round.  How to Operating  Ready to work  Open the following two pages and select the corresponding transaction or query
+      <description>Over Staking for Computing Task Process of Staking  Stake Transfer to your stash account, nominator your or other miner, the token will be locked in this round and become effective in next round. Withdraw Stake The token will be pre-unlocked, and be unlocked in next round.  How to Operating  Ready to work  Open the following two pages and select the corresponding transaction or query
  Select the stath account，select “miningStaking” in &amp;quot;submit the following extrinsic&amp;quot;.</description>
     </item>
     

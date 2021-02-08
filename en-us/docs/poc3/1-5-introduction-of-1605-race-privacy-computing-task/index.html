@@ -22,7 +22,7 @@ Background summary  The computing tasks in this testnet are generated virtually 
 <meta itemprop="description" content="Introduction of 1605 Race Privacy Computing Task Who are familiar with Phala Tokenomics know that Phala&#39;s mining rewards are divided into online rewards and computing task rewards. In this 1605 Race V2, on the basis of online rewards, the emphasis is on the introduction of computing task rewards. This article is an introduction to the computing tasks of the Vendetta testnet.
 Background summary  The computing tasks in this testnet are generated virtually by the system, and 5 computing tasks are fixed for each Round (600 blocks).">
 
-<meta itemprop="wordCount" content="1045">
+<meta itemprop="wordCount" content="1035">
 
 
 
@@ -443,12 +443,10 @@ Background summary  The computing tasks in this testnet are generated virtually 
 <li>According to the core indicators of TEE calculation and dispatch, we calculated the task score of each TEE assigned to the computing task
 The formula for calculating task score is as follows：</li>
 </ol>
-<p>$$
-w=Score+ 5·\sqrt{Stake}\
-$$</p>
+<p>![](/images/docs/poc3/1.5-2.png</p>
 <ul>
-<li>$Score$ = TEE Calculation performance score</li>
-<li>$Stake$ = Stake amount of TEE-Base Stake (1620*core)</li>
+<li><strong>Score</strong> = TEE Calculation performance score</li>
+<li><strong>Stake</strong> = Stake amount of TEE-Base Stake (1620*core)</li>
 </ul>
 <h4 id="weighted-random-sampling-without-replacement">Weighted random sampling without replacement</h4>
 <p>We use weighted random sampling without replacement，which means that each TEE worker can only be sampled once in each Round,Randomly select 5 TEE workers from all online TEE workers to perform computing tasks.</p>
@@ -459,22 +457,18 @@ $$</p>
 Among them, A's task score is 3, B's task score is 2, C's task score is 1
 Now draw one from 3 machines, the probability that A will be drawn is</p>
 </blockquote>
-<p>$$
-P_1=\frac3{3+2+1}=0.5
-$$</p>
+<p><img src="/images/docs/poc3/1.5-3.png" alt=""></p>
 <blockquote>
 <p>If two sets are drawn, the probability of A being drawn is</p>
 </blockquote>
-<p>$$
-P_2=\frac3{3+2+1}+\frac2{3+2+1} ·\frac3{3+1}+\frac1{3+2+1}·\frac3{3+2}=0.85
-$$</p>
+<p><img src="/images/docs/poc3/1.5-4.png" alt=""></p>
 <p>In the real environment, there may be 5 out of thousands or tens of thousands of TEEs, but the logic is consistent with the above example</p>
 <p>In order to allow TEE miners to predict their own probability of winning and to simulate the relationship between the amount of stake tPHA and the probability of winning, we will provide a privacy computing probability calculator on Dashboard. Miners can fill in their own machine performance score and expected stake amount to simulate the probability of order dispatch.</p>
 <h2 id="data-simulation-of-dispatching-algorithm">Data simulation of dispatching algorithm</h2>
 <h4 id="the-correlation-between-the-amount-of-extra-stake-and-the-probability-of-selection">The correlation between the amount of extra stake and the probability of selection</h4>
 <p>The algorithm is clear, but based on the algorithm alone, it is impossible to calculate the probability of a single mining machine being drawn, because the probability of drawing is related to the number of mining machines currently online and their task score. We simulated the increase in the probability of winning by the additional stake amount.</p>
 <p>Assume that Rorschach has a 300 score TEE (red line in the figure). Assume that the other TEEs are 5000 420-score machines and have an additional 1000 tPHA stake. If 5 mining machines are selected from 5001 (including Rorschach's) to perform computing tasks, then as Rorschach adds additional stake, the probability of being drawn increases as follows
-<img src="/images/docs/poc3/1.5-2.png" alt="">
+<img src="/images/docs/poc3/1.5-5.png" alt="">
 It can be seen from the figure:
 - The probability that 5 of more than 1,000 machines will be selected is very low, about 0.05%;
 - As the amount of stake increases, the probability increases rapidly at first, and then slowly;
@@ -483,7 +477,7 @@ It can be seen from the figure:
 <p>In the above figure, the light blue, red, yellow, and green machine points are 400, 300, 200, and 100 score respectively. It can be seen that the machine performance maintains a constant absolute advantage in the probability of winning</p>
 <h4 id="how-to-allocate-additional-mortgage-for-multiple-miners">How to allocate additional mortgage for multiple miners</h4>
 <p>Assuming that Rorschach has two identical mining machines, when the total stake amount is the same, how to allocate the stake has little effect on the overall income. Even the split will be a bit more than just one of them.
-<img src="/images/docs/poc3/1.5-3.png" alt=""></p>
+<img src="/images/docs/poc3/1.5-6.png" alt=""></p>
 <p>The above is all about the privacy computing tasks in 1605 Miner race V2, welcome to <a href="https://forum.phala.network/">forum</a> to have more discussions with us~</p>
 
     <div class="pager">
@@ -537,7 +531,7 @@ It can be seen from the figure:
   </symbol>
 </svg>
 <script src="https://wiki.phala.network/js/bundle.min.178aa2a740cfcbf4e6f0049bc9e83012daac7e717754fc6c8a578411627961f20a43360b7e1a8f0959c4efcc1065e22d235f7b4c91a311f5ce548d4435719d6b.js"></script>
-<script src="https://wiki.phala.network/js/search.min.142c4a8c80fbab912e726409bfda15e998d7b75c41936bf4c11199b7e621f87ed6dc95bb0fde9c1776b036075a37c1b2e56e0be02a564c0ef6c98832e7e0a53f.js" async defer></script>
+<script src="https://wiki.phala.network/js/search.min.d0c24a54e51bec95bce6591e36e462d62e4f3c1a51364a76b60f861ee33a61fc54d064fa5ade5d5133428041b5e4ae0806940b60f5d81b5137ae9f900748fce8.js" async defer></script>
 
 </body>
 </html>
