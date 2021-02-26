@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.80.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.78.2" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -36,7 +36,7 @@
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters."/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.389b7e61094f0df549d34528f889ee0fda81e7745b6ff7dde5d04ebc18553959a2276b4064651cca0d8f490d9f28ce63224c551ffcfb0b70b3db8f5dedbcd82c.css" integrity="sha512-OJt&#43;YQlPDfVJ00Uo&#43;InuD9qB53Rbb/fd5dBOvBhVOVmiJ2tAZGUcyg2PSQ2fKM5jIkxVH/z7C3Cz249d7bzYLA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.00cd19bd8df4b2646453fa51727f45ea777b6a03a021e895ccfce9e41b950e6cf4ebd3e3aa342d35fe46b447bdf07690468037904fb5de0b4e2c08a01a9c83e5.css" integrity="sha512-AM0ZvY30smRkU/pRcn9F6nd7agOgIeiVzPzp5BuVDmz069PjqjQtNf5GtEe98HaQRoA3kE&#43;13gtOLAigGpyD5Q==">
 
 
   
@@ -612,7 +612,7 @@
 <h2 id="implement-a-secret-notebook">Implement a secret notebook</h2>
 <p>After a general understanding of the model of confidential contracts, let's make something practical and implement a contract which can store the secret note of each visitor. In this contract, we allow any user to store one note, and only the user himself is allowed to read his note.</p>
 <blockquote>
-<p>The SecretNote contract commit is available at <a href="https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61">https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61</a> <strong>(CHANGE THIS)</strong>. We thank <a href="https://github.com/laurent">Laurent</a> for his implementation of this contract.</p>
+<p>The SecretNote contract commit is available at <a href="https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61">https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61</a> <strong>(CHANGE THIS)</strong>. We thank <a href="https://github.com/LaurentTrk">Laurent</a> for his implementation of this contract.</p>
 </blockquote>
 <h3 id="contract-1">Contract</h3>
 <p>We use a map to store the users with their notes, and provide two interface <code>SetNote</code> and <code>GetNote</code> for them to operate their notes. We frist define the contract state structure <code>struct SecretNote</code>, with a map <code>notes</code> to store a mapping from the account to the notes. In Phala contracts, an account can be represented by an <code>AccountIdWrapper</code>.</p>
