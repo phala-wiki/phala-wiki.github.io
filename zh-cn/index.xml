@@ -13,7 +13,7 @@
       <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/</guid>
-      <description>配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1 2 3 4 5  cd ~/phala sudo cp ./poc3_validator.service /etc/systemd/system sudo systemctl enable poc3_validator.service sudo systemctl start poc3_validator.service sudo vim validator.sh   再次确认当前输入法为英文输入法。按下 ESC 再按 Shift + ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.</description>
+      <description>配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift + ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github.</description>
     </item>
     
     <item>

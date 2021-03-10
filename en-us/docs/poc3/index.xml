@@ -22,7 +22,7 @@ General Hardware Requirements CPU Requirement You can refer to the following tut
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/</guid>
-      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1 2  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y sudo apt install wget   Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github</description>
+      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y 2sudo apt install wget Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github</description>
     </item>
     
     <item>
@@ -63,8 +63,9 @@ Background summary  The computing tasks in this testnet are generated virtually 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</guid>
-      <description>Start the Phala miner 1  sudo phala start    The scripts will run for a long time.The pruntime and phost will start until the full node got the highest block.
- It costs a tiny amount of tPHA as well. Before deploying pHost, please make sure there are a certain amount of tPHA in your Stash account and controller account. Click here to learn how to obtain tPHA.</description>
+      <description>Start the Phala miner 1sudo phala start  The scripts will run for a long time.The pruntime and phost will start until the full node got the highest block.
+ It costs a tiny amount of tPHA as well. Before deploying pHost, please make sure there are a certain amount of tPHA in your Stash account and controller account. Click here to learn how to obtain tPHA.
+Check the phala miner status You can check your miner status as this command：</description>
     </item>
     
     <item>
@@ -113,7 +114,7 @@ Mining States Verification  Go to Developer → Chain State Choose phalaModule �
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</guid>
       <description>Go to Developer → Extrinsics Choose your controller account，clickphalaModule → stopMiningIntention() → Submit Transaction  Then you will wait for the next mining period (every 1 hour) to get stopped.
-Miner State Verification onchain  Go toDeveloper → Chain State phalaModule → workerState → Stash account phalaModule → miningState → Stash account  Miner State Verification 1  sudo phala status   Stop the Phala miner You can stop your phala miner as this command:</description>
+Miner State Verification onchain  Go toDeveloper → Chain State phalaModule → workerState → Stash account phalaModule → miningState → Stash account  Miner State Verification 1sudo phala status Stop the Phala miner You can stop your phala miner as this command:</description>
     </item>
     
     <item>
@@ -135,7 +136,7 @@ Miner State Verification onchain  Go toDeveloper → Chain State phalaModule →
    Refer to this link to stop mining.
   Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
   Run the following commands to kill the original containers:
-1  sudo phala stop     Update the Phala miner and clean the local files Run the commands below to remove cached data.</description>
+1sudo phala stop   Update the Phala miner and clean the local files Run the commands below to remove cached data.</description>
     </item>
     
     <item>

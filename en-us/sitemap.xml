@@ -18,7 +18,15 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/run-pdiem-m2-demo/</loc>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</loc>
   </url>
   
   <url>
@@ -34,6 +42,22 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/gatekeeper/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/future-works/</loc>
   </url>
   
   <url>
@@ -194,6 +218,10 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/</loc>
   </url>
   
   <url>

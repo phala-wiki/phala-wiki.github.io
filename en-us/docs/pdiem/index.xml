@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pDiem on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/pdiem/</link>
+    <description>Recent content in pDiem on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/pdiem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run pDiem M2 Demo</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/run-pdiem-m2-demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/run-pdiem-m2-demo/</guid>
+      <description>WIP</description>
+    </item>
+    
+    <item>
+      <title>Reservation-based Model</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</guid>
+      <description>A bridge connects the local blockchain to a remote blockchain. pDiem follows the &amp;quot;reservation asset&amp;quot; cross-chain asset transferring pattern (see the equivalent pattern defined in XCM Format). In our case, pDiem (and its parachain) is the local blockchain, and Diem is the remote blockchain.
+The pDiem bridge controls a set of sovereign accounts (see XCM Format - Definitions) on the Diem side, which hold all the Diem assets transferred to pDiem side.</description>
+    </item>
+    
+    <item>
+      <title>Light Validation Client</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/</guid>
+      <description>The Basics A minimal cross-chain bridge can transfer assets between the two blockchains. In the reservation-based model, it requires that the local blockchain can confirm some deposit to its sovereign accounts, and the remote blockchain can confirm the withdraw commands from the local blockchain. The validation of the blockchain is done by full nodes, but they are too heavy to fit into a smart contract or blockchain, in terms of the computation and the storage.</description>
+    </item>
+    
+    <item>
+      <title>Contract Implementation</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</guid>
+      <description>WIP</description>
+    </item>
+    
+    <item>
+      <title>The Relayer</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</guid>
+      <description>WIP</description>
+    </item>
+    
+    <item>
+      <title>Future Works</title>
+      <link>https://wiki.phala.network/en-us/docs/pdiem/future-works/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/pdiem/future-works/</guid>
+      <description>WIP</description>
+    </item>
+    
+  </channel>
+</rss>

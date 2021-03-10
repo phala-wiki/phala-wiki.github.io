@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.80.0" />
+<link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
+<link rel="manifest" href='https://wiki.phala.network/favicons/site.webmanifest'>
+<link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
+<link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
+<meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
+<title>pDiem | Phala Network Wiki</title><meta property="og:title" content="pDiem" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
+<meta itemprop="name" content="pDiem">
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="pDiem"/>
+<meta name="twitter:description" content=""/>
+
+
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
+
+
+
+
+
+  
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+</head>
+  
+    
+  
+<body class="page-section"data-code="100" data-lines="false" >
+  <header class="nav_header">
+<nav class="wrap nav menu">
+	<a href="https://wiki.phala.network" class="nav_brand">
+		<picture data-lit="https://wiki.phala.network/images/logo-phala-48.png" data-dark="https://wiki.phala.network/images/logo-phala-48.png">
+			
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network Wiki Logo'>
+		</picture>
+		<label class="nav_toggle toggle" title='' role="button">
+			<svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg>
+		</label>
+	</a>
+	<ul class="nav_body">
+		<li class="nav-item">
+<div class="search">
+  <label for="find" class="search_label"><svg class="icon icon_search">
+  <use xlink:href="#search"></use>
+</svg>
+  </label>
+  <input type="search" class="search_field" placeholder='' id="find" autocomplete="off">
+  <div class="search_results results"></div>
+</div>
+
+
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
+		</li>
+		
+		<li class="nav-item nav_repo">
+			<a class="nav-link" href="https://github.com/Phala-Network/phala-wiki/" target="_blank">
+				
+					GitHub
+				
+			</a>
+		</li>
+		<li class="nav-item">
+<div class = 'color_mode'>
+  <label for = 'mode'>
+    <picture data-lit="https://wiki.phala.network/icons/sun.svg" data-dark="https://wiki.phala.network/icons/moon.svg">
+      
+      <img srcset = 'https://wiki.phala.network/icons/sun.svg' alt = 'Light/Dark Mode Icon' class="color_icon">
+    </picture>
+  </label>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+</div>
+</li>
+	</ul>
+</nav>
+
+  </header>
+  <div class="main wrap pt-4"><div class="grid-auto"><aside class="aside menu">
+  <div>
+    <label class="aside_toggle toggle" title='' role="button"> <svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg></label>
+  </div>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
+      <section class="subsection" id="docs-phala-network">
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development Tutorial</a></h2>
+      <section class="subsection" id="docs-contract-development-tutorial">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
+      <ul>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
+      <ul>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">GateKeeper Guide</a></h2>
+      <section class="subsection" id="docs-gatekeeper-guide">
+        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup-environment">Setup Environment</a></li>
+    <li><a href="#synchronize-chain-data">Synchronize Chain Data</a>
+      <ul>
+        <li><a href="#to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</a></li>
+      </ul>
+    </li>
+    <li><a href="#bond-pha">Bond PHA</a></li>
+    <li><a href="#set-session-keys">Set Session Keys</a>
+      <ul>
+        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
+          <ul>
+            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
+            <li><a href="#option-2-cli">Option 2: CLI</a></li>
+          </ul>
+        </li>
+        <li><a href="#set-your-sessions-keys">Set Your Sessions Keys</a></li>
+      </ul>
+    </li>
+    <li><a href="#pruntime-setup">pRuntime Setup</a></li>
+    <li><a href="#phost-setup">pHost Setup</a></li>
+    <li><a href="#validate-your-gatekeeper">Validate Your Gatekeeper</a>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
+      <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
+        <h3 class="section_link"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-hardware-requirements">General Hardware Requirements</a>
+      <ul>
+        <li><a href="#cpu-requirement">CPU Requirement</a></li>
+        <li><a href="#bios-settings">BIOS Settings</a>
+          <ul>
+            <li><a href="#reference">Reference</a></li>
+            <li><a href="#miner-community">Miner Community</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#system-requirement">System Requirement</a></li>
+        <li><a href="#install-phala-solo-scripts">Install Phala-solo-Scripts</a></li>
+      </ul>
+    </li>
+    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-set-miner-stash" href="https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/">1.3 Set Miner Stash</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#connecting-to-testnet-vendetta">Connecting to Testnet Vendetta</a></li>
+        <li><a href="#creating-phala-accounts">Creating Phala Accounts</a></li>
+        <li><a href="#obtaining-tpha">Obtaining tPHA</a></li>
+        <li><a href="#setting-miner-stash">Setting Miner Stash</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-14-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/">1.4 On-Chain Staking</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#over-staking-for-computing-task">Over Staking for Computing Task</a>
+      <ul>
+        <li><a href="#process-of-staking">Process of Staking</a></li>
+        <li><a href="#how-to-operating">How to Operating</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-15-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/">1.5 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-of-1605-race-privacy-computing-task">Introduction of 1605 Race Privacy Computing Task</a>
+      <ul>
+        <li><a href="#background-summary">Background summary</a></li>
+        <li><a href="#privacy-computing-task-dispatch-algorithm">Privacy computing task dispatch algorithm</a>
+          <ul>
+            <li><a href="#core-logic">Core logic</a></li>
+            <li><a href="#tee-worker-task-score">TEE worker task score</a></li>
+            <li><a href="#weighted-random-sampling-without-replacement">Weighted random sampling without replacement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#data-simulation-of-dispatching-algorithm">Data simulation of dispatching algorithm</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#the-correlation-between-the-amount-of-extra-stake-and-the-probability-of-selection">The correlation between the amount of extra stake and the probability of selection</a></li>
+            <li><a href="#correlation-between-machine-performance-and-selection-probability">Correlation between machine performance and selection probability</a></li>
+            <li><a href="#how-to-allocate-additional-mortgage-for-multiple-miners">How to allocate additional mortgage for multiple miners</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-start-the-phala-miner" href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/">2.1 Start the Phala miner</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-the-phala-miner">Start the Phala miner</a></li>
+    <li><a href="#check-the-phala-miner-status">Check the phala miner status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mining-state-references">Mining State References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-mining-lending-protocol">The Mining Lending Protocol</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-32-start-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mining-states-verification">Mining States Verification</a></li>
+    <li><a href="#mining-status-references">Mining Status References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-33-stop-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/">3.3 Stop Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#miner-state-verification-onchain">Miner State Verification onchain</a></li>
+    <li><a href="#miner-state-verification">Miner State Verification</a></li>
+    <li><a href="#stop-the-phala-miner">Stop the Phala miner</a></li>
+    <li><a href="#uninstall-the-phala-scripts">Uninstall the Phala scripts</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-34-check-miner-profits" href="https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/">3.4 Check Miner Profits</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-35-upgrade-miner" href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#stop-mining">Stop mining</a></li>
+    <li><a href="#update-the-phala-miner-and-clean-the-local-files">Update the Phala miner and clean the local files</a></li>
+    <li><a href="#update-the-phala-miner-without-clean-the-local-files">Update the Phala miner without clean the local files</a></li>
+    <li><a href="#restart-the-phala-miner">Restart the Phala miner</a></li>
+    <li><a href="#reset-database-for-troubleshooting-only">Reset database (for troubleshooting only)</a>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/poc3/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+    <li><a href="#i-glossary">I. Glossary</a></li>
+    <li><a href="#ii-setting-up-multiple-miners">II. Setting up Multiple Miners</a>
+      <ul>
+        <li><a href="#q-shall-i-set-up-multiple-full-nodes-as-well-if-i-have-several-miner-workers">Q: Shall I set up multiple full-nodes as well if I have several miner workers?</a></li>
+        <li><a href="#q-can-i-use-the-same-ip-address-if-i-have-multiple-computer">Q: Can I use the same IP address if I have multiple computer?</a></li>
+        <li><a href="#q-is-a-public-internet-ip-address-necessary-and-will-it-gain-more-points-in-mining">Q: Is a public Internet IP address necessary and will it gain more points in mining?</a></li>
+        <li><a href="#q-can-i-use-the-same-phala-account-for-multiple-miners">Q: Can I use the same Phala account for multiple miners?</a></li>
+        <li><a href="#q-will-there-be-a-solution-to-registering-multiple-miner-accounts-in-a-short-time">Q: Will there be a solution to registering multiple miner accounts in a short time?</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-linux-updates--sgx-driver">III. Linux Updates &amp; SGX Driver</a>
+      <ul>
+        <li><a href="#q-got-error-apt-install---fix-broken">Q: Got error: <code>apt install --fix-broken</code></a></li>
+        <li><a href="#q-got-error-need-install-curl-">Q: Got error: <code>need install curl </code></a></li>
+        <li><a href="#q-it-got-stuck-after-docker-pull-commands">Q: It got stuck after <code>docker pull...</code> commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-issues-related-to-phala-node-pruntime-phost">IV. Issues related to phala-node, pRuntime, pHost</a>
+      <ul>
+        <li><a href="#q-got-error-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: Got error &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
+        <li><a href="#q-got-error-permission-denied">Q: Got error <code>permission denied</code></a></li>
+        <li><a href="#q-got-error-docker-error-response-from-darmon-conflict-the-container-name-phala-node-is-already-in-use-by-container">Q: Got error <code>docker: Error response from darmon: Conflict. The container name &quot;/phala-node&quot; is already in use by container</code></a></li>
+        <li><a href="#q-got-errors-as-blow">Q: Got errors as blow:</a></li>
+        <li><a href="#q-got-error-devsgxenclave-no-such-file-or-directory-or-devisgx-no-such-file-or-directory">Q: Got error: <code>/dev/sgx/enclave No such file or directory</code> or <code>/dev/isgx No such file or directory</code></a></li>
+        <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP?</a></li>
+        <li><a href="#q-i-suspect-some-docker-container-dies--hangs--doesnt-run-correctly-but-how-can-i-debug">Q: I suspect some docker container dies / hangs / doesn't run correctly but how can I debug?</a></li>
+        <li><a href="#q-how-can-i-dump-the-logs-from-the-containers">Q: How can I dump the logs from the containers?</a></li>
+        <li><a href="#q-what-if-my-machine-id-is-empty-after-ive-run-all-the-commands">Q: What if my Machine ID is empty after I've run all the commands?</a></li>
+      </ul>
+    </li>
+    <li><a href="#v-operations-on-chain">V. Operations On-chain</a>
+      <ul>
+        <li><a href="#q-can-i-bond-the-controller-account-with-multiple-stash-accounts">Q: Can I bond the controller account with multiple stash accounts?</a></li>
+        <li><a href="#q-why-my-balance-didnt-change-after-i-have-started-mining">Q: Why my balance didn't change after I have started mining?</a></li>
+        <li><a href="#q-got-error-not-controller-while-setting-commission">Q: Got error <code>Not Controller</code> while setting commission</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-restart-your-phost">VI. Restart your pHost</a>
+      <ul>
+        <li><a href="#q-got-errblockheadermismatch-after-restarting-phost">Q: Got <code>Err(BlockHeaderMismatch)</code> after restarting phost</a></li>
+        <li><a href="#q-is-it-ok-to-use-docker-restart-instead">Q: Is it ok to use <code>docker restart</code> instead?</a></li>
+        <li><a href="#q-how-can-i-make-sure-the-restart-is-done">Q: How can I make sure the restart is done?</a></li>
+        <li><a href="#q-what-will-happen-if-i-didnt-restart-phost">Q: What will happen if I didn't restart phost?</a></li>
+      </ul>
+    </li>
+    <li><a href="#vii-other">VII. Other</a>
+      <ul>
+        <li><a href="#q-i-cant-claim-test-tokens-after-clicking-click-to-burn-or-click-to-claim">Q: I can't claim test tokens after clicking <code>Click to burn</code> or <code>Click to claim</code></a></li>
+        <li><a href="#q-error-happens-when-i-tried-to-run-the-self-examination-program">Q: Error happens when I tried to run the self-examination program</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+      <section class="subsection" id="docs-legacy-docs-poc-2">
+        <h3 class="section_link"><a id="docs-run-a-full-node" href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/">Run a full node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#types-of-nodes">Types of Nodes</a></li>
+        <li><a href="#fast-install-instructions-linux">Fast Install Instructions (Linux)</a></li>
+        <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
+    <li><a href="#get-substrate">Get Substrate</a></li>
+    <li><a href="#clone-and-build">Clone and Build</a></li>
+    <li><a href="#run">Run</a></li>
+    <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
+    <li><a href="#using-docker">Using Docker</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-run-pdiem-m2-demo" href="https://wiki.phala.network/en-us/docs/pdiem/run-pdiem-m2-demo/">Run pDiem M2 Demo</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-reservation-based-model" href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/">Reservation-based Model</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deposit">Deposit</a></li>
+    <li><a href="#transfer">Transfer</a></li>
+    <li><a href="#withdraw">Withdraw</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-light-validation-client" href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/">Light Validation Client</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-basics">The Basics</a></li>
+    <li><a href="#light-client">Light Client</a></li>
+    <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
+    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+      </section>
+  </section>
+</aside>
+
+  <main class="content">
+    <h1>pDiem</h1><h2 id="overview">Overview</h2>
+<p>pDiem is a privacy-preserving layer for <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> on Polkadot ecosystem. Powered by Phala Network confidential contract, it can protect the privacy of Diem users. More specifically, pDiem is:</p>
+<ul>
+<li>A corss chain bridge connecting Polkadot and Diem</li>
+<li>A privacy-preserving token on Polkadot for Diem users</li>
+<li>A privacy-preserving DApp ecosystem more open and free than Novi (formerly known as Calibra)</li>
+</ul>
+<blockquote>
+<p>The project was initially named pLIBRA (&quot;Privacy-preserving Libra&quot;). &quot;In December 2020, Libra was rebranded as Diem.&quot; Since then we have followed Diem's rebranding, and renamed the project to pDiem.</p>
+</blockquote>
+<h2 id="try-it-out">Try it out</h2>
+<p>pDiem is at <a href="#web3-foundation-grants">Milestone 3</a>. This milestone focuses on the core of the bridge: the validation of the deposit transactions. In this demo, you can connect pDiem to the Diem testnet, validate and accept incoming deposit transactions.</p>
+<p>Please check <a href="/en-us/docs/pdiem/run-pdiem-m2-demo/">Run pDiem M2 Demo</a>.</p>
+<h2 id="the-system">The System</h2>
+<p><img src="/images/docs/pdiem/pdiem-system-design.png" alt=""></p>
+<ul>
+<li><strong>pDiem Contract</strong>: The core of pDiem, a confidential contract that validates and accepts Diem deposit and process withdraw request;</li>
+<li><strong>pDiem Relayers</strong>: The nodes that relay Diem deposit transactions to the pDiem Contract, and broadcast the withdraw transactions to Diem;</li>
+<li><strong>Phala Network</strong>: It runs the pDiem Contract, and relayes XCM between pDiem and other parachains;</li>
+<li><strong>Polkadot</strong>: The relay chain that connects parachains including Phala Network;</li>
+<li><strong>Parachains</strong>: The other blockchains we aim to serve;</li>
+<li><strong>XCMP</strong>: <a href="https://wiki.polkadot.network/docs/en/learn-crosschain">Cross-chain Messaging Protocol</a>.</li>
+</ul>
+<p>Among the component listed in the diagram, the <strong>pDiem Contract</strong> and the <strong>pDiem Realyers</strong> are the core of the pDiem bridge protocol. The contract is deployed on Phala Network. It handles users' Diem deposit transactions and withdraw requests. The relayers are the contributors who run pDiem Relayer program, which relay the transactions between the Diem blockchain and the pDiem contract.</p>
+<p>pDiem receives assets from the Diem blockchain, generates a <em>pDIEM</em> token on the Polkadot side, and can also transfer it back to redeem the original assets. This is achieved by a combination of different components. In the docs, we will introduce:</p>
+<ul>
+<li><a href="/en-us/docs/pdiem/reservation-based-model/">The Reservation-based Model</a>,</li>
+<li><a href="/en-us/docs/pdiem/light-validation-client/">The Light Validation Client</a>,</li>
+<li>and its <a href="/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a>,</li>
+<li><a href="/en-us/docs/pdiem/the-relayer/">The Relayer</a>,</li>
+<li>and finally, the <a href="%20relref%20%22docs/pdiem/future-works.md%22%20">Future Works</a>.</li>
+</ul>
+<h2 id="web3-foundation-grants">Web3 Foundation Grants</h2>
+<p>pDiem received <a href="https://github.com/w3f/General-Grants-Program/blob/8a23ef68c7512fa0d437554640601ef28cea3fca/grants/speculative/pLIBRA.md">a General Grant</a> from Web3 Foundataion on Aug 28, 2019. In the grant plan, we have splitted the development progress into a few milestones, as shown below.</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Date</th>
+            <th>Milestone</th>
+            <th>Achievement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>✅</td>
+            <td>Sep 2019</td>
+            <td>M1</td>
+            <td>
+                The Technical Whitepaper. (<a href="https://files.phala.network/phala-paper.pdf">PDF</a>, <a href="https://docs.google.com/document/d/e/2PACX-1vRpkf-xvEwDSglNHMKI2J8qC7F4JiB7kLv5kOwO_mJzg-bYRL545_3JxWaM-0rCX_iyHDb68zk3Sw75/pub">One Pager</a>)
+            </td>
+        </tr>
+        <tr>
+            <td>✅</td>
+            <td>Mar 2020</td>
+            <td>M2</td>
+            <td>
+                A minimal Confidential Contract implementation (Phala Network) on Substrate. (<a href="https://github.com/Phala-Network/phala-blockchain">Repo</a>)
+            </td>
+        </tr>
+        <tr>
+            <td>⏫</td>
+            <td>2021Q1</td>
+            <td>M3</td>
+            <td>
+                The bridge with a light validation client in confidential contract. (<a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">Contract</a>, <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/diem">Light Client</a>)
+            </td>
+        </tr>
+        <tr>
+            <td>⌛</td>
+            <td>Est. 2021Q2</td>
+            <td>M4</td>
+            <td>
+                Final testnet product with UI (integrated with <a href="https://app.phala.network">Phala Secret Wallet</a>)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+    <div class="pager pager_lean">
+  
+
+  
+</div>
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+  </main>
+</div>
+
+  </div>
+<footer class="pt-2 pb-2">
+  <div class="wrap">
+    <p>&copy; <span class="year">2021</span></p>
+  </div>
+</footer>
+
+
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+
+</body>
+</html>
