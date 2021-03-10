@@ -18,11 +18,25 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/run-pdiem-m2-demo/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/poc3/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/poc3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/poc3/"
+                />
   </url>
   
   <url>
@@ -53,6 +67,10 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/en-us/docs/pdiem/</loc>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</loc>
   </url>
   
@@ -61,22 +79,8 @@
   </url>
   
   <url>
-    <loc>https://wiki.phala.network/en-us/docs/poc3/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/poc3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/poc3/"
-                />
-  </url>
-  
-  <url>
     <loc>https://wiki.phala.network/en-us/docs/poc2/</loc>
-    <lastmod>2020-07-06T22:29:51+08:00</lastmod>
+    <lastmod>2020-07-06T22:30:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -218,10 +222,6 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://wiki.phala.network/en-us/docs/pdiem/</loc>
   </url>
   
   <url>
