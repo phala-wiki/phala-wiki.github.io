@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-cn">
+<html lang="en-us">
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
@@ -9,27 +9,35 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>运行 Gatekeeper | Phala Network 百科</title><meta property="og:title" content="运行 Gatekeeper" />
-<meta property="og:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github." />
+<title>Deploy Local Testnet | Phala Network Wiki</title><meta property="og:title" content="Deploy Local Testnet" />
+<meta property="og:description" content="There are two options to run the pdiem demo:
+ Use our Docker Compose file Build from the source and run it directly  This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.
+In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2020-07-10T01:16:05&#43;08:00" />
-<meta property="article:modified_time" content="2020-07-10T01:16:05&#43;08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/" /><meta property="article:section" content="docs" />
 
-<meta itemprop="name" content="运行 Gatekeeper">
-<meta itemprop="description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github."><meta itemprop="datePublished" content="2020-07-10T01:16:05&#43;08:00" />
-<meta itemprop="dateModified" content="2020-07-10T01:16:05&#43;08:00" />
-<meta itemprop="wordCount" content="431">
+<meta property="og:site_name" content="Phala Network Wiki" />
+
+<meta itemprop="name" content="Deploy Local Testnet">
+<meta itemprop="description" content="There are two options to run the pdiem demo:
+ Use our Docker Compose file Build from the source and run it directly  This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.
+In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured.">
+
+<meta itemprop="wordCount" content="283">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="运行 Gatekeeper"/>
-<meta name="twitter:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github."/>
+<meta name="twitter:title" content="Deploy Local Testnet"/>
+<meta name="twitter:description" content="There are two options to run the pdiem demo:
+ Use our Docker Compose file Build from the source and run it directly  This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.
+In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
 
 
 
-  <meta name="description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github.">
+  <meta name="description" content="There are two options to run the pdiem demo:
+ Use our Docker Compose file Build from the source and run it directly  This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.
+In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured.">
 
 
 
@@ -46,7 +54,7 @@
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture data-lit="https://wiki.phala.network/images/logo-phala-48.png" data-dark="https://wiki.phala.network/images/logo-phala-48.png">
 			
-			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network 百科 Logo'>
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network Wiki Logo'>
 		</picture>
 		<label class="nav_toggle toggle" title='' role="button">
 			<svg class="icon icon_harmburger">
@@ -107,50 +115,60 @@
 </svg></label>
   </div>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Phala Network</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/poc3/" class="group">PoC-3 Vendetta 挖矿教程</a></h2>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">守门人教程</a></h2>
-      <section class="subsection" id="docs-守门人教程">
-        <h3 class="section_link active"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development</a></h2>
+      <section class="subsection" id="docs-contract-development">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#配置要求">配置要求</a>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a>
       <ul>
-        <li><a href="#硬件">硬件</a></li>
-        <li><a href="#软件">软件</a></li>
+        <li><a href="#submit-your-work">Submit your work</a></li>
       </ul>
     </li>
-    <li><a href="#同步链上数据">同步链上数据</a></li>
-    <li><a href="#抵押pha和设置-session-key">抵押PHA和设置 Session Key</a>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
       <ul>
-        <li><a href="#抵押-pha">抵押 PHA</a></li>
-        <li><a href="#获取-session-密钥">获取 Session 密钥</a>
-          <ul>
-            <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
-            <li><a href="#方法2-cli">方法2: CLI</a></li>
-          </ul>
-        </li>
-        <li><a href="#提交session-key">提交Session Key</a></li>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
       </ul>
     </li>
-    <li><a href="#启动-pruntime">启动 pRuntime</a>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#dcap-驱动">DCAP 驱动：</a></li>
-            <li><a href="#sgx-驱动">SGX 驱动：</a></li>
-            <li><a href="#不知道自己的驱动是什么">不知道自己的驱动是什么：</a></li>
-          </ul>
-        </li>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
       </ul>
     </li>
-    <li><a href="#启动-phost">启动 pHost</a></li>
-    <li><a href="#启动守门人身份"><strong>启动守门人身份</strong></a>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
       <ul>
-        <li><a href="#技术支持">技术支持</a></li>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
+      <ul>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
       </ul>
     </li>
   </ul>
@@ -158,23 +176,287 @@
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/poc2/" class="group">历史文档 (PoC-2)</a></h2>
-      <section class="subsection" id="docs-历史文档-poc-2">
-        <h3 class="section_link"><a id="docs-运行全节点" href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/">运行全节点</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
+      <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
+        <h3 class="section_link"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-hardware-requirements">General Hardware Requirements</a>
+      <ul>
+        <li><a href="#cpu-requirement">CPU Requirement</a></li>
+        <li><a href="#bios-settings">BIOS Settings</a>
+          <ul>
+            <li><a href="#reference">Reference</a></li>
+            <li><a href="#miner-community">Miner Community</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#节点类型">节点类型</a></li>
-        <li><a href="#快速安装指南--linux">快速安装指南  (Linux)</a></li>
-        <li><a href="#快速安装指南--mac">快速安装指南  (Mac)</a></li>
+        <li><a href="#system-requirement">System Requirement</a></li>
+        <li><a href="#install-phala-solo-scripts">Install Phala-solo-Scripts</a></li>
       </ul>
     </li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
-    <li><a href="#获取-substrate">获取 Substrate</a></li>
-    <li><a href="#克隆代码编译">克隆代码、编译</a></li>
-    <li><a href="#运行">运行</a></li>
-    <li><a href="#运行归档节点">运行归档节点</a></li>
-    <li><a href="#使用-docker-运行节点">使用 Docker 运行节点</a></li>
+    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-set-miner-stash" href="https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/">1.3 Set Miner Stash</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#connecting-to-testnet-vendetta">Connecting to Testnet Vendetta</a></li>
+        <li><a href="#creating-phala-accounts">Creating Phala Accounts</a></li>
+        <li><a href="#obtaining-tpha">Obtaining tPHA</a></li>
+        <li><a href="#setting-miner-stash">Setting Miner Stash</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-14-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/">1.4 On-Chain Staking</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#over-staking-for-computing-task">Over Staking for Computing Task</a>
+      <ul>
+        <li><a href="#process-of-staking">Process of Staking</a></li>
+        <li><a href="#how-to-operating">How to Operating</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-15-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/">1.5 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-of-1605-race-privacy-computing-task">Introduction of 1605 Race Privacy Computing Task</a>
+      <ul>
+        <li><a href="#background-summary">Background summary</a></li>
+        <li><a href="#privacy-computing-task-dispatch-algorithm">Privacy computing task dispatch algorithm</a>
+          <ul>
+            <li><a href="#core-logic">Core logic</a></li>
+            <li><a href="#tee-worker-task-score">TEE worker task score</a></li>
+            <li><a href="#weighted-random-sampling-without-replacement">Weighted random sampling without replacement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#data-simulation-of-dispatching-algorithm">Data simulation of dispatching algorithm</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#the-correlation-between-the-amount-of-extra-stake-and-the-probability-of-selection">The correlation between the amount of extra stake and the probability of selection</a></li>
+            <li><a href="#correlation-between-machine-performance-and-selection-probability">Correlation between machine performance and selection probability</a></li>
+            <li><a href="#how-to-allocate-additional-mortgage-for-multiple-miners">How to allocate additional mortgage for multiple miners</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-start-the-phala-miner" href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/">2.1 Start the Phala miner</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-the-phala-miner">Start the Phala miner</a></li>
+    <li><a href="#check-the-phala-miner-status">Check the phala miner status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mining-state-references">Mining State References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-mining-lending-protocol">The Mining Lending Protocol</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-32-start-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mining-states-verification">Mining States Verification</a></li>
+    <li><a href="#mining-status-references">Mining Status References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-33-stop-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/">3.3 Stop Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#miner-state-verification-onchain">Miner State Verification onchain</a></li>
+    <li><a href="#miner-state-verification">Miner State Verification</a></li>
+    <li><a href="#stop-the-phala-miner">Stop the Phala miner</a></li>
+    <li><a href="#uninstall-the-phala-scripts">Uninstall the Phala scripts</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-34-check-miner-profits" href="https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/">3.4 Check Miner Profits</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-35-upgrade-miner" href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#stop-mining">Stop mining</a></li>
+    <li><a href="#update-the-phala-miner-and-clean-the-local-files">Update the Phala miner and clean the local files</a></li>
+    <li><a href="#update-the-phala-miner-without-clean-the-local-files">Update the Phala miner without clean the local files</a></li>
+    <li><a href="#restart-the-phala-miner">Restart the Phala miner</a></li>
+    <li><a href="#reset-database-for-troubleshooting-only">Reset database (for troubleshooting only)</a>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/poc3/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+    <li><a href="#i-glossary">I. Glossary</a></li>
+    <li><a href="#ii-setting-up-multiple-miners">II. Setting up Multiple Miners</a>
+      <ul>
+        <li><a href="#q-shall-i-set-up-multiple-full-nodes-as-well-if-i-have-several-miner-workers">Q: Shall I set up multiple full-nodes as well if I have several miner workers?</a></li>
+        <li><a href="#q-can-i-use-the-same-ip-address-if-i-have-multiple-computer">Q: Can I use the same IP address if I have multiple computer?</a></li>
+        <li><a href="#q-is-a-public-internet-ip-address-necessary-and-will-it-gain-more-points-in-mining">Q: Is a public Internet IP address necessary and will it gain more points in mining?</a></li>
+        <li><a href="#q-can-i-use-the-same-phala-account-for-multiple-miners">Q: Can I use the same Phala account for multiple miners?</a></li>
+        <li><a href="#q-will-there-be-a-solution-to-registering-multiple-miner-accounts-in-a-short-time">Q: Will there be a solution to registering multiple miner accounts in a short time?</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-linux-updates--sgx-driver">III. Linux Updates &amp; SGX Driver</a>
+      <ul>
+        <li><a href="#q-got-error-apt-install---fix-broken">Q: Got error: <code>apt install --fix-broken</code></a></li>
+        <li><a href="#q-got-error-need-install-curl-">Q: Got error: <code>need install curl </code></a></li>
+        <li><a href="#q-it-got-stuck-after-docker-pull-commands">Q: It got stuck after <code>docker pull...</code> commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-issues-related-to-phala-node-pruntime-phost">IV. Issues related to phala-node, pRuntime, pHost</a>
+      <ul>
+        <li><a href="#q-got-error-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: Got error &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
+        <li><a href="#q-got-error-permission-denied">Q: Got error <code>permission denied</code></a></li>
+        <li><a href="#q-got-error-docker-error-response-from-darmon-conflict-the-container-name-phala-node-is-already-in-use-by-container">Q: Got error <code>docker: Error response from darmon: Conflict. The container name &quot;/phala-node&quot; is already in use by container</code></a></li>
+        <li><a href="#q-got-errors-as-blow">Q: Got errors as blow:</a></li>
+        <li><a href="#q-got-error-devsgxenclave-no-such-file-or-directory-or-devisgx-no-such-file-or-directory">Q: Got error: <code>/dev/sgx/enclave No such file or directory</code> or <code>/dev/isgx No such file or directory</code></a></li>
+        <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP?</a></li>
+        <li><a href="#q-i-suspect-some-docker-container-dies--hangs--doesnt-run-correctly-but-how-can-i-debug">Q: I suspect some docker container dies / hangs / doesn't run correctly but how can I debug?</a></li>
+        <li><a href="#q-how-can-i-dump-the-logs-from-the-containers">Q: How can I dump the logs from the containers?</a></li>
+        <li><a href="#q-what-if-my-machine-id-is-empty-after-ive-run-all-the-commands">Q: What if my Machine ID is empty after I've run all the commands?</a></li>
+      </ul>
+    </li>
+    <li><a href="#v-operations-on-chain">V. Operations On-chain</a>
+      <ul>
+        <li><a href="#q-can-i-bond-the-controller-account-with-multiple-stash-accounts">Q: Can I bond the controller account with multiple stash accounts?</a></li>
+        <li><a href="#q-why-my-balance-didnt-change-after-i-have-started-mining">Q: Why my balance didn't change after I have started mining?</a></li>
+        <li><a href="#q-got-error-not-controller-while-setting-commission">Q: Got error <code>Not Controller</code> while setting commission</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-restart-your-phost">VI. Restart your pHost</a>
+      <ul>
+        <li><a href="#q-got-errblockheadermismatch-after-restarting-phost">Q: Got <code>Err(BlockHeaderMismatch)</code> after restarting phost</a></li>
+        <li><a href="#q-is-it-ok-to-use-docker-restart-instead">Q: Is it ok to use <code>docker restart</code> instead?</a></li>
+        <li><a href="#q-how-can-i-make-sure-the-restart-is-done">Q: How can I make sure the restart is done?</a></li>
+        <li><a href="#q-what-will-happen-if-i-didnt-restart-phost">Q: What will happen if I didn't restart phost?</a></li>
+      </ul>
+    </li>
+    <li><a href="#vii-other">VII. Other</a>
+      <ul>
+        <li><a href="#q-i-cant-claim-test-tokens-after-clicking-click-to-burn-or-click-to-claim">Q: I can't claim test tokens after clicking <code>Click to burn</code> or <code>Click to claim</code></a></li>
+        <li><a href="#q-error-happens-when-i-tried-to-run-the-self-examination-program">Q: Error happens when I tried to run the self-examination program</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">GateKeeper Guide</a></h2>
+      <section class="subsection" id="docs-gatekeeper-guide">
+        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup-environment">Setup Environment</a></li>
+    <li><a href="#synchronize-chain-data">Synchronize Chain Data</a>
+      <ul>
+        <li><a href="#to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</a></li>
+      </ul>
+    </li>
+    <li><a href="#bond-pha">Bond PHA</a></li>
+    <li><a href="#set-session-keys">Set Session Keys</a>
+      <ul>
+        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
+          <ul>
+            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
+            <li><a href="#option-2-cli">Option 2: CLI</a></li>
+          </ul>
+        </li>
+        <li><a href="#set-your-sessions-keys">Set Your Sessions Keys</a></li>
+      </ul>
+    </li>
+    <li><a href="#pruntime-setup">pRuntime Setup</a></li>
+    <li><a href="#phost-setup">pHost Setup</a></li>
+    <li><a href="#validate-your-gatekeeper">Validate Your Gatekeeper</a>
+      <ul>
+        <li><a href="#miner-community">Miner Community</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link active"><a id="docs-deploy-local-testnet" href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/">Deploy Local Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare">Prepare</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-diem-accounts">Create Diem accounts</a></li>
+    <li><a href="#deposit-diem-assets-to-pdiem">Deposit Diem assets to pDiem</a>
+      <ul>
+        <li><a href="#balances-in-pdiem">Balances in pdiem</a></li>
+        <li><a href="#verified-transactions">Verified transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#withdraw-pdiem-assets-to-diem">Withdraw pDiem assets to Diem</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-reservation-based-model" href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/">Reservation-based Model</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deposit">Deposit</a></li>
+    <li><a href="#transfer">Transfer</a></li>
+    <li><a href="#withdraw">Withdraw</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-light-validation-client" href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/">Light Validation Client</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-basics">The Basics</a></li>
+    <li><a href="#light-client">Light Client</a></li>
+    <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
+    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
+      <section class="subsection" id="docs-legacy-docs-poc-2">
+        <h3 class="section_link"><a id="docs-run-a-full-node" href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/">Run a full node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#types-of-nodes">Types of Nodes</a></li>
+        <li><a href="#fast-install-instructions-linux">Fast Install Instructions (Linux)</a></li>
+        <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
+      </ul>
+    </li>
+    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
+    <li><a href="#get-substrate">Get Substrate</a></li>
+    <li><a href="#clone-and-build">Clone and Build</a></li>
+    <li><a href="#run">Run</a></li>
+    <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
+    <li><a href="#using-docker">Using Docker</a></li>
   </ul>
 </nav>
       </section>
@@ -184,162 +466,59 @@
 </aside>
 
   <main class="content">
-    <h1>运行 Gatekeeper</h1><h2 id="配置要求">配置要求</h2>
-<h3 id="硬件">硬件</h3>
+    <h1>Deploy Local Testnet</h1><p>There are two options to run the pdiem demo:</p>
+<ol>
+<li>Use our Docker Compose file</li>
+<li>Build from the source and run it directly</li>
+</ol>
+<p>This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.</p>
+
+<div class="tip">
+  In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured. If you need any help, don't hesitate to ask in our Discord #dev group.
+</div>
+
+<h2 id="prepare">Prepare</h2>
+<p>Requirements to run the demo:</p>
+<ol>
+<li>A Linux computer with Docker and Docker Compose installed
 <ul>
-<li><strong>CPU</strong>：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片</li>
-<li><strong>内存</strong>：2G（最好8G）</li>
-<li><strong>磁盘空间</strong>：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）</li>
+<li><a href="https://docs.docker.com/engine/install/">Docker installation guide</a></li>
+<li><a href="https://docs.docker.com/compose/install/">Docker Compose installation guide</a></li>
 </ul>
-<h3 id="软件">软件</h3>
-<ul>
-<li><strong>系统</strong>：Ubuntu 18.04 / 20.04</li>
-<li><strong><a href="https://www.yuque.com/fagephalanetwork/miner/hyrrwa">安装 Docker-CE</a></strong></li>
-<li><strong><a href="https://www.yuque.com/fagephalanetwork/miner/yylp17">安装并启动 SGX 驱动</a></strong></li>
-<li><strong>网络环境</strong>：建议使用一级运营商的网络，有公网更好。</li>
-</ul>
-<br>
-<h2 id="同步链上数据">同步链上数据</h2>
-<ol>
-<li>下载 Phala Gatekeeper <a href="https://www.yuque.com/fagephalanetwork/vendettatutorial/bt1f8q">资源包</a>。</li>
-<li>将该文件放到 /home（家） 文件夹内。</li>
-<li>输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 <code>a</code> ，进入可编辑的状态）。</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~/phala
-<span class="ln">2</span>sudo cp ./poc3_validator.service /etc/systemd/system
-<span class="ln">3</span>sudo systemctl <span class="nb">enable</span> poc3_validator.service
-<span class="ln">4</span>sudo systemctl start poc3_validator.service
-<span class="ln">5</span>sudo vim validator.sh
-</code></pre></div><ol start="4">
-<li>再次确认当前输入法为英文输入法。按下 <code>ESC</code> 再按 <code>Shift</code> + <code>;</code> ，底部出现光标，输入 <code>wq</code> ，回车保存退出；</li>
-<li>打开 <a href="https://telemetry.polkadot.io/#list/Phala%2520PoC-3">https://telemetry.polkadot.io/#list/Phala%20PoC-3</a> ，点击 <code>BEST BLOCK</code> 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。</li>
-</ol>
-<blockquote>
-<p>也可以直接从 <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> 代码库的 <strong>master分支</strong> 上直接编译 <code>phala-node</code>。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为
-<code>git clone git@github.com/Phala-Network/phala-blockchain.git</code>.</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>  git clone https://github.com/Phala-Network/phala-blockchain
-<span class="ln">2</span>  <span class="nb">cd</span> phala-blockchain
-<span class="ln">3</span>  ./scripts/init.sh
-<span class="ln">4</span>  git submodule update --init
-<span class="ln">5</span>  cargo build --release
-</code></pre></div><p>这一步会比较消耗时间（大约 10 - 40 分钟，取决于硬件配置和网速）。</p>
-<blockquote>
-<p>如果你在编译的时候遇到编译错误，就可能需要切换到一个稍旧一点的 Nightly Rust 版本，可以通过以下命令实现：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>rustup install nightly-2020-11-10
-<span class="ln">2</span>rustup override <span class="nb">set</span> nightly-2020-11-10
-<span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-05-15
-</code></pre></div><p>如果你希望在本地生成密钥，也可以在同一目录下安装 <code>subkey</code>。如果想进一步提高安全性，则可以把编译好的 <code>subkey</code> 程序发送到一台全新且断网的电脑上进行操作。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>cargo install --force --git https://github.com/paritytech/substrate &gt; subkey
-</code></pre></div></blockquote>
-<p>默认情况下，Gatekeeper节点处于归档模式(Archive)。 如果您以非归档模式同步了链上数据，需要先使用 <code>phala-node purge-chain</code> 删除数据库，然后启用 <code>--pruning=archive</code> 命令行选项。</p>
-<blockquote>
-<p>您可以使用以下指令在非归档模式下运行 Gatekeeper 节点：<code>-unsafe-pruning --pruning &lt;块数&gt;</code>。但是请注意，归档节点和非归档节点的数据库彼此不兼容。要进行切换，需要清除链上数据。</p>
-</blockquote>
-<p>如果你不想立即以守门人模式启动节点，可以运行以下指令同步节点：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-node --pruning<span class="o">=</span>archive
-</code></pre></div><blockquote>
-<p><code>--validator</code> 和 <code>--sentry</code> 选项中已经包含了 <code>--pruning=archive</code> 选项。所以，只有在没有启用上述选项的情况下，才需要特殊指定该选项。如果你没有运行存档节点，或未以守门人、哨兵身份运行节点，当你切换的时候，需要重新同步数据库。</p>
-<p>*守门人需要用 RocksDb 后端进行同步。RocksDb 是一个默认设置，但可以用 <code>--database RocksDb</code> 选项来明确声明。将来，我们建议使用更快和更高效的 ParityDb。在不同数据库后端之间切换，同样也需要重新同步。</p>
-<p>如果你现在就想测试 ParityDB，可以开启 <code>--database paritydb</code> 参数。</p>
-<p>在主网“软启动”的过程中（测试网络不受此影响），如果你没有 PHA 代币，基本上就只能跟着教程做到这一步了。你可以运行一个节点，但接下来的操作必须有一定的 PHA 才可以继续。由于在“软启动”过程中，PHA 的转账还是禁用状态，你无法接受别人的转账从而得到 PHA 代币。此时，即使拥有 PHA 且参与守门人抵押，也只是表明了自己成为守门人的 <em>意愿</em>，直到 NPoS 阶段启用才会真正开始选举。</p>
-</blockquote>
-<br>
-<h2 id="抵押pha和设置-session-key">抵押PHA和设置 Session Key</h2>
-<h3 id="抵押-pha">抵押 PHA</h3>
-<ol>
-<li>注册两个账号，并在两个账号上都留有一定资金用以支付交易手续费。而后将大部分资金存入 Stash 账号。Stash 账号将负责保管保证金，而controller账号则类似一个负责开启或关闭身份的开关。</li>
-<li>点击  <code>网络</code> — <code>质押</code> — <code>账户操作</code> — <code>存储账户</code></li>
-<li>第一排选 Stash 账号，第二排选 Controller 账号。下方输入你想抵押的金额。然后点 <code>Bond</code>。</li>
-<li>稍等片刻，就可以看见页面出现了刚刚操作的账号对。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/1.png" alt="">
-<img src="/images/docs/gatekeeper/2.png" alt="">
-<img src="/images/docs/gatekeeper/3.png" alt=""></p>
-<h3 id="获取-session-密钥">获取 Session 密钥</h3>
-<blockquote>
-<p>注意：Session 密钥对于共识至关重要。如果不确定节点是否有密钥的话，可以使用两种方法来检查：</p>
-<ul>
-<li><a href="https://polkadot.js.org/api/substrate/rpc.html#haskey-publickey-bytes-keytype-text-bool">hasKey</a> 来检查是否有某一个 Session 密钥，或者</li>
-<li><a href="https://polkadot.js.org/api/substrate/rpc.html#hassessionkeys-sessionkeys-bytes-bool">hasSessionKeys</a> 来查看所有的 Session 公钥</li>
-</ul>
-</blockquote>
-<h4 id="方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</h4>
-<ol>
-<li>点击左上角的 <code>logo</code> — <code>DEVELOPMENT</code>，在 <code>custom endpoint</code> 里把端口替换为 <code>ws://127.0.0.1:9944</code> ，然后点 <code>Switch</code>。</li>
-<li>点 <code>开发者</code> — <code>RPC Calls</code> ，下面的模块选 <code>author</code> — <code>rotateKeys()</code>，点提交 <code>RPC 调用</code>，就会获得一串数字。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/4.png" alt="">
-<img src="/images/docs/gatekeeper/5.png" alt=""></p>
-<h4 id="方法2-cli">方法2: CLI</h4>
-<p>如果你在远端服务器上运行守门人节点，可能运行这个指令会更简单（假设你没有修改默认 HTTP PRC 端口号）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;id&#34;:1, &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;method&#34;: &#34;author_rotateKeys&#34;, &#34;params&#34;:[]}&#39;</span> http://localhost:9933
-</code></pre></div><p>它会返回一个十六进制编码的 “result” 字段，由4个公钥串联而成。记下即可。
-现在，你可以重启节点并且去掉 <code>--unsafe-rpc-expose</code> 选项，此后就不再需要这个选项。</p>
-<h3 id="提交session-key">提交Session Key</h3>
-<ol>
-<li>返回 <code>网络</code> — <code>质押</code> — <code>账户操作</code>，在刚刚生成的账户对旁边点击 Session 密钥 ，把刚刚生成的数字填进来。</li>
-<li>点击 <code>开发者</code> — <code>交易</code> ，第一排选择你的 stash 账号，第二排选择 <code>phalaModule</code> — <code>setStash(controller)</code>，第三排选择你的 controller ，最后点 <code>submit Transaction</code>（两个按钮中右边的那一个）。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/6.png" alt=""></p>
-<p><img src="/images/docs/gatekeeper/7.png" alt=""></p>
-<br>
-<h2 id="启动-pruntime">启动 pRuntime</h2>
-<ol>
-<li>输入以下指令拉取 pRuntime 镜像。根据网速不同，这一步可能需要 30~60 分钟。
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo docker pull phalanetwork/phala-poc3-pruntime
-</code></pre></div><p>``</p>
 </li>
-<li>根据你的驱动型号，输入对应的指令启动 pRuntime 容器。</li>
+<li>50G free disk space (SSD is preferred because the compilation takes longer on HDDs)</li>
+<li>A powerful CPU</li>
 </ol>
-<h4 id="dcap-驱动">DCAP 驱动：</h4>
-<pre><code>```bash
-sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pruntime-data:/root/data --device /dev/sgx/enclave --device /dev/sgx/provision phalanetwork/phala-poc3-pruntime
-```
-</code></pre>
-<h4 id="sgx-驱动">SGX 驱动：</h4>
-<pre><code>```bash
-sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pruntime-data:/root/data --device /dev/isgx phalanetwork/phala-poc3-pruntime
-```
-</code></pre>
-<h4 id="不知道自己的驱动是什么">不知道自己的驱动是什么：</h4>
+<p>Maker sure the <code>docker</code> and <code>docker-compose</code> commands are available for your user:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker --version
+<span class="ln">2</span><span class="c1"># &gt; Docker version 20.10.5, build 55c4c88</span>
+<span class="ln">3</span>docker-compose --version
+<span class="ln">4</span><span class="c1"># &gt; docker-compose version 1.28.5, build c4eb3a1f</span>
+</code></pre></div><p>To start the full stack, first clone the phala-docker repo on <code>pdiem-m3</code> branch.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone -b pdiem-m3 https://github.com/Phala-Network/phala-docker.git
+</code></pre></div><p>Cd to the repo, build the docker images.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose build
+</code></pre></div>
+<div class="tip">
+  It may take up to 1-2 hours to build 5 separate projects. A powerful CPU can build it in around 30 mins.
+</div>
+
+<p>To <strong>start</strong> the pdiem full stack:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose up
+</code></pre></div><p>To <strong>stop</strong> the pdiem full stack (and remove diem blockchain history):</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose down --volume
+</code></pre></div><p>To check the service states:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose ps
+</code></pre></div>
+<div class="tip">
+  <p>Tips:</p>
 <ul>
-<li>输入 ls /dev/isgx 有返回：<strong>SGX 驱动</strong></li>
-<li>输入 ls /dev/sgx 有返回：<strong>DCAP 驱动</strong></li>
-<li>如果两个驱动都有，则运行 DCAP 驱动的命令。</li>
-<li>如果两个驱动都没有，请参考<a href="https://www.yuque.com/fagephalanetwork/miner/yylp17">这个教程</a>安装驱动。</li>
+<li>The state of <code>diem-cli</code> should be &quot;Exit 0&quot; because we will start it manually on demand.</li>
+<li>Don't keep it running for a long time. Diem writes ~1MB/s to the disk.</li>
 </ul>
-<br>
-<h2 id="启动-phost">启动 pHost</h2>
-<ol>
-<li>输入vim runphost.sh 进入一个子页面。</li>
-<li>确认当前输入法为英文输入法，按下 <code>a</code> ，看到底部出现 <code>INSERT</code> 字样，即可进入编辑状态。</li>
-<li>把所有 Key Key Key 的字符替换成自己的 controller 助记词。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/8.png" alt=""></p>
-<ol start="4">
-<li>再次确认当前输入法为英文输入法，按下 <code>ESC</code> 再按 <code>Shift</code> + <code>;</code> ，底部出现光标，输入 <code>wq</code> ，回车保存退出；</li>
-<li>输入 <code>./runphost.sh</code> （句号前面没有空格），稍等一下，直到末尾显示 <code>OK(())</code>。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/9.png" alt="">
-<img src="/images/docs/gatekeeper/10.png" alt=""></p>
-<p><strong>如果这里报错如下：</strong>
-<code>FailedToCallRegisterWorker: Err(Rpc(Request(Error { code: ServerError(1010), message: &quot;Invalid Transaction&quot;, data: Some(String(&quot;Inability to pay some fees (e.g. account balance too low)&quot;)) }))) bridge() exited with result: Err(FailedToCallRegisterWorker)</code></p>
-<p><strong>说明是助记词不对，或者你第三步没有做完（需要在</strong> <strong>staking</strong> <strong>界面和</strong> <strong>extrinsics</strong> <strong>界面都操作完成）。</strong></p>
-<p><strong>如果助记词不对，可以****直接</strong> <strong>vim runphost.sh</strong> <strong>进去按照刚刚步骤修改助记词。</strong></p>
-<br>
-<h2 id="启动守门人身份"><strong>启动守门人身份</strong></h2>
-<ol>
-<li>去到<code>质押</code>—<code>账户操作</code>板块，传送门：<a href="https://poc3.phala.network/?rpc=wss%3A%2F%2Fpoc3.phala.network%2Fws#/staking/actions">https://poc3.phala.network/?rpc=wss%3A%2F%2Fpoc3.phala.network%2Fws#/staking/actions</a></li>
-<li>点击你绑定好的账号旁边的 <code>Validate</code>。之后按照引导提交 validate 请求。</li>
-<li>等进入下一个 Epoch 的时候，就可以看到你的守门人在 Waiting 列表里了。</li>
-</ol>
-<p><img src="/images/docs/gatekeeper/11.png" alt="">
-<img src="/images/docs/gatekeeper/12.png" alt="">
-<img src="/images/docs/gatekeeper/13.png" alt=""></p>
-<br>
-<h3 id="技术支持">技术支持</h3>
-<p><a href="https://mp.weixin.qq.com/s/j0ggxgvwqCeNO6v0mgHkzw"><img src="https://img.shields.io/badge/Join-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen" alt=""></a></p>
+
+</div>
+
 
     <div class="pager pager_lean">
   
@@ -347,8 +526,8 @@ sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pr
   
   <div class="pager_item next">
     
-    <a href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/" class="pager_link button" title="运行全节点">
-      <span class="pager_label">运行全节点</span>
+    <a href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/" class="pager_link button" title="Play with pDiem">
+      <span class="pager_label">Play with pDiem</span>
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
     </a>

@@ -9,27 +9,35 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>2.2 Set Commission | Phala Network Wiki</title><meta property="og:title" content="2.2 Set Commission" />
-<meta property="og:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers." />
+<title>Play with pDiem | Phala Network Wiki</title><meta property="og:title" content="Play with pDiem" />
+<meta property="og:description" content="The pdiem full stack includes:
+ A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
+Create Diem accounts First, start the diem-cli from the same directory:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="2.2 Set Commission">
-<meta itemprop="description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers.">
+<meta itemprop="name" content="Play with pDiem">
+<meta itemprop="description" content="The pdiem full stack includes:
+ A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
+Create Diem accounts First, start the diem-cli from the same directory:">
 
-<meta itemprop="wordCount" content="131">
+<meta itemprop="wordCount" content="366">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2.2 Set Commission"/>
-<meta name="twitter:description" content="Go to Developer -&gt; Extrinsics. Choose your Controller account -&gt; phalaModule -&gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers."/>
+<meta name="twitter:title" content="Play with pDiem"/>
+<meta name="twitter:description" content="The pdiem full stack includes:
+ A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
+Create Diem accounts First, start the diem-cli from the same directory:"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
 
 
 
-  <meta name="description" content="Go to Developer -&amp;gt; Extrinsics. Choose your Controller account -&amp;gt; phalaModule -&amp;gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers.">
+  <meta name="description" content="The pdiem full stack includes:
+ A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
+Create Diem accounts First, start the diem-cli from the same directory:">
 
 
 
@@ -251,7 +259,7 @@
     <li><a href="#check-the-phala-miner-status">Check the phala miner status</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-23-veirfy-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Veirfy the Miner State</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#mining-state-references">Mining State References</a></li>
@@ -399,7 +407,7 @@
     <li><a href="#prepare">Prepare</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#create-diem-accounts">Create Diem accounts</a></li>
     <li><a href="#deposit-diem-assets-to-pdiem">Deposit Diem assets to pDiem</a>
@@ -458,25 +466,54 @@
 </aside>
 
   <main class="content">
-    <h1>2.2 Set Commission</h1><ol>
-<li>Go to <code>Developer</code> -&gt; <code>Extrinsics</code>.</li>
-<li>Choose your <code>Controller</code> account -&gt; <code>phalaModule</code> -&gt; <code>setPayoutPrefs(payout_comission, payout_target)</code></li>
-<li>Fill in <code>commission</code> (from 0 to 100) and choose the account where you want to receive the mining rewards at <code>target</code>.</li>
-</ol>
-<blockquote>
-<p>The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a <code>comission</code> of 100 means all the profits are tranferred to your specified account and a <code>comission</code> of 0 will share all the profits to your mining stakers. Of course you get all if it's all your own stake.</p>
-<p>A lower commission rate will share more of your profits, which means more lenders are likely to support you, thus lowering your staking amount requirement.</p>
-</blockquote>
-<p><img src="/images/docs/poc3/2.2.png" alt=""></p>
+    <h1>Play with pDiem</h1><p><img src="/images/docs/pdiem/docker-compose-structure.png" alt=""></p>
+<p>The pdiem full stack includes:</p>
+<ul>
+<li>A local Diem testnet: <code>diem</code>, <code>diem-cli</code></li>
+<li>A Phala Network local testnet with the pdiem contract: <code>phala-node</code>, <code>phala-pruntime</code>, <code>phala-phost</code></li>
+<li>A relayer to connect the both networks: <code>pdiem-relayer</code></li>
+</ul>
+<p>With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.</p>
+<h2 id="create-diem-accounts">Create Diem accounts</h2>
+<p>First, start the diem-cli from the same directory:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli
+</code></pre></div><p>It spawns a shell at <code>/root</code>. Then enter the Diem console inside the shell by:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./diem-cli.sh
+</code></pre></div><p><img src="/images/docs/pdiem/diem-cli.png" alt=""></p>
+<p>Then run the following commands to prepare the accounts:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
+<span class="ln">2</span>diem% account create
+<span class="ln">3</span>diem% account create
+<span class="ln">4</span><span class="c1"># Mint some funds</span>
+<span class="ln">5</span>diem% account mint <span class="m">0</span> <span class="m">100</span> XUS
+<span class="ln">6</span>diem% account mint <span class="m">1</span> <span class="m">100</span> XUS
+</code></pre></div><p>The <code>diem-cli</code> tool is a light wallet connecting to the diem node via RPC. It can be used to manage accounts, transfer tokens, and query the blockchain. In the above steps, we created two accounts (indexed by 0 &amp; 1), and mint some test <code>XUS</code> token to the account.</p>
+
+<div class="tip">
+  Among them, the <code>account 0</code> is a special account that hard-coded in the pdiem-m3 demo contract as the deposit address. Usually <code>diem-cli</code> generates random accounts. But in the pdiem-m3 demo, the seed to generate the wallets is pinned with a special file <a href="https://github.com/Phala-Network/phala-docker/blob/pdiem-m3/dockerfile.d/client.mnemonic">client.mnemonic</a> so that everytime it generates the same hard-coded account.
+</div>
+
+<h2 id="deposit-diem-assets-to-pdiem">Deposit Diem assets to pDiem</h2>
+<p>To send Diem assets to pdiem, just transfer it to the deposit address (<code>account 0</code>) in <code>diem-cli</code>. For example, we can send <code>10 XUS</code> to <code>account 0</code> like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
+</code></pre></div><p>And that's all!</p>
+<p>Behind the scene, <code>pdiem-relayer</code> picked up the deposit transaction, send a regular Substrate extrinsic to the <code>pdiem</code> confidential contract on Phala to sync the transaction. After the validation of the incoming transaction and the proof, the <code>pdiem</code> contract will accept it.</p>
+<h3 id="balances-in-pdiem">Balances in pdiem</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balance
+</code></pre></div><h3 id="verified-transactions">Verified transactions</h3>
+<p>All the transactiosn received by <code>pdiem</code> contract are validated against the latest Diem ledger state, which is protected by a PoS-like consensus. The validated transactions are stored inside the <code>pdiem</code> contract storage, and can be checked by anyone:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
+</code></pre></div><h2 id="withdraw-pdiem-assets-to-diem">Withdraw pDiem assets to Diem</h2>
+<p>(WIP)</p>
 
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/" class="pager_link button" title="2.1 Start the Phala miner">
+    <a href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/" class="pager_link button" title="Deploy Local Testnet">
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-      <span class="pager_label">2.1 Start the Phala miner</span>
+      <span class="pager_label">Deploy Local Testnet</span>
     </a>
   </div>
   
@@ -484,8 +521,8 @@
   
   <div class="pager_item next">
     
-    <a href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/" class="pager_link button" title="2.3 Veirfy the Miner State">
-      <span class="pager_label">2.3 Veirfy the Miner State</span>
+    <a href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/" class="pager_link button" title="Reservation-based Model">
+      <span class="pager_label">Reservation-based Model</span>
       <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
       <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
     </a>
