@@ -416,10 +416,17 @@
     <li><a href="#the-basics">The Basics</a></li>
     <li><a href="#light-client">Light Client</a></li>
     <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
-    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
@@ -451,8 +458,7 @@
 </aside>
 
   <main class="content">
-    <h1>pDiem</h1><h2 id="overview">Overview</h2>
-<p>pDiem is a privacy-preserving layer for <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> on Polkadot ecosystem. Powered by Phala Network confidential contract, it can protect the privacy of Diem users. More specifically, pDiem is:</p>
+    <h1>pDiem</h1><p>pDiem is a privacy-preserving layer for <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> on Polkadot ecosystem. Powered by Phala Network confidential contract, it can protect the privacy of Diem users. More specifically, pDiem is:</p>
 <ul>
 <li>A corss chain bridge connecting Polkadot and Diem</li>
 <li>A privacy-preserving token on Polkadot for Diem users</li>
@@ -530,6 +536,9 @@
         </tr>
     </tbody>
 </table>
+<a href="https://github.com/w3f/General-Grants-Program/blob/8a23ef68c7512fa0d437554640601ef28cea3fca/grants/speculative/pLIBRA.md">
+    <img src="/images/docs/web3%20foundation_grants_badge_black.svg" alt="w3f grant receiver" style="height: 100px;">\
+</a>
 
     <div class="pager pager_lean">
   

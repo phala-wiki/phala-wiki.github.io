@@ -10,26 +10,30 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Contract Implementation | Phala Network Wiki</title><meta property="og:title" content="Contract Implementation" />
-<meta property="og:description" content="WIP" />
+<meta property="og:description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="Contract Implementation">
-<meta itemprop="description" content="WIP">
+<meta itemprop="description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract.">
 
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="599">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Implementation"/>
-<meta name="twitter:description" content="WIP"/>
+<meta name="twitter:description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
 
 
 
-  <meta name="description" content="WIP">
+  <meta name="description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract.">
 
 
 
@@ -423,10 +427,17 @@
     <li><a href="#the-basics">The Basics</a></li>
     <li><a href="#light-client">Light Client</a></li>
     <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
-    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
@@ -458,7 +469,65 @@
 </aside>
 
   <main class="content">
-    <h1>Contract Implementation</h1><p>WIP</p>
+    <h1>Contract Implementation</h1><ul>
+<li>diem contract in the big picture</li>
+<li>functions</li>
+<li>impl
+<ul>
+<li>storage</li>
+<li>functions</li>
+</ul>
+</li>
+</ul>
+<p>The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.</p>
+<p>The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.</p>
+<h2 id="contract-storage">Contract storage</h2>
+<p>The <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">pdiem contract</a> is implemented as a native confidential smart contract. It defines the following storage items:</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Light client
+</span><span class="ln"> 3</span><span class="c1"></span><span class="w">
+</span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// The genesis TrustedState
+</span><span class="ln"> 5</span><span class="sd"></span><span class="w">    </span><span class="n">init_trusted_state</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">TrustedState</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">    </span><span class="sd">/// The latest TrustedState
+</span><span class="ln"> 7</span><span class="sd"></span><span class="w">    </span><span class="n">trusted_state</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">TrustedState</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="c1">// Accounts
+</span><span class="ln">10</span><span class="c1"></span><span class="w">
+</span><span class="ln">11</span><span class="w">    </span><span class="sd">/// Controlled accounts
+</span><span class="ln">12</span><span class="sd"></span><span class="w">    </span><span class="n">accounts</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">AccountInfo</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln">13</span><span class="w">    </span><span class="sd">/// Account sequence id
+</span><span class="ln">14</span><span class="sd"></span><span class="w">    </span><span class="n">seq_number</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln">15</span><span class="w">
+</span><span class="ln">16</span><span class="w">    </span><span class="c1">// Transactions
+</span><span class="ln">17</span><span class="c1"></span><span class="w">
+</span><span class="ln">18</span><span class="w">    </span><span class="sd">/// Known transactions
+</span><span class="ln">19</span><span class="sd"></span><span class="w">    </span><span class="n">transactions</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Transaction</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln">20</span><span class="w">    </span><span class="sd">/// Transaction verification result
+</span><span class="ln">21</span><span class="sd"></span><span class="w">    </span><span class="n">verified</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ln">22</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id="light-client-implementation">Light client implementation</h2>
+<p>The Diem light client maintains the latest ledger state (<code>LedgerInfo</code>). It commits to the accumulators of the historical transactions, states, and the events. A ledger state is updated whenver the Diem blockchain database is mutated. Therefore with the latest ledger state, all the facts happened earlier can be validated.</p>
+<p>The genesis ledger state is initialized by <code>Command::SetTrustedState</code> only at once, and is persistent and can be examed by anyone in the entire lifecycle of the bridge. The current ledger state is used to validate the signature of a newer ledger state until a validator set change (e.g. via an on-chain election). When there's a validator set change, the last ledger state in the same epoch can be validated, and the newly elected validator set can be extracted from the blockchain storage it commits to. This is handled by <code>verify_trusted_state()</code>.</p>
+<p>There's no specific command to update the ledger state. Instead, a <code>LedgerInfoWithSignature</code> and a <code>EpochChangeProof</code> are extracted from the <code>TransactionWithProof</code> from a <code>Command::VerifyTransaction</code> call, when a relayer syncs a new transaction to pdiem. Therefore as the new transactions get synced to the pdiem contract, it always maintains the latest ledger state.</p>
+<h2 id="receive-deposit-transactions">Receive deposit transactions</h2>
+<p>Before a user can deposit Diem assets to pdiem, a deposit address must be generated, similar to a token exchange in the real world. This is done by the pdiem contract. Any user can ask the contract to generate a deposit address. The contract will generate a new private key, save it in the contract storage, and reveal the address to the user.</p>
+
+<div class="tip">
+  In pdiem-m3, we hard-coded the deposit address in the contract.
+</div>
+
+<p>When a deposit address, a user can transfer some Diem assets to pdiem:</p>
+<ol>
+<li>The user sends a Diem transaction to transfer some token to the deposit address</li>
+<li>The pdiem relayer watches the deposit address, notices the deposit transaction, and relay it to the pdiem contract by <code>Command::VerifyTransaction</code></li>
+<li>The contract extracts the latest ledger state with proof and validates it with the previous ledger state (<code>verify_trusted_state()</code>)</li>
+<li>Finally it extracts the transaction proof, and confirm the deposit if the proof can pass the validation against the latest ledger state (<code>verify_transaction_state_proof</code>)</li>
+</ol>
+<p>Once a deposit is validated, we will add the received amount to the user's available balance. The accepted transactions and the balance can be queried by <code>Request::FreeBalance</code> and <code>Request::VerifiedTransactions</code>.</p>
+<h2 id="sign-withdraw-transactions">Sign withdraw transactions</h2>
+<p>WIP: The <a href="https://github.com/Phala-Network/phala-blockchain/pull/171">Pull Request</a> is getting merged.</p>
+<h2 id="assets-transfer">Assets transfer</h2>
+<p>In pdiem-m3 we didn't implement token transferring. We will leave it to the next milestone, and it will be handled by the <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs"><code>Assets</code> confidential contracts</a>, which also implements the standard interoperable assets standard defined in XCM. In this way, the assets bridged by pdiem can be used in any parachains in the Polkadot ecosystem.</p>
 
     <div class="pager">
   

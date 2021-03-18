@@ -19,7 +19,7 @@
 <meta itemprop="name" content="Light Validation Client">
 <meta itemprop="description" content="The Basics A minimal cross-chain bridge can transfer assets between the two blockchains. In the reservation-based model, it requires that the local blockchain can confirm some deposit to its sovereign accounts, and the remote blockchain can confirm the withdraw commands from the local blockchain. The validation of the blockchain is done by full nodes, but they are too heavy to fit into a smart contract or blockchain, in terms of the computation and the storage.">
 
-<meta itemprop="wordCount" content="640">
+<meta itemprop="wordCount" content="633">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Light Validation Client"/>
 <meta name="twitter:description" content="The Basics A minimal cross-chain bridge can transfer assets between the two blockchains. In the reservation-based model, it requires that the local blockchain can confirm some deposit to its sovereign accounts, and the remote blockchain can confirm the withdraw commands from the local blockchain. The validation of the blockchain is done by full nodes, but they are too heavy to fit into a smart contract or blockchain, in terms of the computation and the storage."/>
@@ -423,10 +423,17 @@
     <li><a href="#the-basics">The Basics</a></li>
     <li><a href="#light-client">Light Client</a></li>
     <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
-    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
@@ -479,11 +486,6 @@
 <li>storage (some data stored in the Account Resources)</li>
 </ul>
 <p>See also: <a href="https://github.com/diem/diem/tree/master/storage">Diem blockchain storage hierarchy</a></p>
-<h2 id="a-diem-light-client">A Diem Light Client</h2>
-<p>Code: <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs</a></p>
-<blockquote>
-<p>WIP</p>
-</blockquote>
 
     <div class="pager">
   

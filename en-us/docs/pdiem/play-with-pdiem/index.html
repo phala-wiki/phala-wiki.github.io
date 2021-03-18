@@ -23,7 +23,7 @@ Create Diem accounts First, start the diem-cli from the same directory:" />
  A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
 Create Diem accounts First, start the diem-cli from the same directory:">
 
-<meta itemprop="wordCount" content="366">
+<meta itemprop="wordCount" content="384">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Play with pDiem"/>
 <meta name="twitter:description" content="The pdiem full stack includes:
@@ -431,10 +431,17 @@ Create Diem accounts First, start the diem-cli from the same directory:">
     <li><a href="#the-basics">The Basics</a></li>
     <li><a href="#light-client">Light Client</a></li>
     <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
-    <li><a href="#a-diem-light-client">A Diem Light Client</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
@@ -497,7 +504,7 @@ Create Diem accounts First, start the diem-cli from the same directory:">
 <p>To send Diem assets to pdiem, just transfer it to the deposit address (<code>account 0</code>) in <code>diem-cli</code>. For example, we can send <code>10 XUS</code> to <code>account 0</code> like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
 </code></pre></div><p>And that's all!</p>
-<p>Behind the scene, <code>pdiem-relayer</code> picked up the deposit transaction, send a regular Substrate extrinsic to the <code>pdiem</code> confidential contract on Phala to sync the transaction. After the validation of the incoming transaction and the proof, the <code>pdiem</code> contract will accept it.</p>
+<p>Behind the scene, <code>pdiem-relayer</code> picked up the deposit transaction, send a regular Substrate extrinsic to the <code>pdiem</code> confidential contract on Phala to sync the transaction. After the validation of the incoming transaction and the proof, the <code>pdiem</code> contract will accept it. Usually it takes 30 seconds for the relayer to pick up the transaction, and relay to <code>pdiem</code> side.</p>
 <h3 id="balances-in-pdiem">Balances in pdiem</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balance
 </code></pre></div><h3 id="verified-transactions">Verified transactions</h3>
