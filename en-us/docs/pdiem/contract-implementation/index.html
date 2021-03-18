@@ -21,7 +21,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <meta itemprop="description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
 The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.">
 
-<meta itemprop="wordCount" content="666">
+<meta itemprop="wordCount" content="697">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Implementation"/>
 <meta name="twitter:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
@@ -439,7 +439,11 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-runs-the-relayer">Who runs the relayer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
@@ -500,6 +504,11 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <p>The Diem light client maintains the latest ledger state (<code>LedgerInfo</code>). It commits to the accumulators of the historical transactions, states, and the events. A ledger state is updated whenver the Diem blockchain database is mutated. Therefore with the latest ledger state, all the facts happened earlier can be validated.</p>
 <p>The genesis ledger state is initialized by <code>Command::SetTrustedState</code> only at once, and is persistent and can be examed by anyone in the entire lifecycle of the bridge. The current ledger state is used to validate the signature of a newer ledger state until a validator set change (e.g. via an on-chain election). When there's a validator set change, the last ledger state in the same epoch can be validated, and the newly elected validator set can be extracted from the blockchain storage it commits to. This is handled by <code>verify_trusted_state()</code>.</p>
 <p>There's no specific command to update the ledger state. Instead, a <code>LedgerInfoWithSignature</code> and a <code>EpochChangeProof</code> are extracted from the <code>TransactionWithProof</code> from a <code>Command::VerifyTransaction</code> call, when a relayer syncs a new transaction to pdiem. Therefore as the new transactions get synced to the pdiem contract, it always maintains the latest ledger state.</p>
+
+<div class="tip">
+  The Diem specific serialization, the cryptographics, and the verification logics are extracted from the original Diem codebase, and ported to SGX build target by the pdiem team, located at <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/diem">/diem</a> directory.
+</div>
+
 <h2 id="receive-deposit-transactions">Receive deposit transactions</h2>
 <p>Before a user can deposit Diem assets to pdiem, a deposit address must be generated, similar to a token exchange in the real world. This is done by the pdiem contract. Any user can ask the contract to generate a deposit address. The contract will generate a new private key, save it in the contract storage, and reveal the address to the user.</p>
 

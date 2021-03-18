@@ -10,26 +10,34 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>The Relayer | Phala Network Wiki</title><meta property="og:title" content="The Relayer" />
-<meta property="og:description" content="WIP" />
+<meta property="og:description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
+Codebase: Phala-Network/pdiem-relayer.
+Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="The Relayer">
-<meta itemprop="description" content="WIP">
+<meta itemprop="description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
+Codebase: Phala-Network/pdiem-relayer.
+Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract.">
 
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="171">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Relayer"/>
-<meta name="twitter:description" content="WIP"/>
+<meta name="twitter:description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
+Codebase: Phala-Network/pdiem-relayer.
+Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
 
 
 
-  <meta name="description" content="WIP">
+  <meta name="description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
+Codebase: Phala-Network/pdiem-relayer.
+Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract.">
 
 
 
@@ -435,7 +443,11 @@
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-runs-the-relayer">Who runs the relayer</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
@@ -466,7 +478,12 @@
 </aside>
 
   <main class="content">
-    <h1>The Relayer</h1><p>WIP</p>
+    <h1>The Relayer</h1><p>The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.</p>
+<p>Codebase: <a href="https://github.com/Phala-Network/pdiem-relayer">Phala-Network/pdiem-relayer</a>.</p>
+<h2 id="who-runs-the-relayer">Who runs the relayer</h2>
+<p>Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract. However the more relayer, the higher guarantee of availability can be achieved.</p>
+<p>In pdiem-m3 we haven't added any incentives for the relayer, but since a relayer must submit transactions on the blockchains which causes some gas fee, we would consider to allow the relayers to take a tiny amount of the transaction fee from the cross-chain transactions as a basic incentive.</p>
+<p>An alternative solution could be to ask the user itself to be its own relayer. However this requires the user to be online for a relatively longer time (probably a few minues), and thus causes a bad user experience.</p>
 
     <div class="pager">
   
