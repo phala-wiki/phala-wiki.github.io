@@ -54,8 +54,8 @@ The pDiem bridge controls a set of sovereign accounts (see XCM Format - Definiti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</guid>
-      <description>diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
-The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract.</description>
+      <description>The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.</description>
     </item>
     
     <item>

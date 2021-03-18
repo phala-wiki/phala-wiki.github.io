@@ -10,30 +10,30 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Contract Implementation | Phala Network Wiki</title><meta property="og:title" content="Contract Implementation" />
-<meta property="og:description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
-The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract." />
+<meta property="og:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="Contract Implementation">
-<meta itemprop="description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
-The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract.">
+<meta itemprop="description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.">
 
-<meta itemprop="wordCount" content="599">
+<meta itemprop="wordCount" content="589">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Implementation"/>
-<meta name="twitter:description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
-The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract."/>
+<meta name="twitter:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.51a94ee6f045627ad59db60801f5337e99870a05ce0773970281c0a239aa562b815158c30b1589cf2356249a382dfd3d049389ce9f946fbf3bfb30bdd316c4cc.css" integrity="sha512-UalO5vBFYnrVnbYIAfUzfpmHCgXOB3OXAoHAojmqViuBUVjDCxWJzyNWJJo4Lf09BJOJzp&#43;Ub787&#43;zC90xbEzA==">
 
 
 
-  <meta name="description" content="diem contract in the big picture functions impl  storage functions    The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
-The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract.">
+  <meta name="description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
+The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.">
 
 
 
@@ -469,17 +469,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 </aside>
 
   <main class="content">
-    <h1>Contract Implementation</h1><ul>
-<li>diem contract in the big picture</li>
-<li>functions</li>
-<li>impl
-<ul>
-<li>storage</li>
-<li>functions</li>
-</ul>
-</li>
-</ul>
-<p>The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.</p>
+    <h1>Contract Implementation</h1><p>The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.</p>
 <p>The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.</p>
 <h2 id="contract-storage">Contract storage</h2>
 <p>The <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">pdiem contract</a> is implemented as a native confidential smart contract. It defines the following storage items:</p>
