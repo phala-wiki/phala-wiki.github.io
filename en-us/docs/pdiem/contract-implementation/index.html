@@ -21,7 +21,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <meta itemprop="description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
 The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.">
 
-<meta itemprop="wordCount" content="589">
+<meta itemprop="wordCount" content="666">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Implementation"/>
 <meta name="twitter:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
@@ -436,6 +436,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
     <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
     <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
     <li><a href="#assets-transfer">Assets transfer</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents"></nav>
@@ -514,10 +515,27 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <li>Finally it extracts the transaction proof, and confirm the deposit if the proof can pass the validation against the latest ledger state (<code>verify_transaction_state_proof</code>)</li>
 </ol>
 <p>Once a deposit is validated, we will add the received amount to the user's available balance. The accepted transactions and the balance can be queried by <code>Request::FreeBalance</code> and <code>Request::VerifiedTransactions</code>.</p>
+
+<div class="tip tip_warning">
+  The transactions are ordered by sequence or event id. The ids of the accounts are recorded in the contract to avoid missing transactions.
+</div>
+
 <h2 id="sign-withdraw-transactions">Sign withdraw transactions</h2>
 <p>WIP: The <a href="https://github.com/Phala-Network/phala-blockchain/pull/171">Pull Request</a> is getting merged.</p>
 <h2 id="assets-transfer">Assets transfer</h2>
 <p>In pdiem-m3 we didn't implement token transferring. We will leave it to the next milestone, and it will be handled by the <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs"><code>Assets</code> confidential contracts</a>, which also implements the standard interoperable assets standard defined in XCM. In this way, the assets bridged by pdiem can be used in any parachains in the Polkadot ecosystem.</p>
+<h2 id="reference">Reference</h2>
+<p>Commands:</p>
+<ul>
+<li><code>AccountData</code>: Sets the whitelisted accounts, in bcs encoded base64</li>
+<li><code>SetTrustedState</code>: Sets the trusted state. The owner can only initialize the bridge with the genesis state once.</li>
+<li><code>VerifyTransaction</code>: Verifies a deposit transactions</li>
+</ul>
+<p>Queries:</p>
+<ul>
+<li><code>FreeBalance</code>: Gets the total available balance controlled by the contract.</li>
+<li><code>VerifiedTransactions</code>: Gets all the verified transactions, in hex hash string.</li>
+</ul>
 
     <div class="pager">
   
