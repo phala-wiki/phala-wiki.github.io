@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>pDiem | Phala Network Wiki</title><meta property="og:title" content="pDiem" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="pDiem">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pDiem"/>
 <meta name="twitter:description" content=""/>
 
@@ -465,11 +466,11 @@
 </aside>
 
   <main class="content">
-    <h1>pDiem</h1><p>pDiem is a privacy-preserving layer for <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> on Polkadot ecosystem. Powered by Phala Network confidential contract, it can protect the privacy of Diem users. More specifically, pDiem is:</p>
+    <h1>pDiem</h1><p>pDiem is a compliant privacy-preserving layer for <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> on Polkadot ecosystem. Powered by Phala Network confidential contract, it can protect the privacy of Diem users. More specifically, pDiem is:</p>
 <ul>
-<li>A corss chain bridge connecting Polkadot and Diem</li>
-<li>A privacy-preserving token on Polkadot for Diem users</li>
-<li>A privacy-preserving DApp ecosystem more open and free than Novi (formerly known as Calibra)</li>
+<li>A cross-chain bridge connecting Polkadot ecosystem with Diem’s m(b)illions of users, offering a host of Polkadot-based services and applications to Diem holders and an on-ramp to massive user base for Polkadot.</li>
+<li>A privacy-preserving stablecoin on Polkadot that is both compliant (a single transaction is limited in value up to the no-KYC requirements by FATF) and allows for scalable value transfers in stable asset (think remittances, everyday spending, micro-payments for services). Imagine using your current account without any bank or credit provider tracking your purchases/spendings.</li>
+<li>A privacy-preserving DApp ecosystem that is more open and free than Facebook-operated Novi (formerly known as Calibra).</li>
 </ul>
 <blockquote>
 <p>The project was initially named pLIBRA (&quot;Privacy-preserving Libra&quot;). &quot;In December 2020, Libra was rebranded as Diem.&quot; Since then we have followed Diem's rebranding, and renamed the project to pDiem.</p>
@@ -481,15 +482,15 @@
 <h2 id="the-system">The System</h2>
 <p><img src="/images/docs/pdiem/pdiem-system-design.png" alt=""></p>
 <ul>
-<li><strong>pDiem Contract</strong>: The core of pDiem, a confidential contract that validates and accepts Diem deposit and process withdraw request;</li>
-<li><strong>pDiem Relayers</strong>: The nodes that relay Diem deposit transactions to the pDiem Contract, and broadcast the withdraw transactions to Diem;</li>
-<li><strong>Phala Network</strong>: It runs the pDiem Contract, and relayes XCM between pDiem and other parachains;</li>
+<li><strong>pDiem Contract</strong>: The core of pDiem, a confidential contract that validates and accepts Diem deposits and processes withdraw requests;</li>
+<li><strong>pDiem Relayers</strong>: The nodes that relay Diem deposit transactions to the pDiem Contract, and broadcast the withdrawal transactions to Diem;</li>
+<li><strong>Phala Network</strong>: It runs the pDiem Contract, and relayes XCM transactions between pDiem and other Polkadot parachains</li>
 <li><strong>Polkadot</strong>: The relay chain that connects parachains including Phala Network;</li>
-<li><strong>Parachains</strong>: The other blockchains we aim to serve;</li>
+<li><strong>Parachains</strong>: Other blockchains in the Polkadot ecosystem we aim to serve;</li>
 <li><strong>XCMP</strong>: <a href="https://wiki.polkadot.network/docs/en/learn-crosschain">Cross-chain Messaging Protocol</a>.</li>
 </ul>
-<p>Among the component listed in the diagram, the <strong>pDiem Contract</strong> and the <strong>pDiem Realyers</strong> are the core of the pDiem bridge protocol. The contract is deployed on Phala Network. It handles users' Diem deposit transactions and withdraw requests. The relayers are the contributors who run pDiem Relayer program, which relay the transactions between the Diem blockchain and the pDiem contract.</p>
-<p>pDiem receives assets from the Diem blockchain, generates a <em>pDIEM</em> token on the Polkadot side, and can also transfer it back to redeem the original assets. This is achieved by a combination of different components. In the docs, we will introduce:</p>
+<p>Among the components listed in the diagram, the <strong>pDiem Contract</strong> and the <strong>pDiem Realyers</strong> are the core of the pDiem bridge protocol. The contract is deployed on Phala Network. It handles users' Diem deposit transactions and withdrawal requests. The relayers are the contributors who run pDiem Relayer program, which relay the transactions between the Diem blockchain and the pDiem contract.</p>
+<p>pDiem receives assets from the Diem blockchain, generates <strong>pdiem bridged tokens</strong> on the Polkadot side, and can also transfer them back to redeem the original assets. This is achieved by a combination of different components. In the docs, we will introduce:</p>
 <ul>
 <li><a href="/en-us/docs/pdiem/reservation-based-model/">The Reservation-based Model</a>,</li>
 <li><a href="/en-us/docs/pdiem/light-validation-client/">The Light Validation Client</a>,</li>
@@ -699,7 +700,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>
