@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,19 +14,17 @@
 Codebase: Phala-Network/pdiem-relayer.
 Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="The Relayer">
 <meta itemprop="description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
 Codebase: Phala-Network/pdiem-relayer.
 Who runs the relayer Anyone can run a relayer, and in theory only one honest relayer is required to operate the pdiem bridge, because all the messages submitted by the relayer are validated by the Diem blockchain or the pdiem contract.">
 
 <meta itemprop="wordCount" content="171">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Relayer"/>
 <meta name="twitter:description" content="The pdiem relayer is the component to sync data between pdiem and the Diem blockchain. It runs off-chain, connects to the both blockchains, and watch the related transactions.
 Codebase: Phala-Network/pdiem-relayer.
@@ -182,22 +180,25 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
       <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
-        <h3 class="section_link"><a id="docs-11-hardware-requirement-and-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-1-hardware-configuration/">1.1 Hardware Requirement and Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-11-register-a-phala-account" href="https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/">1.1 Register a Phala account</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#general-hardware-requirements">General Hardware Requirements</a>
+    <li><a href="#tip">Tip:</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-bind-stash-and-controller-accounts" href="https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/">1.2 Bind Stash and Controller accounts</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-13-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/">1.3 Check your hardware, BIOS and system</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-phala-hardware-requirements">General Phala Hardware Requirements</a></li>
+    <li><a href="#check-your-cpu">Check Your CPU</a></li>
+    <li><a href="#check-bios-settings">Check BIOS settings</a></li>
+    <li><a href="#supported-operating-systems-ubuntu-1804-and-2004">Supported Operating Systems: Ubuntu 18.04 and 20.04</a>
       <ul>
-        <li><a href="#cpu-requirement">CPU Requirement</a></li>
-        <li><a href="#bios-settings">BIOS Settings</a>
-          <ul>
-            <li><a href="#reference">Reference</a></li>
-            <li><a href="#miner-community">Miner Community</a></li>
-          </ul>
-        </li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-12-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-2-software-configuration/">1.2 Software Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-14-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/">1.4 Software Configuration</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -208,19 +209,7 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
     <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-13-set-miner-stash" href="https://wiki.phala.network/en-us/docs/poc3/1-3-set-miner-stash/">1.3 Set Miner Stash</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#connecting-to-testnet-vendetta">Connecting to Testnet Vendetta</a></li>
-        <li><a href="#creating-phala-accounts">Creating Phala Accounts</a></li>
-        <li><a href="#obtaining-tpha">Obtaining tPHA</a></li>
-        <li><a href="#setting-miner-stash">Setting Miner Stash</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-14-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-4-on-chain-stake/">1.4 On-Chain Staking</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-15-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/">1.5 On-Chain Staking</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#over-staking-for-computing-task">Over Staking for Computing Task</a>
       <ul>
@@ -230,7 +219,7 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-15-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-5-introduction-of-1605-race-privacy-computing-task/">1.5 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-16-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/">1.6 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#introduction-of-1605-race-privacy-computing-task">Introduction of 1605 Race Privacy Computing Task</a>
       <ul>
@@ -659,7 +648,7 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
