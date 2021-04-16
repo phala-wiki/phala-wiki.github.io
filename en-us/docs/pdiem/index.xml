@@ -25,7 +25,7 @@ In the development environment we build the code natively. The pro users who wan
       <guid>https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/</guid>
       <description>The pdiem full stack includes:
  A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
-Create Diem accounts First, start the diem-cli from the same directory:</description>
+Create Diem accounts Start the diem-cli from the same directory by:</description>
     </item>
     
     <item>
