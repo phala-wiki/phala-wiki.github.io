@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.80.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,21 +14,17 @@
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
 Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/" />
-<meta property="article:published_time" content="2020-07-06T22:30:41+08:00" />
-<meta property="article:modified_time" content="2020-07-06T22:30:41+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-07-06T22:30:41&#43;08:00" />
+<meta property="article:modified_time" content="2020-07-06T22:30:41&#43;08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Run a full node">
 <meta itemprop="description" content="If you&#39;re building dapps or products on a Phala Network, you probably want the ability to run a node-as-a-back-end. After all, it&#39;s always better to rely on your own infrastructure than on a third-party-hosted one in this brave new decentralized world.
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
-Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events.">
-<meta itemprop="datePublished" content="2020-07-06T22:30:41+08:00" />
-<meta itemprop="dateModified" content="2020-07-06T22:30:41+08:00" />
+Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events."><meta itemprop="datePublished" content="2020-07-06T22:30:41&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-06T22:30:41&#43;08:00" />
 <meta itemprop="wordCount" content="1219">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Run a full node"/>
 <meta name="twitter:description" content="If you&#39;re building dapps or products on a Phala Network, you probably want the ability to run a node-as-a-back-end. After all, it&#39;s always better to rely on your own infrastructure than on a third-party-hosted one in this brave new decentralized world.
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
@@ -182,8 +178,8 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3 Vendetta Mining Guide</a></h2>
-      <section class="subsection" id="docs-poc-3-vendetta-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3/4 Vendetta Mining Guide</a></h2>
+      <section class="subsection" id="docs-poc-34-vendetta-mining-guide">
         <h3 class="section_link"><a id="docs-11-register-a-phala-account" href="https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/">1.1 Register a Phala account</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#tip">Tip:</a></li>
@@ -210,7 +206,11 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
         <li><a href="#install-phala-solo-scripts">Install Phala-solo-Scripts</a></li>
       </ul>
     </li>
-    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a></li>
+    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a>
+      <ul>
+        <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-15-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/">1.5 On-Chain Staking</a></h3><nav id="TableOfContents">
@@ -355,6 +355,12 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       <ul>
         <li><a href="#q-i-cant-claim-test-tokens-after-clicking-click-to-burn-or-click-to-claim">Q: I can't claim test tokens after clicking <code>Click to burn</code> or <code>Click to claim</code></a></li>
         <li><a href="#q-error-happens-when-i-tried-to-run-the-self-examination-program">Q: Error happens when I tried to run the self-examination program</a></li>
+      </ul>
+    </li>
+    <li><a href="#viii-increase-confidence-level">VIII. Increase confidence level</a>
+      <ul>
+        <li><a href="#q-configuration_needed-and-configuration_and_sw_hardening_needed">Q: <code>CONFIGURATION_NEEDED</code> and <code>CONFIGURATION_AND_SW_HARDENING_NEEDED</code></a></li>
+        <li><a href="#q-group_out_of_date">Q: <code>GROUP_OUT_OF_DATE</code></a></li>
       </ul>
     </li>
   </ul>
@@ -776,7 +782,7 @@ own docker file for connecting to Phala Network PoC2.</p>
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
