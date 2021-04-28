@@ -21,7 +21,7 @@ In the development environment we build the code natively. The pro users who wan
  Use our Docker Compose file Build from the source and run it directly  This guide will only cover the Docker Compose approach because it handles everything automatically for you. It installs the dependencies, builds the code, starts the network with the components connected correctly, and start them.
 In the development environment we build the code natively. The pro users who want to hack on our code can look into the Dockerfiles and docker-compose file to learn how the system is configured.">
 
-<meta itemprop="wordCount" content="283">
+<meta itemprop="wordCount" content="289">
 
 
 
@@ -456,6 +456,7 @@ In the development environment we build the code natively. The pro users who wan
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -537,6 +538,7 @@ In the development environment we build the code natively. The pro users who wan
 <ul>
 <li>The state of <code>diem-cli</code> should be &quot;Exit 0&quot; because we will start it manually on demand.</li>
 <li>Don't keep it running for a long time. Diem writes ~1MB/s to the disk.</li>
+<li><code>pdiem-m3</code> also supports <a href="/en-us/docs/pdiem/hardware-mode/">SGX Hardware mode</a></li>
 </ul>
 
 </div>
