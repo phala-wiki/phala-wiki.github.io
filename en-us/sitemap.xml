@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://wiki.phala.network/en-us/docs/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
@@ -15,21 +14,13 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/</loc>
     <xhtml:link
                 rel="alternate"
@@ -41,9 +32,7 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/poc3/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/gatekeeper/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -56,41 +45,23 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/gatekeeper/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/spec/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/future-works/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc2/</loc>
     <lastmod>2020-07-06T22:30:41+08:00</lastmod>
     <xhtml:link
@@ -103,9 +74,7 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/poc2/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -118,9 +87,7 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -133,9 +100,7 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/</loc>
     <lastmod>2020-07-06T22:30:41+08:00</lastmod>
     <xhtml:link
@@ -148,85 +113,45 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/4-faq/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -238,9 +163,7 @@
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -253,5 +176,4 @@
                 href="https://wiki.phala.network/en-us/tags/"
                 />
   </url>
-  
 </urlset>

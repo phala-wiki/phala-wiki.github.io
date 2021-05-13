@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.80.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.83.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,19 +12,15 @@
 <title>运行 Gatekeeper | Phala Network 百科</title><meta property="og:title" content="运行 Gatekeeper" />
 <meta property="og:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/" />
-<meta property="article:published_time" content="2020-07-10T01:16:05+08:00" />
-<meta property="article:modified_time" content="2020-07-10T01:16:05+08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-07-10T01:16:05&#43;08:00" />
+<meta property="article:modified_time" content="2020-07-10T01:16:05&#43;08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+
 <meta itemprop="name" content="运行 Gatekeeper">
-<meta itemprop="description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github.">
-<meta itemprop="datePublished" content="2020-07-10T01:16:05+08:00" />
-<meta itemprop="dateModified" content="2020-07-10T01:16:05+08:00" />
+<meta itemprop="description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github."><meta itemprop="datePublished" content="2020-07-10T01:16:05&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-10T01:16:05&#43;08:00" />
 <meta itemprop="wordCount" content="431">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="运行 Gatekeeper"/>
 <meta name="twitter:description" content="配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift &#43; ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github."/>
 
@@ -513,7 +509,7 @@ sudo docker run -d -ti --rm --name phala-pruntime -p 8000:8000 -v $HOME/phala-pr
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
