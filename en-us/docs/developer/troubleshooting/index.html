@@ -539,7 +539,7 @@ error: aborting due to 6 previous errors
 <p>If fixing the other errors doesn't help, you should check if you accidentally introduce the &quot;std&quot; dependency to the runtime code. The hardware enclave sdk Phala is using doesn't allow direct or indirect &quot;std&quot; dependencies. You may consider to switch to a package that supports &quot;no_std&quot; and disable its std feature in <code>Cargo.toml</code>, or manually port the dependency package to use <code>teaclave-sgx-sdk</code>'s <code>tstd</code> instead. <code>tstd</code> is a subset of <code>std</code> but it's enough in the most cases.</p>
 <h3 id="ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</h3>
 <p>Please disable incremental build. This is due to a bug introduced in rustc:</p>
-<p><a href="https://doc.rust-lang.org/cargo/reference/config.html#buildincremental">https://doc.rust-lang.org/cargo/reference/config.html#buildincremental</a></p>
+<p><a href="https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html">https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html</a></p>
 <h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
 <h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</h3>
 <pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
