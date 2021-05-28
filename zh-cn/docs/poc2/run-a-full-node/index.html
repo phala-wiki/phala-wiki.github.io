@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -23,9 +23,10 @@ Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的
  你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
 此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/" />
-<meta property="article:published_time" content="2020-07-06T22:30:41+08:00" />
-<meta property="article:modified_time" content="2020-07-06T22:30:41+08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-07-06T22:30:41&#43;08:00" />
+<meta property="article:modified_time" content="2020-07-06T22:30:41&#43;08:00" /><meta property="og:site_name" content="Phala Network 百科" />
+
 <meta itemprop="name" content="运行全节点">
 <meta itemprop="description" content="这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
 如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
@@ -38,15 +39,10 @@ Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的
 轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
 快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
  你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
-此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。">
-<meta itemprop="datePublished" content="2020-07-06T22:30:41+08:00" />
-<meta itemprop="dateModified" content="2020-07-06T22:30:41+08:00" />
+此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。"><meta itemprop="datePublished" content="2020-07-06T22:30:41&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-06T22:30:41&#43;08:00" />
 <meta itemprop="wordCount" content="291">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="运行全节点"/>
 <meta name="twitter:description" content="这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
 如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
@@ -121,6 +117,9 @@ Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -480,7 +479,7 @@ cargo build --release
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
