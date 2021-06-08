@@ -45,7 +45,7 @@ Recommencez pour le deuxième compte.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/</guid>
-      <description>Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installé Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y</description>
+      <description>Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y</description>
     </item>
     
     <item>

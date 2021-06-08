@@ -10,26 +10,26 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.3 Configurer le mineur | Phala Network Wiki</title><meta property="og:title" content="1.3 Configurer le mineur" />
-<meta property="og:description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installé Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y" />
+<meta property="og:description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="1.3 Configurer le mineur">
-<meta itemprop="description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installé Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y">
+<meta itemprop="description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y">
 
-<meta itemprop="wordCount" content="676">
+<meta itemprop="wordCount" content="672">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 Configurer le mineur"/>
-<meta name="twitter:description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installé Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y"/>
+<meta name="twitter:description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installé Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y">
+  <meta name="description" content="Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y">
 
 
 
@@ -177,16 +177,10 @@
         <li><a href="#q--jai-un-processeur-amd--puis-je-miner-"><strong>Q</strong> : J'ai un processeur AMD , puis je miner ?</a></li>
         <li><a href="#q--peut-on-miner-sur-une-vm-"><strong>Q</strong> : Peut on miner sur une VM ?</a></li>
         <li><a href="#q--est-ce-que-cest-trop-tard-pour-se-lancer-"><strong>Q</strong> : Est ce que c'est trop tard pour se lancer ?</a></li>
-        <li><a href="#q--les-puces-m1-de-apple-sont-elles-compatibles-"><strong>Q</strong> : Les puces M1 de Apple sont elles compatibles ?</a></li>
         <li><a href="#q--pour-commencer-a-miner-sur-le-testnet-dois-je-posseder-les-1620phacoeur-"><strong>Q</strong> : Pour commencer a miner sur le TestNet dois je posseder les 1620Pha/Coeur ?</a></li>
         <li><a href="#q--comment-augmenter-mon-niveau-de-confidentialité"><strong>Q</strong> : Comment augmenter mon niveau de confidentialité?</a></li>
-        <li><a href="#q--que-me-conseillez-vous-dacheter-comme-composants-pour-monter-ma-machine-"><strong>Q</strong> : Que me conseillez vous d'acheter comme composants pour monter ma machine ?</a></li>
         <li><a href="#q--jaimerai-ajouter-un-deuxième-pc-pour-miner-phala-lors-de-la-configuration-je-peux-mettre-le-même-compte-que-lautre-pc"><strong>Q</strong> : J'aimerai ajouter un deuxième pc pour miner phala lors de la configuration je peux mettre le même compte que l'autre pc?</a></li>
-        <li><a href="#q--est-ce-que-lhyperthreading-est-pris-en-compte"><strong>Q</strong> : Est-ce que l'HyperThreading est pris en compte?</a>
-          <ul>
-            <li></li>
-          </ul>
-        </li>
+        <li><a href="#q--est-ce-que-lhyperthreading-est-pris-en-compte"><strong>Q</strong> : Est-ce que l'HyperThreading est pris en compte?</a></li>
       </ul>
     </li>
   </ul>
@@ -201,7 +195,7 @@
     <h1>1.3 Configurer le mineur</h1><h2 id="exigences-du-système">Exigences du système</h2>
 <ul>
 <li>Ce tutoriel est basé sur Ubuntu 20.04. D'autres distributions peuvent fonctionner si on s'en réfère au wiki de phala. mais elle n'ont pas été testées.</li>
-<li><a href="https://doc.ubuntu-fr.org/installation">Comment Installé Ubuntu?</a></li>
+<li><a href="https://doc.ubuntu-fr.org/installation">Comment Installer Ubuntu?</a></li>
 <li>Veillez à  ce que votre OS soit à  jour.</li>
 <li>La base de données de la blockchain grossie de jour en jour. Veillez à  disposer d'un espace disque suffisant.</li>
 </ul>
@@ -209,7 +203,7 @@
 <p><code>sudo apt install wget</code></p>
 <h2 id="installation">Installation</h2>
 <p>Toute l'installation s'effectue par un script fourni par Phala. Ce dernier se charge d'installer Docker, le driver SGX et télécharge les conteneurs.
-Vous n'aurez seulement à  renseigner les 3 paramà¨tres suivants:</p>
+Vous n'aurez seulement à  renseigner les 3 paramètres suivants:</p>
 <ul>
 <li>Un nom de noeud.</li>
 <li>Votre IP locale (docker).</li>
@@ -228,16 +222,16 @@ sudo ./install.sh en
 sudo phala install init
 </code></pre>
 <h2 id="vérifiez-à-nouveau-la-capacité-sgx">Vérifiez à  nouveau la capacité SGX</h2>
-<p>Aprà¨s l'installation de votre pilote, veuillez utiliser l'utilitaire suivant pour vérifier votre niveau de confidence.</p>
+<p>Après l'installation de votre pilote, veuillez utiliser l'utilitaire suivant pour vérifier votre niveau de confidence.</p>
 <p><code>sudo phala sgx-test</code></p>
 <p>Vous recevrez un rapport comme ci-dessous.
-Veuillez prêter attention aux contrà´les ci-dessous :</p>
+Veuillez prêter attention aux contrôles ci-dessous :</p>
 <ul>
 <li>
-<p>(Obligatoire) SGX system software â†’ Able to launch enclaves â†’ Production Mode</p>
+<p>(Obligatoire) SGX system software &gt; Able to launch enclaves &gt; Production mode</p>
 </li>
 <li>
-<p>Flexible launch control â†’ Able to launch production mode enclave</p>
+<p>Flexible launch control &gt; CPU configuration</p>
 </li>
 <li>
 <p>isvEnclaveQuoteStatus and advisoryIDs (explained in the next section)</p>
@@ -253,14 +247,14 @@ Veuillez prêter attention aux contrà´les ci-dessous :</p>
 <p>Si votre confidenceLevel est à  4, 5 ou si vous ne pouvez pas exécuter Phala pRuntime avec les deux marqués comme ✔”, vous pouvez vérifier si votre BIOS est à  jour avec les derniers correctifs de sécurité.</p>
 </li>
 <li>
-<p>Si vous ne pouvez toujours pas exécuter le docker Phala pRuntime avec le dernier BIOS du fabricant de votre carte mà¨re, nous craignons que vous ne puissiez pas exploiter PHA pour le moment avec cette carte mà¨re.</p>
+<p>Si vous ne pouvez toujours pas exécuter le docker Phala pRuntime avec le dernier BIOS du fabricant de votre carte mère, nous craignons que vous ne puissiez pas exploiter PHA pour le moment avec cette carte mère.</p>
 </li>
 </ul>
 <p><strong>NB : si vous ne parvenez pas à  résoudre l'erreur 289 (liée à  certains réglages de votre BIOS), c'est inutile de chercher à  résoudre les suivantes, cette erreur est bloquante.</strong></p>
 <h2 id="confidence-level-du-mineur">Confidence Level du Mineur</h2>
 <p><img src="/images/docs/poc4-fr/confidenceLVLtableau.PNG" alt=""></p>
-<p>Le niveau de confiance mesure la sécurité de l'environnement d'exécution de SGX Enclave. Il est déterminé par le rapport d'attestation à  distance d'Intel. Parmi eux, isvEnclaveQuoteStatus indique si la plate-forme est vulnérable à  certains problà¨mes connus, et AdvisoryIDs indique les problà¨mes réellement affectés.</p>
-<p>Tous les AdvisoryID ne sont pas problématiques. Certains avis n'affectent pas les hypothà¨ses de sécurité de Phala et sont donc mis sur la liste blanche:</p>
+<p>Le niveau de confiance mesure la sécurité de l'environnement d'exécution de SGX Enclave. Il est déterminé par le rapport d'attestation à  distance d'Intel. Parmi eux, isvEnclaveQuoteStatus indique si la plate-forme est vulnérable à  certains problèmes connus, et AdvisoryIDs indique les problèmes réellement affectés.</p>
+<p>Tous les AdvisoryID ne sont pas problématiques. Certains avis n'affectent pas les hypothèses de sécurité de Phala et sont donc mis sur la liste blanche:</p>
 <ul>
 <li>INTEL-SA-00219</li>
 <li>INTEL-SA-00334</li>
@@ -269,11 +263,11 @@ Veuillez prêter attention aux contrà´les ci-dessous :</p>
 </ul>
 <p>Les niveaux 1, 2, 3 sont considérés avec le meilleur niveau de sécurité car ils ne sont soit affectés par aucune vulnérabilité connue, soit le signalement est connu comme étant insignifiant. Il est bon d'exécuter les applications les plus précieuses sur ces travailleurs, par exemple:</p>
 <ul>
-<li>Applications financià¨res: préservant la confidentialité des DEX, DeFi, etc.</li>
-<li>Gestion des clés secrà¨tes: portefeuilles, nÅ“uds KMS, gestionnaires de mots de passe.</li>
+<li>Applications financières: préservant la confidentialité des DEX, DeFi, etc.</li>
+<li>Gestion des clés secrètes: portefeuilles, nÅ“uds KMS, gestionnaires de mots de passe.</li>
 <li>Validateurs Phala.</li>
 </ul>
-<p>Les niveaux 4, 5 sont considérés avec une sécurité réduite, car ces machines nécessitent un correctif de configuration dans le BIOS ou le micrologiciel du BIOS (CONFIGURATION_NEEDED, CONFIGURATION_AND_SW_HARDENING_NEEDED), ou le microcode/micrologiciel du BIOS correspondant sont obsolà¨tes (GROUP_OUT_OF_DATE). Par conséquent, nous ne pouvons pas supposer que la plate-forme est adaptée aux scénarios de sécurité les plus élevés. Cependant, il est toujours bon d'exécuter des tà¢ches de traitement par lots, des applications traitant des données de confidentialité éphémà¨res et des applications blockchain traditionnelles:</p>
+<p>Les niveaux 4, 5 sont considérés avec une sécurité réduite, car ces machines nécessitent un correctif de configuration dans le BIOS ou le micrologiciel du BIOS (CONFIGURATION_NEEDED, CONFIGURATION_AND_SW_HARDENING_NEEDED), ou le microcode/micrologiciel du BIOS correspondant sont obsolètes (GROUP_OUT_OF_DATE). Par conséquent, nous ne pouvons pas supposer que la plate-forme est adaptée aux scénarios de sécurité les plus élevés. Cependant, il est toujours bon d'exécuter des tà¢ches de traitement par lots, des applications traitant des données de confidentialité éphémères et des applications blockchain traditionnelles:</p>
 <ul>
 <li>Travaux d'analyse de données (par exemple, Web3 Analytics)</li>
 <li>Jeux PvP sur blockhain</li>
