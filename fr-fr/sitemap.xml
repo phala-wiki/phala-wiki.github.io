@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/</loc>
     <xhtml:link
                 rel="alternate"
@@ -19,13 +30,69 @@
                 hreflang="fr-fr"
                 href="https://wiki.phala.network/fr-fr/docs/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/spec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -37,53 +104,65 @@
                 hreflang="fr-fr"
                 href="https://wiki.phala.network/fr-fr/docs/spec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/future-works/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/future-works/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.2-cr%C3%A9er-les-comptes-phala-controller-stash/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.3-lier-les-comptes-stash-et-controller/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.5-lancer-le-mineur/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.6-configurer-les-commissions/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.7-lancez-lintention-de-minage/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.8-arr%C3%AAter-le-mineur/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.9-v%C3%A9rifier-les-gains-du-mineur/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/docs/poc4/2.f-a-q/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -100,9 +179,7 @@
                 hreflang="fr-fr"
                 href="https://wiki.phala.network/fr-fr/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/</loc>
     <xhtml:link
                 rel="alternate"
@@ -119,9 +196,7 @@
                 hreflang="fr-fr"
                 href="https://wiki.phala.network/fr-fr/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wiki.phala.network/fr-fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -139,5 +214,4 @@
                 href="https://wiki.phala.network/fr-fr/tags/"
                 />
   </url>
-  
 </urlset>

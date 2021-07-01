@@ -7,6 +7,90 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/fr-fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Déployer le réseau de test en local</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/</guid>
+      <description>Il y a deux options pour exécuter la démo de pdiem :
+ Utiliser notre fichier Docker Compose Construire à partir des sources et l&#39;exécuter directement  Ce guide ne couvrira que l&#39;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.
+Dans l&#39;environnement de développement, nous construisons le code de manière native.</description>
+    </item>
+    
+    <item>
+      <title>Jouez avec pDiem</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/</guid>
+      <description>L&#39;environnement de pDiem comprend:
+ Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&#39;environnement pDiem en cours d&#39;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
+Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire avec la commande :</description>
+    </item>
+    
+    <item>
+      <title>Modèle basé sur la réservation</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/</guid>
+      <description>Un bridge relie la blockchain locale à une blockchain distante. pDiem suit le modèle de transfert d&#39;actifs cross-chain &amp;quot; réservation d&#39;actifs &amp;quot; (voir le modèle équivalent défini dans XCM Format). Dans notre cas, pDiem (et sa parachain) est la blockchain locale, et Diem est la blockchain distante.
+Le bridge pDiem contrôle un ensemble de comptes souverains (voir XCM Format - Definitions) du côté de Diem, qui détiennent tous les actifs de Diem transférés côté pDiem.</description>
+    </item>
+    
+    <item>
+      <title>Client pour la validation légère</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/</guid>
+      <description>Les bases. Un bridge cross-chain peut transférer des actifs entre les deux blockchains. Dans le modèle basé sur la réservation, il faut que la blockchain locale puisse confirmer certains dépôts sur ses comptes souverains, et que la blockchain distante puisse confirmer les commandes de retrait de la blockchain locale. La validation de la blockchain est effectuée par des nœuds complets. Cependant ils sont trop lourds pour être intégrés dans un contrat intelligent ou une blockchain, en termes de calcul et de stockage.</description>
+    </item>
+    
+    <item>
+      <title>Mise en œuvre du contrat</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/</guid>
+      <description>Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.
+Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
+1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&amp;lt;TrustedState&amp;gt;,6/// The latest TrustedState 7trusted_state: Option&amp;lt;TrustedState&amp;gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&amp;lt;AccountInfo&amp;gt;,13/// Account sequence id 14seq_number: BTreeMap&amp;lt;String,u64&amp;gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&amp;lt;String,Vec&amp;lt;Transaction&amp;gt;&amp;gt;,20/// Transaction verification result 21verified: BTreeMap&amp;lt;String,bool&amp;gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo).</description>
+    </item>
+    
+    <item>
+      <title>Le Relayeur</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/</guid>
+      <description>Le relayeur pdiem est le composant qui synchronise les données entre pdiem et la blockchain Diem. Il s&#39;exécute hors chaîne, se connecte aux deux blockchains et surveille les transactions liées.
+Code : Phala-Network/pdiem-relayer.
+Qui fait fonctionner le relayeur ? Tout le monde peut gérer un relais, et en théorie, un seul relayeur honnête est nécessaire pour faire fonctionner le bridge pDiem, car tous les messages soumis par le relayeur sont validés par la blockchain Diem ou le contrat pDiem.</description>
+    </item>
+    
+    <item>
+      <title>Travaux à venir</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/future-works/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/future-works/</guid>
+      <description>pDiem est un projet en pleine expansion. Nous prévoyons d&#39;ajouter les fonctionnalités ci-dessous dans un avenir proche :
+ Contrat  Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM Passage au contrat confidentiel Ink ! (WASM) Confirmation du retrait réussi Garantie multisig   Relais  Relais des messages vers Diem Relayer l&#39;événement de retrait au contrat pdiem   Economique  Conception d&#39;incitations pour le relayeur   Interface utilisateur : intégrer avec Phala-Network/apps-ng  </description>
+    </item>
+    
+    <item>
+      <title>Avancé: Mode Matériel</title>
+      <link>https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/</guid>
+      <description>Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&#39;intérieur de l&#39;Enclave, elle doit fonctionner en mode matériel.
+Le SDK Intel SGX est livré avec trois modes :
+ Software : il s&#39;exécute dans l&#39;environnement de simulation, et n&#39;offre aucune protection au code ou aux données. Hardware Dev : il s&#39;exécute dans l&#39;environnement matériel réel, mais permet aux débogueurs de s&#39;y attacher et n&#39;offre donc aucune protection.</description>
+    </item>
+    
+    <item>
       <title>1.0 Vérifier votre matériel, votre BIOS et votre système</title>
       <link>https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

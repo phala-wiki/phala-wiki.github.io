@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,11 +12,10 @@
 <title>PoC-4 Guide pour miner Phala | Phala Network Wiki</title><meta property="og:title" content="PoC-4 Guide pour miner Phala" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/poc4/" />
-<meta property="og:site_name" content="Phala Network Wiki" />
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/poc4/" /><meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="PoC-4 Guide pour miner Phala">
-<meta itemprop="description" content="">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PoC-4 Guide pour miner Phala"/>
 <meta name="twitter:description" content=""/>
 
@@ -182,6 +181,61 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-déployer-le-réseau-de-test-en-local" href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/">Déployer le réseau de test en local</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#préparation">préparation</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-jouez-avec-pdiem" href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/">Jouez avec pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#créer-des-comptes-diem">Créer des comptes Diem</a></li>
+    <li><a href="#simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</a>
+      <ul>
+        <li><a href="#soldes-en-pdiem">Soldes en pDiem</a></li>
+        <li><a href="#transactions-vérifiées">Transactions vérifiées</a></li>
+      </ul>
+    </li>
+    <li><a href="#préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</a></li>
+    <li><a href="#dépôt-diem--pdiem">Dépôt (diem → pdiem)</a></li>
+    <li><a href="#retirer-pdiem--diem">Retirer (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-modèle-basé-sur-la-réservation" href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/">Modèle basé sur la réservation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dépôt">Dépôt</a></li>
+    <li><a href="#transfert">Transfert</a></li>
+    <li><a href="#retrait">Retrait</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-client-pour-la-validation-légère" href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/">Client pour la validation légère</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#les-bases">Les bases.</a></li>
+    <li><a href="#le-client-léger">Le client léger.</a></li>
+    <li><a href="#la-blockchain-diem">La blockchain Diem</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-mise-en-œuvre-du-contrat" href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/">Mise en œuvre du contrat</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
+    <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
+    <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
+    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#référence">Référence</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-le-relayeur" href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/">Le Relayeur</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/spec/" class="group">Spécifications techniques</a></h2>
   </section>
       </section>
@@ -190,6 +244,13 @@
 
   <main class="content">
     <h1>PoC-4 Guide pour miner Phala</h1><p><img src="/images/docs/poc4-fr/getty_493471862_2000133320009280350_332727.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Ce wiki est propulsé par l'équipe française de Phala-Network</th>
+</tr>
+</thead>
+</table>
 <p>💥💥 🚧 💥💥 Dans l'état actuel du développement de Phala, nous considérons qu'il est inutile d'investir dans une machine pour miner le testnet.</p>
 <p>💥💥 🚧 💥💥 Le mainet est prévu à ce jour en Q4 et il n'y a encore aucune visibilité sur le matériel qui sera le plus approprié.</p>
 <ul>
@@ -202,7 +263,7 @@
 <li>Le site web du projet : <a href="https://phala.network/">https://phala.network/</a></li>
 <li>le whitepaper : <a href="https://files.phala.network/phala-paper.pdf">https://files.phala.network/phala-paper.pdf</a></li>
 <li>Ensembles d'articles disponibles en français : <a href="https://medium.com/phala-francais">https://medium.com/phala-francais</a></li>
-<li>Inscrivez-vous sur le Télégram francophone : https://t.me/phala_french</li>
+<li>Inscrivez-vous sur le Télégram francophone : <a href="https://t.me/phala_french">https://t.me/phala_french</a></li>
 </ul>
 </li>
 <li>
@@ -381,7 +442,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

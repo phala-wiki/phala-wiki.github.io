@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,18 +13,16 @@
 <meta property="og:description" content="Arrêtez le minage.  Si votre mineur n&#39;est pas en statut mining, n&#39;hésitez pas à sauter cette étape.
   Arretez le mineur en suivant la procédure [5.8 Arrêter le mineur](5.Le tuto/5.8 Arrêter le mineur) Attendez la fin de la période de minage en cours (1 heure par période d&#39;extraction). Si vous arrêtez le mineur trop tôt, vous risquez de vous faire couper. Exécutez les commandes suivantes pour tuer les conteneurs d&#39;origine:  sudo phala stop" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/" />
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="1.9 Mise à jour du mineur">
 <meta itemprop="description" content="Arrêtez le minage.  Si votre mineur n&#39;est pas en statut mining, n&#39;hésitez pas à sauter cette étape.
   Arretez le mineur en suivant la procédure [5.8 Arrêter le mineur](5.Le tuto/5.8 Arrêter le mineur) Attendez la fin de la période de minage en cours (1 heure par période d&#39;extraction). Si vous arrêtez le mineur trop tôt, vous risquez de vous faire couper. Exécutez les commandes suivantes pour tuer les conteneurs d&#39;origine:  sudo phala stop">
 
 <meta itemprop="wordCount" content="196">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.9 Mise à jour du mineur"/>
 <meta name="twitter:description" content="Arrêtez le minage.  Si votre mineur n&#39;est pas en statut mining, n&#39;hésitez pas à sauter cette étape.
   Arretez le mineur en suivant la procédure [5.8 Arrêter le mineur](5.Le tuto/5.8 Arrêter le mineur) Attendez la fin de la période de minage en cours (1 heure par période d&#39;extraction). Si vous arrêtez le mineur trop tôt, vous risquez de vous faire couper. Exécutez les commandes suivantes pour tuer les conteneurs d&#39;origine:  sudo phala stop"/>
@@ -191,6 +189,61 @@
     </li>
   </ul>
 </nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-déployer-le-réseau-de-test-en-local" href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/">Déployer le réseau de test en local</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#préparation">préparation</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-jouez-avec-pdiem" href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/">Jouez avec pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#créer-des-comptes-diem">Créer des comptes Diem</a></li>
+    <li><a href="#simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</a>
+      <ul>
+        <li><a href="#soldes-en-pdiem">Soldes en pDiem</a></li>
+        <li><a href="#transactions-vérifiées">Transactions vérifiées</a></li>
+      </ul>
+    </li>
+    <li><a href="#préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</a></li>
+    <li><a href="#dépôt-diem--pdiem">Dépôt (diem → pdiem)</a></li>
+    <li><a href="#retirer-pdiem--diem">Retirer (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-modèle-basé-sur-la-réservation" href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/">Modèle basé sur la réservation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dépôt">Dépôt</a></li>
+    <li><a href="#transfert">Transfert</a></li>
+    <li><a href="#retrait">Retrait</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-client-pour-la-validation-légère" href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/">Client pour la validation légère</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#les-bases">Les bases.</a></li>
+    <li><a href="#le-client-léger">Le client léger.</a></li>
+    <li><a href="#la-blockchain-diem">La blockchain Diem</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-mise-en-œuvre-du-contrat" href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/">Mise en œuvre du contrat</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
+    <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
+    <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
+    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#référence">Référence</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-le-relayeur" href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/">Le Relayeur</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -398,7 +451,7 @@ sudo rm -r $HOME/phala-pruntime-data
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
