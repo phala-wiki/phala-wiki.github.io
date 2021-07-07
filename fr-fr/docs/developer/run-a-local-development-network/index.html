@@ -9,31 +9,35 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>Travaux à venir | Phala Network Wiki</title><meta property="og:title" content="Travaux à venir" />
-<meta property="og:description" content="pDiem est un projet en pleine expansion. Nous prévoyons d&#39;ajouter les fonctionnalités ci-dessous dans un avenir proche :
- Contrat  Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM Passage au contrat confidentiel Ink ! (WASM) Confirmation du retrait réussi Garantie multisig   Relais  Relais des messages vers Diem Relayer l&#39;événement de retrait au contrat pdiem   Economique  Conception d&#39;incitations pour le relayeur   Interface utilisateur : intégrer avec Phala-Network/apps-ng  " />
+<title>1.1 Lançer un réseau de développement local | Phala Network Wiki</title><meta property="og:title" content="1.1 Lançer un réseau de développement local" />
+<meta property="og:description" content="Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.
+ Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &quot;Hello World&quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l&#39;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
+ D&#39;envoyer des transactions confidentielles D&#39;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="Travaux à venir">
-<meta itemprop="description" content="pDiem est un projet en pleine expansion. Nous prévoyons d&#39;ajouter les fonctionnalités ci-dessous dans un avenir proche :
- Contrat  Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM Passage au contrat confidentiel Ink ! (WASM) Confirmation du retrait réussi Garantie multisig   Relais  Relais des messages vers Diem Relayer l&#39;événement de retrait au contrat pdiem   Economique  Conception d&#39;incitations pour le relayeur   Interface utilisateur : intégrer avec Phala-Network/apps-ng  ">
+<meta itemprop="name" content="1.1 Lançer un réseau de développement local">
+<meta itemprop="description" content="Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.
+ Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &quot;Hello World&quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l&#39;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
+ D&#39;envoyer des transactions confidentielles D&#39;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles.">
 
-<meta itemprop="wordCount" content="69">
+<meta itemprop="wordCount" content="1929">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Travaux à venir"/>
-<meta name="twitter:description" content="pDiem est un projet en pleine expansion. Nous prévoyons d&#39;ajouter les fonctionnalités ci-dessous dans un avenir proche :
- Contrat  Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM Passage au contrat confidentiel Ink ! (WASM) Confirmation du retrait réussi Garantie multisig   Relais  Relais des messages vers Diem Relayer l&#39;événement de retrait au contrat pdiem   Economique  Conception d&#39;incitations pour le relayeur   Interface utilisateur : intégrer avec Phala-Network/apps-ng  "/>
+<meta name="twitter:title" content="1.1 Lançer un réseau de développement local"/>
+<meta name="twitter:description" content="Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.
+ Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &quot;Hello World&quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l&#39;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
+ D&#39;envoyer des transactions confidentielles D&#39;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="pDiem est un projet en pleine expansion. Nous prévoyons d&#39;ajouter les fonctionnalités ci-dessous dans un avenir proche :
- Contrat  Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM Passage au contrat confidentiel Ink ! (WASM) Confirmation du retrait réussi Garantie multisig   Relais  Relais des messages vers Diem Relayer l&#39;événement de retrait au contrat pdiem   Economique  Conception d&#39;incitations pour le relayeur   Interface utilisateur : intégrer avec Phala-Network/apps-ng  ">
+  <meta name="description" content="Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.
+ Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &amp;quot;Hello World&amp;quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l&#39;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
+ D&#39;envoyer des transactions confidentielles D&#39;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles.">
 
 
 
@@ -119,7 +123,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/developer/" class="group">Développement du contrat</a></h2>
       <section class="subsection" id="docs-développement-du-contrat">
-        <h3 class="section_link"><a id="docs-11-lançer-un-réseau-de-développement-local" href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/">1.1 Lançer un réseau de développement local</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-11-lançer-un-réseau-de-développement-local" href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/">1.1 Lançer un réseau de développement local</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#aperçu">Aperçu</a></li>
     <li><a href="#environnement">Environnement</a></li>
@@ -303,7 +307,7 @@
     <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
         <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
@@ -315,38 +319,236 @@
 </aside>
 
   <main class="content">
-    <h1>Travaux à venir</h1><p>pDiem est un projet en pleine expansion. Nous prévoyons d'ajouter les fonctionnalités ci-dessous dans un avenir proche :</p>
+    <h1>1.1 Lançer un réseau de développement local</h1><blockquote>
+<p>Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.</p>
+</blockquote>
+<h2 id="aperçu">Aperçu</h2>
+<p>Dans ce tutoriel, nous allons mettre en place un environnement de développement &quot;Hello World&quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l'interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :</p>
 <ul>
-<li>Contrat
+<li>D'envoyer des transactions confidentielles</li>
+<li>D'obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles.</li>
+</ul>
+<p>Une pile Phala Network complète comprend trois composants, plus une interface Web. Les composants de base se trouvent sur <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a>:</p>
 <ul>
-<li>Transfert de jetons : intégration avec le contrat confidentiel Assets et XCM</li>
-<li>Passage au contrat confidentiel Ink ! (WASM)</li>
-<li>Confirmation du retrait réussi</li>
-<li>Garantie multisig</li>
+<li><code>phala-node</code>: Le nœud de la blockchain Substrate</li>
+<li><code>pRuntime</code>: Le runtime TEE. Les contrats s'exécutent dans pRuntime</li>
+<li><code>phost</code>: Le relais de pont Substrate-TEE. Connecte la blockchain et pRuntime</li>
+</ul>
+<p>L'interface utilisateur Web se trouve sur <a href="https://github.com/Phala-Network/apps-ng">Phala-Network/apps-ng</a>. L'interface Web doit se connecter à la fois à la blockchain et au pRuntime afin d'envoyer des transactions et des requêtes.</p>
+<h2 id="environnement">Environnement</h2>
+<p>L'environnement de développement de Phala Network nécessite Linux, parce qu'il s'appuie sur <a href="https://01.org/intel-software-guard-extensions/downloads">Linux Intel SGX SDK</a>. Les machines virtuelles devraient généralement fonctionner. Phala Network ne fonctionne pas nativement sur Windows ou macOS (désolé, amateurs de Mac), mais nous n'avons pas encore testé WLS. Faites-nous savoir si vous êtes le premier à l'exécuter avec succès sur WLS !</p>
+<p>Dans ce tutoriel, nous supposons que le système d'exploitation est <em>Ubuntu 18.04</em>. Bien qu'il n'ait pas encore été testé, il devrait fonctionner avec Ubuntu 20.04 prêt à l'emploi. D'autres distributions Linux devraient également fonctionner, mais les instructions peuvent varier.</p>
+<p>Il est nécessaire d'avoir au moins 4 cœurs et 8 Go de RAM pour construire le projet, y compris le noyau de la blockchain et l'interface Web. Si vous avez moins de 4 Go de RAM, vous risquez de ne pas pouvoir construire l'interface utilisateur Web.</p>
+<p>Suivez les commandes ci-dessous pour préparer l'environnement. Certaines peuvent être ignorées si elles sont déjà installées.</p>
+<ul>
+<li>
+<p>Installer les dépendances au niveau du système</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
+<span class="ln">2</span>sudo apt install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev git cmake perl pkg-config curl llvm-10 clang-10 libclang-10-dev
+</code></pre></div><blockquote>
+<p>Notes sur LLVM : Nous avons besoin d'au moins LLVM-9, mais les versions supérieures sont également prises en charge. Les versions plus anciennes comme LLVM 6.0 ne permettent pas la compilation de la blockchain.</p>
+</blockquote>
+</li>
+<li>
+<p>Installez Rust. Veuillez choisir la chaîne d'outils par défaut</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
+<span class="ln">2</span><span class="nb">source</span> ~/.cargo/env
+</code></pre></div></li>
+<li>
+<p>Installer le SDK Intel SGX</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.12/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.12.100.3.bin
+<span class="ln">2</span>chmod +x ./sgx_linux_x64_sdk_2.12.100.3.bin
+<span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.12.100.3.bin
+<span class="ln">4</span><span class="nb">source</span> /opt/intel/sgxsdk/environment
+</code></pre></div><blockquote>
+<p>Vous pouvez ajouter <code>source /opt/sgxsdk/environment</code> à votre <code>~/.bashrc</code> (ou <code>~/.zshrc</code> dépend du shell que vous utilisez).</p>
+</blockquote>
+</li>
+<li>
+<p>Install Node.js (&gt;= v12) &amp; yarn 2</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<span class="ln">2</span>sudo apt-get install -y nodejs
+<span class="ln">3</span>sudo npm install -g yarn
+<span class="ln">4</span>yarn <span class="nb">set</span> version berry
+</code></pre></div></li>
+</ul>
+<p>Vous pouvez tester l'installation en exécutant les commandes suivantes. La sortie devrait correspondre aux sorties de l'échantillon, ou avec une version légèrement supérieure.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
+<span class="ln"> 2</span><span class="c1"># rustup 1.22.1 (b01adbbc3 2020-07-08)</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>cargo --version
+<span class="ln"> 5</span><span class="c1"># cargo 1.46.0 (149022b1d 2020-07-17)</span>
+<span class="ln"> 6</span>
+<span class="ln"> 7</span><span class="nb">echo</span> <span class="nv">$SGX_SDK</span>
+<span class="ln"> 8</span><span class="c1"># /opt/intel/sgxsdk</span>
+<span class="ln"> 9</span>
+<span class="ln">10</span><span class="c1"># LLVM-9 or higher versions are fine</span>
+<span class="ln">11</span>llvm-ar-10 --version
+<span class="ln">12</span><span class="c1"># LLVM (http://llvm.org/):</span>
+<span class="ln">13</span><span class="c1">#   LLVM version 10.0.0</span>
+<span class="ln">14</span>
+<span class="ln">15</span>node --version
+<span class="ln">16</span><span class="c1"># v12.16.3</span>
+<span class="ln">17</span>
+<span class="ln">18</span>yarn --version
+<span class="ln">19</span><span class="c1"># 2.1.1</span>
+</code></pre></div><p>Enfin, clonons le code et exécutons le script d'initialisation pour mettre à jour la toolchain Rust. Veuillez noter que l'ensemble du tutoriel se trouve sur la branche <strong><code>helloworld</code></strong> à la fois pour la blockchain et le repo Web UI.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Clone the core blockchain repo</span>
+<span class="ln"> 2</span>git clone --branch helloworld https://github.com/Phala-Network/phala-blockchain.git
+<span class="ln"> 3</span><span class="c1"># Clone the Web UI repo</span>
+<span class="ln"> 4</span>git clone --branch helloworld https://github.com/Phala-Network/apps-ng.git
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="c1"># Run the init script to update Rust toolchain and git submodule</span>
+<span class="ln"> 7</span><span class="nb">cd</span> phala-blockchain/
+<span class="ln"> 8</span>git submodule update --init
+<span class="ln"> 9</span>./scripts/init.sh
+<span class="ln">10</span><span class="nb">cd</span> ..
+<span class="ln">11</span>
+<span class="ln">12</span><span class="c1"># Update the git submodule</span>
+<span class="ln">13</span><span class="nb">cd</span> apps-ng/
+<span class="ln">14</span>git submodule update --init
+<span class="ln">15</span><span class="nb">cd</span> ..
+</code></pre></div><h2 id="construire-le-noyau-de-la-blockchain">Construire le noyau de la blockchain</h2>
+<p>Maintenant nous avons déjà les deux dépôts <code>phala-blockchain</code> et <code>apps-ng</code> dans le répertoire de travail. Commençons par construire le noyau de la blockchain. La blockchain sur la branche <strong><code>helloworld</code></strong> est basée sur une ancienne version de Substrate, donc nous utiliserons une ancienne version de Rust pour la construire.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<span class="ln">2</span>rustup install nightly-2020-10-01-x86_64-unknown-linux-gnu
+<span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-01
+<span class="ln">4</span><span class="nb">cd</span> phala-blockchain/
+<span class="ln">5</span>cargo +nightly-2020-10-01 build --release
+<span class="ln">6</span>
+<span class="ln">7</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
+<span class="ln">8</span><span class="nb">cd</span> ./pruntime/
+<span class="ln">9</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
+</code></pre></div><blockquote>
+<p><strong>Notes sur la construction du noyau de la blockchain</strong></p>
+<p>Vous utilisez généralement la dernière version de Substrate et le compilateur Rust pour construire le noyau de la blockchain. La construction serait donc simplifiée avec :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
+<span class="ln">3</span>cargo build --release
+</code></pre></div></blockquote>
+<p>La compilation prend entre 20 et 60 minutes, selon votre connexion Internet et les performances de votre processeur. Après la compilation, vous obtiendrez les trois fichiers binaires :</p>
+<ul>
+<li><code>./target/release/phala-node</code>: The Substrate node</li>
+<li><code>./target/release/phost</code>: The Substrate-to-TEE bridge relayer</li>
+<li><code>./pruntime/bin/app</code>: The TEE worker</li>
+</ul>
+<blockquote>
+<p><strong>Notes sur <code>SGX_MODE</code></strong></p>
+</blockquote>
+<p>Le SDK SGX supporte le mode de simulation logiciel et le mode matériel. <code>SGX_MODE=SW</code> active le mode de simulation. Le mode logiciel est destiné à un développement facile, où l'enclave matérielle n'est pas nécessaire. Vous pouvez même l'exécuter sur une machine virtuelle ou un ordinateur avec un cpu AMD. Cependant, seul le mode matériel peut garantir la sécurité et la confidentialité de l'exécution de confiance. Pour activer le mode matériel, vous devez installer <a href="https://download.01.org/intel-sgx/sgx-dcap/1.8/linux/distro/ubuntu18.04-server/">Intel SGX DCAP Driver</a> et le logiciel de plateforme fourni avec le pilote, et passer <code>SGX_MODE=HW</code> à la chaîne d'outils.</p>
+<p>Les trois composants centraux de la blockchain fonctionnent ensemble pour apporter toutes les fonctionnalités. Parmi eux, <code>phala-node</code> et <code>pruntime</code> doivent être lancés en premier, et <code>phost</code> suit :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># In terminal window 1: phala-node</span>
+<span class="ln">2</span>./target/release/phala-node --dev
+<span class="ln">3</span>
+<span class="ln">4</span><span class="c1"># In terminal window 2: pruntime</span>
+<span class="ln">5</span><span class="nb">cd</span> pruntime/bin
+<span class="ln">6</span>./app
+<span class="ln">7</span>
+<span class="ln">8</span><span class="c1"># In terminal window 3: phost</span>
+<span class="ln">9</span>./target/release/phost --dev
+</code></pre></div><p><img src="/images/docs/core-terminal.gif" alt=""></p>
+<p>(Les composants de base s'exécutent et produisent des journaux)</p>
+<p>Une fois qu'ils sont lancés avec succès, ils devraient produire des logs comme montré dans le GIF ci-dessus. Remarquez que nous passons le drapeau <code>--dev</code> à <code>phala-node</code> et <code>phost</code> pour indiquer que nous sommes dans le réseau de développement.</p>
+<p>Les trois composants principaux de la blockchain sont connectés via TCP (WebSocket et HTTP). Veuillez vous assurer que les ports TCP de votre système ne sont pas occupés par d'autres programmes. Par défaut, ils utilisent les ports suivants :</p>
+<ul>
+<li><code>phala-node</code>
+<ul>
+<li>9944 : Port RPC de Substrate WebSocket</li>
+<li>30333 : Port réseau P2P Substrate</li>
 </ul>
 </li>
-<li>Relais
+<li><code>pruntime</code>
 <ul>
-<li>Relais des messages vers Diem</li>
-<li>Relayer l'événement de retrait au contrat pdiem</li>
+<li>8000 : Port HTTP Restful RPC</li>
 </ul>
 </li>
-<li>Economique
+</ul>
+<p><code>phost</code> n'écoute aucun port mais se connecte au port WebSocket de <code>phala-node</code> et au port HTTP RPC de <code>pruntime</code>.</p>
+<p>Vous pouvez arrêter les trois programmes en toute sécurité par <kbd>Ctrl</kbd> + <kbd>C</kbd>. <code>phala-node</code> sauvegarde la base de données blockchain sur votre disque. Donc, si la blockchain se dérègle, vous pouvez la réinitialiser par :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node purge-chain --dev
+</code></pre></div><h2 id="build-the-web-ui">Build the Web UI</h2>
+<p>L'interface Web est développée avec <code>node.js</code>, <code>yarn</code> et <code>react</code>. Il est facile de construire et de lancer le frontal.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> apps-ng
+<span class="ln">2</span>yarn
+<span class="ln">3</span>yarn dev
+</code></pre></div><p>Cela peut prendre quelques minutes pour télécharger les dépendances et construire le frontend. Par défaut, la page est servie à <a href="http://localhost:3000">http://localhost:3000</a>. Assurez-vous donc que le port 3000 est disponible. Ensuite, il devrait produire quelques logs comme ci-dessous :</p>
+<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
+&gt; Using &quot;webpackDevMiddleware&quot; config function defined in default.
+&gt; Using external babel configuration
+event - compiled successfully
+event - build page: /[...slug]
+event - build page: /
+event - compiled successfully
+</code></pre><p><img src="/images/docs/apps-ng-landing.png" alt="">
+(Page d'accueil de l'interface utilisateur Web)</p>
+<p>L'interface Web se connecte à la fois à <code>phala-node</code> et à <code>pruntime</code> par leurs points de terminaison RPC par défaut. Si tout est configuré correctement, vous verrez l'écran de déverrouillage du portefeuille dans la page d'accueil comme indiqué ci-dessus. Vous devriez être en mesure de sélectionner les comptes de développement bien connus (Alice, Bob, etc) dans la boîte de dépôt.</p>
+<blockquote>
+<p><strong>Notes pour l'accès à distance</strong></p>
+<p>Dans le cas où vous exécuteriez votre blockchain et l'interface Web sur votre REMOTE_SERVER et essayez d'y accéder ailleurs, vous pouvez transférer les ports avec la commande <code>ssh</code>. Par exemple,</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
+</code></pre></div><p>Cela permet de transférer tous les ports nécessaires :</p>
 <ul>
-<li>Conception d'incitations pour le relayeur</li>
+<li>3000 : port HTTP de l'interface Web</li>
+<li>9944 : Port Substrate WebSocket RPC de <code>phala-node</code>.</li>
+<li>8000 : Port HTTP Restful RPC de <code>pruntime</code>.</li>
 </ul>
-</li>
-<li>Interface utilisateur : intégrer avec <a href="https://github.com/Phala-Network/apps-ng">Phala-Network/apps-ng</a></li>
+<p>et vous pouvez visiter l'interface Web à l'adresse <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+</blockquote>
+<h2 id="envoyez-des-jetons-secrets">Envoyez des jetons secrets.</h2>
+<p>Dans les deux dernières sections, nous avons construit et lancé <code>phala-node</code>, <code>pruntime</code>, et <code>phost</code> en mode développement, et connecté l'interface Web au réseau de développement. Maintenant, nous sommes prêts à essayer la fonctionnalité de porte-monnaie secret dans le réseau Phala !</p>
+<p>Sélectionnons Alice et déverrouillons le porte-monnaie. Alice est un compte test intégré avec 10,000 PHA sur la blockchain. Ce jeton PHA est le jeton natif. Il est transparent sur la chaîne comme une blockchain Substrate typique, géré par la palette Balances.</p>
+<p><img src="/images/docs/apps-ng-init-wallet.png" alt="">
+(Dapp de portefeuille secret)</p>
+<p>Cependant, le portefeuille &quot;actifs secrets&quot; ci-dessous est très différent. Les actifs secrets sont stockés dans des contrats confidentiels à l'intérieur des enclaves TEE. Comme son nom l'indique, les actifs secrets sont privés et invisibles sur la blockchain.</p>
+<p>Cliquez sur le bouton &quot;Convert to Secret PHA&quot; pour transférer <strong>PHA</strong> vers <strong>Secret PHA</strong>. Vous verrez d'abord votre solde PHA diminuer, et après une dizaine de secondes, le solde PHA secret augmentera du même montant, à l'exception de quelques frais de transaction.</p>
+<blockquote>
+<p>Que vient-il de se passer ?</p>
+<blockquote>
+<p>Vous avez créé une transaction Substrate pour envoyer des fonds à la palette Phala. Les fonds sont stockés dans la palette, et cela a déclenché une transaction <strong>confidentielle</strong> pour émettre le même montant de jeton dans le portefeuille secret dans les enclaves TEE.</p>
+</blockquote>
+<p>Il faut ~6s pour inclure une transaction Substrate dans la blockchain, puis encore 6s pour finaliser le bloc. Une fois la transaction finalisée, elle déclenche un événement &quot;TransferToTee&quot;, relayé à <code>pruntime</code> via le relais, et le contrat confidentiel augmente le solde. Enfin, l'interface Web interroge le contrat confidentiel pour obtenir le solde mis à jour.</p>
+</blockquote>
+<p>Il y a beaucoup d'autres choses que vous pouvez essayer avec le porte-feuille secret :</p>
+<ul>
+<li>reconvertir les actifs secrets en actifs sur la chaîne ;</li>
+<li>transférer les actifs secrets comme des actifs ordinaires sur chaque blockchain Substrate ;</li>
+<li>et même émettre ou détruire vos propres jetons secrets.</li>
 </ul>
+<p>Toutes les fonctions ci-dessus sont réalisées par transaction confidentielle. Personne ne peut voir le contenu de la transaction, car le corps de celle-ci est crypté. En cliquant sur le bouton &quot;Polkadot UI&quot; dans la barre de navigation, cela vous amènera aux applications polkadot.js que vous connaissez. Après avoir envoyé une transaction chiffrée en cliquant sur le bouton &quot;Secret Transfer&quot;, vous pouvez trouver la transaction chiffrée enveloppée par l'extrinsèque <code>phalaModel.pushCommand</code> à partir de l'explorateur de blocs comme indiqué ci-dessous.</p>
+<img src="/images/docs/polkadotjs-pushCommand.png" style="max-height: 200px;">
+<p>(Une transaction confidentielle cryptée sur un explorateur de blockchain)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Félicitations ! Enfin, vous avez suivi le tutoriel pour :</p>
+<ul>
+<li>Préparer un environnement de développement prêt-à-hacker.</li>
+<li>Télécharger, construire et démarrer un mode de développement full stack Phala Network</li>
+<li>Se connecter au réseau via l'interface Web et essayer le dapp secret wallet.</li>
+</ul>
+<p>Vous êtes maintenant familiarisé avec la construction et le fonctionnement d'un réseau de développement. Tenez bon ! Dans le prochain chapitre, nous allons construire ensemble le premier contrat confidentiel !</p>
+<h3 id="soumettez-votre-travail">Soumettez votre travail.</h3>
+<blockquote>
+<p>Ce hackathon s'est terminé le 13 novembre 2020</p>
+</blockquote>
+<p>Ce tutoriel fait partie du <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &quot;Hello World&quot; virtual hackathon challenge</a> à gitcoin.co. Afin de gagner la tâche, veuillez faire les choses suivantes :</p>
+<ol>
+<li>Faites des captures d'écran de la fenêtre du terminal avec la blockchain principale en cours d'exécution (<code>phala-node</code>, <code>pruntime</code>, et <code>phost</code>).</li>
+<li>Prenez une capture d'écran de votre jeton secret émis par l'utilisateur.</li>
+<li>Envoyez la capture d'écran et partagez votre sentiment sur Twitter.</li>
+<li>Rejoignez notre <a href="https://discord.gg/zzhfUjU">serveur Discord</a> et envoyez le lien vers votre tweet.</li>
+</ol>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/" class="pager_link button" title="Le Relayeur">
+      
+        
+          <a href="https://wiki.phala.network/fr-fr/docs/developer/" class="pager_link button" title="Développement du contrat">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">Le Relayeur</span>
+  <span class="pager_label">Développement du contrat</span>
 </a>
+        
+      
     
   </div>
 
@@ -355,8 +557,8 @@
         
   
     <div class="pager_item next">
-      <a href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/" class="pager_link button" title="Avancé: Mode Matériel">
-  <span class="pager_label">Avancé: Mode Matériel</span>
+      <a href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/" class="pager_link button" title="1.2 Hello World : votre premier contrat confidentiel">
+  <span class="pager_label">1.2 Hello World : votre premier contrat confidentiel</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>

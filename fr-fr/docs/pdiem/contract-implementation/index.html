@@ -121,6 +121,67 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
     <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/developer/" class="group">Développement du contrat</a></h2>
+      <section class="subsection" id="docs-développement-du-contrat">
+        <h3 class="section_link"><a id="docs-11-lançer-un-réseau-de-développement-local" href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/">1.1 Lançer un réseau de développement local</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#aperçu">Aperçu</a></li>
+    <li><a href="#environnement">Environnement</a></li>
+    <li><a href="#construire-le-noyau-de-la-blockchain">Construire le noyau de la blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#envoyez-des-jetons-secrets">Envoyez des jetons secrets.</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#soumettez-votre-travail">Soumettez votre travail.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#environnement-et-construction">Environnement et construction</a></li>
+    <li><a href="#visite-guidée">Visite guidée</a>
+      <ul>
+        <li><a href="#contrat">Contrat</a></li>
+        <li><a href="#frontend">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#mettre-en-place-un-carnet-secret">Mettre en place un carnet secret</a>
+      <ul>
+        <li><a href="#contrat-1">Contrat</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#mettez-tout-ensemble">Mettez tout ensemble</a></li>
+    <li><a href="#sommaire">Sommaire</a>
+      <ul>
+        <li><a href="#soumettez-votre-travail">Soumettez votre travail</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-dépannage" href="https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/">1.3 Dépannage</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
+      <ul>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/poc4/" class="group">PoC-4 Guide pour miner Phala</a></h2>
       <section class="subsection" id="docs-poc-4-guide-pour-miner-phala">
         <h3 class="section_link"><a id="docs-10-vérifier-votre-matériel-votre-bios-et-votre-système" href="https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/">1.0 Vérifier votre matériel, votre BIOS et votre système</a></h3><nav id="TableOfContents">

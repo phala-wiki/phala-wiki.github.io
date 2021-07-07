@@ -21,6 +21,16 @@
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/developer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/developer/"
+                />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/</loc>
     <xhtml:link
@@ -227,14 +237,44 @@
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/</loc>
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/"
+                />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/</loc>
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/"
+                />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/</loc>
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-fr"
+                href="https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/"
+                />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/</loc>
   </url><url>
