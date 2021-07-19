@@ -128,7 +128,7 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       
       <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
       <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we are going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Overview In this tutorial, we&#39;re going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
     </item>
     

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,17 +14,19 @@
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
 1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&lt;TrustedState&gt;,6/// The latest TrustedState 7trusted_state: Option&lt;TrustedState&gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&lt;AccountInfo&gt;,13/// Account sequence id 14seq_number: BTreeMap&lt;String,u64&gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&lt;String,Vec&lt;Transaction&gt;&gt;,20/// Transaction verification result 21verified: BTreeMap&lt;String,bool&gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Mise en œuvre du contrat">
 <meta itemprop="description" content="Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
 1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&lt;TrustedState&gt;,6/// The latest TrustedState 7trusted_state: Option&lt;TrustedState&gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&lt;AccountInfo&gt;,13/// Account sequence id 14seq_number: BTreeMap&lt;String,u64&gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&lt;String,Vec&lt;Transaction&gt;&gt;,20/// Transaction verification result 21verified: BTreeMap&lt;String,bool&gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo).">
 
 <meta itemprop="wordCount" content="738">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mise en œuvre du contrat"/>
 <meta name="twitter:description" content="Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
@@ -562,7 +564,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

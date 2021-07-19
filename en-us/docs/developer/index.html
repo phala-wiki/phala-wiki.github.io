@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Contract Development | Phala Network Wiki</title><meta property="og:title" content="Contract Development" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Contract Development">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Development"/>
 <meta name="twitter:description" content=""/>
 
@@ -115,11 +116,7 @@
     <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
     <li><a href="#build-the-web-ui">Build the Web UI</a></li>
     <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
-    <li><a href="#conclusion">Conclusion</a>
-      <ul>
-        <li><a href="#submit-your-work">Submit your work</a></li>
-      </ul>
-    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
@@ -515,7 +512,7 @@
 </blockquote>
 </blockquote>
 <h2 id="the-root-of-trust-tee">The Root of Trust: TEE</h2>
-<p>Phala provides confidentiality guarantee based on trusted hardwares, or <em>Trusted Execution Environment</em>, which means your code and data are safe even if your operating system is compromised. A contract executing in the TEE is just like the priest in the confessional room: You know who he is, you can tell he what you want and he will reply, but only God knows what's going on there. The most important thing is: All your secrets are safe.</p>
+<p>Phala provides confidentiality guarantee based on trusted hardwares, or <em>Trusted Execution Environment</em>, which means your code and data are safe even if your operating system is compromised. A contract executing in the TEE is just like the priest in the confessional room: You know who he is, you can tell him what you want and he will reply, but only God knows what's going on there. The most important thing is: All your secrets are safe.</p>
 <p>Phala adopts one of the most popular implementations of TEE, i.e., Intel SGX. Intel SGX introduces a small set of instructions to encrypt the data in memory, and attackers cannot decrypt it without cracking the CPU and extracting the secret key in it. Unlike existing blockchains in which all contract states are public on chain, the states of confidential contracts are encrypted and sealed in SGX.</p>
 <h2 id="phala-network-in-detail">Phala Network in Detail</h2>
 <p>Phala Network is consisted of three components: phala-nodes which make up of Phala blockchain, pRuntime and phost. Among them, only pRuntime lives in TEE. Although attackers cannot peek into TEE, they can trick the contracts in TEE by forging transactions or replaying/reordering valid transactions. It it important to ensure that confidential contracts only accept valid transactions and process transactions in an expected order. That's why we introduce Phala blockchain and phost.</p>
@@ -690,7 +687,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

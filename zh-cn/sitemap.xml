@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://wiki.phala.network/zh-cn/docs/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
@@ -19,7 +20,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/poc3/</loc>
     <xhtml:link
                 rel="alternate"
@@ -31,7 +34,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/poc3/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/gatekeeper/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -44,7 +49,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/gatekeeper/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/poc2/</loc>
     <lastmod>2020-07-06T22:30:41+08:00</lastmod>
     <xhtml:link
@@ -57,7 +64,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/poc2/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -75,7 +84,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/</loc>
     <lastmod>2020-07-10T01:16:05+08:00</lastmod>
     <xhtml:link
@@ -88,7 +99,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/</loc>
     <lastmod>2020-07-06T22:30:41+08:00</lastmod>
     <xhtml:link
@@ -101,7 +114,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -118,7 +133,9 @@
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/categories/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -136,4 +153,5 @@
                 href="https://wiki.phala.network/zh-cn/tags/"
                 />
   </url>
+  
 </urlset>
