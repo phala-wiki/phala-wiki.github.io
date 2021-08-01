@@ -10,44 +10,36 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.2 Bind Stash and Controller accounts | Phala Network Wiki</title><meta property="og:title" content="1.2 Bind Stash and Controller accounts" />
-<meta property="og:description" content="Create two Phala accounts
- Reference https://hackmd.io/1U7uIEb-RD6bakEKmBlJzg to create a Phala account To help identify the relationship between accounts later, we recommend that you add &quot;Stash&quot; and &quot;Controller&quot; to the account names.    Get Test Currency
-Join our testnet faucet Telegram group to get some free test coins.
-  Set the binding relationship between stash and controller
-Developer Tab → Extrinsics (transaction) → select your Stash account → select phalaModule → choose setStash(controller) -&gt; select your Controller account." />
+<meta property="og:description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.2 Bind Stash and Controller accounts">
-<meta itemprop="description" content="Create two Phala accounts
- Reference https://hackmd.io/1U7uIEb-RD6bakEKmBlJzg to create a Phala account To help identify the relationship between accounts later, we recommend that you add &quot;Stash&quot; and &quot;Controller&quot; to the account names.    Get Test Currency
-Join our testnet faucet Telegram group to get some free test coins.
-  Set the binding relationship between stash and controller
-Developer Tab → Extrinsics (transaction) → select your Stash account → select phalaModule → choose setStash(controller) -&gt; select your Controller account.">
+<meta itemprop="description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.">
 
-<meta itemprop="wordCount" content="83">
+<meta itemprop="wordCount" content="218">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.2 Bind Stash and Controller accounts"/>
-<meta name="twitter:description" content="Create two Phala accounts
- Reference https://hackmd.io/1U7uIEb-RD6bakEKmBlJzg to create a Phala account To help identify the relationship between accounts later, we recommend that you add &quot;Stash&quot; and &quot;Controller&quot; to the account names.    Get Test Currency
-Join our testnet faucet Telegram group to get some free test coins.
-  Set the binding relationship between stash and controller
-Developer Tab → Extrinsics (transaction) → select your Stash account → select phalaModule → choose setStash(controller) -&gt; select your Controller account."/>
+<meta name="twitter:description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Create two Phala accounts
- Reference https://hackmd.io/1U7uIEb-RD6bakEKmBlJzg to create a Phala account To help identify the relationship between accounts later, we recommend that you add &amp;quot;Stash&amp;quot; and &amp;quot;Controller&amp;quot; to the account names.    Get Test Currency
-Join our testnet faucet Telegram group to get some free test coins.
-  Set the binding relationship between stash and controller
-Developer Tab → Extrinsics (transaction) → select your Stash account → select phalaModule → choose setStash(controller) -&amp;gt; select your Controller account.">
+  <meta name="description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.">
 
 
 
@@ -497,7 +489,21 @@ Developer Tab → Extrinsics (transaction) → select your Stash account → sel
 </aside>
 
   <main class="content">
-    <h1>1.2 Bind Stash and Controller accounts</h1><ol>
+    <h1>1.2 Bind Stash and Controller accounts</h1>
+<div class="tip tip_warning">
+  <p><strong>⚠️⚠️ Out-of-date Warning ⚠️⚠️</strong></p>
+<p>The Phala team has published the new <a href="https://medium.com/phala-network/reading-phala-network-economic-paper-preview-5f33b7019861">Tokenomics v0.9</a> in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).</p>
+<p>The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol. The difference between the new one and the old one is significant. Some frequentely asked questions are already no-issue on the new testnet. Therefore we storngly suggest you to wait for the new testnet launch. The runtime-bridge will be available shortly after that.</p>
+<p>You can find the latest development progress from the links below:</p>
+<ol>
+<li><a href="https://github.com/orgs/Phala-Network/projects/9">Phala/Khala Core Protocol Progress</a></li>
+<li><a href="https://github.com/orgs/Phala-Network/projects/8">Mining Protocol Progress</a></li>
+<li><a href="https://github.com/Phala-Network/runtime-bridge">runtime-bridge Github repo</a></li>
+</ol>
+
+</div>
+
+<ol>
 <li>
 <p><strong>Create two Phala accounts</strong></p>
 <ul>

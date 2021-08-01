@@ -138,11 +138,9 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/</guid>
-      <description>Create two Phala accounts
- Reference https://hackmd.io/1U7uIEb-RD6bakEKmBlJzg to create a Phala account To help identify the relationship between accounts later, we recommend that you add &amp;quot;Stash&amp;quot; and &amp;quot;Controller&amp;quot; to the account names.    Get Test Currency
-Join our testnet faucet Telegram group to get some free test coins.
-  Set the binding relationship between stash and controller
-Developer Tab → Extrinsics (transaction) → select your Stash account → select phalaModule → choose setStash(controller) -&amp;gt; select your Controller account.</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -192,8 +190,9 @@ Check Your CPU   Look up your computer&#39;s Processor. On Windows, you can find
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/</guid>
-      <description>Over Staking for Computing Task Process of Staking  Stake Transfer to your stash account, nominator your or other miner, the token will be locked in this round and become effective in next round. Withdraw Stake The token will be pre-unlocked, and be unlocked in next round.  How to Operating  Ready to work  Open the following two pages and select the corresponding transaction or query
- Select the stath account，select “miningStaking” in &amp;quot;submit the following extrinsic&amp;quot;.</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -202,8 +201,9 @@ Check Your CPU   Look up your computer&#39;s Processor. On Windows, you can find
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/</guid>
-      <description>Introduction of 1605 Race Privacy Computing Task Who are familiar with Phala Tokenomics know that Phala&#39;s mining rewards are divided into online rewards and computing task rewards. In this 1605 Race V2, on the basis of online rewards, the emphasis is on the introduction of computing task rewards. This article is an introduction to the computing tasks of the Vendetta testnet.
-Background summary  The computing tasks in this testnet are generated virtually by the system, and 5 computing tasks are fixed for each Round (600 blocks).</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -212,9 +212,9 @@ Background summary  The computing tasks in this testnet are generated virtually 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</guid>
-      <description>Start the Phala miner 1sudo phala start  The scripts will run for a long time.The pruntime and phost will start until the full node got the highest block.
- It costs a tiny amount of tPHA as well. Before deploying pHost, please make sure there are a certain amount of tPHA in your Stash account and controller account. Click here to learn how to obtain tPHA.
-Check the phala miner status You can check your miner status as this command：</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -223,7 +223,9 @@ Check the phala miner status You can check your miner status as this command：<
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/</guid>
-      <description>Go to Developer -&amp;gt; Extrinsics. Choose your Controller account -&amp;gt; phalaModule -&amp;gt; setPayoutPrefs(payout_comission, payout_target) Fill in commission (from 0 to 100) and choose the account where you want to receive the mining rewards at target.   The commission rate influences your final profits. For any mining reward you get, you always take the commission from it, and then distribute the rest propotionally to the mining stakers. For example, a comission of 100 means all the profits are tranferred to your specified account and a comission of 0 will share all the profits to your mining stakers.</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -232,8 +234,9 @@ Check the phala miner status You can check your miner status as this command：<
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</guid>
-      <description>Go to Developer -&amp;gt; Chain state :
- Check miner score: phalaModule - &amp;gt;workerState -&amp;gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free).</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -242,8 +245,9 @@ Check the phala miner status You can check your miner status as this command：<
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/</guid>
-      <description>As designed in Phala Token Economics, each miner is required to stake at least 1620 PHA per core before mining starts. On testnet Vendetta, to better perform a stress test on Phala network and allow more miners to participate, Phala network will automatically stake for miners after they register.
-However, to score a higher rank in the Miner Race, you can earn more points by using better hardwares, staking more tPHA, or simply running for a longer period, e.</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -252,8 +256,9 @@ However, to score a higher rank in the Miner Race, you can earn more points by u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/</guid>
-      <description>Go to Develoepr -&amp;gt; Extrinsics Choose your controller account，click phalaModule -&amp;gt; startMiningIntention() ，and Submit Transaction.  Then you will wait for the next mining period (every 1 hour) to get started.
-Mining States Verification  Go to Developer → Chain State Choose phalaModule → workerState, and choose your stash account If there&#39;s a Mining with block height after state, congratulations, your miner is working. If there&#39;s a Miningpending, it means your miner will start mining from the next round (600 blocks later).</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -262,8 +267,9 @@ Mining States Verification  Go to Developer → Chain State Choose phalaModule �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</guid>
-      <description>Go to Developer → Extrinsics Choose your controller account，clickphalaModule → stopMiningIntention() → Submit Transaction  Then you will wait for the next mining period (every 1 hour) to get stopped.
-Miner State Verification onchain  Go toDeveloper → Chain State phalaModule → workerState → Stash account phalaModule → miningState → Stash account  Miner State Verification 1sudo phala status Stop the Phala miner You can stop your phala miner as this command:</description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>
@@ -272,7 +278,9 @@ Miner State Verification onchain  Go toDeveloper → Chain State phalaModule →
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</guid>
-      <description> Go to Developer → Chain State Click phalaModule → fire(Accountld): BalanceOf  </description>
+      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
     </item>
     
     <item>

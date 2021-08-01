@@ -10,32 +10,36 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>2.3 Verify the Miner State | Phala Network Wiki</title><meta property="og:title" content="2.3 Verify the Miner State" />
-<meta property="og:description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free)." />
+<meta property="og:description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="2.3 Verify the Miner State">
-<meta itemprop="description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free).">
+<meta itemprop="description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.">
 
-<meta itemprop="wordCount" content="151">
+<meta itemprop="wordCount" content="286">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.3 Verify the Miner State"/>
-<meta name="twitter:description" content="Go to Developer -&gt; Chain state :
- Check miner score: phalaModule - &gt;workerState -&gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free)."/>
+<meta name="twitter:description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Go to Developer -&amp;gt; Chain state :
- Check miner score: phalaModule - &amp;gt;workerState -&amp;gt; choose your stash account  score.overallScore: the total points that a miner scores features: number of enabled cores, and the level of your cores（1-4）.   Check stash state: stashState Confirm the binding between stash and controller addresses: phalaModule.stash(controller) An example of all the details of mining state is shown below:  Mining State References  Empty: A rare tag to see if you have registered your miner successfully Free: Your miner is successfully registered but haven&#39;t start mining Gatekeeper: Your Gatekeeper role is enabled MiningPending: Your miner will start mining in the next round Mining: BlockNumber: Your miner is mining; the number aside is the blockheight where you start MiningStopping: Your miner will stop mining in the next round (state changed into Free).">
+  <meta name="description" content="⚠️⚠️ Out-of-date Warning ⚠️⚠️
+The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
+The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.">
 
 
 
@@ -485,7 +489,21 @@
 </aside>
 
   <main class="content">
-    <h1>2.3 Verify the Miner State</h1><p>Go to <code>Developer</code> -&gt; <code>Chain state</code> :</p>
+    <h1>2.3 Verify the Miner State</h1>
+<div class="tip tip_warning">
+  <p><strong>⚠️⚠️ Out-of-date Warning ⚠️⚠️</strong></p>
+<p>The Phala team has published the new <a href="https://medium.com/phala-network/reading-phala-network-economic-paper-preview-5f33b7019861">Tokenomics v0.9</a> in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).</p>
+<p>The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol. The difference between the new one and the old one is significant. Some frequentely asked questions are already no-issue on the new testnet. Therefore we storngly suggest you to wait for the new testnet launch. The runtime-bridge will be available shortly after that.</p>
+<p>You can find the latest development progress from the links below:</p>
+<ol>
+<li><a href="https://github.com/orgs/Phala-Network/projects/9">Phala/Khala Core Protocol Progress</a></li>
+<li><a href="https://github.com/orgs/Phala-Network/projects/8">Mining Protocol Progress</a></li>
+<li><a href="https://github.com/Phala-Network/runtime-bridge">runtime-bridge Github repo</a></li>
+</ol>
+
+</div>
+
+<p>Go to <code>Developer</code> -&gt; <code>Chain state</code> :</p>
 <ul>
 <li>Check miner score: <code>phalaModule</code> - &gt;<code>workerState</code> -&gt; choose your stash account
 <ul>
