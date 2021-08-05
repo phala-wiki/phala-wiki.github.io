@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,21 +14,17 @@
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
 Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2020-07-06T22:30:41+08:00" />
 <meta property="article:modified_time" content="2020-07-06T22:30:41+08:00" /><meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Run a full node">
 <meta itemprop="description" content="If you&#39;re building dapps or products on a Phala Network, you probably want the ability to run a node-as-a-back-end. After all, it&#39;s always better to rely on your own infrastructure than on a third-party-hosted one in this brave new decentralized world.
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
-Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events.">
-<meta itemprop="datePublished" content="2020-07-06T22:30:41+08:00" />
+Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events."><meta itemprop="datePublished" content="2020-07-06T22:30:41+08:00" />
 <meta itemprop="dateModified" content="2020-07-06T22:30:41+08:00" />
 <meta itemprop="wordCount" content="1219">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Run a full node"/>
 <meta name="twitter:description" content="If you&#39;re building dapps or products on a Phala Network, you probably want the ability to run a node-as-a-back-end. After all, it&#39;s always better to rely on your own infrastructure than on a third-party-hosted one in this brave new decentralized world.
 This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
@@ -571,30 +567,30 @@ cargo build --release
 </ul>
 <h2 id="participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</h2>
 <p>To participate the PoC-2 events, it's required to set your node name in the format below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-node --name <span class="s2">&#34;Name | Controller account address&#34;</span> &lt;...other arguments&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-node --name <span class="s2">&#34;Name | Controller account address&#34;</span> &lt;...other arguments&gt;
 </code></pre></div><p>where &quot;Controller account address&quot; is the address of your Controller account for staking (not Stash account). Please make sure there are two spaces close to the vertical bar symbol.</p>
 <blockquote>
 <p>Example: the command below brings up an archive node with the name &quot;PhalaMiner&quot; and its controller account</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-node --name <span class="s2">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-node --name <span class="s2">&#34;PhalaMiner | 5Ea32SkcVaEmBVFNeMycjuAQKNzHzwosFrhEhwUFmawsEtkt&#34;</span> --pruning archive
 </code></pre></div></blockquote>
 <h2 id="get-substrate">Get Substrate</h2>
 <p>Follow instructions as outlined
 <a href="https://substrate.dev/docs/en/knowledgebase/getting-started">here</a> - note that Windows users will
 have their work cut out for them. It's better to use a virtual machine instead.</p>
 <p>Test if the installation was successful by running <code>cargo --version</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ cargo --version
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ cargo --version
 <span class="ln">2</span>cargo 1.41.0 <span class="o">(</span>626f0f40e 2019-12-03<span class="o">)</span>
 </code></pre></div><h2 id="clone-and-build">Clone and Build</h2>
 <p>The <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a> repo's master branch contains the
 latest Phala Network code.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone https://github.com/Phala-Network/phala-blockchain
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone https://github.com/Phala-Network/phala-blockchain
 <span class="ln">2</span><span class="nb">cd</span> phala-blockchain
 <span class="ln">3</span>./scripts/init.sh
 <span class="ln">4</span>git submodule update --init
 <span class="ln">5</span>cargo build --release
 </code></pre></div><h2 id="run">Run</h2>
 <p>The built binary will be in the <code>target/release</code> folder, called <code>phala-node</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node --chain poc2 --name <span class="s2">&#34;My node&#39;s name&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node --chain poc2 --name <span class="s2">&#34;My node&#39;s name&#34;</span>
 </code></pre></div><blockquote>
 <p>Check <a href="#participate-testnet-poc-2-promotion-events">participating PoC-2 events</a> for naming convention if you are.</p>
 </blockquote>
@@ -609,7 +605,7 @@ using any other Substrate chain.</p>
 <p>When running as a simple sync node (above), only the state of the past 256 blocks will be kept. When
 validating, it defaults to <a href="#types-of-nodes">archive mode</a>. To keep the full state use the
 <code>--pruning</code> flag:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node --chain poc2 --name <span class="s2">&#34;My node&#39;s name&#34;</span> --pruning archive
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node --chain poc2 --name <span class="s2">&#34;My node&#39;s name&#34;</span> --pruning archive
 </code></pre></div><p>It is possible to almost quadruple synchronization speed by using an additional flag:
 <code>--wasm-execution Compiled</code>. Note that this uses much more CPU and RAM, so it should be turned off
 after the node is in sync.</p>
@@ -790,7 +786,7 @@ own docker file for connecting to Phala Network PoC2.</p>
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

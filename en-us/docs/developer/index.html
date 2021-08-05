@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,11 +12,10 @@
 <title>Contract Development | Phala Network Wiki</title><meta property="og:title" content="Contract Development" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" />
-<meta property="og:site_name" content="Phala Network Wiki" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/" /><meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Contract Development">
-<meta itemprop="description" content="">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Development"/>
 <meta name="twitter:description" content=""/>
 
@@ -474,7 +473,7 @@
 
   <main class="content">
     <h1>Contract Development</h1><h2 id="what-is-a-confidential-contract">What is a Confidential Contract</h2>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span><span class="ln"> 3</span><span class="w"></span><span class="p">}</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">
@@ -492,7 +491,7 @@
 <p>A confidential contract is nothing more than an ordinary smart contract, but with confidentiality. This example shows a simple contract where it stores a counter and anyone can increment it, but only the authorized user can read it. The above snippet defines the contract storage and the <code>Increment</code> command.</p>
 <p>The Phala contracts are written in Rust, a programming language that can do anything on the blockchain. You can make full use of your favorite package manager Cargo and libraries at <a href="https://crates.io">crates.io</a>.</p>
 <p>So far, we have a HelloWorld contract with a counter, but it's only the first half! Now you may wonder what is the difference between confidential contracts and other smart contracts. The second half revels the secret.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">    </span><span class="n">Request</span>::<span class="n">GetCount</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">ROOT_ACCOUNT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -687,7 +686,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

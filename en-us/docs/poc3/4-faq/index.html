@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,19 +14,17 @@
 
 I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment. Full-node. A full node is pruned, meaning it discards all information older than 256 blocks, but keeps the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires much less space than an archive node." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/4-faq/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/4-faq/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="4 Frequently Asked Questions">
 <meta itemprop="description" content="Miner Community Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
 
 I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment. Full-node. A full node is pruned, meaning it discards all information older than 256 blocks, but keeps the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires much less space than an archive node.">
 
 <meta itemprop="wordCount" content="1699">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 Frequently Asked Questions"/>
 <meta name="twitter:description" content="Miner Community Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
 
@@ -526,7 +524,7 @@ I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment.
 <p>Type in <code>sudo apt install –fix-broken</code>.</p>
 <h3 id="q-got-error-need-install-curl-">Q: Got error: <code>need install curl </code></h3>
 <p>Run the commands below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo apt-get update
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo apt-get update
 <span class="ln">2</span>sudo apt-get install curl
 </code></pre></div><h3 id="q-it-got-stuck-after-docker-pull-commands">Q: It got stuck after <code>docker pull...</code> commands</h3>
 <p>Please kindly check your network.</p>
@@ -538,7 +536,7 @@ I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment.
 <h3 id="q-got-error-docker-error-response-from-darmon-conflict-the-container-name-phala-node-is-already-in-use-by-container">Q: Got error <code>docker: Error response from darmon: Conflict. The container name &quot;/phala-node&quot; is already in use by container</code></h3>
 <p>It means you already the containers of your last step (running phala-node/pRuntime/pHost) has installed the containers correctly and you don't need to run the same container again.</p>
 <h3 id="q-got-errors-as-blow">Q: Got errors as blow:</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>Starting pHost with extra opts <span class="s1">&#39;-r&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>Starting pHost with extra opts <span class="s1">&#39;-r&#39;</span>
 <span class="ln">2</span>Connected to substrate at: ws://192.168.0.9:9944
 <span class="ln">3</span>thread <span class="s1">&#39;main&#39;</span> panicked at <span class="s1">&#39;Controller not registered; qed&#39;</span>, phost/src/main.rs:512:13
 <span class="ln">4</span>note: run with <span class="s1">&#39;RUST_BACKTRACE=1&#39;</span> environment variable to display a backtrace
@@ -556,7 +554,7 @@ I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment.
 </ul>
 <h3 id="q-i-suspect-some-docker-container-dies--hangs--doesnt-run-correctly-but-how-can-i-debug">Q: I suspect some docker container dies / hangs / doesn't run correctly but how can I debug?</h3>
 <p>Remove <code>-d</code> in the <code>docker run</code> command and run it again to get the output in the foreground. You can screenshot the log and send it to the community for help. To dump a full log from a hanging docker, please run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker logs phala-phost &gt; phost.log
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker logs phala-phost &gt; phost.log
 </code></pre></div><h3 id="q-how-can-i-dump-the-logs-from-the-containers">Q: How can I dump the logs from the containers?</h3>
 <p>When they are running:</p>
 <ul>
@@ -565,7 +563,7 @@ I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment.
 <li>pHost: <code>sudo docker logs phala-phost</code></li>
 </ul>
 <p>You can check if the container is running by:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker ps
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker ps
 </code></pre></div><p>If the container dies right after the launch, consider to remote <code>-d</code> from the startup commandline to get the output.</p>
 <h3 id="q-what-if-my-machine-id-is-empty-after-ive-run-all-the-commands">Q: What if my Machine ID is empty after I've run all the commands?</h3>
 <p>Upgrade your miner(s) following <a href="/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a>. If it doesn't help, a walk-around is to create a new stash and controller account pair, transfer the token to the new accounts, and then start over.</p>
@@ -797,7 +795,7 @@ I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment.
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,17 +12,15 @@
 <title>1.4 Software Configuration | Phala Network Wiki</title><meta property="og:title" content="1.4 Software Configuration" />
 <meta property="og:description" content="System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y 2sudo apt install wget Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="1.4 Software Configuration">
 <meta itemprop="description" content="System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y 2sudo apt install wget Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github">
 
 <meta itemprop="wordCount" content="1439">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.4 Software Configuration"/>
 <meta name="twitter:description" content="System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y 2sudo apt install wget Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github"/>
 
@@ -487,15 +485,15 @@
 <li><a href="https://phoenixnap.com/kb/how-to-install-ubuntu-18-04">How to install Ubuntu 18.04</a></li>
 <li>Make sure wget is installed all your packages are up-to-date:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y <span class="o">&amp;&amp;</span> sudo apt autoremove -y
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y <span class="o">&amp;&amp;</span> sudo apt autoremove -y
 <span class="ln">2</span>sudo apt install wget
 </code></pre></div><h3 id="install-phala-solo-scripts">Install Phala-solo-Scripts</h3>
 <p>Download the Phala-solo-Scripts form Github</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://codeload.github.com/Phala-Network/solo-mining-scripts/zip/main
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://codeload.github.com/Phala-Network/solo-mining-scripts/zip/main
 </code></pre></div><p>Unzip and run the install.sh to install the scripts
 A Phala miner helps maintain the backbone of the network. We suggest you to run a Phala miner on a device with 50+ GB storage.
 Your node name ，IP address and controllor mnemonic will be set by the scripts.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>unzip main.zip
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>unzip main.zip
 <span class="ln">2</span><span class="nb">cd</span> solo-mining-scripts-main
 <span class="ln">3</span>sudo chmod +x *.sh
 <span class="ln">4</span>sudo ./install.sh en
@@ -508,7 +506,7 @@ Your node name ，IP address and controllor mnemonic will be set by the scripts.
 <ul>
 <li>
 <p>You can run the SGX test by the Phala scripts</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div></li>
 </ul>
 <p>Please pay attention to the following checks:</p>
@@ -520,7 +518,7 @@ Your node name ，IP address and controllor mnemonic will be set by the scripts.
 <p>Among them, <strong>the former one is a must to run Phala Network pRuntime</strong>. If it's not supported (tagged as ✘ in the report example below), we are afraid you can't mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
 <p>The latter is not a must though, it is suggested to be checked as it would be essential to install the DCAP driver.</p>
 <p>The report below would be a positive result:</p>
-<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>aesm_service[15]: Malformed request received (May be forged for attack)
 <span class="ln"> 3</span>✔  SGX instruction set
 <span class="ln"> 4</span>  ✔  CPU support
@@ -578,7 +576,7 @@ Your node name ，IP address and controllor mnemonic will be set by the scripts.
 <span class="ln">56</span>advisoryURL = https://security-center.intel.com
 <span class="ln">57</span>advisoryIDs = &#34;INTEL-SA-00219&#34;
 </code></pre></div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
-<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction set
 <span class="ln"> 3</span>  ✔  CPU support // if tagged with ❌: it does not suppoort SGX function, you would need to use other types of CPU.
 <span class="ln"> 4</span>  ✔  CPU configuration // if tagged with ❌: you would need to check BIOS updates.
@@ -854,7 +852,7 @@ Your node name ，IP address and controllor mnemonic will be set by the scripts.
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
