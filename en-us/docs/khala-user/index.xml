@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polkadot{.js} Extension Guide on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/khala-user/</link>
+    <description>Recent content in Polkadot{.js} Extension Guide on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/khala-user/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

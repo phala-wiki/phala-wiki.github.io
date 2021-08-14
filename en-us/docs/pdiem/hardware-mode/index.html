@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,17 +14,19 @@
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Advanced: Hardware Mode">
 <meta itemprop="description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.">
 
 <meta itemprop="wordCount" content="302">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Advanced: Hardware Mode"/>
 <meta name="twitter:description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
@@ -121,74 +123,33 @@ Intel SGX SDK comes with three modes:
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Contract Development</a></h2>
-      <section class="subsection" id="docs-contract-development">
-        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
+      <section class="subsection" id="docs-understand-phala-tokenomics">
+        <h3 class="section_link"><a id="docs-1-tee-mining-staking" href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/">1 TEE Mining Staking</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment">Environment</a></li>
-    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
-    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
-    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment-and-build">Environment and Build</a></li>
-    <li><a href="#walk-through">Walk-through</a>
-      <ul>
-        <li><a href="#contract">Contract</a></li>
-        <li><a href="#frontend">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
-      <ul>
-        <li><a href="#contract-1">Contract</a></li>
-        <li><a href="#frontend-1">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#put-everything-together">Put everything together</a></li>
-    <li><a href="#summary">Summary</a>
-      <ul>
-        <li><a href="#submit-your-work">Submit your work</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
-      <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
-      </ul>
-    </li>
-    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
-      <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
-      </ul>
-    </li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#tee-mining-roles">TEE Mining Roles</a></li>
+    <li><a href="#role-relationships">Role Relationships</a></li>
+    <li><a href="#the-relationship-between-worker-and-stakepool">The Relationship between Worker and StakePool</a></li>
+    <li><a href="#assignment-of-stake-from-pools-to-workers">Assignment of Stake from Pools to Workers</a></li>
+    <li><a href="#reward-settlement-flow">Reward Settlement Flow</a></li>
+    <li><a href="#pool-exit-stake-settlements">Pool Exit Stake Settlements</a></li>
   </ul>
 </nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc3/" class="group">PoC-3/4 Vendetta Mining Guide</a></h2>
-      <section class="subsection" id="docs-poc-34-vendetta-mining-guide">
-        <h3 class="section_link"><a id="docs-11-register-a-phala-account" href="https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/">1.1 Register a Phala account</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Mining Guide</a></h2>
+      <section class="subsection" id="docs-khala-mining-guide">
+        <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#tip">Tip:</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-12-bind-stash-and-controller-accounts" href="https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/">1.2 Bind Stash and Controller accounts</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-13-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/">1.3 Check your hardware, BIOS and system</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#general-phala-hardware-requirements">General Phala Hardware Requirements</a></li>
+    <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
     <li><a href="#check-your-cpu">Check Your CPU</a></li>
     <li><a href="#check-bios-settings">Check BIOS settings</a></li>
     <li><a href="#supported-operating-systems-ubuntu-1804-and-2004">Supported Operating Systems: Ubuntu 18.04 and 20.04</a>
@@ -198,209 +159,70 @@ Intel SGX SDK comes with three modes:
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-14-software-configuration" href="https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/">1.4 Software Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-12-install-phala-tools" href="https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/">1.2 Install Phala Tools</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#system-requirement">System Requirement</a></li>
-        <li><a href="#install-phala-solo-scripts">Install Phala-solo-Scripts</a></li>
-      </ul>
-    </li>
-    <li><a href="#double-check-the-sgx-capability">Double check the SGX capability</a>
-      <ul>
-        <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
-      </ul>
-    </li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#download-phala-scripts">Download Phala Scripts</a></li>
+    <li><a href="#activate-sgx-software-with-sgx_enable">Activate SGX Software with sgx_enable</a></li>
+    <li><a href="#install-phala-tools">Install Phala Tools</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-15-on-chain-staking" href="https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/">1.5 On-Chain Staking</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-13-check-the-sgx-capability-and-confidence-level" href="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 Check the SGX Capability and Confidence Level</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#over-staking-for-computing-task">Over Staking for Computing Task</a>
-      <ul>
-        <li><a href="#process-of-staking">Process of Staking</a></li>
-        <li><a href="#how-to-operating">How to Operating</a></li>
-      </ul>
-    </li>
+    <li><a href="#double-check-the-sgx-capability">Double Check the SGX Capability</a></li>
+    <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-16-introduction-of-1605-race-privacy-computing-task" href="https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/">1.6 Introduction of 1605 Race Privacy Computing Task</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-14-benchmarking" href="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/">1.4 Benchmarking</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction-of-1605-race-privacy-computing-task">Introduction of 1605 Race Privacy Computing Task</a>
+    <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-solo-mining-in-para-1-testnet" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo Mining in Para-1 Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2.1 Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-sgx-driver">Install SGX Driver</a></li>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/">2.2 Deploy Worker Node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-mining">Start Mining</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/">2.3 Verify Worker Status</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#verify-worker-status">Verify Worker Status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-24-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-25-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/">2.5 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#console-manual">Console Manual</a>
       <ul>
-        <li><a href="#background-summary">Background summary</a></li>
-        <li><a href="#privacy-computing-task-dispatch-algorithm">Privacy computing task dispatch algorithm</a>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#console-operations">Console Operations</a></li>
+        <li><a href="#other-operations">Other Operations</a></li>
+        <li><a href="#explanations-of-fields">Explanations of Fields</a>
           <ul>
-            <li><a href="#core-logic">Core logic</a></li>
-            <li><a href="#tee-worker-task-score">TEE worker task score</a></li>
-            <li><a href="#weighted-random-sampling-without-replacement">Weighted random sampling without replacement</a></li>
+            <li><a href="#stakepool-list">Stakepool List</a></li>
+            <li><a href="#worker-list">Worker List</a></li>
+            <li><a href="#stake-info">Stake Info</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#data-simulation-of-dispatching-algorithm">Data simulation of dispatching algorithm</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#the-correlation-between-the-amount-of-extra-stake-and-the-probability-of-selection">The correlation between the amount of extra stake and the probability of selection</a></li>
-            <li><a href="#correlation-between-machine-performance-and-selection-probability">Correlation between machine performance and selection probability</a></li>
-            <li><a href="#how-to-allocate-additional-mortgage-for-multiple-miners">How to allocate additional mortgage for multiple miners</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-21-start-the-phala-miner" href="https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/">2.1 Start the Phala miner</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#start-the-phala-miner">Start the Phala miner</a></li>
-    <li><a href="#check-the-phala-miner-status">Check the phala miner status</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-22-set-commission" href="https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/">2.2 Set Commission</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-23-verify-the-miner-state" href="https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/">2.3 Verify the Miner State</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#mining-state-references">Mining State References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-31-set-miner-stakes" href="https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/">3.1 Set Miner Stakes</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#the-mining-lending-protocol">The Mining Lending Protocol</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-32-start-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/">3.2 Start Mining</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#mining-states-verification">Mining States Verification</a></li>
-    <li><a href="#mining-status-references">Mining Status References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-33-stop-mining" href="https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/">3.3 Stop Mining</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#miner-state-verification-onchain">Miner State Verification onchain</a></li>
-    <li><a href="#miner-state-verification">Miner State Verification</a></li>
-    <li><a href="#stop-the-phala-miner">Stop the Phala miner</a></li>
-    <li><a href="#uninstall-the-phala-scripts">Uninstall the Phala scripts</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-34-check-miner-profits" href="https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/">3.4 Check Miner Profits</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-35-upgrade-miner" href="https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/">3.5 Upgrade Miner</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#stop-mining">Stop mining</a></li>
-    <li><a href="#update-the-phala-miner-and-clean-the-local-files">Update the Phala miner and clean the local files</a></li>
-    <li><a href="#update-the-phala-miner-without-clean-the-local-files">Update the Phala miner without clean the local files</a></li>
-    <li><a href="#restart-the-phala-miner">Restart the Phala miner</a></li>
-    <li><a href="#reset-database-for-troubleshooting-only">Reset database (for troubleshooting only)</a>
-      <ul>
-        <li><a href="#miner-community">Miner Community</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/poc3/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#miner-community">Miner Community</a></li>
-      </ul>
-    </li>
-    <li><a href="#i-glossary">I. Glossary</a></li>
-    <li><a href="#ii-setting-up-multiple-miners">II. Setting up Multiple Miners</a>
-      <ul>
-        <li><a href="#q-shall-i-set-up-multiple-full-nodes-as-well-if-i-have-several-miner-workers">Q: Shall I set up multiple full-nodes as well if I have several miner workers?</a></li>
-        <li><a href="#q-can-i-use-the-same-ip-address-if-i-have-multiple-computer">Q: Can I use the same IP address if I have multiple computer?</a></li>
-        <li><a href="#q-is-a-public-internet-ip-address-necessary-and-will-it-gain-more-points-in-mining">Q: Is a public Internet IP address necessary and will it gain more points in mining?</a></li>
-        <li><a href="#q-can-i-use-the-same-phala-account-for-multiple-miners">Q: Can I use the same Phala account for multiple miners?</a></li>
-        <li><a href="#q-will-there-be-a-solution-to-registering-multiple-miner-accounts-in-a-short-time">Q: Will there be a solution to registering multiple miner accounts in a short time?</a></li>
-      </ul>
-    </li>
-    <li><a href="#iii-linux-updates--sgx-driver">III. Linux Updates &amp; SGX Driver</a>
-      <ul>
-        <li><a href="#q-got-error-apt-install---fix-broken">Q: Got error: <code>apt install --fix-broken</code></a></li>
-        <li><a href="#q-got-error-need-install-curl-">Q: Got error: <code>need install curl </code></a></li>
-        <li><a href="#q-it-got-stuck-after-docker-pull-commands">Q: It got stuck after <code>docker pull...</code> commands</a></li>
-      </ul>
-    </li>
-    <li><a href="#iv-issues-related-to-phala-node-pruntime-phost">IV. Issues related to phala-node, pRuntime, pHost</a>
-      <ul>
-        <li><a href="#q-got-error-no-such-command-after-i-typed-docker-pull-dockerpkggithubcomphala-networkphala-dockerphala-nodepre-test-4">Q: Got error &quot;no such command&quot; after I typed <code>docker pull docker.pkg.github.com/phala-network/phala-docker/phala-node:pre-test-4</code></a></li>
-        <li><a href="#q-got-error-permission-denied">Q: Got error <code>permission denied</code></a></li>
-        <li><a href="#q-got-error-docker-error-response-from-darmon-conflict-the-container-name-phala-node-is-already-in-use-by-container">Q: Got error <code>docker: Error response from darmon: Conflict. The container name &quot;/phala-node&quot; is already in use by container</code></a></li>
-        <li><a href="#q-got-errors-as-blow">Q: Got errors as blow:</a></li>
-        <li><a href="#q-got-error-devsgxenclave-no-such-file-or-directory-or-devisgx-no-such-file-or-directory">Q: Got error: <code>/dev/sgx/enclave No such file or directory</code> or <code>/dev/isgx No such file or directory</code></a></li>
-        <li><a href="#q-how-to-check-if-my-installed-driver-is-sgx-or-dcap">Q: How to check if my installed driver is SGX or DCAP?</a></li>
-        <li><a href="#q-i-suspect-some-docker-container-dies--hangs--doesnt-run-correctly-but-how-can-i-debug">Q: I suspect some docker container dies / hangs / doesn't run correctly but how can I debug?</a></li>
-        <li><a href="#q-how-can-i-dump-the-logs-from-the-containers">Q: How can I dump the logs from the containers?</a></li>
-        <li><a href="#q-what-if-my-machine-id-is-empty-after-ive-run-all-the-commands">Q: What if my Machine ID is empty after I've run all the commands?</a></li>
-      </ul>
-    </li>
-    <li><a href="#v-operations-on-chain">V. Operations On-chain</a>
-      <ul>
-        <li><a href="#q-can-i-bond-the-controller-account-with-multiple-stash-accounts">Q: Can I bond the controller account with multiple stash accounts?</a></li>
-        <li><a href="#q-why-my-balance-didnt-change-after-i-have-started-mining">Q: Why my balance didn't change after I have started mining?</a></li>
-        <li><a href="#q-got-error-not-controller-while-setting-commission">Q: Got error <code>Not Controller</code> while setting commission</a></li>
-      </ul>
-    </li>
-    <li><a href="#vi-restart-your-phost">VI. Restart your pHost</a>
-      <ul>
-        <li><a href="#q-got-errblockheadermismatch-after-restarting-phost">Q: Got <code>Err(BlockHeaderMismatch)</code> after restarting phost</a></li>
-        <li><a href="#q-is-it-ok-to-use-docker-restart-instead">Q: Is it ok to use <code>docker restart</code> instead?</a></li>
-        <li><a href="#q-how-can-i-make-sure-the-restart-is-done">Q: How can I make sure the restart is done?</a></li>
-        <li><a href="#q-what-will-happen-if-i-didnt-restart-phost">Q: What will happen if I didn't restart phost?</a></li>
-      </ul>
-    </li>
-    <li><a href="#vii-other">VII. Other</a>
-      <ul>
-        <li><a href="#q-i-cant-claim-test-tokens-after-clicking-click-to-burn-or-click-to-claim">Q: I can't claim test tokens after clicking <code>Click to burn</code> or <code>Click to claim</code></a></li>
-        <li><a href="#q-error-happens-when-i-tried-to-run-the-self-examination-program">Q: Error happens when I tried to run the self-examination program</a></li>
-      </ul>
-    </li>
-    <li><a href="#viii-increase-confidence-level">VIII. Increase confidence level</a>
-      <ul>
-        <li><a href="#q-configuration_needed-and-configuration_and_sw_hardening_needed">Q: <code>CONFIGURATION_NEEDED</code> and <code>CONFIGURATION_AND_SW_HARDENING_NEEDED</code></a></li>
-        <li><a href="#q-group_out_of_date">Q: <code>GROUP_OUT_OF_DATE</code></a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-41-error-references" href="https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/">4.1 Error References</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">GateKeeper Guide</a></h2>
-      <section class="subsection" id="docs-gatekeeper-guide">
-        <h3 class="section_link"><a id="docs-run-a-gatekeeper" href="https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/">Run a Gatekeeper</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#setup-environment">Setup Environment</a></li>
-    <li><a href="#synchronize-chain-data">Synchronize Chain Data</a>
-      <ul>
-        <li><a href="#to-compile-your-gatekeeper-node">*To Compile Your Gatekeeper Node</a></li>
-      </ul>
-    </li>
-    <li><a href="#bond-pha">Bond PHA</a></li>
-    <li><a href="#set-session-keys">Set Session Keys</a>
-      <ul>
-        <li><a href="#generating-the-session-keys">Generating the Session Keys</a>
-          <ul>
-            <li><a href="#option-1-polkadotjs-apps">Option 1: PolkadotJS-APPS</a></li>
-            <li><a href="#option-2-cli">Option 2: CLI</a></li>
-          </ul>
-        </li>
-        <li><a href="#set-your-sessions-keys">Set Your Sessions Keys</a></li>
-      </ul>
-    </li>
-    <li><a href="#pruntime-setup">pRuntime Setup</a></li>
-    <li><a href="#phost-setup">pHost Setup</a></li>
-    <li><a href="#validate-your-gatekeeper">Validate Your Gatekeeper</a>
-      <ul>
-        <li><a href="#miner-community">Miner Community</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </section>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
@@ -458,26 +280,58 @@ Intel SGX SDK comes with three modes:
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/poc2/" class="group">Legacy Docs (PoC-2)</a></h2>
-      <section class="subsection" id="docs-legacy-docs-poc-2">
-        <h3 class="section_link"><a id="docs-run-a-full-node" href="https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/">Run a full node</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
+      <section class="subsection" id="docs-archived-contract-development">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
       <ul>
-        <li><a href="#types-of-nodes">Types of Nodes</a></li>
-        <li><a href="#fast-install-instructions-linux">Fast Install Instructions (Linux)</a></li>
-        <li><a href="#fast-install-instructions-mac">Fast Install Instructions (Mac)</a></li>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
       </ul>
     </li>
-    <li><a href="#participate-testnet-poc-2-promotion-events">Participate Testnet PoC-2 promotion events</a></li>
-    <li><a href="#get-substrate">Get Substrate</a></li>
-    <li><a href="#clone-and-build">Clone and Build</a></li>
-    <li><a href="#run">Run</a></li>
-    <li><a href="#running-an-archive-node">Running an Archive Node</a></li>
-    <li><a href="#using-docker">Using Docker</a></li>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
+      <ul>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
+      <ul>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </section>
@@ -507,7 +361,7 @@ Intel SGX SDK comes with three modes:
 </ul>
 <p><code>IAS</code> and <code>DCAP</code> are the two different SGX driver. Please choose the docker-compose file that matches your platform. Then, you can specify the config files when running any docker-compose command by <code>-f</code>.</p>
 <p>For example, run the following command to build the image for the IAS Driver:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
 </code></pre></div><p>There are also HW version of <code>phala-console.sh</code>, which should be used according to your platform:</p>
 <ul>
 <li><code>phala-console.hw.ias.sh</code></li>
@@ -685,7 +539,7 @@ Intel SGX SDK comes with three modes:
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

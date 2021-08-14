@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Understand Phala Tokenomics on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/tokenomic/</link>
+    <description>Recent content in Understand Phala Tokenomics on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/tokenomic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 TEE Mining Staking</title>
+      <link>https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/</guid>
+      <description>MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList += &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining.</description>
+    </item>
+    
+  </channel>
+</rss>

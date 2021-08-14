@@ -91,27 +91,6 @@ Le SDK Intel SGX est livré avec trois modes :
     </item>
     
     <item>
-      <title>1.0 Vérifier votre matériel, votre BIOS et votre système</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/</guid>
-      <description>Prérequis: Votre machine peut potentiellement miner pour Phala si elle répond à ces exigences : Elle aura également besoin d&#39;une carte mère et d&#39;un BIOS prenant en charge l&#39;utilisation d&#39;Intel SGX pour exécuter un environnement sécurisé (TEE).
-Vérifiez votre CPU Recherchez le processeur de votre ordinateur.
- Sous Windows, vous pouvez le trouver dans Panneau de configuration / Paramètres, ou faites un clique droit sur l&#39;icône Démarrer et sélectionnez Système.  Sur Ubuntu, cliquez dans le coin supérieur droit, choisissez Paramètres, puis A propos.</description>
-    </item>
-    
-    <item>
-      <title>1.1 Créer les comptes Phala Controller &amp; Stash</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.2-cr%C3%A9er-les-comptes-phala-controller-stash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.2-cr%C3%A9er-les-comptes-phala-controller-stash/</guid>
-      <description>Ici, nous allons créer 2 adresses Phala. Une adresse Controller et l&#39;autre Stash (masquée). Remplacez, &amp;quot;PolkaFrance_stash&amp;quot; par les noms de comptes que vous choisirez. Mettez bien le préfixe &amp;quot;_stash&amp;quot; ou &amp;quot;_controleur&amp;quot; pour éviter toutes confusions ultérieurement.
- Accédez à la page de gestion du Testnet Phala : https://poc4.phala.network/polkadotjs/#/accounts   Copiez et collez le mnémonique créer dans un endroit sûre. Celui du controller vous sera redemandé par la suite.Cochez la case, puis &amp;quot;Suivant&amp;quot;.</description>
-    </item>
-    
-    <item>
       <title>1.1 Lançer un réseau de développement local</title>
       <link>https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -134,27 +113,6 @@ Vérifiez votre CPU Recherchez le processeur de votre ordinateur.
     </item>
     
     <item>
-      <title>1.2 Lier les comptes Stash et Controller</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.3-lier-les-comptes-stash-et-controller/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.3-lier-les-comptes-stash-et-controller/</guid>
-      <description>Réclamer vos tokens sur le faucet Dans le cadre du tesnet, Phala vous offre de faux tokens pour tester la blockchain. Vous pouvez reclamer des tokens 2 fois par jour.
-Copiez l&#39;adresse d&#39;un des 2 comptes puis allez sur le groupe Télégram testnet faucet de phala.
-Envoyez un message au Bot avec la commande drip suivie de votre adresse : /drip #Adresse. Les &amp;quot;tpha&amp;quot;, sont délivrés quasiment instantanément.
-Recommencez pour le deuxième compte.</description>
-    </item>
-    
-    <item>
-      <title>1.3 Configurer le mineur</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/</guid>
-      <description>Exigences du système  Ce tutoriel est basé sur Ubuntu 20.04. D&#39;autres distributions peuvent fonctionner si on s&#39;en réfère au wiki de phala. mais elle n&#39;ont pas été testées. Comment Installer Ubuntu? Veillez à ce que votre OS soit à jour. La base de données de la blockchain grossie de jour en jour. Veillez à disposer d&#39;un espace disque suffisant.  sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y</description>
-    </item>
-    
-    <item>
       <title>1.3 Dépannage</title>
       <link>https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -162,77 +120,6 @@ Recommencez pour le deuxième compte.</description>
       <guid>https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/</guid>
       <description>Blockchain Phala Probleme : &amp;quot;la cible wasm32-unknown-unknown n&#39;est peut-être pas installée&amp;quot;. Vous devez ajouter la cible wasm-unknown-unknown à votre toolchain rust. Faites-le de cette façon (sous le repo du code) :
 1rustup target add wasm32-unknown-unknown Probleme: &amp;quot;(signal: 9, SIGKILL: kill)&amp;quot; lors de la construction du substrat Le compilateur peut manquer de mémoire. Habituellement, chaque thread prend jusqu&#39;à 2GB de RAM. Si vous n&#39;avez pas assez de mémoire, vous pouvez limiter la concurrence en spécifiant un N plus petit que vos cœurs disponibles :</description>
-    </item>
-    
-    <item>
-      <title>1.4 Lancer le mineur</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.5-lancer-le-mineur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.5-lancer-le-mineur/</guid>
-      <description>Démarrez le mineur Phala sudo phala start
-Les scripts s&#39;exécuteront durant une longue période, selon la taille de la blockchain. A ce jour (mai 2021), la base de Poc4 est petite. Cependant, lorsque nous avons commencé à miner sur Poc3, la synchronisation pouvait durer entre 24 et 48 heures. Les conteneurs pruntime et le phost se lanceront lorsque le nœud obtiendra le bloc le plus élevé. Laissez la commande phala start suivre son cours, elle lancera tous les dockers les uns à la suite des autres, pas la peine d&#39;ouvrir un second terminal et de forcer le lancement du pruntime et du phost, cela ne fonctionnera pas.</description>
-    </item>
-    
-    <item>
-      <title>1.5 Configurer les commissions</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.6-configurer-les-commissions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.6-configurer-les-commissions/</guid>
-      <description>Accédez à la page de gestion du Testnet Phala : https://poc4.phala.network/polkadotjs/#/accounts 
- Go to Developer -&amp;gt; Extrinsics. Choisissez votre compte Controller -&amp;gt; phala -&amp;gt; setPayoutPrefs (payout_comission, payout_target) Remplissez la commission (de 0 à 100) et choisissez le compte sur lequel vous souhaitez recevoir les récompenses minières à la cible.   Le taux de commission influence vos bénéfices finaux. Pour toute récompense minière que vous obtenez, vous en prenez toujours la commission, puis vous distribuez le reste proportionnellement aux mining stakers.</description>
-    </item>
-    
-    <item>
-      <title>1.6 Lancez l&#39;intention de minage</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.7-lancez-lintention-de-minage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.7-lancez-lintention-de-minage/</guid>
-      <description>Lancez L&#39;intention de minage Accédez à la page de gestion du Testnet Phala : https://poc4.phala.network/polkadotjs/#/accounts 
- Allez dans Developer -&amp;gt; Extrinsics Choisissez votre compte Controller, cliquez sur phala -&amp;gt; startMiningIntention () et Soumettez la transaction.  Vérifier l&#39;état du mineur  Go to Developer -&amp;gt; Chain state. Vérifiez le score du mineur: phala-&amp;gt; workerState-&amp;gt; choisissez votre compte Stash  Vous obtenez un statut : MiningPending: = Votre mineur commencera à miner au prochain tour (600 Blocks, attention, ça peut prendre 1 heure!</description>
-    </item>
-    
-    <item>
-      <title>1.7 Arrêter le mineur</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.8-arr%C3%AAter-le-mineur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.8-arr%C3%AAter-le-mineur/</guid>
-      <description>Arrêter L&#39;intention de minage Accédez à la page de gestion du Testnet Phala : https://poc4.phala.network/polkadotjs/#/accounts 
- Allez dans Développeur → Extrinsics Choisissez votre compte Controller ， Phala → stopMiningIntention () → Soumettre la transaction   Ensuite, attendez la prochaine période de minage (~ toutes les 1 heure) pour que l&#39;intention de minage soit arrêtée.
- Vérification de l&#39;état du mineur sur la chaîne Pour vérifier que l&#39;état du mineur soit bien à l&#39;arret :</description>
-    </item>
-    
-    <item>
-      <title>1.8 Vérifier les gains du mineur</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.9-v%C3%A9rifier-les-gains-du-mineur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.9-v%C3%A9rifier-les-gains-du-mineur/</guid>
-      <description>Accédez à la page de gestion du Testnet Phala : https://poc4.phala.network/polkadotjs/#/accounts 
-Go to **Developer ** → Chain State Click phala → fire2(Accountld): BalanceOf</description>
-    </item>
-    
-    <item>
-      <title>1.9 Mise à jour du mineur</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/</guid>
-      <description>Arrêtez le minage.  Si votre mineur n&#39;est pas en statut mining, n&#39;hésitez pas à sauter cette étape.
-  Arretez le mineur en suivant la procédure [5.8 Arrêter le mineur](5.Le tuto/5.8 Arrêter le mineur) Attendez la fin de la période de minage en cours (1 heure par période d&#39;extraction). Si vous arrêtez le mineur trop tôt, vous risquez de vous faire couper. Exécutez les commandes suivantes pour tuer les conteneurs d&#39;origine:  sudo phala stop</description>
-    </item>
-    
-    <item>
-      <title>2 FAQ</title>
-      <link>https://wiki.phala.network/fr-fr/docs/poc4/2.f-a-q/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/fr-fr/docs/poc4/2.f-a-q/</guid>
-      <description>Q : Quels sont les pré-requis pour se lancer ? R :
- 1620 PHA / coeur (pour le testnet, ça n&#39;est pas une obligation) Un processeur INTEL compatible SGX OS : Ubuntu 18 ou 20 Disque Dur &amp;gt; 50 Go Une connexion internet Connaissance des commandes de base Ubuntu  Q : Quelle est la rentabilité du projet ? R : A l&#39;heure actuelle, nous ne savons pas et les devs de PHALA eux-même ne savent pas.</description>
     </item>
     
   </channel>

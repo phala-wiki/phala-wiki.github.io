@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GateKeeper Guide on Phala Network Wiki</title>
+    <title>Apply for Khala Gatekeeper on Phala Network Wiki</title>
     <link>https://wiki.phala.network/en-us/docs/gatekeeper/</link>
-    <description>Recent content in GateKeeper Guide on Phala Network Wiki</description>
+    <description>Recent content in Apply for Khala Gatekeeper on Phala Network Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 01:16:05 +0800</lastBuildDate><atom:link href="https://wiki.phala.network/en-us/docs/gatekeeper/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Run a Gatekeeper</title>
-      <link>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</link>
-      <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</guid>
-      <description>Setup Environment   Hardware
- CPU: 6th generation or newer Intel Core/Pentium/Celeron/Atom series. Memory: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory. Mainboard: SGX-supported mainboard, and newer mainboards can support more SGX features.</description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/gatekeeper/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -9,14 +9,15 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>守门人教程 | Phala Network 百科</title><meta property="og:title" content="守门人教程" />
+<title>Khala守门人申请教程 | Phala Network 百科</title><meta property="og:title" content="Khala守门人申请教程" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/" /><meta property="og:site_name" content="Phala Network 百科" />
-
-<meta itemprop="name" content="守门人教程">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="守门人教程"/>
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/gatekeeper/" />
+<meta property="og:site_name" content="Phala Network 百科" />
+<meta itemprop="name" content="Khala守门人申请教程">
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Khala守门人申请教程"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -106,95 +107,185 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/poc3/" class="group">PoC-3/4 Vendetta 挖矿教程</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/tokenomic/" class="group">了解TEE挖矿经济模型（提案）</a></h2>
+      <section class="subsection" id="docs-了解tee挖矿经济模型提案">
+        <h3 class="section_link"><a id="docs-1-phala挖矿抵押设计" href="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/">1 Phala挖矿抵押设计</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#角色介绍">角色介绍</a></li>
+    <li><a href="#角色关系">角色关系</a>
+      <ul>
+        <li><a href="#计算节点与抵押池的关系">计算节点与抵押池的关系</a></li>
+        <li><a href="#抵押者与机器的关系">抵押者与机器的关系</a></li>
+        <li><a href="#奖励结算关系">奖励结算关系</a></li>
+        <li><a href="#退出抵押结算">退出抵押结算</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">守门人教程</a></h2>
-      <section class="subsection" id="docs-守门人教程">
-        <h3 class="section_link"><a id="docs-运行-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/">运行 Gatekeeper</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-user/" class="group">使用波卡插件</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-mining/" class="group">Khala挖矿教程</a></h2>
+      <section class="subsection" id="docs-khala挖矿教程">
+        <h3 class="section_link"><a id="docs-11-检查你的硬件bios和系统" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/">1.1 检查你的硬件、BIOS和系统</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#配置要求">配置要求</a>
+    <li><a href="#phala-硬件需求门槛">Phala 硬件需求门槛</a></li>
+    <li><a href="#打开英特尔官网httpswwwintelcncontentwwwcnzhhomepagehtml搜索自己的cpu型号">打开<a href="https://www.intel.cn/content/www/cn/zh/homepage.html">英特尔官网</a>，搜索自己的CPU型号</a>
       <ul>
-        <li><a href="#硬件">硬件</a></li>
-        <li><a href="#软件">软件</a></li>
+        <li><a href="#如图所示这样就是支持的芯片">如图所示，这样就是支持的芯片。</a></li>
       </ul>
     </li>
-    <li><a href="#同步链上数据">同步链上数据</a></li>
-    <li><a href="#抵押pha和设置-session-key">抵押PHA和设置 Session Key</a>
+    <li><a href="#确认-bios-设置">确认 BIOS 设置</a></li>
+    <li><a href="#ubuntu-1804--2004">Ubuntu 18.04 / 20.04</a>
       <ul>
-        <li><a href="#抵押-pha">抵押 PHA</a></li>
-        <li><a href="#获取-session-密钥">获取 Session 密钥</a>
-          <ul>
-            <li><a href="#方法1-polkadotjs-apps">方法1: PolkadotJS-APPS</a></li>
-            <li><a href="#方法2-cli">方法2: CLI</a></li>
-          </ul>
-        </li>
-        <li><a href="#提交session-key">提交Session Key</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#启动-pruntime">启动 pRuntime</a>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a>
       <ul>
         <li>
           <ul>
-            <li><a href="#dcap-驱动">DCAP 驱动：</a></li>
-            <li><a href="#sgx-驱动">SGX 驱动：</a></li>
-            <li><a href="#不知道自己的驱动是什么">不知道自己的驱动是什么：</a></li>
+            <li><a href="#在phala脚本目录打开终端输入以下指令后电脑会重启">在phala脚本目录打开终端，输入以下指令后电脑会重启：</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#启动-phost">启动 pHost</a></li>
-    <li><a href="#启动守门人身份"><strong>启动守门人身份</strong></a>
+    <li><a href="#安装phala工具">安装Phala工具</a>
       <ul>
-        <li><a href="#技术支持">技术支持</a></li>
+        <li>
+          <ul>
+            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令：</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
 </nav>
-      </section>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/poc2/" class="group">历史文档 (PoC-2)</a></h2>
-      <section class="subsection" id="docs-历史文档-poc-2">
-        <h3 class="section_link"><a id="docs-运行全节点" href="https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/">运行全节点</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-13-sgx测试和信任分级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 SGX测试和信任分级</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#节点类型">节点类型</a></li>
-        <li><a href="#快速安装指南--linux">快速安装指南  (Linux)</a></li>
-        <li><a href="#快速安装指南--mac">快速安装指南  (Mac)</a></li>
+        <li><a href="#首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</a></li>
+        <li><a href="#自检指令">自检指令</a></li>
+        <li><a href="#正常的结果">正常的结果</a></li>
       </ul>
     </li>
-    <li><a href="#参与测试网络-poc-2-活动">参与测试网络 PoC-2 活动</a></li>
-    <li><a href="#获取-substrate">获取 Substrate</a></li>
-    <li><a href="#克隆代码编译">克隆代码、编译</a></li>
-    <li><a href="#运行">运行</a></li>
-    <li><a href="#运行归档节点">运行归档节点</a></li>
-    <li><a href="#使用-docker-运行节点">使用 Docker 运行节点</a></li>
+    <li><a href="#信任分级介绍">信任分级介绍</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-14-测试worker性能分" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/">1.4 测试Worker性能分</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</a></li>
+        <li><a href="#heading"></a></li>
+        <li><a href="#性能分数测试方法">性能分数测试方法：</a></li>
+        <li><a href="#一定要记得替换核心数使用你的cpu最大核心数跑分测试不要无脑复制否则跑分将不准确">一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！</a></li>
+        <li><a href="#heading-1"></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-单节点挖矿para1版本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/">2 单节点挖矿（Para1版本）</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-21-环境配置" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/">2.1 环境配置</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#如果你已经进行了sgx测试性能测试那么你的配置应该已经完成可以忽略直接下一步">如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-部署-worker-节点" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/">2.2 部署 Worker 节点</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-mining">Start Mining</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/">2.3 查看Worker状态</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#查看矿机状态">查看矿机状态</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-24-worker升级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Worker升级</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-25-使用控制台" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/">2.5 使用控制台</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#名词解释">名词解释</a></li>
+    <li><a href="#操作指南">操作指南</a>
+      <ul>
+        <li><a href="#准备">准备</a></li>
+        <li><a href="#主流程">主流程</a></li>
+        <li><a href="#其他操作">其他操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#信息介绍">信息介绍</a>
+      <ul>
+        <li><a href="#抵押池列表stakepool">抵押池列表（Stakepool）</a></li>
+        <li><a href="#worker列表worker">Worker列表（Worker）</a></li>
+        <li><a href="#抵押详情stake-info">抵押详情（Stake Info）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">3 FAQ</a></h3><nav id="TableOfContents"></nav>
       </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">Khala守门人申请教程</a></h2>
   </section>
       </section>
   </section>
 </aside>
 
   <main class="content">
-    <h1>守门人教程</h1><h2 id="什么是守门人">什么是守门人</h2>
-<p>守门人（Gatekeeper）是对 Phala 网络至关重要的角色。守门人负责区块的打包和密钥管理，是意外情况下保证网络可用性的重要途径。守门人需要使用性能较好的设备、在网络情况良好的环境登录，且必须时刻保持在线。因此，<strong>守门人可以获得可观的收益</strong>，但同时需要对自己和提名人的PHA抵押额负责。如果因为频繁掉线或其他不良行为导致被惩罚，则无论是名誉还是PHA损失都会是巨大的。</p>
-<p>运行守门人节点，安全是第一要素。鉴于 Phala 采用了和 Polkadot 一样的NPoS共识机制，你可以参考<a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">“如何搭建Polkadot验证人节点”</a>查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的<a href="https://github.com/w3f/polkadot-secure-validator">验证人节点参考实现</a>（<a href="https://www.youtube.com/watch?v=tTn8P6t7JYc">Web3基金会视频教程</a>）。你可以把这个代码库当作 <code>一个初始模版</code>，根据需要自行修改相关代码。</p>
+    <h1>Khala守门人申请教程</h1><h2 id="敬请期待">敬请期待</h2>
+<!-- ## 什么是守门人
+
+守门人（Gatekeeper）是对 Phala 网络至关重要的角色。守门人负责区块的打包和密钥管理，是意外情况下保证网络可用性的重要途径。守门人需要使用性能较好的设备、在网络情况良好的环境登录，且必须时刻保持在线。因此，**守门人可以获得可观的收益**，但同时需要对自己和提名人的PHA抵押额负责。如果因为频繁掉线或其他不良行为导致被惩罚，则无论是名誉还是PHA损失都会是巨大的。
+
+运行守门人节点，安全是第一要素。鉴于 Phala 采用了和 Polkadot 一样的NPoS共识机制，你可以参考[“如何搭建Polkadot验证人节点”](https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator)查看可能影响守门人安全运行的因素。Web3 基金会也维护了一个你可以自行部署的[验证人节点参考实现](https://github.com/w3f/polkadot-secure-validator)（[Web3基金会视频教程](https://www.youtube.com/watch?v=tTn8P6t7JYc)）。你可以把这个代码库当作 `一个初始模版`，根据需要自行修改相关代码。
+
 <br>
-<h2 id="vendetta-测试网上的守门人">Vendetta 测试网上的守门人</h2>
-<p>当选守门人需要目前有守门人空位且有足够的提名人为你抵押押金。守门人空位不是无上限的，Phala 预计主网上只有 100 个守门人空位。</p>
-<blockquote>
-<p><strong>在当前版本，守门人名额只有 <code>21</code> 位，且当选守门人需要完成 GKOL工作坊报名：https://www.yuque.com/fagephalanetwork/vendettatutorial/llm05v</strong></p>
-</blockquote>
-<p>选举为守门人所需的最低PHA是动态的，并且会随着时间而变化。这不仅取决于每个守门人被提名的PHA数量，还取决于被选中的守门人+排队中守门人的总数量。</p>
-<p>只要你收到了足够多的提名，即便这个 Era（6小时/Era） 没有空位，那么在下个 Era 你会自动入选。但如果下个 Era 仍然没有足够的人为你提名或押金不足，你将一直处在 等待 状态。你可以尝试追加绑定金，或号召更多 PHA 持有者为你提名。</p>
-<p>所有守门人的收益来自 Phala 5% 的网络通胀。在系统扣除守门人佣金后，守门人的提名人将按照提名比例共享这部分收益。需要注意的是，守门人如果表现不佳（如经常掉线），可能会被“削（Slash）”。提名人的押金也会跟着受损，所以寻找靠谱的守门人非常重要。</p>
+
+## Vendetta 测试网上的守门人
+
+当选守门人需要目前有守门人空位且有足够的提名人为你抵押押金。守门人空位不是无上限的，Phala 预计主网上只有 100 个守门人空位。
+
+> **在当前版本，守门人名额只有 `21` 位，且当选守门人需要完成 GKOL工作坊报名：https://www.yuque.com/fagephalanetwork/vendettatutorial/llm05v**
+
+选举为守门人所需的最低PHA是动态的，并且会随着时间而变化。这不仅取决于每个守门人被提名的PHA数量，还取决于被选中的守门人+排队中守门人的总数量。
+
+只要你收到了足够多的提名，即便这个 Era（6小时/Era） 没有空位，那么在下个 Era 你会自动入选。但如果下个 Era 仍然没有足够的人为你提名或押金不足，你将一直处在 等待 状态。你可以尝试追加绑定金，或号召更多 PHA 持有者为你提名。
+
+所有守门人的收益来自 Phala 5% 的网络通胀。在系统扣除守门人佣金后，守门人的提名人将按照提名比例共享这部分收益。需要注意的是，守门人如果表现不佳（如经常掉线），可能会被“削（Slash）”。提名人的押金也会跟着受损，所以寻找靠谱的守门人非常重要。
+
 <br>
-<h3 id="技术支持">技术支持</h3>
-<p><a href="https://mp.weixin.qq.com/s/j0ggxgvwqCeNO6v0mgHkzw"><img src="https://img.shields.io/badge/Join-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen" alt=""></a></p>
+
+### 技术支持
+ [![](https://img.shields.io/badge/Join-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen)](https://mp.weixin.qq.com/s/j0ggxgvwqCeNO6v0mgHkzw) -->
 
     <div class="pager pager_lean">
   <div class="pager_item prev">
@@ -205,12 +296,6 @@
 
   <div class="pager_item next">
   
-    
-      <a href="https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/" class="pager_link button" title="运行 Gatekeeper">
-  <span class="pager_label">运行 Gatekeeper</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
     
   
         
@@ -364,7 +449,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

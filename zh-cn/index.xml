@@ -5,35 +5,153 @@
     <link>https://wiki.phala.network/zh-cn/</link>
     <description>Recent content in Phala Network Wiki on Phala Network 百科</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 01:16:05 +0800</lastBuildDate><atom:link href="https://wiki.phala.network/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wiki.phala.network/zh-cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>运行 Gatekeeper</title>
-      <link>https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/</link>
-      <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
+      <title>1 Phala挖矿抵押设计</title>
+      <link>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/zh-cn/docs/gatekeeper/run-a-gatekeeper/</guid>
-      <description>配置要求 硬件  CPU：英特尔6代（最好8代）双核及以上奔腾/赛扬/酷睿芯片 内存：2G（最好8G） 磁盘空间：40-80 GB（越大越好，建议采用 NVMe 固态硬盘，每六个月需要重新评估节点磁盘占用大小）  软件  系统：Ubuntu 18.04 / 20.04 安装 Docker-CE 安装并启动 SGX 驱动 网络环境：建议使用一级运营商的网络，有公网更好。  同步链上数据  下载 Phala Gatekeeper 资源包。 将该文件放到 /home（家） 文件夹内。 输入以下指令。vim 指令过后，会进入Vim，在其中将 YOUR NAME 替换成节点名字（确认当前输入法为英文输入法，按下 a ，进入可编辑的状态）。  1cd ~/phala 2sudo cp ./poc3_validator.service /etc/systemd/system 3sudo systemctl enable poc3_validator.service 4sudo systemctl start poc3_validator.service 5sudo vim validator.sh 再次确认当前输入法为英文输入法。按下 ESC 再按 Shift + ; ，底部出现光标，输入 wq ，回车保存退出； 打开 https://telemetry.polkadot.io/#list/Phala%20PoC-3 ，点击 BEST BLOCK 下面的长条形的标题位置，即可按首字母顺序或倒序显示节点名字。点击一个节点，即可选中它，在默认排序中置顶。等待区块高度完成同步。根据网速不同，这一步可能需要1-2小时。等待期间，可以同时做 第2步 和 第3步。但第4步必须要等到区块高度完成同步。   也可以直接从 Phala-Network/phala-blockchain 代码库的 master分支 上直接编译 phala-node。如果你倾向于用SSH链接Github，也可以把以下第一条命令替换为 git clone git@github.</description>
+      <guid>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</guid>
+      <description>简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
+如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
+角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，</description>
     </item>
     
     <item>
-      <title>运行全节点</title>
-      <link>https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/</link>
-      <pubDate>Mon, 06 Jul 2020 22:30:41 +0800</pubDate>
+      <title>1.1 检查你的硬件、BIOS和系统</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/zh-cn/docs/poc2/run-a-full-node/</guid>
-      <description>这是一份关于如何在 Phala PoC-2 测试网 上安装全节点的教程。
-如果你有节点相关疑问，请 点此前往 Phala论坛中文区，参照此 模板 进行提问。后等待Phala开发人员解答即可。
-在开始跑节点之前，您可以先了解一下 Phala 网络上的节点类型。
-节点类型 一条区块链的成长，由创世区块（genesis block）开始，由 交易（extrinsic） 和事件（event）推动。
-Phala上的守门人节点（Gatekeeper）封装区块1时，会获取区块0的状态，将未确定的状态添加到新区块之上，并生成事件。随后，区块2也会如此进行封装，区块3同理。如果超过三分之二的守门人都认定一个区块是有效的，则此区块的封装完结（finalize）。如此循环往复。
-这个过程将由以下几种节点参与。
- 归档节点（Archive Node）：负责保存已经封装好的区块。因为有归档节点的存在，我们才可以很方便地查看过去的链上记录，如某个账号在某个时间点的余额，或哪个状态生成的交易是快速操作。不过，归档节点对存储空间有很高的要求。例，要归档 Kusama 网络上 160 万个区块大概需要 15 - 20 GB 的存储空间。如果你想运行一个守门人节点，则需要配置两倍于此要求的存储空间，因为每一个守门人节点同时都是归档节点。 全节点（Full Node）：相比归档节点，全节点要精简许多。它不会保存第 256 个区块之前的信息，只保留包括创始区块在内的旧区块的交易。如此精简过后，一个全节点所需的存储空间就远远小于归档节点了。不过，要想在全节点上查询某个过去链上状态，用户需要等待区块链重建至某个需要查询的区块。全节点无需外部指令或变成归档节点即可重建整个链。需要注意的是，如果由于各种原因，区块的完结被阻塞在 256 个区块以前，精简过的节点就无法再与网络同步了。 轻节点（Light Node）：轻节点上只有 Runtime 和实时状态，不保存任何过往交易，也不同步从创世区块开始的整条链。  归档节点对于需要经常查询过往链上信息的应用或功能来说更实用，如浏览器、议会记录（council scanner）、议事平台（如 Polkassenbly）等。
-全节点人人可用。有了自己的节点，你就可以随时查看链上状态，直接向链上提交交易，而不必经由某个中心化的节点商。
-轻节点则适合设备不那么高级的用户。一种有趣的轻节点是 Google 浏览器扩展插件，一个插件就是一个节点，Runtime 以 WASM 格式运行。详情可戳链接：https://github.com/paritytech/substrate-light-ui
-快速安装指南 (Linux)  不建议已经是守门人节点的设备继续此教程。详情请参见 《如何安全搭建守门人节点》
- 你可以前往 phala-blockchain 的 Github 发布页面 获取最新的可执行程序 。下方代码可能会有一点点古老。
-此外，预编译的程序可能无法在老版本的 Linux 或特殊架构上运行。如果出现类似 cannot execute binary file: Exec format error 的错误，可能是由可执行程序版本和系统不兼容导致的。你可能需要重新编译一遍，或使用 Docker。</description>
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/</guid>
+      <description>Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod +x sgx_enable 3sudo ./sgx_enable Tip
+如何打开 Ubuntu 终端：在桌面点击右键 →终端（Open in Terminal）
+Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安装 Ubuntu 18.</description>
+    </item>
+    
+    <item>
+      <title>1.2 下载并安装Phala脚本</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/</guid>
+      <description>请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
+下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip，或者可以用wget下载，命令如下：
+1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip 5unzip poc5.zip 6cd solo-mining-scripts-poc5 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启： 1cd ~/solo-mining-scripts-poc5 2sudo chmod +x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令： 1cd ~/solo-mining-scripts-poc5 2sudo chmod +x install.sh 3sudo ./install.sh cn </description>
+    </item>
+    
+    <item>
+      <title>1.3 SGX测试和信任分级</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/</guid>
+      <description>首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
+在报告的最后一行会显示你的安全等级（1～5），如果您这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表您的机器是无法参与挖矿的。
+SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
+如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。
+自检指令 1sudo phala sgx-test 正常的结果 1Detecting SGX, this may take a minute... 2✔ SGX instruction set 3 ✔ CPU support 4 ✔ CPU configuration 5 ✔ Enclave attributes 6 ✔ Enclave Page Cache 7 SGX features 8 ✔ SGX2 ✔ EXINFO ✘ ENCLV ✘ OVERSUB ✘ KSS 9 Total EPC size: 94.</description>
+    </item>
+    
+    <item>
+      <title>1.4 测试Worker性能分</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/</guid>
+      <description>如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​
+重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+​
+1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X 一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！  跑分用的Docker不会自动结束关闭，结束跑分的方法：
+1sudo phala stop bench 在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
+另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！</description>
+    </item>
+    
+    <item>
+      <title>2 单节点挖矿（Para1版本）</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/</guid>
+      <description>Para1是Khala的测试网，它将运行在平行链环境。运行它的目的是给Khala网络做测试。
+领取测试币 您可以通过 Phala 水龙头免费自助获取测试币。 由于以太坊矿工费高昂，不推荐您使用此前的燃烧方式。 领取测试币后需要保证stash账号和cntroller账号都有一些测试币，后续才能顺利测试
+ 测试币无任何价值，不可兑换，仅供测试用
+ Telegram(需科学) 第一步：点击水龙头群链接 https://t.me/phalafaucet ，按照提示下载软件。点击“View in Telegram”加入水龙头群组。
+第二步：进群后先回复机器人提出的数学题 如机器人发送（7+1），请回复8。否则机器人将不会给您发测试币。
+第三步：设置username可见。 方法Setting——右上角edit——设置username。否则机器人将无法识别您的申领信息。
+第四步：进入群组后发送 /drip [你的测试网地址] ，如下图。
+Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载Bananatok聊天软件0.plus/phalafaucet，无需科学也可登入TG社群。 ​
+申领流程与上述Telegram方式相同，只有设置用户名的位置不同： 右下角我的——设置——右上角编辑——用户名 ​
+注意：如果发了消息机器人没反应，检查以下：  进群后没回复数学题，退群重进 设置里用户名没有公开 drip后面没加空格 drip后面不要用折行 地址后面或最开头斜杠前面多了空格  如您不会使用Telegram软件，请前往矿工微信群询问其他矿工的帮助</description>
+    </item>
+    
+    <item>
+      <title>2.1 环境配置</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/</guid>
+      <description>如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
+只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
+1sudo phala install 当你希望重新安装DCAP驱动，你可以这样做：
+1sudo phala install dcap 当你希望重新安装isgx驱动，你可以这样做：
+1sudo phala install isgx 当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
+1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
+1sudo phala config show 注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA</description>
+    </item>
+    
+    <item>
+      <title>2.2 部署 Worker 节点</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/</guid>
+      <description>Start Mining 首先你要完成上一步的安装，如果没有做，请移步上一章节
+在phala脚本目录打开终端，输入以下指令:
+1sudo phala start </description>
+    </item>
+    
+    <item>
+      <title>2.3 查看Worker状态</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/</guid>
+      <description>查看矿机状态 在phala脚本目录打开终端，输入以下指令: 1sudo phala status 正确的状态应该如下图： 注意： 这里会显示你的节点名称、核心使用数、Gas费地址及余额、抵押池账户地址以及Worker-publish-key 请注意如果你的Gas费账户余额低于2PHA此处将出现警告，若您注意到警告请及时向Gas费账户补充PHA。</description>
+    </item>
+    
+    <item>
+      <title>2.4 Worker升级</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/</guid>
+      <description>停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start </description>
+    </item>
+    
+    <item>
+      <title>2.5 使用控制台</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/</guid>
+      <description>控制台链接：app-test.phala.network/console
+简介 控制台面向的用户主要是矿工及矿池主，囊括了对 Worker 及抵押池的链上操作及数据展示
+名词解释  WorkerPublicKey：Worker 在注册完成后获得的唯一 ID，以 0x 开头 pid：即抵押池 ID，抵押池的唯一 ID  操作指南 准备  有 PHA 的账户,作为抵押池所有者/Worker 操作者 Worker 的 WorkerPublicKey，并且该 Worker 已绑定上述账户  主流程   连接账户（创建、导入账户教程）
+  创建抵押池
+ 点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
+  手续费
+ 点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额</description>
+    </item>
+    
+    <item>
+      <title>3 FAQ</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</guid>
+      <description></description>
     </item>
     
   </channel>

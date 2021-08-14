@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>了解TEE挖矿经济模型（提案） on Phala Network 百科</title>
+    <link>https://wiki.phala.network/zh-cn/docs/tokenomic/</link>
+    <description>Recent content in 了解TEE挖矿经济模型（提案） on Phala Network 百科</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/zh-cn/docs/tokenomic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Phala挖矿抵押设计</title>
+      <link>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</guid>
+      <description>简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
+如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
+角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，</description>
+    </item>
+    
+  </channel>
+</rss>

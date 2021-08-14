@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Phala Network Wiki</title><meta property="og:title" content="Phala Network" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Phala Network">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Phala Network"/>
 <meta name="twitter:description" content=""/>
 
@@ -106,6 +107,64 @@
     <h2 class="section_title active"><a  href="https://wiki.phala.network/fr-fr/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/spec/" class="group">Spécifications techniques</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-déployer-le-réseau-de-test-en-local" href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/">Déployer le réseau de test en local</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#préparation">préparation</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-jouez-avec-pdiem" href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/">Jouez avec pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#créer-des-comptes-diem">Créer des comptes Diem</a></li>
+    <li><a href="#simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</a>
+      <ul>
+        <li><a href="#soldes-en-pdiem">Soldes en pDiem</a></li>
+        <li><a href="#transactions-vérifiées">Transactions vérifiées</a></li>
+      </ul>
+    </li>
+    <li><a href="#préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</a></li>
+    <li><a href="#dépôt-diem--pdiem">Dépôt (diem → pdiem)</a></li>
+    <li><a href="#retirer-pdiem--diem">Retirer (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-modèle-basé-sur-la-réservation" href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/">Modèle basé sur la réservation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dépôt">Dépôt</a></li>
+    <li><a href="#transfert">Transfert</a></li>
+    <li><a href="#retrait">Retrait</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-client-pour-la-validation-légère" href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/">Client pour la validation légère</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#les-bases">Les bases.</a></li>
+    <li><a href="#le-client-léger">Le client léger.</a></li>
+    <li><a href="#la-blockchain-diem">La blockchain Diem</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-mise-en-œuvre-du-contrat" href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/">Mise en œuvre du contrat</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
+    <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
+    <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
+    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#référence">Référence</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-le-relayeur" href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/">Le Relayeur</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/developer/" class="group">Développement du contrat</a></h2>
       <section class="subsection" id="docs-développement-du-contrat">
         <h3 class="section_link"><a id="docs-11-lançer-un-réseau-de-développement-local" href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/">1.1 Lançer un réseau de développement local</a></h3><nav id="TableOfContents">
@@ -166,139 +225,6 @@
 </nav>
       </section>
   </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/poc4/" class="group">PoC-4 Guide pour miner Phala</a></h2>
-      <section class="subsection" id="docs-poc-4-guide-pour-miner-phala">
-        <h3 class="section_link"><a id="docs-10-vérifier-votre-matériel-votre-bios-et-votre-système" href="https://wiki.phala.network/fr-fr/docs/poc4/3.1-v%C3%A9rifier-votre-mat%C3%A9riel-votre-bios-et-votre-syst%C3%A8me/">1.0 Vérifier votre matériel, votre BIOS et votre système</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#prérequis">Prérequis:</a></li>
-    <li><a href="#vérifiez-votre-cpu">Vérifiez votre CPU</a></li>
-    <li><a href="#confirmez-que-le-processeur-prend-en-charge-sgx">Confirmez que le processeur prend en charge SGX</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-11-créer-les-comptes-phala-controller--stash" href="https://wiki.phala.network/fr-fr/docs/poc4/3.2-cr%C3%A9er-les-comptes-phala-controller-stash/">1.1 Créer les comptes Phala Controller &amp; Stash</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-12-lier-les-comptes-stash-et-controller" href="https://wiki.phala.network/fr-fr/docs/poc4/3.3-lier-les-comptes-stash-et-controller/">1.2 Lier les comptes Stash et Controller</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#réclamer-vos-tokens-sur-le-faucet">Réclamer vos tokens sur le faucet</a></li>
-    <li><a href="#lier-les-comptes-stash-et-controller">Lier les comptes Stash et Controller</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-13-configurer-le-mineur" href="https://wiki.phala.network/fr-fr/docs/poc4/3.4-configurer-le-mineur/">1.3 Configurer le mineur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#exigences-du-système">Exigences du système</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#vérifiez-à-nouveau-la-capacité-sgx">Vérifiez à  nouveau la capacité SGX</a></li>
-    <li><a href="#confidence-level-du-mineur">Confidence Level du Mineur</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-14-lancer-le-mineur" href="https://wiki.phala.network/fr-fr/docs/poc4/3.5-lancer-le-mineur/">1.4 Lancer le mineur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#démarrez-le-mineur-phala">Démarrez le mineur Phala</a></li>
-    <li><a href="#vérifiez-le-statut-du-mineur-phala">Vérifiez le statut du mineur phala</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-15-configurer-les-commissions" href="https://wiki.phala.network/fr-fr/docs/poc4/3.6-configurer-les-commissions/">1.5 Configurer les commissions</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-16-lancez-lintention-de-minage" href="https://wiki.phala.network/fr-fr/docs/poc4/3.7-lancez-lintention-de-minage/">1.6 Lancez l&#39;intention de minage</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#lancez-lintention-de-minage">Lancez L'intention de minage</a></li>
-    <li><a href="#vérifier-létat-du-mineur">Vérifier l'état du mineur</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-17-arrêter-le-mineur" href="https://wiki.phala.network/fr-fr/docs/poc4/3.8-arr%C3%AAter-le-mineur/">1.7 Arrêter le mineur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#arrêter-lintention-de-minage">Arrêter L'intention de minage</a></li>
-    <li><a href="#vérification-de-létat-du-mineur-sur-la-chaîne">Vérification de l'état du mineur sur la chaîne</a></li>
-    <li><a href="#arrêtez-le-miner-phala">Arrêtez le miner Phala</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-18-vérifier-les-gains-du-mineur" href="https://wiki.phala.network/fr-fr/docs/poc4/3.9-v%C3%A9rifier-les-gains-du-mineur/">1.8 Vérifier les gains du mineur</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-19-mise-à-jour-du-mineur" href="https://wiki.phala.network/fr-fr/docs/poc4/3.9.1-mise-%C3%A0-jour-du-mineur/">1.9 Mise à jour du mineur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#arrêtez-le-minage">Arrêtez le minage.</a></li>
-    <li><a href="#mettez-à-jour-le-mineur-phala-et-nettoyez-les-fichiers-locaux">Mettez à jour le mineur Phala et nettoyez les fichiers locaux</a></li>
-    <li><a href="#mettez-à-jour-le-mineur-phala-sans-nettoyer-les-fichiers-locaux">Mettez à jour le mineur Phala sans nettoyer les fichiers locaux</a></li>
-    <li><a href="#redémarrez-le-mineur-phala">Redémarrez le mineur Phala</a></li>
-    <li><a href="#réinitialiser-la-base-de-données-pour-le-dépannage-uniquement">Réinitialiser la base de données (pour le dépannage uniquement)</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-2-faq" href="https://wiki.phala.network/fr-fr/docs/poc4/2.f-a-q/">2 FAQ</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#q--quels-sont-les-pré-requis-pour-se-lancer-"><strong>Q</strong> : Quels sont les pré-requis pour se lancer ?</a></li>
-        <li><a href="#q--quelle-est-la-rentabilité-du-projet-"><strong>Q</strong> : Quelle est la rentabilité du projet ?</a></li>
-        <li><a href="#q--puis-je-miner-sous-windows"><strong>Q</strong> : Puis-je miner sous windows?</a></li>
-        <li><a href="#q--jai-un-processeur-amd--puis-je-miner-"><strong>Q</strong> : J'ai un processeur AMD , puis je miner ?</a></li>
-        <li><a href="#q--peut-on-miner-sur-une-vm-"><strong>Q</strong> : Peut on miner sur une VM ?</a></li>
-        <li><a href="#q--est-ce-que-cest-trop-tard-pour-se-lancer-"><strong>Q</strong> : Est ce que c'est trop tard pour se lancer ?</a></li>
-        <li><a href="#q--pour-commencer-a-miner-sur-le-testnet-dois-je-posseder-les-1620phacoeur-"><strong>Q</strong> : Pour commencer a miner sur le TestNet dois je posseder les 1620Pha/Coeur ?</a></li>
-        <li><a href="#q--comment-augmenter-mon-niveau-de-confidentialité"><strong>Q</strong> : Comment augmenter mon niveau de confidentialité?</a></li>
-        <li><a href="#q--jaimerai-ajouter-un-deuxième-pc-pour-miner-phala-lors-de-la-configuration-je-peux-mettre-le-même-compte-que-lautre-pc"><strong>Q</strong> : J'aimerai ajouter un deuxième pc pour miner phala lors de la configuration je peux mettre le même compte que l'autre pc?</a></li>
-        <li><a href="#q--est-ce-que-lhyperthreading-est-pris-en-compte"><strong>Q</strong> : Est-ce que l'HyperThreading est pris en compte?</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </section>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="group">pDiem</a></h2>
-      <section class="subsection" id="docs-pdiem">
-        <h3 class="section_link"><a id="docs-déployer-le-réseau-de-test-en-local" href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/">Déployer le réseau de test en local</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#préparation">préparation</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-jouez-avec-pdiem" href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/">Jouez avec pDiem</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#créer-des-comptes-diem">Créer des comptes Diem</a></li>
-    <li><a href="#simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</a>
-      <ul>
-        <li><a href="#soldes-en-pdiem">Soldes en pDiem</a></li>
-        <li><a href="#transactions-vérifiées">Transactions vérifiées</a></li>
-      </ul>
-    </li>
-    <li><a href="#préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</a></li>
-    <li><a href="#dépôt-diem--pdiem">Dépôt (diem → pdiem)</a></li>
-    <li><a href="#retirer-pdiem--diem">Retirer (pdiem → diem)</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-modèle-basé-sur-la-réservation" href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/">Modèle basé sur la réservation</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#dépôt">Dépôt</a></li>
-    <li><a href="#transfert">Transfert</a></li>
-    <li><a href="#retrait">Retrait</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-client-pour-la-validation-légère" href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/">Client pour la validation légère</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#les-bases">Les bases.</a></li>
-    <li><a href="#le-client-léger">Le client léger.</a></li>
-    <li><a href="#la-blockchain-diem">La blockchain Diem</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-mise-en-œuvre-du-contrat" href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/">Mise en œuvre du contrat</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#contract-storage">Contract storage</a></li>
-    <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
-    <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
-    <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
-    <li><a href="#référence">Référence</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-le-relayeur" href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/">Le Relayeur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
-      </section>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/spec/" class="group">Spécifications techniques</a></h2>
-  </section>
       </section>
   </section>
 </aside>
@@ -323,8 +249,8 @@
   <div class="pager_item next">
   
     
-      <a href="https://wiki.phala.network/fr-fr/docs/developer/" class="pager_link button" title="Développement du contrat">
-  <span class="pager_label">Développement du contrat</span>
+      <a href="https://wiki.phala.network/fr-fr/docs/spec/" class="pager_link button" title="Spécifications techniques">
+  <span class="pager_label">Spécifications techniques</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>
@@ -481,7 +407,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

@@ -5,8 +5,7 @@
     <link>https://wiki.phala.network/en-us/</link>
     <description>Recent content on Phala Network Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 01:16:05 +0800</lastBuildDate><atom:link href="https://wiki.phala.network/en-us/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Local Testnet</title>
       <link>https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/</link>
@@ -91,34 +90,23 @@ Intel SGX SDK comes with three modes:
     </item>
     
     <item>
-      <title>Run a Gatekeeper</title>
-      <link>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</link>
-      <pubDate>Fri, 10 Jul 2020 01:16:05 +0800</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/gatekeeper/run-a-gatekeeper/</guid>
-      <description>Setup Environment   Hardware
- CPU: 6th generation or newer Intel Core/Pentium/Celeron/Atom series. Memory: 2GB - 8GB. 2GB is indeed the minimum memory you should operate your Gatekeeper with. For better performance, you can bump it up to 4GB or 8GB, but memory more than that is unnecessary. In order to compile the binary yourself, you will need around 8GB memory. Mainboard: SGX-supported mainboard, and newer mainboards can support more SGX features.</description>
-    </item>
-    
-    <item>
-      <title>Run a full node</title>
-      <link>https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/</link>
-      <pubDate>Mon, 06 Jul 2020 22:30:41 +0800</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc2/run-a-full-node/</guid>
-      <description>If you&#39;re building dapps or products on a Phala Network, you probably want the ability to run a node-as-a-back-end. After all, it&#39;s always better to rely on your own infrastructure than on a third-party-hosted one in this brave new decentralized world.
-This guide will show you how to connect to Phala Network PoC-2. First, let&#39;s clarify the term full node.
-Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics, and events.</description>
-    </item>
-    
-    <item>
-      <title>1.1 Register a Phala account</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/</link>
+      <title>1 TEE Mining Staking</title>
+      <link>https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-1-register-a-phala-acocunt/</guid>
-      <description>Go to the account management page of the Phala Testnet: https://poc4.phala.network/polkadotjs/#/accounts
-  Click Add Account   Carefully write down the mnemonic seed and check I have saved my mnemonic seed safely, and then click Next. Note: Keep the mnemonic seed safe and secure!   Enter a name and password (and confirm your password.) If you plan to run a Gatekeeper as well as a Miner, we recommend including the word &amp;quot;Controller&amp;quot; for a gatekeeper controller account and the word &amp;quot;Stash&amp;quot; for a miner stash account.</description>
+      <guid>https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/</guid>
+      <description>MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList += &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining.</description>
+    </item>
+    
+    <item>
+      <title>1.1 Check Your Hardware, BIOS and System</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/</guid>
+      <description>General Khala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:
+It will also need a motherboard and BIOS which support using Intel SGX to run a Trusted Execution Environment (TEE).
+Check Your CPU   Look up your computer&#39;s Processor. On Windows, you can find this in Control Panel/Settings, or right-click on the Start icon and select System. On Ubuntu, click in the upper-right corner, pick Settings, and then pick About.</description>
     </item>
     
     <item>
@@ -133,17 +121,6 @@ Types of Nodes A blockchain&#39;s growth comes from a genesis block, extrinsics,
     </item>
     
     <item>
-      <title>1.2 Bind Stash and Controller accounts</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-2-bind-stash-and-controller-accounts/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
-    </item>
-    
-    <item>
       <title>1.2 Hello World: your first confidential contract</title>
       <link>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -155,14 +132,26 @@ The running testnet (poc4-dev) and runtime-bridge are still based on the old min
     </item>
     
     <item>
-      <title>1.3 Check your hardware, BIOS and system</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/</link>
+      <title>1.2 Install Phala Tools</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-3-check-your-hardware-bios-and-system/</guid>
-      <description>General Phala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:
-It will also need a motherboard and BIOS which support using Intel SGX to run a Trusted Execution Environment (TEE).
-Check Your CPU   Look up your computer&#39;s Processor. On Windows, you can find this in Control Panel/Settings, or right-click on the Start icon and select System. On Ubuntu, click in the upper-right corner, pick Settings, and then pick About.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/</guid>
+      <description>Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.
+Download Phala Scripts The Phala tools are availbale at https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip, it can be downloaded with wget by executing the following commands in the terminal:
+1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y 2sudo apt install wget unzip 3cd ~ 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip 5unzip poc5.</description>
+    </item>
+    
+    <item>
+      <title>1.3 Check the SGX Capability and Confidence Level</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/</guid>
+      <description>Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.
+  You can run the SGX test by the Phala scripts
+1sudo phala sgx-test   Please pay attention to the following checks:
+ SGX system software → Able to launch enclaves → Production Mode Flexible launch control → Able to launch production mode enclave isvEnclaveQuoteStatus and advisoryIDs (explained in the next section)  Among them, the first one is a must to run Phala Network pRuntime.</description>
     </item>
     
     <item>
@@ -176,146 +165,94 @@ Check Your CPU   Look up your computer&#39;s Processor. On Windows, you can find
     </item>
     
     <item>
-      <title>1.4 Software Configuration</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/</link>
+      <title>1.4 Benchmarking</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-4-software-configuration/</guid>
-      <description>System Requirement  This tutorial is based on Ubuntu 18.04. Ubuntu with versions other than 18.04 are not covered in this tutorial, though they and other Linux distributions may also work as well. How to install Ubuntu 18.04 Make sure wget is installed all your packages are up-to-date:  1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y 2sudo apt install wget Install Phala-solo-Scripts Download the Phala-solo-Scripts form Github</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</guid>
+      <description>Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:
+1sudo phala update script Get the performance score with:
+1sudo phala score_test [number_of_cores] 2# e.g., sudo phala score_test 4  Tip: We recommend to use all the cores of your CPU.
+ The performance test has to be stopped manually with:
+1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results.</description>
     </item>
     
     <item>
-      <title>1.5 On-Chain Staking</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/</link>
+      <title>2 Solo Mining in Para-1 Testnet</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-5-on-chain-stake/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</guid>
+      <description>The following tutorials apply to Para-1 Testnet, which shares the same tokenomics parameters as the future Khala.
+Before you start mining in Para-1 Testnet, you need to first get a Khala account and acquire test token from faucet (real PHA is needed in future Khala mining).
+Claim Test Token from Telegram Bot  Get to Phala Faucet https://t.me/phalafaucet. You may need to download and install Telegram as prompted. Click &amp;quot;VIEW IN TELEGRAM&amp;quot; to join the group.</description>
     </item>
     
     <item>
-      <title>1.6 Introduction of 1605 Race Privacy Computing Task</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/</link>
+      <title>2.1 Configuration</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/1-6-introduction-of-1605-race-privacy-computing-task/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</guid>
+      <description>If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install SGX Driver You can reinstall the DCAP driver with
+1sudo phala install dcap or reinstall the isgx driver with
+1sudo phala install isgx Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.</description>
     </item>
     
     <item>
-      <title>2.1 Start the Phala miner</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</link>
+      <title>2.2 Deploy Worker Node</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/2-1-start-the-phala-miner/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</guid>
+      <description>Start Mining After all the installation and configuration, let&#39;s start mining!
+1sudo phala start </description>
     </item>
     
     <item>
-      <title>2.2 Set Commission</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/</link>
+      <title>2.3 Verify Worker Status</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/2-2-set-commission/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</guid>
+      <description>Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
+ Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  </description>
     </item>
     
     <item>
-      <title>2.3 Verify the Miner State</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</link>
+      <title>2.4 Upgrade Worker Node</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/2-3-verify-the-miner-state/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</guid>
+      <description>To upgrade your worker requires it to stop first.
+1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
+1sudo phala update clean or with the data preserved
+1sudo phala update Finally, restart your worker with:
+1sudo phala start </description>
     </item>
     
     <item>
-      <title>3.1 Set Miner Stakes</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/</link>
+      <title>2.5 Use Console to Manage Your Mining</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/3-1-set-miner-stakes/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</guid>
+      <description>We highly recommend to read staking mechanism before using the Console.
+ Console: http://app-test.phala.network/console
+Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
+Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above.</description>
     </item>
     
     <item>
-      <title>3.2 Start Mining</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/</link>
+      <title>3 Frequently Asked Questions</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/poc3/3-2-start-mining/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
-    </item>
-    
-    <item>
-      <title>3.3 Stop Mining</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/3-3-stop-mining/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
-    </item>
-    
-    <item>
-      <title>3.4 Check Miner Profits</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/3-4-check-mining-profits/</guid>
-      <description>⚠️⚠️ Out-of-date Warning ⚠️⚠️
-The Phala team has published the new Tokenomics v0.9 in July 2021. We are working on massive refactor and upgrade of the core blockchain and the mining protocol to adopt the latest Tokenomic v0.9 and the Polkadot parachain architecture. When the development is ready, we are going to launch a new testnet (Para1).
-The running testnet (poc4-dev) and runtime-bridge are still based on the old mining protocol.</description>
-    </item>
-    
-    <item>
-      <title>3.5 Upgrade Miner</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/3-5-upgrade-miner/</guid>
-      <description>Stop mining  If your miner is not in mining status, feel free to skip this step.
-   Refer to this link to stop mining.
-  Wait until the end of the current mining period (1 hour per mining period). If you stop the miner too early, you may get slashed.
-  Run the following commands to kill the original containers:
-1sudo phala stop   Update the Phala miner and clean the local files Run the commands below to remove cached data.</description>
-    </item>
-    
-    <item>
-      <title>4 Frequently Asked Questions</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/4-faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/4-faq/</guid>
-      <description>Miner Community Please don&#39;t hesitate to ask us if you have any questions. You can find us at:
-
-I. Glossary  SGX. Software Guard Extensions. TEE. Trusted Execution Environment. Full-node. A full node is pruned, meaning it discards all information older than 256 blocks, but keeps the extrinsics for all past blocks, and the genesis block. A node that is pruned this way requires much less space than an archive node.</description>
-    </item>
-    
-    <item>
-      <title>4.1 Error References</title>
-      <link>https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/poc3/4.1-error-references/</guid>
-      <description>Error How to Fix     No genesis block Please upgrade your miner node following these steps.   Failed to decode signature Please kindly check whether your node has finished syncing.   FailedToCallRegisterWorker You may refer to:
-1. Go to https://telemetry.polkadot.io/#list/Phala%20PoC-3 and check whether your node has finished sycning;
-2. type in sudo docker attach --sig-proxy=false --detach-keys=ctrl-c phala-pruntime to learn whether your pRuntime has been launched</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</guid>
+      <description></description>
     </item>
     
   </channel>
