@@ -10,40 +10,32 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.1 检查你的硬件、BIOS和系统 | Phala Network 百科</title><meta property="og:title" content="1.1 检查你的硬件、BIOS和系统" />
-<meta property="og:description" content="Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
-打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable Tip
-如何打开 Ubuntu 终端：在桌面点击右键 →终端（Open in Terminal）
-Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安装 Ubuntu 18." />
+<meta property="og:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/" />
 <meta property="og:site_name" content="Phala Network 百科" />
 <meta itemprop="name" content="1.1 检查你的硬件、BIOS和系统">
-<meta itemprop="description" content="Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
-打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable Tip
-如何打开 Ubuntu 终端：在桌面点击右键 →终端（Open in Terminal）
-Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安装 Ubuntu 18.">
+<meta itemprop="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo .">
 
-<meta itemprop="wordCount" content="74">
+<meta itemprop="wordCount" content="87">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.1 检查你的硬件、BIOS和系统"/>
-<meta name="twitter:description" content="Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
-打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable Tip
-如何打开 Ubuntu 终端：在桌面点击右键 →终端（Open in Terminal）
-Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安装 Ubuntu 18."/>
+<meta name="twitter:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
-打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable Tip
-如何打开 Ubuntu 终端：在桌面点击右键 →终端（Open in Terminal）
-Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安装 Ubuntu 18.">
+  <meta name="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod &#43;x sgx_enable 3sudo .">
 
 
 
@@ -168,24 +160,8 @@ Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安
 </nav>
         <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#在phala脚本目录打开终端输入以下指令后电脑会重启">在phala脚本目录打开终端，输入以下指令后电脑会重启：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#安装phala工具">安装Phala工具</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a></li>
+    <li><a href="#安装phala工具">安装Phala工具</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-13-sgx测试和信任分级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 SGX测试和信任分级</a></h3><nav id="TableOfContents">
@@ -215,8 +191,6 @@ Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安
         <li><a href="#如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</a></li>
         <li><a href="#heading"></a></li>
         <li><a href="#性能分数测试方法">性能分数测试方法：</a></li>
-        <li><a href="#一定要记得替换核心数使用你的cpu最大核心数跑分测试不要无脑复制否则跑分将不准确">一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！</a></li>
-        <li><a href="#heading-1"></a></li>
       </ul>
     </li>
   </ul>
@@ -281,7 +255,12 @@ Ubuntu 18.04 / 20.04  目前暂不支持这两个版本以外的版本 怎么安
 </aside>
 
   <main class="content">
-    <h1>1.1 检查你的硬件、BIOS和系统</h1><h2 id="phala-硬件需求门槛">Phala 硬件需求门槛</h2>
+    <h1>1.1 检查你的硬件、BIOS和系统</h1>
+<div class="tip tip_warning">
+  Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。
+</div>
+
+<h2 id="phala-硬件需求门槛">Phala 硬件需求门槛</h2>
 <p><img src="/images/docs/poc3/1-3.1.png" alt="">
 如何检查自己的设备支持 BIOS：
 <a href="https://www.notion.so/Intel-SGX-26209def476b40b0bb578c89d4d2e7da">前往 Intel 官网查询自己的芯片是否支持 SGX</a></p>

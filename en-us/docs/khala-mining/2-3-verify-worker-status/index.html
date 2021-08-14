@@ -10,36 +10,32 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>2.3 Verify Worker Status | Phala Network Wiki</title><meta property="og:title" content="2.3 Verify Worker Status" />
-<meta property="og:description" content="Verify Worker Status Read the worker status with:
-1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
- Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  " />
+<meta property="og:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="2.3 Verify Worker Status">
-<meta itemprop="description" content="Verify Worker Status Read the worker status with:
-1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
- Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  ">
+<meta itemprop="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.">
 
-<meta itemprop="wordCount" content="56">
+<meta itemprop="wordCount" content="109">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.3 Verify Worker Status"/>
-<meta name="twitter:description" content="Verify Worker Status Read the worker status with:
-1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
- Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  "/>
+<meta name="twitter:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Verify Worker Status Read the worker status with:
-1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
- Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  ">
+  <meta name="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.">
 
 
 
@@ -145,8 +141,8 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Mining Guide</a></h2>
-      <section class="subsection" id="docs-khala-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-1 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-1-testnet-mining-guide">
         <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
@@ -341,7 +337,12 @@
 </aside>
 
   <main class="content">
-    <h1>2.3 Verify Worker Status</h1><h2 id="verify-worker-status">Verify Worker Status</h2>
+    <h1>2.3 Verify Worker Status</h1>
+<div class="tip tip_warning">
+  Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.
+</div>
+
+<h2 id="verify-worker-status">Verify Worker Status</h2>
 <p>Read the worker status with:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala status
 </code></pre></div><p>An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.</p>

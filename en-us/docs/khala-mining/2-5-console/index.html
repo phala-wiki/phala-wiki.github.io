@@ -10,40 +10,32 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>2.5 Use Console to Manage Your Mining | Phala Network Wiki</title><meta property="og:title" content="2.5 Use Console to Manage Your Mining" />
-<meta property="og:description" content="We highly recommend to read staking mechanism before using the Console.
- Console: http://app-test.phala.network/console
-Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
-Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above." />
+<meta property="og:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
+ The Console" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="2.5 Use Console to Manage Your Mining">
-<meta itemprop="description" content="We highly recommend to read staking mechanism before using the Console.
- Console: http://app-test.phala.network/console
-Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
-Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above.">
+<meta itemprop="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
+ The Console">
 
-<meta itemprop="wordCount" content="695">
+<meta itemprop="wordCount" content="748">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.5 Use Console to Manage Your Mining"/>
-<meta name="twitter:description" content="We highly recommend to read staking mechanism before using the Console.
- Console: http://app-test.phala.network/console
-Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
-Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above."/>
+<meta name="twitter:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
+ The Console"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="We highly recommend to read staking mechanism before using the Console.
- Console: http://app-test.phala.network/console
-Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
-Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above.">
+  <meta name="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
+ The Console">
 
 
 
@@ -149,8 +141,8 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Mining Guide</a></h2>
-      <section class="subsection" id="docs-khala-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-1 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-1-testnet-mining-guide">
         <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
@@ -345,10 +337,15 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
 </aside>
 
   <main class="content">
-    <h1>2.5 Use Console to Manage Your Mining</h1><blockquote>
+    <h1>2.5 Use Console to Manage Your Mining</h1>
+<div class="tip tip_warning">
+  Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.
+</div>
+
+<blockquote>
 <p>We highly recommend to read <a href="/en-us/docs/tokenomic/1-mining-staking/">staking mechanism</a> before using the Console.</p>
 </blockquote>
-<p>Console: <a href="http://app-test.phala.network/console">http://app-test.phala.network/console</a></p>
+<p><a href="http://app-test.phala.network/console">The Console</a></p>
 <p>Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.</p>
 <h2 id="console-manual">Console Manual</h2>
 <h3 id="prerequisites">Prerequisites</h3>

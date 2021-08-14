@@ -10,48 +10,32 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.4 Benchmarking | Phala Network Wiki</title><meta property="og:title" content="1.4 Benchmarking" />
-<meta property="og:description" content="Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:
-1sudo phala update script Get the performance score with:
-1sudo phala score_test [number_of_cores] 2# e.g., sudo phala score_test 4  Tip: We recommend to use all the cores of your CPU.
- The performance test has to be stopped manually with:
-1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results." />
+<meta property="og:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="1.4 Benchmarking">
-<meta itemprop="description" content="Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:
-1sudo phala update script Get the performance score with:
-1sudo phala score_test [number_of_cores] 2# e.g., sudo phala score_test 4  Tip: We recommend to use all the cores of your CPU.
- The performance test has to be stopped manually with:
-1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results.">
+<meta itemprop="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:">
 
-<meta itemprop="wordCount" content="109">
+<meta itemprop="wordCount" content="162">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.4 Benchmarking"/>
-<meta name="twitter:description" content="Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:
-1sudo phala update script Get the performance score with:
-1sudo phala score_test [number_of_cores] 2# e.g., sudo phala score_test 4  Tip: We recommend to use all the cores of your CPU.
- The performance test has to be stopped manually with:
-1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results."/>
+<meta name="twitter:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:
-1sudo phala update script Get the performance score with:
-1sudo phala score_test [number_of_cores] 2# e.g., sudo phala score_test 4  Tip: We recommend to use all the cores of your CPU.
- The performance test has to be stopped manually with:
-1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results.">
+  <meta name="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:">
 
 
 
@@ -157,8 +141,8 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Mining Guide</a></h2>
-      <section class="subsection" id="docs-khala-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-1 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-1-testnet-mining-guide">
         <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
@@ -353,7 +337,12 @@
 </aside>
 
   <main class="content">
-    <h1>1.4 Benchmarking</h1><h2 id="benchmark-your-worker">Benchmark Your Worker</h2>
+    <h1>1.4 Benchmarking</h1>
+<div class="tip tip_warning">
+  Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.
+</div>
+
+<h2 id="benchmark-your-worker">Benchmark Your Worker</h2>
 <p>First, install the needed images with Phala tools:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>If you have installed the images before, you can update them with:</p>

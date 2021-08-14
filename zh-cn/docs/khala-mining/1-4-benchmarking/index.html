@@ -10,48 +10,44 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.4 测试Worker性能分 | Phala Network 百科</title><meta property="og:title" content="1.4 测试Worker性能分" />
-<meta property="og:description" content="如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​
-重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
-​
-1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X 一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！  跑分用的Docker不会自动结束关闭，结束跑分的方法：
-1sudo phala stop bench 在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
-另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！" />
+<meta property="og:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
+ 跑分用的Docker不会自动结束关闭，结束跑分的方法：
+1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
+另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/" />
 <meta property="og:site_name" content="Phala Network 百科" />
 <meta itemprop="name" content="1.4 测试Worker性能分">
-<meta itemprop="description" content="如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​
-重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
-​
-1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X 一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！  跑分用的Docker不会自动结束关闭，结束跑分的方法：
-1sudo phala stop bench 在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
-另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！">
+<meta itemprop="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
+ 跑分用的Docker不会自动结束关闭，结束跑分的方法：
+1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
+另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！">
 
-<meta itemprop="wordCount" content="28">
+<meta itemprop="wordCount" content="40">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.4 测试Worker性能分"/>
-<meta name="twitter:description" content="如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​
-重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
-​
-1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X 一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！  跑分用的Docker不会自动结束关闭，结束跑分的方法：
-1sudo phala stop bench 在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
-另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！"/>
+<meta name="twitter:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
+ 跑分用的Docker不会自动结束关闭，结束跑分的方法：
+1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
+另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​
-重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
-​
-1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X 一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！  跑分用的Docker不会自动结束关闭，结束跑分的方法：
-1sudo phala stop bench 在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
-另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！">
+  <meta name="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
+ 跑分用的Docker不会自动结束关闭，结束跑分的方法：
+1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
+另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！">
 
 
 
@@ -176,24 +172,8 @@
 </nav>
         <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#在phala脚本目录打开终端输入以下指令后电脑会重启">在phala脚本目录打开终端，输入以下指令后电脑会重启：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#安装phala工具">安装Phala工具</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a></li>
+    <li><a href="#安装phala工具">安装Phala工具</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-13-sgx测试和信任分级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 SGX测试和信任分级</a></h3><nav id="TableOfContents">
@@ -223,8 +203,6 @@
         <li><a href="#如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</a></li>
         <li><a href="#heading"></a></li>
         <li><a href="#性能分数测试方法">性能分数测试方法：</a></li>
-        <li><a href="#一定要记得替换核心数使用你的cpu最大核心数跑分测试不要无脑复制否则跑分将不准确">一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！</a></li>
-        <li><a href="#heading-1"></a></li>
       </ul>
     </li>
   </ul>
@@ -289,22 +267,27 @@
 </aside>
 
   <main class="content">
-    <h1>1.4 测试Worker性能分</h1><h3 id="如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</h3>
+    <h1>1.4 测试Worker性能分</h1>
+<div class="tip tip_warning">
+  Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。
+</div>
+
+<h3 id="如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
-</code></pre></div><p>​</p>
-<p><strong>重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：</strong></p>
-<p>​</p>
+</code></pre></div><p>​
+<strong>重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update script
 </code></pre></div><h3 id="heading"></h3>
 <h3 id="性能分数测试方法">性能分数测试方法：</h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala score_test <span class="o">[</span>要使用的核心数量，核心数量根据CPU情况而定<span class="o">]</span>
 <span class="ln">2</span>例如：sudo phala score-test X
-</code></pre></div><h3 id="一定要记得替换核心数使用你的cpu最大核心数跑分测试不要无脑复制否则跑分将不准确">一定要记得替换核心数，使用你的CPU最大核心数跑分测试，不要无脑复制，否则跑分将不准确！</h3>
-<h3 id="heading-1"></h3>
+</code></pre></div><blockquote>
+<p>一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！</p>
+</blockquote>
 <p>跑分用的Docker不会自动结束关闭，结束跑分的方法：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala stop bench
-</code></pre></div><p>在跑分结束后，程序会自动上传您的配置和跑分，如果你不希望上传，请手动输入N以结束上传。</p>
-<p>另外，受各种环境因素影响，性能评分有可能产生一定程度的波动！此评分为预览版本，预备主网上线有变化的可能！</p>
+</code></pre></div><p>在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。</p>
+<p>另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！</p>
 
     <div class="pager">
   <div class="pager_item prev">
