@@ -12,9 +12,7 @@
 <title>2.1 环境配置 | Phala Network 百科</title><meta property="og:title" content="2.1 环境配置" />
 <meta property="og:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
 只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
-1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望重新安装DCAP驱动，你可以这样做：
-1sudo phala install dcap 当你希望重新安装isgx驱动，你可以这样做：
-1sudo phala install isgx 当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
+1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
 1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
 1sudo phala config show 注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA" />
 <meta property="og:type" content="article" />
@@ -25,20 +23,16 @@
 <meta itemprop="name" content="2.1 环境配置">
 <meta itemprop="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
 只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
-1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望重新安装DCAP驱动，你可以这样做：
-1sudo phala install dcap 当你希望重新安装isgx驱动，你可以这样做：
-1sudo phala install isgx 当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
+1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
 1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
 1sudo phala config show 注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA">
 
-<meta itemprop="wordCount" content="41">
+<meta itemprop="wordCount" content="31">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.1 环境配置"/>
 <meta name="twitter:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
 只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
-1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望重新安装DCAP驱动，你可以这样做：
-1sudo phala install dcap 当你希望重新安装isgx驱动，你可以这样做：
-1sudo phala install isgx 当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
+1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
 1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
 1sudo phala config show 注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA"/>
 
@@ -49,9 +43,7 @@
 
   <meta name="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
 只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
-1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望重新安装DCAP驱动，你可以这样做：
-1sudo phala install dcap 当你希望重新安装isgx驱动，你可以这样做：
-1sudo phala install isgx 当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
+1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
 1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
 1sudo phala config show 注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA">
 
@@ -287,11 +279,7 @@
   Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。
 </div>
 
-<p>当你希望重新安装DCAP驱动，你可以这样做：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install dcap
-</code></pre></div><p>当你希望重新安装isgx驱动，你可以这样做：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install isgx
-</code></pre></div><p>当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：</p>
+<p>当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala config <span class="nb">set</span>
 </code></pre></div><p>当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala config show
