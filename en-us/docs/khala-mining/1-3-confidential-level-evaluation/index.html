@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,15 +12,17 @@
 <title>1.3 Check the SGX Capability and Confidence Level | Phala Network Wiki</title><meta property="og:title" content="1.3 Check the SGX Capability and Confidence Level" />
 <meta property="og:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="1.3 Check the SGX Capability and Confidence Level">
 <meta itemprop="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.">
 
 <meta itemprop="wordCount" content="1201">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 Check the SGX Capability and Confidence Level"/>
 <meta name="twitter:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well."/>
 
@@ -72,10 +74,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -211,6 +213,28 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -309,16 +333,16 @@
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -340,7 +364,7 @@
 <ul>
 <li>
 <p>You can run the SGX test by the Phala scripts</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div></li>
 </ul>
 <p>Please pay attention to the following checks:</p>
@@ -349,10 +373,10 @@
 <li>Flexible launch control → <code>Able to launch production mode enclave</code></li>
 <li><code>isvEnclaveQuoteStatus</code> and <code>advisoryIDs</code> (explained in the next section)</li>
 </ol>
-<p>Among them, <strong>the first one is a must to run Phala Network pRuntime</strong>. If it's not supported (tagged as ✘ in the report example below), we are afraid you can't mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
+<p>Among them, <strong>the first one is a must to run Phala Network pRuntime</strong>. If it&rsquo;s not supported (tagged as ✘ in the report example below), we are afraid you can&rsquo;t mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
 <p>The latter two are not a must, though it is suggested to be checked as it would be essential to install the DCAP driver.</p>
 <p>The report below would be a positive result:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction set
 <span class="ln"> 3</span>  ✔  CPU support
 <span class="ln"> 4</span>  ✔  CPU configuration
@@ -389,7 +413,7 @@
 <span class="ln">35</span>advisoryIDs = &#34;INTEL-SA-00219&#34;, &#34;INTEL-SA-00289&#34;, &#34;INTEL-SA-00320&#34;, &#34;INTEL-SA-00329&#34;
 <span class="ln">36</span>confidenceLevel = 5
 </code></pre></div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction set
 <span class="ln"> 3</span>  ✔  CPU support // if tagged with ❌: it does not suppoort SGX function, you would need to use other types of CPU.
 <span class="ln"> 4</span>  ✔  CPU configuration // if tagged with ❌: you would need to check BIOS updates.
@@ -424,7 +448,7 @@
 <span class="ln">33</span>debug: cause: failed to load report enclave
 <span class="ln">34</span>debug: cause: The EINITTOKEN provider didn&#39;t provide a token
 <span class="ln">35</span>debug: cause: aesm error code GetLicensetokenError_6
-</code></pre></div><p>If you can't run Phala pRuntime with both of them tagged as ✔, you may have to check whether your BIOS is the latest version with latest security patches. If you still can't run Phala pRuntime docker with the latest BIOS of your motherboard manufacturer, we are afraid you can't mine PHA for now with this motherboard.</p>
+</code></pre></div><p>If you can&rsquo;t run Phala pRuntime with both of them tagged as ✔, you may have to check whether your BIOS is the latest version with latest security patches. If you still can&rsquo;t run Phala pRuntime docker with the latest BIOS of your motherboard manufacturer, we are afraid you can&rsquo;t mine PHA for now with this motherboard.</p>
 <h2 id="confidence-level-of-a-miner">Confidence Level of a Miner</h2>
 <table>
 <thead>
@@ -462,10 +486,10 @@
 </tr>
 </tbody>
 </table>
-<p>The confidence level measures how secure the SGX Enclave execution environment is. It's determined by the Remote Attestation report from Intel. Among them, <code>isvEnclaveQuoteStatus</code> indicates if the platform is vulnerable to some known problems, and <code>advisoryIDs</code> indicates the actual affected problems.</p>
+<p>The confidence level measures how secure the SGX Enclave execution environment is. It&rsquo;s determined by the Remote Attestation report from Intel. Among them, <code>isvEnclaveQuoteStatus</code> indicates if the platform is vulnerable to some known problems, and <code>advisoryIDs</code> indicates the actual affected problems.</p>
 
 <div class="tip">
-  <p>Not all the <code>advisoryIDs</code> are problematic. Some advisories doesn't affect Phala's security assumption, and therefore are whitelisted:</p>
+  <p>Not all the <code>advisoryIDs</code> are problematic. Some advisories doesn&rsquo;t affect Phala&rsquo;s security assumption, and therefore are whitelisted:</p>
 <ul>
 <li>INTEL-SA-00219</li>
 <li>INTEL-SA-00334</li>
@@ -475,13 +499,13 @@
 
 </div>
 
-<p>Tier 1, 2, 3 are considered with the best security level because they are either not affected by any known vulnerability, or the adversary is known trivial. It's good to run highest valuable apps on these workers, for instance:</p>
+<p>Tier 1, 2, 3 are considered with the best security level because they are either not affected by any known vulnerability, or the adversary is known trivial. It&rsquo;s good to run highest valuable apps on these workers, for instance:</p>
 <ul>
 <li>Financial apps: privacy-preserving DEX, DeFi ,etc</li>
 <li>Secret key management: wallet, node KMS, password manager</li>
 <li>Phala Gatekeeper</li>
 </ul>
-<p>Tier 4, 5 are considered with reduced security, because these machines requires some configuration fix in the BIOS or BIOS firmware (CONFIGURATION_NEEDED, CONFIGURATION_AND_SW_HARDENING_NEEDED), or their microcode or the corresponding BIOS firmware are out-of-date (GROUP_OUT_OF_DATE). Therefore we cannot assume the platform is suitable for highest security scenarios. However it's still good to run batch processing jobs, apps dealing with ephemeral privacy data, and traditional blockchain apps:</p>
+<p>Tier 4, 5 are considered with reduced security, because these machines requires some configuration fix in the BIOS or BIOS firmware (CONFIGURATION_NEEDED, CONFIGURATION_AND_SW_HARDENING_NEEDED), or their microcode or the corresponding BIOS firmware are out-of-date (GROUP_OUT_OF_DATE). Therefore we cannot assume the platform is suitable for highest security scenarios. However it&rsquo;s still good to run batch processing jobs, apps dealing with ephemeral privacy data, and traditional blockchain apps:</p>
 <ul>
 <li>Data analysis jobs (e.g. Web3 Analytics)</li>
 <li>On-chain PvP games</li>
@@ -665,7 +689,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

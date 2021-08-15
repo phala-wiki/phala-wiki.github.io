@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr-fr">
+<html lang="en-us">
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
@@ -9,37 +9,21 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>Déployer le réseau de test en local | Phala Network Wiki</title><meta property="og:title" content="Déployer le réseau de test en local" />
-<meta property="og:description" content="Il y a deux options pour exécuter la démo de pdiem :
- Utiliser notre fichier Docker Compose Construire à partir des sources et l&rsquo;exécuter directement  Ce guide ne couvrira que l&rsquo;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.
-Dans l&rsquo;environnement de développement, nous construisons le code de manière native." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/" />
+<title>Runtime Bridge | Phala Network Wiki</title><meta property="og:title" content="Runtime Bridge" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/prb/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-<meta itemprop="name" content="Déployer le réseau de test en local">
-<meta itemprop="description" content="Il y a deux options pour exécuter la démo de pdiem :
- Utiliser notre fichier Docker Compose Construire à partir des sources et l&rsquo;exécuter directement  Ce guide ne couvrira que l&rsquo;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.
-Dans l&rsquo;environnement de développement, nous construisons le code de manière native.">
-
-<meta itemprop="wordCount" content="312">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="name" content="Runtime Bridge">
+<meta itemprop="description" content="">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Déployer le réseau de test en local"/>
-<meta name="twitter:description" content="Il y a deux options pour exécuter la démo de pdiem :
- Utiliser notre fichier Docker Compose Construire à partir des sources et l&rsquo;exécuter directement  Ce guide ne couvrira que l&rsquo;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.
-Dans l&rsquo;environnement de développement, nous construisons le code de manière native."/>
+<meta name="twitter:title" content="Runtime Bridge"/>
+<meta name="twitter:description" content=""/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
-
-  <meta name="description" content="Il y a deux options pour exécuter la démo de pdiem :
- Utiliser notre fichier Docker Compose Construire à partir des sources et l&amp;rsquo;exécuter directement  Ce guide ne couvrira que l&amp;rsquo;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.
-Dans l&amp;rsquo;environnement de développement, nous construisons le code de manière native.">
 
 
 
@@ -50,7 +34,7 @@ Dans l&amp;rsquo;environnement de développement, nous construisons le code de m
   
     
   
-<body class="page-page"data-code="100" data-lines="false" >
+<body class="page-section"data-code="100" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
 	<a href="https://wiki.phala.network" class="nav_brand">
@@ -120,115 +104,231 @@ Dans l&amp;rsquo;environnement de développement, nous construisons le code de m
 </svg></label>
   </div>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/" class="group">Phala Network</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/spec/" class="group">Spécifications techniques</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="group">pDiem</a></h2>
-      <section class="subsection" id="docs-pdiem">
-        <h3 class="section_link active"><a id="docs-déployer-le-réseau-de-test-en-local" href="https://wiki.phala.network/fr-fr/docs/pdiem/deploy-local-testnet/">Déployer le réseau de test en local</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
+      <section class="subsection" id="docs-understand-phala-tokenomics">
+        <h3 class="section_link"><a id="docs-1-tee-mining-staking" href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/">1 TEE Mining Staking</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#préparation">préparation</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#tee-mining-roles">TEE Mining Roles</a></li>
+    <li><a href="#role-relationships">Role Relationships</a></li>
+    <li><a href="#the-relationship-between-worker-and-stakepool">The Relationship between Worker and StakePool</a></li>
+    <li><a href="#assignment-of-stake-from-pools-to-workers">Assignment of Stake from Pools to Workers</a></li>
+    <li><a href="#reward-settlement-flow">Reward Settlement Flow</a></li>
+    <li><a href="#pool-exit-stake-settlements">Pool Exit Stake Settlements</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-jouez-avec-pdiem" href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/">Jouez avec pDiem</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#créer-des-comptes-diem">Créer des comptes Diem</a></li>
-    <li><a href="#simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</a>
-      <ul>
-        <li><a href="#soldes-en-pdiem">Soldes en pDiem</a></li>
-        <li><a href="#transactions-vérifiées">Transactions vérifiées</a></li>
-      </ul>
-    </li>
-    <li><a href="#préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</a></li>
-    <li><a href="#dépôt-diem--pdiem">Dépôt (diem → pdiem)</a></li>
-    <li><a href="#retirer-pdiem--diem">Retirer (pdiem → diem)</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-modèle-basé-sur-la-réservation" href="https://wiki.phala.network/fr-fr/docs/pdiem/reservation-based-model/">Modèle basé sur la réservation</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#dépôt">Dépôt</a></li>
-    <li><a href="#transfert">Transfert</a></li>
-    <li><a href="#retrait">Retrait</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-client-pour-la-validation-légère" href="https://wiki.phala.network/fr-fr/docs/pdiem/light-validation-client/">Client pour la validation légère</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#les-bases">Les bases.</a></li>
-    <li><a href="#le-client-léger">Le client léger.</a></li>
-    <li><a href="#la-blockchain-diem">La blockchain Diem</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-mise-en-œuvre-du-contrat" href="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/">Mise en œuvre du contrat</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#contract-storage">Contract storage</a></li>
-    <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
-    <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
-    <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
-    <li><a href="#référence">Référence</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-le-relayeur" href="https://wiki.phala.network/fr-fr/docs/pdiem/the-relayer/">Le Relayeur</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#qui-fait-fonctionner-le-relayeur-">Qui fait fonctionner le relayeur ?</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-travaux-à-venir" href="https://wiki.phala.network/fr-fr/docs/pdiem/future-works/">Travaux à venir</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-avancé-mode-matériel" href="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/">Avancé: Mode Matériel</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/fr-fr/docs/developer/" class="group">Développement du contrat</a></h2>
-      <section class="subsection" id="docs-développement-du-contrat">
-        <h3 class="section_link"><a id="docs-11-lançer-un-réseau-de-développement-local" href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/">1.1 Lançer un réseau de développement local</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-1 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-1-testnet-mining-guide">
+        <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#aperçu">Aperçu</a></li>
-    <li><a href="#environnement">Environnement</a></li>
-    <li><a href="#construire-le-noyau-de-la-blockchain">Construire le noyau de la blockchain</a></li>
-    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
-    <li><a href="#envoyez-des-jetons-secrets">Envoyez des jetons secrets.</a></li>
-    <li><a href="#conclusion">Conclusion</a>
+    <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
+    <li><a href="#check-your-cpu">Check Your CPU</a></li>
+    <li><a href="#check-bios-settings">Check BIOS settings</a></li>
+    <li><a href="#supported-operating-systems-ubuntu-1804-and-2004">Supported Operating Systems: Ubuntu 18.04 and 20.04</a>
       <ul>
-        <li><a href="#soumettez-votre-travail">Soumettez votre travail.</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-12-install-phala-tools" href="https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/">1.2 Install Phala Tools</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
-    <li><a href="#environnement-et-construction">Environnement et construction</a></li>
-    <li><a href="#visite-guidée">Visite guidée</a>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#download-phala-scripts">Download Phala Scripts</a></li>
+    <li><a href="#activate-sgx-software-with-sgx_enable">Activate SGX Software with sgx_enable</a></li>
+    <li><a href="#install-phala-tools">Install Phala Tools</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-check-the-sgx-capability-and-confidence-level" href="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 Check the SGX Capability and Confidence Level</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#double-check-the-sgx-capability">Double Check the SGX Capability</a></li>
+    <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-14-benchmarking" href="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/">1.4 Benchmarking</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-solo-mining-in-para-1-testnet" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo Mining in Para-1 Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2.1 Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/">2.2 Deploy Worker Node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-mining">Start Mining</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/">2.3 Verify Worker Status</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#verify-worker-status">Verify Worker Status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-24-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-25-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/">2.5 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#console-manual">Console Manual</a>
       <ul>
-        <li><a href="#contrat">Contrat</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#console-operations">Console Operations</a></li>
+        <li><a href="#other-operations">Other Operations</a></li>
+        <li><a href="#explanations-of-fields">Explanations of Fields</a>
+          <ul>
+            <li><a href="#stakepool-list">Stakepool List</a></li>
+            <li><a href="#worker-list">Worker List</a></li>
+            <li><a href="#stake-info">Stake Info</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-deploy-local-testnet" href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/">Deploy Local Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare">Prepare</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-diem-accounts">Create Diem accounts</a></li>
+    <li><a href="#simple-diem-to-pdiem-transfer">Simple diem-to-pdiem transfer</a>
+      <ul>
+        <li><a href="#balances-in-pdiem">Balances in pdiem</a></li>
+        <li><a href="#verified-transactions">Verified transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#prepare-subaccounts-for-two-way-transfer">Prepare subaccounts for two-way transfer</a></li>
+    <li><a href="#deposit-diem--pdiem">Deposit (diem → pdiem)</a></li>
+    <li><a href="#withdraw-pdiem--diem">Withdraw (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-reservation-based-model" href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/">Reservation-based Model</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deposit">Deposit</a></li>
+    <li><a href="#transfer">Transfer</a></li>
+    <li><a href="#withdraw">Withdraw</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-light-validation-client" href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/">Light Validation Client</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-basics">The Basics</a></li>
+    <li><a href="#light-client">Light Client</a></li>
+    <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-runs-the-relayer">Who runs the relayer</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
+      <section class="subsection" id="docs-archived-contract-development">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
         <li><a href="#frontend">Frontend</a></li>
       </ul>
     </li>
-    <li><a href="#mettre-en-place-un-carnet-secret">Mettre en place un carnet secret</a>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
       <ul>
-        <li><a href="#contrat-1">Contrat</a></li>
+        <li><a href="#contract-1">Contract</a></li>
         <li><a href="#frontend-1">Frontend</a></li>
       </ul>
     </li>
-    <li><a href="#mettez-tout-ensemble">Mettez tout ensemble</a></li>
-    <li><a href="#sommaire">Sommaire</a>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
       <ul>
-        <li><a href="#soumettez-votre-travail">Soumettez votre travail</a></li>
+        <li><a href="#submit-your-work">Submit your work</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-13-dépannage" href="https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/">1.3 Dépannage</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
         <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
@@ -246,88 +346,51 @@ Dans l&amp;rsquo;environnement de développement, nous construisons le code de m
 </aside>
 
   <main class="content">
-    <h1>Déployer le réseau de test en local</h1><p>Il y a deux options pour exécuter la démo de pdiem :</p>
-<ol>
-<li>Utiliser notre fichier Docker Compose</li>
-<li>Construire à partir des sources et l&rsquo;exécuter directement</li>
-</ol>
-<p>Ce guide ne couvrira que l&rsquo;approche Docker Compose car elle gère tout automatiquement pour vous. Il installe les dépendances, construit le code, démarre le réseau avec les composants correctement connectés, et les lancent.</p>
-
-<div class="tip">
-  Dans l&rsquo;environnement de développement, nous construisons le code de manière native. Les utilisateurs professionnels qui souhaitent modifier notre code peuvent consulter les fichiers Dockerfiles et docker-compose pour apprendre comment le système est configuré. Si vous avez besoin d&rsquo;aide, n&rsquo;hésitez pas à demander dans notre groupe Discord #dev.
-</div>
-
-<h2 id="préparation">préparation</h2>
-<p>Conditions requises pour exécuter la démo :</p>
-<ol>
-<li>Un ordinateur Linux sur lequel Docker et Docker Compose sont installés.
+    <h1>Runtime Bridge</h1><p>In the solo mining scenario, <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/standalone/pherry">pherry</a> plays the part of fetching blocks from the network and send them to the TEE runtime. It works gracefully but enconters some prodctivity and performance issues in the pool mining scenario. Thus, Phala <a href="https://github.com/Phala-Network/runtime-bridge">Runtime Bridge</a> a.k.a. <code>prb</code> is introduced to take advantage of the mining pool machanism introduced in Tokenomic v0.9 and reduces the complexity of using standalone pherry.</p>
+<p>The <code>prb</code> is designed to be deployed in a Cloud Native environments but also runs via traditional Linux shell, it provides a RPC interface to manage workers' lifecycle through Redis. It is intended to replace pherry(ye olde <code>phost</code>) in both solo and pool mining scenarios.</p>
+<h2 id="requirements">Requirements</h2>
+<p>For that <code>prb</code> uses Node.js since only the JavaScript client of Substrate is officially well maintained, it creates serval processes when running because of Node.js' single-thread model. In this case, a CPU with at least 8 cores and strong single-core performance is recommended.</p>
+<p>Both RocksDB and LevelDB are available for the <code>prb</code> to use as the storage backend, it requires sufficient random I/O performance to support the large number of concurrent workers. Thus, a PCI-E 4.0 x4 SSD with big cache would be preferred. FYI, the space usage for each block in average:</p>
 <ul>
-<li><a href="https://docs.docker.com/engine/install/">Guide d&rsquo;installation de Docker</a></li>
-<li><a href="https://docs.docker.com/compose/install/">Guide d&rsquo;installation de Docker Compose</a></li>
+<li>50 KiB using LevelDB,</li>
+<li>40 KiB using RocksDB.</li>
 </ul>
-</li>
-<li>50G d&rsquo;espace disque libre (un SSD est préférable car la compilation prend plus de temps sur les disques HDDs)</li>
-<li>Un processeur puissant</li>
-</ol>
-<p>Assurez-vous que les commandes <code>docker</code> et <code>docker-compose</code> sont disponibles pour votre utilisateur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker --version
-<span class="ln">2</span><span class="c1"># &gt; Docker version 20.10.5, build 55c4c88</span>
-<span class="ln">3</span>docker-compose --version
-<span class="ln">4</span><span class="c1"># &gt; docker-compose version 1.28.5, build c4eb3a1f</span>
-</code></pre></div><p>Pour démarrer l&rsquo;environnement complet, clonez d&rsquo;abord le dépôt phala-docker sur la branche <code>pdiem-m3</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone -b pdiem-m3 https://github.com/Phala-Network/phala-docker.git
-</code></pre></div><p>Ouvrez le dépôt, construisez les images docker.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> phala-docker <span class="o">&amp;&amp;</span> docker-compose build
-</code></pre></div>
-<div class="tip">
-  La création des 5 projets distincts peut prendre jusqu&rsquo;à 1 à 2 heures. Un processeur puissant peut le construire en 30 minutes environ.
-</div>
-
-<p>Pour <strong>démarrer</strong> l&rsquo;environnement complet de pdiem :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose up
-</code></pre></div><p>Pour <strong>arrêter</strong> l&rsquo;environnement complet de pdiem (et supprimer l&rsquo;historique de la blockchain diem) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose down --volume
-</code></pre></div><p>Pour vérifier l&rsquo;état des services :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose ps
-</code></pre></div>
-<div class="tip">
-  <p>Astuces:</p>
+<p>While <code>prb</code> sends extrinsics to synchronize between the TEE workers and the blockchain, it does require a full-featured node running in the local network environment for both Phala(<code>parachain</code>) and the Parent Chain.</p>
+<h2 id="services">Services</h2>
+<p>The <code>prb</code> provides the following services:</p>
 <ul>
-<li>L&rsquo;état de <code>diem-cli</code> devrait être &ldquo;Exit 0&rdquo; car nous le lancerons manuellement à la demande.</li>
-<li>Ne laissez pas fonctionner <code>diem-cli</code> trop longtemps. Il écrit ~1 Mo/s sur le disque.</li>
-<li><code>pdiem-m3</code> prend également en charge le <a href="/fr-fr/docs/pdiem/hardware-mode/">SGX Hardware mode</a></li>
+<li><code>io</code>: a simple server to provide internal RocksDB/LevelDB I/O ability. while RocksDB/LevelDB is thread-safe，it can only keep one instance running at the same time.</li>
+<li><code>fetch</code>: it fetches block data the blockchains then processes them for synchronization.</li>
+<li><code>trade</code>: it makes transactions(extrinsics) to the blockchain, it&rsquo;s design to work as a cluster, but not tested yet in this scenario.</li>
+<li><code>lifecycle</code>: it handles the lifecycle and status of the workers, synchronize message queues and block data between the TEE and the blockchain.</li>
 </ul>
-
-</div>
-
+<h2 id="redis-rpc-and-the-monitor">Redis, RPC and the monitor</h2>
+<p>Redis is used to maintain the internal message queue and to communicate between components. since Redis allows unauthorized access by default, <strong>DO NOT EXPOSE IT TO THE INTERNET DIRECTLY</strong>.</p>
+<p>The <code>prb</code> uses Protobuf to define the RPC interface, <a href="https://github.com/Phala-Network/runtime-bridge-proto/blob/main/message.proto">here is the definitions</a>.</p>
+<p>The <a href="https://github.com/Phala-Network/runtime-bridge-monitor">monitor</a> is a simple web server that provides a simple web interface to manage the workers. It&rsquo;s also an example of the RPC usage.</p>
+<h2 id="linux-kernel-tuning">Linux kernel tuning</h2>
+<p>It&rsquo;s unnecessary to do the tuning during development and testing.</p>
+<p>When there are more than ~300 workers in the setup, the machine running the lifecycle component should be tuned to be able to maintain huge amount of TCP connections, <a href="https://github.com/Phala-Network/runtime-bridge/tree/master/system/bridge">an example</a> is provided for referring, be ware that we can not provides support of the Linux kernel and your actual environment.</p>
 
     <div class="pager pager_lean">
   <div class="pager_item prev">
     
-      
-        
-          <a href="https://wiki.phala.network/fr-fr/docs/pdiem/" class="pager_link button" title="pDiem">
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">pDiem</span>
-</a>
-        
       
     
   </div>
 
   <div class="pager_item next">
   
-        
-  
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/" class="pager_link button" title="Jouez avec pDiem">
-  <span class="pager_label">Jouez avec pDiem</span>
+    
+      <a href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/" class="pager_link button" title="Deployment with Containers: An Example with Docker Compose">
+  <span class="pager_label">Deployment with Containers: An Example with Docker Compose</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>
-        </div>
-      
+    
+  
+        
+  
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

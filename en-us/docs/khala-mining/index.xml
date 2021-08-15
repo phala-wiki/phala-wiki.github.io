@@ -67,7 +67,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</guid>
-      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&#39;s start mining!
+      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
 1sudo phala start </description>
     </item>
     

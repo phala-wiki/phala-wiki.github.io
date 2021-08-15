@@ -13,8 +13,8 @@
       
       <guid>https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/</guid>
       <description>Une compréhension de base du shell Linux et de la compilation est nécessaire pour suivre ce tutoriel.
- Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &amp;quot;Hello World&amp;quot;. Nous allons déployer une pile complète de la blockchain principale et connecter l&#39;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
- D&#39;envoyer des transactions confidentielles D&#39;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles.</description>
+ Aperçu Dans ce tutoriel, nous allons mettre en place un environnement de développement &amp;ldquo;Hello World&amp;rdquo;. Nous allons déployer une pile complète de la blockchain principale et connecter l&amp;rsquo;interface utilisateur Web à la blockchain. À la fin du tutoriel, vous serez en mesure :
+ D&amp;rsquo;envoyer des transactions confidentielles D&amp;rsquo;obtenir une version prêt-à-hacker de Phala Network pour construire vos propres applications confidentielles.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/</guid>
       <description>Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.
- Vue d&#39;ensemble Dans ce tutoriel, nous allons continuer sur l&#39;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
+ Vue d&amp;rsquo;ensemble Dans ce tutoriel, nous allons continuer sur l&amp;rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
  Apprendre à développer un contrat confidentiel.</description>
     </item>
     
@@ -34,8 +34,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/</guid>
-      <description>Blockchain Phala Probleme : &amp;quot;la cible wasm32-unknown-unknown n&#39;est peut-être pas installée&amp;quot;. Vous devez ajouter la cible wasm-unknown-unknown à votre toolchain rust. Faites-le de cette façon (sous le repo du code) :
-1rustup target add wasm32-unknown-unknown Probleme: &amp;quot;(signal: 9, SIGKILL: kill)&amp;quot; lors de la construction du substrat Le compilateur peut manquer de mémoire. Habituellement, chaque thread prend jusqu&#39;à 2GB de RAM. Si vous n&#39;avez pas assez de mémoire, vous pouvez limiter la concurrence en spécifiant un N plus petit que vos cœurs disponibles :</description>
+      <description>Blockchain Phala Probleme : &amp;ldquo;la cible wasm32-unknown-unknown n&amp;rsquo;est peut-être pas installée&amp;rdquo;. Vous devez ajouter la cible wasm-unknown-unknown à votre toolchain rust. Faites-le de cette façon (sous le repo du code) :
+1rustup target add wasm32-unknown-unknown Probleme: &amp;ldquo;(signal: 9, SIGKILL: kill)&amp;rdquo; lors de la construction du substrat Le compilateur peut manquer de mémoire. Habituellement, chaque thread prend jusqu&amp;rsquo;à 2GB de RAM. Si vous n&amp;rsquo;avez pas assez de mémoire, vous pouvez limiter la concurrence en spécifiant un N plus petit que vos cœurs disponibles :</description>
     </item>
     
   </channel>

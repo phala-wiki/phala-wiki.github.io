@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Phala Network Wiki</title><meta property="og:title" content="Phala Network" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Phala Network">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Phala Network"/>
 <meta name="twitter:description" content=""/>
 
@@ -65,10 +66,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -150,7 +151,7 @@
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -182,7 +183,7 @@
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -208,16 +209,16 @@
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -230,8 +231,8 @@
 
   <main class="content">
     <h1>Phala Network</h1><h2 id="manque-de-confidentialité-des-blockchains">Manque de confidentialité des blockchains</h2>
-<p>Une blockchain est une sorte de registre distribué qui enregistre de manière indélébile les transactions dans une liste de blocs qui ne cesse de s'allonger. La base de notre confiance dans la blockchain est le fait que l'exécution de chaque transaction peut être vérifiée par n'importe quel utilisateur de la blockchain. Les blockchains existantes, telles que BTC et ETH, tiennent cette promesse de manière intuitive : elles rendent tout public, y compris les transactions et les états internes des contrats intelligents. Cela nous amène à un problème : les données confidentielles ne peuvent pas être traitées par ces blockchains.</p>
-<p>Phala Network s'attaque à ce problème difficile. Il cherche à fournir de solides garanties de <em>confidentialité</em> sans sacrifier l'<em>interopérabilité inter-contrats</em>, ce qui signifie que les contrats confidentiels de Phala Network peuvent interagir librement avec d'autres contrats confidentiels. En outre, en tant que parachain Polkadot, le réseau Phala permet une <em>interopérabilité inter-chaîne</em> des contrats intelligents pour exploiter de manière confidentielle des actifs sur une autre blockchain.</p>
+<p>Une blockchain est une sorte de registre distribué qui enregistre de manière indélébile les transactions dans une liste de blocs qui ne cesse de s&rsquo;allonger. La base de notre confiance dans la blockchain est le fait que l&rsquo;exécution de chaque transaction peut être vérifiée par n&rsquo;importe quel utilisateur de la blockchain. Les blockchains existantes, telles que BTC et ETH, tiennent cette promesse de manière intuitive : elles rendent tout public, y compris les transactions et les états internes des contrats intelligents. Cela nous amène à un problème : les données confidentielles ne peuvent pas être traitées par ces blockchains.</p>
+<p>Phala Network s&rsquo;attaque à ce problème difficile. Il cherche à fournir de solides garanties de <em>confidentialité</em> sans sacrifier l'<em>interopérabilité inter-contrats</em>, ce qui signifie que les contrats confidentiels de Phala Network peuvent interagir librement avec d&rsquo;autres contrats confidentiels. En outre, en tant que parachain Polkadot, le réseau Phala permet une <em>interopérabilité inter-chaîne</em> des contrats intelligents pour exploiter de manière confidentielle des actifs sur une autre blockchain.</p>
 <h2 id="veuillez-choisir-un-sujet">Veuillez choisir un sujet</h2>
 <p><a href="poc4" class="button">Miner sur Phala</a>
 <a href="developer" class="button">Programmer sur Phala</a>
@@ -406,7 +407,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,16 +13,18 @@
 <meta property="og:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
  The Console" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="2.5 Use Console to Manage Your Mining">
 <meta itemprop="description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
  The Console">
 
 <meta itemprop="wordCount" content="757">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.5 Use Console to Manage Your Mining"/>
 <meta name="twitter:description" content="Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
  The Console"/>
@@ -76,10 +78,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -215,6 +217,28 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -313,16 +337,16 @@
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -356,9 +380,9 @@
 <li>Connect your Khala account (<a href="/en-us/docs/khala-user/">You can follow this page to create/import your account</a>);</li>
 <li>Create StakePool
 <ul>
-<li>Click &quot;Create Stakepool&quot;;
+<li>Click &ldquo;Create Stakepool&rdquo;;
 <img src="/images/docs/khala-mining/create-pool.png" alt=""></li>
-<li>Click &quot;Confirm&quot; in the pop-up window;</li>
+<li>Click &ldquo;Confirm&rdquo; in the pop-up window;</li>
 <li>Sign the transaction in the Polkadot{.js} Extension and wait for about 20 seconds;</li>
 <li>Created pool will be listed in Stakepool;</li>
 </ul>
@@ -367,16 +391,16 @@
 <ul>
 <li>Set Payout
 <ul>
-<li>Click &quot;Set Payout Pref&quot; of the target pool;</li>
+<li>Click &ldquo;Set Payout Pref&rdquo; of the target pool;</li>
 <li>Type in the payout in the pop-up window; the default payout is 0, and it can be set between 0-100%;</li>
-<li>Click &quot;Confirm&quot; to send the transaction;</li>
+<li>Click &ldquo;Confirm&rdquo; to send the transaction;</li>
 <li>The payout value will be updated in Stakepool list;</li>
 </ul>
 </li>
 <li>Set Staking Capacity
 <ul>
-<li>Click &quot;Set Cap&quot; of the target pool;</li>
-<li>Type in the Staking capacity in the pop-up window; the default capacity is unlimited, and it can be set between &quot;Total Stake Now&quot; to unlimited number;</li>
+<li>Click &ldquo;Set Cap&rdquo; of the target pool;</li>
+<li>Type in the Staking capacity in the pop-up window; the default capacity is unlimited, and it can be set between &ldquo;Total Stake Now&rdquo; to unlimited number;</li>
 <li>Submit the transaction;</li>
 <li>The capacity value will be updated in Stakepool list;</li>
 </ul>
@@ -385,7 +409,7 @@
 </li>
 <li>Bind Worker
 <ul>
-<li>Click &quot;Add Worker&quot; of the target pool;
+<li>Click &ldquo;Add Worker&rdquo; of the target pool;
 <img src="/images/docs/khala-mining/add-worker.png" alt=""></li>
 <li>Type in the WorkerPublicKey of Worker in the pop-up window;</li>
 <li>Submit the transaction;</li>
@@ -397,27 +421,27 @@
 <li>After creating the StakePool, you can invite other Stakers to invest or stake yourself;</li>
 <li>To stake yourself
 <ul>
-<li>Click &quot;Stake&quot; of the target pool;</li>
-<li>Click &quot;Contribute&quot; in the pop-up window;</li>
-<li>Type in the amount to stake, it should be less than your &quot;Transferrable Balance&quot; and &quot;Pool Cap Gap&quot;;</li>
+<li>Click &ldquo;Stake&rdquo; of the target pool;</li>
+<li>Click &ldquo;Contribute&rdquo; in the pop-up window;</li>
+<li>Type in the amount to stake, it should be less than your &ldquo;Transferrable Balance&rdquo; and &ldquo;Pool Cap Gap&rdquo;;</li>
 <li>Submit the transaction;</li>
-<li>Click the &quot;Stake&quot; of the target pool, and you should see the change of &quot;Locked&quot; amount in &quot;Your Stake Info&quot;;</li>
+<li>Click the &ldquo;Stake&rdquo; of the target pool, and you should see the change of &ldquo;Locked&rdquo; amount in &ldquo;Your Stake Info&rdquo;;</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Begin Mining
 <ul>
-<li>Click &quot;Start&quot; of the Worker in &quot;Ready&quot; state;</li>
-<li>Type in the stake amount for the Worker, it should be more than &quot;Smin&quot; and less than &quot;Smax&quot; and &quot;Pool Free Balance&quot;. Noted that you <strong>CAN NOT</strong> change the stake amount during mining;</li>
+<li>Click &ldquo;Start&rdquo; of the Worker in &ldquo;Ready&rdquo; state;</li>
+<li>Type in the stake amount for the Worker, it should be more than &ldquo;Smin&rdquo; and less than &ldquo;Smax&rdquo; and &ldquo;Pool Free Balance&rdquo;. Noted that you <strong>CAN NOT</strong> change the stake amount during mining;</li>
 <li>Submit the transaction;</li>
-<li>The Worker state should transit from &quot;Ready&quot; to &quot;Mining&quot;;</li>
+<li>The Worker state should transit from &ldquo;Ready&rdquo; to &ldquo;Mining&rdquo;;</li>
 </ul>
 </li>
 <li>Get Rewards
 <ul>
-<li>Click &quot;Claim&quot; of the target pool;</li>
-<li>You can see your rewards from this pool, including &quot;Owner Reward&quot; and &quot;Staker Reward&quot;;</li>
+<li>Click &ldquo;Claim&rdquo; of the target pool;</li>
+<li>You can see your rewards from this pool, including &ldquo;Owner Reward&rdquo; and &ldquo;Staker Reward&rdquo;;</li>
 <li>Choose your account to claim the rewards;</li>
 <li>Submit the transaction;</li>
 <li>Your account balance should be increased accordingly;</li>
@@ -428,23 +452,23 @@
 <ol>
 <li>Withdraw Staking
 <ul>
-<li>Click &quot;Stake&quot; of the target pool;</li>
-<li>Click &quot;Withdraw&quot; in the pop-up window;</li>
+<li>Click &ldquo;Stake&rdquo; of the target pool;</li>
+<li>Click &ldquo;Withdraw&rdquo; in the pop-up window;</li>
 <li>Type in the amount to withdraw;</li>
 <li>Submit the transaction;</li>
-<li>You may wait for at most 14 days to get all your staking (check <a href="/en-us/docs/tokenomic/1-mining-staking/">staking mechanism</a>). You can check the frozen amount in the &quot;Withdraw Queue&quot; of &quot;Stake&quot; pop-up;</li>
+<li>You may wait for at most 14 days to get all your staking (check <a href="/en-us/docs/tokenomic/1-mining-staking/">staking mechanism</a>). You can check the frozen amount in the &ldquo;Withdraw Queue&rdquo; of &ldquo;Stake&rdquo; pop-up;</li>
 </ul>
 </li>
 <li>Stop Mining
 <ul>
-<li>Click &quot;Stop&quot; of the Worker in &quot;Mining&quot; or &quot;Unresponsive&quot; state;</li>
+<li>Click &ldquo;Stop&rdquo; of the Worker in &ldquo;Mining&rdquo; or &ldquo;Unresponsive&rdquo; state;</li>
 <li>Submit the transaction;</li>
-<li>The Worker state should transit to &quot;CoolingDown&quot;;</li>
+<li>The Worker state should transit to &ldquo;CoolingDown&rdquo;;</li>
 </ul>
 </li>
 <li>Remove Worker
 <ul>
-<li>Click &quot;Remove&quot; of the Worker in &quot;Ready&quot; state;</li>
+<li>Click &ldquo;Remove&rdquo; of the Worker in &ldquo;Ready&rdquo; state;</li>
 <li>Submit the transaction;</li>
 <li>The Worker should be removed from list;</li>
 </ul>
@@ -453,20 +477,20 @@
 <h3 id="explanations-of-fields">Explanations of Fields</h3>
 <h4 id="stakepool-list">Stakepool List</h4>
 <ol>
-<li>You can click &quot;Create Pool&quot; to create a new StakePool if the list is empty;</li>
+<li>You can click &ldquo;Create Pool&rdquo; to create a new StakePool if the list is empty;</li>
 <li>Fields
 <ul>
 <li>Owner Reward: The owner reward from the payout which can be claimed immediately;</li>
 <li>Total Shares: The total staking amount;</li>
 <li>Free Stake: The free staking amount;</li>
-<li>Releasing Stake: The total staking amount of the pool Workers in &quot;CoolingDown&quot; state;</li>
+<li>Releasing Stake: The total staking amount of the pool Workers in &ldquo;CoolingDown&rdquo; state;</li>
 </ul>
 </li>
-<li>&quot;Show this only&quot; Button: only show the Workers of the target pool;</li>
+<li>&ldquo;Show this only&rdquo; Button: only show the Workers of the target pool;</li>
 </ol>
 <h4 id="worker-list">Worker List</h4>
 <ol>
-<li>You can click &quot;Add Worker&quot; to add a new Worker if the list is empty;</li>
+<li>You can click &ldquo;Add Worker&rdquo; to add a new Worker if the list is empty;</li>
 <li>Fields
 <ul>
 <li>Mining Core: The number of CPU cores in use;</li>
@@ -664,7 +688,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -13,16 +13,18 @@
 <meta property="og:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
 The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Contract Implementation">
 <meta itemprop="description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
 The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.">
 
 <meta itemprop="wordCount" content="697">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contract Implementation"/>
 <meta name="twitter:description" content="The pdiem contract implements a Diem light client and wallet. On the one hand, the pdiem relayers talks to the contract to sync the transactiosn between Diem side and pdiem side. On the other hand, it provides the interface for users to manage their cross-chain assets.
 The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain."/>
@@ -76,10 +78,10 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -215,6 +217,28 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -313,16 +337,16 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -338,7 +362,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <p>The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.</p>
 <h2 id="contract-storage">Contract storage</h2>
 <p>The <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">pdiem contract</a> is implemented as a native confidential smart contract. It defines the following storage items:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Light client
 </span><span class="ln"> 3</span><span class="c1"></span><span class="w">
 </span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// The genesis TrustedState
@@ -362,8 +386,8 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 </span><span class="ln">22</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="light-client-implementation">Light client implementation</h2>
 <p>The Diem light client maintains the latest ledger state (<code>LedgerInfo</code>). It commits to the accumulators of the historical transactions, states, and the events. A ledger state is updated whenver the Diem blockchain database is mutated. Therefore with the latest ledger state, all the facts happened earlier can be validated.</p>
-<p>The genesis ledger state is initialized by <code>Command::SetTrustedState</code> only at once, and is persistent and can be examed by anyone in the entire lifecycle of the bridge. The current ledger state is used to validate the signature of a newer ledger state until a validator set change (e.g. via an on-chain election). When there's a validator set change, the last ledger state in the same epoch can be validated, and the newly elected validator set can be extracted from the blockchain storage it commits to. This is handled by <code>verify_trusted_state()</code>.</p>
-<p>There's no specific command to update the ledger state. Instead, a <code>LedgerInfoWithSignature</code> and a <code>EpochChangeProof</code> are extracted from the <code>TransactionWithProof</code> from a <code>Command::VerifyTransaction</code> call, when a relayer syncs a new transaction to pdiem. Therefore as the new transactions get synced to the pdiem contract, it always maintains the latest ledger state.</p>
+<p>The genesis ledger state is initialized by <code>Command::SetTrustedState</code> only at once, and is persistent and can be examed by anyone in the entire lifecycle of the bridge. The current ledger state is used to validate the signature of a newer ledger state until a validator set change (e.g. via an on-chain election). When there&rsquo;s a validator set change, the last ledger state in the same epoch can be validated, and the newly elected validator set can be extracted from the blockchain storage it commits to. This is handled by <code>verify_trusted_state()</code>.</p>
+<p>There&rsquo;s no specific command to update the ledger state. Instead, a <code>LedgerInfoWithSignature</code> and a <code>EpochChangeProof</code> are extracted from the <code>TransactionWithProof</code> from a <code>Command::VerifyTransaction</code> call, when a relayer syncs a new transaction to pdiem. Therefore as the new transactions get synced to the pdiem contract, it always maintains the latest ledger state.</p>
 
 <div class="tip">
   The Diem specific serialization, the cryptographics, and the verification logics are extracted from the original Diem codebase, and ported to SGX build target by the pdiem team, located at <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/diem">/diem</a> directory.
@@ -383,7 +407,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <li>The contract extracts the latest ledger state with proof and validates it with the previous ledger state (<code>verify_trusted_state()</code>)</li>
 <li>Finally it extracts the transaction proof, and confirm the deposit if the proof can pass the validation against the latest ledger state (<code>verify_transaction_state_proof</code>)</li>
 </ol>
-<p>Once a deposit is validated, we will add the received amount to the user's available balance. The accepted transactions and the balance can be queried by <code>Request::FreeBalance</code> and <code>Request::VerifiedTransactions</code>.</p>
+<p>Once a deposit is validated, we will add the received amount to the user&rsquo;s available balance. The accepted transactions and the balance can be queried by <code>Request::FreeBalance</code> and <code>Request::VerifiedTransactions</code>.</p>
 
 <div class="tip tip_warning">
   The transactions are ordered by sequence or event id. The ids of the accounts are recorded in the contract to avoid missing transactions.
@@ -392,7 +416,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <h2 id="sign-withdraw-transactions">Sign withdraw transactions</h2>
 <p>WIP: The <a href="https://github.com/Phala-Network/phala-blockchain/pull/171">Pull Request</a> is getting merged.</p>
 <h2 id="assets-transfer">Assets transfer</h2>
-<p>In pdiem-m3 we didn't implement token transferring. We will leave it to the next milestone, and it will be handled by the <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs"><code>Assets</code> confidential contracts</a>, which also implements the standard interoperable assets standard defined in XCM. In this way, the assets bridged by pdiem can be used in any parachains in the Polkadot ecosystem.</p>
+<p>In pdiem-m3 we didn&rsquo;t implement token transferring. We will leave it to the next milestone, and it will be handled by the <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs"><code>Assets</code> confidential contracts</a>, which also implements the standard interoperable assets standard defined in XCM. In this way, the assets bridged by pdiem can be used in any parachains in the Polkadot ecosystem.</p>
 <h2 id="reference">Reference</h2>
 <p>Commands:</p>
 <ul>
@@ -578,7 +602,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

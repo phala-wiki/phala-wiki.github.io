@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -17,10 +17,8 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。
 自检指令 1sudo phala sgx-test 正常的结果 1Detecting SGX, this may take a minute... 2✔ SGX instruction set 3 ✔ CPU support 4 ✔ CPU configuration 5 ✔ Enclave attributes 6 ✔ Enclave Page Cache 7 SGX features 8 ✔ SGX2 ✔ EXINFO ✘ ENCLV ✘ OVERSUB ✘ KSS 9 Total EPC size: 94." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/" />
 <meta property="og:site_name" content="Phala Network 百科" />
-
 <meta itemprop="name" content="1.3 SGX测试和信任分级">
 <meta itemprop="description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
@@ -30,7 +28,11 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 自检指令 1sudo phala sgx-test 正常的结果 1Detecting SGX, this may take a minute... 2✔ SGX instruction set 3 ✔ CPU support 4 ✔ CPU configuration 5 ✔ Enclave attributes 6 ✔ Enclave Page Cache 7 SGX features 8 ✔ SGX2 ✔ EXINFO ✘ ENCLV ✘ OVERSUB ✘ KSS 9 Total EPC size: 94.">
 
 <meta itemprop="wordCount" content="609">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 SGX测试和信任分级"/>
 <meta name="twitter:description" content="Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
@@ -92,10 +94,10 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -275,7 +277,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 </div>
 
 <h3 id="首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>​
 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。</p>
 <p>如果你看到<code>SGX_ERROR_UPDATE_NEEDED</code>这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，<strong>则无法挖矿。</strong></p>
@@ -283,9 +285,9 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 <p>SGX测试完毕后，输入<code>ls /dev | grep sgx</code>，如果运行有返回<code>sgx</code>或者<code>isgx</code>，则说明驱动正常运行。</p>
 <p>如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。</p>
 <h3 id="自检指令">自检指令</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div><h3 id="正常的结果">正常的结果</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction <span class="nb">set</span>
 <span class="ln"> 3</span>  ✔  CPU support
 <span class="ln"> 4</span>  ✔  CPU configuration
@@ -627,7 +629,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

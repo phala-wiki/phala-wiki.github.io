@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -10,30 +10,32 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.3 Troubleshooting | Phala Network Wiki</title><meta property="og:title" content="1.3 Troubleshooting" />
-<meta property="og:description" content="phala-blockchain Problem: &quot;the wasm32-unknown-unknown target may not be installed&quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:" />
+<meta property="og:description" content="phala-blockchain Problem: &ldquo;the wasm32-unknown-unknown target may not be installed&rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/troubleshooting/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/troubleshooting/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="1.3 Troubleshooting">
-<meta itemprop="description" content="phala-blockchain Problem: &quot;the wasm32-unknown-unknown target may not be installed&quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:">
+<meta itemprop="description" content="phala-blockchain Problem: &ldquo;the wasm32-unknown-unknown target may not be installed&rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:">
 
 <meta itemprop="wordCount" content="530">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 Troubleshooting"/>
-<meta name="twitter:description" content="phala-blockchain Problem: &quot;the wasm32-unknown-unknown target may not be installed&quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:"/>
+<meta name="twitter:description" content="phala-blockchain Problem: &ldquo;the wasm32-unknown-unknown target may not be installed&rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="phala-blockchain Problem: &amp;quot;the wasm32-unknown-unknown target may not be installed&amp;quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &amp;quot;(signal: 9, SIGKILL: kill)&amp;quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:">
+  <meta name="description" content="phala-blockchain Problem: &amp;ldquo;the wasm32-unknown-unknown target may not be installed&amp;rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &amp;ldquo;(signal: 9, SIGKILL: kill)&amp;rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&amp;rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:">
 
 
 
@@ -76,10 +78,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -215,6 +217,28 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -313,16 +337,16 @@
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -335,13 +359,13 @@
 
   <main class="content">
     <h1>1.3 Troubleshooting</h1><h2 id="phala-blockchain"><code>phala-blockchain</code></h2>
-<h3 id="problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</h3>
+<h3 id="problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</h3>
 <p>You need to add the <code>wasm-unknown-unknown</code> target to your rust toolchain. Do it by this (under the code repo):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
-</code></pre></div><h3 id="problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</h3>
-<p>The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don't have enough memory, you can limit the concurrency specifying a smaller <code>N</code> than your available cores:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
-</code></pre></div><h3 id="probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
+</code></pre></div><h3 id="problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</h3>
+<p>The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller <code>N</code> than your available cores:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
+</code></pre></div><h3 id="probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</h3>
 <pre><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
       --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9
        |
@@ -359,10 +383,10 @@
        |
        = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 </code></pre><p>This is a <a href="https://github.com/paritytech/substrate/issues/7287">known issue</a> caused by Rust nightly regression. To walkaround it, switch to an older nightly toolchain. We recommend <code>nightly-2020-09-27</code>. It can be done like below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
 <span class="ln">2</span>rustup default nightly-2020-09-27
 <span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-27
-</code></pre></div><h3 id="probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</h3>
+</code></pre></div><h3 id="probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</h3>
 <pre><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
   |
   = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on)
@@ -384,14 +408,14 @@ error: duplicate lang item in crate `std`: `oom`.
   = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on)
 
 error: aborting due to 6 previous errors
-</code></pre><p>This is due to accidentally introduced &quot;std&quot; dependencies. Usually there are two common causes of this error.</p>
-<p>Most likely the code has some syntax errors and cannot build. Sometimes these errors can confuse the Rust compiler in &quot;no_std&quot; mode and the compiler may accidentally introduce some random dependencies, which breaks our SDK. If this is the case, scroll up and fix the other compiling errors, and then this error should disappear.</p>
-<p>If fixing the other errors doesn't help, you should check if you accidentally introduce the &quot;std&quot; dependency to the runtime code. The hardware enclave sdk Phala is using doesn't allow direct or indirect &quot;std&quot; dependencies. You may consider to switch to a package that supports &quot;no_std&quot; and disable its std feature in <code>Cargo.toml</code>, or manually port the dependency package to use <code>teaclave-sgx-sdk</code>'s <code>tstd</code> instead. <code>tstd</code> is a subset of <code>std</code> but it's enough in the most cases.</p>
-<h3 id="ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</h3>
+</code></pre><p>This is due to accidentally introduced &ldquo;std&rdquo; dependencies. Usually there are two common causes of this error.</p>
+<p>Most likely the code has some syntax errors and cannot build. Sometimes these errors can confuse the Rust compiler in &ldquo;no_std&rdquo; mode and the compiler may accidentally introduce some random dependencies, which breaks our SDK. If this is the case, scroll up and fix the other compiling errors, and then this error should disappear.</p>
+<p>If fixing the other errors doesn&rsquo;t help, you should check if you accidentally introduce the &ldquo;std&rdquo; dependency to the runtime code. The hardware enclave sdk Phala is using doesn&rsquo;t allow direct or indirect &ldquo;std&rdquo; dependencies. You may consider to switch to a package that supports &ldquo;no_std&rdquo; and disable its std feature in <code>Cargo.toml</code>, or manually port the dependency package to use <code>teaclave-sgx-sdk</code>&rsquo;s <code>tstd</code> instead. <code>tstd</code> is a subset of <code>std</code> but it&rsquo;s enough in the most cases.</p>
+<h3 id="ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</h3>
 <p>Please disable incremental build. This is due to a bug introduced in rustc:</p>
 <p><a href="https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html">https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html</a></p>
 <h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
-<h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</h3>
+<h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</h3>
 <pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
 error TS6053: File '@polkadot/dev/config/tsconfig' not found.
 </code></pre><p>You forgot to init the git submodule. Please run <code>git submodule update --init</code>.</p>
@@ -560,7 +584,7 @@ error TS6053: File '@polkadot/dev/config/tsconfig' not found.
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,15 +12,17 @@
 <title>2.4 Worker升级 | Phala Network 百科</title><meta property="og:title" content="2.4 Worker升级" />
 <meta property="og:description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/" />
 <meta property="og:site_name" content="Phala Network 百科" />
-
 <meta itemprop="name" content="2.4 Worker升级">
 <meta itemprop="description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start ">
 
 <meta itemprop="wordCount" content="32">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.4 Worker升级"/>
 <meta name="twitter:description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start "/>
 
@@ -72,10 +74,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -255,12 +257,12 @@
 </div>
 
 <h1 id="停止挖矿">停止挖矿</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala stop
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala stop
 </code></pre></div><h1 id="清空节点数据并升级">清空节点数据并升级</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update clean
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update clean
 <span class="ln">2</span>sudo phala start
 </code></pre></div><h1 id="不清空节点数据升级">不清空节点数据升级</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update
 <span class="ln">2</span>sudo phala start
 </code></pre></div>
     <div class="pager">
@@ -435,7 +437,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

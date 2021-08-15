@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -10,34 +10,36 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Avancé: Mode Matériel | Phala Network Wiki</title><meta property="og:title" content="Avancé: Mode Matériel" />
-<meta property="og:description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&#39;intérieur de l&#39;Enclave, elle doit fonctionner en mode matériel.
+<meta property="og:description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&rsquo;intérieur de l&rsquo;Enclave, elle doit fonctionner en mode matériel.
 Le SDK Intel SGX est livré avec trois modes :
- Software : il s&#39;exécute dans l&#39;environnement de simulation, et n&#39;offre aucune protection au code ou aux données. Hardware Dev : il s&#39;exécute dans l&#39;environnement matériel réel, mais permet aux débogueurs de s&#39;y attacher et n&#39;offre donc aucune protection." />
+ Software : il s&rsquo;exécute dans l&rsquo;environnement de simulation, et n&rsquo;offre aucune protection au code ou aux données. Hardware Dev : il s&rsquo;exécute dans l&rsquo;environnement matériel réel, mais permet aux débogueurs de s&rsquo;y attacher et n&rsquo;offre donc aucune protection." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/hardware-mode/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Avancé: Mode Matériel">
-<meta itemprop="description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&#39;intérieur de l&#39;Enclave, elle doit fonctionner en mode matériel.
+<meta itemprop="description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&rsquo;intérieur de l&rsquo;Enclave, elle doit fonctionner en mode matériel.
 Le SDK Intel SGX est livré avec trois modes :
- Software : il s&#39;exécute dans l&#39;environnement de simulation, et n&#39;offre aucune protection au code ou aux données. Hardware Dev : il s&#39;exécute dans l&#39;environnement matériel réel, mais permet aux débogueurs de s&#39;y attacher et n&#39;offre donc aucune protection.">
+ Software : il s&rsquo;exécute dans l&rsquo;environnement de simulation, et n&rsquo;offre aucune protection au code ou aux données. Hardware Dev : il s&rsquo;exécute dans l&rsquo;environnement matériel réel, mais permet aux débogueurs de s&rsquo;y attacher et n&rsquo;offre donc aucune protection.">
 
 <meta itemprop="wordCount" content="339">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Avancé: Mode Matériel"/>
-<meta name="twitter:description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&#39;intérieur de l&#39;Enclave, elle doit fonctionner en mode matériel.
+<meta name="twitter:description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&rsquo;intérieur de l&rsquo;Enclave, elle doit fonctionner en mode matériel.
 Le SDK Intel SGX est livré avec trois modes :
- Software : il s&#39;exécute dans l&#39;environnement de simulation, et n&#39;offre aucune protection au code ou aux données. Hardware Dev : il s&#39;exécute dans l&#39;environnement matériel réel, mais permet aux débogueurs de s&#39;y attacher et n&#39;offre donc aucune protection."/>
+ Software : il s&rsquo;exécute dans l&rsquo;environnement de simulation, et n&rsquo;offre aucune protection au code ou aux données. Hardware Dev : il s&rsquo;exécute dans l&rsquo;environnement matériel réel, mais permet aux débogueurs de s&rsquo;y attacher et n&rsquo;offre donc aucune protection."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&#39;intérieur de l&#39;Enclave, elle doit fonctionner en mode matériel.
+  <meta name="description" content="Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&amp;rsquo;intérieur de l&amp;rsquo;Enclave, elle doit fonctionner en mode matériel.
 Le SDK Intel SGX est livré avec trois modes :
- Software : il s&#39;exécute dans l&#39;environnement de simulation, et n&#39;offre aucune protection au code ou aux données. Hardware Dev : il s&#39;exécute dans l&#39;environnement matériel réel, mais permet aux débogueurs de s&#39;y attacher et n&#39;offre donc aucune protection.">
+ Software : il s&amp;rsquo;exécute dans l&amp;rsquo;environnement de simulation, et n&amp;rsquo;offre aucune protection au code ou aux données. Hardware Dev : il s&amp;rsquo;exécute dans l&amp;rsquo;environnement matériel réel, mais permet aux débogueurs de s&amp;rsquo;y attacher et n&amp;rsquo;offre donc aucune protection.">
 
 
 
@@ -80,10 +82,10 @@ Le SDK Intel SGX est livré avec trois modes :
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -165,7 +167,7 @@ Le SDK Intel SGX est livré avec trois modes :
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -197,7 +199,7 @@ Le SDK Intel SGX est livré avec trois modes :
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -223,16 +225,16 @@ Le SDK Intel SGX est livré avec trois modes :
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -244,16 +246,16 @@ Le SDK Intel SGX est livré avec trois modes :
 </aside>
 
   <main class="content">
-    <h1>Avancé: Mode Matériel</h1><p>Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l'intérieur de l'Enclave, elle doit fonctionner en mode matériel.</p>
+    <h1>Avancé: Mode Matériel</h1><p>Par défaut, la démo est construite avec le mode logiciel SGX SDK. Elle est conçue pour un environnement de développement. Cependant, pour protéger les données et la logique à l&rsquo;intérieur de l&rsquo;Enclave, elle doit fonctionner en mode matériel.</p>
 
 <div class="tip">
   <p>Le SDK Intel SGX est livré avec trois modes :</p>
 <ul>
-<li><strong>Software</strong> : il s'exécute dans l'environnement de simulation, et n'offre aucune protection au code ou aux données.</li>
-<li><strong>Hardware Dev</strong> : il s'exécute dans l'environnement matériel réel, mais permet aux débogueurs de s'y attacher et n'offre donc aucune protection.</li>
-<li><strong>Hardware Prod</strong> : il s'exécute dans l'environnement matériel réel et n'autorise pas les débogueurs à s'y attacher, mais doit être signé avec des certificats de production.</li>
+<li><strong>Software</strong> : il s&rsquo;exécute dans l&rsquo;environnement de simulation, et n&rsquo;offre aucune protection au code ou aux données.</li>
+<li><strong>Hardware Dev</strong> : il s&rsquo;exécute dans l&rsquo;environnement matériel réel, mais permet aux débogueurs de s&rsquo;y attacher et n&rsquo;offre donc aucune protection.</li>
+<li><strong>Hardware Prod</strong> : il s&rsquo;exécute dans l&rsquo;environnement matériel réel et n&rsquo;autorise pas les débogueurs à s&rsquo;y attacher, mais doit être signé avec des certificats de production.</li>
 </ul>
-<p>Pour exécuter des programmes SGX en mode matériel, vous devez d'abord installer le pilote SGX.</p>
+<p>Pour exécuter des programmes SGX en mode matériel, vous devez d&rsquo;abord installer le pilote SGX.</p>
 
 </div>
 
@@ -263,7 +265,7 @@ Le SDK Intel SGX est livré avec trois modes :
 <li><code>docker-compose.hw.dcap.yml</code> : Mode de développement HW fonctionnant avec le <a href="https://01.org/intel-softwareguard-extensions/downloads/intel-sgx-dcap-1.10-release">pilote DCAP</a></li>
 </ul>
 <p><code>IAS</code> et <code>DCAP</code> sont deux pilotes SGX différents. Veuillez choisir le fichier docker-compose qui correspond à votre plateforme. Ensuite, vous pouvez spécifier les fichiers de configuration lorsque vous exécutez une commande docker-compose par <code>-f</code>.</p>
-<p>Par exemple, exécutez la commande suivante pour construire l'image du pilote IAS :</p>
+<p>Par exemple, exécutez la commande suivante pour construire l&rsquo;image du pilote IAS :</p>
 <p>``bash
 docker-compose -f docker-compose.hw.ias.yml build</p>
 <pre><code>
@@ -274,7 +276,7 @@ Il existe également une version HW de `phala-console.sh`, qui doit être utilis
 
 
 <div class="tip">
-  <p>Certaines plateformes prennent en charge les deux pilotes, mais les autres ne prennent en charge qu'un seul d'entre eux. Vous pouvez toujours essayer l'un d'entre eux, et passer à l'autre si cela ne fonctionne pas. Assurez-vous de désinstaller le pilote actuel avant une autre installation car ils entrent en conflit l'un avec l'autre.</p>
+  <p>Certaines plateformes prennent en charge les deux pilotes, mais les autres ne prennent en charge qu&rsquo;un seul d&rsquo;entre eux. Vous pouvez toujours essayer l&rsquo;un d&rsquo;entre eux, et passer à l&rsquo;autre si cela ne fonctionne pas. Assurez-vous de désinstaller le pilote actuel avant une autre installation car ils entrent en conflit l&rsquo;un avec l&rsquo;autre.</p>
 <p>Le pilote IAS crée un périphérique dans le répertoire <code>/dev/isgx</code>, tandis que le pilote DCAP crée deux périphériques dans le répertoire <code>/dev/sgx</code>. Vous pouvez vérifier lequel est installé dans votre système par cette astuce.</p>
 
 </div>
@@ -444,7 +446,7 @@ Il existe également une version HW de `phala-console.sh`, qui doit être utilis
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Understand Phala Tokenomics | Phala Network Wiki</title><meta property="og:title" content="Understand Phala Tokenomics" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Understand Phala Tokenomics">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Understand Phala Tokenomics"/>
 <meta name="twitter:description" content=""/>
 
@@ -65,10 +66,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -204,6 +205,28 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -302,16 +325,16 @@
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -343,12 +366,12 @@
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <blockquote>
-<p>This article is a preview of Konstantin Shamruk's upcoming &quot;Phala Economics White Paper V0.9&quot;. It will also be submitted to the Khala Network Council as a proposal, and will be launched after the democratic referendum is passed.</p>
+<p>This article is a preview of Konstantin Shamruk&rsquo;s upcoming &ldquo;Phala Economics White Paper V0.9&rdquo;. It will also be submitted to the Khala Network Council as a proposal, and will be launched after the democratic referendum is passed.</p>
 </blockquote>
 <h2 id="design-targets">Design targets</h2>
 <p>The overall economic design is built to address these points:</p>
 <ol>
-<li>Support Phala Network's trustless cloud computing architecture
+<li>Support Phala Network&rsquo;s trustless cloud computing architecture
 <ul>
 <li>Consensus-Computation Separation</li>
 <li>Linearly-scalable computing workers (100k order of magnitude number of miners)</li>
@@ -370,7 +393,7 @@
 <ul>
 <li>A virtual score for an individual miner representing value earned which is payable in the future, to motivate miners to behave honestly and reliably</li>
 <li>Equal to the expected value of the revenues earned by the miner for providing power for the platform</li>
-<li>Changes dynamically based on the miner's behaviors and the repayment of Rewards
+<li>Changes dynamically based on the miner&rsquo;s behaviors and the repayment of Rewards
 <ul>
 <li>Mining honestly: $V$ grows gradually over time</li>
 <li>Harmful conduct: punished by reduction of $V$</li>
@@ -382,9 +405,9 @@
 <p>$$V^e = f(R^e, \text{ConfidenceScore}) \times (S + C)$$</p>
 <ul>
 <li>$R^e &gt; 1$ is a <em><strong>Stake Multiplier</strong></em> set by the network (Khala or Phala).</li>
-<li>$S$ is the miner stake; a <em><strong>Minimum Stake</strong></em> is required to start mining. Stake can't be increased or decreased while mining, but can be set higher than the Minimum.</li>
+<li>$S$ is the miner stake; a <em><strong>Minimum Stake</strong></em> is required to start mining. Stake can&rsquo;t be increased or decreased while mining, but can be set higher than the Minimum.</li>
 <li>$C$ is the estimated cost of the miner rigs, inferred from the <em><strong>Performance Test</strong></em>.</li>
-<li>$\text{ConfidenceScore}$ is based on the miner's SGX capabilities</li>
+<li>$\text{ConfidenceScore}$ is based on the miner&rsquo;s SGX capabilities</li>
 <li>$f(R^e, \text{ConfidenceScore}) = 1 + (\text{ConfidenceScore} \cdot (R^e - 1))$</li>
 </ul>
 <p>Params used in simulation:</p>
@@ -461,12 +484,12 @@
 <li>$\phi$ is the current PHA/USD quote, dynamically updated on-chain via Oracles</li>
 <li>$P$ is the initial <em><strong>Performance Test</strong></em> score.</li>
 <li>In the early stages we are compensating the equipment cost $C$ with a higher Value Promise.</li>
-<li>In the future we plan to compensate for higher amortization costs (adding equipment amortization cost to the running costs $c^i$ and $c^a$), thus increasing the speed of growth of the Miner's $V$.</li>
+<li>In the future we plan to compensate for higher amortization costs (adding equipment amortization cost to the running costs $c^i$ and $c^a$), thus increasing the speed of growth of the Miner&rsquo;s $V$.</li>
 </ul>
 <h3 id="general-mining-process">General mining process</h3>
 <p><img src="https://i.imgur.com/IpEnlGR.png" alt=""></p>
 <p><img src="https://i.imgur.com/zKWAI1S.png" alt=""></p>
-<p>Each individual's $V$ is updated at every block:</p>
+<p>Each individual&rsquo;s $V$ is updated at every block:</p>
 <ul>
 <li>Increased by $\Delta V_t$ if the worker keeps mining</li>
 <li>Decreased by $w(V_t)$ if the miner got a payout</li>
@@ -508,8 +531,8 @@
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:center">Block reward</td>
-<td style="text-align:center">...</td>
-<td style="text-align:center">...</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
 <td style="text-align:center">Block reward</td>
 <td style="text-align:center">Cooling off for $\delta$ blocks</td>
 <td style="text-align:center">Final payout</td>
@@ -521,7 +544,7 @@
 <li>$\delta = \text{blocks equivalent to 7 days}$</li>
 </ul>
 <h3 id="update-of-v">Update of $V$</h3>
-<p>When there's no payout or slash event:</p>
+<p>When there&rsquo;s no payout or slash event:</p>
 <p>$$\Delta V_t = k_p \cdot \big(\rho^m V_t + c(s_t) + \gamma(V_t)h(V_t)\big)$$</p>
 <ul>
 <li>$\rho^m$ is the unconditional $V$ increment factor for miner</li>
@@ -597,7 +620,7 @@
 </tbody>
 </table>
 <h3 id="heartbeat--payout-schedule">Heartbeat &amp; Payout Schedule</h3>
-<p>In any block $t$, if the Miner's VRF is smaller than their current Heartbeat Threshold $\gamma(V_t)$, they must send the Heartbeat transaction to the chain, which will update the on-chain record of their Value Promise and send a Mining Reward $w(V_t)$ to their reward wallet:</p>
+<p>In any block $t$, if the Miner&rsquo;s VRF is smaller than their current Heartbeat Threshold $\gamma(V_t)$, they must send the Heartbeat transaction to the chain, which will update the on-chain record of their Value Promise and send a Mining Reward $w(V_t)$ to their reward wallet:</p>
 <p>$$\Delta V_t = - w(V_t).$$</p>
 <p>If they fail to send the Heartbeat transaction to the chain within the challenge window, the update of their value promise will be</p>
 <p>$$\Delta V_t = - h(V_t),$$</p>
@@ -814,7 +837,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

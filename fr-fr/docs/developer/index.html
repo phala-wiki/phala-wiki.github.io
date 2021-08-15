@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Développement du contrat | Phala Network Wiki</title><meta property="og:title" content="Développement du contrat" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/developer/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/developer/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Développement du contrat">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Développement du contrat"/>
 <meta name="twitter:description" content=""/>
 
@@ -65,10 +66,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -150,7 +151,7 @@
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -182,7 +183,7 @@
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -208,16 +209,16 @@
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -229,8 +230,8 @@
 </aside>
 
   <main class="content">
-    <h1>Développement du contrat</h1><h2 id="quest-ce-quun-contrat-confidentiel-">Qu'est-ce qu'un contrat confidentiel ?</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+    <h1>Développement du contrat</h1><h2 id="quest-ce-quun-contrat-confidentiel-">Qu&rsquo;est-ce qu&rsquo;un contrat confidentiel ?</h2>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span><span class="ln"> 3</span><span class="w"></span><span class="p">}</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">
@@ -245,10 +246,10 @@
 </span></code></pre></div><blockquote>
 <p><strong>Note</strong>: Certains codes passe-partout ont été supprimés pour plus de simplicité.</p>
 </blockquote>
-<p>Un contrat confidentiel n'est rien de plus qu'un contrat intelligent ordinaire, mais avec une confidentialité. Cet exemple montre un contrat simple dans lequel est stocké un compteur. N'importe qui peut l'incrémenter mais seul l'utilisateur autorisé peut le lire. Le snippet ci-dessus définit le stockage du contrat et la commande <code>Increment</code>.</p>
+<p>Un contrat confidentiel n&rsquo;est rien de plus qu&rsquo;un contrat intelligent ordinaire, mais avec une confidentialité. Cet exemple montre un contrat simple dans lequel est stocké un compteur. N&rsquo;importe qui peut l&rsquo;incrémenter mais seul l&rsquo;utilisateur autorisé peut le lire. Le snippet ci-dessus définit le stockage du contrat et la commande <code>Increment</code>.</p>
 <p>Les contrats Phala sont écrits en Rust, un langage de programmation qui peut tout faire sur la blockchain. Vous pouvez utiliser pleinement votre gestionnaire de paquets préféré Cargo et les bibliothèques sur <a href="https://crates.io">crates.io</a>.</p>
-<p>Jusqu'à présent, nous avons un contrat HelloWorld avec un compteur, mais ce n'est que la première moitié ! Maintenant, vous vous demandez peut-être quelle est la différence entre les contrats confidentiels et les autres smart contracts. La seconde moitié dévoile le secret.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p>Jusqu&rsquo;à présent, nous avons un contrat HelloWorld avec un compteur, mais ce n&rsquo;est que la première moitié ! Maintenant, vous vous demandez peut-être quelle est la différence entre les contrats confidentiels et les autres smart contracts. La seconde moitié dévoile le secret.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">    </span><span class="n">Request</span>::<span class="n">GetCount</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">ROOT_ACCOUNT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -258,21 +259,21 @@
 </span><span class="ln"> 8</span><span class="w">      </span><span class="p">}</span><span class="w">
 </span><span class="ln"> 9</span><span class="w">    </span><span class="p">}</span><span class="w">
 </span><span class="ln">10</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Contrairement aux smart contracts traditionnels, les états d'un contrat confidentiel ne sont pas accessibles directement en dehors du contrat car ils sont cryptés sur la blockchain. Toutefois, les contrats Phala disposent de &quot;requêtes&quot;, qui sont des fonctions exécutées dans le TEE pour accepter la demande, lire l'état brut et répondre. Dans une requête, vous pouvez définir qui a la permission d'accéder à quelle partie des données. Dans cet exemple, nous n'autorisons que le compte spécial <code>ROOT_ACCOUNT</code> à lire le compteur, sinon le demandeur recevra une erreur <code>NotAuthorized</code>.</p>
-<p>En fait, outre les états du contrat, les entrées et les sorties du contrat sont également signées et cryptées de bout en bout. Comme les requêtes sont signées, le contrat peut savoir qui est l'expéditeur d'une requête, de sorte que les développeurs de contrats peuvent concevoir un contrôle d'accès arbitraire dans les gestionnaires de requêtes, tout comme la programmation d'un service backend ordinaire. Cela n'était pas possible auparavant dans un contrat intelligent traditionnel.</p>
+</span></code></pre></div><p>Contrairement aux smart contracts traditionnels, les états d&rsquo;un contrat confidentiel ne sont pas accessibles directement en dehors du contrat car ils sont cryptés sur la blockchain. Toutefois, les contrats Phala disposent de &ldquo;requêtes&rdquo;, qui sont des fonctions exécutées dans le TEE pour accepter la demande, lire l&rsquo;état brut et répondre. Dans une requête, vous pouvez définir qui a la permission d&rsquo;accéder à quelle partie des données. Dans cet exemple, nous n&rsquo;autorisons que le compte spécial <code>ROOT_ACCOUNT</code> à lire le compteur, sinon le demandeur recevra une erreur <code>NotAuthorized</code>.</p>
+<p>En fait, outre les états du contrat, les entrées et les sorties du contrat sont également signées et cryptées de bout en bout. Comme les requêtes sont signées, le contrat peut savoir qui est l&rsquo;expéditeur d&rsquo;une requête, de sorte que les développeurs de contrats peuvent concevoir un contrôle d&rsquo;accès arbitraire dans les gestionnaires de requêtes, tout comme la programmation d&rsquo;un service backend ordinaire. Cela n&rsquo;était pas possible auparavant dans un contrat intelligent traditionnel.</p>
 <blockquote>
 <p><strong>Notes secondaires : Les variables privées ne sont pas privées sur Ethereum.</strong></p>
-<p>Bien que vous puissiez définir des variables avec un attribut &quot;privé&quot;, les données restent publiques sur la blockchain. Selon la <a href="https://solidity.readthedocs.io/en/v0.7.3/contracts.html">documentation de solidity</a>:</p>
+<p>Bien que vous puissiez définir des variables avec un attribut &ldquo;privé&rdquo;, les données restent publiques sur la blockchain. Selon la <a href="https://solidity.readthedocs.io/en/v0.7.3/contracts.html">documentation de solidity</a>:</p>
 <blockquote>
-<p>Tout ce qui se trouve à l'intérieur d'un contrat est visible par tous les observateurs externes à la blockchain. Rendre quelque chose privé empêche seulement les autres contrats de lire ou de modifier l'information, mais elle sera toujours visible pour le monde entier en dehors de la blockchain.</p>
+<p>Tout ce qui se trouve à l&rsquo;intérieur d&rsquo;un contrat est visible par tous les observateurs externes à la blockchain. Rendre quelque chose privé empêche seulement les autres contrats de lire ou de modifier l&rsquo;information, mais elle sera toujours visible pour le monde entier en dehors de la blockchain.</p>
 </blockquote>
 </blockquote>
 <h2 id="la-racine-de-la-confiance--tee">La racine de la confiance : TEE</h2>
-<p>Phala offre une garantie de confidentialité basée sur des hardwares de confiance, ou <em>Trusted Execution Environment</em>, ce qui signifie que votre code et vos données sont en sécurité même si votre système d'exploitation est compromis. Un contrat exécuté dans le TEE est comme le prêtre dans le confessionnal : Vous savez qui il est, vous pouvez lui dire ce que vous voulez et il vous répondra, mais seul Dieu sait ce qui s'y passe. La chose la plus importante est la suivante : Tous vos secrets sont en sécurité.</p>
-<p>Phala adopte l'une des implémentations les plus populaires de TEE, à savoir Intel SGX. Intel SGX introduit un petit ensemble d'instructions pour crypter les données en mémoire, et les attaquants ne peuvent pas les décrypter sans craquer le processeur et extraire la clé secrète qu'il contient. Contrairement aux blockchains existantes dans lesquelles tous les états des contrats sont publics sur la chaîne, les états des contrats confidentiels sont cryptés et scellés dans SGX.</p>
+<p>Phala offre une garantie de confidentialité basée sur des hardwares de confiance, ou <em>Trusted Execution Environment</em>, ce qui signifie que votre code et vos données sont en sécurité même si votre système d&rsquo;exploitation est compromis. Un contrat exécuté dans le TEE est comme le prêtre dans le confessionnal : Vous savez qui il est, vous pouvez lui dire ce que vous voulez et il vous répondra, mais seul Dieu sait ce qui s&rsquo;y passe. La chose la plus importante est la suivante : Tous vos secrets sont en sécurité.</p>
+<p>Phala adopte l&rsquo;une des implémentations les plus populaires de TEE, à savoir Intel SGX. Intel SGX introduit un petit ensemble d&rsquo;instructions pour crypter les données en mémoire, et les attaquants ne peuvent pas les décrypter sans craquer le processeur et extraire la clé secrète qu&rsquo;il contient. Contrairement aux blockchains existantes dans lesquelles tous les états des contrats sont publics sur la chaîne, les états des contrats confidentiels sont cryptés et scellés dans SGX.</p>
 <h2 id="le-réseau-phala-en-détail">Le réseau Phala en détail</h2>
-<p>Le réseau Phala est composé de trois éléments : les phala-nodes qui constituent la blockchain Phala, pRuntime et phost. Parmi eux, seul pRuntime vit dans TEE. Bien que les attaquants ne puissent pas pénétrer dans TEE, ils peuvent tromper les contrats dans TEE en forgeant des transactions ou en rejouant/réorganisant des transactions valides. Il est important de s'assurer que les contrats confidentiels n'acceptent que les transactions valides et traitent les transactions dans l'ordre attendu. C'est pourquoi nous introduisons la blockchain Phala et phost.</p>
-<p>La blockchain Phala sert de source canonique de transactions valides. Seules les transactions soumises peuvent être acceptées par pRuntime, et elles seront traitées dans le même ordre que sur la blockchain. Nous implémentons un client de validation léger dans pRuntime afin qu'il soit capable de déterminer si les transactions valides sont acceptées dans l'ordre prévu. Un mécanisme de rotation des clés sera également introduit pour empêcher le rejeu des transactions historiques. Ce qui est génial, c'est que pRuntime vous cache tous ces détails d'implémentation compliqués, de sorte que vous pouvez simplement implémenter des contrats confidentiels comme vous développez des programmes ordinaires.</p>
+<p>Le réseau Phala est composé de trois éléments : les phala-nodes qui constituent la blockchain Phala, pRuntime et phost. Parmi eux, seul pRuntime vit dans TEE. Bien que les attaquants ne puissent pas pénétrer dans TEE, ils peuvent tromper les contrats dans TEE en forgeant des transactions ou en rejouant/réorganisant des transactions valides. Il est important de s&rsquo;assurer que les contrats confidentiels n&rsquo;acceptent que les transactions valides et traitent les transactions dans l&rsquo;ordre attendu. C&rsquo;est pourquoi nous introduisons la blockchain Phala et phost.</p>
+<p>La blockchain Phala sert de source canonique de transactions valides. Seules les transactions soumises peuvent être acceptées par pRuntime, et elles seront traitées dans le même ordre que sur la blockchain. Nous implémentons un client de validation léger dans pRuntime afin qu&rsquo;il soit capable de déterminer si les transactions valides sont acceptées dans l&rsquo;ordre prévu. Un mécanisme de rotation des clés sera également introduit pour empêcher le rejeu des transactions historiques. Ce qui est génial, c&rsquo;est que pRuntime vous cache tous ces détails d&rsquo;implémentation compliqués, de sorte que vous pouvez simplement implémenter des contrats confidentiels comme vous développez des programmes ordinaires.</p>
 <p>phost fonctionne comme un pont entre la blockchain Phala et pRuntime. Il garantit que toutes les transactions sur la blockchain sont fidèlement transmises à pRuntime et que toutes les instances TEE exécutent une version non modifiée de pRuntime.</p>
 
     <div class="pager pager_lean">
@@ -443,7 +444,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

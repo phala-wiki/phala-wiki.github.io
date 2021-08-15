@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -10,24 +10,26 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Jouez avec pDiem | Phala Network Wiki</title><meta property="og:title" content="Jouez avec pDiem" />
-<meta property="og:description" content="L&#39;environnement de pDiem comprend:
- Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&#39;environnement pDiem en cours d&#39;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
+<meta property="og:description" content="L&rsquo;environnement de pDiem comprend:
+ Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&rsquo;environnement pDiem en cours d&rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
 Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire avec la commande :" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/play-with-pdiem/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Jouez avec pDiem">
-<meta itemprop="description" content="L&#39;environnement de pDiem comprend:
- Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&#39;environnement pDiem en cours d&#39;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
+<meta itemprop="description" content="L&rsquo;environnement de pDiem comprend:
+ Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&rsquo;environnement pDiem en cours d&rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
 Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire avec la commande :">
 
 <meta itemprop="wordCount" content="961">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jouez avec pDiem"/>
-<meta name="twitter:description" content="L&#39;environnement de pDiem comprend:
- Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&#39;environnement pDiem en cours d&#39;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
+<meta name="twitter:description" content="L&rsquo;environnement de pDiem comprend:
+ Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&rsquo;environnement pDiem en cours d&rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
 Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire avec la commande :"/>
 
 
@@ -35,8 +37,8 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 
 
 
-  <meta name="description" content="L&#39;environnement de pDiem comprend:
- Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&#39;environnement pDiem en cours d&#39;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
+  <meta name="description" content="L&amp;rsquo;environnement de pDiem comprend:
+ Un réseau local de test Diem : diem, diem-cli Un réseau local de test Phala Network avec le contrat pDiem: phala-node, phala-pruntime, phala-phost Un relayeur pour connecter les deux réseaux: pdiem-relayer  Avec l&amp;rsquo;environnement pDiem en cours d&amp;rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..
 Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire avec la commande :">
 
 
@@ -80,10 +82,10 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -165,7 +167,7 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -197,7 +199,7 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -223,16 +225,16 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -245,87 +247,87 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 
   <main class="content">
     <h1>Jouez avec pDiem</h1><p><img src="/images/docs/pdiem/docker-compose-structure.png" alt=""></p>
-<p>L'environnement de pDiem comprend:</p>
+<p>L&rsquo;environnement de pDiem comprend:</p>
 <ul>
 <li>Un réseau local de test Diem : <code>diem</code>, <code>diem-cli</code></li>
 <li>Un réseau local de test Phala Network avec le contrat pDiem: <code>phala-node</code>, <code>phala-pruntime</code>, <code>phala-phost</code></li>
 <li>Un relayeur pour connecter les deux réseaux: <code>pdiem-relayer</code></li>
 </ul>
-<p>Avec l'environnement pDiem en cours d'exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..</p>
+<p>Avec l&rsquo;environnement pDiem en cours d&rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..</p>
 <h2 id="créer-des-comptes-diem">Créer des comptes Diem</h2>
 <p>Démarrez le diem-cli à partir du même répertoire avec la commande :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
 </code></pre></div><p><img src="/images/docs/pdiem/diem-cli.png" alt=""></p>
 <p>Exécutez ensuite les commandes suivantes pour préparer les comptes :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
 <span class="ln">2</span>diem% account create
 <span class="ln">3</span>diem% account create
 <span class="ln">4</span><span class="c1"># Mint some funds</span>
 <span class="ln">5</span>diem% account mint <span class="m">0</span> <span class="m">100</span> XUS
 <span class="ln">6</span>diem% account mint <span class="m">1</span> <span class="m">100</span> XUS
-</code></pre></div><p>L'outil <code>diem-cli</code> est un porte-feuille léger qui se connecte au nœud Diem via RPC. Il peut être utilisé pour gérer des comptes, transférer des jetons, et interroger la blockchain. Dans les étapes ci-dessus, nous avons créé deux comptes (indexés par 0 et 1), et nous avons transféré des jetons de test <code>XUS</code> sur les comptes.</p>
+</code></pre></div><p>L&rsquo;outil <code>diem-cli</code> est un porte-feuille léger qui se connecte au nœud Diem via RPC. Il peut être utilisé pour gérer des comptes, transférer des jetons, et interroger la blockchain. Dans les étapes ci-dessus, nous avons créé deux comptes (indexés par 0 et 1), et nous avons transféré des jetons de test <code>XUS</code> sur les comptes.</p>
 
 <div class="tip">
-  Parmi eux, le <code>compte 0</code> est un compte spécial qui est codé en dur dans le contrat de démonstration pdiem-m3 comme adresse de dépôt. Habituellement, <code>diem-cli</code> génère des comptes aléatoires. Mais dans la démo pdiem-m3, la clé pour générer les portefeuilles est fixée dans un fichier spécial <a href="https://github.com/Phala-Network/phala-docker/blob/pdiem-m3/dockerfile.d/client.mnemonic">client.mnemonic</a> de sorte qu'il génère, en dur, le même compte à chaque fois.
+  Parmi eux, le <code>compte 0</code> est un compte spécial qui est codé en dur dans le contrat de démonstration pdiem-m3 comme adresse de dépôt. Habituellement, <code>diem-cli</code> génère des comptes aléatoires. Mais dans la démo pdiem-m3, la clé pour générer les portefeuilles est fixée dans un fichier spécial <a href="https://github.com/Phala-Network/phala-docker/blob/pdiem-m3/dockerfile.d/client.mnemonic">client.mnemonic</a> de sorte qu&rsquo;il génère, en dur, le même compte à chaque fois.
 </div>
 
 <h2 id="simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</h2>
-<p>Le transfert simple fait référence au transfert entre l'adresse admin (<code>compte 0</code>, codé en dur dans le contrat pdiem-m3) et l'adresse de destination du paiement.</p>
-<p>Pour envoyer des actifs Diem à pDiem, transférez-les simplement à l'adresse administrateur (<code>compte 0</code>) dans <code>diem-cli</code>. Par exemple, nous pouvons envoyer « 10 XUS » au « compte 0 » comme ceci :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
-</code></pre></div><p>Et c'est tout!</p>
-<p>En arrière-plan, <code>pdiem-relayer</code> récupère la transaction de dépôt, envoie une commande Substrate extrinsèque standard au contrat confidentiel <code>pdiem</code> sur Phala pour synchroniser la transaction. Après la validation de la transaction entrante et de la preuve, le contrat <code>pdiem</code> l'accepte. Habituellement, il faut 30 secondes pour que le relais prenne en compte la transaction et la transmette au contrat <code>pdiem</code>.</p>
+<p>Le transfert simple fait référence au transfert entre l&rsquo;adresse admin (<code>compte 0</code>, codé en dur dans le contrat pdiem-m3) et l&rsquo;adresse de destination du paiement.</p>
+<p>Pour envoyer des actifs Diem à pDiem, transférez-les simplement à l&rsquo;adresse administrateur (<code>compte 0</code>) dans <code>diem-cli</code>. Par exemple, nous pouvons envoyer « 10 XUS » au « compte 0 » comme ceci :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
+</code></pre></div><p>Et c&rsquo;est tout!</p>
+<p>En arrière-plan, <code>pdiem-relayer</code> récupère la transaction de dépôt, envoie une commande Substrate extrinsèque standard au contrat confidentiel <code>pdiem</code> sur Phala pour synchroniser la transaction. Après la validation de la transaction entrante et de la preuve, le contrat <code>pdiem</code> l&rsquo;accepte. Habituellement, il faut 30 secondes pour que le relais prenne en compte la transaction et la transmette au contrat <code>pdiem</code>.</p>
 <h3 id="soldes-en-pdiem">Soldes en pDiem</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><h3 id="transactions-vérifiées">Transactions vérifiées</h3>
-<p>Toutes les transactions reçues par le contrat <code>pdiem</code> sont validées par rapport au dernier état du registre de Diem, qui est protégé par un consensus de type PoS. Les transactions validées sont stockées dans le stockage du contrat <code>pdiem</code>, et peuvent être vérifiées par n'importe qui :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
+<p>Toutes les transactions reçues par le contrat <code>pdiem</code> sont validées par rapport au dernier état du registre de Diem, qui est protégé par un consensus de type PoS. Les transactions validées sont stockées dans le stockage du contrat <code>pdiem</code>, et peuvent être vérifiées par n&rsquo;importe qui :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
 </code></pre></div><h2 id="préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</h2>
-<p>pdiem-m3 utilise la fonction de sous-compte de Diem pour créer des comptes de dépôt. Tout utilisateur peut créer son sous-compte de dépôt Diem en envoyant une commande 'NewAccount' :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
-</code></pre></div><p>La commande ci-dessus enverra <code>Command::NewAccount</code> au contrat <code>pdiem</code> depuis le compte Substrate &quot;Bob&quot;. Vous pouvez créer autant de comptes que vous le souhaitez. Il faut 2-3 blocs pour traiter la commande.</p>
+<p>pdiem-m3 utilise la fonction de sous-compte de Diem pour créer des comptes de dépôt. Tout utilisateur peut créer son sous-compte de dépôt Diem en envoyant une commande &lsquo;NewAccount&rsquo; :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
+</code></pre></div><p>La commande ci-dessus enverra <code>Command::NewAccount</code> au contrat <code>pdiem</code> depuis le compte Substrate &ldquo;Bob&rdquo;. Vous pouvez créer autant de comptes que vous le souhaitez. Il faut 2-3 blocs pour traiter la commande.</p>
 
 <div class="tip">
-  Le premier argument de <code>pdiem-new-account</code> est l'identifiant de séquence de la transaction du nouveau compte sur Diem. Comme les autres blockchains, Diem exige également que chaque transaction ait un identifiant de séquence incrémenté. Ainsi, lorsque vous créez un nouveau sous-compte, exécutez <code>./phala-console.sh pdiem-new-account 1 '//Charlie'</code>.
+  Le premier argument de <code>pdiem-new-account</code> est l&rsquo;identifiant de séquence de la transaction du nouveau compte sur Diem. Comme les autres blockchains, Diem exige également que chaque transaction ait un identifiant de séquence incrémenté. Ainsi, lorsque vous créez un nouveau sous-compte, exécutez <code>./phala-console.sh pdiem-new-account 1 '//Charlie'</code>.
 </div>
 
 <p>Ensuite, vous pouvez obtenir une liste complète des comptes pDiem par une requête :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/pdiem-balances.png" alt=""></p>
-<p>Comme le montre la capture d'écran, Bob vient de créer son adresse Diem de dépôt <code>4DB6A10FCEB765C55ADC3751474AE8D1</code>.</p>
+<p>Comme le montre la capture d&rsquo;écran, Bob vient de créer son adresse Diem de dépôt <code>4DB6A10FCEB765C55ADC3751474AE8D1</code>.</p>
 <h2 id="dépôt-diem--pdiem">Dépôt (diem → pdiem)</h2>
 <p>Obtenez votre adresse de dépôt de la dernière étape. Et maintenant, vous pouvez déposer du <code>XUS</code> du côté Diem dans diem-cli :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
 </code></pre></div>
 <div class="tip">
-  La commande de transfert dans <code>diem-cli</code> prend le compte source et le compte destination comme les deux premiers arguments. Elle accepte soit deux références de compte (par exemple 0 pour <code>compte 0</code> dans le portefeuille local), soit deux adresses codées en hexadécimal. Dans l'exemple ci-dessus, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> est le <code>compte 1</code> et <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> est le sous-compte de dépôt de Bob.
+  La commande de transfert dans <code>diem-cli</code> prend le compte source et le compte destination comme les deux premiers arguments. Elle accepte soit deux références de compte (par exemple 0 pour <code>compte 0</code> dans le portefeuille local), soit deux adresses codées en hexadécimal. Dans l&rsquo;exemple ci-dessus, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> est le <code>compte 1</code> et <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> est le sous-compte de dépôt de Bob.
 </div>
 
 <p>Le transfert corss-chain prend environ 4 à 6 blocs. Vérifiez le solde avec la commande :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><blockquote>
 <p>Dans cet exemple, le compte Diem de Bob obtiendra « 10 XUS », qui est « 10000000 » sous le champ « free » dans les sorties « pdiem-balances » (6 décimales).</p>
 </blockquote>
 <h2 id="retirer-pdiem--diem">Retirer (pdiem → diem)</h2>
 <p>Vous pouvez retirer des actifs de <code>pdiem</code> vers diem par <code>pdiem-withdraw</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>Dans la commande ci-dessus, les arguments sont :</p>
 <ul>
-<li><code>4DB6A10FCEB765C55ADC3751474AE8D1</code>: L'adresse Diem de retrait</li>
-<li><code>'10 XUS'</code>: Le montant de l'actif</li>
+<li><code>4DB6A10FCEB765C55ADC3751474AE8D1</code>: L&rsquo;adresse Diem de retrait</li>
+<li><code>'10 XUS'</code>: Le montant de l&rsquo;actif</li>
 <li><code>'//Bob'</code>: Le surnom de la clé privée du compte Substrat à retirer</li>
 </ul>
 
 <div class="tip">
-  <p>La commande <code>pdiem-withdraw</code> envoie une transaction <code>Command::TransferXUS</code> au contrat <code>pdiem</code> via la blockchain Phala Network. Le contrat crée alors une transaction Diem du sous-compte vers la cible de retrait, la signe et la pousse dans une file d'attente. Une fois que le <code>pdiem-relayer</code> a remarqué de nouvelles transactions dans la file d'attente, il les relaie vers la blockchain Diem.</p>
-<p>Les transactions de retrait sont mises en file d'attente jusqu'à ce qu'elles soient confirmées sur Diem. Une fois confirmées, les transactions sortantes sont observées par le <code>pdiem-relayer</code>, et une preuve est renvoyée au contrat <code>pdiem</code>. Finalement, le contrat <code>pdiem</code> confirmera que les transactions de retrait soient exécutées.</p>
+  <p>La commande <code>pdiem-withdraw</code> envoie une transaction <code>Command::TransferXUS</code> au contrat <code>pdiem</code> via la blockchain Phala Network. Le contrat crée alors une transaction Diem du sous-compte vers la cible de retrait, la signe et la pousse dans une file d&rsquo;attente. Une fois que le <code>pdiem-relayer</code> a remarqué de nouvelles transactions dans la file d&rsquo;attente, il les relaie vers la blockchain Diem.</p>
+<p>Les transactions de retrait sont mises en file d&rsquo;attente jusqu&rsquo;à ce qu&rsquo;elles soient confirmées sur Diem. Une fois confirmées, les transactions sortantes sont observées par le <code>pdiem-relayer</code>, et une preuve est renvoyée au contrat <code>pdiem</code>. Finalement, le contrat <code>pdiem</code> confirmera que les transactions de retrait soient exécutées.</p>
 
 </div>
 
 <p>Vous pouvez consulter votre solde <code>pdiem</code> à tout moment :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/withdraw-lock-confirmed.png" alt=""></p>
-<p>Vous pouvez toujours voir le montant du retrait sous les soldes &quot;verrouillés&quot; jusqu'à ce que la transaction soit confirmée sur Diem. La capture d'écran ci-dessus a deux côtés. Le côté gauche montre que les fonds de retrait étaient verrouillés et en attente de confirmation, tandis que le côté droit montre que les fonds verrouillés ont été supprimés parce que la tx sortante est confirmée. Enfin, la séquence sous le compte de dépôt a été incrémentée à 1.</p>
+<p>Vous pouvez toujours voir le montant du retrait sous les soldes &ldquo;verrouillés&rdquo; jusqu&rsquo;à ce que la transaction soit confirmée sur Diem. La capture d&rsquo;écran ci-dessus a deux côtés. Le côté gauche montre que les fonds de retrait étaient verrouillés et en attente de confirmation, tandis que le côté droit montre que les fonds verrouillés ont été supprimés parce que la tx sortante est confirmée. Enfin, la séquence sous le compte de dépôt a été incrémentée à 1.</p>
 
     <div class="pager">
   <div class="pager_item prev">
@@ -499,7 +501,7 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

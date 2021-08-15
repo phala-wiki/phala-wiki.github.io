@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,17 +14,19 @@
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
 1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&lt;TrustedState&gt;,6/// The latest TrustedState 7trusted_state: Option&lt;TrustedState&gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&lt;AccountInfo&gt;,13/// Account sequence id 14seq_number: BTreeMap&lt;String,u64&gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&lt;String,Vec&lt;Transaction&gt;&gt;,20/// Transaction verification result 21verified: BTreeMap&lt;String,bool&gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/contract-implementation/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Mise en œuvre du contrat">
 <meta itemprop="description" content="Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
 1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&lt;TrustedState&gt;,6/// The latest TrustedState 7trusted_state: Option&lt;TrustedState&gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&lt;AccountInfo&gt;,13/// Account sequence id 14seq_number: BTreeMap&lt;String,u64&gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&lt;String,Vec&lt;Transaction&gt;&gt;,20/// Transaction verification result 21verified: BTreeMap&lt;String,bool&gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo).">
 
 <meta itemprop="wordCount" content="738">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mise en œuvre du contrat"/>
 <meta name="twitter:description" content="Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.
 Contract storage Le contrat pDiem est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :
@@ -80,10 +82,10 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -165,7 +167,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -197,7 +199,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -223,16 +225,16 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -247,7 +249,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
     <h1>Mise en œuvre du contrat</h1><p>Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.</p>
 <h2 id="contract-storage">Contract storage</h2>
 <p>Le <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">contrat pDiem</a> est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Light client
 </span><span class="ln"> 3</span><span class="c1"></span><span class="w">
 </span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// The genesis TrustedState
@@ -271,42 +273,42 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
 </span><span class="ln">22</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="implémentation-du-client-léger">Implémentation du client léger</h2>
 <p>Le client léger Diem maintient le dernier état du registre (<code>LedgerInfo</code>). Il transmet aux accumulateurs des transactions historiques, des états et des événements. Un état de registre est mis à jour chaque fois que la base de données de la blockchain Diem est modifiée. Par conséquent, avec le dernier état du registre, tous les faits survenus précédemment peuvent être validés.</p>
-<p>L'état du registre de genèse est initialisé par <code>Command::SetTrustedState</code> une fois seulement, il est persistant et peut être examiné par n'importe qui pendant tout le cycle de vie du bridge. L'état actuel du registre est utilisé pour valider la signature d'un état plus récent du registre jusqu'à ce qu'un validateur configure un changement (par exemple, via une élection sur la chaîne). Lorsqu'il y a un changement d'ensemble de validateurs, le dernier état du registre dans la même période peut être validé, et le nouvel ensemble de validateurs élu peut être extrait du stockage de la blockchain dans lequel il s'engage. Ceci est géré par <code>verify_trusted_state()</code>.</p>
-<p>Il n'y a pas de commande spécifique pour mettre à jour l'état du registre. Au lieu de cela, une <code>LedgerInfoWithSignature</code> et une <code>EpochChangeProof</code> sont extraites de la <code>TransactionWithProof</code> à partir d'un appel <code>Command::VerifyTransaction</code>, lorsqu'un relais synchronise une nouvelle transaction avec pDiem. Ainsi, au fur et à mesure que les nouvelles transactions sont synchronisées avec le contrat pDiem, celui-ci maintient toujours le dernier état du registre.</p>
+<p>L&rsquo;état du registre de genèse est initialisé par <code>Command::SetTrustedState</code> une fois seulement, il est persistant et peut être examiné par n&rsquo;importe qui pendant tout le cycle de vie du bridge. L&rsquo;état actuel du registre est utilisé pour valider la signature d&rsquo;un état plus récent du registre jusqu&rsquo;à ce qu&rsquo;un validateur configure un changement (par exemple, via une élection sur la chaîne). Lorsqu&rsquo;il y a un changement d&rsquo;ensemble de validateurs, le dernier état du registre dans la même période peut être validé, et le nouvel ensemble de validateurs élu peut être extrait du stockage de la blockchain dans lequel il s&rsquo;engage. Ceci est géré par <code>verify_trusted_state()</code>.</p>
+<p>Il n&rsquo;y a pas de commande spécifique pour mettre à jour l&rsquo;état du registre. Au lieu de cela, une <code>LedgerInfoWithSignature</code> et une <code>EpochChangeProof</code> sont extraites de la <code>TransactionWithProof</code> à partir d&rsquo;un appel <code>Command::VerifyTransaction</code>, lorsqu&rsquo;un relais synchronise une nouvelle transaction avec pDiem. Ainsi, au fur et à mesure que les nouvelles transactions sont synchronisées avec le contrat pDiem, celui-ci maintient toujours le dernier état du registre.</p>
 
 <div class="tip">
-  La sérialisation spécifique de Diem, la cryptographie et les logiques de vérification sont extraites de la base de code originale de Diem. elles sont portées sur la cible de construction SGX par l'équipe pDiem, située dans le répertoire [/Diem] (<a href="https://github.com/Phala-Network/phala-blockchain/tree/master/diem)">https://github.com/Phala-Network/phala-blockchain/tree/master/diem)</a>.
+  La sérialisation spécifique de Diem, la cryptographie et les logiques de vérification sont extraites de la base de code originale de Diem. elles sont portées sur la cible de construction SGX par l&rsquo;équipe pDiem, située dans le répertoire [/Diem] (<a href="https://github.com/Phala-Network/phala-blockchain/tree/master/diem)">https://github.com/Phala-Network/phala-blockchain/tree/master/diem)</a>.
 </div>
 
 <h2 id="recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</h2>
-<p>Avant qu'un utilisateur puisse déposer des actifs Diem sur pDiem, une adresse de dépôt doit être générée, comme pour un échange de jetons dans le monde réel. Ceci est fait par le contrat pDiem. Tout utilisateur peut demander au contrat de générer une adresse de dépôt. Le contrat génère une nouvelle clé privée, la sauvegarde dans le stockage du contrat et révèle l'adresse à l'utilisateur.</p>
+<p>Avant qu&rsquo;un utilisateur puisse déposer des actifs Diem sur pDiem, une adresse de dépôt doit être générée, comme pour un échange de jetons dans le monde réel. Ceci est fait par le contrat pDiem. Tout utilisateur peut demander au contrat de générer une adresse de dépôt. Le contrat génère une nouvelle clé privée, la sauvegarde dans le stockage du contrat et révèle l&rsquo;adresse à l&rsquo;utilisateur.</p>
 
 <div class="tip">
-  Dans pDiem-m3, nous avons codé en dur l'adresse de dépôt dans le contrat.
+  Dans pDiem-m3, nous avons codé en dur l&rsquo;adresse de dépôt dans le contrat.
 </div>
 
-<p>Lorsqu'une adresse de dépôt est créée, un utilisateur peut transférer certains actifs de Diem à pDiem :</p>
+<p>Lorsqu&rsquo;une adresse de dépôt est créée, un utilisateur peut transférer certains actifs de Diem à pDiem :</p>
 <ol>
-<li>L'utilisateur envoie une transaction Diem pour transférer des jetons à l'adresse de dépôt.</li>
-<li>Le relayeur pDiem surveille l'adresse de dépôt, remarque la transaction de dépôt, et la relaie au contrat pDiem par <code>Command::VerifyTransaction</code>.</li>
-<li>Le contrat extrait le dernier état du registre avec la preuve et le valide avec l'état précédent du registre (<code>verify_trusted_state()</code>).</li>
+<li>L&rsquo;utilisateur envoie une transaction Diem pour transférer des jetons à l&rsquo;adresse de dépôt.</li>
+<li>Le relayeur pDiem surveille l&rsquo;adresse de dépôt, remarque la transaction de dépôt, et la relaie au contrat pDiem par <code>Command::VerifyTransaction</code>.</li>
+<li>Le contrat extrait le dernier état du registre avec la preuve et le valide avec l&rsquo;état précédent du registre (<code>verify_trusted_state()</code>).</li>
 <li>Enfin, il extrait la preuve de la transaction, et confirme le dépôt si la preuve peut passer la validation par rapport au dernier état du registre (<code>verify_transaction_state_proof</code>).</li>
 </ol>
-<p>Une fois qu'un dépôt est validé, nous ajoutons le montant reçu au solde disponible de l'utilisateur. Les transactions acceptées et le solde peuvent être interrogés par <code>Request::FreeBalance</code> et <code>Request::VerifiedTransactions</code>.</p>
+<p>Une fois qu&rsquo;un dépôt est validé, nous ajoutons le montant reçu au solde disponible de l&rsquo;utilisateur. Les transactions acceptées et le solde peuvent être interrogés par <code>Request::FreeBalance</code> et <code>Request::VerifiedTransactions</code>.</p>
 
 <div class="tip tip_Attention">
-  Les transactions sont classées par séquence ou par identifiant d'événement. Les ids des comptes sont enregistrés dans le contrat pour éviter les transactions manquantes.
+  Les transactions sont classées par séquence ou par identifiant d&rsquo;événement. Les ids des comptes sont enregistrés dans le contrat pour éviter les transactions manquantes.
 </div>
 
 <h2 id="signer-les-transactions-de-retrait">Signer les transactions de retrait</h2>
 <p>WIP: <a href="https://github.com/Phala-Network/phala-blockchain/pull/171">Pull Request</a> est en train de fusionner.</p>
-<h2 id="transfert-dactifs">Transfert d'actifs</h2>
-<p>Dans pDiem-m3 nous n'avons pas implémenté le transfert de jetons. Nous le laisserons à la prochaine étape, et il sera géré par les <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs">contrats confidentiels <code>Assets</code></a>, qui implémente également la norme des actifs interopérables définie dans XCM. De cette façon, les actifs bridgés par pDiem peuvent être utilisés dans n'importe quel parachain de l'écosystème Polkadot.</p>
+<h2 id="transfert-dactifs">Transfert d&rsquo;actifs</h2>
+<p>Dans pDiem-m3 nous n&rsquo;avons pas implémenté le transfert de jetons. Nous le laisserons à la prochaine étape, et il sera géré par les <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/assets.rs">contrats confidentiels <code>Assets</code></a>, qui implémente également la norme des actifs interopérables définie dans XCM. De cette façon, les actifs bridgés par pDiem peuvent être utilisés dans n&rsquo;importe quel parachain de l&rsquo;écosystème Polkadot.</p>
 <h2 id="référence">Référence</h2>
 <p>Commandes:</p>
 <ul>
 <li><code>AccountData</code> : définit les comptes de la liste blanche, dans bcs encodé en base64</li>
-<li><code>SetTrustedState</code> : Définit l'état de confiance. Le propriétaire ne peut initialiser le pont avec l'état genesis qu'une seule fois.</li>
+<li><code>SetTrustedState</code> : Définit l&rsquo;état de confiance. Le propriétaire ne peut initialiser le pont avec l&rsquo;état genesis qu&rsquo;une seule fois.</li>
 <li><code>VerifyTransaction</code> : vérifie une transaction de dépôt</li>
 </ul>
 <p>Requêtes:</p>
@@ -487,7 +489,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

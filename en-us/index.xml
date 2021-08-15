@@ -18,6 +18,17 @@ In the development environment we build the code natively. The pro users who wan
     </item>
     
     <item>
+      <title>Deployment with Containers: An Example with Docker Compose</title>
+      <link>https://wiki.phala.network/en-us/docs/prb/docker-compose-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/prb/docker-compose-example/</guid>
+      <description>Every release of prb is publish on Docker Hub once it gets on the Github release page, you can get the latest release by running:
+1docker pull phalanetwork/prb The prb is designed to be simple, basic and easily integrated with RPC without modifying its code. With containers, managing prb services and integrating them is much easier. Here is an example of how to deploy prb with Docker Compose.
+ Note: This expample explains the relationship between services only, you should design your setup regrading your own requirements.</description>
+    </item>
+    
+    <item>
       <title>Play with pDiem</title>
       <link>https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,8 +45,18 @@ Create Diem accounts Start the diem-cli from the same directory by:</description
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</guid>
-      <description>A bridge connects the local blockchain to a remote blockchain. pDiem follows the &amp;quot;reservation asset&amp;quot; cross-chain asset transferring pattern (see the equivalent pattern defined in XCM Format). In our case, pDiem (and its parachain) is the local blockchain, and Diem is the remote blockchain.
+      <description>A bridge connects the local blockchain to a remote blockchain. pDiem follows the &amp;ldquo;reservation asset&amp;rdquo; cross-chain asset transferring pattern (see the equivalent pattern defined in XCM Format). In our case, pDiem (and its parachain) is the local blockchain, and Diem is the remote blockchain.
 The pDiem bridge controls a set of sovereign accounts (see XCM Format - Definitions) on the Diem side, which hold all the Diem assets transferred to pDiem side.</description>
+    </item>
+    
+    <item>
+      <title>Running Directly in Linux</title>
+      <link>https://wiki.phala.network/en-us/docs/prb/running-directly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/prb/running-directly/</guid>
+      <description>Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell.</description>
     </item>
     
     <item>
@@ -84,7 +105,7 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/</guid>
-      <description>By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+      <description>By default, the demo is built with SGX SDK software mode. It&amp;rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.</description>
     </item>
@@ -114,7 +135,7 @@ Intel SGX SDK comes with three modes:
       
       <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
       <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&#39;re going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Overview In this tutorial, we&amp;rsquo;re going to set up a &amp;ldquo;Hello World&amp;rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
     </item>
     
@@ -153,8 +174,8 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</guid>
-      <description>phala-blockchain Problem: &amp;quot;the wasm32-unknown-unknown target may not be installed&amp;quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &amp;quot;(signal: 9, SIGKILL: kill)&amp;quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:</description>
+      <description>phala-blockchain Problem: &amp;ldquo;the wasm32-unknown-unknown target may not be installed&amp;rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &amp;ldquo;(signal: 9, SIGKILL: kill)&amp;rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&amp;rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:</description>
     </item>
     
     <item>
@@ -191,7 +212,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</guid>
-      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&#39;s start mining!
+      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
 1sudo phala start </description>
     </item>
     

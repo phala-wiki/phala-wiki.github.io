@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,15 +12,17 @@
 <title>1 TEE Mining Staking | Phala Network Wiki</title><meta property="og:title" content="1 TEE Mining Staking" />
 <meta property="og:description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="1 TEE Mining Staking">
 <meta itemprop="description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining.">
 
 <meta itemprop="wordCount" content="2249">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 TEE Mining Staking"/>
 <meta name="twitter:description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining."/>
 
@@ -72,10 +74,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -211,6 +213,28 @@
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -309,16 +333,16 @@
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -544,7 +568,7 @@
 </tr>
 </tbody>
 </table>
-<p>In real-world cases, each Pool Owner can set a maximum stake amount for the Pool to prevent the pool's stake share from being maliciously diluted:</p>
+<p>In real-world cases, each Pool Owner can set a maximum stake amount for the Pool to prevent the pool&rsquo;s stake share from being maliciously diluted:</p>
 <ul>
 <li>When the total PHA in the pool is below the maximum stake amount, any Staker can join by contributing PHA;</li>
 <li>When the total PHA amount has reached the maximum stake amount, additional PHA will not be accepted.</li>
@@ -609,8 +633,8 @@
 <th style="text-align:center"><strong>Staker</strong></th>
 <th style="text-align:center"><strong>StakePool</strong></th>
 <th style="text-align:center"><strong>Pool Revenue</strong></th>
-<th style="text-align:center"><strong>Staker's Stake / Pool Total Stake</strong></th>
-<th style="text-align:center"><strong>Staker's Pool Share</strong></th>
+<th style="text-align:center"><strong>Staker&rsquo;s Stake / Pool Total Stake</strong></th>
+<th style="text-align:center"><strong>Staker&rsquo;s Pool Share</strong></th>
 <th style="text-align:center"><strong>Rewards</strong></th>
 </tr>
 </thead>
@@ -670,7 +694,7 @@
 <p><img src="/images/docs/tokenomic/withdraw-1.png" alt=""></p>
 <center>Figure 4.1 Withdraw example</center>
 <p>As shown in Figure 4.1, when the Owner cancels mining, the StakePool immediately suspends computing for all Workers and associated stakes immediately enter a <em><strong>Freeze Period</strong></em>. After 7 days, the PHA contributed by for Owner <strong>A</strong>, Staker <strong>①</strong>, and Staker <strong>④</strong> will be refunded in full.</p>
-<p>Stakers can request withdrawal of their funds at any time, and if there are idle funds in the StakePool (<em><strong>Free</strong></em>), they will receive their withdrawal immediately. However, if Staker's withdrawal amount is greater than the idle funds in StakePool (<em><strong>Free</strong></em>), Staker will immediately obtain the Free funds and the remainder of the withdrawal will need to wait:</p>
+<p>Stakers can request withdrawal of their funds at any time, and if there are idle funds in the StakePool (<em><strong>Free</strong></em>), they will receive their withdrawal immediately. However, if Staker&rsquo;s withdrawal amount is greater than the idle funds in StakePool (<em><strong>Free</strong></em>), Staker will immediately obtain the Free funds and the remainder of the withdrawal will need to wait:</p>
 <p><img src="/images/docs/tokenomic/withdraw-2.png" alt=""></p>
 <center>Figure 4.2 Withdraw when there is not enough Free PHA</center>
 <p>As shown in Figure 4.2, Staker <strong>③</strong> initially staked 20k in Pool <strong>3</strong>. When they submit a withdrawal for 10k of their stake, Pool <strong>3</strong> immediately sent the 0.5k balance of the Free PHA to Staker <strong>③</strong>. The remaining 9.5k of staked PHA will wait for the following:</p>
@@ -862,7 +886,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

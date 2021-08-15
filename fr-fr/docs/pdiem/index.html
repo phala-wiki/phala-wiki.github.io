@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>pDiem | Phala Network Wiki</title><meta property="og:title" content="pDiem" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/pdiem/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="pDiem">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pDiem"/>
 <meta name="twitter:description" content=""/>
 
@@ -65,10 +66,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -150,7 +151,7 @@
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -182,7 +183,7 @@
 </nav>
         <h3 class="section_link"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -208,16 +209,16 @@
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -229,17 +230,17 @@
 </aside>
 
   <main class="content">
-    <h1>pDiem</h1><p>pDiem est une couche conforme de préservation de la vie privée pour <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> sur l'écosystème Polkadot. Alimentée par le contrat confidentiel de Phala Network, elle protège la vie privée des utilisateurs de Diem. Plus précisément, pDiem est :</p>
+    <h1>pDiem</h1><p>pDiem est une couche conforme de préservation de la vie privée pour <a href="https://en.wikipedia.org/wiki/Diem_(digital_currency)">Diem</a> sur l&rsquo;écosystème Polkadot. Alimentée par le contrat confidentiel de Phala Network, elle protège la vie privée des utilisateurs de Diem. Plus précisément, pDiem est :</p>
 <ul>
-<li>Un pont cross-chain reliant l'écosystème Polkadot aux millions d'utilisateurs de Diem, offrant ainsi une multitude de services et d'applications basés sur Polkadot aux détenteurs de Diem, mais aussi une rampe d'accès à une base d'utilisateurs massive pour Polkadot.</li>
-<li>Un stablecoin préservant la vie privée sur Polkadot qui est à la fois conforme (une seule transaction est limitée en valeur jusqu'aux exigences no-KYC du FATF-GAFI) et permet des transferts de valeur évolutifs en actifs stables (pensez aux transferts de fonds, aux dépenses quotidiennes, aux micro-paiements pour des services.). Imaginez que vous utilisiez votre compte courant sans qu'aucune banque ou fournisseur de crédit ne puisse suivre vos achats/dépenses.</li>
+<li>Un pont cross-chain reliant l&rsquo;écosystème Polkadot aux millions d&rsquo;utilisateurs de Diem, offrant ainsi une multitude de services et d&rsquo;applications basés sur Polkadot aux détenteurs de Diem, mais aussi une rampe d&rsquo;accès à une base d&rsquo;utilisateurs massive pour Polkadot.</li>
+<li>Un stablecoin préservant la vie privée sur Polkadot qui est à la fois conforme (une seule transaction est limitée en valeur jusqu&rsquo;aux exigences no-KYC du FATF-GAFI) et permet des transferts de valeur évolutifs en actifs stables (pensez aux transferts de fonds, aux dépenses quotidiennes, aux micro-paiements pour des services.). Imaginez que vous utilisiez votre compte courant sans qu&rsquo;aucune banque ou fournisseur de crédit ne puisse suivre vos achats/dépenses.</li>
 <li>Un écosystème DApp préservant la vie privée, plus ouvert et plus libre que Novi (anciennement connu sous le nom de Calibra), exploité par Facebook.</li>
 </ul>
 <blockquote>
-<p>Le projet a été initialement nommé pLIBRA. &quot;En décembre 2020, Libra a été rebaptisé Diem.&quot; Depuis lors, nous avons suivi le changement de nom de Diem, et ainsi renommé le projet en pDiem.</p>
+<p>Le projet a été initialement nommé pLIBRA. &ldquo;En décembre 2020, Libra a été rebaptisé Diem.&rdquo; Depuis lors, nous avons suivi le changement de nom de Diem, et ainsi renommé le projet en pDiem.</p>
 </blockquote>
 <h2 id="essayez-le">Essayez-le</h2>
-<p>pDiem se situe à <a href="#web3-foundation-grants">l'étape 3</a> du programme de subvention de la Fondation Web3. Cette étape se concentre sur le cœur du bridge : la validation des transactions de dépôt. Dans cette démo, vous pouvez connecter pDiem au testnet Diem, valider et accepter les transactions de dépôt entrantes.</p>
+<p>pDiem se situe à <a href="#web3-foundation-grants">l&rsquo;étape 3</a> du programme de subvention de la Fondation Web3. Cette étape se concentre sur le cœur du bridge : la validation des transactions de dépôt. Dans cette démo, vous pouvez connecter pDiem au testnet Diem, valider et accepter les transactions de dépôt entrantes.</p>
 <a href="deploy-local-testnet" class="button">Déployer un réseau de test en local</a>
 <a href="play-with-pdiem" class="button">Jouer avec pDiem</a>
 <h2 id="le-système">Le système</h2>
@@ -249,10 +250,10 @@
 <li><strong>Les relayeurs pDiem</strong> : Les nœuds qui relaient les transactions de dépôt Diem au contrat pDiem, et diffusent les transactions de retrait à Diem ;</li>
 <li><strong>Phala Network</strong> : Il exécute le contrat pDiem et relaie les transactions XCM entre pDiem et les autres parachains Polkadot.</li>
 <li><strong>Polkadot</strong> : La chaîne de relais qui relie les parachains, y compris le réseau de Phala-Network ;</li>
-<li><strong>Parachains</strong> : Autres blockchains de l'écosystème Polkadot que nous souhaitons servir ;</li>
+<li><strong>Parachains</strong> : Autres blockchains de l&rsquo;écosystème Polkadot que nous souhaitons servir ;</li>
 <li><strong>XCMP</strong> : <a href="https://wiki.polkadot.network/docs/en/learn-crosschain">Cross-chain Messaging Protocol</a>.</li>
 </ul>
-<p>Parmi les composants énumérés dans le diagramme, le <strong>contrat pDiem</strong> et les <strong>relayeurs pDiem</strong> constituent le cœur du protocole de bridge pDiem. Le contrat est déployé sur Phala Network. Il gère les transactions de dépôt et les demandes de retrait des utilisateurs sur Diem . Les relayeurs sont les contributeurs qui exécutent le programme &quot;pDiem Relayer&quot;, qui relaient les transactions entre la blockchain Diem et le contrat pDiem.</p>
+<p>Parmi les composants énumérés dans le diagramme, le <strong>contrat pDiem</strong> et les <strong>relayeurs pDiem</strong> constituent le cœur du protocole de bridge pDiem. Le contrat est déployé sur Phala Network. Il gère les transactions de dépôt et les demandes de retrait des utilisateurs sur Diem . Les relayeurs sont les contributeurs qui exécutent le programme &ldquo;pDiem Relayer&rdquo;, qui relaient les transactions entre la blockchain Diem et le contrat pDiem.</p>
 <p>pDiem reçoit des actifs de la blockchain Diem, génère des <strong>tokens pdiem bridgés</strong> du côté de Polkadot, et peut également les transférer pour racheter les actifs originaux. Ceci est réalisé par une combinaison de différents composants. Dans la documentation, nous présenterons :</p>
 <ul>
 <li><a href="/fr-fr/docs/pdiem/reservation-based-model/">Le modèle basé sur la réservation</a>,</li>
@@ -483,7 +484,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

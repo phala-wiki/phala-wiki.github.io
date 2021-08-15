@@ -34,7 +34,7 @@ Create Diem accounts Start the diem-cli from the same directory by:</description
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</guid>
-      <description>A bridge connects the local blockchain to a remote blockchain. pDiem follows the &amp;quot;reservation asset&amp;quot; cross-chain asset transferring pattern (see the equivalent pattern defined in XCM Format). In our case, pDiem (and its parachain) is the local blockchain, and Diem is the remote blockchain.
+      <description>A bridge connects the local blockchain to a remote blockchain. pDiem follows the &amp;ldquo;reservation asset&amp;rdquo; cross-chain asset transferring pattern (see the equivalent pattern defined in XCM Format). In our case, pDiem (and its parachain) is the local blockchain, and Diem is the remote blockchain.
 The pDiem bridge controls a set of sovereign accounts (see XCM Format - Definitions) on the Diem side, which hold all the Diem assets transferred to pDiem side.</description>
     </item>
     
@@ -84,7 +84,7 @@ Who runs the relayer Anyone can run a relayer, and in theory only one honest rel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/</guid>
-      <description>By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+      <description>By default, the demo is built with SGX SDK software mode. It&amp;rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.</description>
     </item>

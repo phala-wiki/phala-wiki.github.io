@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,17 +14,19 @@
  A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
 Create Diem accounts Start the diem-cli from the same directory by:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Play with pDiem">
 <meta itemprop="description" content="The pdiem full stack includes:
  A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
 Create Diem accounts Start the diem-cli from the same directory by:">
 
 <meta itemprop="wordCount" content="851">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Play with pDiem"/>
 <meta name="twitter:description" content="The pdiem full stack includes:
  A local Diem testnet: diem, diem-cli A Phala Network local testnet with the pdiem contract: phala-node, phala-pruntime, phala-phost A relayer to connect the both networks: pdiem-relayer  With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.
@@ -80,10 +82,10 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -219,6 +221,28 @@ Create Diem accounts Start the diem-cli from the same directory by:">
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -317,16 +341,16 @@ Create Diem accounts Start the diem-cli from the same directory by:">
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -348,10 +372,10 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 <p>With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.</p>
 <h2 id="create-diem-accounts">Create Diem accounts</h2>
 <p>Start the diem-cli from the same directory by:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
 </code></pre></div><p><img src="/images/docs/pdiem/diem-cli.png" alt=""></p>
 <p>Then run the following commands to prepare the accounts:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
 <span class="ln">2</span>diem% account create
 <span class="ln">3</span>diem% account create
 <span class="ln">4</span><span class="c1"># Mint some funds</span>
@@ -366,43 +390,43 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 <h2 id="simple-diem-to-pdiem-transfer">Simple diem-to-pdiem transfer</h2>
 <p>Simple transfer refers to the transfer between the admin address (<code>account 0</code>, hardcoded in the pdiem-m3 contract).</p>
 <p>To send Diem assets to pdiem, just transfer it to the admin address (<code>account 0</code>) in <code>diem-cli</code>. For example, we can send <code>10 XUS</code> to <code>account 0</code> like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
-</code></pre></div><p>And that's all!</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
+</code></pre></div><p>And that&rsquo;s all!</p>
 <p>Behind the scene, <code>pdiem-relayer</code> picked up the deposit transaction, sent a regular Substrate extrinsic to the <code>pdiem</code> confidential contract on Phala to sync the transaction. After the validation of the incoming transaction and the proof, the <code>pdiem</code> contract will accept it. Usually it takes 30 seconds for the relayer to pick up the transaction, and relay to <code>pdiem</code> side.</p>
 <h3 id="balances-in-pdiem">Balances in pdiem</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><h3 id="verified-transactions">Verified transactions</h3>
 <p>All the transactiosn received by <code>pdiem</code> contract are validated against the latest Diem ledger state, which is protected by a PoS-like consensus. The validated transactions are stored inside the <code>pdiem</code> contract storage, and can be checked by anyone:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
 </code></pre></div><h2 id="prepare-subaccounts-for-two-way-transfer">Prepare subaccounts for two-way transfer</h2>
-<p>pdiem-m3 uses Diem's subaccount feature to create deposit accounts. Any user can create its Diem deposit subaccount by sending a <code>NewAccount</code> command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
-</code></pre></div><p>The above command will send <code>Command::NewAccount</code> to the <code>pdiem</code> contract from Substrate account &quot;Bob&quot;. You can create as many accounts as you want. It takes 2-3 blocks to process the command.</p>
+<p>pdiem-m3 uses Diem&rsquo;s subaccount feature to create deposit accounts. Any user can create its Diem deposit subaccount by sending a <code>NewAccount</code> command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
+</code></pre></div><p>The above command will send <code>Command::NewAccount</code> to the <code>pdiem</code> contract from Substrate account &ldquo;Bob&rdquo;. You can create as many accounts as you want. It takes 2-3 blocks to process the command.</p>
 
 <div class="tip">
   The first argument of <code>pdiem-new-account</code> is the sequence id of the new account transaction on Diem. Similar to the other blockchains, Diem also requires every transaction has incremented sequence id. So when creating another new subaccount, run <code>./phala-console.sh pdiem-new-account 1 '//Charlie'</code>.
 </div>
 
 <p>Then you can get a full list of the Diem accounts by a query:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/pdiem-balances.png" alt=""></p>
 <p>As shown in the screenshot, Bob just created its deposit Diem address <code>4DB6A10FCEB765C55ADC3751474AE8D1</code>.</p>
 <h2 id="deposit-diem--pdiem">Deposit (diem → pdiem)</h2>
 <p>Get your deposit address from the last step. And now you can deposit some <code>XUS</code> on the Diem side in diem-cli:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
 </code></pre></div>
 <div class="tip">
-  The transfer command in <code>diem-cli</code> takes the source account and the destination account as the first two arguments. It accepts either two account references (e.g. 0 for <code>account 0</code> in the local wallet), or two hex-encoded addresses. In the example above, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> is <code>account 1</code> and <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> is Bob's the deposit subaccount.
+  The transfer command in <code>diem-cli</code> takes the source account and the destination account as the first two arguments. It accepts either two account references (e.g. 0 for <code>account 0</code> in the local wallet), or two hex-encoded addresses. In the example above, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> is <code>account 1</code> and <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> is Bob&rsquo;s the deposit subaccount.
 </div>
 
 <p>The corss-chain transfer takes around 4-6 blocks to complete. Check the balance by:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><blockquote>
-<p>In this example, Bob's Diem account will get <code>10 XUS</code>, which is <code>10000000</code> under the <code>free</code> field in the <code>pdiem-balances</code> outputs (6 decimals).</p>
+<p>In this example, Bob&rsquo;s Diem account will get <code>10 XUS</code>, which is <code>10000000</code> under the <code>free</code> field in the <code>pdiem-balances</code> outputs (6 decimals).</p>
 </blockquote>
 <h2 id="withdraw-pdiem--diem">Withdraw (pdiem → diem)</h2>
 <p>You can withdraw assets from <code>pdiem</code> back to diem by <code>pdiem-withdraw</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>In the command above the arguments are:</p>
 <ul>
 <li><code>4DB6A10FCEB765C55ADC3751474AE8D1</code>: The Diem address to withdraw</li>
@@ -417,9 +441,9 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 </div>
 
 <p>You can check your <code>pdiem</code> balance at any point:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/withdraw-lock-confirmed.png" alt=""></p>
-<p>You can still see the withdrawal amount under the &quot;locked&quot; balances until transaction is confimed on Diem. The above screenshot has two sides. The left side shows the withdrawal funds was locked and pending confirmation, while the right side shows the locked funds were removed because the outgoing tx is confirmed. Finally the sequence under the deposit account was incremented to 1.</p>
+<p>You can still see the withdrawal amount under the &ldquo;locked&rdquo; balances until transaction is confimed on Diem. The above screenshot has two sides. The left side shows the withdrawal funds was locked and pending confirmation, while the right side shows the locked funds were removed because the outgoing tx is confirmed. Finally the sequence under the deposit account was incremented to 1.</p>
 
     <div class="pager">
   <div class="pager_item prev">
@@ -593,7 +617,7 @@ Create Diem accounts Start the diem-cli from the same directory by:">
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

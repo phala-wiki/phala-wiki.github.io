@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runtime Bridge on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/prb/</link>
+    <description>Recent content in Runtime Bridge on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/prb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deployment with Containers: An Example with Docker Compose</title>
+      <link>https://wiki.phala.network/en-us/docs/prb/docker-compose-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/prb/docker-compose-example/</guid>
+      <description>Every release of prb is publish on Docker Hub once it gets on the Github release page, you can get the latest release by running:
+1docker pull phalanetwork/prb The prb is designed to be simple, basic and easily integrated with RPC without modifying its code. With containers, managing prb services and integrating them is much easier. Here is an example of how to deploy prb with Docker Compose.
+ Note: This expample explains the relationship between services only, you should design your setup regrading your own requirements.</description>
+    </item>
+    
+    <item>
+      <title>Running Directly in Linux</title>
+      <link>https://wiki.phala.network/en-us/docs/prb/running-directly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/prb/running-directly/</guid>
+      <description>Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell.</description>
+    </item>
+    
+  </channel>
+</rss>

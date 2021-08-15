@@ -13,7 +13,7 @@
       
       <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
       <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&#39;re going to set up a &amp;quot;Hello World&amp;quot; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Overview In this tutorial, we&amp;rsquo;re going to set up a &amp;ldquo;Hello World&amp;rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
     </item>
     
@@ -34,8 +34,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</guid>
-      <description>phala-blockchain Problem: &amp;quot;the wasm32-unknown-unknown target may not be installed&amp;quot; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &amp;quot;(signal: 9, SIGKILL: kill)&amp;quot; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&#39;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:</description>
+      <description>phala-blockchain Problem: &amp;ldquo;the wasm32-unknown-unknown target may not be installed&amp;rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
+1rustup target add wasm32-unknown-unknown Problem: &amp;ldquo;(signal: 9, SIGKILL: kill)&amp;rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&amp;rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:</description>
     </item>
     
   </channel>

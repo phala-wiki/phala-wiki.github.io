@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -11,23 +11,25 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.2 Hello World : votre premier contrat confidentiel | Phala Network Wiki</title><meta property="og:title" content="1.2 Hello World : votre premier contrat confidentiel" />
 <meta property="og:description" content="Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.
- Vue d&#39;ensemble Dans ce tutoriel, nous allons continuer sur l&#39;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
+ Vue d&rsquo;ensemble Dans ce tutoriel, nous allons continuer sur l&rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
  Apprendre à développer un contrat confidentiel." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="1.2 Hello World : votre premier contrat confidentiel">
 <meta itemprop="description" content="Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.
- Vue d&#39;ensemble Dans ce tutoriel, nous allons continuer sur l&#39;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
+ Vue d&rsquo;ensemble Dans ce tutoriel, nous allons continuer sur l&rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
  Apprendre à développer un contrat confidentiel.">
 
 <meta itemprop="wordCount" content="1593">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.2 Hello World : votre premier contrat confidentiel"/>
 <meta name="twitter:description" content="Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.
- Vue d&#39;ensemble Dans ce tutoriel, nous allons continuer sur l&#39;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
+ Vue d&rsquo;ensemble Dans ce tutoriel, nous allons continuer sur l&rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
  Apprendre à développer un contrat confidentiel."/>
 
 
@@ -36,7 +38,7 @@
 
 
   <meta name="description" content="Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.
- Vue d&#39;ensemble Dans ce tutoriel, nous allons continuer sur l&#39;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
+ Vue d&amp;rsquo;ensemble Dans ce tutoriel, nous allons continuer sur l&amp;rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :
  Apprendre à développer un contrat confidentiel.">
 
 
@@ -80,10 +82,10 @@
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -165,7 +167,7 @@
     <li><a href="#implémentation-du-client-léger">Implémentation du client léger</a></li>
     <li><a href="#recevoir-des-transactions-de-dépôt">Recevoir des transactions de dépôt</a></li>
     <li><a href="#signer-les-transactions-de-retrait">Signer les transactions de retrait</a></li>
-    <li><a href="#transfert-dactifs">Transfert d'actifs</a></li>
+    <li><a href="#transfert-dactifs">Transfert d&rsquo;actifs</a></li>
     <li><a href="#référence">Référence</a></li>
   </ul>
 </nav>
@@ -197,7 +199,7 @@
 </nav>
         <h3 class="section_link active"><a id="docs-12-hello-world--votre-premier-contrat-confidentiel" href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/">1.2 Hello World : votre premier contrat confidentiel</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+    <li><a href="#vue-densemble">Vue d&rsquo;ensemble</a></li>
     <li><a href="#environnement-et-construction">Environnement et construction</a></li>
     <li><a href="#visite-guidée">Visite guidée</a>
       <ul>
@@ -223,16 +225,16 @@
   <ul>
     <li><a href="#blockchain-phala"><code>Blockchain Phala</code></a>
       <ul>
-        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &quot;la cible <code>wasm32-unknown-unknown</code> n'est peut-être pas installée&quot;.</a></li>
-        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &quot;(signal: 9, SIGKILL: kill)&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &quot;consider giving <code>accuracy</code> a type&quot; lors de la construction du substrat</a></li>
-        <li><a href="#probleme-duplicate-lang-item">Probleme: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</a></li>
+        <li><a href="#probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</a></li>
+        <li><a href="#probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -247,11 +249,11 @@
     <h1>1.2 Hello World : votre premier contrat confidentiel</h1><blockquote>
 <p>Une connaissance de base de la programmation en langage Rust et du développement de contrats intelligents est nécessaire pour suivre ce tutoriel.</p>
 </blockquote>
-<h2 id="vue-densemble">Vue d'ensemble</h2>
-<p>Dans ce tutoriel, nous allons continuer sur l'environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :</p>
+<h2 id="vue-densemble">Vue d&rsquo;ensemble</h2>
+<p>Dans ce tutoriel, nous allons continuer sur l&rsquo;environnement de développement que nous avons mis en place dans le chapitre précédent, et explorer comment un contrat intelligent confidentiel est fait. À la fin de ce tutoriel, vous allez :</p>
 <ul>
 <li>Apprendre à développer un contrat confidentiel.</li>
-<li>Interagir avec le contrat à partir de l'interface Web.</li>
+<li>Interagir avec le contrat à partir de l&rsquo;interface Web.</li>
 <li>Construire votre propre contrat confidentiel</li>
 </ul>
 <p>Pour un aperçu de haut niveau du réseau Phala, veuillez consulter les chapitres précédents.</p>
@@ -259,20 +261,20 @@
 <p>Veuillez configurer un environnement de développement en suivant le chapitre précédent [Run a Local Development Network] (Run-a-Local-Development-Network). Assurez-vous que vous êtes dans la branche <code>helloworld</code> sur les deux repo <code>phala-blockchain</code> et <code>apps-ng</code>.</p>
 <h2 id="visite-guidée">Visite guidée</h2>
 <h3 id="contrat">Contrat</h3>
-<p>Le contrat HelloWorld est disponible à l'adresse <a href="https://github.com/Phala-Network/phala-blockchain/commit/b9c576702ec1b9f0ee4a274b5d7aecc30e40fcb4">ici</a>.</p>
-<p>Le contrat HelloWorld stocke un compteur qui peut être incrémenté par n'importe qui, mais seul l'utilisateur autorisé peut le lire. Le modèle typique des contrats confidentiels dans Phala Network est constitué des trois composants suivants que nous allons aborder en détail.</p>
+<p>Le contrat HelloWorld est disponible à l&rsquo;adresse <a href="https://github.com/Phala-Network/phala-blockchain/commit/b9c576702ec1b9f0ee4a274b5d7aecc30e40fcb4">ici</a>.</p>
+<p>Le contrat HelloWorld stocke un compteur qui peut être incrémenté par n&rsquo;importe qui, mais seul l&rsquo;utilisateur autorisé peut le lire. Le modèle typique des contrats confidentiels dans Phala Network est constitué des trois composants suivants que nous allons aborder en détail.</p>
 <ul>
 <li>États</li>
 <li>Commandes</li>
 <li>Requêtes</li>
 </ul>
-<p>Les <strong>États</strong> d'un contrat sont décrits par certaines variables. Dans ce cas, nous définissons une variable non signée de 32 bits comme compteur, mais vous êtes libre d'utiliser des variables de n'importe quel type dans vos contrats.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p>Les <strong>États</strong> d&rsquo;un contrat sont décrits par certaines variables. Dans ce cas, nous définissons une variable non signée de 32 bits comme compteur, mais vous êtes libre d&rsquo;utiliser des variables de n&rsquo;importe quel type dans vos contrats.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln">2</span><span class="w">    </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span><span class="ln">3</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Il existe deux types d'opérations qui peuvent être utilisées pour interagir avec les contrats confidentiels : les <strong>Commandes</strong> et les <strong>requêtes</strong>. La différence la plus importante entre elles est qu'elles modifient ou non les états des contrats, et nous les expliquons séparément.</p>
+</span></code></pre></div><p>Il existe deux types d&rsquo;opérations qui peuvent être utilisées pour interagir avec les contrats confidentiels : les <strong>Commandes</strong> et les <strong>requêtes</strong>. La différence la plus importante entre elles est qu&rsquo;elles modifient ou non les états des contrats, et nous les expliquons séparément.</p>
 <p>Les <strong>Commandes</strong> sont censées changer les états des contrats. Elles sont également appelées <strong>Transactions</strong>, et elles sont exactement comme les transactions sur les blockchains de contrats intelligents traditionnelles comme Ethereum : elles doivent être envoyées à la blockchain avant leur exécution. Dans notre contrat HelloWorld, nous définissons une commande <code>Increment</code> qui change la valeur du compteur.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln">2</span><span class="w">    </span><span class="sd">/// Increments the counter in the contract by some number
 </span><span class="ln">3</span><span class="sd"></span><span class="w">    </span><span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln">4</span><span class="w">        </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
@@ -280,7 +282,7 @@
 </span><span class="ln">6</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><blockquote>
 <p>Il est important de noter que vous pouvez définir plusieurs commandes pour un contrat. Par exemple, nous pouvons ajouter une commande <code>Decrement</code> pour diminuer le compteur comme suit.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Increments the counter in the contract by some number
 </span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">        </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
@@ -291,8 +293,8 @@
 </span><span class="ln"> 9</span><span class="w">    </span><span class="p">},</span><span class="w">
 </span><span class="ln">10</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div></blockquote>
-<p>Toutes les commandes sont traitées par la méthode <code>handle_command</code> qui doit être implémentée. Dans ce cas, nous permettons à n'importe quel utilisateur d'utiliser cette commande, donc nous augmentons simplement le compteur sans vérifier l'<code>_origin</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="kp">&amp;</span><span class="nc">chain</span>::<span class="n">AccountId</span><span class="p">,</span><span class="w"> </span><span class="n">_txref</span>: <span class="kp">&amp;</span><span class="nc">TxRef</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionStatus</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p>Toutes les commandes sont traitées par la méthode <code>handle_command</code> qui doit être implémentée. Dans ce cas, nous permettons à n&rsquo;importe quel utilisateur d&rsquo;utiliser cette commande, donc nous augmentons simplement le compteur sans vérifier l'<code>_origin</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="kp">&amp;</span><span class="nc">chain</span>::<span class="n">AccountId</span><span class="p">,</span><span class="w"> </span><span class="n">_txref</span>: <span class="kp">&amp;</span><span class="nc">TxRef</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionStatus</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">        </span><span class="c1">// Handle the `Increment` command with one parameter
 </span><span class="ln"> 4</span><span class="c1"></span><span class="w">        </span><span class="n">Command</span>::<span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -303,8 +305,8 @@
 </span><span class="ln"> 9</span><span class="w">        </span><span class="p">},</span><span class="w">
 </span><span class="ln">10</span><span class="w">    </span><span class="p">}</span><span class="w">
 </span><span class="ln">11</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Contrairement aux commandes, les <strong>requêtes</strong> ne changent pas l'état des contacts. Les requêtes sont l'une des innovations du réseau Phala. Elles sont conçues pour permettre un examen rapide des états des contrats. Pour définir une requête, vous devez définir à la fois le <code>Request</code> et la <code>Response</code> correspondante.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></code></pre></div><p>Contrairement aux commandes, les <strong>requêtes</strong> ne changent pas l&rsquo;état des contacts. Les requêtes sont l&rsquo;une des innovations du réseau Phala. Elles sont conçues pour permettre un examen rapide des états des contrats. Pour définir une requête, vous devez définir à la fois le <code>Request</code> et la <code>Response</code> correspondante.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Ask for the value of the counter
 </span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">GetCount</span><span class="p">,</span><span class="w">
 </span><span class="ln"> 4</span><span class="w"></span><span class="p">}</span><span class="w">
@@ -318,9 +320,9 @@
 </span><span class="ln">12</span><span class="w">    </span><span class="sd">/// Something wrong happened
 </span><span class="ln">13</span><span class="sd"></span><span class="w">    </span><span class="n">Error</span><span class="p">(</span><span class="n">Error</span><span class="p">)</span><span class="w">
 </span><span class="ln">14</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>La méthode <code>handle_query</code> est censée traiter toutes les requêtes. Contrairement aux commandes, les requêtes vont directement aux contrats sans avoir besoin d'être envoyées à la blockchain. Dans les contrats confidentiels, les requêtes doivent généralement être signées pour indiquer l'identité des demandeurs. Par conséquent, les requêtes peuvent faire l'objet d'une réponse conditionnelle, ce qui donne au développeur un contrôle très souple des données dans les contrats confidentiels. L'identité du demandeur est accessible à partir de <code>origin</code>, le deuxième argument de <code>handle_query</code>.</p>
+</span></code></pre></div><p>La méthode <code>handle_query</code> est censée traiter toutes les requêtes. Contrairement aux commandes, les requêtes vont directement aux contrats sans avoir besoin d&rsquo;être envoyées à la blockchain. Dans les contrats confidentiels, les requêtes doivent généralement être signées pour indiquer l&rsquo;identité des demandeurs. Par conséquent, les requêtes peuvent faire l&rsquo;objet d&rsquo;une réponse conditionnelle, ce qui donne au développeur un contrôle très souple des données dans les contrats confidentiels. L&rsquo;identité du demandeur est accessible à partir de <code>origin</code>, le deuxième argument de <code>handle_query</code>.</p>
 <p>Nous allons parler plus en détail de <code>origin</code> plus tard dans ce tutoriel, mais il supporte aussi les requêtes anonymes où <code>origin</code> est <code>None</code> comme montré ci-dessous. La requête <code>GetCount</code> renvoie simplement la valeur actuelle du compteur.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">            </span><span class="c1">// Handle the `GetCount` request.
@@ -335,25 +337,25 @@
 </span><span class="ln">13</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">resp</span><span class="w">
 </span><span class="ln">14</span><span class="w">    </span><span class="p">}</span><span class="w">
 </span><span class="ln">15</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Contrairement à Ethereum, les requêtes dans les contrats confidentiels sont capables d'effectuer des calculs arbitraires. Nous recommandons donc d'introduire une vérification de l'autorité ici pour éviter une attaque potentielle par déni de service avec une énorme quantité de requêtes.</p>
+</span></code></pre></div><p>Contrairement à Ethereum, les requêtes dans les contrats confidentiels sont capables d&rsquo;effectuer des calculs arbitraires. Nous recommandons donc d&rsquo;introduire une vérification de l&rsquo;autorité ici pour éviter une attaque potentielle par déni de service avec une énorme quantité de requêtes.</p>
 <h3 id="frontend">Frontend</h3>
 <ul>
-<li>Validation de l'interface Web : <a href="https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56">https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56</a></li>
+<li>Validation de l&rsquo;interface Web : <a href="https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56">https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56</a></li>
 </ul>
 <p>Interagir avec le contrat : comment envoyer des commandes et des requêtes.</p>
 <h2 id="mettre-en-place-un-carnet-secret">Mettre en place un carnet secret</h2>
-<p>Après une compréhension générale du modèle des contrats confidentiels, faisons quelque chose de pratique et implémentons un contrat qui peut stocker la note secrète de chaque visiteur. Dans ce contrat, nous permettons à tout utilisateur de stocker une note, et seul l'utilisateur lui-même est autorisé à lire sa note.</p>
+<p>Après une compréhension générale du modèle des contrats confidentiels, faisons quelque chose de pratique et implémentons un contrat qui peut stocker la note secrète de chaque visiteur. Dans ce contrat, nous permettons à tout utilisateur de stocker une note, et seul l&rsquo;utilisateur lui-même est autorisé à lire sa note.</p>
 <blockquote>
-<p>Le commit du contrat SecretNote est disponible à l'adresse suivante <a href="https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61">https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61</a> <strong>(CHANGEZ CELA)</strong>. Nous remercions <a href="https://github.com/LaurentTrk">Laurent</a> pour son exécution du présent contrat.</p>
+<p>Le commit du contrat SecretNote est disponible à l&rsquo;adresse suivante <a href="https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61">https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61</a> <strong>(CHANGEZ CELA)</strong>. Nous remercions <a href="https://github.com/LaurentTrk">Laurent</a> pour son exécution du présent contrat.</p>
 </blockquote>
 <h3 id="contrat-1">Contrat</h3>
-<p>Nous utilisons une carte pour stocker les utilisateurs avec leurs notes, et fournissons deux interfaces <code>SetNote</code> et <code>GetNote</code> pour qu'ils puissent utiliser leurs notes. Nous définissons d'abord la structure d'état du contrat <code>struct SecretNote</code>, avec une carte <code>notes</code> pour stocker une correspondance entre le compte et les notes. Dans les contrats Phala, un compte peut être représenté par un <code>AccountIdWrapper</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p>Nous utilisons une carte pour stocker les utilisateurs avec leurs notes, et fournissons deux interfaces <code>SetNote</code> et <code>GetNote</code> pour qu&rsquo;ils puissent utiliser leurs notes. Nous définissons d&rsquo;abord la structure d&rsquo;état du contrat <code>struct SecretNote</code>, avec une carte <code>notes</code> pour stocker une correspondance entre le compte et les notes. Dans les contrats Phala, un compte peut être représenté par un <code>AccountIdWrapper</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln">2</span><span class="w">    </span><span class="n">notes</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="n">AccountIdWrapper</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span><span class="ln">3</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><p>Dans la bibliothèque de collection std de Rust, il y a deux implémentations de map : <code>HashMap</code> et <code>BTreeMap</code>. Puisque notre <code>AccountIdWrapper</code> ne dérive pas <code>Hash</code> nécessaire à <code>HashMap</code>, nous utilisons <code>BTreeMap</code> pour stocker le mapping entre les comptes utilisateurs et leurs notes.</p>
-<p>Nous rappelons ici la différence entre les commandes et les requêtes. Dans SecretNote, <code>SetNote</code> change les états, c'est donc une commande, et <code>GetNote</code> est une requête. Pour chaque utilisateur, nous ne gardons que la dernière note. Donc dans <code>SetNote</code>, nous appelons la commande <code>insert</code> pour ajouter une note si aucune précédente n'existe ou directement écraser la note existante.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p>Nous rappelons ici la différence entre les commandes et les requêtes. Dans SecretNote, <code>SetNote</code> change les états, c&rsquo;est donc une commande, et <code>GetNote</code> est une requête. Pour chaque utilisateur, nous ne gardons que la dernière note. Donc dans <code>SetNote</code>, nous appelons la commande <code>insert</code> pour ajouter une note si aucune précédente n&rsquo;existe ou directement écraser la note existante.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Set the note for current user
 </span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">SetNote</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">        </span><span class="n">note</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
@@ -375,9 +377,9 @@
 </span><span class="ln">20</span><span class="w">        </span><span class="p">}</span><span class="w">
 </span><span class="ln">21</span><span class="w">    </span><span class="p">}</span><span class="w">
 </span><span class="ln">22</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Maintenant nous pouvons passer au gestionnaire <code>GetNote</code>. C'est un peu délicat car nous n'autorisons que le propriétaire de la note à accéder à sa note. En d'autres termes, nous devons nous assurer que l'utilisateur a signé la requête, et ensuite nous répondons avec sa note. Pour une requête signée, l'argument <code>origin</code> de la méthode <code>handle_query</code> contient l'identifiant du compte du demandeur.</p>
-<p>Nous implémentons <code>handle_query</code> comme indiqué ci-dessous. Elle vérifie d'abord si la requête est signée en contrôlant <code>origin</code>, puis renvoie la note stockée dans les états du contrat. Il retourne une réponse <code>NotAuthorized</code> si la requête n'est pas signée.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="sd">/// Queries are not supposed to write to the contract states.
+</span></code></pre></div><p>Maintenant nous pouvons passer au gestionnaire <code>GetNote</code>. C&rsquo;est un peu délicat car nous n&rsquo;autorisons que le propriétaire de la note à accéder à sa note. En d&rsquo;autres termes, nous devons nous assurer que l&rsquo;utilisateur a signé la requête, et ensuite nous répondons avec sa note. Pour une requête signée, l&rsquo;argument <code>origin</code> de la méthode <code>handle_query</code> contient l&rsquo;identifiant du compte du demandeur.</p>
+<p>Nous implémentons <code>handle_query</code> comme indiqué ci-dessous. Elle vérifie d&rsquo;abord si la requête est signée en contrôlant <code>origin</code>, puis renvoie la note stockée dans les états du contrat. Il retourne une réponse <code>NotAuthorized</code> si la requête n&rsquo;est pas signée.</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="sd">/// Queries are not supposed to write to the contract states.
 </span><span class="ln"> 2</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug, Clone)]</span><span class="w">
 </span><span class="ln"> 3</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// Read the note for current user
@@ -425,12 +427,12 @@
 </span><span class="ln">46</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id="frontend-1">Frontend</h3>
 <ol>
-<li>Définir l'interface utilisateur de la note</li>
+<li>Définir l&rsquo;interface utilisateur de la note</li>
 <li>Interface utilisateur pour les requêtes</li>
 <li>Erreur de manipulation</li>
 </ol>
 <h2 id="mettez-tout-ensemble">Mettez tout ensemble</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">  1</span><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Serialize</span><span class="p">,</span><span class="w"> </span><span class="n">Deserialize</span><span class="p">};</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">  1</span><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Serialize</span><span class="p">,</span><span class="w"> </span><span class="n">Deserialize</span><span class="p">};</span><span class="w">
 </span><span class="ln">  2</span><span class="w">
 </span><span class="ln">  3</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">contracts</span><span class="p">;</span><span class="w">
 </span><span class="ln">  4</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">types</span>::<span class="n">TxRef</span><span class="p">;</span><span class="w">
@@ -536,18 +538,18 @@
 </span><span class="ln">104</span><span class="w">    </span><span class="p">}</span><span class="w">
 </span><span class="ln">105</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="sommaire">Sommaire</h2>
-<p>Dans ce tutoriel, nous avons décrit le modèle de contrat <code>HelloWorld</code> et montré comment construire un contrat un peu plus avancé <code>SecretNote</code> qui exploite la confidentialité des contrats Phala. Maintenant, c'est à votre tour de construire quelque chose de nouveau !</p>
+<p>Dans ce tutoriel, nous avons décrit le modèle de contrat <code>HelloWorld</code> et montré comment construire un contrat un peu plus avancé <code>SecretNote</code> qui exploite la confidentialité des contrats Phala. Maintenant, c&rsquo;est à votre tour de construire quelque chose de nouveau !</p>
 <h3 id="soumettez-votre-travail">Soumettez votre travail</h3>
 <blockquote>
-<p>Ce hackathon s'est terminé le 13 novembre 2020</p>
+<p>Ce hackathon s&rsquo;est terminé le 13 novembre 2020</p>
 </blockquote>
-<p>Ce tutoriel fait partie du <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &quot;Hello World&quot; virtual hackathon challenge</a> à gitcoin.co. Afin de gagner la tâche, veuillez faire les choses suivantes :</p>
+<p>Ce tutoriel fait partie du <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &ldquo;Hello World&rdquo; virtual hackathon challenge</a> à gitcoin.co. Afin de gagner la tâche, veuillez faire les choses suivantes :</p>
 <ol>
-<li>Transférez <a href="https://github.com/Phala-Network/phala-blockchain/tree/helloworld">la blockchain centrale</a> et <a href="https://github.com/Phala-Network/apps-ng/tree/helloworld">l'interface Web</a> dans votre propre compte GitHub (branche helloworld).</li>
-<li>Développez votre propre contrat sur les modèles de la branche &quot;helloworld&quot; (il doit s'agir d'un contrat différent des soumissions existantes).</li>
-<li>Lancez votre pile de développement complète et faites des captures d'écran de vos dapps.</li>
+<li>Transférez <a href="https://github.com/Phala-Network/phala-blockchain/tree/helloworld">la blockchain centrale</a> et <a href="https://github.com/Phala-Network/apps-ng/tree/helloworld">l&rsquo;interface Web</a> dans votre propre compte GitHub (branche helloworld).</li>
+<li>Développez votre propre contrat sur les modèles de la branche &ldquo;helloworld&rdquo; (il doit s&rsquo;agir d&rsquo;un contrat différent des soumissions existantes).</li>
+<li>Lancez votre pile de développement complète et faites des captures d&rsquo;écran de vos dapps.</li>
 <li>Poussez votre travail vers vos dépôts bifurqués. Ils doivent être open source</li>
-<li>Faites un tweet avec le lien vers vos dépôts, les captures d'écran, et décrivez ce que vous construisez sur Twitter.</li>
+<li>Faites un tweet avec le lien vers vos dépôts, les captures d&rsquo;écran, et décrivez ce que vous construisez sur Twitter.</li>
 <li>Rejoignez notre <a href="https://discord.gg/zQKNGv4">serveur Discord</a> et soumettez le lien vers votre tweet.</li>
 </ol>
 
@@ -723,7 +725,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

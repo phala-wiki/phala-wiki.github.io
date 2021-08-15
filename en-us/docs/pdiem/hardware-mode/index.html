@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -10,23 +10,25 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Advanced: Hardware Mode | Phala Network Wiki</title><meta property="og:title" content="Advanced: Hardware Mode" />
-<meta property="og:description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+<meta property="og:description" content="By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" /><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" />
 <meta property="og:site_name" content="Phala Network Wiki" />
-
 <meta itemprop="name" content="Advanced: Hardware Mode">
-<meta itemprop="description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+<meta itemprop="description" content="By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.">
 
 <meta itemprop="wordCount" content="302">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Advanced: Hardware Mode"/>
-<meta name="twitter:description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+<meta name="twitter:description" content="By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first."/>
 
@@ -35,7 +37,7 @@ Intel SGX SDK comes with three modes:
 
 
 
-  <meta name="description" content="By default, the demo is built with SGX SDK software mode. It&#39;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
+  <meta name="description" content="By default, the demo is built with SGX SDK software mode. It&amp;rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.">
 
@@ -80,10 +82,10 @@ Intel SGX SDK comes with three modes:
 			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文站</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>French</span></a>
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
@@ -219,6 +221,28 @@ Intel SGX SDK comes with three modes:
       </section>
   </section>
   <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
   </section>
   <section class="section aside_inner">
@@ -317,16 +341,16 @@ Intel SGX SDK comes with three modes:
   <ul>
     <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
       <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &quot;the <code>wasm32-unknown-unknown</code> target may not be installed&quot;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &quot;(signal: 9, SIGKILL: kill)&quot; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &quot;consider giving <code>accuracy</code> a type&quot; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &quot;duplicate lang item&quot;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &quot;found unstable fingerprints for predicates_of...&quot;</a></li>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
       </ul>
     </li>
     <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
       <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: '@polkadot/dev/config/tsconfig' not found</a></li>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
       </ul>
     </li>
   </ul>
@@ -338,7 +362,7 @@ Intel SGX SDK comes with three modes:
 </aside>
 
   <main class="content">
-    <h1>Advanced: Hardware Mode</h1><p>By default, the demo is built with SGX SDK software mode. It's designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.</p>
+    <h1>Advanced: Hardware Mode</h1><p>By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.</p>
 
 <div class="tip">
   <p>Intel SGX SDK comes with three modes:</p>
@@ -358,7 +382,7 @@ Intel SGX SDK comes with three modes:
 </ul>
 <p><code>IAS</code> and <code>DCAP</code> are the two different SGX driver. Please choose the docker-compose file that matches your platform. Then, you can specify the config files when running any docker-compose command by <code>-f</code>.</p>
 <p>For example, run the following command to build the image for the IAS Driver:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
 </code></pre></div><p>There are also HW version of <code>phala-console.sh</code>, which should be used according to your platform:</p>
 <ul>
 <li><code>phala-console.hw.ias.sh</code></li>
@@ -366,7 +390,7 @@ Intel SGX SDK comes with three modes:
 </ul>
 
 <div class="tip">
-  <p>Some platforms support the both drivers, but the others only support one of them. You can always try one of them, and switch to another if it doesn't work. Make sure to uninstall the current driver before another installation because they conflict with each other.</p>
+  <p>Some platforms support the both drivers, but the others only support one of them. You can always try one of them, and switch to another if it doesn&rsquo;t work. Make sure to uninstall the current driver before another installation because they conflict with each other.</p>
 <p>The IAS driver creates a device at <code>/dev/isgx</code>, while the DCAP driver creates two devices under <code>/dev/sgx</code> directory. You can check which one is installed in your system by this trick.</p>
 
 </div>
@@ -536,7 +560,7 @@ Intel SGX SDK comes with three modes:
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>
