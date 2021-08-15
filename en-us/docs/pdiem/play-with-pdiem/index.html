@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -349,10 +349,10 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 <p>With the pdiem full stack running, we are going to send some Diem transactions to the pdiem deposit account, and check if the pdiem contract has received it.</p>
 <h2 id="create-diem-accounts">Create Diem accounts</h2>
 <p>Start the diem-cli from the same directory by:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
 </code></pre></div><p><img src="/images/docs/pdiem/diem-cli.png" alt=""></p>
 <p>Then run the following commands to prepare the accounts:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
 <span class="ln">2</span>diem% account create
 <span class="ln">3</span>diem% account create
 <span class="ln">4</span><span class="c1"># Mint some funds</span>
@@ -367,17 +367,17 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 <h2 id="simple-diem-to-pdiem-transfer">Simple diem-to-pdiem transfer</h2>
 <p>Simple transfer refers to the transfer between the admin address (<code>account 0</code>, hardcoded in the pdiem-m3 contract).</p>
 <p>To send Diem assets to pdiem, just transfer it to the admin address (<code>account 0</code>) in <code>diem-cli</code>. For example, we can send <code>10 XUS</code> to <code>account 0</code> like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
 </code></pre></div><p>And that's all!</p>
 <p>Behind the scene, <code>pdiem-relayer</code> picked up the deposit transaction, sent a regular Substrate extrinsic to the <code>pdiem</code> confidential contract on Phala to sync the transaction. After the validation of the incoming transaction and the proof, the <code>pdiem</code> contract will accept it. Usually it takes 30 seconds for the relayer to pick up the transaction, and relay to <code>pdiem</code> side.</p>
 <h3 id="balances-in-pdiem">Balances in pdiem</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><h3 id="verified-transactions">Verified transactions</h3>
 <p>All the transactiosn received by <code>pdiem</code> contract are validated against the latest Diem ledger state, which is protected by a PoS-like consensus. The validated transactions are stored inside the <code>pdiem</code> contract storage, and can be checked by anyone:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
 </code></pre></div><h2 id="prepare-subaccounts-for-two-way-transfer">Prepare subaccounts for two-way transfer</h2>
 <p>pdiem-m3 uses Diem's subaccount feature to create deposit accounts. Any user can create its Diem deposit subaccount by sending a <code>NewAccount</code> command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>The above command will send <code>Command::NewAccount</code> to the <code>pdiem</code> contract from Substrate account &quot;Bob&quot;. You can create as many accounts as you want. It takes 2-3 blocks to process the command.</p>
 
 <div class="tip">
@@ -385,25 +385,25 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 </div>
 
 <p>Then you can get a full list of the Diem accounts by a query:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/pdiem-balances.png" alt=""></p>
 <p>As shown in the screenshot, Bob just created its deposit Diem address <code>4DB6A10FCEB765C55ADC3751474AE8D1</code>.</p>
 <h2 id="deposit-diem--pdiem">Deposit (diem → pdiem)</h2>
 <p>Get your deposit address from the last step. And now you can deposit some <code>XUS</code> on the Diem side in diem-cli:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
 </code></pre></div>
 <div class="tip">
   The transfer command in <code>diem-cli</code> takes the source account and the destination account as the first two arguments. It accepts either two account references (e.g. 0 for <code>account 0</code> in the local wallet), or two hex-encoded addresses. In the example above, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> is <code>account 1</code> and <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> is Bob's the deposit subaccount.
 </div>
 
 <p>The corss-chain transfer takes around 4-6 blocks to complete. Check the balance by:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><blockquote>
 <p>In this example, Bob's Diem account will get <code>10 XUS</code>, which is <code>10000000</code> under the <code>free</code> field in the <code>pdiem-balances</code> outputs (6 decimals).</p>
 </blockquote>
 <h2 id="withdraw-pdiem--diem">Withdraw (pdiem → diem)</h2>
 <p>You can withdraw assets from <code>pdiem</code> back to diem by <code>pdiem-withdraw</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>In the command above the arguments are:</p>
 <ul>
 <li><code>4DB6A10FCEB765C55ADC3751474AE8D1</code>: The Diem address to withdraw</li>
@@ -418,7 +418,7 @@ Create Diem accounts Start the diem-cli from the same directory by:">
 </div>
 
 <p>You can check your <code>pdiem</code> balance at any point:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/withdraw-lock-confirmed.png" alt=""></p>
 <p>You can still see the withdrawal amount under the &quot;locked&quot; balances until transaction is confimed on Diem. The above screenshot has two sides. The left side shows the withdrawal funds was locked and pending confirmation, while the right side shows the locked funds were removed because the outgoing tx is confirmed. Finally the sequence under the deposit account was incremented to 1.</p>
 

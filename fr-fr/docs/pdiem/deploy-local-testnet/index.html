@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -268,25 +268,25 @@ Dans l&#39;environnement de développement, nous construisons le code de manièr
 <li>Un processeur puissant</li>
 </ol>
 <p>Assurez-vous que les commandes <code>docker</code> et <code>docker-compose</code> sont disponibles pour votre utilisateur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker --version
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker --version
 <span class="ln">2</span><span class="c1"># &gt; Docker version 20.10.5, build 55c4c88</span>
 <span class="ln">3</span>docker-compose --version
 <span class="ln">4</span><span class="c1"># &gt; docker-compose version 1.28.5, build c4eb3a1f</span>
 </code></pre></div><p>Pour démarrer l'environnement complet, clonez d'abord le dépôt phala-docker sur la branche <code>pdiem-m3</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone -b pdiem-m3 https://github.com/Phala-Network/phala-docker.git
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git clone -b pdiem-m3 https://github.com/Phala-Network/phala-docker.git
 </code></pre></div><p>Ouvrez le dépôt, construisez les images docker.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> phala-docker <span class="o">&amp;&amp;</span> docker-compose build
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> phala-docker <span class="o">&amp;&amp;</span> docker-compose build
 </code></pre></div>
 <div class="tip">
   La création des 5 projets distincts peut prendre jusqu'à 1 à 2 heures. Un processeur puissant peut le construire en 30 minutes environ.
 </div>
 
 <p>Pour <strong>démarrer</strong> l'environnement complet de pdiem :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose up
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose up
 </code></pre></div><p>Pour <strong>arrêter</strong> l'environnement complet de pdiem (et supprimer l'historique de la blockchain diem) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose down --volume
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose down --volume
 </code></pre></div><p>Pour vérifier l'état des services :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose ps
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose ps
 </code></pre></div>
 <div class="tip">
   <p>Astuces:</p>

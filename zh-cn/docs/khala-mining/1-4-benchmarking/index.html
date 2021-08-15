@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -271,19 +271,19 @@
 </div>
 
 <h3 id="如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>​
 <strong>重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update script
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala update script
 </code></pre></div><h3 id="heading"></h3>
 <h3 id="性能分数测试方法">性能分数测试方法：</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala score_test <span class="o">[</span>要使用的核心数量，核心数量根据CPU情况而定<span class="o">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala score_test <span class="o">[</span>要使用的核心数量，核心数量根据CPU情况而定<span class="o">]</span>
 <span class="ln">2</span>例如：sudo phala score-test X
 </code></pre></div><blockquote>
 <p>一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！</p>
 </blockquote>
 <p>跑分用的Docker不会自动结束关闭，结束跑分的方法：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala stop bench
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala stop bench
 </code></pre></div><p>在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。</p>
 <p>另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！</p>
 

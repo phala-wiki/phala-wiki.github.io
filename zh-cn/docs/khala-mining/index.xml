@@ -23,7 +23,7 @@
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/</guid>
       <description> Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：链接，或者可以用wget下载，命令如下：
+下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip，或者可以用wget下载，命令如下：
 1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
 1cd ~/solo-mining-scripts-para 2sudo chmod +x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
 1cd ~/solo-mining-scripts-para 2sudo chmod +x install.sh 3sudo ./install.sh cn </description>
@@ -127,7 +127,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/</guid>
       <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  控制台链接入口
 简介 控制台面向的用户主要是矿工及矿池主，囊括了对 Worker 及抵押池的链上操作及数据展示
-名词解释  WorkerPublicKey：Worker 在注册完成后获得的唯一 ID，以 0x 开头 pid：即抵押池 ID，抵押池的唯一 ID  操作指南 准备  有 PHA 的账户,作为抵押池所有者/Worker 操作者 Worker 的 WorkerPublicKey，并且该 Worker 已绑定上述账户  主流程   连接账户（创建、导入账户教程）
+名词解释  WorkerPublicKey：Worker 在注册完成后获得的唯一 ID，以 0x 开头 pid：即抵押池 ID，抵押池的唯一 ID  操作指南 准备  有 PHA 的账户,作为抵押池所有者/Worker 操作者 Worker 的 WorkerPublicKey，并且该 Worker 已绑定上述账户  主流程   连接账户（创建和导入账户教程）
   创建抵押池
  点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
   手续费
