@@ -104,7 +104,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  General Khala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:</description>
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  General Khala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:</description>
     </item>
     
     <item>
@@ -135,7 +135,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.</description>
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.</description>
     </item>
     
     <item>
@@ -144,7 +144,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.</description>
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.</description>
     </item>
     
     <item>
@@ -163,7 +163,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
 1sudo phala install If you have installed the images before, you can update them with:</description>
     </item>
     
@@ -173,7 +173,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-1 Testnet, which shares the same tokenomics parameters as the future Khala.</description>
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-1 Testnet, which shares the same tokenomics parameters as the future Khala.</description>
     </item>
     
     <item>
@@ -182,7 +182,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.</description>
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.</description>
     </item>
     
     <item>
@@ -191,7 +191,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</guid>
-      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&#39;s start mining!
+      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&#39;s start mining!
 1sudo phala start </description>
     </item>
     
@@ -201,7 +201,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
 1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.</description>
     </item>
     
@@ -211,7 +211,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  To upgrade your worker requires it to stop first.
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  To upgrade your worker requires it to stop first.
 1sudo phala stop The worker node can be updated in a clean way which removes all the saved data</description>
     </item>
     
@@ -221,7 +221,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</guid>
-      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
+      <description>Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
  The Console</description>
     </item>
     
@@ -231,7 +231,7 @@ Intel SGX SDK comes with three modes:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</guid>
-      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalites on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   To be updated.
+      <description> Para-1 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   To be updated.
  </description>
     </item>
     

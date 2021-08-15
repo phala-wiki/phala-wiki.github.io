@@ -23,7 +23,7 @@
 如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
 角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，">
 
-<meta itemprop="wordCount" content="281">
+<meta itemprop="wordCount" content="274">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 Phala挖矿抵押设计"/>
 <meta name="twitter:description" content="简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
@@ -214,7 +214,7 @@
 </nav>
         <h3 class="section_link"><a id="docs-23-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/">2.3 查看Worker状态</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#查看矿机状态">查看矿机状态</a>
+    <li>
       <ul>
         <li>
           <ul>
@@ -329,7 +329,7 @@
 <ul>
 <li>当计算节点worker（如 a,b,c）被创建后，worker需要先授权给某个operator地址 (如A) 去管理计算节点</li>
 <li>Owner （如Owner-A）创建了 StakePool （如pool-1）</li>
-<li>因为A既是<strong>pool-1</strong>的owner，又是worker {a,b,c} 的operator，因此worker {a,b} 与pool-1产生了绑定关系，因此worker {c} 与pool-2产生了绑定关系。pool-1中的已抵押PHA可以分配给worke{a,b}进行抵押操作，pool-2中的已抵押PHA可以分配给worke{c}进行抵押操作</li>
+<li>因为A既是<strong>pool-1</strong>的owner，又是worker {a,b,c} 的operator，因此worker {a,b} 与pool-1产生了绑定关系，因此worker {c} 与pool-2产生了绑定关系。pool-1中的已抵押PHA可以分配给worker{a,b}进行抵押操作，pool-2中的已抵押PHA可以分配给worker{c}进行抵押操作</li>
 <li>同理，B是pool-3的所有者，因此B管理的worker {d,e} 可以绑定在pool-3上</li>
 </ul>
 <p>不可成立的关系</p>
@@ -549,18 +549,18 @@
 <center>图 4.2 Withdraw when there is not enough Free PHA</center>
 <p>如图4.2，Staker-③在之前抵押了20k在pool-3，当他申请取消抵押10k PHA时，pool-3立刻将free状态的0.5k余额打给了Staker-③。剩余的9.5k抵押需要等待：</p>
 <ul>
-<li>如果有未成功提款资金，则Staker需要先等待一个 3 天的缓冲期，在此期间StakePool中如果加入了新的闲置资金或有worker停止挖矿，那此部份闲置资金立即解锁给Staker发起的退出交易，以此类推直到完成全部提款；</li>
-<li>如果 3 天过后仍未完成该退出申请，则该抵押池所有worker都会进入 7 天的冷却期，此过程不能被任何人中止，7 天过后该提款交易就可全部完成</li>
-<li>也就说任意Staker发起退出交易后，最多 10 天就可以成功退出抵押</li>
+<li>如果有未成功提款资金，则Staker需要先等待一个7天的缓冲期，在此期间StakePool中如果加入了新的闲置资金或有worker停止挖矿，那此部份闲置资金立即解锁给Staker发起的退出交易，以此类推直到完成全部提款；</li>
+<li>如果7天过后仍未完成该退出申请，则该抵押池所有worker都会进入7天的冷却期，此过程不能被任何人中止，7天过后该提款交易就可全部完成</li>
+<li>也就说任意Staker发起退出交易后，最多 14 天就可以成功退出抵押</li>
 </ul>
 <p><img src="/images/docs/tokenomic/withdraw-3.png" alt=""></p>
 <center>Figure 4.3 Withdraw after more staking</center>
 <ul>
 <li>如图4.3，在Staker-②给pool-3又抵押了5k PHA之后，因为pool-3的free状态资金增加了5k，因此Staker-③立即获得了另外5k退款</li>
-<li>在等待3天但4.5k资金仍然没有成功补充进pool-3后，系统被迫终止了pool-3的所有挖矿行为，并且在7天解冻期后自动退款4.5k至Staker-③</li>
+<li>在等待7天但4.5k资金仍然没有成功补充进pool-3后，系统被迫终止了pool-3的所有挖矿行为，并且在7天解冻期后自动退款4.5k至Staker-③</li>
 </ul>
 <p>综上，实际worker的控制者——StakePool Owner发起中止挖矿或取消全部抵押时，将触发全部抵押取消并有7天的解冻期。解冻期后该StakePool全部抵押金额将会被退回；</p>
-<p>当Staker发起取消抵押时，系统将判断该pool是否有free状态资金，如果有，则自动退回给Staker；如果没有闲置资金则该Pool的Owner有3天时间去补充Staker需要退回的资金，如果补充资金成功则该Pool不必强行另worker下线；如果没有成功补充资金，则系统将被迫中止该pool的全部挖矿行为以便给Staker退款（7天后成功）。</p>
+<p>当Staker发起取消抵押时，系统将判断该pool是否有free状态资金，如果有，则自动退回给Staker；如果没有闲置资金则该Pool的Owner有7天时间去补充Staker需要退回的资金，如果补充资金成功则该Pool不必强行另worker下线；如果没有成功补充资金，则系统将被迫中止该pool的全部挖矿行为以便给Staker退款（7天后成功）。</p>
 
     <div class="pager pager_lean">
   <div class="pager_item prev">
