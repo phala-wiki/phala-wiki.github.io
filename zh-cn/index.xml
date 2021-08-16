@@ -34,7 +34,7 @@
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/</guid>
       <description> Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip，或者可以用wget下载，命令如下：
+下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
 1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
 1cd ~/solo-mining-scripts-para 2sudo chmod +x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
 1cd ~/solo-mining-scripts-para 2sudo chmod +x install.sh 3sudo ./install.sh cn </description>
@@ -61,7 +61,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/</guid>
       <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
-1sudo phala update script  性能分数测试方法： 1sudo phala score_test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
+1sudo phala update script 性能分数测试方法： 1sudo phala score-test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
  跑分用的Docker不会自动结束关闭，结束跑分的方法：
 1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
 另外，受各种环境因素影响，性能评分有可能产生一定程度的波动。此评分为预览版本，预备主网上线有变化的可能！</description>
