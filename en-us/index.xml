@@ -56,7 +56,7 @@ The pDiem bridge controls a set of sovereign accounts (see XCM Format - Definiti
       
       <guid>https://wiki.phala.network/en-us/docs/prb/running-directly/</guid>
       <description>Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
-Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell.</description>
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the environment variables of current shell.</description>
     </item>
     
     <item>

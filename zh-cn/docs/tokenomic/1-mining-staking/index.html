@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,19 +14,17 @@
 如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
 角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network 百科" />
+
 <meta itemprop="name" content="1 Phala挖矿抵押设计">
 <meta itemprop="description" content="简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
 如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
 角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，">
 
 <meta itemprop="wordCount" content="274">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 Phala挖矿抵押设计"/>
 <meta name="twitter:description" content="简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
 如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
@@ -732,7 +730,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

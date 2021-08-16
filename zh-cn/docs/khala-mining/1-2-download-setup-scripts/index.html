@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -16,8 +16,10 @@
 1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
 1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network 百科" />
+
 <meta itemprop="name" content="1.2 下载并安装Phala脚本">
 <meta itemprop="description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
 下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip，或者可以用wget下载，命令如下：
@@ -26,11 +28,7 @@
 1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn ">
 
 <meta itemprop="wordCount" content="54">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.2 下载并安装Phala脚本"/>
 <meta name="twitter:description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
 下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip，或者可以用wget下载，命令如下：
@@ -274,7 +272,7 @@
 
 <p><strong>请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。</strong></p>
 <p>下载Phala工具包地址：<a href="https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip">https://github.com/Phala-Network/solo-mining-scripts/archive/poc5.zip</a>，或者可以用wget下载，命令如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~
 <span class="ln">2</span>sudo apt-get install wget
 <span class="ln">3</span>sudo apt-get install unzip
 <span class="ln">4</span>wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip
@@ -282,13 +280,13 @@
 <span class="ln">6</span><span class="nb">cd</span> solo-mining-scripts-para
 </code></pre></div><h2 id="使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</h2>
 <p>在phala脚本目录打开终端，输入以下指令后电脑会重启：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
 <span class="ln">2</span>sudo chmod +x sgx_enable
 <span class="ln">3</span>sudo ./sgx_enable
 <span class="ln">4</span>sudo reboot
 </code></pre></div><h2 id="安装phala工具">安装Phala工具</h2>
 <p>在phala脚本目录打开终端，输入以下指令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
 <span class="ln">2</span>sudo chmod +x install.sh
 <span class="ln">3</span>sudo ./install.sh cn
 </code></pre></div>
@@ -464,7 +462,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

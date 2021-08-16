@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,11 +12,10 @@
 <title>Runtime Bridge | Phala Network Wiki</title><meta property="og:title" content="Runtime Bridge" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/prb/" />
-<meta property="og:site_name" content="Phala Network Wiki" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/prb/" /><meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Runtime Bridge">
-<meta itemprop="description" content="">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Runtime Bridge"/>
 <meta name="twitter:description" content=""/>
 
@@ -346,8 +345,8 @@
 </aside>
 
   <main class="content">
-    <h1>Runtime Bridge</h1><p>In the solo mining scenario, <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/standalone/pherry">pherry</a> plays the part of fetching blocks from the network and send them to the TEE runtime. It works gracefully but enconters some prodctivity and performance issues in the pool mining scenario. Thus, Phala <a href="https://github.com/Phala-Network/runtime-bridge">Runtime Bridge</a> a.k.a. <code>prb</code> is introduced to take advantage of the mining pool machanism introduced in Tokenomic v0.9 and reduces the complexity of using standalone pherry.</p>
-<p>The <code>prb</code> is designed to be deployed in a Cloud Native environments but also runs via traditional Linux shell, it provides a RPC interface to manage workers' lifecycle through Redis. It is intended to replace pherry(ye olde <code>phost</code>) in both solo and pool mining scenarios.</p>
+    <h1>Runtime Bridge</h1><p>In the solo mining scenario, <a href="https://github.com/Phala-Network/phala-blockchain/tree/master/standalone/pherry">pherry</a> plays the part of fetching blocks from the network and send them to the TEE runtime. It works gracefully but enconters some productivity and performance issues in the pool mining scenario. Thus, Phala <a href="https://github.com/Phala-Network/runtime-bridge">Runtime Bridge</a> a.k.a. <code>prb</code> is introduced to take advantage of the mining pool machanism introduced in Tokenomic v0.9 and reduces the complexity of using standalone pherry.</p>
+<p>The <code>prb</code> is designed to be deployed in a Cloud Native environments but also runs via traditional Linux shell, it provides a RPC interface to manage workers' lifecycle through Redis. It is intended to replace pherry (previous <code>phost</code>) in both solo and pool mining scenarios.</p>
 <h2 id="requirements">Requirements</h2>
 <p>For that <code>prb</code> uses Node.js since only the JavaScript client of Substrate is officially well maintained, it creates serval processes when running because of Node.js' single-thread model. In this case, a CPU with at least 8 cores and strong single-core performance is recommended.</p>
 <p>Both RocksDB and LevelDB are available for the <code>prb</code> to use as the storage backend, it requires sufficient random I/O performance to support the large number of concurrent workers. Thus, a PCI-E 4.0 x4 SSD with big cache would be preferred. FYI, the space usage for each block in average:</p>
@@ -540,7 +539,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

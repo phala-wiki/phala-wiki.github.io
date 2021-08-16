@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -11,23 +11,21 @@
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Running Directly in Linux | Phala Network Wiki</title><meta property="og:title" content="Running Directly in Linux" />
 <meta property="og:description" content="Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
-Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell." />
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the environment variables of current shell." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/prb/running-directly/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/prb/running-directly/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Running Directly in Linux">
 <meta itemprop="description" content="Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
-Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell.">
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the environment variables of current shell.">
 
 <meta itemprop="wordCount" content="135">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running Directly in Linux"/>
 <meta name="twitter:description" content="Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
-Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell."/>
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the environment variables of current shell."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
@@ -35,7 +33,7 @@ Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependen
 
 
   <meta name="description" content="Running prb directly in a Linux shell is not recommended since using Docker is more convenient in both development and production.
-Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the envrionment variables of current shell.">
+Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependencies and generate Protobuf interfaces 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS Start Services To start any of the services, run pnpm start_module, all parameters are read from the environment variables of current shell.">
 
 
 
@@ -367,14 +365,14 @@ Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependen
 <li>pnpm</li>
 </ul>
 <h2 id="set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git submodule init
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git submodule init
 <span class="ln">2</span>git submodule update
 <span class="ln">3</span>pnpm install
 <span class="ln">4</span>pnpm proto:build <span class="c1"># use `pnpm proto:darwin:build` in macOS</span>
 <span class="ln">5</span>pnpm proto:build_prpc <span class="c1"># use `pnpm proto:darwin:build_prpc` in macOS</span>
 </code></pre></div><h2 id="start-services">Start Services</h2>
-<p>To start any of the services, run <code>pnpm start_module</code>, all parameters are read from the envrionment variables of current shell.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">PHALA_MODULE</span><span class="o">=</span>fetch <span class="c1"># module to start</span>
+<p>To start any of the services, run <code>pnpm start_module</code>, all parameters are read from the environment variables of current shell.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">PHALA_MODULE</span><span class="o">=</span>fetch <span class="c1"># module to start</span>
 <span class="ln"> 2</span><span class="nv">NODE_ENV</span><span class="o">=</span>development
 <span class="ln"> 3</span><span class="nv">PHALA_DB_HOST</span><span class="o">=</span>io <span class="c1"># hostname/ip to io service</span>
 <span class="ln"> 4</span><span class="nv">PHALA_DB_PORT_BASE</span><span class="o">=</span><span class="m">9000</span>
@@ -551,7 +549,7 @@ Requirements  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  Set up dependen
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>
