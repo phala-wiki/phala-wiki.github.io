@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>Understand Phala Tokenomics | Phala Network Wiki</title><meta property="og:title" content="Understand Phala Tokenomics" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/" /><meta property="og:site_name" content="Phala Network Wiki" />
-
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/tokenomic/" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 <meta itemprop="name" content="Understand Phala Tokenomics">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Understand Phala Tokenomics"/>
 <meta name="twitter:description" content=""/>
 
@@ -200,7 +201,16 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
+      <ul>
+        <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
+        <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -549,7 +559,7 @@
 <li>$\rho^m$ is the unconditional $V$ increment factor for miner</li>
 <li>$c(s_t)$ is the operational cost to run the miner</li>
 <li>$\gamma(V_t)h(V_t)$ represents a factor to compesate for accidental/unintentional slashing (ignored in simulated charts)</li>
-<li>$k_p = \min(\frac{P_t}{P}, 120%)$, where $P_t$ is the instant performance score, and $P$ is the initial score</li>
+<li>$k_p = \min(\frac{P_t}{P}, 120\%)$, where $P_t$ is the instant performance score, and $P$ is the initial score</li>
 </ul>
 <p>Proposed parameters:</p>
 <ul>
@@ -557,9 +567,15 @@
 <li>$\rho^m_{\text{Phala}} = 1.00020$ (hourly)</li>
 </ul>
 <h3 id="payout-event">Payout event</h3>
-<p>In order to stay within the subsidy budget, at every block the budget is distributed proportionally based on the current <em><strong>Miner Shares</strong></em>:</p>
-<p>$$w(V_t) = B \frac{\text{share}}{\Sigma \text{share}},$$</p>
-<p>where $B$ is the current network subsidy budget for the given payout period. Whenever $w(V_t)$ is paid to a miner, his $V$ will be updated accordingly:</p>
+<p>In order to stay within the subsidy budget, at every block the budget is distributed proportionally based on the current <em><strong>Miner Shares</strong></em>. However, the payout is also capped to ensure the payout doesn&rsquo;t cause $V$ to drop lower than it in the last payout event:</p>
+<p>$$w(V_t) = \min(B \frac{\text{share}}{\Sigma \text{share}}, V_t - V_\text{last}),$$</p>
+<p>where $B$ is the current network subsidy budget for the given payout period, and $V_\text{last}$ is the value promised at the last payout event, or $V^e$ if this is the first payout.</p>
+
+<div class="tip">
+  Capping the payout is necessary to make sure miners are well incentives to always accumulate credits in the network. Otherwise if V decreases over the time, miners are incentivezed to constantly reset their mining session.
+</div>
+
+<p>Whenever $w(V_t)$ is paid to a miner, his $V$ will be updated accordingly:</p>
 <p>$$\Delta V = -w(V_t).$$</p>
 <p>Share represents how much the miner is paid out from $V$. We expect it will approximate the share baseline, but with minor adjustment to reflect the property of the worker:</p>
 <p>$$\text{share}_{\text{Baseline}} = V_t.$$</p>
@@ -836,7 +852,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>

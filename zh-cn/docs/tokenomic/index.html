@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -12,10 +12,11 @@
 <title>了解TEE挖矿经济模型（提案） | Phala Network 百科</title><meta property="og:title" content="了解TEE挖矿经济模型（提案）" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/tokenomic/" /><meta property="og:site_name" content="Phala Network 百科" />
-
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/tokenomic/" />
+<meta property="og:site_name" content="Phala Network 百科" />
 <meta itemprop="name" content="了解TEE挖矿经济模型（提案）">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="了解TEE挖矿经济模型（提案）"/>
 <meta name="twitter:description" content=""/>
 
@@ -230,7 +231,16 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-3-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">3 FAQ</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-3-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">3 FAQ</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-增加信任等级">I. 增加信任等级</a>
+      <ul>
+        <li><a href="#遇到提示-configuration_needed-或-configuration_and_sw_hardening_needed">遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
+        <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -443,7 +453,7 @@
 <li>$\rho^m$ 是机器 $V$ 值的无条件增量系数</li>
 <li>$c(s_t)$ 是估算的运行机器的运维成本，如电费、网络费用、管理费用等</li>
 <li>$\gamma(V_t)h(V_t)$ 代表对诚实矿工意外惩罚的补偿因子（在模拟中被忽略）</li>
-<li>$k_p = \min(\frac{P_t}{P}, 120%)$，其中 $P_t$ 为性能测试的瞬时值， $P$ 为初始性能分数</li>
+<li>$k_p = \min(\frac{P_t}{P}, 120\%)$，其中 $P_t$ 为性能测试的瞬时值， $P$ 为初始性能分数</li>
 </ul>
 <p>模拟实验结果建议:</p>
 <ul>
@@ -451,9 +461,15 @@
 <li>$\rho^m_{\text{Phala}} = 1.00020$ (每小时)</li>
 </ul>
 <h3 id="支付事件">支付事件</h3>
-<p>为了满足补贴预算要求，每个区块会根据当前 <em><strong>矿工份额</strong></em> 按比例分配预算:</p>
-<p>$$w(V_t) = B \frac{\text{share}}{\Sigma \text{share}}$$</p>
-<p>$B$ 是单位时间内的当前网络补贴预算。每当 $w(V_t)$ 支付给矿工时，他的 $V$ 将相应更新:</p>
+<p>为了满足补贴预算要求，每个区块会根据当前 <em><strong>矿工份额</strong></em> 按比例分配预算。与此同时，支付金额也受到 $V$ 增量的限制，以确保它不会随着支付而比上一次支付时更低：</p>
+<p>$$w(V_t) = \min(B \frac{\text{share}}{\Sigma \text{share}}, V_t - V_\text{last})$$</p>
+<p>其中，$B$ 是单位时间内的当前网络补贴预算，而 $V_\text{last}$ 是上一次支付事件时的 $V$ 值，或者当此次为第一次支付时，取初始 $V^e$。</p>
+
+<div class="tip">
+  当支付额较高时，为了确保确保经济模型激励合理，鼓励矿工在网络中积累信用，它的上限必须被控制在合理范围。如果诚实矿工的V随着挖矿反而下降，经济模型就会鼓励矿工反复开关机，而干扰网络的运转。
+</div>
+
+<p>每当 $w(V_t)$ 支付给矿工时，他的 $V$ 将相应更新:</p>
 <p>$$\Delta V = -w(V_t)$$</p>
 <p>Share（份额）代表我们将允许矿工从 $V$ 中提取多少。实际值应当在基准值上微调:</p>
 <p>$$\text{share}_{\text{Baseline}} = V_t.$$</p>
@@ -730,7 +746,7 @@
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
 
 </body>
 </html>
