@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runtime Bridge on Phala Network 百科</title>
+    <link>https://wiki.phala.network/zh-cn/docs/prb/</link>
+    <description>Recent content in Runtime Bridge on Phala Network 百科</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/zh-cn/docs/prb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于Docker Compose的部署示例</title>
+      <link>https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/</guid>
+      <description>每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
+1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
+ 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
+ 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
+  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
+ 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
+在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
+RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
+fetch服务 运行docker-compose up -d fetch启动fetch服务。
+此服务将至少占用3个CPU核心:
+ 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
+trade服务 运行docker-compose up -d trade启动trade服务。</description>
+    </item>
+    
+    <item>
+      <title>在Linux中直接部署</title>
+      <link>https://wiki.phala.network/zh-cn/docs/prb/running-directly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/prb/running-directly/</guid>
+      <description>由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署prb。
+系统要求  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  安装依赖并生成Protobuf接口代码 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS 启动服务 使用pnpm start_module来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。
+1PHALA_MODULE=fetch # module to start 2NODE_ENV=development 3PHALA_DB_HOST=io # hostname/ip to io service 4PHALA_DB_PORT_BASE=9000 5PHALA_LOGGER_LEVEL=debug 6PHALA_PARENT_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parent chain substrate websocket endpoint 7PHALA_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parachain substrate websocket endpoint 8PHALA_REDIS_ENDPOINT=redis://127.</description>
+    </item>
+    
+  </channel>
+</rss>

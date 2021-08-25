@@ -9,45 +9,73 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>1.2 下载并安装Phala脚本 | Phala Network 百科</title><meta property="og:title" content="1.2 下载并安装Phala脚本" />
-<meta property="og:description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
-1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn " />
+<title>基于Docker Compose的部署示例 | Phala Network 百科</title><meta property="og:title" content="基于Docker Compose的部署示例" />
+<meta property="og:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
+1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
+ 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
+ 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
+  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
+ 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
+在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
+RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
+fetch服务 运行docker-compose up -d fetch启动fetch服务。
+此服务将至少占用3个CPU核心:
+ 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
+trade服务 运行docker-compose up -d trade启动trade服务。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/" />
 <meta property="og:site_name" content="Phala Network 百科" />
-<meta itemprop="name" content="1.2 下载并安装Phala脚本">
-<meta itemprop="description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
-1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn ">
+<meta itemprop="name" content="基于Docker Compose的部署示例">
+<meta itemprop="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
+1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
+ 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
+ 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
+  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
+ 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
+在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
+RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
+fetch服务 运行docker-compose up -d fetch启动fetch服务。
+此服务将至少占用3个CPU核心:
+ 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
+trade服务 运行docker-compose up -d trade启动trade服务。">
 
-<meta itemprop="wordCount" content="54">
+<meta itemprop="wordCount" content="68">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.2 下载并安装Phala脚本"/>
-<meta name="twitter:description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
-1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn "/>
+<meta name="twitter:title" content="基于Docker Compose的部署示例"/>
+<meta name="twitter:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
+1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
+ 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
+ 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
+  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
+ 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
+在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
+RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
+fetch服务 运行docker-compose up -d fetch启动fetch服务。
+此服务将至少占用3个CPU核心:
+ 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
+trade服务 运行docker-compose up -d trade启动trade服务。"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content=" Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
-下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
-1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
-1cd ~/solo-mining-scripts-para 2sudo chmod &#43;x install.sh 3sudo ./install.sh cn ">
+  <meta name="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
+1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
+ 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
+ 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
+  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
+ 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
+在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
+RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
+fetch服务 运行docker-compose up -d fetch启动fetch服务。
+此服务将至少占用3个CPU核心:
+ 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
+trade服务 运行docker-compose up -d trade启动trade服务。">
 
 
 
@@ -170,7 +198,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a></li>
     <li><a href="#安装phala工具">安装Phala工具</a></li>
@@ -270,7 +298,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/prb/" class="group">Runtime Bridge</a></h2>
       <section class="subsection" id="docs-runtime-bridge">
-        <h3 class="section_link"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#系统要求">系统要求</a></li>
     <li><a href="#环境准备">环境准备</a></li>
@@ -297,39 +325,66 @@
 </aside>
 
   <main class="content">
-    <h1>1.2 下载并安装Phala脚本</h1>
-<div class="tip tip_warning">
-  Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。
-</div>
+    <h1>基于Docker Compose的部署示例</h1><p>每当prb在Github Release上发布新版本时，<a href="https://hub.docker.com/r/phalanetwork/prb">Docker Hub</a>会同步更新其容器镜像，您可以通过以下命令获取其最新版本:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker pull phalanetwork/prb
+</code></pre></div><p>您可以通过使用<code>prb</code>的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署<code>prb</code>的一个简单示例。</p>
+<blockquote>
+<p><strong>注意:</strong> 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。</p>
+</blockquote>
+<h2 id="系统要求">系统要求</h2>
+<ul>
+<li>Ubuntu LTS 20.04</li>
+<li>Docker 20.10或更新</li>
+<li>Docker Compose 1.29 或更新</li>
+</ul>
+<blockquote>
+<p>Ubuntu默认APT源中的Docker版本太旧，请您根据<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/ </a>与<a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>安装Docker和Docker Compose的最新版本。</p>
+</blockquote>
+<blockquote>
+<p>在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。</p>
+</blockquote>
+<h2 id="环境准备">环境准备</h2>
+<ol>
+<li>创建一个新的文件夹，然后用<a href="https://github.com/Phala-Network/runtime-bridge/blob/master/docker/testing/bridge/docker-compose.example.yml">这里</a>的样例创建和编辑docker-compose.yml；</li>
+<li>运行<code>docker-compose pull</code>拉取最新镜像；</li>
+<li>在Worker机上部署 <code>pruntime</code>；</li>
+<li>在区块链上建立Stakepool。</li>
+</ol>
+<h2 id="基础服务">基础服务</h2>
+<p>运行<code>docker-compose up -d redis io</code>启动基础服务。</p>
+<p>在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。</p>
+<p>RocksDB/LevelDB数据将存放于环境变量中<code>PHALA_DB_PREFIX</code>所指定的目录中。其中，<code>0</code>目录将用于区块数据存储。<code>1</code>目录用于保存Pool和Worker数据（包括私钥，请务必备份）。</p>
+<h2 id="fetch服务"><code>fetch</code>服务</h2>
+<p>运行<code>docker-compose up -d fetch</code>启动<code>fetch</code>服务。</p>
+<p>此服务将至少占用3个CPU核心:</p>
+<ol>
+<li>从中继链中获取包含justification的区块header；</li>
+<li>从平行链中获取区块header和storage changes；</li>
+<li>将区块数据编码为<code>pruntime</code>所接受的格式；</li>
+<li>组织并合并上述数据以实现快速同步。</li>
+</ol>
+<p>这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。<code>fetch</code>服务可以根据实际情况停止和启动。</p>
+<h2 id="trade服务"><code>trade</code>服务</h2>
+<p>运行<code>docker-compose up -d trade</code>启动<code>trade</code>服务。</p>
+<p>其仅需要需要1个CPU核心即可将消息队列中的消息进行签名并发送至区块链上。其签名所需的密钥将保存在内存中，请保证运行环境的数据安全。</p>
+<p>每次更改pool的账户信息时，<code>trade</code>须重启才能生效。</p>
+<h2 id="lifecycle服务"><code>lifecycle</code>服务</h2>
+<p>运行 <code>docker-compose up -d lifecycle</code>启动<code>lifecycle</code>服务。</p>
+<p>其向TEE计算节点同步消息队列和区块数据并管理TEE计算节点的生命周期与状态。使用<a href="https://github.com/Phala-Network/runtime-bridge-monitor">monitor</a>来添加、编辑、删除或检查TEE计算节点。</p>
+<p>每次更改Worker（TEE计算节点）信息时，<code>lifecycle</code>须重启才能生效。</p>
 
-<p><strong>请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。</strong></p>
-<p>下载Phala工具包地址：<a href="https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip">https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip</a>，或者可以用wget下载，命令如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~
-<span class="ln">2</span>sudo apt-get install wget
-<span class="ln">3</span>sudo apt-get install unzip
-<span class="ln">4</span>wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip
-<span class="ln">5</span>unzip para.zip
-<span class="ln">6</span><span class="nb">cd</span> solo-mining-scripts-para
-</code></pre></div><h2 id="使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</h2>
-<p>在phala脚本目录打开终端，输入以下指令后电脑会重启：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
-<span class="ln">2</span>sudo chmod +x sgx_enable
-<span class="ln">3</span>sudo ./sgx_enable
-<span class="ln">4</span>sudo reboot
-</code></pre></div><h2 id="安装phala工具">安装Phala工具</h2>
-<p>在phala脚本目录打开终端，输入以下指令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-para
-<span class="ln">2</span>sudo chmod +x install.sh
-<span class="ln">3</span>sudo ./install.sh cn
-</code></pre></div>
-    <div class="pager">
+    <div class="pager pager_lean">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/" class="pager_link button" title="1.1 检查你的硬件、BIOS和系统">
+      
+        
+          <a href="https://wiki.phala.network/zh-cn/docs/prb/" class="pager_link button" title="Runtime Bridge">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">1.1 检查你的硬件、BIOS和系统</span>
+  <span class="pager_label">Runtime Bridge</span>
 </a>
+        
+      
     
   </div>
 
@@ -338,8 +393,8 @@
         
   
     <div class="pager_item next">
-      <a href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/" class="pager_link button" title="1.3 SGX测试和信任分级">
-  <span class="pager_label">1.3 SGX测试和信任分级</span>
+      <a href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/" class="pager_link button" title="在Linux中直接部署">
+  <span class="pager_label">在Linux中直接部署</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>

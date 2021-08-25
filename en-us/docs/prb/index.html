@@ -368,9 +368,9 @@
 <h2 id="services">Services</h2>
 <p>The <code>prb</code> provides the following services:</p>
 <ul>
-<li><code>io</code>: a simple server to provide internal RocksDB/LevelDB I/O ability. while RocksDB/LevelDB is thread-safe，it can only keep one instance running at the same time.</li>
+<li><code>io</code>: a simple server to provide internal RocksDB/LevelDB I/O ability. while RocksDB/LevelDB is thread-safe, it can only keep one instance running at the same time.</li>
 <li><code>fetch</code>: it fetches block data the blockchains then processes them for synchronization.</li>
-<li><code>trade</code>: it makes transactions(extrinsics) to the blockchain, it&rsquo;s design to work as a cluster, but not tested yet in this scenario.</li>
+<li><code>trade</code>: it makes transactions(extrinsics) to the blockchain.</li>
 <li><code>lifecycle</code>: it handles the lifecycle and status of the workers, synchronize message queues and block data between the TEE and the blockchain.</li>
 </ul>
 <h2 id="redis-rpc-and-the-monitor">Redis, RPC and the monitor</h2>

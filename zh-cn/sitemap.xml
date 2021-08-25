@@ -36,6 +36,20 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/"
+                />
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/khala-user/</loc>
     <xhtml:link
                 rel="alternate"
@@ -50,6 +64,20 @@
   </url>
   
   <url>
+    <loc>https://wiki.phala.network/zh-cn/docs/prb/running-directly/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/prb/running-directly/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/"
+                />
+  </url>
+  
+  <url>
     <loc>https://wiki.phala.network/zh-cn/docs/khala-mining/</loc>
     <xhtml:link
                 rel="alternate"
@@ -60,6 +88,20 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/khala-mining/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wiki.phala.network/zh-cn/docs/prb/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/prb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/prb/"
                 />
   </url>
   
