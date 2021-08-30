@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Governance on Phala Network Wiki</title>
+    <link>https://wiki.phala.network/en-us/docs/governance/</link>
+    <description>Recent content in Governance on Phala Network Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/governance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Participate in Democracy</title>
+      <link>https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/</guid>
+      <description>Participate in Democracy The public referenda chamber is one of the three bodies of on-chain governance as it&amp;rsquo;s instantiated in Phala and Khala. The other two bodies are the council and the technical committee.
+Public referenda can be proposed and voted on by any token holder in the system as long as they provide a bond. After a proposal is made, others can agree with it by seconding it and putting up tokens equal to the original bond.</description>
+    </item>
+    
+    <item>
+      <title>2 Join the Council</title>
+      <link>https://wiki.phala.network/en-us/docs/governance/2-join-the-council/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/governance/2-join-the-council/</guid>
+      <description>The council is an elected body of on-chain accounts that are intended to represent the passive stakeholders of Phala and/or Khala. The council has two major tasks in governance: proposing referenda and vetoing dangerous or malicious referenda. For more information on the council, see the governance page. This guide will walk you through entering your candidacy to the council.
+Submit Candidacy Submitting your candidacy for the council requires a small bond of PHA / K-PHA.</description>
+    </item>
+    
+    <item>
+      <title>3 Voting for Councillors</title>
+      <link>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</guid>
+      <description>The council is an elected body of on-chain accounts that are intended to represent the passive stakeholders of Phala and/or Khala. The council has two major tasks in governance: proposing referenda and vetoing dangerous or malicious referenda. For more information on the council, see the Governance page. This guide will walk you through voting for councillors in the elections.
+Voting for Councillors Voting for councillors requires you to lock 5 PHA on Phala or 5 K-PHA on Khala for the duration of your vote.</description>
+    </item>
+    
+  </channel>
+</rss>

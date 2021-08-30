@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.76.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -14,19 +14,17 @@
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/" /><meta property="article:section" content="docs" />
+
 <meta property="og:site_name" content="Phala Network Wiki" />
+
 <meta itemprop="name" content="Advanced: Hardware Mode">
 <meta itemprop="description" content="By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
  Software: it runs in the simulation environment, and offers no protection to the code or data Hardware Dev: it runs in the real hardware environment, but allows debuggers to attach to it and thus no protection as well Hardware Prod: it runs in the real hardware environment and disallows debugger to attach, but has to be signed with production certificates  To run SGX programs in the hardware mode, you need to install the SGX driver first.">
 
 <meta itemprop="wordCount" content="302">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Advanced: Hardware Mode"/>
 <meta name="twitter:description" content="By default, the demo is built with SGX SDK software mode. It&rsquo;s designed for development environment. However, to protect the data and logic inside the Enclave, it must run in hardware mode.
 Intel SGX SDK comes with three modes:
@@ -137,6 +135,50 @@ Intel SGX SDK comes with three modes:
     <li><a href="#assignment-of-stake-from-pools-to-workers">Assignment of Stake from Pools to Workers</a></li>
     <li><a href="#reward-settlement-flow">Reward Settlement Flow</a></li>
     <li><a href="#pool-exit-stake-settlements">Pool Exit Stake Settlements</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/governance/" class="group">Governance</a></h2>
+      <section class="subsection" id="docs-governance">
+        <h3 class="section_link"><a id="docs-1-participate-in-democracy" href="https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/">1 Participate in Democracy</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#participate-in-democracy">Participate in Democracy</a>
+      <ul>
+        <li><a href="#important-parameters">Important Parameters</a></li>
+        <li><a href="#proposing-an-action">Proposing an Action</a></li>
+        <li><a href="#submitting-a-preimage">Submitting a Preimage</a></li>
+        <li><a href="#seconding-a-proposal">Seconding a Proposal</a></li>
+        <li><a href="#voting-on-a-proposal">Voting on a Proposal</a></li>
+        <li><a href="#unlocking-locked-tokens">Unlocking Locked Tokens</a></li>
+        <li><a href="#delegate-a-vote">Delegate a Vote</a></li>
+        <li><a href="#undelegate-a-vote">Undelegate a Vote</a></li>
+        <li><a href="#voting-with-a-governance-proxy">Voting with a Governance Proxy</a></li>
+        <li><a href="#interpreting-on-chain-voting-data">Interpreting On-Chain Voting Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-join-the-council" href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/">2 Join the Council</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#submit-candidacy">Submit Candidacy</a></li>
+        <li><a href="#voting-on-candidates">Voting on Candidates</a></li>
+        <li><a href="#winning">Winning</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-voting-for-councillors" href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/">3 Voting for Councillors</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#voting-for-councillors">Voting for Councillors</a></li>
+        <li><a href="#removing-your-vote">Removing your Vote</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </section>
@@ -569,7 +611,7 @@ Intel SGX SDK comes with three modes:
   </symbol>
 </svg>
 
-<script src="https://wiki.phala.network/js/bundle.min.dbb0c64e45980f578a96e379ea64892a62ac354066002d337e8070e2ac0dcd62b218523bbe8af1f9eb6e9362a55e119b7dce5e3cf2a9f7274906caf57f936cc7.js"></script>
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
 
 </body>
 </html>

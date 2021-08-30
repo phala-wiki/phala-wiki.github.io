@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
+<link rel="manifest" href='https://wiki.phala.network/favicons/site.webmanifest'>
+<link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
+<link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
+<meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
+<title>Governance | Phala Network Wiki</title><meta property="og:title" content="Governance" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/governance/" /><meta property="og:site_name" content="Phala Network Wiki" />
+
+<meta itemprop="name" content="Governance">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Governance"/>
+<meta name="twitter:description" content=""/>
+
+
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
+
+
+
+
+
+  
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+</head>
+  
+    
+  
+<body class="page-section"data-code="100" data-lines="false" >
+  <header class="nav_header">
+<nav class="wrap nav menu">
+	<a href="https://wiki.phala.network" class="nav_brand">
+		<picture data-lit="https://wiki.phala.network/images/logo-phala-48.png" data-dark="https://wiki.phala.network/images/logo-phala-48.png">
+			
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network Wiki Logo'>
+		</picture>
+		<label class="nav_toggle toggle" title='' role="button">
+			<svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg>
+		</label>
+	</a>
+	<ul class="nav_body">
+		<li class="nav-item">
+<div class="search">
+  <label for="find" class="search_label"><svg class="icon icon_search">
+  <use xlink:href="#search"></use>
+</svg>
+  </label>
+  <input type="search" class="search_field" placeholder='' id="find" autocomplete="off">
+  <div class="search_results results"></div>
+</div>
+
+
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
+		</li>
+		
+		<li class="nav-item nav_repo">
+			<a class="nav-link" href="https://github.com/Phala-Network/phala-wiki/" target="_blank">
+				
+					GitHub
+				
+			</a>
+		</li>
+		<li class="nav-item">
+<div class = 'color_mode'>
+  <label for = 'mode'>
+    <picture data-lit="https://wiki.phala.network/icons/sun.svg" data-dark="https://wiki.phala.network/icons/moon.svg">
+      
+      <img srcset = 'https://wiki.phala.network/icons/sun.svg' alt = 'Light/Dark Mode Icon' class="color_icon">
+    </picture>
+  </label>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+</div>
+</li>
+	</ul>
+</nav>
+
+  </header>
+  <div class="main wrap pt-4"><div class="grid-auto"><aside class="aside menu">
+  <div>
+    <label class="aside_toggle toggle" title='' role="button"> <svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg></label>
+  </div>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
+      <section class="subsection" id="docs-phala-network">
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
+      <section class="subsection" id="docs-understand-phala-tokenomics">
+        <h3 class="section_link"><a id="docs-1-tee-mining-staking" href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/">1 TEE Mining Staking</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#tee-mining-roles">TEE Mining Roles</a></li>
+    <li><a href="#role-relationships">Role Relationships</a></li>
+    <li><a href="#the-relationship-between-worker-and-stakepool">The Relationship between Worker and StakePool</a></li>
+    <li><a href="#assignment-of-stake-from-pools-to-workers">Assignment of Stake from Pools to Workers</a></li>
+    <li><a href="#reward-settlement-flow">Reward Settlement Flow</a></li>
+    <li><a href="#pool-exit-stake-settlements">Pool Exit Stake Settlements</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/governance/" class="group">Governance</a></h2>
+      <section class="subsection" id="docs-governance">
+        <h3 class="section_link"><a id="docs-1-participate-in-democracy" href="https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/">1 Participate in Democracy</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#participate-in-democracy">Participate in Democracy</a>
+      <ul>
+        <li><a href="#important-parameters">Important Parameters</a></li>
+        <li><a href="#proposing-an-action">Proposing an Action</a></li>
+        <li><a href="#submitting-a-preimage">Submitting a Preimage</a></li>
+        <li><a href="#seconding-a-proposal">Seconding a Proposal</a></li>
+        <li><a href="#voting-on-a-proposal">Voting on a Proposal</a></li>
+        <li><a href="#unlocking-locked-tokens">Unlocking Locked Tokens</a></li>
+        <li><a href="#delegate-a-vote">Delegate a Vote</a></li>
+        <li><a href="#undelegate-a-vote">Undelegate a Vote</a></li>
+        <li><a href="#voting-with-a-governance-proxy">Voting with a Governance Proxy</a></li>
+        <li><a href="#interpreting-on-chain-voting-data">Interpreting On-Chain Voting Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-join-the-council" href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/">2 Join the Council</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#submit-candidacy">Submit Candidacy</a></li>
+        <li><a href="#voting-on-candidates">Voting on Candidates</a></li>
+        <li><a href="#winning">Winning</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-voting-for-councillors" href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/">3 Voting for Councillors</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#voting-for-councillors">Voting for Councillors</a></li>
+        <li><a href="#removing-your-vote">Removing your Vote</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-1 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-1-testnet-mining-guide">
+        <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
+    <li><a href="#check-your-cpu">Check Your CPU</a></li>
+    <li><a href="#check-bios-settings">Check BIOS settings</a></li>
+    <li><a href="#supported-operating-systems-ubuntu-1804-and-2004">Supported Operating Systems: Ubuntu 18.04 and 20.04</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-install-phala-tools" href="https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/">1.2 Install Phala Tools</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#download-phala-scripts">Download Phala Scripts</a></li>
+    <li><a href="#activate-sgx-software-with-sgx_enable">Activate SGX Software with sgx_enable</a></li>
+    <li><a href="#install-phala-tools">Install Phala Tools</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-check-the-sgx-capability-and-confidence-level" href="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 Check the SGX Capability and Confidence Level</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#double-check-the-sgx-capability">Double Check the SGX Capability</a></li>
+    <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-14-benchmarking" href="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/">1.4 Benchmarking</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-solo-mining-in-para-1-testnet" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo Mining in Para-1 Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2.1 Configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/">2.2 Deploy Worker Node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-mining">Start Mining</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/">2.3 Verify Worker Status</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#verify-worker-status">Verify Worker Status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-24-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-25-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/">2.5 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#console-manual">Console Manual</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#console-operations">Console Operations</a></li>
+        <li><a href="#other-operations">Other Operations</a></li>
+        <li><a href="#explanations-of-fields">Explanations of Fields</a>
+          <ul>
+            <li><a href="#stakepool-list">Stakepool List</a></li>
+            <li><a href="#worker-list">Worker List</a></li>
+            <li><a href="#stake-info">Stake Info</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
+      <ul>
+        <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
+        <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/gatekeeper/" class="group">Apply for Khala Gatekeeper</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-deploy-local-testnet" href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/">Deploy Local Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare">Prepare</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-diem-accounts">Create Diem accounts</a></li>
+    <li><a href="#simple-diem-to-pdiem-transfer">Simple diem-to-pdiem transfer</a>
+      <ul>
+        <li><a href="#balances-in-pdiem">Balances in pdiem</a></li>
+        <li><a href="#verified-transactions">Verified transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#prepare-subaccounts-for-two-way-transfer">Prepare subaccounts for two-way transfer</a></li>
+    <li><a href="#deposit-diem--pdiem">Deposit (diem → pdiem)</a></li>
+    <li><a href="#withdraw-pdiem--diem">Withdraw (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-reservation-based-model" href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/">Reservation-based Model</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deposit">Deposit</a></li>
+    <li><a href="#transfer">Transfer</a></li>
+    <li><a href="#withdraw">Withdraw</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-light-validation-client" href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/">Light Validation Client</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-basics">The Basics</a></li>
+    <li><a href="#light-client">Light Client</a></li>
+    <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-runs-the-relayer">Who runs the relayer</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
+      <section class="subsection" id="docs-archived-contract-development">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
+      <ul>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
+      <ul>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+      </section>
+  </section>
+</aside>
+
+  <main class="content">
+    <h1>Governance</h1><p>The early Khala network will use a governance mechanism consistent with Polkadot and Kusama, enabling it to evolve gracefully over time at the ultimate behest of its assembled stakeholders. The stated goal is to ensure that the majority of the stake can always command the network.</p>
+<p>Therefore, the following Khala democratic mechanism basically adopts the same process and instructions as the <a href="https://wiki.polkadot.network/docs/learn-governance">Polkadot wiki </a>.</p>
+<p>To do this, we bring together various novel mechanisms, including an amorphous state-transition function stored on-chain and defined in a platform-neutral intermediate language (i.e. WebAssembly) and several on-chain voting mechanisms such as referenda with adaptive super-majority thresholds and batch approval voting. All changes to the protocol must be agreed upon by stake-weighted referenda.</p>
+<h2 id="mechanism">Mechanism</h2>
+<p>To make any changes to the network, the idea is to compose active token holders and the council together to administrate a network upgrade decision. No matter whether the proposal is proposed by the public (PHA token holders) or the council, it finally will have to go through a referendum to let all holders, weighted by stake, make the decision.</p>
+<p>To better understand how the council is formed, please read council section.</p>
+<h2 id="referenda">Referenda</h2>
+<p>Referenda are simple, inclusive, stake-based voting schemes. Each referendum has a specific <em>proposal</em> on-chain associated with it that takes the form of a privileged function call (that includes the most powerful call: <code>set_code</code>, which can switch out the entire code of the Runtime, achieving updates on-chain).</p>
+<p>Referenda are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved. Referenda are always binary; your only options in voting are &ldquo;aye&rdquo;, &ldquo;nay&rdquo;, or abstaining entirely.</p>
+<p>Referenda can be started in one of several ways:</p>
+<ul>
+<li>Publicly submitted proposals;</li>
+<li>Proposals submitted by the council, either through a majority or unanimously;</li>
+<li>Proposals submitted as part of the enactment of a prior referendum;</li>
+<li>Emergency proposals submitted by the Technical Committee and approved by the Council.</li>
+</ul>
+<p>All referenda have an <em>enactment delay</em> associated with them. This is the period between the
+referendum ending and, assuming the proposal was approved, the changes being enacted. For the first two ways that a referendum is launched, this is a fixed time. In Phala, it is 7 days. For the third type, it can be set as desired.</p>
+<p>Emergency proposals deal with major problems with the network that need to be &ldquo;fast-tracked&rdquo;. These will have a shorter enactment time.</p>
+<h3 id="proposing-a-referendum">Proposing a Referendum</h3>
+<h4 id="public-referenda">Public Referenda</h4>
+<p>Anyone can propose a referendum by depositing the minimum amount of PHA for a certain period (number of blocks). If someone agrees with the proposal, they may deposit the same amount of tokens to support it - this action is called <em>seconding</em>. The proposal with the highest amount of bonded support will be selected to be a referendum in the next voting cycle.</p>
+<p>Note that this may be different from the absolute number of seconds; for instance, three accounts bonding 20 PHA each would &ldquo;outweigh&rdquo; ten accounts bonding a single PHA each. The bonded tokens will be released once the proposal is tabled (that is, brought to a vote).</p>
+<p>There can be a maximum of 100 public proposals in the proposal queue.</p>
+<h4 id="council-referenda">Council Referenda</h4>
+<p>Unanimous Council - When all members of the council agree on a proposal, it can be moved to a referendum. This referendum will have a negative turnout bias (that is, the smaller the amount of stake voting, the smaller the amount necessary for it to pass - see &ldquo;Adaptive Quorum Biasing&rdquo;, below).</p>
+<p>Majority Council - When agreement from only a simple majority of council members occurs, the referendum can also be voted upon, but it will be majority-carries (51% wins).</p>
+<p>There can only be one active referendum at any given time, except when there is also an emergency referendum in progress.</p>
+<h4 id="voting-timetable">Voting Timetable</h4>
+<p>Every 7 days on Phala, a new referendum will come up for a vote, assuming there is at least one proposal in one of the queues. There is a queue for Council-approved proposals
+and a queue for publicly submitted proposals. The referendum to be voted upon alternates between the top proposal in the two queues.</p>
+<p>The &ldquo;top&rdquo; proposal is determined by the amount of stake bonded behind it. If the given queue whose turn it is to create a referendum that has no proposals (is empty), and proposals are waiting in the other queue, the top proposal in the other queue will become a referendum.</p>
+<p>Multiple referenda cannot be voted upon in the same period, excluding emergency referenda. An emergency referendum occurring at the same time as a regular referendum (either public- or council-proposed) is the only time that multiple referenda will be able to be voted on at once.</p>
+<h4 id="voting-on-a-referendum">Voting on a referendum</h4>
+<p>To vote, a voter generally must lock their PHA up for at least the enactment delay period beyond the end of the referendum. This is in order to ensure that some minimal economic buy-in to the result is needed and to dissuade vote selling.</p>
+<p>It is possible to vote without locking at all, but your vote is worth a small fraction of a normal vote, given your stake. At the same time, holding only a small amount of tokens does not mean that the holder cannot influence the referendum result, thanks to time-locking. You can read more about this at Voluntary Locking.</p>
+<pre><code>Example:
+
+Peter: Votes `No` with 10 PHA for a 32 week lock period  =&gt; 10 * 6 = 60 Votes
+
+Logan: Votes `Yes` with 20 PHA for a 2 week lock period =&gt; 20 * 2 = 40 Votes
+
+Kevin: Votes `Yes` with 15 PHA for a 8 week lock period =&gt; 15 * 4 = 60 Votes
+</code></pre><p>Even though combined both Logan and Kevin vote with more PHA than Peter, the lock period for both of them is less than Peter, leading to their voting power counting as less.</p>
+<h4 id="tallying">Tallying</h4>
+<p>Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Entity</strong></th>
+<th style="text-align:center"><strong>Metric</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:center">Positive Turnout Bias (Super-Majority Approve)</td>
+</tr>
+<tr>
+<td style="text-align:center">Council (Complete agreement)</td>
+<td style="text-align:center">Negative Turnout Bias (Super-Majority Against)</td>
+</tr>
+<tr>
+<td style="text-align:center">Council (Majority agreement)</td>
+<td style="text-align:center">Simple Majority</td>
+</tr>
+</tbody>
+</table>
+<p>Also, we need the following information and apply one of the formulas listed below to calculate the voting result. For example, let&rsquo;s use the public proposal as an example, so the
+<code>Super-Majority Approve</code> formula will be applied. There is no strict quorum, but the super-majority required increases with lower turnout.</p>
+<pre><code>approve - the number of aye votes
+
+against - the number of nay votes
+
+turnout - the total number of voting tokens (does not include conviction)
+
+electorate - the total number of PHA tokens issued in the network
+</code></pre><h5 id="super-majority-approve">Super-Majority Approve</h5>
+<p>A <code>positive turnout bias</code>, whereby a heavy super-majority of aye votes is required to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries as below.</p>
+<p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%7Bagainst&amp;space;%5Cover&amp;space;%5Csqrt%7Bturnout%7D%7D&amp;space;%3C&amp;space;%7Bapprove&amp;space;%5Cover&amp;space;%5Csqrt%7Belectorate%7D%7D" alt=""></p>
+<h5 id="super-majority-against">Super-Majority Against</h5>
+<p>A <code>negative turnout bias</code>, whereby a heavy super-majority of nay votes is required to reject at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries as below.</p>
+<p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%7Bagainst&amp;space;%5Cover&amp;space;%5Csqrt%7Belectorate%7D%7D&amp;space;%3C&amp;space;%7Bapprove&amp;space;%5Cover&amp;space;%5Csqrt%7Bturnout%7D%7D" alt=""></p>
+<h5 id="simple-majority">Simple-Majority</h5>
+<p>Majority-carries, a simple comparison of votes; if there are more aye votes than nay, then the proposal is carried, no matter how much stake votes on the proposal.</p>
+<p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%7Bapprove%7D&amp;space;%3E&amp;space;%7Bagainst%7D" alt=""></p>
+<pre><code>Example:
+
+Assume:
+- We only have 1,500 PHA tokens in total.
+- Public proposal
+
+John  - 500 PHA
+Peter - 100 PHA
+Lilly - 150 PHA
+JJ    - 150 PHA
+Ken   - 600 PHA
+
+
+John: Votes `Yes` for a 1 week lock period  =&gt; 500 * 1 = 500 Votes
+
+Peter: Votes `Yes` for a 1 week lock period =&gt; 100 * 1 = 100 Votes
+
+JJ: Votes `No` for a 4 week lock period =&gt; 150 * 3 = 450 Votes
+
+approve = 600
+against = 450
+turnout = 750
+electorate = 1500
+</code></pre><p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%5Cfrac%7B450%7D%7B%5Csqrt%7B750%7D%7D&amp;space;%3C&amp;space;%5Cfrac%7B600%7D%7B%5Csqrt%7B1500%7D%7D" alt="\Large \frac{450}{\sqrt{750}}&space;<&space;\frac{600}{\sqrt{1500}}"></p>
+<p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%7B16.432%7D&amp;space;%3C&amp;space;%7B15.492%7D" alt="\Large {16.432}&space;<&space;{15.492}"></p>
+<p>Since the above example is a public referendum, <code>Super-Majority Approve</code> would be used to calculate the result. <code>Super-Majority Approve</code> requires more <code>aye</code> votes to pass the referendum when turnout is low, therefore, based on the above result, the referendum will be rejected. In addition, only the winning voter&rsquo;s tokens are locked. If the voters on the losing side of the referendum believe that the outcome will have negative effects, their tokens are transferrable so they will not be locked into the decision. Moreover, winning proposals are autonomously enacted only after some enactment
+period.</p>
+<h4 id="voluntary-locking">Voluntary Locking</h4>
+<p>Phala follows Polkadot&rsquo;s idea called <code>Voluntary Locking</code> that allows token holders to increase their voting power by declaring how long they are willing to lock up their tokens, hence, the number of votes for each token holder will be calculated by the following formula:</p>
+<pre><code>votes = tokens * conviction_multiplier
+</code></pre><p>The conviction multiplier increases the vote multiplier by one every time the number of lock periods double.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Lock Periods</th>
+<th style="text-align:center">Vote Multiplier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0.1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">32</td>
+<td style="text-align:center">6</td>
+</tr>
+</tbody>
+</table>
+<p>The maximum number of &ldquo;doublings&rdquo; of the lock period is set to 6 (and thus 32 lock periods in total), and one lock period equals 7 days on Phala. Only doublings are allowed; you cannot lock for, say, 24 periods and increase your conviction by 5.5, for instance.</p>
+<p>While a token is locked, you can still use it for voting and staking; you are only prohibited from transferring these tokens to another account.</p>
+<p>Votes are still &ldquo;counted&rdquo; at the same time (at the end of the voting period), no matter for how long the tokens are locked.</p>
+<h4 id="adaptive-quorum-biasing">Adaptive Quorum Biasing</h4>
+<p>Phala follows the concept, &ldquo;Adaptive Quorum Biasing&rdquo;, which functions as a lever that the
+council can use to alter the effective super-majority required to make it easier or more difficult for a proposal to pass in the case that there is no clear majority of voting power backing it or against it.</p>
+<p><img src="https://wiki.polkadot.network/assets/images/adaptive-quorum-biasing-18c2e70b6b9d2c3abf563219b11974dc.png" alt="img"></p>
+<p>Let&rsquo;s use the above image as an example.</p>
+<p>If a publicly submitted referendum only has a 25% turnout, the tally of &ldquo;aye&rdquo; votes has to reach 66% for it to pass since we applied <code>Positive Turnout Bias</code>.</p>
+<p>In contrast, when it has a 75% turnout, the tally of &ldquo;aye&rdquo; votes has to reach 54%, which means that the super-majority required decreases as the turnout increases.</p>
+<p>When the council proposes a new proposal through unanimous consent, the referendum would be put to a vote using &ldquo;Negative Turnout Bias&rdquo;. In this case, it is easier to pass this proposal with low turnout and requires a super-majority to reject. As more token holders participate in voting, the bias approaches a plain majority carries.</p>
+<p>Referring to the above image, when a referendum only has 25% turnout, the tally of &ldquo;aye&rdquo; votes has to reach 34% for it to pass.</p>
+<p>In short, when the turnout rate is low, a super-majority is required to reject the proposal, which means a lower threshold of &ldquo;aye&rdquo; votes have to be reached, but as turnout increases towards 100%, it becomes a simple majority.</p>
+<p>All three tallying mechanisms - majority carries, super-majority approve, and super-majority against - equate to a simple majority-carries system at 100% turnout.</p>
+<h2 id="council">Council</h2>
+<p>To represent passive stakeholders, Phala introduces the idea of a &ldquo;council&rdquo;. The council is an on-chain entity comprising several actors, each represented as an on-chain account. On Phala, the council currently consists of 4 members. This is expected to increase over the next few months to 11 seats. In general, the council will end up having a fixed number of seats.</p>
+<p>Along with controlling the treasury, the council is called upon primarily for three tasks of governance: proposing sensible referenda, cancelling uncontroversially dangerous or
+malicious referenda, and electing the technical committee.</p>
+<p>For a referendum to be proposed by the council, a strict majority of members must be in favor, with no member exercising a veto. Vetoes may be exercised only once by a member for any single proposal; if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time.</p>
+<p>Council motions which pass with a 3/5 (60%) super-majority - but without reaching unanimous
+support - will move to a public referendum under a neutral, majority-carries voting scheme. In the case that all members of the council vote in favor of a motion, the vote is considered unanimous and becomes a referendum with negative adaptive quorum biasing.</p>
+<h3 id="canceling">Canceling</h3>
+<p>A proposal can be canceled if the technical committee unanimously agrees to
+do so, or if Root origin (e.g. sudo) triggers this functionality. A canceled proposal&rsquo;s deposit is
+burned.</p>
+<p>Additionally, a two-thirds majority of the council can cancel a referendum. This may function as a last-resort if there is an issue found late in a referendum&rsquo;s proposal such as a bug in the parameter configuration of the on-chain call to be executed is incorrect.</p>
+<p>If the cancellation is controversial enough that the council cannot get a two-thirds majority, then it will be left to the stakeholders <em>en masse</em> to determine the fate of the proposal.</p>
+<h3 id="blacklisting">Blacklisting</h3>
+<p>A proposal can be blacklisted by Root origin (e.g. sudo). A blacklisted proposal and its related referendum (if any) is immediately canceled. Additionally, a blacklisted proposal&rsquo;s hash cannot re-appear in the proposal queue. Blacklisting is useful when removing erroneous proposals that could be submitted with the same hash, i.e.proposal #2 in which the submitter used plain text to make a suggestion.</p>
+<p>Upon seeing their proposal removed, a submitter who is not properly introduced to the democracy system of Phala might be tempted to re-submit the same proposal. That said, this is far from a fool-proof method of preventing invalid proposals from being submitted - a single changed character in a proposal&rsquo;s text will also change the hash of the proposal, rendering the per-hash blacklist invalid.</p>
+<h3 id="how-to-be-a-council-member">How to be a council member?</h3>
+<p><img src="https://i.imgur.com/A3iCGJ0.png" alt=""></p>
+<p>All stakeholders are free to signal their approval of any of the registered candidates.</p>
+<p>Council elections are handled by the same Phragmén election process that selects validators from the available pool based on nominations. However, token holders' votes for councillors are isolated from any of the nominations they may have on validators. Council terms last for one week on Phala.</p>
+<p>At the end of each term, Phragmén election algorithm runs and the result will choose the new councillors based on the vote configurations of all voters. The election also chooses
+a set number of runners up (currently 10 on Phala) that will remain in the queue with their votes intact.</p>
+<p>As opposed to a &ldquo;first-past-the-post&rdquo; electoral system, where voters can only vote for a single candidate from a list, a Phragmén election is a more expressive way to include each voters' views.
+Token holders can treat it as a way to support as many candidates as they want. The election algorithm will find a fair subset of the candidates that most closely matches the expressed indications of the electorate as a whole.</p>
+<p>Let&rsquo;s take a look at the example below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Round 1</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Token Holders</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>Candidates</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center">Peter</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">Alice</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Bob</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">Kelvin</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Total</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>The above example shows that candidate C wins the election in round 1, while candidates A, B, D &amp; E keep remaining on the candidates' list for the next round.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Round 2</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Token Holders</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>Candidates</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center">Peter</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Alice</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Bob</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">Kelvin</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Total</strong></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>For the top-N (say 4 in this example) runners-up, they can remain and their votes persist until the next election. After round 2, even though candidates A &amp; B get the same number of votes in this round, candidate A gets elected because after adding the older unused approvals, it is higher than B.</p>
+<p>This is a temporary governance configuration for the initial phase of Phala. If any security vulnerabilities are found after a third-party audit, it will be changed. Further changes can be made through on-chain governance.</p>
+<h3 id="prime-members">Prime Members</h3>
+<p>The council, being an instantiation of Substrate&rsquo;s Collective pallet,  implements what&rsquo;s called a <em>prime member</em> whose vote acts as the default for other members that fail
+to vote before the timeout.</p>
+<p>The prime member is chosen based on a Borda count.</p>
+<p>The purpose of having a prime member of the council is to ensure a quorum, even when several members abstain from a vote. Council members might be tempted to vote a &ldquo;soft rejection&rdquo; or a &ldquo;soft approval&rdquo; by not voting and letting the others vote. With the existence of a prime member, it forces councillors to be explicit in their votes or have their vote counted for whatever is voted on by the prime.</p>
+<h2 id="technical-committee">Technical Committee</h2>
+<p>The Technical Committee was introduced in the Phala rollout and governance post as one of the three chambers of Phala governance (along with the Council and the Referendum chamber). The Technical Committee is composed of the teams that have successfully implemented or specified either a Phala parachain or Phala Host. Teams are added or removed from the Technical Committee via a simple majority vote of the Council.</p>
+<p>The Technical Committee can, along with the Council, produce emergency referenda, which are
+fast-tracked for voting and implementation. These are used for emergency bug fixes or rapid
+implementation of new but battle-tested features into the Phala parachain.</p>
+<p>Fast-tracked referenda are the only type of referenda that can be active alongside another active referendum. Thus, with fast-tracked referenda it is possible to have two active referendums at the same time. Voting on one does not prevent a user from voting on the other.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-can-i-appeal-to-the-council-to-enact-a-change-on-my-behalf">How can I appeal to the council to enact a change on my behalf?</h3>
+<p>In some circumstances, you may want to appeal to the on-chain council to enact a change on your behalf. One example of this circumstance is the case of lost or locked funds when the funds were lost due to a human interface error (such as inputting an address for another network). When these circumstances can be proven beyond a reasonable doubt to be an error, the council <em>may</em> consider a governance motion to correct it.</p>
+<p>The first step to appeal to the council is to get in contact with the councillors. There is no singular place where you are guaranteed to grab every councillor&rsquo;s ear with your message. However, there are a handful of good places to start where you can get the attention of some of them. The Phala Forum is one such place. After creating an account and joining this room, you can post a well-thought-through message here that lays down your case and provides justification for why you think the council should consider enacting a change to the protocol on your behalf.</p>
+<p>At some point you will likely need a place for a longer-form discussion. For this, making a <a href="https://khala.polkassembly.network/onchain">post</a> on <a href="https://khala.polkassembly.network/onchain">Khala&rsquo;s Polkassembly</a> is the recommended place to do so. When you write a post on Polkassembly make sure you present all the evidence for your circumstances and state clearly what kind of change you would suggest to the councillors to enact. Remember - the councillors do not need to make the change, it is your responsibility to make a strong case for why the change should be made.</p>
+
+    <div class="pager pager_lean">
+  <div class="pager_item prev">
+    
+      
+    
+  </div>
+
+  <div class="pager_item next">
+  
+    
+      <a href="https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/" class="pager_link button" title="1 Participate in Democracy">
+  <span class="pager_label">1 Participate in Democracy</span>
+  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+</a>
+    
+  
+        
+  
+    </div>
+</div>
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+  </main>
+</div>
+
+  </div>
+<footer class="pt-2 pb-2">
+  <div class="wrap">
+    <p>&copy; <span class="year">2021</span></p>
+  </div>
+</footer>
+
+
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+
+</body>
+</html>

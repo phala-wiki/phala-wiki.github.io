@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
+<link rel="manifest" href='https://wiki.phala.network/favicons/site.webmanifest'>
+<link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
+<link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
+<meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
+<title>1 民主模块 | Phala Network 百科</title><meta property="og:title" content="1 民主模块" />
+<meta property="og:description" content="公投议院是链上治理的三个机构之一，在 Phala 和 Khala 中都是如此。另外两个机构是理事会和技术委员会。
+公投（Public Referenda ）可以由系统中的任何代币持有人提出和投票，只要他们绑定（代币）。在一个议案被提出后，其他人可以通过 “附议（second）“ 并拿出和原绑定金额相同的代币来赞成该议案。在每个提案启动阶段，附议最多的提案都会被移交到公投上进行投票表决。选民如果愿意将代币锁上更长的时间，也可以这样做，从而加大他们的投票权重。有关治理机制的更多详细信息，请参阅此处。 本指南将指导代币持有人如何使用 Khala 上的民主模块（Democracry Module），就公投进行提案和投票。
+重要参数 使用民主模块投票时需要注意的重要参数如下：
+ 启动期：多久进行启动一次新公投。 投票期：多久进行一次全民投票。 紧急投票期：针对一个需要快速跟进的紧急公投的最短投票期。 最低存款额：公投议案保证金的最低金额。 执行期：锁定资金的最短期限，和议案从被批准到颁布之间的时间。 冷却期：提案被否决后不能重新提交的时间。  提交提案 提出议案首先需要你绑定一些代币。为了确保你有足够的代币进行最小的存款，你可以检查链状态下的参数。绑定的代币只有在提案提交（即进行投票）后才会释放；在公投之前，用户无法“撤销”提案并取回保证金。由于无法准确预测提案何时会被全民公投（假如有），这意味着任何绑定的代币的锁定期都是未知的。
+ 提案人不能撤销提案，即使这些提案永远不会变成公投。重要的是要注意，用于提议或附议提案的 PHA 不会在任何确定的时间范围内进行返还。
+ 在 Khala 网络上，您可以使用 “民主（Democracy）” 这一栏来提出新的提案。为了提交提案，你需要提交所谓的原像哈希（preimage hash）。原像哈希是要发布的提案的哈希值。获取原像哈希的最简单方法是单击 “Submit preimage” 按钮并配置您提案建议的操作。
+例如，如果你想提议帐户“ALICE”的余额为 10 个代币，那么您的提案可能类似于下图所示。原象哈希0xd1ae46565118fc347a7c7a67dc68fb2fdeec6d77bc6ef4ae9cd9d4d964e0470c你可以复制此原像哈希并将其保存到下一步。此时不需要单击 Submit Preimage，尽管可以这样做。我们将在下一节讨论这个问题。
+现在，您将单击“Submit Proposal”按钮，在名为“preimage hash”的输入中输入原像哈希，并在“locked balance”字段中输入最低存款额。点击橙色的“Submit proposal”按钮并确认交易。现在你应该会看到你的提议出现在页面的“议案”列中。
+现在，任何访问该链的人都可以看到你的提案，其他人可以对其进行附议或提交 preimage。然而，很难说这个提案到底做了什么，因为它显示的是提案的哈希。其他持有者将无法判断他们是否支持它，直到有人提交了这项提案的实际 preimage。在下一步中，你将提交 preimage。
+提交 Preimage 因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。
+然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。
+单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/" /><meta property="article:section" content="docs" />
+
+<meta property="og:site_name" content="Phala Network 百科" />
+
+<meta itemprop="name" content="1 民主模块">
+<meta itemprop="description" content="公投议院是链上治理的三个机构之一，在 Phala 和 Khala 中都是如此。另外两个机构是理事会和技术委员会。
+公投（Public Referenda ）可以由系统中的任何代币持有人提出和投票，只要他们绑定（代币）。在一个议案被提出后，其他人可以通过 “附议（second）“ 并拿出和原绑定金额相同的代币来赞成该议案。在每个提案启动阶段，附议最多的提案都会被移交到公投上进行投票表决。选民如果愿意将代币锁上更长的时间，也可以这样做，从而加大他们的投票权重。有关治理机制的更多详细信息，请参阅此处。 本指南将指导代币持有人如何使用 Khala 上的民主模块（Democracry Module），就公投进行提案和投票。
+重要参数 使用民主模块投票时需要注意的重要参数如下：
+ 启动期：多久进行启动一次新公投。 投票期：多久进行一次全民投票。 紧急投票期：针对一个需要快速跟进的紧急公投的最短投票期。 最低存款额：公投议案保证金的最低金额。 执行期：锁定资金的最短期限，和议案从被批准到颁布之间的时间。 冷却期：提案被否决后不能重新提交的时间。  提交提案 提出议案首先需要你绑定一些代币。为了确保你有足够的代币进行最小的存款，你可以检查链状态下的参数。绑定的代币只有在提案提交（即进行投票）后才会释放；在公投之前，用户无法“撤销”提案并取回保证金。由于无法准确预测提案何时会被全民公投（假如有），这意味着任何绑定的代币的锁定期都是未知的。
+ 提案人不能撤销提案，即使这些提案永远不会变成公投。重要的是要注意，用于提议或附议提案的 PHA 不会在任何确定的时间范围内进行返还。
+ 在 Khala 网络上，您可以使用 “民主（Democracy）” 这一栏来提出新的提案。为了提交提案，你需要提交所谓的原像哈希（preimage hash）。原像哈希是要发布的提案的哈希值。获取原像哈希的最简单方法是单击 “Submit preimage” 按钮并配置您提案建议的操作。
+例如，如果你想提议帐户“ALICE”的余额为 10 个代币，那么您的提案可能类似于下图所示。原象哈希0xd1ae46565118fc347a7c7a67dc68fb2fdeec6d77bc6ef4ae9cd9d4d964e0470c你可以复制此原像哈希并将其保存到下一步。此时不需要单击 Submit Preimage，尽管可以这样做。我们将在下一节讨论这个问题。
+现在，您将单击“Submit Proposal”按钮，在名为“preimage hash”的输入中输入原像哈希，并在“locked balance”字段中输入最低存款额。点击橙色的“Submit proposal”按钮并确认交易。现在你应该会看到你的提议出现在页面的“议案”列中。
+现在，任何访问该链的人都可以看到你的提案，其他人可以对其进行附议或提交 preimage。然而，很难说这个提案到底做了什么，因为它显示的是提案的哈希。其他持有者将无法判断他们是否支持它，直到有人提交了这项提案的实际 preimage。在下一步中，你将提交 preimage。
+提交 Preimage 因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。
+然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。
+单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。">
+
+<meta itemprop="wordCount" content="219">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1 民主模块"/>
+<meta name="twitter:description" content="公投议院是链上治理的三个机构之一，在 Phala 和 Khala 中都是如此。另外两个机构是理事会和技术委员会。
+公投（Public Referenda ）可以由系统中的任何代币持有人提出和投票，只要他们绑定（代币）。在一个议案被提出后，其他人可以通过 “附议（second）“ 并拿出和原绑定金额相同的代币来赞成该议案。在每个提案启动阶段，附议最多的提案都会被移交到公投上进行投票表决。选民如果愿意将代币锁上更长的时间，也可以这样做，从而加大他们的投票权重。有关治理机制的更多详细信息，请参阅此处。 本指南将指导代币持有人如何使用 Khala 上的民主模块（Democracry Module），就公投进行提案和投票。
+重要参数 使用民主模块投票时需要注意的重要参数如下：
+ 启动期：多久进行启动一次新公投。 投票期：多久进行一次全民投票。 紧急投票期：针对一个需要快速跟进的紧急公投的最短投票期。 最低存款额：公投议案保证金的最低金额。 执行期：锁定资金的最短期限，和议案从被批准到颁布之间的时间。 冷却期：提案被否决后不能重新提交的时间。  提交提案 提出议案首先需要你绑定一些代币。为了确保你有足够的代币进行最小的存款，你可以检查链状态下的参数。绑定的代币只有在提案提交（即进行投票）后才会释放；在公投之前，用户无法“撤销”提案并取回保证金。由于无法准确预测提案何时会被全民公投（假如有），这意味着任何绑定的代币的锁定期都是未知的。
+ 提案人不能撤销提案，即使这些提案永远不会变成公投。重要的是要注意，用于提议或附议提案的 PHA 不会在任何确定的时间范围内进行返还。
+ 在 Khala 网络上，您可以使用 “民主（Democracy）” 这一栏来提出新的提案。为了提交提案，你需要提交所谓的原像哈希（preimage hash）。原像哈希是要发布的提案的哈希值。获取原像哈希的最简单方法是单击 “Submit preimage” 按钮并配置您提案建议的操作。
+例如，如果你想提议帐户“ALICE”的余额为 10 个代币，那么您的提案可能类似于下图所示。原象哈希0xd1ae46565118fc347a7c7a67dc68fb2fdeec6d77bc6ef4ae9cd9d4d964e0470c你可以复制此原像哈希并将其保存到下一步。此时不需要单击 Submit Preimage，尽管可以这样做。我们将在下一节讨论这个问题。
+现在，您将单击“Submit Proposal”按钮，在名为“preimage hash”的输入中输入原像哈希，并在“locked balance”字段中输入最低存款额。点击橙色的“Submit proposal”按钮并确认交易。现在你应该会看到你的提议出现在页面的“议案”列中。
+现在，任何访问该链的人都可以看到你的提案，其他人可以对其进行附议或提交 preimage。然而，很难说这个提案到底做了什么，因为它显示的是提案的哈希。其他持有者将无法判断他们是否支持它，直到有人提交了这项提案的实际 preimage。在下一步中，你将提交 preimage。
+提交 Preimage 因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。
+然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。
+单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。"/>
+
+
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
+
+
+
+  <meta name="description" content="公投议院是链上治理的三个机构之一，在 Phala 和 Khala 中都是如此。另外两个机构是理事会和技术委员会。
+公投（Public Referenda ）可以由系统中的任何代币持有人提出和投票，只要他们绑定（代币）。在一个议案被提出后，其他人可以通过 “附议（second）“ 并拿出和原绑定金额相同的代币来赞成该议案。在每个提案启动阶段，附议最多的提案都会被移交到公投上进行投票表决。选民如果愿意将代币锁上更长的时间，也可以这样做，从而加大他们的投票权重。有关治理机制的更多详细信息，请参阅此处。 本指南将指导代币持有人如何使用 Khala 上的民主模块（Democracry Module），就公投进行提案和投票。
+重要参数 使用民主模块投票时需要注意的重要参数如下：
+ 启动期：多久进行启动一次新公投。 投票期：多久进行一次全民投票。 紧急投票期：针对一个需要快速跟进的紧急公投的最短投票期。 最低存款额：公投议案保证金的最低金额。 执行期：锁定资金的最短期限，和议案从被批准到颁布之间的时间。 冷却期：提案被否决后不能重新提交的时间。  提交提案 提出议案首先需要你绑定一些代币。为了确保你有足够的代币进行最小的存款，你可以检查链状态下的参数。绑定的代币只有在提案提交（即进行投票）后才会释放；在公投之前，用户无法“撤销”提案并取回保证金。由于无法准确预测提案何时会被全民公投（假如有），这意味着任何绑定的代币的锁定期都是未知的。
+ 提案人不能撤销提案，即使这些提案永远不会变成公投。重要的是要注意，用于提议或附议提案的 PHA 不会在任何确定的时间范围内进行返还。
+ 在 Khala 网络上，您可以使用 “民主（Democracy）” 这一栏来提出新的提案。为了提交提案，你需要提交所谓的原像哈希（preimage hash）。原像哈希是要发布的提案的哈希值。获取原像哈希的最简单方法是单击 “Submit preimage” 按钮并配置您提案建议的操作。
+例如，如果你想提议帐户“ALICE”的余额为 10 个代币，那么您的提案可能类似于下图所示。原象哈希0xd1ae46565118fc347a7c7a67dc68fb2fdeec6d77bc6ef4ae9cd9d4d964e0470c你可以复制此原像哈希并将其保存到下一步。此时不需要单击 Submit Preimage，尽管可以这样做。我们将在下一节讨论这个问题。
+现在，您将单击“Submit Proposal”按钮，在名为“preimage hash”的输入中输入原像哈希，并在“locked balance”字段中输入最低存款额。点击橙色的“Submit proposal”按钮并确认交易。现在你应该会看到你的提议出现在页面的“议案”列中。
+现在，任何访问该链的人都可以看到你的提案，其他人可以对其进行附议或提交 preimage。然而，很难说这个提案到底做了什么，因为它显示的是提案的哈希。其他持有者将无法判断他们是否支持它，直到有人提交了这项提案的实际 preimage。在下一步中，你将提交 preimage。
+提交 Preimage 因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。
+然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。
+单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。">
+
+
+
+  
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+</head>
+  
+    
+  
+<body class="page-page"data-code="100" data-lines="false" >
+  <header class="nav_header">
+<nav class="wrap nav menu">
+	<a href="https://wiki.phala.network" class="nav_brand">
+		<picture data-lit="https://wiki.phala.network/images/logo-phala-48.png" data-dark="https://wiki.phala.network/images/logo-phala-48.png">
+			
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network 百科 Logo'>
+		</picture>
+		<label class="nav_toggle toggle" title='' role="button">
+			<svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg>
+		</label>
+	</a>
+	<ul class="nav_body">
+		<li class="nav-item">
+<div class="search">
+  <label for="find" class="search_label"><svg class="icon icon_search">
+  <use xlink:href="#search"></use>
+</svg>
+  </label>
+  <input type="search" class="search_field" placeholder='' id="find" autocomplete="off">
+  <div class="search_results results"></div>
+</div>
+
+
+
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/en-us/docs/"><span>Docs</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/zh-cn/"><span>中文</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://wiki.phala.network/fr-fr/"><span>français</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://phala.network"><span>Homepage</span></a>
+		</li>
+		
+		<li class="nav-item nav_repo">
+			<a class="nav-link" href="https://github.com/Phala-Network/phala-wiki/" target="_blank">
+				
+					GitHub
+				
+			</a>
+		</li>
+		<li class="nav-item">
+<div class = 'color_mode'>
+  <label for = 'mode'>
+    <picture data-lit="https://wiki.phala.network/icons/sun.svg" data-dark="https://wiki.phala.network/icons/moon.svg">
+      
+      <img srcset = 'https://wiki.phala.network/icons/sun.svg' alt = 'Light/Dark Mode Icon' class="color_icon">
+    </picture>
+  </label>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+</div>
+</li>
+	</ul>
+</nav>
+
+  </header>
+  <div class="main wrap pt-4"><div class="grid-auto"><aside class="aside menu">
+  <div>
+    <label class="aside_toggle toggle" title='' role="button"> <svg class="icon icon_harmburger">
+  <use xlink:href="#harmburger"></use>
+</svg></label>
+  </div>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Phala Network</a></h2>
+      <section class="subsection" id="docs-phala-network">
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/tokenomic/" class="group">了解TEE挖矿经济模型（提案）</a></h2>
+      <section class="subsection" id="docs-了解tee挖矿经济模型提案">
+        <h3 class="section_link"><a id="docs-1-phala挖矿抵押设计" href="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/">1 Phala挖矿抵押设计</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#角色介绍">角色介绍</a></li>
+    <li><a href="#角色关系">角色关系</a>
+      <ul>
+        <li><a href="#计算节点与抵押池的关系">计算节点与抵押池的关系</a></li>
+        <li><a href="#抵押者与机器的关系">抵押者与机器的关系</a></li>
+        <li><a href="#奖励结算关系">奖励结算关系</a></li>
+        <li><a href="#退出抵押结算">退出抵押结算</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/governance/" class="group">治理</a></h2>
+      <section class="subsection" id="docs-治理">
+        <h3 class="section_link active"><a id="docs-1-民主模块" href="https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/">1 民主模块</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#重要参数">重要参数</a></li>
+        <li><a href="#提交提案">提交提案</a></li>
+        <li><a href="#提交-preimage">提交 Preimage</a></li>
+        <li><a href="#附议">附议</a></li>
+        <li><a href="#提案公投">提案公投</a></li>
+        <li><a href="#代币解锁">代币解锁</a></li>
+        <li><a href="#委托投票">委托投票</a></li>
+        <li><a href="#取消委托投票">取消委托投票</a></li>
+        <li><a href="#通过代理投票">通过代理投票</a></li>
+        <li><a href="#链上数据说明">链上数据说明</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-加入理事会议会" href="https://wiki.phala.network/zh-cn/docs/governance/2-join-the-council/">2 加入理事会议会</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#提交候选人">提交候选人</a></li>
+        <li><a href="#对候选人进行投票">对候选人进行投票</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-为理事会议员投票" href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/">3 为理事会议员投票</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#为议员投票">为议员投票</a></li>
+        <li><a href="#删除您的投票">删除您的投票</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-user/" class="group">使用波卡插件</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-mining/" class="group">Para-1挖矿教程</a></h2>
+      <section class="subsection" id="docs-para-1挖矿教程">
+        <h3 class="section_link"><a id="docs-11-检查你的硬件bios和系统" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/">1.1 检查你的硬件、BIOS和系统</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-硬件需求门槛">Phala 硬件需求门槛</a></li>
+    <li><a href="#打开英特尔官网httpswwwintelcncontentwwwcnzhhomepagehtml搜索自己的cpu型号">打开<a href="https://www.intel.cn/content/www/cn/zh/homepage.html">英特尔官网</a>，搜索自己的CPU型号</a>
+      <ul>
+        <li><a href="#如图所示这样就是支持的芯片">如图所示，这样就是支持的芯片。</a></li>
+      </ul>
+    </li>
+    <li><a href="#确认-bios-设置">确认 BIOS 设置</a></li>
+    <li><a href="#ubuntu-1804--2004">Ubuntu 18.04 / 20.04</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a></li>
+    <li><a href="#安装phala工具">安装Phala工具</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-sgx测试和信任分级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 SGX测试和信任分级</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</a></li>
+        <li><a href="#自检指令">自检指令</a></li>
+        <li><a href="#正常的结果">正常的结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#信任分级介绍">信任分级介绍</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-14-测试worker性能分" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/">1.4 测试Worker性能分</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</a></li>
+        <li><a href="#性能分数测试方法">性能分数测试方法：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-单节点挖矿para1版本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/">2 单节点挖矿（Para1版本）</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-21-环境配置" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/">2.1 环境配置</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#如果你已经进行了sgx测试性能测试那么你的配置应该已经完成可以忽略直接下一步">如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-22-部署-worker-节点" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/">2.2 部署 Worker 节点</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#start-mining">Start Mining</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/">2.3 查看Worker状态</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-24-worker升级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Worker升级</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-25-使用控制台" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/">2.5 使用控制台</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#名词解释">名词解释</a></li>
+    <li><a href="#操作指南">操作指南</a>
+      <ul>
+        <li><a href="#准备">准备</a></li>
+        <li><a href="#主流程">主流程</a></li>
+        <li><a href="#其他操作">其他操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#信息介绍">信息介绍</a>
+      <ul>
+        <li><a href="#抵押池列表stakepool">抵押池列表（Stakepool）</a></li>
+        <li><a href="#worker列表worker">Worker列表（Worker）</a></li>
+        <li><a href="#抵押详情stake-info">抵押详情（Stake Info）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">3 FAQ</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-增加信任等级">I. 增加信任等级</a>
+      <ul>
+        <li><a href="#遇到提示-configuration_needed-或-configuration_and_sw_hardening_needed">遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
+        <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/prb/" class="group">Runtime Bridge</a></h2>
+      <section class="subsection" id="docs-runtime-bridge">
+        <h3 class="section_link"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统要求">系统要求</a></li>
+    <li><a href="#环境准备">环境准备</a></li>
+    <li><a href="#基础服务">基础服务</a></li>
+    <li><a href="#fetch服务"><code>fetch</code>服务</a></li>
+    <li><a href="#trade服务"><code>trade</code>服务</a></li>
+    <li><a href="#lifecycle服务"><code>lifecycle</code>服务</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-在linux中直接部署" href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/">在Linux中直接部署</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统要求">系统要求</a></li>
+    <li><a href="#安装依赖并生成protobuf接口代码">安装依赖并生成Protobuf接口代码</a></li>
+    <li><a href="#启动服务">启动服务</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">Khala守门人申请教程</a></h2>
+  </section>
+      </section>
+  </section>
+</aside>
+
+  <main class="content">
+    <h1>1 民主模块</h1><p>公投议院是链上治理的三个机构之一，在 Phala 和 Khala 中都是如此。另外两个机构是<a href="/zh-cn/docs/governance/## 技术委员会">理事会和技术委员会</a>。</p>
+<p>公投（Public Referenda ）可以由系统中的任何代币持有人提出和投票，只要他们绑定（代币）。在一个议案被提出后，其他人可以通过 “附议（second）“ 并拿出和原绑定金额相同的代币来赞成该议案。在每个提案启动阶段，附议最多的提案都会被移交到公投上进行投票表决。选民如果愿意将代币锁上更长的时间，也可以这样做，从而加大他们的投票权重。有关治理机制的更多详细信息，请参阅<a href="/zh-cn/docs/governance/## 技术委员会">此处</a>。
+本指南将指导代币持有人如何使用 Khala 上的民主模块（Democracry Module），就公投进行提案和投票。</p>
+<h3 id="重要参数">重要参数</h3>
+<p>使用民主模块投票时需要注意的重要参数如下：</p>
+<ul>
+<li>启动期：多久进行启动一次新公投。</li>
+<li>投票期：多久进行一次全民投票。</li>
+<li>紧急投票期：针对一个需要快速跟进的紧急公投的最短投票期。</li>
+<li>最低存款额：公投议案保证金的最低金额。</li>
+<li>执行期：锁定资金的最短期限，和议案从被批准到颁布之间的时间。</li>
+<li>冷却期：提案被否决后不能重新提交的时间。</li>
+</ul>
+<h3 id="提交提案">提交提案</h3>
+<p>提出议案首先需要你绑定一些代币。为了确保你有足够的代币进行最小的存款，你可以检查链状态下的参数。绑定的代币只有在提案提交（即进行投票）后才会释放；在公投之前，用户无法“撤销”提案并取回保证金。由于无法准确预测提案何时会被全民公投（假如有），这意味着任何绑定的代币的锁定期都是未知的。</p>
+<blockquote>
+<p>提案人不能撤销提案，即使这些提案永远不会变成公投。重要的是要注意，用于提议或附议提案的 PHA 不会在任何确定的时间范围内进行返还。</p>
+</blockquote>
+<p>在 Khala 网络上，您可以使用 “民主（Democracy）” 这一栏来提出新的提案。为了提交提案，你需要提交所谓的原像哈希（preimage hash）。原像哈希是要发布的提案的哈希值。获取原像哈希的最简单方法是单击 “Submit preimage” 按钮并配置您提案建议的操作。</p>
+<p>例如，如果你想提议帐户“ALICE”的余额为 10 个代币，那么您的提案可能类似于下图所示。原象哈希<code>0xd1ae46565118fc347a7c7a67dc68fb2fdeec6d77bc6ef4ae9cd9d4d964e0470c</code>你可以复制此原像哈希并将其保存到下一步。此时不需要单击 Submit Preimage，尽管可以这样做。我们将在下一节讨论这个问题。</p>
+<p><img src="https://i.imgur.com/dbwqufA.png" alt=""></p>
+<p>现在，您将单击“Submit Proposal”按钮，在名为“preimage hash”的输入中输入原像哈希，并在“locked balance”字段中输入最低存款额。点击橙色的“Submit proposal”按钮并确认交易。现在你应该会看到你的提议出现在页面的“议案”列中。</p>
+<p><img src="https://i.imgur.com/ZTEeE2a.png" alt=""></p>
+<p>现在，任何访问该链的人都可以看到你的提案，其他人可以对其进行附议或提交 preimage。然而，很难说这个提案到底做了什么，因为它显示的是提案的哈希。其他持有者将无法判断他们是否支持它，直到有人提交了这项提案的实际 preimage。在下一步中，你将提交 preimage。</p>
+<p><img src="https://i.imgur.com/A1hDYms.png" alt=""></p>
+<h3 id="提交-preimage">提交 Preimage</h3>
+<p>因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。</p>
+<p>然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。</p>
+<p>单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。</p>
+<p><img src="https://i.imgur.com/Ne3a3PA.png" alt=""></p>
+<p>一旦交易完成，用户界面就会更新您已经提交的提案信息。</p>
+<p><img src="https://i.imgur.com/ENyAfVO.png" alt=""></p>
+<h3 id="附议">附议</h3>
+<p>附议意味着您同意该提案，并以与最初锁定的相同金额的押金作为保障。通过附议，您会把它提升到比较靠前的位置。最受支持的提案，按照价值而非支持者数量统计，将成为公投提案，在每个启动期进行投票。
+要支持某一个提案，请导航到要进行支持的提案，然后单击“Second”按钮。</p>
+<p><img src="https://i.imgur.com/0ifVLmd.png" alt=""></p>
+<p>系统将提示您议案的完整详细信息（如果 preimage 已提交！）然后通过点击橙色的“Second”按钮来广播交易。</p>
+<p><img src="https://i.imgur.com/zCUWaqL.png" alt=""></p>
+<p>一旦成功，您将看到您的赞成票出现在议案详细信息的下拉列表中。</p>
+<p><img src="https://i.imgur.com/N8P4ygr.png" alt=""></p>
+<h3 id="提案公投">提案公投</h3>
+<p>在每个启动期结束时，支持率最高的提案将转为公投提案。在此期间，您可以投赞成票或反对票。也可以把代币锁上更长的时间，来增加投票权重。在代币锁定期间，代币虽然无法转移，但是仍可以用于进一步的投票。代币的锁定期是层层叠加的（一个周期为7天），也就是说，完成投票后再次投票，锁定期将一共是14天。</p>
+<p>要对公投提案进行投票，请导航到 Khala 的“民主”栏。任何积极的公投都会在“referenda（公投）”一栏中显示出来。点击橙色按钮“投票”，为公投投票。</p>
+<p><img src="https://i.imgur.com/OREAQq6.png" alt=""></p>
+<p>如果您想对提案投赞成票，请选择“Aye, I approve”选项。如果想投反对票，请选择“Nay, I do not approve”选项。</p>
+<p>第二个选项是为这次投票选择您的 Conviction（意愿值）。锁定代币的意愿时间越长，投票的权重就越大。不愿意锁定代币意味着您的投票权重仅占您所持代币的 10%，而 256 天的最大锁定时间意味着您的投票权重是所持代币的 600%。</p>
+<p>若赞成提案，单击橙色的“Vote（投票）”按钮提交交易，并等待它被区块打包。</p>
+<p><img src="https://i.imgur.com/hoYqBmf.png" alt=""></p>
+<h3 id="代币解锁">代币解锁</h3>
+<p>与归属权一样，锁定在 democracy 中的代币将惰性释放。这意味着用户必须调用 Extrinsics 函数来解锁，以确保资金在锁定到期后可再次使用。 解绑（Unbonding）是在 Phala 中经常听到的另一个术语，意思是回收用户在 staking 中使用的 PHA。了解更多信息，请参阅<a href="">此处</a>。</p>
+<p>用户可以从 Khala 应用程序中的“帐户（Account）”页面执行此操作，除非使用 Ledger（见下文）。首先打开账号余额详细信息，检查账户是否有“democracy”资金。在下面的例子中，账户有 9 PHA 锁定 democracy 在中。</p>
+<p><img src="https://i.imgur.com/rlECajc.png" alt=""></p>
+<p>单击“Clear expired democracy locks（清除过期的民主锁）”，确认交易，交易成功后锁定的代币将解锁。
+<img src="https://i.imgur.com/9g8gJ5o.png" alt=""></p>
+<h3 id="委托投票">委托投票</h3>
+<p>如果因为太忙而没有时间继续投票，可以选择将您的投票权委托给信任的账户。当您委托后，该帐户将获得您代币的附加投票权以及您设置的投票意愿。授权投票意愿的工作原理与常规投票的意愿相同，只是您的代币锁定时间可能比正常情况下更长，因为取消委托投票时锁定会重置。</p>
+<p>一旦委托成功，被委托的账户不会执行任何特殊操作。他们可以继续就他们认为合适的公投进行投票。不同的是，当民主制度计票时，无论被授权人投了什么票，都会附加上被委托的代币。</p>
+<p>您可以把您的投票权委托给另一个账户，甚至可以给这个授权附加一个“Conviction（意愿值）”。导航到 Khala 上的“Extrinsics”选项卡，然后选择“Democracy （民主）”和“Delegate（委托）”选项。这意味着您正在访问民主模块并选择要发送的委托交易类型。您的授权将计入您委托的任何账户，直到您取消您的投票。</p>
+<p>在第一个输入框中，选择您要委托的账户，在第二个输入框中选择您的意愿值。记住，更高的意愿值意味着您代币将被锁定更长的时间，所以要明智地选择！</p>
+<p><img src="https://i.imgur.com/dkvQaXx.png" alt=""></p>
+<p>发送委托交易后，您可以通过导航到“Chain State”选项卡并选择“Democracy（民主）”和“Voting（投票）”选项来验证它是否通过。您将看到类似于下面的输出框，显示您已将投票权委托给某地址。</p>
+<p><img src="https://i.imgur.com/kq7JGks.png" alt=""></p>
+<h3 id="取消委托投票">取消委托投票</h3>
+<p>您可能会在将来的某个时候决定取消对目标账户的委托。在这种情况下，您的代币将按授权时设定的意愿值的进行锁定。例如，如果你选择了“2x”的意愿值，那您的代币将在发送取消授权交易后锁定16天。一旦您的投票被取消授权，您就可以再次进行投票，既可以直接投票，也可以选择账户进行委托。</p>
+<p>Undelegate（取消授权）交易必须从您希望清除其委托权限的账户发送。如果 Alice 授权给了另外一个用户，那 Alice 就需要调用 undelegate 来取消她的委托。</p>
+<p>最简单的方法是从 Khala 的“Extrinsics”选项卡中进行操作。选择“Democracy”模块和“Undelegate”交易类型。确保交易是从您想要清除授权的账户发出的。点击“Submit Transaction（提交交易）”并确认。</p>
+<p><img src="https://i.imgur.com/gVZT1R0.png" alt=""></p>
+<h3 id="通过代理投票">通过代理投票</h3>
+<p>代表 stash 账户进行投票需要代理模块中的“代理”交易。当你从“Extrinsics”选项卡中选择此交易时，它将允许您从“Democracy（民主）”模块中选择“Vote（投票）”，并且您将指定正在投票的公投的索引、判决（即“Aye”表示赞成或“Nay”表示拒绝）和意愿，就像普通投票一样。</p>
+<h3 id="链上数据说明">链上数据说明</h3>
+<p>以下示例展示了区块浏览器是如何显示投票结果的。</p>
+<blockquote>
+<p>Nay 0.1x =&gt; 0
+Nay 1x =&gt; 1
+Nay 2x =&gt; 2
+Nay 3x =&gt; 3
+Nay 4x =&gt; 4
+Nay 5x =&gt; 5
+Nay 6x =&gt; 6
+Aye 0.1x =&gt; 128
+Aye 1x =&gt; 129
+Aye 2x =&gt; 130
+Aye 3x =&gt; 131
+Aye 4x =&gt; 132
+Aye 5x =&gt; 133
+Aye 6x =&gt; 134</p>
+</blockquote>
+<p>乍一看，可能这是很难解释的投票内容，我们需要在二进制维度上解读“投票数据”。</p>
+<p>投票是通过位域数据结构以一个字节的形式存储，并以十进制整数显示在区块浏览器上。位域存储了信念值和 aye/nay 布尔值，其中布尔值使用字节的 MSB 表示。这意味着剩余 7 位的分组用于存储结果判定信念值。</p>
+
+    <div class="pager">
+  <div class="pager_item prev">
+    
+      
+        
+          <a href="https://wiki.phala.network/zh-cn/docs/governance/" class="pager_link button" title="治理">
+  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+  <span class="pager_label">治理</span>
+</a>
+        
+      
+    
+  </div>
+
+  <div class="pager_item next">
+  
+        
+  
+    <div class="pager_item next">
+      <a href="https://wiki.phala.network/zh-cn/docs/governance/2-join-the-council/" class="pager_link button" title="2 加入理事会议会">
+  <span class="pager_label">2 加入理事会议会</span>
+  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+</a>
+        </div>
+      
+    </div>
+</div>
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+  </main>
+</div>
+
+  </div>
+<footer class="pt-2 pb-2">
+  <div class="wrap">
+    <p>&copy; <span class="year">2021</span></p>
+  </div>
+</footer>
+
+
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004" id="next">
+    <path d="M484.14 226.886L306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" id="search">
+    <path d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 179" id="harmburger">
+    <path d="M1 10C1 4.477 5.477 0 11 0h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11C5.477 20 1 15.523 1 10zm0 80c0-5.523 4.477-10 10-10h220c5.523 0 10 4.477 10 10s-4.477 10-10 10H11c-5.523 0-10-4.477-10-10zm9 69c-5.523 0-10 4.477-10 10s4.477 10 10 10h220c5.523 0 10-4.477 10-10s-4.477-10-10-10H10z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.998 401.998" id="sort">
+    <path d="M73.092 164.452h255.813c4.949 0 9.233-1.807 12.848-5.424 3.613-3.616 5.427-7.898 5.427-12.847s-1.813-9.229-5.427-12.85L213.846 5.424C210.232 1.812 205.951 0 200.999 0s-9.233 1.812-12.85 5.424L60.242 133.331c-3.617 3.617-5.424 7.901-5.424 12.85 0 4.948 1.807 9.231 5.424 12.847 3.621 3.617 7.902 5.424 12.85 5.424zm255.813 73.097H73.092c-4.952 0-9.233 1.808-12.85 5.421-3.617 3.617-5.424 7.898-5.424 12.847s1.807 9.233 5.424 12.848L188.149 396.57c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428l127.907-127.906c3.613-3.614 5.427-7.898 5.427-12.848 0-4.948-1.813-9.229-5.427-12.847-3.614-3.616-7.899-5.42-12.848-5.42z"></path>
+  </symbol>
+</svg>
+
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="youtube">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+<script src="https://wiki.phala.network/js/bundle.min.ff2af2b02cda8c10a3c000abaddf6495f5de9e097c4305d94d77eaf30b472f1332958cf308695a20408e459815f3641bb83ca163fea06b3d4468c3de30dfb189.js"></script>
+
+</body>
+</html>
