@@ -31,7 +31,7 @@
 角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，"/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
@@ -323,7 +323,17 @@
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/gatekeeper/" class="group">Khala守门人申请教程</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/maintain/" class="group">网络维护</a></h2>
+      <section class="subsection" id="docs-网络维护">
+        <h3 class="section_link"><a id="docs-collator" href="https://wiki.phala.network/zh-cn/docs/maintain/collator/">Collator</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#concepts">Concepts</a></li>
+    <li><a href="#prepare-a-new-collator">Prepare a new collator</a></li>
+    <li><a href="#enable-an-invulnerable-collator">Enable an invulnerable collator</a></li>
+    <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
+  </ul>
+</nav>
+      </section>
   </section>
       </section>
   </section>

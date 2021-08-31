@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Collator</title>
+      <link>https://wiki.phala.network/en-us/docs/maintain/collator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/maintain/collator/</guid>
+      <description>Collators on Phala (Khala) are supposed to be Gatekeepers, who also run the pRuntime as the Gatekeeper role, helping manage the keys in the network. However, Gatekeeper is not open for election now.  Concepts Phala Network is currently running its collators on Aura consensus. Aura is a simple block authoring engine that rotates the block producers among the registered collator candidates one by one.
+ Host Session Api Manager Collator &amp;lt;===== [Session] &amp;lt;--------- [CollatorSelection] node pallet pallet On the blockchain, the block authoring is handled collaboratively by Session and CollatorSelection pallets.</description>
+    </item>
+    
+    <item>
       <title>Deploy Local Testnet</title>
       <link>https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

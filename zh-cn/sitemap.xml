@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wiki.phala.network/zh-cn/docs/maintain/collator/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/maintain/collator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/collator/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/zh-cn/docs/</loc>
     <xhtml:link
                 rel="alternate"
@@ -103,16 +115,16 @@
                 href="https://wiki.phala.network/zh-cn/docs/prb/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/zh-cn/docs/gatekeeper/</loc>
+    <loc>https://wiki.phala.network/zh-cn/docs/maintain/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/gatekeeper/"
+                href="https://wiki.phala.network/en-us/docs/maintain/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/gatekeeper/"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</loc>

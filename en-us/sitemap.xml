@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wiki.phala.network/en-us/docs/maintain/collator/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/collator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/maintain/collator/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/</loc>
     <xhtml:link
                 rel="alternate"
@@ -187,18 +199,6 @@
                 href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/gatekeeper/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/gatekeeper/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/gatekeeper/"
-                />
-  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/future-works/</loc>
     <xhtml:link
                 rel="alternate"
@@ -209,6 +209,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/pdiem/future-works/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/maintain/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/maintain/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/</loc>
