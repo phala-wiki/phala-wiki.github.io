@@ -425,7 +425,7 @@
 <li>Emergency proposals submitted by the Technical Committee and approved by the Council.</li>
 </ul>
 <p>All referenda have an <em>enactment delay</em> associated with them. This is the period between the
-referendum ending and, assuming the proposal was approved, the changes being enacted. For the first two ways that a referendum is launched, this is a fixed time. In Phala, it is 7 days. For the third type, it can be set as desired.</p>
+referendum ending and, assuming the proposal was approved, the changes being enacted. For the first two ways that a referendum is launched, this is a fixed time. In Khala, it is 7 days. For the third type, it can be set as desired.</p>
 <p>Emergency proposals deal with major problems with the network that need to be &ldquo;fast-tracked&rdquo;. These will have a shorter enactment time.</p>
 <h3 id="proposing-a-referendum">Proposing a Referendum</h3>
 <h4 id="public-referenda">Public Referenda</h4>
@@ -437,7 +437,7 @@ referendum ending and, assuming the proposal was approved, the changes being ena
 <p>Majority Council - When agreement from only a simple majority of council members occurs, the referendum can also be voted upon, but it will be majority-carries (51% wins).</p>
 <p>There can only be one active referendum at any given time, except when there is also an emergency referendum in progress.</p>
 <h4 id="voting-timetable">Voting Timetable</h4>
-<p>Every 7 days on Phala, a new referendum will come up for a vote, assuming there is at least one proposal in one of the queues. There is a queue for Council-approved proposals
+<p>Every 7 days on Khala, a new referendum will come up for a vote, assuming there is at least one proposal in one of the queues. There is a queue for Council-approved proposals
 and a queue for publicly submitted proposals. The referendum to be voted upon alternates between the top proposal in the two queues.</p>
 <p>The &ldquo;top&rdquo; proposal is determined by the amount of stake bonded behind it. If the given queue whose turn it is to create a referendum that has no proposals (is empty), and proposals are waiting in the other queue, the top proposal in the other queue will become a referendum.</p>
 <p>Multiple referenda cannot be voted upon in the same period, excluding emergency referenda. An emergency referendum occurring at the same time as a regular referendum (either public- or council-proposed) is the only time that multiple referenda will be able to be voted on at once.</p>
@@ -522,7 +522,7 @@ electorate = 1500
 <p>Since the above example is a public referendum, <code>Super-Majority Approve</code> would be used to calculate the result. <code>Super-Majority Approve</code> requires more <code>aye</code> votes to pass the referendum when turnout is low, therefore, based on the above result, the referendum will be rejected. In addition, only the winning voter&rsquo;s tokens are locked. If the voters on the losing side of the referendum believe that the outcome will have negative effects, their tokens are transferrable so they will not be locked into the decision. Moreover, winning proposals are autonomously enacted only after some enactment
 period.</p>
 <h4 id="voluntary-locking">Voluntary Locking</h4>
-<p>Phala follows Polkadot&rsquo;s idea called <code>Voluntary Locking</code> that allows token holders to increase their voting power by declaring how long they are willing to lock up their tokens, hence, the number of votes for each token holder will be calculated by the following formula:</p>
+<p>Khala follows Polkadot&rsquo;s idea called <code>Voluntary Locking</code> that allows token holders to increase their voting power by declaring how long they are willing to lock up their tokens, hence, the number of votes for each token holder will be calculated by the following formula:</p>
 <pre><code>votes = tokens * conviction_multiplier
 </code></pre><p>The conviction multiplier increases the vote multiplier by one every time the number of lock periods double.</p>
 <table>
@@ -563,11 +563,11 @@ period.</p>
 </tr>
 </tbody>
 </table>
-<p>The maximum number of &ldquo;doublings&rdquo; of the lock period is set to 6 (and thus 32 lock periods in total), and one lock period equals 7 days on Phala. Only doublings are allowed; you cannot lock for, say, 24 periods and increase your conviction by 5.5, for instance.</p>
+<p>The maximum number of &ldquo;doublings&rdquo; of the lock period is set to 6 (and thus 32 lock periods in total), and one lock period equals 7 days on Khala. Only doublings are allowed; you cannot lock for, say, 24 periods and increase your conviction by 5.5, for instance.</p>
 <p>While a token is locked, you can still use it for voting and staking; you are only prohibited from transferring these tokens to another account.</p>
 <p>Votes are still &ldquo;counted&rdquo; at the same time (at the end of the voting period), no matter for how long the tokens are locked.</p>
 <h4 id="adaptive-quorum-biasing">Adaptive Quorum Biasing</h4>
-<p>Phala follows the concept, &ldquo;Adaptive Quorum Biasing&rdquo;, which functions as a lever that the
+<p>Khala follows the concept, &ldquo;Adaptive Quorum Biasing&rdquo;, which functions as a lever that the
 council can use to alter the effective super-majority required to make it easier or more difficult for a proposal to pass in the case that there is no clear majority of voting power backing it or against it.</p>
 <p><img src="https://wiki.polkadot.network/assets/images/adaptive-quorum-biasing-18c2e70b6b9d2c3abf563219b11974dc.png" alt="img"></p>
 <p>Let&rsquo;s use the above image as an example.</p>
@@ -578,7 +578,7 @@ council can use to alter the effective super-majority required to make it easier
 <p>In short, when the turnout rate is low, a super-majority is required to reject the proposal, which means a lower threshold of &ldquo;aye&rdquo; votes have to be reached, but as turnout increases towards 100%, it becomes a simple majority.</p>
 <p>All three tallying mechanisms - majority carries, super-majority approve, and super-majority against - equate to a simple majority-carries system at 100% turnout.</p>
 <h2 id="council">Council</h2>
-<p>To represent passive stakeholders, Phala introduces the idea of a &ldquo;council&rdquo;. The council is an on-chain entity comprising several actors, each represented as an on-chain account. On Phala, the council currently consists of 5 members. This is expected to increase over the next few months to 11 seats. In general, the council will end up having a fixed number of seats.</p>
+<p>To represent passive stakeholders, Khala introduces the idea of a &ldquo;council&rdquo;. The council is an on-chain entity comprising several actors, each represented as an on-chain account. On Khala, the council currently consists of 5 members. This is expected to increase over the next few months to 11 seats. In general, the council will end up having a fixed number of seats.</p>
 <p>Along with controlling the treasury, the council is called upon primarily for three tasks of governance: proposing sensible referenda, cancelling uncontroversially dangerous or
 malicious referenda, and electing the technical committee.</p>
 <p>For a referendum to be proposed by the council, a strict majority of members must be in favor, with no member exercising a veto. Vetoes may be exercised only once by a member for any single proposal; if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time.</p>
@@ -592,13 +592,13 @@ burned.</p>
 <p>If the cancellation is controversial enough that the council cannot get a two-thirds majority, then it will be left to the stakeholders <em>en masse</em> to determine the fate of the proposal.</p>
 <h3 id="blacklisting">Blacklisting</h3>
 <p>A proposal can be blacklisted by Root origin (e.g. sudo). A blacklisted proposal and its related referendum (if any) is immediately canceled. Additionally, a blacklisted proposal&rsquo;s hash cannot re-appear in the proposal queue. Blacklisting is useful when removing erroneous proposals that could be submitted with the same hash, i.e.proposal #2 in which the submitter used plain text to make a suggestion.</p>
-<p>Upon seeing their proposal removed, a submitter who is not properly introduced to the democracy system of Phala might be tempted to re-submit the same proposal. That said, this is far from a fool-proof method of preventing invalid proposals from being submitted - a single changed character in a proposal&rsquo;s text will also change the hash of the proposal, rendering the per-hash blacklist invalid.</p>
+<p>Upon seeing their proposal removed, a submitter who is not properly introduced to the democracy system of Khala might be tempted to re-submit the same proposal. That said, this is far from a fool-proof method of preventing invalid proposals from being submitted - a single changed character in a proposal&rsquo;s text will also change the hash of the proposal, rendering the per-hash blacklist invalid.</p>
 <h3 id="how-to-be-a-council-member">How to be a council member?</h3>
 <p><img src="https://i.imgur.com/A3iCGJ0.png" alt=""></p>
 <p>All stakeholders are free to signal their approval of any of the registered candidates.</p>
-<p>Council elections are handled by the same Phragmén election process that selects validators from the available pool based on nominations. However, token holders' votes for councillors are isolated from any of the nominations they may have on validators. Council terms last for one week on Phala.</p>
+<p>Council elections are handled by the same Phragmén election process that selects validators from the available pool based on nominations. However, token holders' votes for councillors are isolated from any of the nominations they may have on validators. Council terms last for one week on Khala.</p>
 <p>At the end of each term, Phragmén election algorithm runs and the result will choose the new councillors based on the vote configurations of all voters. The election also chooses
-a set number of runners up (currently 10 on Phala) that will remain in the queue with their votes intact.</p>
+a set number of runners up (currently 5 on Khala) that will remain in the queue with their votes intact.</p>
 <p>As opposed to a &ldquo;first-past-the-post&rdquo; electoral system, where voters can only vote for a single candidate from a list, a Phragmén election is a more expressive way to include each voters' views.
 Token holders can treat it as a way to support as many candidates as they want. The election algorithm will find a fair subset of the candidates that most closely matches the expressed indications of the electorate as a whole.</p>
 <p>Let&rsquo;s take a look at the example below.</p>
@@ -736,22 +736,22 @@ Token holders can treat it as a way to support as many candidates as they want. 
 </tbody>
 </table>
 <p>For the top-N (say 4 in this example) runners-up, they can remain and their votes persist until the next election. After round 2, even though candidates A &amp; B get the same number of votes in this round, candidate A gets elected because after adding the older unused approvals, it is higher than B.</p>
-<p>This is a temporary governance configuration for the initial phase of Phala. If any security vulnerabilities are found after a third-party audit, it will be changed. Further changes can be made through on-chain governance.</p>
+<p>This is a temporary governance configuration for the initial phase of Khala. If any security vulnerabilities are found after a third-party audit, it will be changed. Further changes can be made through on-chain governance.</p>
 <h3 id="prime-members">Prime Members</h3>
 <p>The council, being an instantiation of Substrate&rsquo;s Collective pallet,  implements what&rsquo;s called a <em>prime member</em> whose vote acts as the default for other members that fail
 to vote before the timeout.</p>
 <p>The prime member is chosen based on a Borda count.</p>
 <p>The purpose of having a prime member of the council is to ensure a quorum, even when several members abstain from a vote. Council members might be tempted to vote a &ldquo;soft rejection&rdquo; or a &ldquo;soft approval&rdquo; by not voting and letting the others vote. With the existence of a prime member, it forces councillors to be explicit in their votes or have their vote counted for whatever is voted on by the prime.</p>
 <h2 id="technical-committee">Technical Committee</h2>
-<p>The Technical Committee was introduced in the Phala rollout and governance post as one of the three chambers of Phala governance (along with the Council and the Referendum chamber). The Technical Committee is composed of the teams that have successfully implemented or specified either a Phala parachain or Phala Host. Teams are added or removed from the Technical Committee via a simple majority vote of the Council.</p>
+<p>The Technical Committee was introduced in the Khala rollout and governance post as one of the three chambers of Khala governance (along with the Council and the Referendum chamber). The Technical Committee is composed of the teams that have successfully implemented or specified either a Khala parachain or Khala Host. Teams are added or removed from the Technical Committee via a simple majority vote of the Council.</p>
 <p>The Technical Committee can, along with the Council, produce emergency referenda, which are
 fast-tracked for voting and implementation. These are used for emergency bug fixes or rapid
-implementation of new but battle-tested features into the Phala parachain.</p>
+implementation of new but battle-tested features into the Khala parachain.</p>
 <p>Fast-tracked referenda are the only type of referenda that can be active alongside another active referendum. Thus, with fast-tracked referenda it is possible to have two active referendums at the same time. Voting on one does not prevent a user from voting on the other.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <h3 id="how-can-i-appeal-to-the-council-to-enact-a-change-on-my-behalf">How can I appeal to the council to enact a change on my behalf?</h3>
 <p>In some circumstances, you may want to appeal to the on-chain council to enact a change on your behalf. One example of this circumstance is the case of lost or locked funds when the funds were lost due to a human interface error (such as inputting an address for another network). When these circumstances can be proven beyond a reasonable doubt to be an error, the council <em>may</em> consider a governance motion to correct it.</p>
-<p>The first step to appeal to the council is to get in contact with the councillors. There is no singular place where you are guaranteed to grab every councillor&rsquo;s ear with your message. However, there are a handful of good places to start where you can get the attention of some of them. The Phala Forum is one such place. After creating an account and joining this room, you can post a well-thought-through message here that lays down your case and provides justification for why you think the council should consider enacting a change to the protocol on your behalf.</p>
+<p>The first step to appeal to the council is to get in contact with the councillors. There is no singular place where you are guaranteed to grab every councillor&rsquo;s ear with your message. However, there are a handful of good places to start where you can get the attention of some of them. The Khala Forum is one such place. After creating an account and joining this room, you can post a well-thought-through message here that lays down your case and provides justification for why you think the council should consider enacting a change to the protocol on your behalf.</p>
 <p>At some point you will likely need a place for a longer-form discussion. For this, making a <a href="https://khala.polkassembly.network/onchain">post</a> on <a href="https://khala.polkassembly.network/onchain">Khala&rsquo;s Polkassembly</a> is the recommended place to do so. When you write a post on Polkassembly make sure you present all the evidence for your circumstances and state clearly what kind of change you would suggest to the councillors to enact. Remember - the councillors do not need to make the change, it is your responsibility to make a strong case for why the change should be made.</p>
 
     <div class="pager pager_lean">
