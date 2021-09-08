@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Para-1挖矿教程 on Phala Network 百科</title>
+    <title>Para-2挖矿教程 on Phala Network 百科</title>
     <link>https://wiki.phala.network/zh-cn/docs/khala-mining/</link>
-    <description>Recent content in Para-1挖矿教程 on Phala Network 百科</description>
+    <description>Recent content in Para-2挖矿教程 on Phala Network 百科</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/zh-cn/docs/khala-mining/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  Phala 硬件需求门槛 如何检查自己的设备支持 BIOS： 前往 Intel 官网查询自己的芯片是否支持 SGX
 打开英特尔官网，搜索自己的CPU型号 如图所示，这样就是支持的芯片。 确认 BIOS 设置  首先打开百度，查询进入你的电脑的 BIOS 键是什么。每个品牌不一样。重启电脑，快速按下刚刚查到的键，进入 BIOS 界面。  找到 Security（安全选项） ，找到 Secure Boot（安全启动） ，选择 Disabled（关闭） 找到 Boot（启动选项） ，在 Boot Mode (启动模式) 里 启动 UEFI 找到 SGX 选项，优先选 Enabled，如果没有则选 Software Controlled。选择 Software Controlled 的，进入系统以后输入下面的指令启动驱动：    1wget https://github.com/Phala-Network/sgx-tools/releases/download/0.1/sgx_enable 2sudo chmod +x sgx_enable 3sudo .</description>
     </item>
     
@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/</guid>
-      <description> Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
+      <description> Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。
 下载Phala工具包地址：https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip，或者可以用wget下载，命令如下：
 1cd ~ 2sudo apt-get install wget 3sudo apt-get install unzip 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/para.zip 5unzip para.zip 6cd solo-mining-scripts-para 使用sgx_enable激活SGX功能 在phala脚本目录打开终端，输入以下指令后电脑会重启：
 1cd ~/solo-mining-scripts-para 2sudo chmod +x sgx_enable 3sudo ./sgx_enable 4sudo reboot 安装Phala工具 在phala脚本目录打开终端，输入以下指令：
@@ -35,7 +35,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
 在报告的最后一行会显示你的安全等级（1～5），如果你这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表你的机器是无法参与挖矿的。
 SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
@@ -49,7 +49,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本 1sudo phala install 重要提示：如果你曾经已经安装了Phala脚本只需要升级脚本即可。升级方法如下：
 1sudo phala update script 性能分数测试方法： 1sudo phala score-test [要使用的核心数量，核心数量根据CPU情况而定] 2例如：sudo phala score-test X  一定要记得替换核心数，使用你的CPU最大核心数跑分测试，否则跑分将不准确！
  跑分用的Docker不会自动结束关闭，结束跑分的方法：
 1sudo phala stop bench 在跑分结束后，程序会自动上传你的配置和跑分，如果你不希望上传，请手动输入N以结束上传。
@@ -57,12 +57,12 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>2 单节点挖矿（Para1版本）</title>
+      <title>2 单节点挖矿（para2版本）</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  领取测试币 你可以通过 Phala 水龙头免费自助获取测试币。 由于以太坊矿工费高昂，不推荐你使用此前的燃烧方式。 领取测试币后需要保证stash账号和cntroller账号都有一些测试币，后续才能顺利测试
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  领取测试币 你可以通过 Phala 水龙头免费自助获取测试币。 由于以太坊矿工费高昂，不推荐你使用此前的燃烧方式。 领取测试币后需要保证stash账号和cntroller账号都有一些测试币，后续才能顺利测试
  测试币无任何价值，不可兑换，仅供测试用
  Telegram(需科学) 第一步：点击水龙头群链接 https://t.me/phalafaucet ，按照提示下载软件。点击“View in Telegram”加入水龙头群组。
 第二步：进群后先回复机器人提出的数学题 如机器人发送（7+1），请回复8。否则机器人将不会给你发测试币。
@@ -79,7 +79,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步 ​
 只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：
 1sudo phala install  Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。  当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：
 1sudo phala config set 当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：
@@ -92,7 +92,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/</guid>
-      <description> Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  Start Mining 首先你要完成上一步的安装，如果没有做，请移步上一章节
+      <description> Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  Start Mining 首先你要完成上一步的安装，如果没有做，请移步上一章节
 在phala脚本目录打开终端，输入以下指令:
 1sudo phala start </description>
     </item>
@@ -103,7 +103,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  在phala脚本目录打开终端，输入以下指令: 1sudo phala status 正确的状态应该如下图：
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  在phala脚本目录打开终端，输入以下指令: 1sudo phala status 正确的状态应该如下图：
 注意：
 这里会显示你的节点名称、核心使用数、Gas费地址及余额、抵押池账户地址以及Worker-publish-key 请注意如果你的Gas费账户余额低于2PHA此处将出现警告，若你注意到警告请及时向Gas费账户补充PHA。</description>
     </item>
@@ -114,7 +114,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/</guid>
-      <description> Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start </description>
+      <description> Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  停止挖矿 1sudo phala stop 清空节点数据并升级 1sudo phala update clean 2sudo phala start 不清空节点数据升级 1sudo phala update 2sudo phala start </description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。  控制台链接入口
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  控制台链接入口
 简介 控制台面向的用户主要是矿工及矿池主，囊括了对 Worker 及抵押池的链上操作及数据展示
 名词解释  WorkerPublicKey：Worker 在注册完成后获得的唯一 ID，以 0x 开头 pid：即抵押池 ID，抵押池的唯一 ID  操作指南 准备  有 PHA 的账户,作为抵押池所有者/Worker 操作者 Worker 的 WorkerPublicKey，并且该 Worker 已绑定上述账户  主流程   连接账户（创建和导入账户教程）
   创建抵押池
@@ -138,7 +138,7 @@ Bananatok聊天软件（无需科学） 如果无法科学上网，可以下载B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</guid>
-      <description>Para-1 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-1 测试网。   陆续更新中。
+      <description>Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。   陆续更新中。
  I. 增加信任等级 目前等级 1、2、3 会被当作同样的信任等级来看待，因此如果你只是2或3级，无需去再去提升等级。但如果你的等级为4或5，则可以参考以下建议来操作。与此同时，我们鼓励加入我们的 Telegram 或 Discord 群来讨论与分享你的经验。
 遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs). The platform has not been identified as compromised and thus it is not revoked.</description>
     </item>
