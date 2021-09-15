@@ -183,8 +183,8 @@ Submit Candidacy Submitting your candidacy for the council requires a small bond
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-2 Testnet Mining Guide</a></h2>
-      <section class="subsection" id="docs-para-2-testnet-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-khala-pre-mainnet-mining-guide">
         <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
@@ -216,28 +216,28 @@ Submit Candidacy Submitting your candidacy for the council requires a small bond
     <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-2-solo-mining-in-para-2-testnet" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo Mining in Para-2 Testnet</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-21-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2.1 Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2 Solo mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#install">Install</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-22-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/">2.2 Deploy Worker Node</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo-mining-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo mining configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/">2.1 Deploy Worker Node</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#start-mining">Start Mining</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-23-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/">2.3 Verify Worker Status</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-22-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/">2.2 Verify Worker Status</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#verify-worker-status">Verify Worker Status</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-24-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-25-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/">2.5 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-23-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-24-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/">2.4 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#console-manual">Console Manual</a>
       <ul>
@@ -255,14 +255,50 @@ Submit Candidacy Submitting your candidacy for the council requires a small bond
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
       <ul>
         <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
+        <li><a href="#how-to-update-worker-from-para2-to-khala">How to update worker from Para2 to Khala</a></li>
       </ul>
     </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-41-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#stateful-firewall">Stateful firewall</a>
+      <ul>
+        <li><a href="#what-these-stateful-firewalls-do">What these stateful firewalls do</a>
+          <ul>
+            <li><a href="#source-nat">Source NAT</a></li>
+            <li><a href="#policy-based-filter">Policy-based filter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#what-to-do">What to do</a>
+      <ul>
+        <li><a href="#get-rid-of-nat-or-filter-at-all">Get rid of NAT or filter at all</a></li>
+        <li><a href="#configure-your-own-device-to-get-better-connectivity">Configure your own device to get better connectivity</a>
+          <ul>
+            <li><a href="#destination-nat-dmz-or-upnp">Destination NAT, DMZ, or UPnP</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/para-mining/" class="group">Para-2 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-2-testnet-mining-guide">
+        <h3 class="section_link"><a id="docs-claim-test-token-from-telegram-bot" href="https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/">Claim Test Token from Telegram Bot</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
   </ul>
 </nav>
       </section>

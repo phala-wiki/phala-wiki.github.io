@@ -9,27 +9,31 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>2 Solo Mining in Para-2 Testnet | Phala Network Wiki</title><meta property="og:title" content="2 Solo Mining in Para-2 Testnet" />
-<meta property="og:description" content="Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala." />
+<title>2 Solo mining configuration | Phala Network Wiki</title><meta property="og:title" content="2 Solo mining configuration" />
+<meta property="og:description" content="If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="2 Solo Mining in Para-2 Testnet">
-<meta itemprop="description" content="Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala.">
+<meta itemprop="name" content="2 Solo mining configuration">
+<meta itemprop="description" content="If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.">
 
-<meta itemprop="wordCount" content="176">
+<meta itemprop="wordCount" content="137">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2 Solo Mining in Para-2 Testnet"/>
-<meta name="twitter:description" content="Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala."/>
+<meta name="twitter:title" content="2 Solo mining configuration"/>
+<meta name="twitter:description" content="If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala.">
+  <meta name="description" content="If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.">
 
 
 
@@ -179,8 +183,8 @@
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Para-2 Testnet Mining Guide</a></h2>
-      <section class="subsection" id="docs-para-2-testnet-mining-guide">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-khala-pre-mainnet-mining-guide">
         <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
@@ -212,28 +216,28 @@
     <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-2-solo-mining-in-para-2-testnet" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo Mining in Para-2 Testnet</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-21-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2.1 Configuration</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2 Solo mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#install">Install</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-22-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/">2.2 Deploy Worker Node</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-2-solo-mining-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo mining configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/">2.1 Deploy Worker Node</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#start-mining">Start Mining</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-23-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/">2.3 Verify Worker Status</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-22-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/">2.2 Verify Worker Status</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#verify-worker-status">Verify Worker Status</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-24-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-25-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/">2.5 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-23-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-24-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/">2.4 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#console-manual">Console Manual</a>
       <ul>
@@ -251,14 +255,50 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
       <ul>
         <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
+        <li><a href="#how-to-update-worker-from-para2-to-khala">How to update worker from Para2 to Khala</a></li>
       </ul>
     </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-41-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#stateful-firewall">Stateful firewall</a>
+      <ul>
+        <li><a href="#what-these-stateful-firewalls-do">What these stateful firewalls do</a>
+          <ul>
+            <li><a href="#source-nat">Source NAT</a></li>
+            <li><a href="#policy-based-filter">Policy-based filter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#what-to-do">What to do</a>
+      <ul>
+        <li><a href="#get-rid-of-nat-or-filter-at-all">Get rid of NAT or filter at all</a></li>
+        <li><a href="#configure-your-own-device-to-get-better-connectivity">Configure your own device to get better connectivity</a>
+          <ul>
+            <li><a href="#destination-nat-dmz-or-upnp">Destination NAT, DMZ, or UPnP</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/para-mining/" class="group">Para-2 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-2-testnet-mining-guide">
+        <h3 class="section_link"><a id="docs-claim-test-token-from-telegram-bot" href="https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/">Claim Test Token from Telegram Bot</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
   </ul>
 </nav>
       </section>
@@ -415,39 +455,35 @@
 </aside>
 
   <main class="content">
-    <h1>2 Solo Mining in Para-2 Testnet</h1>
-<div class="tip tip_warning">
-  Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.
+    <h1>2 Solo mining configuration</h1>
+<div class="tip">
+  If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.
 </div>
 
-<p>The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala.</p>
-<!-- The difference between Para-2 Testnet and Khala is the underlying relaychain, which should be opaque to the miners. -->
-<p>Before you start mining in Para-2 Testnet, you need to first <a href="/en-us/docs/khala-user/">get a Khala account</a> and acquire test token from faucet (real PHA is needed in future Khala mining).</p>
-<h2 id="claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</h2>
-<ol>
-<li>Get to Phala Faucet <a href="https://t.me/phalafaucet">https://t.me/phalafaucet</a>. You may need to download and install Telegram as prompted. Click &ldquo;VIEW IN TELEGRAM&rdquo; to join the group.</li>
-</ol>
-<p><img src="/images/docs/khala-mining/faucet-1.png" alt=""></p>
-<ol start="2">
-<li>Answer the arithmetic CAPTCHA from the bot after you join the group. For example, you should reply 16 in the following case.</li>
-</ol>
-<p><img src="/images/docs/khala-mining/faucet-2.png" alt=""></p>
-<ol start="3">
-<li>Choose a username. Click &ldquo;Settings - Edit - Username&rdquo; to set your username, or bot cannot recognize your applications.</li>
-</ol>
-<p><img src="/images/docs/khala-mining/faucet-3.png" alt=""></p>
-<ol start="4">
-<li>Send <strong>/drip [your_account]</strong> to get test token.</li>
-</ol>
-<p><img src="/images/docs/khala-mining/faucet-4.png" alt=""></p>
+<h2 id="install">Install</h2>
+<p>You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
+</code></pre></div><p>By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.</p>
 
+<div class="tip tip_warning">
+  DO NOT share the same gas fee account across multiple solo mining setup.
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config <span class="nb">set</span>
+</code></pre></div><blockquote>
+<p>The script will ask for re-enter if the received parameter is invalid.
+To ensure the proceeding of mining, the balance of gas fee account should be greater than 0.1 PHA.</p>
+</blockquote>
+<p>You can get the current parameters in use with</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config show
+</code></pre></div>
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/" class="pager_link button" title="1.4 Benchmarking">
+      <a href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/" class="pager_link button" title="2 Solo mining">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">1.4 Benchmarking</span>
+  <span class="pager_label">2 Solo mining</span>
 </a>
     
   </div>
@@ -457,8 +493,8 @@
         
   
     <div class="pager_item next">
-      <a href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/" class="pager_link button" title="2.1 Configuration">
-  <span class="pager_label">2.1 Configuration</span>
+      <a href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/" class="pager_link button" title="2.1 Deploy Worker Node">
+  <span class="pager_label">2.1 Deploy Worker Node</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>

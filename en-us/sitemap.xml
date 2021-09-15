@@ -175,6 +175,18 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/para-mining/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/para-mining/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/para-mining/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/prb/</loc>
     <xhtml:link
                 rel="alternate"
@@ -379,6 +391,8 @@
                 href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</loc>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</loc>
     <xhtml:link
                 rel="alternate"
@@ -391,64 +405,64 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-deploy-worker-node/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-verify-worker-status/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-upgrade-worker-node/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-console/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/"
+                href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/"
+                href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</loc>
@@ -463,16 +477,16 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/categories/</loc>
@@ -490,6 +504,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/categories/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/para-mining/claim-test-token/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/</loc>

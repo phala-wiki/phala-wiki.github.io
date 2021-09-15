@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>1.3 SGX测试和信任分级 | Phala Network 百科</title><meta property="og:title" content="1.3 SGX测试和信任分级" />
-<meta property="og:description" content="Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+<meta property="og:description" content="首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
 在报告的最后一行会显示你的安全等级（1～5），如果你这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表你的机器是无法参与挖矿的。
 SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
@@ -22,17 +22,17 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 <meta property="og:site_name" content="Phala Network 百科" />
 
 <meta itemprop="name" content="1.3 SGX测试和信任分级">
-<meta itemprop="description" content="Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+<meta itemprop="description" content="首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
 在报告的最后一行会显示你的安全等级（1～5），如果你这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表你的机器是无法参与挖矿的。
 SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
 如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。
 自检指令 1sudo phala sgx-test 正常的结果 1Detecting SGX, this may take a minute... 2✔ SGX instruction set 3 ✔ CPU support 4 ✔ CPU configuration 5 ✔ Enclave attributes 6 ✔ Enclave Page Cache 7 SGX features 8 ✔ SGX2 ✔ EXINFO ✘ ENCLV ✘ OVERSUB ✘ KSS 9 Total EPC size: 94.">
 
-<meta itemprop="wordCount" content="609">
+<meta itemprop="wordCount" content="596">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.3 SGX测试和信任分级"/>
-<meta name="twitter:description" content="Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+<meta name="twitter:description" content="首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
 在报告的最后一行会显示你的安全等级（1～5），如果你这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表你的机器是无法参与挖矿的。
 SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
@@ -44,7 +44,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 
 
 
-  <meta name="description" content="Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。  首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
+  <meta name="description" content="首先需要先按照简易安装模式安装Phala脚本 1sudo phala install ​ 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。
 如果你看到SGX_ERROR_UPDATE_NEEDED这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，则无法挖矿。
 在报告的最后一行会显示你的安全等级（1～5），如果你这里显示的是Can&#39;t give a confidenceLevel due to don&#39;t meet minimum requirement则代表你的机器是无法参与挖矿的。
 SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者isgx，则说明驱动正常运行。
@@ -197,8 +197,8 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-user/" class="group">使用波卡插件</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-mining/" class="group">Para-2挖矿教程</a></h2>
-      <section class="subsection" id="docs-para-2挖矿教程">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-mining/" class="group">Khala预备主网挖矿教程</a></h2>
+      <section class="subsection" id="docs-khala预备主网挖矿教程">
         <h3 class="section_link"><a id="docs-11-检查你的硬件bios和系统" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/">1.1 检查你的硬件、BIOS和系统</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#phala-硬件需求门槛">Phala 硬件需求门槛</a></li>
@@ -251,8 +251,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-2-单节点挖矿para2版本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/">2 单节点挖矿（para2版本）</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-21-环境配置" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-configuration/">2.1 环境配置</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo挖矿环境配置" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/">2 Solo挖矿环境配置</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -261,12 +260,12 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-22-部署-worker-节点" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-deploy-worker-node/">2.2 部署 Worker 节点</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-21-部署-worker-节点" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-deploy-worker-node/">2.1 部署 Worker 节点</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#start-mining">Start Mining</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-23-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-verify-worker-status/">2.3 查看Worker状态</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-22-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-verify-worker-status/">2.2 查看Worker状态</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -279,8 +278,8 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-24-worker升级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-upgrade-worker-node/">2.4 Worker升级</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-25-使用控制台" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-5-console/">2.5 使用控制台</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-23-worker升级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Worker升级</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-24-使用控制台" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-console/">2.4 使用控制台</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#简介">简介</a></li>
     <li><a href="#名词解释">名词解释</a></li>
@@ -300,16 +299,49 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-3-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">3 FAQ</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-4-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">4 FAQ</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#i-增加信任等级">I. 增加信任等级</a>
       <ul>
         <li><a href="#遇到提示-configuration_needed-或-configuration_and_sw_hardening_needed">遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
+        <li><a href="#如何从para2切换到khala">如何从Para2切换到Khala</a></li>
       </ul>
     </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-41-如何提高和p2p节点的连接性" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 如何提高和P2P节点的连接性</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#面临的问题">面临的问题</a></li>
+    <li><a href="#太长不读">太长不读</a></li>
+    <li><a href="#原理解释状态防火墙">原理解释：状态防火墙</a>
+      <ul>
+        <li><a href="#防火墙做了什么">防火墙做了什么</a>
+          <ul>
+            <li><a href="#对来源地址的转换source-nat">对来源地址的转换（Source NAT）</a></li>
+          </ul>
+        </li>
+        <li><a href="#过滤策略">过滤策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#怎么办">怎么办</a>
+      <ul>
+        <li><a href="#避免麻烦">避免麻烦</a></li>
+        <li><a href="#配置设备来让连接性好一点">配置设备来让连接性好一点</a>
+          <ul>
+            <li><a href="#目的地址转换destination-nat暴露特定主机以及upnp">目的地址转换（Destination NAT），暴露特定主机以及UPnP</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/para-mining/" class="group">Para-2测试网教程</a></h2>
+      <section class="subsection" id="docs-para-2测试网教程">
+        <h3 class="section_link"><a id="docs-领取para2测试币" href="https://wiki.phala.network/zh-cn/docs/para-mining/claim-test-token/">领取Para2测试币</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -352,13 +384,8 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 </aside>
 
   <main class="content">
-    <h1>1.3 SGX测试和信任分级</h1>
-<div class="tip tip_warning">
-  Para-2 是 Phala Network (以及 Khala Network) 的第一版平行链测试网。测试网的目的是在 Khala Network 上线挖矿子系统前及早发现并解决问题，同时收集来自社区的反馈。因此在测试网络中，频繁的修改与升级是正常的。除非特殊提及，本教程中所有的区块链都指 Para-2 测试网。
-</div>
-
-<h3 id="首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala install
+    <h1>1.3 SGX测试和信任分级</h1><h3 id="首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>​
 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。</p>
 <p>如果你看到<code>SGX_ERROR_UPDATE_NEEDED</code>这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，<strong>则无法挖矿。</strong></p>

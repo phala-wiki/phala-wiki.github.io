@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Para-2 Testnet Mining Guide on Phala Network Wiki</title>
+    <title>Khala Pre-mainnet Mining Guide on Phala Network Wiki</title>
     <link>https://wiki.phala.network/en-us/docs/khala-mining/</link>
-    <description>Recent content in Para-2 Testnet Mining Guide on Phala Network Wiki</description>
+    <description>Recent content in Khala Pre-mainnet Mining Guide on Phala Network Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/khala-mining/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,7 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  General Khala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:</description>
+      <description>General Khala Hardware Requirements A system can potentially mine Phala if it meets these general requirements:
+It will also need a motherboard and BIOS which support using Intel SGX to run a Trusted Execution Environment (TEE).
+Check Your CPU   Look up your computer&amp;rsquo;s Processor. On Windows, you can find this in Control Panel/Settings, or right-click on the Start icon and select System. On Ubuntu, click in the upper-right corner, pick Settings, and then pick About.</description>
     </item>
     
     <item>
@@ -21,7 +23,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.</description>
+      <description>Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.
+Download Phala Scripts The Phala tools are availbale at https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip, it can be downloaded with wget by executing the following commands in the terminal:
+1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y 2sudo apt install wget unzip 3cd ~ 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip 5unzip main.</description>
     </item>
     
     <item>
@@ -30,7 +34,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.</description>
+      <description>Double Check the SGX Capability After the installation of your driver, please use the following utility to double check if everything goes well.
+  You can run the SGX test by the Phala scripts
+1sudo phala sgx-test   Please pay attention to the following checks:
+ SGX system software → Able to launch enclaves → Production Mode Flexible launch control → Able to launch production mode enclave isvEnclaveQuoteStatus and advisoryIDs (explained in the next section)  Among them, the first one is a must to run Phala Network pRuntime.</description>
     </item>
     
     <item>
@@ -39,76 +46,99 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:</description>
+      <description>Benchmark Your Worker First, install the needed images with Phala tools:
+1sudo phala install If you have installed the images before, you can update them with:
+1sudo phala update script Get the performance score with:
+1sudo phala score-test [number_of_cores] 2# e.g., sudo phala score-test 4  Tip: We recommend to use all the cores of your CPU.
+ The performance test has to be stopped manually with:
+1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results.</description>
     </item>
     
     <item>
-      <title>2 Solo Mining in Para-2 Testnet</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  The following tutorials apply to Para-2 Testnet, which shares the same tokenomics parameters as the future Khala.</description>
-    </item>
-    
-    <item>
-      <title>2.1 Configuration</title>
+      <title>2 Solo mining</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.</description>
+      <description>If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.</description>
     </item>
     
     <item>
-      <title>2.2 Deploy Worker Node</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</link>
+      <title>2 Solo mining configuration</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-deploy-worker-node/</guid>
-      <description> Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</guid>
+      <description>If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
+1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.</description>
+    </item>
+    
+    <item>
+      <title>2.1 Deploy Worker Node</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/</guid>
+      <description>Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
 1sudo phala start </description>
     </item>
     
     <item>
-      <title>2.3 Verify Worker Status</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</link>
+      <title>2.2 Verify Worker Status</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-3-verify-worker-status/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  Verify Worker Status Read the worker status with:
-1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/</guid>
+      <description>Verify Worker Status Read the worker status with:
+1sudo phala status An expected worker status is shown as follow, which contains the node name, number of cores, gas account and balance, StakePool account and Worker public key.
+ Warning will be sent if your gas account balance is under 2 PHA so you can recharge in time.  </description>
     </item>
     
     <item>
-      <title>2.4 Upgrade Worker Node</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</link>
+      <title>2.3 Upgrade Worker Node</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-4-upgrade-worker-node/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.  To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/</guid>
+      <description>To upgrade your worker requires it to stop first.
+1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
+1sudo phala update clean or with the data preserved
+1sudo phala update Finally, restart your worker with:
+1sudo phala start </description>
     </item>
     
     <item>
-      <title>2.5 Use Console to Manage Your Mining</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</link>
+      <title>2.4 Use Console to Manage Your Mining</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-5-console/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   We highly recommend to read staking mechanism before using the Console.
- The Console</description>
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/</guid>
+      <description>We highly recommend to read staking mechanism before using the Console.
+ The Console
+Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
+Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above.</description>
     </item>
     
     <item>
-      <title>3 Frequently Asked Questions</title>
+      <title>4 Frequently Asked Questions</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</guid>
-      <description>Para-2 is the Parachain testnet of Phala Network (and Khala Network). The purpose of running a testnet is to capture the chaos and collect feedback before the launch of the functionalities on Khala Network. So the system is subject to change. In this tutorial, we always refer to the testnet unless explicitly mentioned.   To be updated.
- I. Increase Confidence Level Currently Tier 1, 2, 3 are treated in the same way.</description>
+      <description>To be updated.
+ I. Increase Confidence Level Currently Tier 1, 2, 3 are treated in the same way. No operation is needed if you are at these tier. However if you are at Tier 4 or 5, you can try the following tips. You can also join the Discord or Telegram miner group to discuss.
+Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs).</description>
+    </item>
+    
+    <item>
+      <title>4.1 How to get better peers connectivity</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</guid>
+      <description>The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both.</description>
     </item>
     
   </channel>
