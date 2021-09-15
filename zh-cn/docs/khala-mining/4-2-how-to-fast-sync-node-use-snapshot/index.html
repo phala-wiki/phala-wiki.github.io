@@ -9,71 +9,59 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>基于Docker Compose的部署示例 | Phala Network 百科</title><meta property="og:title" content="基于Docker Compose的部署示例" />
-<meta property="og:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。" />
+<title>4.2 如果还没有同步好挖矿节点，快速追上的办法 | Phala Network 百科</title><meta property="og:title" content="4.2 如果还没有同步好挖矿节点，快速追上的办法" />
+<meta property="og:description" content="面临的问题 如果你的节点没有同步到最新状态，
+典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
+此时你可以考虑使用这里介绍的方法快速追上最新的状态。
+注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
+下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 下载地址 https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
+$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
+注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘
+准备工作 请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network 百科" />
 
-<meta itemprop="name" content="基于Docker Compose的部署示例">
-<meta itemprop="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。">
+<meta itemprop="name" content="4.2 如果还没有同步好挖矿节点，快速追上的办法">
+<meta itemprop="description" content="面临的问题 如果你的节点没有同步到最新状态，
+典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
+此时你可以考虑使用这里介绍的方法快速追上最新的状态。
+注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
+下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 下载地址 https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
+$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
+注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘
+准备工作 请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行">
 
-<meta itemprop="wordCount" content="68">
+<meta itemprop="wordCount" content="95">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="基于Docker Compose的部署示例"/>
-<meta name="twitter:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。"/>
+<meta name="twitter:title" content="4.2 如果还没有同步好挖矿节点，快速追上的办法"/>
+<meta name="twitter:description" content="面临的问题 如果你的节点没有同步到最新状态，
+典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
+此时你可以考虑使用这里介绍的方法快速追上最新的状态。
+注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
+下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 下载地址 https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
+$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
+注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘
+准备工作 请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。">
+  <meta name="description" content="面临的问题 如果你的节点没有同步到最新状态，
+典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
+此时你可以考虑使用这里介绍的方法快速追上最新的状态。
+注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
+下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 下载地址 https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
+$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
+注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘
+准备工作 请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行">
 
 
 
@@ -360,7 +348,7 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-42-如果还没有同步好挖矿节点快速追上的办法" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 如果还没有同步好挖矿节点，快速追上的办法</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-42-如果还没有同步好挖矿节点快速追上的办法" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 如果还没有同步好挖矿节点，快速追上的办法</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#面临的问题">面临的问题</a></li>
     <li><a href="#下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</a></li>
@@ -385,7 +373,7 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/prb/" class="group">Runtime Bridge</a></h2>
       <section class="subsection" id="docs-runtime-bridge">
-        <h3 class="section_link active"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#系统要求">系统要求</a></li>
     <li><a href="#环境准备">环境准备</a></li>
@@ -422,66 +410,42 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
 </aside>
 
   <main class="content">
-    <h1>基于Docker Compose的部署示例</h1><p>每当prb在Github Release上发布新版本时，<a href="https://hub.docker.com/r/phalanetwork/prb">Docker Hub</a>会同步更新其容器镜像，您可以通过以下命令获取其最新版本:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker pull phalanetwork/prb
-</code></pre></div><p>您可以通过使用<code>prb</code>的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署<code>prb</code>的一个简单示例。</p>
-<blockquote>
-<p><strong>注意:</strong> 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。</p>
-</blockquote>
-<h2 id="系统要求">系统要求</h2>
-<ul>
-<li>Ubuntu LTS 20.04</li>
-<li>Docker 20.10或更新</li>
-<li>Docker Compose 1.29 或更新</li>
-</ul>
-<blockquote>
-<p>Ubuntu默认APT源中的Docker版本太旧，请您根据<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/ </a>与<a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>安装Docker和Docker Compose的最新版本。</p>
-</blockquote>
-<blockquote>
-<p>在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。</p>
-</blockquote>
-<h2 id="环境准备">环境准备</h2>
-<ol>
-<li>创建一个新的文件夹，然后用<a href="https://github.com/Phala-Network/runtime-bridge/blob/master/docker/testing/bridge/docker-compose.example.yml">这里</a>的样例创建和编辑docker-compose.yml；</li>
-<li>运行<code>docker-compose pull</code>拉取最新镜像；</li>
-<li>在Worker机上部署 <code>pruntime</code>；</li>
-<li>在区块链上建立Stakepool。</li>
-</ol>
-<h2 id="基础服务">基础服务</h2>
-<p>运行<code>docker-compose up -d redis io</code>启动基础服务。</p>
-<p>在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。</p>
-<p>RocksDB/LevelDB数据将存放于环境变量中<code>PHALA_DB_PREFIX</code>所指定的目录中。其中，<code>0</code>目录将用于区块数据存储。<code>1</code>目录用于保存Pool和Worker数据（包括私钥，请务必备份）。</p>
-<h2 id="fetch服务"><code>fetch</code>服务</h2>
-<p>运行<code>docker-compose up -d fetch</code>启动<code>fetch</code>服务。</p>
-<p>此服务将至少占用3个CPU核心:</p>
-<ol>
-<li>从中继链中获取包含justification的区块header；</li>
-<li>从平行链中获取区块header和storage changes；</li>
-<li>将区块数据编码为<code>pruntime</code>所接受的格式；</li>
-<li>组织并合并上述数据以实现快速同步。</li>
-</ol>
-<p>这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。<code>fetch</code>服务可以根据实际情况停止和启动。</p>
-<h2 id="trade服务"><code>trade</code>服务</h2>
-<p>运行<code>docker-compose up -d trade</code>启动<code>trade</code>服务。</p>
-<p>其仅需要需要1个CPU核心即可将消息队列中的消息进行签名并发送至区块链上。其签名所需的密钥将保存在内存中，请保证运行环境的数据安全。</p>
-<p>每次更改pool的账户信息时，<code>trade</code>须重启才能生效。</p>
-<h2 id="lifecycle服务"><code>lifecycle</code>服务</h2>
-<p>运行 <code>docker-compose up -d lifecycle</code>启动<code>lifecycle</code>服务。</p>
-<p>其向TEE计算节点同步消息队列和区块数据并管理TEE计算节点的生命周期与状态。使用<a href="https://github.com/Phala-Network/runtime-bridge-monitor">monitor</a>来添加、编辑、删除或检查TEE计算节点。</p>
-<p>每次更改Worker（TEE计算节点）信息时，<code>lifecycle</code>须重启才能生效。</p>
+    <h1>4.2 如果还没有同步好挖矿节点，快速追上的办法</h1><h2 id="面临的问题">面临的问题</h2>
+<p>如果你的节点没有同步到最新状态，</p>
+<p>典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示</p>
+<pre><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
+2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
+</code></pre><p>并且 best 和 target 相差很大。</p>
+<p>此时你可以考虑使用这里介绍的方法快速追上最新的状态。</p>
+<p>注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。</p>
+<h2 id="下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</h2>
+<p>下载地址 <a href="https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz">https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz</a></p>
+<pre><code>$ sha256sum khala-snapshot-210915.tar.gz
+d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
+</code></pre><p>下载完成后解压缩，得到 <code>khala-node</code> 目录</p>
+<p>注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘</p>
+<h2 id="准备工作">准备工作</h2>
+<p>请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+</code></pre></div><p>关闭挖矿服务</p>
+<h2 id="使用全量快照替换本地的数据">使用全量快照替换本地的数据</h2>
+<h3 id="如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</h3>
+<p>删除 <code>/var/khala-dev-node</code> 目录里的所有文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去。</p>
+<h3 id="高级矿工">高级矿工</h3>
+<p>找到节点的区块存储目录，清空里面的文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去</p>
+<h2 id="重新启动服务">重新启动服务</h2>
+<p>如果你是 Solo 挖矿，使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+</code></pre></div><p>重新启动挖矿服务，此时你的挖矿节点将快速恢复到全量快照发布时的状态，再稍等几十分钟到几个小时不等（视网络情况而定）即可跟上最新状态，以便开始挖矿</p>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      
-        
-          <a href="https://wiki.phala.network/zh-cn/docs/prb/" class="pager_link button" title="Runtime Bridge">
+      <a href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/" class="pager_link button" title="4.1 如何提高和P2P节点的连接性">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">Runtime Bridge</span>
+  <span class="pager_label">4.1 如何提高和P2P节点的连接性</span>
 </a>
-        
-      
     
   </div>
 
@@ -489,14 +453,6 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
   
         
   
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/" class="pager_link button" title="在Linux中直接部署">
-  <span class="pager_label">在Linux中直接部署</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
-        </div>
-      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -40,7 +40,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 自检指令 1sudo phala sgx-test 正常的结果 1Detecting SGX, this may take a minute... 2✔ SGX instruction set 3 ✔ CPU support 4 ✔ CPU configuration 5 ✔ Enclave attributes 6 ✔ Enclave Page Cache 7 SGX features 8 ✔ SGX2 ✔ EXINFO ✘ ENCLV ✘ OVERSUB ✘ KSS 9 Total EPC size: 94."/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
@@ -336,6 +336,20 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-42-如果还没有同步好挖矿节点快速追上的办法" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 如果还没有同步好挖矿节点，快速追上的办法</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#面临的问题">面临的问题</a></li>
+    <li><a href="#下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</a></li>
+    <li><a href="#准备工作">准备工作</a></li>
+    <li><a href="#使用全量快照替换本地的数据">使用全量快照替换本地的数据</a>
+      <ul>
+        <li><a href="#如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</a></li>
+        <li><a href="#高级矿工">高级矿工</a></li>
+      </ul>
+    </li>
+    <li><a href="#重新启动服务">重新启动服务</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -385,7 +399,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 
   <main class="content">
     <h1>1.3 SGX测试和信任分级</h1><h3 id="首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>​
 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。</p>
 <p>如果你看到<code>SGX_ERROR_UPDATE_NEEDED</code>这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，<strong>则无法挖矿。</strong></p>
@@ -393,9 +407,9 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 <p>SGX测试完毕后，输入<code>ls /dev | grep sgx</code>，如果运行有返回<code>sgx</code>或者<code>isgx</code>，则说明驱动正常运行。</p>
 <p>如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。</p>
 <h3 id="自检指令">自检指令</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div><h3 id="正常的结果">正常的结果</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction <span class="nb">set</span>
 <span class="ln"> 3</span>  ✔  CPU support
 <span class="ln"> 4</span>  ✔  CPU configuration

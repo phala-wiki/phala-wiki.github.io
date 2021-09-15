@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-cn">
+<html lang="en-us">
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
@@ -9,71 +9,35 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>基于Docker Compose的部署示例 | Phala Network 百科</title><meta property="og:title" content="基于Docker Compose的部署示例" />
-<meta property="og:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。" />
+<title>4.2 How to fast sync your node to you haven&#39;t fully synced yet | Phala Network Wiki</title><meta property="og:title" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet" />
+<meta property="og:description" content="Problem If your node havn&rsquo;t up to date, a typical node log looks like
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
+This article shares a cheat way to fast syncing your node." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/" /><meta property="article:section" content="docs" />
 
-<meta property="og:site_name" content="Phala Network 百科" />
+<meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="基于Docker Compose的部署示例">
-<meta itemprop="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。">
+<meta itemprop="name" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet">
+<meta itemprop="description" content="Problem If your node havn&rsquo;t up to date, a typical node log looks like
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
+This article shares a cheat way to fast syncing your node.">
 
-<meta itemprop="wordCount" content="68">
+<meta itemprop="wordCount" content="276">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="基于Docker Compose的部署示例"/>
-<meta name="twitter:description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。"/>
+<meta name="twitter:title" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet"/>
+<meta name="twitter:description" content="Problem If your node havn&rsquo;t up to date, a typical node log looks like
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
+This article shares a cheat way to fast syncing your node."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
-  <meta name="description" content="每当prb在Github Release上发布新版本时，Docker Hub会同步更新其容器镜像，您可以通过以下命令获取其最新版本:
-1docker pull phalanetwork/prb 您可以通过使用prb的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署prb的一个简单示例。
- 注意: 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。
- 系统要求  Ubuntu LTS 20.04 Docker 20.10或更新 Docker Compose 1.29 或更新   Ubuntu默认APT源中的Docker版本太旧，请您根据https://docs.docker.com/engine/install/ 与https://docs.docker.com/compose/install/安装Docker和Docker Compose的最新版本。
-  在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。
- 环境准备  创建一个新的文件夹，然后用这里的样例创建和编辑docker-compose.yml； 运行docker-compose pull拉取最新镜像； 在Worker机上部署 pruntime； 在区块链上建立Stakepool。  基础服务 运行docker-compose up -d redis io启动基础服务。
-在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。
-RocksDB/LevelDB数据将存放于环境变量中PHALA_DB_PREFIX所指定的目录中。其中，0目录将用于区块数据存储。1目录用于保存Pool和Worker数据（包括私钥，请务必备份）。
-fetch服务 运行docker-compose up -d fetch启动fetch服务。
-此服务将至少占用3个CPU核心:
- 从中继链中获取包含justification的区块header； 从平行链中获取区块header和storage changes； 将区块数据编码为pruntime所接受的格式； 组织并合并上述数据以实现快速同步。  这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。fetch服务可以根据实际情况停止和启动。
-trade服务 运行docker-compose up -d trade启动trade服务。">
+  <meta name="description" content="Problem If your node havn&amp;rsquo;t up to date, a typical node log looks like
+2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
+This article shares a cheat way to fast syncing your node.">
 
 
 
@@ -90,7 +54,7 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
 	<a href="https://wiki.phala.network" class="nav_brand">
 		<picture data-lit="https://wiki.phala.network/images/logo-phala-48.png" data-dark="https://wiki.phala.network/images/logo-phala-48.png">
 			
-			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network 百科 Logo'>
+			<img srcset = 'https://wiki.phala.network/images/logo-phala-48.png' alt = 'Phala Network Wiki Logo'>
 		</picture>
 		<label class="nav_toggle toggle" title='' role="button">
 			<svg class="icon icon_harmburger">
@@ -154,20 +118,65 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
 </svg></label>
   </div>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/" class="group">Phala Network</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/" class="group">Phala Network</a></h2>
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/tokenomic/" class="group">了解TEE挖矿经济模型（提案）</a></h2>
-      <section class="subsection" id="docs-了解tee挖矿经济模型提案">
-        <h3 class="section_link"><a id="docs-1-phala挖矿抵押设计" href="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/">1 Phala挖矿抵押设计</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
+      <section class="subsection" id="docs-understand-phala-tokenomics">
+        <h3 class="section_link"><a id="docs-1-tee-mining-staking" href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/">1 TEE Mining Staking</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#角色介绍">角色介绍</a></li>
-    <li><a href="#角色关系">角色关系</a>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#tee-mining-roles">TEE Mining Roles</a></li>
+    <li><a href="#role-relationships">Role Relationships</a></li>
+    <li><a href="#the-relationship-between-worker-and-stakepool">The Relationship between Worker and StakePool</a></li>
+    <li><a href="#assignment-of-stake-from-pools-to-workers">Assignment of Stake from Pools to Workers</a></li>
+    <li><a href="#reward-settlement-flow">Reward Settlement Flow</a></li>
+    <li><a href="#pool-exit-stake-settlements">Pool Exit Stake Settlements</a></li>
+  </ul>
+</nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/governance/" class="group">Governance</a></h2>
+      <section class="subsection" id="docs-governance">
+        <h3 class="section_link"><a id="docs-1-participate-in-democracy" href="https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/">1 Participate in Democracy</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#participate-in-democracy">Participate in Democracy</a>
       <ul>
-        <li><a href="#计算节点与抵押池的关系">计算节点与抵押池的关系</a></li>
-        <li><a href="#抵押者与机器的关系">抵押者与机器的关系</a></li>
-        <li><a href="#奖励结算关系">奖励结算关系</a></li>
-        <li><a href="#退出抵押结算">退出抵押结算</a></li>
+        <li><a href="#important-parameters">Important Parameters</a></li>
+        <li><a href="#proposing-an-action">Proposing an Action</a></li>
+        <li><a href="#submitting-a-preimage">Submitting a Preimage</a></li>
+        <li><a href="#seconding-a-proposal">Seconding a Proposal</a></li>
+        <li><a href="#voting-on-a-proposal">Voting on a Proposal</a></li>
+        <li><a href="#unlocking-locked-tokens">Unlocking Locked Tokens</a></li>
+        <li><a href="#delegate-a-vote">Delegate a Vote</a></li>
+        <li><a href="#undelegate-a-vote">Undelegate a Vote</a></li>
+        <li><a href="#voting-with-a-governance-proxy">Voting with a Governance Proxy</a></li>
+        <li><a href="#interpreting-on-chain-voting-data">Interpreting On-Chain Voting Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-2-join-the-council" href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/">2 Join the Council</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#submit-candidacy">Submit Candidacy</a></li>
+        <li><a href="#voting-on-candidates">Voting on Candidates</a></li>
+        <li><a href="#winning">Winning</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-3-voting-for-councillors" href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/">3 Voting for Councillors</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#voting-for-councillors">Voting for Councillors</a></li>
+        <li><a href="#removing-your-vote">Removing your Vote</a></li>
       </ul>
     </li>
   </ul>
@@ -175,239 +184,169 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/governance/" class="group">治理</a></h2>
-      <section class="subsection" id="docs-治理">
-        <h3 class="section_link"><a id="docs-1-民主模块" href="https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/">1 民主模块</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#重要参数">重要参数</a></li>
-        <li><a href="#提交提案">提交提案</a></li>
-        <li><a href="#提交-preimage">提交 Preimage</a></li>
-        <li><a href="#附议">附议</a></li>
-        <li><a href="#提案公投">提案公投</a></li>
-        <li><a href="#代币解锁">代币解锁</a></li>
-        <li><a href="#委托投票">委托投票</a></li>
-        <li><a href="#取消委托投票">取消委托投票</a></li>
-        <li><a href="#通过代理投票">通过代理投票</a></li>
-        <li><a href="#链上数据说明">链上数据说明</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-2-加入理事会议会" href="https://wiki.phala.network/zh-cn/docs/governance/2-join-the-council/">2 加入理事会议会</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#提交候选人">提交候选人</a></li>
-        <li><a href="#对候选人进行投票">对候选人进行投票</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-3-为理事会议员投票" href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/">3 为理事会议员投票</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#为议员投票">为议员投票</a></li>
-        <li><a href="#删除您的投票">删除您的投票</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </section>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-user/" class="group">使用波卡插件</a></h2>
-  </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/khala-mining/" class="group">Khala预备主网挖矿教程</a></h2>
-      <section class="subsection" id="docs-khala预备主网挖矿教程">
-        <h3 class="section_link"><a id="docs-11-检查你的硬件bios和系统" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/">1.1 检查你的硬件、BIOS和系统</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-khala-pre-mainnet-mining-guide">
+        <h3 class="section_link"><a id="docs-11-check-your-hardware-bios-and-system" href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/">1.1 Check Your Hardware, BIOS and System</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#phala-硬件需求门槛">Phala 硬件需求门槛</a></li>
-    <li><a href="#打开英特尔官网httpswwwintelcncontentwwwcnzhhomepagehtml搜索自己的cpu型号">打开<a href="https://www.intel.cn/content/www/cn/zh/homepage.html">英特尔官网</a>，搜索自己的CPU型号</a>
-      <ul>
-        <li><a href="#如图所示这样就是支持的芯片">如图所示，这样就是支持的芯片。</a></li>
-      </ul>
-    </li>
-    <li><a href="#确认-bios-设置">确认 BIOS 设置</a></li>
-    <li><a href="#ubuntu-1804--2004">Ubuntu 18.04 / 20.04</a>
+    <li><a href="#general-khala-hardware-requirements">General Khala Hardware Requirements</a></li>
+    <li><a href="#check-your-cpu">Check Your CPU</a></li>
+    <li><a href="#check-bios-settings">Check BIOS settings</a></li>
+    <li><a href="#supported-operating-systems-ubuntu-1804-and-2004">Supported Operating Systems: Ubuntu 18.04 and 20.04</a>
       <ul>
         <li><a href="#references">References</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-12-下载并安装phala脚本" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-2-download-setup-scripts/">1.2 下载并安装Phala脚本</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-12-install-phala-tools" href="https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/">1.2 Install Phala Tools</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</a></li>
-    <li><a href="#安装phala工具">安装Phala工具</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#download-phala-scripts">Download Phala Scripts</a></li>
+    <li><a href="#activate-sgx-software-with-sgx_enable">Activate SGX Software with sgx_enable</a></li>
+    <li><a href="#install-phala-tools">Install Phala Tools</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-13-sgx测试和信任分级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 SGX测试和信任分级</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-13-check-the-sgx-capability-and-confidence-level" href="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/">1.3 Check the SGX Capability and Confidence Level</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</a></li>
-        <li><a href="#自检指令">自检指令</a></li>
-        <li><a href="#正常的结果">正常的结果</a></li>
-      </ul>
-    </li>
-    <li><a href="#信任分级介绍">信任分级介绍</a>
-      <ul>
-        <li>
-          <ul>
-            <li></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#double-check-the-sgx-capability">Double Check the SGX Capability</a></li>
+    <li><a href="#confidence-level-of-a-miner">Confidence Level of a Miner</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-14-测试worker性能分" href="https://wiki.phala.network/zh-cn/docs/khala-mining/1-4-benchmarking/">1.4 测试Worker性能分</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-14-benchmarking" href="https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/">1.4 Benchmarking</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#如果你没有运行过sgx测试首先需要先按照简易安装模式安装phala脚本">如果你没有运行过SGX测试首先需要先按照简易安装模式安装Phala脚本</a></li>
-        <li><a href="#性能分数测试方法">性能分数测试方法：</a></li>
-      </ul>
-    </li>
+    <li><a href="#benchmark-your-worker">Benchmark Your Worker</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-2-solo挖矿环境配置" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-solo-mining/">2 Solo挖矿环境配置</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/">2 Solo mining</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#如果你已经进行了sgx测试性能测试那么你的配置应该已经完成可以忽略直接下一步">如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步</a></li>
-      </ul>
-    </li>
+    <li><a href="#install">Install</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-21-部署-worker-节点" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-deploy-worker-node/">2.1 部署 Worker 节点</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-2-solo-mining-configuration" href="https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/">2 Solo mining configuration</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-21-deploy-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/">2.1 Deploy Worker Node</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#start-mining">Start Mining</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-22-查看worker状态" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-2-verify-worker-status/">2.2 查看Worker状态</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-22-verify-worker-status" href="https://wiki.phala.network/en-us/docs/khala-mining/2-2-verify-worker-status/">2.2 Verify Worker Status</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#verify-worker-status">Verify Worker Status</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-23-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-24-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/">2.4 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#console-manual">Console Manual</a>
       <ul>
-        <li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#console-operations">Console Operations</a></li>
+        <li><a href="#other-operations">Other Operations</a></li>
+        <li><a href="#explanations-of-fields">Explanations of Fields</a>
           <ul>
-            <li><a href="#在phala脚本目录打开终端输入以下指令">在phala脚本目录打开终端，输入以下指令:</a></li>
+            <li><a href="#stakepool-list">Stakepool List</a></li>
+            <li><a href="#worker-list">Worker List</a></li>
+            <li><a href="#stake-info">Stake Info</a></li>
           </ul>
         </li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-23-worker升级" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Worker升级</a></h3><nav id="TableOfContents"></nav>
-        <h3 class="section_link"><a id="docs-24-使用控制台" href="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-console/">2.4 使用控制台</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#名词解释">名词解释</a></li>
-    <li><a href="#操作指南">操作指南</a>
+    <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
       <ul>
-        <li><a href="#准备">准备</a></li>
-        <li><a href="#主流程">主流程</a></li>
-        <li><a href="#其他操作">其他操作</a></li>
-      </ul>
-    </li>
-    <li><a href="#信息介绍">信息介绍</a>
-      <ul>
-        <li><a href="#抵押池列表stakepool">抵押池列表（Stakepool）</a></li>
-        <li><a href="#worker列表worker">Worker列表（Worker）</a></li>
-        <li><a href="#抵押详情stake-info">抵押详情（Stake Info）</a></li>
+        <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
+        <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
+        <li><a href="#how-to-update-worker-from-para2-to-khala">How to update worker from Para2 to Khala</a></li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-4-faq" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/">4 FAQ</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-41-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#i-增加信任等级">I. 增加信任等级</a>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#stateful-firewall">Stateful firewall</a>
       <ul>
-        <li><a href="#遇到提示-configuration_needed-或-configuration_and_sw_hardening_needed">遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
-        <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
-        <li><a href="#如何从para2切换到khala">如何从Para2切换到Khala</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-41-如何提高和p2p节点的连接性" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 如何提高和P2P节点的连接性</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#面临的问题">面临的问题</a></li>
-    <li><a href="#太长不读">太长不读</a></li>
-    <li><a href="#原理解释状态防火墙">原理解释：状态防火墙</a>
-      <ul>
-        <li><a href="#防火墙做了什么">防火墙做了什么</a>
+        <li><a href="#what-these-stateful-firewalls-do">What these stateful firewalls do</a>
           <ul>
-            <li><a href="#对来源地址的转换source-nat">对来源地址的转换（Source NAT）</a></li>
+            <li><a href="#source-nat">Source NAT</a></li>
+            <li><a href="#policy-based-filter">Policy-based filter</a></li>
           </ul>
         </li>
-        <li><a href="#过滤策略">过滤策略</a></li>
       </ul>
     </li>
-    <li><a href="#怎么办">怎么办</a>
+    <li><a href="#what-to-do">What to do</a>
       <ul>
-        <li><a href="#避免麻烦">避免麻烦</a></li>
-        <li><a href="#配置设备来让连接性好一点">配置设备来让连接性好一点</a>
+        <li><a href="#get-rid-of-nat-or-filter-at-all">Get rid of NAT or filter at all</a></li>
+        <li><a href="#configure-your-own-device-to-get-better-connectivity">Configure your own device to get better connectivity</a>
           <ul>
-            <li><a href="#目的地址转换destination-nat暴露特定主机以及upnp">目的地址转换（Destination NAT），暴露特定主机以及UPnP</a></li>
+            <li><a href="#destination-nat-dmz-or-upnp">Destination NAT, DMZ, or UPnP</a></li>
           </ul>
         </li>
       </ul>
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-42-如果还没有同步好挖矿节点快速追上的办法" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 如果还没有同步好挖矿节点，快速追上的办法</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-42-how-to-fast-sync-your-node-to-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to fast sync your node to you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#面临的问题">面临的问题</a></li>
-    <li><a href="#下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</a></li>
-    <li><a href="#准备工作">准备工作</a></li>
-    <li><a href="#使用全量快照替换本地的数据">使用全量快照替换本地的数据</a>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#download-latest-snapshot-updated-at-9152021">Download latest snapshot (updated at 9/15/2021)</a></li>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
       <ul>
-        <li><a href="#如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</a></li>
-        <li><a href="#高级矿工">高级矿工</a></li>
+        <li><a href="#if-youre-solo-miner">If you&rsquo;re solo miner</a></li>
+        <li><a href="#advanced-miner">Advanced miner</a></li>
       </ul>
     </li>
-    <li><a href="#重新启动服务">重新启动服务</a></li>
+    <li><a href="#restart-phala-services">Restart Phala services</a></li>
   </ul>
 </nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/para-mining/" class="group">Para-2测试网教程</a></h2>
-      <section class="subsection" id="docs-para-2测试网教程">
-        <h3 class="section_link"><a id="docs-领取para2测试币" href="https://wiki.phala.network/zh-cn/docs/para-mining/claim-test-token/">领取Para2测试币</a></h3><nav id="TableOfContents"></nav>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/para-mining/" class="group">Para-2 Testnet Mining Guide</a></h2>
+      <section class="subsection" id="docs-para-2-testnet-mining-guide">
+        <h3 class="section_link"><a id="docs-claim-test-token-from-telegram-bot" href="https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/">Claim Test Token from Telegram Bot</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claim-test-token-from-telegram-bot">Claim Test Token from Telegram Bot</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/prb/" class="group">Runtime Bridge</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/prb/" class="group">Runtime Bridge</a></h2>
       <section class="subsection" id="docs-runtime-bridge">
-        <h3 class="section_link active"><a id="docs-基于docker-compose的部署示例" href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/">基于Docker Compose的部署示例</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-deployment-with-containers-an-example-with-docker-compose" href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/">Deployment with Containers: An Example with Docker Compose</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#系统要求">系统要求</a></li>
-    <li><a href="#环境准备">环境准备</a></li>
-    <li><a href="#基础服务">基础服务</a></li>
-    <li><a href="#fetch服务"><code>fetch</code>服务</a></li>
-    <li><a href="#trade服务"><code>trade</code>服务</a></li>
-    <li><a href="#lifecycle服务"><code>lifecycle</code>服务</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#prepare-the-environment">Prepare the environment</a></li>
+    <li><a href="#base-services">Base Services</a></li>
+    <li><a href="#the-fetch-service">The <code>fetch</code> Service</a></li>
+    <li><a href="#the-trade-service">The <code>trade</code> Service</a></li>
+    <li><a href="#the-lifecycle-service">The <code>lifecycle</code> Service</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-在linux中直接部署" href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/">在Linux中直接部署</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-running-directly-in-linux" href="https://wiki.phala.network/en-us/docs/prb/running-directly/">Running Directly in Linux</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#系统要求">系统要求</a></li>
-    <li><a href="#安装依赖并生成protobuf接口代码">安装依赖并生成Protobuf接口代码</a></li>
-    <li><a href="#启动服务">启动服务</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#set-up-dependencies-and-generate-protobuf-interfaces">Set up dependencies and generate Protobuf interfaces</a></li>
+    <li><a href="#start-services">Start Services</a></li>
   </ul>
 </nav>
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/zh-cn/docs/maintain/" class="group">网络维护</a></h2>
-      <section class="subsection" id="docs-网络维护">
-        <h3 class="section_link"><a id="docs-collator" href="https://wiki.phala.network/zh-cn/docs/maintain/collator/">Collator</a></h3><nav id="TableOfContents">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/maintain/" class="group">Maintain</a></h2>
+      <section class="subsection" id="docs-maintain">
+        <h3 class="section_link"><a id="docs-collator" href="https://wiki.phala.network/en-us/docs/maintain/collator/">Collator</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#concepts">Concepts</a></li>
     <li><a href="#prepare-a-new-collator">Prepare a new collator</a></li>
@@ -417,71 +356,159 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
 </nav>
       </section>
   </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/pdiem/" class="group">pDiem</a></h2>
+      <section class="subsection" id="docs-pdiem">
+        <h3 class="section_link"><a id="docs-deploy-local-testnet" href="https://wiki.phala.network/en-us/docs/pdiem/deploy-local-testnet/">Deploy Local Testnet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare">Prepare</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-play-with-pdiem" href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/">Play with pDiem</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-diem-accounts">Create Diem accounts</a></li>
+    <li><a href="#simple-diem-to-pdiem-transfer">Simple diem-to-pdiem transfer</a>
+      <ul>
+        <li><a href="#balances-in-pdiem">Balances in pdiem</a></li>
+        <li><a href="#verified-transactions">Verified transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#prepare-subaccounts-for-two-way-transfer">Prepare subaccounts for two-way transfer</a></li>
+    <li><a href="#deposit-diem--pdiem">Deposit (diem → pdiem)</a></li>
+    <li><a href="#withdraw-pdiem--diem">Withdraw (pdiem → diem)</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-reservation-based-model" href="https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/">Reservation-based Model</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deposit">Deposit</a></li>
+    <li><a href="#transfer">Transfer</a></li>
+    <li><a href="#withdraw">Withdraw</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-light-validation-client" href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/">Light Validation Client</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-basics">The Basics</a></li>
+    <li><a href="#light-client">Light Client</a></li>
+    <li><a href="#the-diem-blockchain">The Diem Blockchain</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-contract-implementation" href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/">Contract Implementation</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contract-storage">Contract storage</a></li>
+    <li><a href="#light-client-implementation">Light client implementation</a></li>
+    <li><a href="#receive-deposit-transactions">Receive deposit transactions</a></li>
+    <li><a href="#sign-withdraw-transactions">Sign withdraw transactions</a></li>
+    <li><a href="#assets-transfer">Assets transfer</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-the-relayer" href="https://wiki.phala.network/en-us/docs/pdiem/the-relayer/">The Relayer</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-runs-the-relayer">Who runs the relayer</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-future-works" href="https://wiki.phala.network/en-us/docs/pdiem/future-works/">Future Works</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
+      </section>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
+      <section class="subsection" id="docs-archived-contract-development">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
+      <ul>
+        <li><a href="#contract-1">Contract</a></li>
+        <li><a href="#frontend-1">Frontend</a></li>
+      </ul>
+    </li>
+    <li><a href="#put-everything-together">Put everything together</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
+      <ul>
+        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
+        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
+        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
+        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
+      <ul>
+        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
+  </section>
       </section>
   </section>
 </aside>
 
   <main class="content">
-    <h1>基于Docker Compose的部署示例</h1><p>每当prb在Github Release上发布新版本时，<a href="https://hub.docker.com/r/phalanetwork/prb">Docker Hub</a>会同步更新其容器镜像，您可以通过以下命令获取其最新版本:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker pull phalanetwork/prb
-</code></pre></div><p>您可以通过使用<code>prb</code>的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署<code>prb</code>的一个简单示例。</p>
-<blockquote>
-<p><strong>注意:</strong> 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。</p>
-</blockquote>
-<h2 id="系统要求">系统要求</h2>
-<ul>
-<li>Ubuntu LTS 20.04</li>
-<li>Docker 20.10或更新</li>
-<li>Docker Compose 1.29 或更新</li>
-</ul>
-<blockquote>
-<p>Ubuntu默认APT源中的Docker版本太旧，请您根据<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/ </a>与<a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>安装Docker和Docker Compose的最新版本。</p>
-</blockquote>
-<blockquote>
-<p>在生产环境中，请您使用Docker Hub中的预构建的镜像而非由源码自行构建以避免非预期的行为。</p>
-</blockquote>
-<h2 id="环境准备">环境准备</h2>
-<ol>
-<li>创建一个新的文件夹，然后用<a href="https://github.com/Phala-Network/runtime-bridge/blob/master/docker/testing/bridge/docker-compose.example.yml">这里</a>的样例创建和编辑docker-compose.yml；</li>
-<li>运行<code>docker-compose pull</code>拉取最新镜像；</li>
-<li>在Worker机上部署 <code>pruntime</code>；</li>
-<li>在区块链上建立Stakepool。</li>
-</ol>
-<h2 id="基础服务">基础服务</h2>
-<p>运行<code>docker-compose up -d redis io</code>启动基础服务。</p>
-<p>在本示例中，Redis中的数据没有被持久化，其意外退出会破坏整个环境，请在生产环境中配置高可用的Redis服务。如果您需要在Docker Compose的网络环境外使用RPC，请暴露Redis的端口。</p>
-<p>RocksDB/LevelDB数据将存放于环境变量中<code>PHALA_DB_PREFIX</code>所指定的目录中。其中，<code>0</code>目录将用于区块数据存储。<code>1</code>目录用于保存Pool和Worker数据（包括私钥，请务必备份）。</p>
-<h2 id="fetch服务"><code>fetch</code>服务</h2>
-<p>运行<code>docker-compose up -d fetch</code>启动<code>fetch</code>服务。</p>
-<p>此服务将至少占用3个CPU核心:</p>
-<ol>
-<li>从中继链中获取包含justification的区块header；</li>
-<li>从平行链中获取区块header和storage changes；</li>
-<li>将区块数据编码为<code>pruntime</code>所接受的格式；</li>
-<li>组织并合并上述数据以实现快速同步。</li>
-</ol>
-<p>这所有的操作都是异步的，在同步时，您将看到这几个进程会占用大量的CPU时间。<code>fetch</code>服务可以根据实际情况停止和启动。</p>
-<h2 id="trade服务"><code>trade</code>服务</h2>
-<p>运行<code>docker-compose up -d trade</code>启动<code>trade</code>服务。</p>
-<p>其仅需要需要1个CPU核心即可将消息队列中的消息进行签名并发送至区块链上。其签名所需的密钥将保存在内存中，请保证运行环境的数据安全。</p>
-<p>每次更改pool的账户信息时，<code>trade</code>须重启才能生效。</p>
-<h2 id="lifecycle服务"><code>lifecycle</code>服务</h2>
-<p>运行 <code>docker-compose up -d lifecycle</code>启动<code>lifecycle</code>服务。</p>
-<p>其向TEE计算节点同步消息队列和区块数据并管理TEE计算节点的生命周期与状态。使用<a href="https://github.com/Phala-Network/runtime-bridge-monitor">monitor</a>来添加、编辑、删除或检查TEE计算节点。</p>
-<p>每次更改Worker（TEE计算节点）信息时，<code>lifecycle</code>须重启才能生效。</p>
+    <h1>4.2 How to fast sync your node to you haven&#39;t fully synced yet</h1><h2 id="problem">Problem</h2>
+<p>If your node havn&rsquo;t up to date, a typical node log looks like</p>
+<pre><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
+2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
+</code></pre><p>and <code>best</code> is too far from <code>target</code>.</p>
+<p>This article shares a cheat way to fast syncing your node.</p>
+<p>IMPORTANT: If your node is near newest block height (about several hours to catch up) or already catched up,
+you don&rsquo;t need to do anything, just seat and wait.</p>
+<h2 id="download-latest-snapshot-updated-at-9152021">Download latest snapshot (updated at 9/15/2021)</h2>
+<p>Download snapshot data from: <a href="https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz">https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz</a></p>
+<pre><code>$ sha256sum khala-snapshot-210915.tar.gz
+d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
+</code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
+<p>IMPORTANT: snapshot archive is ~220GiB, extract require ~350G, which means you require at least 550G free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
+<h2 id="preparation">Preparation</h2>
+<p>Please ensure Phala services is stopped, especially the node, if you&rsquo;re using solo mining, use</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+</code></pre></div><p>to stop Phala services.</p>
+<h2 id="replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</h2>
+<h3 id="if-youre-solo-miner">If you&rsquo;re solo miner</h3>
+<p>Delete all files and folders inside <code>/var/khala-dev-node</code>，move all files and folders from <code>khala-node</code> into <code>/var/khala-dev-node</code></p>
+<h3 id="advanced-miner">Advanced miner</h3>
+<p>Find the node working directory, Delete all files and folders inside the directory, then move all files and folders from <code>khala-node</code> into it.</p>
+<h2 id="restart-phala-services">Restart Phala services</h2>
+<p>If you&rsquo;re solo miner, do</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+</code></pre></div><p>to restart services, then you shall find out your node has fast forward to a very close to latest status, then waiting few minutes or hours,  then the node will catching up, and you can start mining now.</p>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      
-        
-          <a href="https://wiki.phala.network/zh-cn/docs/prb/" class="pager_link button" title="Runtime Bridge">
+      <a href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/" class="pager_link button" title="4.1 How to get better peers connectivity">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">Runtime Bridge</span>
+  <span class="pager_label">4.1 How to get better peers connectivity</span>
 </a>
-        
-      
     
   </div>
 
@@ -489,14 +516,6 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
   
         
   
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/" class="pager_link button" title="在Linux中直接部署">
-  <span class="pager_label">在Linux中直接部署</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
-        </div>
-      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

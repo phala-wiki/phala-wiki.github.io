@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -20,7 +20,7 @@
 <meta name="twitter:description" content=""/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
@@ -280,6 +280,20 @@
     </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-42-how-to-fast-sync-your-node-to-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to fast sync your node to you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#download-latest-snapshot-updated-at-9152021">Download latest snapshot (updated at 9/15/2021)</a></li>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
+      <ul>
+        <li><a href="#if-youre-solo-miner">If you&rsquo;re solo miner</a></li>
+        <li><a href="#advanced-miner">Advanced miner</a></li>
+      </ul>
+    </li>
+    <li><a href="#restart-phala-services">Restart Phala services</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -445,7 +459,7 @@
 
   <main class="content">
     <h1>Archived: Contract Development</h1><h2 id="what-is-a-confidential-contract">What is a Confidential Contract</h2>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span><span class="ln"> 3</span><span class="w"></span><span class="p">}</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">
@@ -463,7 +477,7 @@
 <p>A confidential contract is nothing more than an ordinary smart contract, but with confidentiality. This example shows a simple contract where it stores a counter and anyone can increment it, but only the authorized user can read it. The above snippet defines the contract storage and the <code>Increment</code> command.</p>
 <p>The Phala contracts are written in Rust, a programming language that can do anything on the blockchain. You can make full use of your favorite package manager Cargo and libraries at <a href="https://crates.io">crates.io</a>.</p>
 <p>So far, we have a HelloWorld contract with a counter, but it&rsquo;s only the first half! Now you may wonder what is the difference between confidential contracts and other smart contracts. The second half revels the secret.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">    </span><span class="n">Request</span>::<span class="n">GetCount</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">ROOT_ACCOUNT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">

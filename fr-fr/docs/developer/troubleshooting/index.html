@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -28,7 +28,7 @@
 1rustup target add wasm32-unknown-unknown Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat Le compilateur peut manquer de mémoire. Habituellement, chaque thread prend jusqu&rsquo;à 2GB de RAM. Si vous n&rsquo;avez pas assez de mémoire, vous pouvez limiter la concurrence en spécifiant un N plus petit que vos cœurs disponibles :"/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
@@ -243,10 +243,10 @@
     <h1>1.3 Dépannage</h1><h2 id="blockchain-phala"><code>Blockchain Phala</code></h2>
 <h3 id="probleme--la-cible-wasm32-unknown-unknown-nest-peut-être-pas-installée">Probleme : &ldquo;la cible <code>wasm32-unknown-unknown</code> n&rsquo;est peut-être pas installée&rdquo;.</h3>
 <p>Vous devez ajouter la cible <code>wasm-unknown-unknown</code> à votre toolchain rust. Faites-le de cette façon (sous le repo du code) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
 </code></pre></div><h3 id="probleme-signal-9-sigkill-kill-lors-de-la-construction-du-substrat">Probleme: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; lors de la construction du substrat</h3>
 <p>Le compilateur peut manquer de mémoire. Habituellement, chaque thread prend jusqu&rsquo;à 2GB de RAM. Si vous n&rsquo;avez pas assez de mémoire, vous pouvez limiter la concurrence en spécifiant un <code>N</code> plus petit que vos cœurs disponibles :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
 </code></pre></div><h3 id="probleme-consider-giving-accuracy-a-type-lors-de-la-construction-du-substrat">Probleme: &ldquo;consider giving <code>accuracy</code> a type&rdquo; lors de la construction du substrat</h3>
 <pre><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
       --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9
@@ -265,7 +265,7 @@
        |
        = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 </code></pre><p>Il s&rsquo;agit d&rsquo;un <a href="https://github.com/paritytech/substrate/issues/7287">problème connu</a> causé par la régression Nightly de Rust. Pour contourner ce problème, passez à une toolchain Nightly plus ancienne. Nous recommandons <code>nightly-2020-09-27</code>. Cela peut être fait comme ci-dessous :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
 <span class="ln">2</span>rustup default nightly-2020-09-27
 <span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-27
 </code></pre></div><h3 id="probleme-duplicate-lang-item">Probleme: &ldquo;duplicate lang item&rdquo;</h3>

@@ -319,6 +319,18 @@
                 href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/zh-cn/categories/</loc>
     <xhtml:link
                 rel="alternate"

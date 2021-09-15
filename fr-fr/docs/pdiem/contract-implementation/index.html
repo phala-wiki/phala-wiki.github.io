@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -31,7 +31,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
 1pubstruct Diem{2// Light client 34/// The genesis TrustedState 5init_trusted_state: Option&lt;TrustedState&gt;,6/// The latest TrustedState 7trusted_state: Option&lt;TrustedState&gt;,89// Accounts 1011/// Controlled accounts 12accounts: Vec&lt;AccountInfo&gt;,13/// Account sequence id 14seq_number: BTreeMap&lt;String,u64&gt;,1516// Transactions 1718/// Known transactions 19transactions: BTreeMap&lt;String,Vec&lt;Transaction&gt;&gt;,20/// Transaction verification result 21verified: BTreeMap&lt;String,bool&gt;,22}Implémentation du client léger Le client léger Diem maintient le dernier état du registre (LedgerInfo)."/>
 
 
-<link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
+<link rel="stylesheet" href="https://wiki.phala.network/css/styles.3cce8f177a418f4e602daae86230d9f6867bc61e9a62766cffded6bcb44c0d14c38a98748c18ffedb30c0f7c3f6147cd28c17868b151e8e4e89c15393a98e88c.css" integrity="sha512-PM6PF3pBj05gLaroYjDZ9oZ7xh6aYnZs/97WvLRMDRTDiph0jBj/7bMMD3w/YUfNKMF4aLFR6OTonBU5OpjojA==">
 
 
 
@@ -247,7 +247,7 @@ Contract storage Le contrat pDiem est implémenté comme un contrat intelligent 
     <h1>Mise en œuvre du contrat</h1><p>Le contrat pDiem agit comme un porte-feuille Diem ordinaire. Il détient les clés privées dans son contrat confidentiel Phala Network. Le contrat peut donc contrôler certains portefeuilles pour recevoir ou envoyer des fonds sur la blockchain Diem.</p>
 <h2 id="contract-storage">Contract storage</h2>
 <p>Le <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">contrat pDiem</a> est implémenté comme un contrat intelligent confidentiel natif. Il définit les éléments de stockage suivants :</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Light client
 </span><span class="ln"> 3</span><span class="c1"></span><span class="w">
 </span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// The genesis TrustedState
