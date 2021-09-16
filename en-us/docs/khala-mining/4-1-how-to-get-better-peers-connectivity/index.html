@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>4.1 How to get better peers connectivity | Phala Network Wiki</title><meta property="og:title" content="4.1 How to get better peers connectivity" />
-<meta property="og:description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+<meta property="og:description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.
 Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/" /><meta property="article:section" content="docs" />
@@ -18,13 +18,13 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="4.1 How to get better peers connectivity">
-<meta itemprop="description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+<meta itemprop="description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.
 Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both.">
 
-<meta itemprop="wordCount" content="487">
+<meta itemprop="wordCount" content="489">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.1 How to get better peers connectivity"/>
-<meta name="twitter:description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+<meta name="twitter:description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.
 Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both."/>
 
 
@@ -32,7 +32,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
 
 
 
-  <meta name="description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+  <meta name="description" content="The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.
 Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both.">
 
 
@@ -256,7 +256,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
       <ul>
         <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
-        <li><a href="#how-to-update-worker-from-para2-to-khala">How to update worker from Para2 to Khala</a></li>
+        <li><a href="#how-to-update-workers-from-para2-to-khala">How to update workers from Para2 to Khala</a></li>
       </ul>
     </li>
   </ul>
@@ -293,7 +293,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
     <li><a href="#preparation">Preparation</a></li>
     <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
       <ul>
-        <li><a href="#if-youre-solo-miner">If you&rsquo;re solo miner</a></li>
+        <li><a href="#if-youre-a-solo-miner">If you&rsquo;re a solo miner</a></li>
         <li><a href="#advanced-miner">Advanced miner</a></li>
       </ul>
     </li>
@@ -465,7 +465,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
 
   <main class="content">
     <h1>4.1 How to get better peers connectivity</h1><h2 id="the-problem">The problem</h2>
-<p>Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.</p>
+<p>Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.</p>
 <h2 id="stateful-firewall">Stateful firewall</h2>
 <p>As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both. This increases the complexity of the connectivity a lot and causing tons of issues.</p>
 <h3 id="what-these-stateful-firewalls-do">What these stateful firewalls do</h3>
@@ -482,7 +482,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
 <h3 id="configure-your-own-device-to-get-better-connectivity">Configure your own device to get better connectivity</h3>
 <p>If you have to set up source NAT for yourself, you can still do something to get your node for better connectivity.</p>
 <h4 id="destination-nat-dmz-or-upnp">Destination NAT, DMZ, or UPnP</h4>
-<p>You can configure destination NAT to expose the ports that your nodes listening. Some of the network devices designed for home use may let you config a DMZ host which will receive all incoming datagrams that not being known to any connection.</p>
+<p>You can configure destination NAT to expose the ports that your nodes listening to. Some of the network devices designed for home use may let you config a DMZ host which will receive all incoming datagrams that not being known to any connection.</p>
 <p>Some of the network devices designed for home use may also be able to listen to UPnP which can help the configuration of destination nat. But the use of UPnP is often problematic and not safe. So the UPnP should be only considered as the last resort.</p>
 
     <div class="pager">

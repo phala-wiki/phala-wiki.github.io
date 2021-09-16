@@ -303,8 +303,8 @@ Voting for Councillors Voting for councillors requires you to lock 5 PHA on Phal
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</guid>
       <description>To be updated.
- I. Increase Confidence Level Currently Tier 1, 2, 3 are treated in the same way. No operation is needed if you are at these tier. However if you are at Tier 4 or 5, you can try the following tips. You can also join the Discord or Telegram miner group to discuss.
-Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs).</description>
+ I. Increase Confidence Level Currently, Tier 1, 2, 3 are treated in the same way. No operation is needed if you are at these tiers. However, if you are at Tier 4 or 5, you can try the following tips. You can also join the Discord or Telegram miner group to discuss.
+Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but the additional configuration of the SGX platform may be needed (for further details see Advisory IDs).</description>
     </item>
     
     <item>
@@ -313,7 +313,7 @@ Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID sig
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</guid>
-      <description>The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes being dropped from the whole wonderful network. In this KB you may find why and what to do.
+      <description>The problem Some of our friends that running our nodes may found their nodes are struggling to connect to any peer which causes nodes to be dropped from the whole wonderful network. In this KB you may find why and what to do.
 Stateful firewall As IPv4 is exhausting, also as there are some security concerns or some design considerations. There’s a lot of stateful firewalls between you and peers that run NAT, policy-based filter, or both.</description>
     </item>
     
