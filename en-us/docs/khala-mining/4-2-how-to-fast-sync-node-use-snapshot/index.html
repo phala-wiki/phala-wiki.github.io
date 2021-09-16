@@ -23,7 +23,7 @@ This article shares a cheat way to accelerate your node syncing." />
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing.">
 
-<meta itemprop="wordCount" content="317">
+<meta itemprop="wordCount" content="306">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
 <meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
@@ -480,10 +480,7 @@ you don&rsquo;t need to do anything, just seat and wait.</p>
 <p>We recommend to use the BT download with <a href="/files/khala.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
 <pre tabindex="0"><code>$ sha256sum khala.torrent
 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05  khala.torrent
-</code></pre><blockquote>
-<p>Also you can choose to directly download snapshot data from: <a href="https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz">https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz</a></p>
-</blockquote>
-<p>You can check the integrity of your download by comparing the checksum</p>
+</code></pre><p>You can check the integrity of your download by comparing the checksum</p>
 <pre tabindex="0"><code>$ sha256sum khala-snapshot-210915.tar.gz
 d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
