@@ -138,9 +138,9 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</guid>
-      <description>Problem If your node havn&amp;rsquo;t up to date, a typical node log looks like
+      <description>Problem If your node is not up-to-date, a typical node log looks like
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
-This article shares a cheat way to fast syncing your node.</description>
+This article shares a cheat way to accelerate your node syncing.</description>
     </item>
     
   </channel>
