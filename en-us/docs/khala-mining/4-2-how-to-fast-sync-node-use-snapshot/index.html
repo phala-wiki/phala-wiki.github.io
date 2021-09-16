@@ -9,7 +9,7 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>4.2 How to fast sync your node to you haven&#39;t fully synced yet | Phala Network Wiki</title><meta property="og:title" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet" />
+<title>4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet | Phala Network Wiki</title><meta property="og:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet" />
 <meta property="og:description" content="Problem If your node is not up-to-date, a typical node log looks like
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing." />
@@ -18,14 +18,14 @@ This article shares a cheat way to accelerate your node syncing." />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet">
+<meta itemprop="name" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet">
 <meta itemprop="description" content="Problem If your node is not up-to-date, a typical node log looks like
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing.">
 
-<meta itemprop="wordCount" content="287">
+<meta itemprop="wordCount" content="303">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="4.2 How to fast sync your node to you haven&#39;t fully synced yet"/>
+<meta name="twitter:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
 <meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing."/>
@@ -290,10 +290,10 @@ This article shares a cheat way to accelerate your node syncing.">
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-42-how-to-fast-sync-your-node-to-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to fast sync your node to you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-42-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
-    <li><a href="#download-latest-snapshot-updated-at-9152021">Download latest snapshot (updated at 9/15/2021)</a></li>
+    <li><a href="#download-latest-snapshot-updated-at-9152021">Download latest snapshot (Updated at 9/15/2021)</a></li>
     <li><a href="#preparation">Preparation</a></li>
     <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
       <ul>
@@ -468,7 +468,7 @@ This article shares a cheat way to accelerate your node syncing.">
 </aside>
 
   <main class="content">
-    <h1>4.2 How to fast sync your node to you haven&#39;t fully synced yet</h1><h2 id="problem">Problem</h2>
+    <h1>4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</h1><h2 id="problem">Problem</h2>
 <p>If your node is not up-to-date, a typical node log looks like</p>
 <pre tabindex="0"><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
 2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
@@ -476,9 +476,12 @@ This article shares a cheat way to accelerate your node syncing.">
 <p>This article shares a cheat way to accelerate your node syncing.</p>
 <p>IMPORTANT: If your node is near newest block height (about several hours to catch up) or has already catched up,
 you don&rsquo;t need to do anything, just seat and wait.</p>
-<h2 id="download-latest-snapshot-updated-at-9152021">Download latest snapshot (updated at 9/15/2021)</h2>
-<p>Download snapshot data from: <a href="https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz">https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz</a>,
-or if you prefer BT download, we provide a torrent <a href="/files/khala.torrent">here</a>.</p>
+<h2 id="download-latest-snapshot-updated-at-9152021">Download latest snapshot (Updated at 9/15/2021)</h2>
+<p>We recommend to use the BT download with <a href="/files/khala.torrent">torrent</a>.</p>
+<blockquote>
+<p>Also you can choose to directly download snapshot data from: <a href="https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz">https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz</a></p>
+</blockquote>
+<p>You can check the integrity of your download by comparing the checksum</p>
 <pre tabindex="0"><code>$ sha256sum khala-snapshot-210915.tar.gz
 d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
