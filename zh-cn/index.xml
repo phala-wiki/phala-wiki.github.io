@@ -271,11 +271,10 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
 此时你可以考虑使用这里介绍的方法快速追上最新的状态。
 注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
-下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。
- 你也可以选择直接下载： https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
+下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
+$ sha256sum khala.torrent 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05 khala.torrent  你也可以选择直接下载： https://storage.googleapis.com/khala-snapshots/khala-snapshot-210915.tar.gz
  在下载完成后，可以通过校验sha256校验和来确保数据完整性
-$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
-注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘</description>
+$ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录</description>
     </item>
     
     <item>
