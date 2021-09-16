@@ -165,7 +165,8 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/2-1-deploy-worker-node/</guid>
-      <description>Start Mining 首先你要完成上一步的安装，如果没有做，请移步上一章节
+      <description> Khala挖矿正式开启之前，您无法执行Start mining操作，但您可以通过以下方法进行节点预同步：
+1sudo phala presync   Start Mining 首先你要完成上一步的安装，如果没有做，请移步上一章节
 在phala脚本目录打开终端，输入以下指令:
 1sudo phala start </description>
     </item>

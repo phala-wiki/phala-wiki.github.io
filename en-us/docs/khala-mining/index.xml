@@ -55,16 +55,6 @@ Download Phala Scripts The Phala tools are availbale at https://github.com/Phala
     </item>
     
     <item>
-      <title>2 Solo mining</title>
-      <link>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-configuration/</guid>
-      <description>If you have successfully installed the SGX driver and finished the benchmarking, you can skip the following tutorials.  Install You can use the following commands to install Phala tools. It will automatically set the number of CPU cores to use, node name, gas fee account mnemonic and pool owner account.
-1sudo phala install By default, all the configurations are set automatically. If you want to manually config the tools, use the following commands and set the parameters.</description>
-    </item>
-    
-    <item>
       <title>2 Solo mining configuration</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/2-solo-mining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -80,7 +70,8 @@ Download Phala Scripts The Phala tools are availbale at https://github.com/Phala
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-1-deploy-worker-node/</guid>
-      <description>Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
+      <description> You cannot start mining before Khala mining starts. But you can follow this command to pre-sync your Khala node:
+1sudo phala presync   Start Mining After all the installation and configuration, let&amp;rsquo;s start mining!
 1sudo phala start </description>
     </item>
     
