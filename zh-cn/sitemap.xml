@@ -151,18 +151,6 @@
                 href="https://wiki.phala.network/zh-cn/docs/maintain/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/"
-                />
-  </url><url>
     <loc>https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/</loc>
     <xhtml:link
                 rel="alternate"
@@ -173,6 +161,18 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/zh-cn/docs/khala-mining/1-1-hardware-requirements/</loc>

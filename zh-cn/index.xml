@@ -59,17 +59,6 @@ trade服务 运行docker-compose up -d trade启动trade服务。</description>
     </item>
     
     <item>
-      <title>1 Phala挖矿抵押设计</title>
-      <link>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</guid>
-      <description>简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
-如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
-角色介绍    角色 介绍 识别符     Worker 计算节点，以cpu为单位。在Phala网络负责链下计算（隐私环境内） worker Key   Operator 由worker授权的管理员，负责管理该worker的挖矿行为 operator key   Owner 创建StakePool的地址，负责对pool和pool绑定的worker进行管理 owner key   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 pid （系统自动生成）   Staker 持有PHA币的地址，可以通过stake参与Phala挖矿行为中 staker key    角色关系     Operator Owner Staker     Worker 每个worker只能授权给一个operator；一个operator可以拥有多个worker 当某个worker的operator是某个pool的owner的时候，这个pool可以抵押币给该worker /   StakePool 当某个pool的owner是某个worker的operator的时候，这个pool可以抵押币给该worker 一个owner可以创建多个pool；每个pool只能绑定一个owner 一个staker可以给多个pool抵押；每个pool也可以拥有多个staker    计算节点与抵押池的关系 Figure 1 Worker-StakePool 如图1，</description>
-    </item>
-    
-    <item>
       <title>1 民主模块</title>
       <link>https://wiki.phala.network/zh-cn/docs/governance/1-participate-in-democracy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,6 +76,18 @@ trade服务 运行docker-compose up -d trade启动trade服务。</description>
 提交 Preimage 因为提交一个大的 preimage 的存储成本可能相当昂贵，所以提出一个提案的过程与提交该提案的 preimage 是分开的。preimage 作为一个单独的交易处理意味着如果您没有足够的资金，另一个账户可以为您提交 preimage，这也意味着您不必马上支付超预算的资金，因为你有 preimage hash 证明。
 然而，在提案通过之前，您需要提交 preimage，否则提案无法实施。我们现在将向你演示如何执行此操作。
 单击橙色的 “submit preimage” 按钮并将其配置为与之前获取 preimage hash 一样的操作。这一次，您不需要将哈希复制到另一个选项卡，而是继续执行并单击 “submit preimage” 并确认交易。</description>
+    </item>
+    
+    <item>
+      <title>1 计算节点的抵押机制</title>
+      <link>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/tokenomic/1-mining-staking/</guid>
+      <description>简介 Phala Network为了实现计算节点的安全性，除了给计算节点设置安全等级之外，还在挖矿行为中引入了staking概念。每个计算节点通过抵押与自己CPU得分匹配的PHA代币数量，才能获得V值，从而进入挖矿系统开始挖矿。
+如果计算节点表现与系统要求不符，则会被惩罚V值，从而引导计算节点网络状态符合规则。
+不同于类似于 Polkadot 或其他 Proof-of-Stake 区块链，Phala区块链管理的计算节点数量可以达到100万个CPU核心的量级，即10万台节点以上。因此 Phala Network 抵押机制需要超越现有的Proof-of-Stake 设计，才能在性能和效率上满足需求 —— 对此我们提出了委托抵押（Delegate）设计，通过引入 StakePool 角色，我们允许任何人创建抵押池来连接计算节点和抵押者，抵押者将 $PHA 委托给 Stakepool，由 StakePool 对与池相关联的计算节点进行抵押和管理。
+角色介绍    角色 介绍     Worker 计算节点，以CPU为单位。在 Phala Network 负责链下计算（隐私环境内）   Operator 由 Worker 授权的管理员，负责管理该 Worker 的挖矿行为   PoolOwner 创建 StakePool 的地址，负责对 Pool 和 Pool 绑定的 Worker 进行管理   StakePool 抵押池，作为矿机与抵押者之间资金流动的中间层，服务于挖矿抵押场景的链上操作 （pid 是 StakePool 的标识符，由系统自动生成）   Delegator 持有 $PHA 币的地址，可以通过委托抵押参与 Phala 挖矿行为中    角色关系     Operator Owner Delegator     Worker 每个 Worker 只能授权给一个 Operator ；一个 Operator 可以拥有多个 Worker 当某个 Worker 的 Operator 是某个 Pool 的 Owner 的时候，这个 Pool 可以抵押币给该 Worker /   StakePool 当某个 Pool 的 Owner 是某个 Worker 的 Operator 的时候，这个 Pool 可以抵押币给该 Worker 一个 Owner 可以创建多个 Pool ；每个 Pool 只能绑定一个 Owner 一个 Delegator 可以给多个 Pool 抵押；每个 Pool 也可以拥有多个 Delegator    计算节点与抵押池的关系 图 1 如图1，</description>
     </item>
     
     <item>
