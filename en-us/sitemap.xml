@@ -139,6 +139,18 @@
                 href="https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/khala-user/polkadot-js-extension/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-user/</loc>
     <xhtml:link
                 rel="alternate"
@@ -526,6 +538,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/para-mining/claim-test-token/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/khala-user/stake-pool/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/khala-user/stake-pool/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/</loc>

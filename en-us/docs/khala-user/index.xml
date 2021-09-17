@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Polkadot{.js} Extension Guide on Phala Network Wiki</title>
+    <title>User Guides on Phala Network Wiki</title>
     <link>https://wiki.phala.network/en-us/docs/khala-user/</link>
-    <description>Recent content in Polkadot{.js} Extension Guide on Phala Network Wiki</description>
+    <description>Recent content in User Guides on Phala Network Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://wiki.phala.network/en-us/docs/khala-user/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polkadot{.js} Extension Guide</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/</guid>
+      <description>In this tutorial, we present how to use Polkadot{.js} Extension to create/import Khala account. Khala Network, as the parachain of Kusama, shares the accounts of Kusama Relay Chain.
+Install Polkadot{.js} Extension   Get extension from https://polkadot.js.org/extension/
+  Choose Chrome or Firefox Extension according to your explorer
+  Create New Account  Choose your installed Polkadot{.js} Extension; Click &amp;ldquo;+&amp;rdquo;, and choose &amp;ldquo;Create new account&amp;rdquo;;  Keep mnemonic seed safe; Choose Network &amp;ldquo;Allow use on any chain&amp;rdquo;, fill in the descriptive name and password, and click &amp;ldquo;Add the account with the generated seed&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Guidance of Delegation StakePool</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-user/stake-pool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-user/stake-pool/</guid>
+      <description>MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList += &#39;has-jax&#39;}) });   Delegator Token holders (ie, delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as “depositing to earn interest”. This guide will introduce how to earn rewards through delegation in Phala Network.</description>
+    </item>
+    
   </channel>
 </rss>

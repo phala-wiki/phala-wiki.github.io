@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -188,7 +188,35 @@
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">User Guides</a></h2>
+      <section class="subsection" id="docs-user-guides">
+        <h3 class="section_link"><a id="docs-polkadotjs-extension-guide" href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/">Polkadot{.js} Extension Guide</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-polkadotjs-extension">Install Polkadot{.js} Extension</a></li>
+    <li><a href="#create-new-account">Create New Account</a></li>
+    <li><a href="#import-existed-account">Import Existed Account</a>
+      <ul>
+        <li><a href="#import-with-mnemonic">Import with Mnemonic</a></li>
+        <li><a href="#import-with-json">Import with JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-guidance-of-delegation-stakepool" href="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/">Guidance of Delegation StakePool</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#delegator">Delegator</a></li>
+    <li><a href="#how-to-delegate">How to Delegate</a>
+      <ul>
+        <li><a href="#introduction-of-delegation">Introduction of Delegation</a></li>
+        <li><a href="#choose-stakepool">Choose StakePool</a></li>
+        <li><a href="#how-to-delegate-1">How to Delegate</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-delegation">Check Delegation</a></li>
+    <li><a href="#potential-risks">Potential Risks</a></li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
@@ -478,7 +506,7 @@
 <ul>
 <li>
 <p>You can run the SGX test by the Phala scripts</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div></li>
 </ul>
 <p>Please pay attention to the following checks:</p>
@@ -490,7 +518,7 @@
 <p>Among them, <strong>the first one is a must to run Phala Network pRuntime</strong>. If it&rsquo;s not supported (tagged as ✘ in the report example below), we are afraid you can&rsquo;t mine PHA with this setup. You may want to replace the motherboard and/or the CPU.</p>
 <p>The latter two are not a must, though it is suggested to be checked as it would be essential to install the DCAP driver.</p>
 <p>The report below would be a positive result:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction set
 <span class="ln"> 3</span>  ✔  CPU support
 <span class="ln"> 4</span>  ✔  CPU configuration
@@ -527,7 +555,7 @@
 <span class="ln">35</span>advisoryIDs = &#34;INTEL-SA-00219&#34;, &#34;INTEL-SA-00289&#34;, &#34;INTEL-SA-00320&#34;, &#34;INTEL-SA-00329&#34;
 <span class="ln">36</span>confidenceLevel = 5
 </code></pre></div><p>If your got a report like below, please screenshot it, and send it to <a href="https://discord.gg/zjdJ7d844d">Phala Discord Server</a> or <a href="https://t.me/phalaminer">Telegram Miner Group</a> for help.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction set
 <span class="ln"> 3</span>  ✔  CPU support // if tagged with ❌: it does not suppoort SGX function, you would need to use other types of CPU.
 <span class="ln"> 4</span>  ✔  CPU configuration // if tagged with ❌: you would need to check BIOS updates.

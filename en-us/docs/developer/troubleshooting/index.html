@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -180,7 +180,35 @@
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">User Guides</a></h2>
+      <section class="subsection" id="docs-user-guides">
+        <h3 class="section_link"><a id="docs-polkadotjs-extension-guide" href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/">Polkadot{.js} Extension Guide</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-polkadotjs-extension">Install Polkadot{.js} Extension</a></li>
+    <li><a href="#create-new-account">Create New Account</a></li>
+    <li><a href="#import-existed-account">Import Existed Account</a>
+      <ul>
+        <li><a href="#import-with-mnemonic">Import with Mnemonic</a></li>
+        <li><a href="#import-with-json">Import with JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-guidance-of-delegation-stakepool" href="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/">Guidance of Delegation StakePool</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#delegator">Delegator</a></li>
+    <li><a href="#how-to-delegate">How to Delegate</a>
+      <ul>
+        <li><a href="#introduction-of-delegation">Introduction of Delegation</a></li>
+        <li><a href="#choose-stakepool">Choose StakePool</a></li>
+        <li><a href="#how-to-delegate-1">How to Delegate</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-delegation">Check Delegation</a></li>
+    <li><a href="#potential-risks">Potential Risks</a></li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
@@ -468,12 +496,12 @@
     <h1>1.3 Troubleshooting</h1><h2 id="phala-blockchain"><code>phala-blockchain</code></h2>
 <h3 id="problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</h3>
 <p>You need to add the <code>wasm-unknown-unknown</code> target to your rust toolchain. Do it by this (under the code repo):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup target add wasm32-unknown-unknown
 </code></pre></div><h3 id="problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</h3>
 <p>The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller <code>N</code> than your available cores:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
 </code></pre></div><h3 id="probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
+<pre><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
       --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9
        |
   541  |                   let accuracy = P::ACCURACY.saturated_into();
@@ -490,11 +518,11 @@
        |
        = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 </code></pre><p>This is a <a href="https://github.com/paritytech/substrate/issues/7287">known issue</a> caused by Rust nightly regression. To walkaround it, switch to an older nightly toolchain. We recommend <code>nightly-2020-09-27</code>. It can be done like below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>rustup toolchain install nightly-2020-09-27
 <span class="ln">2</span>rustup default nightly-2020-09-27
 <span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-27
 </code></pre></div><h3 id="probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
+<pre><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
   |
   = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on)
 
@@ -523,7 +551,7 @@ error: aborting due to 6 previous errors
 <p><a href="https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html">https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html</a></p>
 <h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
 <h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
+<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
 error TS6053: File '@polkadot/dev/config/tsconfig' not found.
 </code></pre><p>You forgot to init the git submodule. Please run <code>git submodule update --init</code>.</p>
 

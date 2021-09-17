@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -9,14 +9,14 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>Polkadot{.js} Extension Guide | Phala Network Wiki</title><meta property="og:title" content="Polkadot{.js} Extension Guide" />
+<title>User Guides | Phala Network Wiki</title><meta property="og:title" content="User Guides" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-user/" /><meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="Polkadot{.js} Extension Guide">
+<meta itemprop="name" content="User Guides">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Polkadot{.js} Extension Guide"/>
+<meta name="twitter:title" content="User Guides"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -169,7 +169,35 @@
       </section>
   </section>
   <section class="section aside_inner">
-    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">Polkadot{.js} Extension Guide</a></h2>
+    <h2 class="section_title active"><a  href="https://wiki.phala.network/en-us/docs/khala-user/" class="group">User Guides</a></h2>
+      <section class="subsection" id="docs-user-guides">
+        <h3 class="section_link"><a id="docs-polkadotjs-extension-guide" href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/">Polkadot{.js} Extension Guide</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-polkadotjs-extension">Install Polkadot{.js} Extension</a></li>
+    <li><a href="#create-new-account">Create New Account</a></li>
+    <li><a href="#import-existed-account">Import Existed Account</a>
+      <ul>
+        <li><a href="#import-with-mnemonic">Import with Mnemonic</a></li>
+        <li><a href="#import-with-json">Import with JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-guidance-of-delegation-stakepool" href="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/">Guidance of Delegation StakePool</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#delegator">Delegator</a></li>
+    <li><a href="#how-to-delegate">How to Delegate</a>
+      <ul>
+        <li><a href="#introduction-of-delegation">Introduction of Delegation</a></li>
+        <li><a href="#choose-stakepool">Choose StakePool</a></li>
+        <li><a href="#how-to-delegate-1">How to Delegate</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-delegation">Check Delegation</a></li>
+    <li><a href="#potential-risks">Potential Risks</a></li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/khala-mining/" class="group">Khala Pre-mainnet Mining Guide</a></h2>
@@ -454,68 +482,11 @@
 </aside>
 
   <main class="content">
-    <h1>Polkadot{.js} Extension Guide</h1><p>In this tutorial, we present how to use Polkadot{.js} Extension to create/import Khala account.
-Khala Network, as the parachain of Kusama, shares the accounts of Kusama Relay Chain.</p>
-<h2 id="install-polkadotjs-extension">Install Polkadot{.js} Extension</h2>
-<ol>
-<li>Get extension from <a href="https://polkadot.js.org/extension/">https://polkadot.js.org/extension/</a></li>
-</ol>
-<p><img src="/images/docs/khala-user/polkadot-js.png" alt=""></p>
-<ol start="2">
-<li>Choose Chrome or Firefox Extension according to your explorer</li>
-</ol>
-<h2 id="create-new-account">Create New Account</h2>
-<ol>
-<li>Choose your installed Polkadot{.js} Extension;</li>
-<li>Click &ldquo;+&rdquo;, and choose &ldquo;Create new account&rdquo;;</li>
-</ol>
-<p><img src="/images/docs/khala-user/new-account.png" alt=""></p>
-<ol start="3">
-<li>Keep mnemonic seed safe;</li>
-<li>Choose Network &ldquo;Allow use on any chain&rdquo;, fill in the descriptive name and password, and click &ldquo;Add the account with the generated seed&rdquo;.</li>
-</ol>
-<p><img src="/images/docs/khala-user/choose-network.png" alt=""></p>
-<h2 id="import-existed-account">Import Existed Account</h2>
-<p>There are two ways to import an existed account:</p>
-<h3 id="import-with-mnemonic">Import with Mnemonic</h3>
-<ol>
-<li>Choose your installed Polkadot{.js} Extension;</li>
-<li>Click &ldquo;+&rdquo;, and choose &ldquo;Import account from pre-existing seed&rdquo;;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-mne-1.png" alt=""></p>
-<ol start="3">
-<li>Type in your 12-word mnemonic seed (DO NOT let others know it), separate each word with space. Choose Network &ldquo;Allow use on any chain&rdquo;. Click Next;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-mne-2.png" alt=""></p>
-<ol start="4">
-<li>Fill in the descriptive name and password, and click &ldquo;Add the account with the supplied seed&rdquo;;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-mne-3.png" alt=""></p>
-<ol start="5">
-<li>Congratulation!</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-mne-4.png" alt=""></p>
-<h3 id="import-with-json">Import with JSON</h3>
-<ol>
-<li>Choose your installed Polkadot{.js} Extension;</li>
-<li>Click &ldquo;+&rdquo;, and choose &ldquo;Restore account from backup JSON file&rdquo;;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-json-1.png" alt=""></p>
-<ol start="3">
-<li>Choose your saved JSON file;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-json-2.png" alt=""></p>
-<ol start="4">
-<li>Type in your password and click Restore;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-json-3.png" alt=""></p>
-<ol start="5">
-<li>Choose &ldquo;Allow use on any chain&rdquo;;</li>
-</ol>
-<p><img src="/images/docs/khala-user/import-json-4.png" alt=""></p>
-<ol start="6">
-<li>Congratulation!</li>
-</ol>
+    <h1>User Guides</h1><p>Please select a sub-topic：</p>
+<ul>
+<li><a href="/en-us/docs/khala-user/polkadot-js-extension/">Polkadot.js Extension Guide</a></li>
+<li><a href="/en-us/docs/khala-user/stake-pool/">StakePool Guide</a></li>
+</ul>
 
     <div class="pager pager_lean">
   <div class="pager_item prev">
@@ -526,6 +497,12 @@ Khala Network, as the parachain of Kusama, shares the accounts of Kusama Relay C
 
   <div class="pager_item next">
   
+    
+      <a href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/" class="pager_link button" title="Polkadot{.js} Extension Guide">
+  <span class="pager_label">Polkadot{.js} Extension Guide</span>
+  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+</a>
     
   
         
