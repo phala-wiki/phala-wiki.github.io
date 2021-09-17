@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -511,17 +511,17 @@
   <main class="content">
     <h1>1.4 Benchmarking</h1><h2 id="benchmark-your-worker">Benchmark Your Worker</h2>
 <p>First, install the needed images with Phala tools:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>If you have installed the images before, you can update them with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update script
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update script
 </code></pre></div><p>Get the performance score with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala score-test <span class="o">[</span>number_of_cores<span class="o">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala score-test <span class="o">[</span>number_of_cores<span class="o">]</span>
 <span class="ln">2</span><span class="c1"># e.g., sudo phala score-test 4</span>
 </code></pre></div><blockquote>
 <p>Tip: We recommend to use all the cores of your CPU.</p>
 </blockquote>
 <p>The performance test has to be stopped manually with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop pruntime-bench
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop pruntime-bench
 </code></pre></div><p>After that, you will be asked whether to upload the performance test results.</p>
 <blockquote>
 <p>Noted that your performance test results can vary due to different factors.

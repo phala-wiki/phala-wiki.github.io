@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -230,7 +230,7 @@
 
   <main class="content">
     <h1>Développement du contrat</h1><h2 id="quest-ce-quun-contrat-confidentiel-">Qu&rsquo;est-ce qu&rsquo;un contrat confidentiel ?</h2>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span><span class="ln"> 3</span><span class="w"></span><span class="p">}</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">
@@ -248,7 +248,7 @@
 <p>Un contrat confidentiel n&rsquo;est rien de plus qu&rsquo;un contrat intelligent ordinaire, mais avec une confidentialité. Cet exemple montre un contrat simple dans lequel est stocké un compteur. N&rsquo;importe qui peut l&rsquo;incrémenter mais seul l&rsquo;utilisateur autorisé peut le lire. Le snippet ci-dessus définit le stockage du contrat et la commande <code>Increment</code>.</p>
 <p>Les contrats Phala sont écrits en Rust, un langage de programmation qui peut tout faire sur la blockchain. Vous pouvez utiliser pleinement votre gestionnaire de paquets préféré Cargo et les bibliothèques sur <a href="https://crates.io">crates.io</a>.</p>
 <p>Jusqu&rsquo;à présent, nous avons un contrat HelloWorld avec un compteur, mais ce n&rsquo;est que la première moitié ! Maintenant, vous vous demandez peut-être quelle est la différence entre les contrats confidentiels et les autres smart contracts. La seconde moitié dévoile le secret.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">  </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 3</span><span class="w">    </span><span class="n">Request</span>::<span class="n">GetCount</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 4</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">ROOT_ACCOUNT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
