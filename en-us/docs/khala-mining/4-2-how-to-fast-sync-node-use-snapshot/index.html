@@ -23,7 +23,7 @@ This article shares a cheat way to accelerate your node syncing." />
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing.">
 
-<meta itemprop="wordCount" content="309">
+<meta itemprop="wordCount" content="362">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
 <meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
@@ -261,6 +261,7 @@ This article shares a cheat way to accelerate your node syncing.">
         <li><a href="#got-configuration_needed-and-configuration_and_sw_hardening_needed">Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#got-group_out_of_date">Got GROUP_OUT_OF_DATE</a></li>
         <li><a href="#how-to-update-workers-from-para2-to-khala">How to update workers from Para2 to Khala</a></li>
+        <li><a href="#got-unable-to-retrieve-header-and-parent-from-supplied-hash-during-node-syncing">Got &ldquo;Unable to retrieve header and parent from supplied hash&rdquo; during node syncing</a></li>
       </ul>
     </li>
   </ul>
@@ -293,7 +294,7 @@ This article shares a cheat way to accelerate your node syncing.">
         <h3 class="section_link active"><a id="docs-42-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
-    <li><a href="#download-latest-snapshot-updated-at-9152021">Download latest snapshot (Updated at 9/15/2021)</a></li>
+    <li><a href="#download-latest-snapshot-updated-in-9172021">Download latest snapshot (Updated in 9/17/2021)</a></li>
     <li><a href="#preparation">Preparation</a></li>
     <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
       <ul>
@@ -474,9 +475,9 @@ This article shares a cheat way to accelerate your node syncing.">
 2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
 </code></pre><p>and <code>best</code> is too far from <code>target</code>.</p>
 <p>This article shares a cheat way to accelerate your node syncing.</p>
-<p>IMPORTANT: If your node is near the newest block height (about several hours to catch up) or has already caught up,
+<p>ATTENTION: If your node is near the newest block height (about several hours to catch up) or has already caught up,
 you don&rsquo;t need to do anything, just sit and wait.</p>
-<h2 id="download-latest-snapshot-updated-at-9152021">Download latest snapshot (Updated at 9/15/2021)</h2>
+<h2 id="download-latest-snapshot-updated-in-9172021">Download latest snapshot (Updated in 9/17/2021)</h2>
 <p>We recommend to use the BT download with <a href="/files/khala.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
 <pre tabindex="0"><code>$ sha256sum khala.torrent
 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05  khala.torrent
@@ -484,15 +485,20 @@ you don&rsquo;t need to do anything, just sit and wait.</p>
 <pre tabindex="0"><code>$ sha256sum khala-snapshot-210915.tar.gz
 d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
-<p>IMPORTANT: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 550GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
-<h2 id="preparation">Preparation</h2>
+<p>ATTENTION: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 600GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
+<p><strong>Updated in 9/17/2021</strong>: We found there is malformed Khala block in <code>khala-snapshot-210915.tar.gz</code> which can block your node syncing. Remove the Khala data (for now, the dispatched Kusama data is fine) before you apply the snapshot.</p>
+<pre tabindex="0"><code>rm -rf khala-node/chains/khala
+</code></pre><h2 id="preparation">Preparation</h2>
 <p>Please ensure Phala services are stopped, especially the node, if you&rsquo;re using solo mining, use</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>to stop Phala services.</p>
 <h2 id="replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</h2>
 <h3 id="if-youre-a-solo-miner">If you&rsquo;re a solo miner</h3>
 <p>Delete all files and folders inside <code>/var/khala-dev-node</code>，move all files and folders from <code>khala-node</code> into <code>/var/khala-dev-node</code></p>
-<h3 id="advanced-miner">Advanced miner</h3>
+<p>If you do things right, inside <code>/var/khala-dev-node</code> it looks like</p>
+<pre tabindex="0"><code>$ ls /var/khala-dev-node
+chains  polkadot
+</code></pre><h3 id="advanced-miner">Advanced miner</h3>
 <p>Find the node working directory, Delete all files and folders inside the directory, then move all files and folders from <code>khala-node</code> into it.</p>
 <h2 id="restart-phala-services">Restart Phala services</h2>
 <p>If you&rsquo;re a solo miner, do</p>

@@ -15,10 +15,10 @@
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
 此时你可以考虑使用这里介绍的方法快速追上最新的状态。
 注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
-下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
+下载全量数据快照并解压缩（最新更新日期：2021年9月17日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
 $ sha256sum khala.torrent 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05 khala.torrent 在下载完成后，可以通过校验sha256校验和来确保数据完整性
 $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
-注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘" />
+注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/" /><meta property="article:section" content="docs" />
 
@@ -30,12 +30,12 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
 此时你可以考虑使用这里介绍的方法快速追上最新的状态。
 注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
-下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
+下载全量数据快照并解压缩（最新更新日期：2021年9月17日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
 $ sha256sum khala.torrent 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05 khala.torrent 在下载完成后，可以通过校验sha256校验和来确保数据完整性
 $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
-注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘">
+注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘">
 
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="111">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.2 如果还没有同步好挖矿节点，快速追上的办法"/>
 <meta name="twitter:description" content="面临的问题 如果你的节点没有同步到最新状态，
@@ -43,10 +43,10 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
 此时你可以考虑使用这里介绍的方法快速追上最新的状态。
 注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
-下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
+下载全量数据快照并解压缩（最新更新日期：2021年9月17日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
 $ sha256sum khala.torrent 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05 khala.torrent 在下载完成后，可以通过校验sha256校验和来确保数据完整性
 $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
-注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘"/>
+注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
@@ -58,10 +58,10 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s 并且 best 和 target 相差很大。
 此时你可以考虑使用这里介绍的方法快速追上最新的状态。
 注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。
-下载全量数据快照并解压缩（最新更新日期：2021年9月15日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
+下载全量数据快照并解压缩（最新更新日期：2021年9月17日） 我们推荐使用BT下载（种子文件），请在下载完成后保持做种。种子文件的sha256校验和为
 $ sha256sum khala.torrent 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05 khala.torrent 在下载完成后，可以通过校验sha256校验和来确保数据完整性
 $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c khala-snapshot-210915.tar.gz 下载完成后解压缩，得到 khala-node 目录
-注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘">
+注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘">
 
 
 
@@ -318,6 +318,7 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
         <li><a href="#遇到提示-configuration_needed-或-configuration_and_sw_hardening_needed">遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED</a></li>
         <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
         <li><a href="#如何从para2切换到khala">如何从Para2切换到Khala</a></li>
+        <li><a href="#基于snapshot数据同步时遇到unable-to-retrieve-header-and-parent-from-supplied-hash错误">基于snapshot数据同步时遇到“Unable to retrieve header and parent from supplied hash”错误</a></li>
       </ul>
     </li>
   </ul>
@@ -351,7 +352,7 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
         <h3 class="section_link active"><a id="docs-42-如果还没有同步好挖矿节点快速追上的办法" href="https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 如果还没有同步好挖矿节点，快速追上的办法</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#面临的问题">面临的问题</a></li>
-    <li><a href="#下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</a></li>
+    <li><a href="#下载全量数据快照并解压缩最新更新日期2021年9月17日">下载全量数据快照并解压缩（最新更新日期：2021年9月17日）</a></li>
     <li><a href="#准备工作">准备工作</a></li>
     <li><a href="#使用全量快照替换本地的数据">使用全量快照替换本地的数据</a>
       <ul>
@@ -418,7 +419,7 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
 </code></pre><p>并且 best 和 target 相差很大。</p>
 <p>此时你可以考虑使用这里介绍的方法快速追上最新的状态。</p>
 <p>注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。</p>
-<h2 id="下载全量数据快照并解压缩最新更新日期2021年9月15日">下载全量数据快照并解压缩（最新更新日期：2021年9月15日）</h2>
+<h2 id="下载全量数据快照并解压缩最新更新日期2021年9月17日">下载全量数据快照并解压缩（最新更新日期：2021年9月17日）</h2>
 <p>我们推荐使用BT下载（<a href="/files/khala.torrent">种子文件</a>），请在下载完成后保持做种。种子文件的sha256校验和为</p>
 <pre tabindex="0"><code>$ sha256sum khala.torrent
 7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05  khala.torrent
@@ -426,14 +427,17 @@ $ sha256sum khala-snapshot-210915.tar.gz d1ad677bb2421d17e12f7bed2af95beaf7343a2
 <pre tabindex="0"><code>$ sha256sum khala-snapshot-210915.tar.gz
 d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
 </code></pre><p>下载完成后解压缩，得到 <code>khala-node</code> 目录</p>
-<p>注意，全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要至少 550G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘</p>
-<h2 id="准备工作">准备工作</h2>
+<p>注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘</p>
+<p><strong>2021年9月17日更新</strong>：目前已知<code>khala-snapshot-210915.tar.gz</code>文件中Khala部分数据存在坏块，可能导致错误。请删除目录中的Khala部分数据后重新同步（Kusama部分数据目前未发现相关问题）。</p>
+<pre tabindex="0"><code>rm -rf khala-node/chains/khala
+</code></pre><h2 id="准备工作">准备工作</h2>
 <p>请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
-</code></pre></div><p>关闭挖矿服务</p>
+</code></pre></div><p>关闭挖矿服务。</p>
 <h2 id="使用全量快照替换本地的数据">使用全量快照替换本地的数据</h2>
 <h3 id="如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</h3>
-<p>删除 <code>/var/khala-dev-node</code> 目录里的所有文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去。</p>
+<p>删除 <code>/var/khala-dev-node</code> <strong>目录里的所有文件</strong>，将之前步骤解压缩得到的 <code>khala-node</code> <strong>目录里的文件</strong>移动进去。</p>
+<p>如果你操作正确，可以看到 <code>/var/khala-dev-node</code> 目录里仅有 <code>chains</code> 和 <code>polkadot</code> 两个目录</p>
 <h3 id="高级矿工">高级矿工</h3>
 <p>找到节点的区块存储目录，清空里面的文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去</p>
 <h2 id="重新启动服务">重新启动服务</h2>
