@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -25,7 +25,7 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
 Miners and pool owners can use Console to manage Workers and StakePools. Also it provides an overview of the status of all the managed Workers and StakePools.
 Console Manual Prerequisites  Create a Khala account as the pool Owner and Worker operator; Get the WorkerPublicKey from Worker and has bound the Worker to the Khala account above.">
 
-<meta itemprop="wordCount" content="704">
+<meta itemprop="wordCount" content="796">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.4 Use Console to Manage Your Mining"/>
 <meta name="twitter:description" content="We highly recommend to read staking mechanism before using the Console.
@@ -529,12 +529,19 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
 </li>
 <li>(Optional) Configure StakePool
 <ul>
-<li>Set Payout
+<li>Set payout preference
 <ul>
-<li>Click &ldquo;Set Payout Pref&rdquo; of the target pool;</li>
-<li>Type in the payout in the pop-up window; the default payout is 0, and it can be set between 0-100%;</li>
+<li>The payout preference allows you to set the commission of a pool. The comission rate determines how much the pool owner can earn before the mined rewards are distributed to the stakers. Examples:
+<ul>
+<li>If set to 0%, all the mined rewards go to the stakers pro rata;</li>
+<li>If set to 100%, all the mined rewards go to the pool owner;</li>
+<li>If set to 50%, half of the rewards go to the pool owner, and another half go to the stakers pro rata.</li>
+</ul>
+</li>
+<li>Click &ldquo;Set Payout Pref&rdquo; of the target pool to set the commission rate;</li>
+<li>Type in the payout in the pop-up window; the default payout is 0% (all give to stakers), and it can be set between 0-100%;</li>
 <li>Click &ldquo;Confirm&rdquo; to send the transaction;</li>
-<li>The payout value will be updated in Stakepool list;</li>
+<li>The comission rate will be updated in StakePool list;</li>
 </ul>
 </li>
 <li>Set Staking Capacity

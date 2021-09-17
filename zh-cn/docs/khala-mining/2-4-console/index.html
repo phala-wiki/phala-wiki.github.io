@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -16,7 +16,7 @@
   创建抵押池
  点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
   手续费
- 点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额" />
+ 手续费表示矿抵押池从矿机的收入中收取的费率比例，收取手续费后，剩余的收益将由抵押人平分。例如：  0% 的手续费表示所有收入都分给抵押人； 100% 的手续费表示所有收入都分给抵押池主； 50% 的手续费表示一半的收入由抵押池主收取，另一半均分给抵押人   点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-mining/2-4-console/" /><meta property="article:section" content="docs" />
 
@@ -29,9 +29,9 @@
   创建抵押池
  点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
   手续费
- 点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额">
+ 手续费表示矿抵押池从矿机的收入中收取的费率比例，收取手续费后，剩余的收益将由抵押人平分。例如：  0% 的手续费表示所有收入都分给抵押人； 100% 的手续费表示所有收入都分给抵押池主； 50% 的手续费表示一半的收入由抵押池主收取，另一半均分给抵押人   点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额">
 
-<meta itemprop="wordCount" content="242">
+<meta itemprop="wordCount" content="250">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.4 使用控制台"/>
 <meta name="twitter:description" content="控制台链接入口
@@ -40,7 +40,7 @@
   创建抵押池
  点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
   手续费
- 点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额"/>
+ 手续费表示矿抵押池从矿机的收入中收取的费率比例，收取手续费后，剩余的收益将由抵押人平分。例如：  0% 的手续费表示所有收入都分给抵押人； 100% 的手续费表示所有收入都分给抵押池主； 50% 的手续费表示一半的收入由抵押池主收取，另一半均分给抵押人   点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
@@ -53,7 +53,7 @@
   创建抵押池
  点击 Create Pool!  在弹窗中点击 Confirm 在插件中点击签名此交易，之后等待二十几秒 创建成功的抵押池会出现在 Stakepool 列表中    设置抵押池（可选）
   手续费
- 点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额">
+ 手续费表示矿抵押池从矿机的收入中收取的费率比例，收取手续费后，剩余的收益将由抵押人平分。例如：  0% 的手续费表示所有收入都分给抵押人； 100% 的手续费表示所有收入都分给抵押池主； 50% 的手续费表示一半的收入由抵押池主收取，另一半均分给抵押人   点击相应抵押池的 Set Payout Pref 在弹窗中输入手续费，默认是 0，可设范围是 0-100% 点击 Confirm 提交交易 可在 Stakepool 列表中看到该值更新    最大抵押额">
 
 
 
@@ -469,6 +469,13 @@
 <li>
 <p>手续费</p>
 <ul>
+<li>手续费表示矿抵押池从矿机的收入中收取的费率比例，收取手续费后，剩余的收益将由抵押人平分。例如：
+<ul>
+<li>0% 的手续费表示所有收入都分给抵押人；</li>
+<li>100% 的手续费表示所有收入都分给抵押池主；</li>
+<li>50% 的手续费表示一半的收入由抵押池主收取，另一半均分给抵押人</li>
+</ul>
+</li>
 <li>点击相应抵押池的 Set Payout Pref</li>
 <li>在弹窗中输入手续费，默认是 0，可设范围是 0-100%</li>
 <li>点击 Confirm 提交交易</li>
@@ -478,7 +485,8 @@
 <li>
 <p>最大抵押额</p>
 <ul>
-<li>点击相应抵押池的 Set Cap</li>
+<li>最呆抵押额用来保护抵押池的收益被合理分配。当没有限额时，任何人都可以向抵押池贡献资金，从而参与收益分配，然而如果抵押进来的资金闲置而没被利用，则会损害其他抵押人的收益。</li>
+<li>为了设置最大抵押额，点击相应抵押池的 Set Cap</li>
 <li>在弹窗中输入最大抵押额，默认是无限，可设范围是当前池中总抵押额（Total Stake Now）- 无限</li>
 <li>提交交易</li>
 <li>可在 Stakepool 列表中看到该值更新</li>

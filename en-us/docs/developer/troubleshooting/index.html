@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -503,7 +503,7 @@
 <p>The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&rsquo;t have enough memory, you can limit the concurrency specifying a smaller <code>N</code> than your available cores:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cargo build --release --j N
 </code></pre></div><h3 id="probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
+<pre><code class="language-log" data-lang="log">  error[E0282]: type annotations needed
       --&gt; .../substrate/primitives/arithmetic/src/fixed_point.rs:541:9
        |
   541  |                   let accuracy = P::ACCURACY.saturated_into();
@@ -524,7 +524,7 @@
 <span class="ln">2</span>rustup default nightly-2020-09-27
 <span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-09-27
 </code></pre></div><h3 id="probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
+<pre><code class="language-log" data-lang="log">error: duplicate lang item in crate `std`: `f32_runtime`.
   |
   = note: the lang item is first defined in crate `sgx_tstd` (which `enclaveapp` depends on)
 
@@ -553,7 +553,7 @@ error: aborting due to 6 previous errors
 <p><a href="https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html">https://blog.rust-lang.org/2021/05/10/Rust-1.52.1.html</a></p>
 <h2 id="apps-ng-related"><code>apps-ng</code> related</h2>
 <h3 id="probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</h3>
-<pre tabindex="0"><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
+<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
 error TS6053: File '@polkadot/dev/config/tsconfig' not found.
 </code></pre><p>You forgot to init the git submodule. Please run <code>git submodule update --init</code>.</p>
 
