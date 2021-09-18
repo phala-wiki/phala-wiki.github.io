@@ -23,7 +23,7 @@ This article shares a cheat way to accelerate your node syncing." />
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing.">
 
-<meta itemprop="wordCount" content="362">
+<meta itemprop="wordCount" content="322">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
 <meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
@@ -324,7 +324,7 @@ This article shares a cheat way to accelerate your node syncing.">
         <h3 class="section_link active"><a id="docs-42-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
-    <li><a href="#download-latest-snapshot-updated-in-9172021">Download latest snapshot (Updated in 9/17/2021)</a></li>
+    <li><a href="#download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</a></li>
     <li><a href="#preparation">Preparation</a></li>
     <li><a href="#replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</a>
       <ul>
@@ -507,18 +507,14 @@ This article shares a cheat way to accelerate your node syncing.">
 <p>This article shares a cheat way to accelerate your node syncing.</p>
 <p>ATTENTION: If your node is near the newest block height (about several hours to catch up) or has already caught up,
 you don&rsquo;t need to do anything, just sit and wait.</p>
-<h2 id="download-latest-snapshot-updated-in-9172021">Download latest snapshot (Updated in 9/17/2021)</h2>
-<p>We recommend to use the BT download with <a href="/files/khala.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
-<pre tabindex="0"><code>$ sha256sum khala.torrent
-7f517ac05bc8a2840055a4f8d59f147c2bdd92c10281f4d45ab963908c141f05  khala.torrent
-</code></pre><p>You can check the integrity of your download by comparing the checksum</p>
-<pre tabindex="0"><code>$ sha256sum khala-snapshot-210915.tar.gz
-d1ad677bb2421d17e12f7bed2af95beaf7343a2f9c79b4b07b85a0faa521467c  khala-snapshot-210915.tar.gz
+<h2 id="download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</h2>
+<p>We recommend to use the BT download with <a href="/files/khala-snapshot-2021-09-17.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
+<pre tabindex="0"><code>$ sha256sum khala-snapshot-2021-09-17.torrent
+595e448bfce90c6725de75d1f38462570d7142c41199375bc86d35f6809b733f  khala-snapshot-2021-09-17.torrent
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
 <p>ATTENTION: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 600GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
-<p><strong>Updated in 9/17/2021</strong>: We found there is malformed Khala block in <code>khala-snapshot-210915.tar.gz</code> which can block your node syncing. Remove the Khala data (for now, the dispatched Kusama data is fine) before you apply the snapshot.</p>
-<pre tabindex="0"><code>rm -rf khala-node/chains/khala
-</code></pre><h2 id="preparation">Preparation</h2>
+<p><strong>Updated in 9/18/2021</strong>: We have updated the snapshot which does not contain broken data anymore.</p>
+<h2 id="preparation">Preparation</h2>
 <p>Please ensure Phala services are stopped, especially the node, if you&rsquo;re using solo mining, use</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>to stop Phala services.</p>
