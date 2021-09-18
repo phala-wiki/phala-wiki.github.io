@@ -9,35 +9,27 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>1.1 Run a Local Development Network | Phala Network Wiki</title><meta property="og:title" content="1.1 Run a Local Development Network" />
-<meta property="og:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI." />
+<title>Set Up Identity | Phala Network Wiki</title><meta property="og:title" content="Set Up Identity" />
+<meta property="og:description" content="Learn about on-chain identity, judgments, and registrars." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="1.1 Run a Local Development Network">
-<meta itemprop="description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
+<meta itemprop="name" content="Set Up Identity">
+<meta itemprop="description" content="Learn about on-chain identity, judgments, and registrars.">
 
-<meta itemprop="wordCount" content="1706">
+<meta itemprop="wordCount" content="1484">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.1 Run a Local Development Network"/>
-<meta name="twitter:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI."/>
+<meta name="twitter:title" content="Set Up Identity"/>
+<meta name="twitter:description" content="Learn about on-chain identity, judgments, and registrars."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&amp;rsquo;re going to set up a &amp;ldquo;Hello World&amp;rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
+  <meta name="description" content="Learn about on-chain identity, judgments, and registrars.">
 
 
 
@@ -214,7 +206,7 @@
     <li><a href="#potential-risks">Potential Risks</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-set-up-identity" href="https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/">Set Up Identity</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-set-up-identity" href="https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/">Set Up Identity</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#setting-an-identity">Setting an Identity</a>
       <ul>
@@ -458,7 +450,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
       <section class="subsection" id="docs-archived-contract-development">
-        <h3 class="section_link active"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#environment">Environment</a></li>
@@ -517,224 +509,106 @@
 </aside>
 
   <main class="content">
-    <h1>1.1 Run a Local Development Network</h1><blockquote>
-<p>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.</p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p>In this tutorial,  we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:</p>
+    <h1>Set Up Identity</h1><p>Phala Network provides a naming system that allows participants to add personal information to their on-chain account and subsequently ask for verification of this information by <a href="#registrars">registrars</a>.</p>
+<p>After your identity is added, it can be used in many applications in Phala or Khala ecosystem. For example, in Secure Worker mining, this will help you attracting delegators to trust and vote for you.</p>
+<p><img src="/images/docs/khala-user/identity-0.png" alt=""></p>
+<h2 id="setting-an-identity">Setting an Identity</h2>
+<p>Users can set an identity by registering through default fields such as legal name, display name, website, Twitter handle, Riot handle, etc. along with some extra, custom fields for which they would like attestations (see <a href="#judgements">Judgements</a>).</p>
+<p>Users must reserve funds in a bond to store their information on chain:<code>identity_reserve_funds</code>, and <code> identity_field_funds</code>  per each field beyond the legal name. These funds are <em>locked</em>, not spent - they are returned when the identity is cleared.</p>
+<p>These amounts can also be extracted by querying constants through the <a href="https://polkadot.js.org/apps/#/chainstate/constants">Chain state constants</a> tab on polkadot.js/apps.</p>
+<p>First, select <code>identity</code> as the <code>selected constant query</code>.</p>
+<p>Then on the right-hand side, you can select the constants that you would like to view and add them onto the webpage by clicking the &ldquo;plus&rdquo; icon at the end of the bar.</p>
+<p>Each field can store up to 32 bytes of information, so the data must be less than that. When inputting the data manually through the <a href="https://polkadot.js.org/apps/#/extrinsics">Extrinsics UI</a>, a <a href="https://onlineutf8tools.com/convert-utf8-to-bytes">UTF8 to bytes</a> converter can help.</p>
+<p>The easiest way to add the built-in fields is to click the gear icon next to your account and select &ldquo;Set on-chain identity&rdquo;.</p>
+<p><img src="/images/docs/khala-user/identity-1.png" alt=""></p>
+<p>A popup will appear, offering the default fields.</p>
+<p><img src="/images/docs/khala-user/identity-2.png" alt=""></p>
+<p>To add custom fields beyond the default ones, use the Extrinsics UI to submit a raw transaction by first clicking &ldquo;Add Item&rdquo; and adding any field name you like. The display name also has to be provided, otherwise, the Identity pallet would consider it wiped if we submitted it with the &ldquo;None&rdquo; option still selected. That is to say, every time you make a change to your identity values, you need to re-submit the entire set of fields: the write operation is always &ldquo;overwrite&rdquo;, never &ldquo;append&rdquo;.</p>
+<p><img src="/images/docs/khala-user/identity-3.png" alt=""></p>
+<p>Note that custom fields are not shown in the UI by default.</p>
+<p>The rendering of such custom values is, ultimately, up to the UI/dapp makers. In the case of PolkadotJS, the team prefers to only show official fields for now. If you want to check that the values are still stored, use the <a href="https://polkadot.js.org/apps/#/chainstate">Chain State UI</a> to query the active account&rsquo;s identity info:</p>
+<p><img src="/images/docs/khala-user/identity-4.png" alt=""></p>
+<p>It is up to your own UI or dapp to then do with this data as it pleases. The data will remain available for querying via the Polkadot API, so you don&rsquo;t have to rely on the PolkadotJS UI.</p>
+<p>You can have a maximum of 100 custom fields.</p>
+<h3 id="format-caveat">Format Caveat</h3>
+<p>Please note the following caveat: because the fields support different formats, from raw bytes to various hashes, a UI has no way of telling how to encode a given field it encounters.</p>
+<p>The PolkadotJS UI currently encodes the raw bytes it encounters as UTF8 strings, which makes these values readable on-screen. However, given that there are no restrictions on the values that can be placed into these fields, a different UI may interpret them as, for example, IPFS hashes or encoded bitmaps. This means any field stored as raw bytes will become unreadable by that specific UI. As field standards crystallize, things will become easier to use but for now, every custom implementation of displaying user information will likely have to make a conscious decision on the approach to take, or support multiple formats and then attempt multiple encodings until the output makes sense.</p>
+<h2 id="judgements">Judgements</h2>
+<p>After a user injects their information on chain, they can request judgement from a registrar. Users declare a maximum fee that they are willing to pay for judgement, and registrars whose fee is below that amount can provide a judgement.</p>
+<p>When a registrar provides judgement, they can select up to six levels of confidence in their attestation:</p>
 <ul>
-<li>Send confidential transactions</li>
-<li>Get a ready-to-hack version of Phala Network for building your own confidential Dapps</li>
+<li>Unknown: The default value, no judgement made yet.</li>
+<li>Reasonable: The data appears reasonable, but no in-depth checks (e.g. formal KYC process) were performed.</li>
+<li>Known Good: The registrar has certified that the information is correct.</li>
+<li>Out of Date: The information used to be good, but is now out of date.</li>
+<li>Low Quality: The information is low quality or imprecise, but can be fixed with an update.</li>
+<li>Erroneous: The information is erroneous and may indicate malicious intent.</li>
 </ul>
-<p>A full Phala Network stack has three components plus a Web UI. The core components are at <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a>:</p>
+<p>A seventh state, &ldquo;fee paid&rdquo;, is for when a user has requested judgement and it is in progress. Information that is in this state or &ldquo;erroneous&rdquo; is &ldquo;sticky&rdquo; and cannot be modified; it can only be removed by the complete removal of the identity.</p>
+<p>Registrars gain trust by performing proper due diligence and would presumably be replaced for issuing faulty judgements.</p>
+<p>To be judged after submitting your identity information, go to the <a href="https://polkadot.js.org/apps/#/extrinsics">&ldquo;Extrinsics UI&rdquo;</a> and select the <code>identity</code> pallet, then <code>requestJudgement</code>. For the <code>reg_index</code> put the index of the registrar you want to be judged by, and for the <code>max_fee</code> put the maximum you&rsquo;re willing to pay for these confirmations.</p>
+<p>If you don&rsquo;t know which registrar to pick, first check the available registrars by going to <a href="#">&ldquo;Chain State UI&rdquo;</a> and selecting <code>identity.registrars()</code> to get the full list.</p>
+<h3 id="requesting-a-judgement">Requesting a Judgement</h3>
+<p>Requesting judgement follows the same process regardless of whether you&rsquo;re on the Khala or Phala networks. Select one of the registrars from the query you made above.</p>
+<p><img src="/images/docs/khala-user/identity-5.png" alt=""></p>
+<p>This will make your identity go from unjudged to &ldquo;waiting&rdquo;:</p>
+<p>At this point, direct contact with the registrar is required - the contact info is in their identity as shown above. Each registrar will have their own set of procedures to verify your identity and values, and only once you&rsquo;ve satisfied their requirements will the process continue.</p>
+<p>Once the registrar has confirmed the identity, a green checkmark should appear next to your account name with the appropriate confidence level:</p>
+<p><img src="/images/docs/khala-user/identity-6.png" alt=""></p>
+<p><em>Note that changing even a single field&rsquo;s value after you&rsquo;ve been verified will un-verify your account and you will need to start the judgement process anew. However, you can still change fields while the judgement is going on - it&rsquo;s up to the registrar to keep an eye on the changes.</em></p>
+<h3 id="cancelling-a-judgement">Cancelling a Judgement</h3>
+<p>You may decide that you do not want to be judged by a registrar (for instance, because you realize you entered incorrect data or selected the wrong registrar). In this case, after submitting the request for judgement but before your identity has been judged, you can issue a call to cancel the judgement using an extrinsic.</p>
+<p>To do this, first, go to the <a href="https://polkadot.js.org/apps/#/extrinsics">&ldquo;Extrinsics UI&rdquo;</a> and select
+the <code>identity</code> pallet, then <code>cancelRequest</code>. Ensure that you are calling this from the correct account (the one for which you initially requested judgement). For the <code>reg_index</code>, put the index of the registrar from which you requested judgement.</p>
+<p>Submit the transaction, and the requested judgement will be cancelled.</p>
+<h3 id="khala-registrars">Khala Registrars</h3>
+<p>There will be multiple registrars on Khala. But at the moment you only have 1 registrar supplier:</p>
 <ul>
-<li><code>phala-node</code>: The Substrate blockchain node</li>
-<li><code>pRuntime</code>: The TEE runtime. Contracts runs in pRuntime</li>
-<li><code>phost</code>: The Substrate-TEE bridge relayer. Connects the blockchain and pRuntime</li>
-</ul>
-<p>The Web UI is at <a href="https://github.com/Phala-Network/apps-ng">Phala-Network/apps-ng</a>. The Web UI needs to connect to both the blockchain and the pRuntime in order to send transaction and queries.</p>
-<h2 id="environment">Environment</h2>
-<p>The development environment of Phala Network requires Linux, because it relies on <a href="https://01.org/intel-software-guard-extensions/downloads">Linux Intel SGX SDK</a>. Virtual machines should generally work. Phala Network doesn&rsquo;t work on Windows or macOS natively (sorry, Mac lovers), however we haven&rsquo;t tested WLS yet. Please let us know if you are the first to run it on WLS successfully!</p>
-<p>In this tutorial we assume the operating system is <em>Ubuntu 18.04</em>. Though not tested yet, it should work with Ubuntu 20.04 out-of-box. Other Linux distributions should also work, but the instructions or command may vary.</p>
-<p>It&rsquo;s required to have at least 4 cores and 8GB ram to build the project including the core blockchain and the Web UI. Less than 4GB ram may fail to build the Web UI.</p>
-<p>Follow the commands below to prepare the environment. Some can be skipped if already installed.</p>
+<li>Registrar 0:
 <ul>
-<li>
-<p>Install the system level dependencies</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
-<span class="ln">2</span>sudo apt install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev git cmake perl pkg-config curl llvm-10 clang-10 libclang-10-dev
-</code></pre></div><blockquote>
-<p>Notes on LLVM: We require at least LLVM-9, but higher versions are also supported. Older version like LLVM 6.0 breaks the core blockchain compilation.</p>
-</blockquote>
-</li>
-<li>
-<p>Install Rust. Please choose the default toolchain</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
-<span class="ln">2</span><span class="nb">source</span> ~/.cargo/env
-</code></pre></div></li>
-<li>
-<p>Install Intel SGX SDK</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.12/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.12.100.3.bin
-<span class="ln">2</span>chmod +x ./sgx_linux_x64_sdk_2.12.100.3.bin
-<span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.12.100.3.bin
-<span class="ln">4</span><span class="nb">source</span> /opt/intel/sgxsdk/environment
-</code></pre></div><blockquote>
-<p>You can add <code>source /opt/sgxsdk/environment</code> to your <code>~/.bashrc</code> (or <code>~/.zshrc</code> depends on which shell you&rsquo;re using).</p>
-</blockquote>
-</li>
-<li>
-<p>Install Node.js (&gt;= v12) &amp; yarn 2</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
-<span class="ln">2</span>sudo apt-get install -y nodejs
-<span class="ln">3</span>sudo npm install -g yarn
-<span class="ln">4</span>yarn <span class="nb">set</span> version berry
-</code></pre></div></li>
-</ul>
-<p>You can test the installation by running the following commands. The output should match the sample outputs, or with a slightly higher version.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
-<span class="ln"> 2</span><span class="c1"># rustup 1.22.1 (b01adbbc3 2020-07-08)</span>
-<span class="ln"> 3</span>
-<span class="ln"> 4</span>cargo --version
-<span class="ln"> 5</span><span class="c1"># cargo 1.46.0 (149022b1d 2020-07-17)</span>
-<span class="ln"> 6</span>
-<span class="ln"> 7</span><span class="nb">echo</span> <span class="nv">$SGX_SDK</span>
-<span class="ln"> 8</span><span class="c1"># /opt/intel/sgxsdk</span>
-<span class="ln"> 9</span>
-<span class="ln">10</span><span class="c1"># LLVM-9 or higher versions are fine</span>
-<span class="ln">11</span>llvm-ar-10 --version
-<span class="ln">12</span><span class="c1"># LLVM (http://llvm.org/):</span>
-<span class="ln">13</span><span class="c1">#   LLVM version 10.0.0</span>
-<span class="ln">14</span>
-<span class="ln">15</span>node --version
-<span class="ln">16</span><span class="c1"># v12.16.3</span>
-<span class="ln">17</span>
-<span class="ln">18</span>yarn --version
-<span class="ln">19</span><span class="c1"># 2.1.1</span>
-</code></pre></div><p>Finally let&rsquo;s clone the code and run the initialization script to update the Rust toolchain. Please note that the entire tutorial is on the <strong><code>helloworld</code> branch</strong> for both the blockchain and the Web UI repo.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Clone the core blockchain repo</span>
-<span class="ln"> 2</span>git clone --branch helloworld https://github.com/Phala-Network/phala-blockchain.git
-<span class="ln"> 3</span><span class="c1"># Clone the Web UI repo</span>
-<span class="ln"> 4</span>git clone --branch helloworld https://github.com/Phala-Network/apps-ng.git
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="c1"># Run the init script to update Rust toolchain and git submodule</span>
-<span class="ln"> 7</span><span class="nb">cd</span> phala-blockchain/
-<span class="ln"> 8</span>git submodule update --init
-<span class="ln"> 9</span>./scripts/init.sh
-<span class="ln">10</span><span class="nb">cd</span> ..
-<span class="ln">11</span>
-<span class="ln">12</span><span class="c1"># Update the git submodule</span>
-<span class="ln">13</span><span class="nb">cd</span> apps-ng/
-<span class="ln">14</span>git submodule update --init
-<span class="ln">15</span><span class="nb">cd</span> ..
-</code></pre></div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
-<p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let&rsquo;s start to build the the core blockchain first. The blockchain on the <strong><code>helloworld</code> branch</strong> is based on an old version of Substrate, therefore we&rsquo;ll use an old version of Rust to build it.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
-<span class="ln">2</span>rustup install nightly-2020-10-01-x86_64-unknown-linux-gnu
-<span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-01
-<span class="ln">4</span><span class="nb">cd</span> phala-blockchain/
-<span class="ln">5</span>cargo +nightly-2020-10-01 build --release
-<span class="ln">6</span>
-<span class="ln">7</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
-<span class="ln">8</span><span class="nb">cd</span> ./pruntime/
-<span class="ln">9</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
-</code></pre></div><blockquote>
-<p><strong>Notes on Build the core blockchain</strong></p>
-<p>You would usually use the latest version of Substrate and the Rust compiler to build the core blockchain. The build would therefore be simplified to:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
-<span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
-<span class="ln">3</span>cargo build --release
-</code></pre></div></blockquote>
-<p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
-<ul>
-<li><code>./target/release/phala-node</code>: The Substrate node</li>
-<li><code>./target/release/phost</code>: The Substrate-to-TEE bridge relayer</li>
-<li><code>./pruntime/bin/app</code>: The TEE worker</li>
-</ul>
-<blockquote>
-<p><strong>Notes on <code>SGX_MODE</code></strong></p>
-<p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD cpu. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.8/linux/distro/ubuntu18.04-server/">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
-</blockquote>
-<p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>phost</code> follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># In terminal window 1: phala-node</span>
-<span class="ln">2</span>./target/release/phala-node --dev
-<span class="ln">3</span>
-<span class="ln">4</span><span class="c1"># In terminal window 2: pruntime</span>
-<span class="ln">5</span><span class="nb">cd</span> pruntime/bin
-<span class="ln">6</span>./app
-<span class="ln">7</span>
-<span class="ln">8</span><span class="c1"># In terminal window 3: phost</span>
-<span class="ln">9</span>./target/release/phost --dev
-</code></pre></div><p><img src="/images/docs/core-terminal.gif" alt=""></p>
-<p>(Core components running and producing logs)</p>
-<p>Once they are launched successfully, they should output logs as shown in the GIF above. Notice that we pass the <code>--dev</code> flag to <code>phala-node</code> and <code>phost</code> to indicate we are in the development network.</p>
-<p>The three core blockchain components are connected via TCP (WebSocket and HTTP). Please ensure your system have the TCP ports not occupied with other programs. By default they use the following ports:</p>
-<ul>
-<li><code>phala-node</code>
-<ul>
-<li>9944: Substrate WebSocket RPC port</li>
-<li>30333: Substrate P2P network port</li>
-</ul>
-</li>
-<li><code>pruntime</code>
-<ul>
-<li>8000: HTTP Restful RPC port</li>
+<li>Marvin Tong</li>
+<li>Contact: <a href="mailto:marvin@phala.network">marvin@phala.network</a></li>
+<li>Account: 42McARWf3FMrGa2RnhhVansbCHuRktiiyHpjsW5nDkDefwHr</li>
+<li>Fee: 5 $PHA</li>
 </ul>
 </li>
 </ul>
-<p><code>phost</code> doesn&rsquo;t listen to any ports but connect to <code>phala-node</code>&rsquo;s WebSocket port and <code>pruntime</code>&rsquo;s HTTP RPC port.</p>
-<p>You can safely shutdown the three program by <kbd>Ctrl</kbd> + <kbd>C</kbd>. <code>phala-node</code> saves the blockchain database on your disk. So if the blockchain gets messed up, you may want to reset it by:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node purge-chain --dev
-</code></pre></div><h2 id="build-the-web-ui">Build the Web UI</h2>
-<p>The Web UI frontend is developed with <code>node.js</code>, <code>yarn</code> and <code>react</code>. It&rsquo;s easy to build and launch the frontend.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> apps-ng
-<span class="ln">2</span>yarn
-<span class="ln">3</span>yarn dev
-</code></pre></div><p>It may take a few minutes to download the dependencies and build the frontend. By default the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
-<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
-&gt; Using &quot;webpackDevMiddleware&quot; config function defined in default.
-&gt; Using external babel configuration
-event - compiled successfully
-event - build page: /[...slug]
-event - build page: /
-event - compiled successfully
-</code></pre><p><img src="/images/docs/apps-ng-landing.png" alt="">
-(Web UI landing page)</p>
-<p>The Web UI connects to both <code>phala-node</code> and <code>pruntime</code> by their default RPC endpoints. If everything is configured correctly, you will see the wallet unlock screen in the landing page as shown above. You should be able to select the well-known development accounts (Alice, Bob, etc) in the drop box.</p>
-<blockquote>
-<p><strong>Notes for Remote Access</strong></p>
-<p>In a case where you run your blockchain and WEB UI on your REMOTE_SERVER and try to access them elsewhere, you can forward the ports with <code>ssh</code> command. For example,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
-</code></pre></div><p>This forwards all the necessary ports:</p>
-<ul>
-<li>3000: HTTP port of Web UI</li>
-<li>9944: Substrate WebSocket RPC port of <code>phala-node</code></li>
-<li>8000: HTTP Restful RPC port of <code>pruntime</code></li>
-</ul>
-<p>and you can visit the Web UI at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
-</blockquote>
-<h2 id="send-some-secret-tokens">Send some secret tokens</h2>
-<p>In the last two sections, we have built and launched <code>phala-node</code>, <code>pruntime</code>, and <code>phost</code> in development mode, and connect the Web UI to the development network. Now we are ready to try the secret wallet feature in Phala Network!</p>
-<p>Let&rsquo;s select Alice and unlock the wallet. Alice is a built-in test account with 10,000 PHA on the blockchain. This PHA token is the native token. It&rsquo;s transparent on-chain like a typical Substrate blockchain, managed by Balances pallet.</p>
-<p><img src="/images/docs/apps-ng-init-wallet.png" alt="">
-(Secret wallet dapp)</p>
-<p>However, the &ldquo;secret assets&rdquo; wallet below is very different. Secret assets are stored in confidential contracts inside TEE enclaves. Like what the name says, the secret assets are private and invisible on the blockchain.</p>
-<p>Click &ldquo;Convert to Secret PHA&rdquo; button to transfer <strong>PHA</strong> to <strong>Secret PHA</strong>. You will see your PHA balance reduced first, and after around ten seconds, the Secret PHA balance will increase by the same amount, except some transaction fee.</p>
-<blockquote>
-<p>What just happend?</p>
-<p>You created a Substrate transaction to send some funds to the Phala pallet. The funds are stored in the pallet, and it triggered a <strong>confidential transaction</strong> to issue the same amount of the token in the secret wallet in TEE enclaves.</p>
-<p>It takes ~6s to include a Substrate transaction in the blockchain, and then another 6s to finalize the block. Once the transaction is finalized, it triggers a &ldquo;TransferToTee&rdquo; event, relayed to <code>pruntime</code> via the relayer, and the confidential contract increases the balance. Finally the Web UI queries the confidential contract to get the updated balance.</p>
-</blockquote>
-<p>There are plenty of things you can play with the secret wallet:</p>
-<ul>
-<li>convert the secret assets back to on-chain assets;</li>
-<li>transfer secret assets just like ordinary assets on every Substrate blockchain;</li>
-<li>and even issue or destroy your own secret tokens</li>
-</ul>
-<p>All the above functions are made by confidential transaction. Nobody can see the content of the transaction because the body is encrypted. By clicking &ldquo;Polkadot UI&rdquo; button in the navigation bar, it will bring you to the polkadot.js apps you are familiar with. After sending an encrypted transaction by clicking the &ldquo;Secret Transfer&rdquo; button, you can find the encrypted transaction wrapped by <code>phalaModel.pushCommand</code> extrinsic from the block explorer as shown below.</p>
-<img src="/images/docs/polkadotjs-pushCommand.png" style="max-height: 200px;">
-<p>(An encrypted confidential transaction on a blockchain explorer)</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Congratulations! Finally, you have followed the tutorial to:</p>
-<ul>
-<li>Prepare a ready-to-hack development environment</li>
-<li>Download, build, and started a full stack development mode Phala Network</li>
-<li>Connect to the network via the Web UI and try the secret wallet dapp</li>
-</ul>
-<p>Now you are familiar with building and running a development network. Hold tight! In the next chapter, we are going to build the first confidential contract together!</p>
-<p>Join our <a href="https://discord.gg/zzhfUjU">Discord server</a> and feel free to ask for help!</p>
+<p>Please add the following information to the application:</p>
+<p>I am applying for identity verification on Khala, the information is as follows:</p>
+<pre><code>{
+  &quot;account&quot;: &quot;42McARWf3FMrGa2RnhhVansbCHuRktiiyHpjsW5nDkDefwHr&quot;,
+  &quot;display&quot;: &quot;Marvin Tong&quot;,
+  &quot;web&quot;: &quot;https://phala.network&quot;,
+  &quot;email&quot;: &quot;marvin@phala.network&quot;
+  &quot;twitter&quot;: &quot;https://twitter.com/marvin_tong&quot;
+}
+</code></pre><p>Registrar 0 will reply for the next steps.</p>
+<h2 id="sub-accounts">Sub Accounts</h2>
+<p>Users can also link accounts by setting &ldquo;sub accounts&rdquo;, each with its own identity, under a primary account. The system reserves a bond for each sub account. An example of how you might use this would be a validation company running multiple validators. A single entity, &ldquo;My Staking Company&rdquo;, could
+register multiple sub accounts that represent the <a href="learn-keys.md">Stash accounts</a> of each of their validators.</p>
+<p>An account can have a maximum of 100 sub-accounts.</p>
+<p>To register a sub-account on an existing account, you must currently use the <a href="https://polkadot.js.org/apps/#/extrinsics">Extrinsics UI</a>. There, select the identity pallet, then <code>setSubs</code> as the function to use. Click &ldquo;Add Item&rdquo; for every child account you want to add to the parent sender account. The value to put into the Data field of each parent is the optional name of the sub-account. If omitted, the sub-account will inherit the parent&rsquo;s name and be displayed as <code>parent/parent</code> instead of <code>parent/child</code>.</p>
+<p><img src="/images/docs/khala-user/identity-7.png" alt=""></p>
+<p>Note that a deposit of  <code>identity_sub_reserve_funds</code>  is required for every sub-account.</p>
+<p>You can use <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkhala-api.phala.network%2Fws#/chainstate/constants">polkadot.js/apps</a> again to verify this amount by querying the <code>identity.subAccountDeposit</code> constant.</p>
+<h2 id="clearing-and-killing-an-identity">Clearing and Killing an Identity</h2>
+<p><strong>Clearing:</strong> Users can clear their identity information and have their deposit returned. Clearing an identity also clears all sub accounts and returns their deposits.</p>
+<p>To clear an identity:</p>
+<ol>
+<li>Navigate to the <a href="https://polkadot.js.org/apps/#/accounts">Accounts UI</a>.</li>
+<li>Click the three dots corresponding to the account you want to clear and select &lsquo;Set on-chain identity&rsquo;.</li>
+<li>Select &lsquo;Clear Identity&rsquo;, and sign and submit the transaction.</li>
+</ol>
+<p><strong>Killing:</strong> The Council can kill an identity that it deems erroneous. This results in a slash of the deposit.</p>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      
-        
-          <a href="https://wiki.phala.network/en-us/docs/developer/" class="pager_link button" title="Archived: Contract Development">
+      <a href="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/" class="pager_link button" title="Guidance of Delegation StakePool">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">Archived: Contract Development</span>
+  <span class="pager_label">Guidance of Delegation StakePool</span>
 </a>
-        
-      
     
   </div>
 
@@ -742,14 +616,6 @@ event - compiled successfully
   
         
   
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/" class="pager_link button" title="1.2 Hello World: your first confidential contract">
-  <span class="pager_label">1.2 Hello World: your first confidential contract</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
-        </div>
-      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

@@ -360,6 +360,18 @@
                 href="https://wiki.phala.network/zh-cn/categories/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/zh-cn/docs/khala-user/set-up-identity/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/khala-user/set-up-identity/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/zh-cn/</loc>
     <xhtml:link
                 rel="alternate"

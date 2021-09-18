@@ -27,5 +27,16 @@ Install Polkadot{.js} Extension   Get extension from https://polkadot.js.org/ext
       <description>MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList += &#39;has-jax&#39;}) });   Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &amp;ldquo;depositing to earn interest&amp;rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.</description>
     </item>
     
+    <item>
+      <title>Set Up Identity</title>
+      <link>https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/khala-user/set-up-identity/</guid>
+      <description>Phala Network provides a naming system that allows participants to add personal information to their on-chain account and subsequently ask for verification of this information by registrars.
+After your identity is added, it can be used in many applications in Phala or Khala ecosystem. For example, in Secure Worker mining, this will help you attracting delegators to trust and vote for you.
+Setting an Identity Users can set an identity by registering through default fields such as legal name, display name, website, Twitter handle, Riot handle, etc.</description>
+    </item>
+    
   </channel>
 </rss>
