@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -541,7 +541,7 @@
 <ul>
 <li>
 <p>Install the system level dependencies</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
 <span class="ln">2</span>sudo apt install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev git cmake perl pkg-config curl llvm-10 clang-10 libclang-10-dev
 </code></pre></div><blockquote>
 <p>Notes on LLVM: We require at least LLVM-9, but higher versions are also supported. Older version like LLVM 6.0 breaks the core blockchain compilation.</p>
@@ -549,12 +549,12 @@
 </li>
 <li>
 <p>Install Rust. Please choose the default toolchain</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
 <span class="ln">2</span><span class="nb">source</span> ~/.cargo/env
 </code></pre></div></li>
 <li>
 <p>Install Intel SGX SDK</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.12/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.12.100.3.bin
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.12/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.12.100.3.bin
 <span class="ln">2</span>chmod +x ./sgx_linux_x64_sdk_2.12.100.3.bin
 <span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.12.100.3.bin
 <span class="ln">4</span><span class="nb">source</span> /opt/intel/sgxsdk/environment
@@ -564,14 +564,14 @@
 </li>
 <li>
 <p>Install Node.js (&gt;= v12) &amp; yarn 2</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
 <span class="ln">2</span>sudo apt-get install -y nodejs
 <span class="ln">3</span>sudo npm install -g yarn
 <span class="ln">4</span>yarn <span class="nb">set</span> version berry
 </code></pre></div></li>
 </ul>
 <p>You can test the installation by running the following commands. The output should match the sample outputs, or with a slightly higher version.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
 <span class="ln"> 2</span><span class="c1"># rustup 1.22.1 (b01adbbc3 2020-07-08)</span>
 <span class="ln"> 3</span>
 <span class="ln"> 4</span>cargo --version
@@ -591,7 +591,7 @@
 <span class="ln">18</span>yarn --version
 <span class="ln">19</span><span class="c1"># 2.1.1</span>
 </code></pre></div><p>Finally let&rsquo;s clone the code and run the initialization script to update the Rust toolchain. Please note that the entire tutorial is on the <strong><code>helloworld</code> branch</strong> for both the blockchain and the Web UI repo.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Clone the core blockchain repo</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Clone the core blockchain repo</span>
 <span class="ln"> 2</span>git clone --branch helloworld https://github.com/Phala-Network/phala-blockchain.git
 <span class="ln"> 3</span><span class="c1"># Clone the Web UI repo</span>
 <span class="ln"> 4</span>git clone --branch helloworld https://github.com/Phala-Network/apps-ng.git
@@ -608,7 +608,7 @@
 <span class="ln">15</span><span class="nb">cd</span> ..
 </code></pre></div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
 <p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let&rsquo;s start to build the the core blockchain first. The blockchain on the <strong><code>helloworld</code> branch</strong> is based on an old version of Substrate, therefore we&rsquo;ll use an old version of Rust to build it.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span>rustup install nightly-2020-10-01-x86_64-unknown-linux-gnu
 <span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-01
 <span class="ln">4</span><span class="nb">cd</span> phala-blockchain/
@@ -620,7 +620,7 @@
 </code></pre></div><blockquote>
 <p><strong>Notes on Build the core blockchain</strong></p>
 <p>You would usually use the latest version of Substrate and the Rust compiler to build the core blockchain. The build would therefore be simplified to:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
 <span class="ln">3</span>cargo build --release
 </code></pre></div></blockquote>
@@ -635,7 +635,7 @@
 <p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD cpu. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.8/linux/distro/ubuntu18.04-server/">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
 </blockquote>
 <p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>phost</code> follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># In terminal window 1: phala-node</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># In terminal window 1: phala-node</span>
 <span class="ln">2</span>./target/release/phala-node --dev
 <span class="ln">3</span>
 <span class="ln">4</span><span class="c1"># In terminal window 2: pruntime</span>
@@ -663,10 +663,10 @@
 </ul>
 <p><code>phost</code> doesn&rsquo;t listen to any ports but connect to <code>phala-node</code>&rsquo;s WebSocket port and <code>pruntime</code>&rsquo;s HTTP RPC port.</p>
 <p>You can safely shutdown the three program by <kbd>Ctrl</kbd> + <kbd>C</kbd>. <code>phala-node</code> saves the blockchain database on your disk. So if the blockchain gets messed up, you may want to reset it by:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node purge-chain --dev
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node purge-chain --dev
 </code></pre></div><h2 id="build-the-web-ui">Build the Web UI</h2>
 <p>The Web UI frontend is developed with <code>node.js</code>, <code>yarn</code> and <code>react</code>. It&rsquo;s easy to build and launch the frontend.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> apps-ng
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> apps-ng
 <span class="ln">2</span>yarn
 <span class="ln">3</span>yarn dev
 </code></pre></div><p>It may take a few minutes to download the dependencies and build the frontend. By default the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
@@ -683,7 +683,7 @@ event - compiled successfully
 <blockquote>
 <p><strong>Notes for Remote Access</strong></p>
 <p>In a case where you run your blockchain and WEB UI on your REMOTE_SERVER and try to access them elsewhere, you can forward the ports with <code>ssh</code> command. For example,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
 </code></pre></div><p>This forwards all the necessary ports:</p>
 <ul>
 <li>3000: HTTP port of Web UI</li>

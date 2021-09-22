@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -517,7 +517,7 @@ The pdiem contract acts as a regular Diem wallet. It holds the private keys insi
 <p>The pdiem contract acts as a regular Diem wallet. It holds the private keys inside its Phala Network confidential contract. So the contract can control some wallets to receive or send funds on the Diem blockchain.</p>
 <h2 id="contract-storage">Contract storage</h2>
 <p>The <a href="https://github.com/Phala-Network/phala-blockchain/blob/master/standalone/pruntime/enclave/src/contracts/diem.rs">pdiem contract</a> is implemented as a native confidential smart contract. It defines the following storage items:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Diem</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Light client
 </span><span class="ln"> 3</span><span class="c1"></span><span class="w">
 </span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// The genesis TrustedState

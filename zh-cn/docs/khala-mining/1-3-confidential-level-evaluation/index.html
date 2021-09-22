@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -449,7 +449,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 
   <main class="content">
     <h1>1.3 SGX测试和信任分级</h1><h3 id="首先需要先按照简易安装模式安装phala脚本">首先需要先按照简易安装模式安装Phala脚本</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div><p>​
 重要提示：请大家首先关注安全等级（在报告的最后一行），安全等级目前是网络评判的唯一标准！请大家务必先查看安全等级后再询问。</p>
 <p>如果你看到<code>SGX_ERROR_UPDATE_NEEDED</code>这样的提示，则说明 BIOS 上缺少 Intel 要求 SGX 环境必须包含的工具，所以评估系统不满足 SGX 的安全标准。解决方法是更新你的 BIOS 版本，怎么更新请百度自己厂商的教程。如果这已经该厂商最新版 BIOS，<strong>则无法挖矿。</strong></p>
@@ -457,9 +457,9 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
 <p>SGX测试完毕后，输入<code>ls /dev | grep sgx</code>，如果运行有返回<code>sgx</code>或者<code>isgx</code>，则说明驱动正常运行。</p>
 <p>如果没有返回，请到《检查你的硬件、BIOS与系统》一章按照教程调试主板，设置好后回到本章继续进行SGX测试。</p>
 <h3 id="自检指令">自检指令</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>sudo phala sgx-test
 </code></pre></div><h3 id="正常的结果">正常的结果</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln"> 1</span>Detecting SGX, this may take a minute...
 <span class="ln"> 2</span>✔  SGX instruction <span class="nb">set</span>
 <span class="ln"> 3</span>  ✔  CPU support
 <span class="ln"> 4</span>  ✔  CPU configuration

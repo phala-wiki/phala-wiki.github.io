@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -534,7 +534,7 @@ you don&rsquo;t need to do anything, just sit and wait.</p>
 <p><strong>Updated in 9/18/2021</strong>: We have updated the snapshot which does not contain broken data anymore.</p>
 <h2 id="preparation">Preparation</h2>
 <p>Please ensure Phala services are stopped, especially the node, if you&rsquo;re using solo mining, use</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>to stop Phala services.</p>
 <h2 id="replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</h2>
 <h3 id="if-youre-a-solo-miner">If you&rsquo;re a solo miner</h3>
@@ -546,7 +546,7 @@ chains  polkadot
 <p>Find the node working directory, Delete all files and folders inside the directory, then move all files and folders from <code>khala-node</code> into it.</p>
 <h2 id="restart-phala-services">Restart Phala services</h2>
 <p>If you&rsquo;re a solo miner, do</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
 </code></pre></div><p>to restart services, then you shall find out your node has fast forward to a very close to latest status, then waiting few minutes or hours,  then the node will catch up, and you can start mining now.</p>
 
     <div class="pager">

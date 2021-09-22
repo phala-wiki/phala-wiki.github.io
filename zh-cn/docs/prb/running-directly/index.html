@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -445,14 +445,14 @@
 <li>pnpm</li>
 </ul>
 <h2 id="安装依赖并生成protobuf接口代码">安装依赖并生成Protobuf接口代码</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git submodule init
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git submodule init
 <span class="ln">2</span>git submodule update
 <span class="ln">3</span>pnpm install
 <span class="ln">4</span>pnpm proto:build <span class="c1"># use `pnpm proto:darwin:build` in macOS</span>
 <span class="ln">5</span>pnpm proto:build_prpc <span class="c1"># use `pnpm proto:darwin:build_prpc` in macOS</span>
 </code></pre></div><h2 id="启动服务">启动服务</h2>
 <p>使用<code>pnpm start_module</code>来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">PHALA_MODULE</span><span class="o">=</span>fetch <span class="c1"># module to start</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">PHALA_MODULE</span><span class="o">=</span>fetch <span class="c1"># module to start</span>
 <span class="ln"> 2</span><span class="nv">NODE_ENV</span><span class="o">=</span>development
 <span class="ln"> 3</span><span class="nv">PHALA_DB_HOST</span><span class="o">=</span>io <span class="c1"># hostname/ip to io service</span>
 <span class="ln"> 4</span><span class="nv">PHALA_DB_PORT_BASE</span><span class="o">=</span><span class="m">9000</span>

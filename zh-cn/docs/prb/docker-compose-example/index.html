@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -473,7 +473,7 @@ trade服务 运行docker-compose up -d trade启动trade服务。">
 
   <main class="content">
     <h1>基于Docker Compose的部署示例</h1><p>每当prb在Github Release上发布新版本时，<a href="https://hub.docker.com/r/phalanetwork/prb">Docker Hub</a>会同步更新其容器镜像，您可以通过以下命令获取其最新版本:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker pull phalanetwork/prb
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker pull phalanetwork/prb
 </code></pre></div><p>您可以通过使用<code>prb</code>的RPC进行符合您使用需求的代码集成而不需要对prb本身进行改动。使用容器技术对其进行管理比在Linux中直接运行容易得多。以下是使用Docker Compose部署<code>prb</code>的一个简单示例。</p>
 <blockquote>
 <p><strong>注意:</strong> 此示例仅介绍了各个服务之间的关系，请您根据自己的需求进行环境配置。</p>
