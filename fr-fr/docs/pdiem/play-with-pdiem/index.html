@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -254,10 +254,10 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 <p>Avec l&rsquo;environnement pDiem en cours d&rsquo;exécution, nous allons envoyer des transactions Diem sur le compte de dépôt pDiem et vérifier si le contrat pDiem les a reçues..</p>
 <h2 id="créer-des-comptes-diem">Créer des comptes Diem</h2>
 <p>Démarrez le diem-cli à partir du même répertoire avec la commande :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose run --rm --entrypoint /bin/bash -- diem-cli ./diem-cli.sh
 </code></pre></div><p><img src="/images/docs/pdiem/diem-cli.png" alt=""></p>
 <p>Exécutez ensuite les commandes suivantes pour préparer les comptes :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Create two accounts</span>
 <span class="ln">2</span>diem% account create
 <span class="ln">3</span>diem% account create
 <span class="ln">4</span><span class="c1"># Mint some funds</span>
@@ -272,17 +272,17 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 <h2 id="simple-transfert-de-diem-vers-pdiem">Simple transfert de Diem vers pDiem.</h2>
 <p>Le transfert simple fait référence au transfert entre l&rsquo;adresse admin (<code>compte 0</code>, codé en dur dans le contrat pdiem-m3) et l&rsquo;adresse de destination du paiement.</p>
 <p>Pour envoyer des actifs Diem à pDiem, transférez-les simplement à l&rsquo;adresse administrateur (<code>compte 0</code>) dans <code>diem-cli</code>. Par exemple, nous pouvons envoyer « 10 XUS » au « compte 0 » comme ceci :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer <span class="m">1</span> <span class="m">0</span> <span class="m">10</span> XUS
 </code></pre></div><p>Et c&rsquo;est tout!</p>
 <p>En arrière-plan, <code>pdiem-relayer</code> récupère la transaction de dépôt, envoie une commande Substrate extrinsèque standard au contrat confidentiel <code>pdiem</code> sur Phala pour synchroniser la transaction. Après la validation de la transaction entrante et de la preuve, le contrat <code>pdiem</code> l&rsquo;accepte. Habituellement, il faut 30 secondes pour que le relais prenne en compte la transaction et la transmette au contrat <code>pdiem</code>.</p>
 <h3 id="soldes-en-pdiem">Soldes en pDiem</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><h3 id="transactions-vérifiées">Transactions vérifiées</h3>
 <p>Toutes les transactions reçues par le contrat <code>pdiem</code> sont validées par rapport au dernier état du registre de Diem, qui est protégé par un consensus de type PoS. Les transactions validées sont stockées dans le stockage du contrat <code>pdiem</code>, et peuvent être vérifiées par n&rsquo;importe qui :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-tx
 </code></pre></div><h2 id="préparer-des-sous-comptes-pour-le-transfert-bidirectionnel">Préparer des sous-comptes pour le transfert bidirectionnel</h2>
 <p>pdiem-m3 utilise la fonction de sous-compte de Diem pour créer des comptes de dépôt. Tout utilisateur peut créer son sous-compte de dépôt Diem en envoyant une commande &lsquo;NewAccount&rsquo; :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-new-account <span class="m">0</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>La commande ci-dessus enverra <code>Command::NewAccount</code> au contrat <code>pdiem</code> depuis le compte Substrate &ldquo;Bob&rdquo;. Vous pouvez créer autant de comptes que vous le souhaitez. Il faut 2-3 blocs pour traiter la commande.</p>
 
 <div class="tip">
@@ -290,25 +290,25 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 </div>
 
 <p>Ensuite, vous pouvez obtenir une liste complète des comptes pDiem par une requête :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/pdiem-balances.png" alt=""></p>
 <p>Comme le montre la capture d&rsquo;écran, Bob vient de créer son adresse Diem de dépôt <code>4DB6A10FCEB765C55ADC3751474AE8D1</code>.</p>
 <h2 id="dépôt-diem--pdiem">Dépôt (diem → pdiem)</h2>
 <p>Obtenez votre adresse de dépôt de la dernière étape. Et maintenant, vous pouvez déposer du <code>XUS</code> du côté Diem dans diem-cli :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>diem% transfer 0x57c76da2e144c0357336ace2f3f8ac9b 0x4DB6A10FCEB765C55ADC3751474AE8D1 <span class="m">10</span> XUS
 </code></pre></div>
 <div class="tip">
   La commande de transfert dans <code>diem-cli</code> prend le compte source et le compte destination comme les deux premiers arguments. Elle accepte soit deux références de compte (par exemple 0 pour <code>compte 0</code> dans le portefeuille local), soit deux adresses codées en hexadécimal. Dans l&rsquo;exemple ci-dessus, <code>0x57c76da2e144c0357336ace2f3f8ac9b</code> est le <code>compte 1</code> et <code>0x4DB6A10FCEB765C55ADC3751474AE8D1</code> est le sous-compte de dépôt de Bob.
 </div>
 
 <p>Le transfert corss-chain prend environ 4 à 6 blocs. Vérifiez le solde avec la commande :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><blockquote>
 <p>Dans cet exemple, le compte Diem de Bob obtiendra « 10 XUS », qui est « 10000000 » sous le champ « free » dans les sorties « pdiem-balances » (6 décimales).</p>
 </blockquote>
 <h2 id="retirer-pdiem--diem">Retirer (pdiem → diem)</h2>
 <p>Vous pouvez retirer des actifs de <code>pdiem</code> vers diem par <code>pdiem-withdraw</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-withdraw 4DB6A10FCEB765C55ADC3751474AE8D1 <span class="s1">&#39;10 XUS&#39;</span> <span class="s1">&#39;//Bob&#39;</span>
 </code></pre></div><p>Dans la commande ci-dessus, les arguments sont :</p>
 <ul>
 <li><code>4DB6A10FCEB765C55ADC3751474AE8D1</code>: L&rsquo;adresse Diem de retrait</li>
@@ -323,7 +323,7 @@ Créer des comptes Diem Démarrez le diem-cli à partir du même répertoire ave
 </div>
 
 <p>Vous pouvez consulter votre solde <code>pdiem</code> à tout moment :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./phala-console.sh pdiem-balances
 </code></pre></div><p><img src="/images/docs/pdiem/withdraw-lock-confirmed.png" alt=""></p>
 <p>Vous pouvez toujours voir le montant du retrait sous les soldes &ldquo;verrouillés&rdquo; jusqu&rsquo;à ce que la transaction soit confirmée sur Diem. La capture d&rsquo;écran ci-dessus a deux côtés. Le côté gauche montre que les fonds de retrait étaient verrouillés et en attente de confirmation, tandis que le côté droit montre que les fonds verrouillés ont été supprimés parce que la tx sortante est confirmée. Enfin, la séquence sous le compte de dépôt a été incrémentée à 1.</p>
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -446,7 +446,7 @@
   <main class="content">
     <h1>1.2 下载并安装Phala脚本</h1><p><strong>请注意，在你进行以下操作之前请确保你已经阅读了本章节以前的全部内容。已经检查过你的硬件、BIOS设置（若找不到SGX选项可以先往后做进行测试）。并且已经安装好Ubuntu18.04或Ubuntu20.04。</strong></p>
 <p>下载Phala工具包地址：<a href="https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip">https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip</a>，或者可以用wget下载，命令如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~
 <span class="ln">2</span>sudo apt-get install wget
 <span class="ln">3</span>sudo apt-get install unzip
 <span class="ln">4</span>wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip
@@ -454,13 +454,13 @@
 <span class="ln">6</span><span class="nb">cd</span> solo-mining-scripts-main
 </code></pre></div><h2 id="使用sgx_enable激活sgx功能">使用sgx_enable激活SGX功能</h2>
 <p>在phala脚本目录打开终端，输入以下指令后电脑会重启：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-main
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-main
 <span class="ln">2</span>sudo chmod +x sgx_enable
 <span class="ln">3</span>sudo ./sgx_enable
 <span class="ln">4</span>sudo reboot
 </code></pre></div><h2 id="安装phala工具">安装Phala工具</h2>
 <p>在phala脚本目录打开终端，输入以下指令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-main
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> ~/solo-mining-scripts-main
 <span class="ln">2</span>sudo chmod +x install.sh
 <span class="ln">3</span>sudo ./install.sh cn
 </code></pre></div>

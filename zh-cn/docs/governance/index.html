@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -453,7 +453,7 @@
 <h4 id="公投投票">公投投票</h4>
 <p>为了投票，选民投票的代币通常必须至少锁定到公投结束后的公示执行期后。这是为了确保投票结果需要最低限度的经济支持，并避免卖票行为。</p>
 <p>您可以投票但是不锁定，但这样一来您的投票价值只有锁定投票的一小部分。同时，由于锁定时间也影响了投票价值，仅持有少量代币并不意味着您无法影响公投结果。您可以在自愿锁定中阅读更多相关信息。</p>
-<pre><code>Example:
+<pre tabindex="0"><code>Example:
 Peter: 投票 `拒绝`，用 10 PHA 锁定了32周 =&gt; 10 * 6 = 60 票
 Logan: 投票 `同意`，用 20 PHA 锁定了2周 =&gt; 20 * 2 = 40 票
 Kevin: 投票 `同意`，用 15 PHA 锁定了8周 =&gt; 15 * 4 = 60 票
@@ -483,7 +483,7 @@ Kevin: 投票 `同意`，用 15 PHA 锁定了8周 =&gt; 15 * 4 = 60 票
 </tbody>
 </table>
 <p>此外，我们需要以下信息并应用下面列出的公式来计算投票结果。例如，以公开提案为例，因此将应用 <code>绝对多数赞成</code> 公式。没有严格的规定投票人数，但所需的绝对多数席位会随着投票率的降低而增加。</p>
-<pre><code>approve（赞成） - 赞成票数
+<pre tabindex="0"><code>approve（赞成） - 赞成票数
 against（反对） - 反对票数
 turnout（投票率） - 投票的代币总数 (不包含 conviction)
 electorate（总选票） - 网络中 PHA 发行的总量
@@ -496,7 +496,7 @@ electorate（总选票） - 网络中 PHA 发行的总量
 <h5 id="简单多数制">简单多数制</h5>
 <p>多数票通过，仅为简单的票数比较；如果赞成票多于反对票，则无论该提案获得多少投票，该提案都会通过。</p>
 <p><img src="https://latex.codecogs.com/svg.latex?%5Clarge&amp;space;%7Bapprove%7D&amp;space;%3E&amp;space;%7Bagainst%7D" alt="img"></p>
-<pre><code>例: 假设:
+<pre tabindex="0"><code>例: 假设:
 - 总量仅 1,500 PHA
 - 公开提案
 John  - 500 PHA
@@ -516,7 +516,7 @@ JJ: 投 `反对` 且锁定 PHA 4 周 =&gt; 150 * 3 = 450 票
 <p>由于上面的例子是公众公投，因此将用绝对多数赞成制来计算投票结果。当投票率低时，绝对多数赞成制需要更多 &lsquo;赞成票&rsquo; 才能通过公投。因此根据上述结果，公投将被否决。此外，只有获胜方选民的代币被锁定。如果公投失败方的选民认为结果会产生负面影响，他们的代币是可转让的，因此他们投票的代币不会进入锁定期。此外，只有在公示执行期之后，通过的提案才能被自动执行。</p>
 <h4 id="自愿锁定">自愿锁定</h4>
 <p>Phala 利用了<code>自愿锁定</code>的方式，允许代币持有者通过声明他们愿意锁定代币的时长来增加他们的投票权重。因此，每个代币持有者的投票数将通过以下公式计算：</p>
-<pre><code>票数 = 代币数量 * 投票乘数
+<pre tabindex="0"><code>票数 = 代币数量 * 投票乘数
 </code></pre><p>每次锁定周期数加倍时，定罪乘数将投票乘数增加一。</p>
 <table>
 <thead>
