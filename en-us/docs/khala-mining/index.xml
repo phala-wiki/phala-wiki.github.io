@@ -46,12 +46,8 @@ Download Phala Scripts The Phala tools are availbale at https://github.com/Phala
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</guid>
-      <description>Benchmark Your Worker First, install the needed images with Phala tools:
-1sudo phala install If you have installed the images before, you can update them with:
-1sudo phala update script Get the performance score with:
-1sudo phala score-test [number_of_cores] 2# e.g., sudo phala score-test 4  Tip: We recommend to use all the cores of your CPU.
- The performance test has to be stopped manually with:
-1sudo phala stop pruntime-bench After that, you will be asked whether to upload the performance test results.</description>
+      <description>The local benchmark feature is not supported any more. Please run the full mining client, and follow the regular deployment guide. After the worker is registered on the blockchain, you can read the performance score from the blockchain (at Phala App).
+Note that benchmarking on the mainnet (Khala) requires to set up real accounts to pay the transaction fee. To test without real coins, you can refer to our Testnet Mining Guide.</description>
     </item>
     
     <item>
