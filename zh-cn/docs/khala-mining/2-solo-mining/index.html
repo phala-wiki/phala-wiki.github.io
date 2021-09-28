@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -438,16 +438,16 @@
     <h1>2 Solo挖矿环境配置</h1><h3 id="如果你已经进行了sgx测试性能测试那么你的配置应该已经完成可以忽略直接下一步">如果你已经进行了SGX测试、性能测试，那么你的配置应该已经完成，可以忽略，直接下一步</h3>
 <p>​</p>
 <p>只需要运行（会自动请求设置使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala install
 </code></pre></div>
 <div class="tip tip_warning">
   Solo挖矿模式需要让一个GAS费地址对应一台Worker。GAS费地址不能复用。
 </div>
 
 <p>当你希望更改使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config <span class="nb">set</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config <span class="nb">set</span>
 </code></pre></div><p>当你希望查看配置（使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址），你可以这样做：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config show
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala config show
 </code></pre></div><p>注意：如果你使用核心数、节点名称、Gas费账户助记词、抵押池owner账户地址等输入错误，脚本会自动请求重新输入，只有输入正确的信息才会向下运行。为保证挖矿可以进行，Gas费账户最低余额不得低于0.1PHA</p>
 
     <div class="pager">
