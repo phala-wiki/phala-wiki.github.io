@@ -23,7 +23,7 @@ This article shares a cheat way to accelerate your node syncing." />
 2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
 This article shares a cheat way to accelerate your node syncing.">
 
-<meta itemprop="wordCount" content="322">
+<meta itemprop="wordCount" content="345">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
 <meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
@@ -528,6 +528,12 @@ you don&rsquo;t need to do anything, just sit and wait.</p>
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
 <p>ATTENTION: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 600GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
 <p><strong>Updated in 9/18/2021</strong>: We have updated the snapshot which does not contain broken data anymore.</p>
+<blockquote>
+<p>There are community maintained snapshots updated more frequently. (Thanks to zozyo on our forum.) You may consider using at your own risk:</p>
+<ul>
+<li><a href="https://forum.phala.network/t/topic/2852">https://forum.phala.network/t/topic/2852</a></li>
+</ul>
+</blockquote>
 <h2 id="preparation">Preparation</h2>
 <p>Please ensure Phala services are stopped, especially the node, if you&rsquo;re using solo mining, use</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
