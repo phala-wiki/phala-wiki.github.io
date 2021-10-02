@@ -67,6 +67,8 @@
                 href="https://wiki.phala.network/en-us/docs/prb/docker-compose-example/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/</loc>
     <xhtml:link
                 rel="alternate"
@@ -77,30 +79,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/tokenomic/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/tokenomic/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/tokenomic/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/governance/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/governance/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/governance/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/reservation-based-model/</loc>
@@ -127,6 +105,30 @@
                 href="https://wiki.phala.network/en-us/docs/prb/running-directly/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/tokenomic/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/tokenomic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/tokenomic/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/governance/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/governance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/governance/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/light-validation-client/</loc>
     <xhtml:link
                 rel="alternate"
@@ -151,18 +153,6 @@
                 href="https://wiki.phala.network/en-us/docs/khala-user/polkadot-js-extension/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/khala-user/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/khala-user/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/khala-user/"
-                />
-  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -175,6 +165,18 @@
                 href="https://wiki.phala.network/en-us/docs/pdiem/contract-implementation/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/khala-user/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/khala-user/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/khala-user/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/</loc>
     <xhtml:link
                 rel="alternate"
@@ -185,30 +187,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/khala-mining/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/para-mining/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/para-mining/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/para-mining/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/prb/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/prb/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/prb/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/the-relayer/</loc>
@@ -235,16 +213,16 @@
                 href="https://wiki.phala.network/en-us/docs/pdiem/future-works/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/maintain/</loc>
+    <loc>https://wiki.phala.network/en-us/docs/para-mining/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/maintain/"
+                href="https://wiki.phala.network/zh-cn/docs/para-mining/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/maintain/"
+                href="https://wiki.phala.network/en-us/docs/para-mining/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/</loc>
@@ -259,6 +237,30 @@
                 href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/prb/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/prb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/prb/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/maintain/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/maintain/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/</loc>
     <xhtml:link
                 rel="alternate"
@@ -269,18 +271,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/pdiem/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/governance/1-participate-in-democracy/</loc>
@@ -319,29 +309,7 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/1-1-hardware-requirements/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/"
-                />
+    <loc>https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/</loc>
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/</loc>
     <xhtml:link
@@ -355,6 +323,8 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/1-2-download-setup-scripts/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</loc>
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -367,17 +337,7 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/1-3-confidential-level-evaluation/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/"
-                />
+    <loc>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</loc>
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/1-4-benchmarking/</loc>
     <xhtml:link
@@ -463,18 +423,6 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/"
-                />
-  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</loc>
     <xhtml:link
                 rel="alternate"
@@ -485,6 +433,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/"
+                />
+  </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/"
                 />
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</loc>

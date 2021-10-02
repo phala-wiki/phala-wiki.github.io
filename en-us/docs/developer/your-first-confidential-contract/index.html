@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -9,7 +9,7 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>1.2 Hello World: your first confidential contract | Phala Network Wiki</title><meta property="og:title" content="1.2 Hello World: your first confidential contract" />
+<title>1.3 Guess Number: A Confidential Contract Example | Phala Network Wiki</title><meta property="og:title" content="1.3 Guess Number: A Confidential Contract Example" />
 <meta property="og:description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters." />
@@ -18,14 +18,14 @@
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="1.2 Hello World: your first confidential contract">
+<meta itemprop="name" content="1.3 Guess Number: A Confidential Contract Example">
 <meta itemprop="description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.">
 
-<meta itemprop="wordCount" content="1531">
+<meta itemprop="wordCount" content="1602">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.2 Hello World: your first confidential contract"/>
+<meta name="twitter:title" content="1.3 Guess Number: A Confidential Contract Example"/>
 <meta name="twitter:description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters."/>
@@ -122,6 +122,49 @@
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Developer Guide</a></h2>
+      <section class="subsection" id="docs-developer-guide">
+        <h3 class="section_link"><a id="docs-11-phala-blockchain-in-detail" href="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/">1.1 Phala Blockchain in Detail</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-12-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.2 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#play-the-guessnumber">Play the <code>GuessNumber</code></a>
+      <ul>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#play-with-it">Play with it</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link active"><a id="docs-13-guess-number-a-confidential-contract-example" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.3 Guess Number: A Confidential Contract Example</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend-sdk">Frontend SDK</a></li>
+      </ul>
+    </li>
+    <li><a href="#access-http-service-in-confidential-contract">Access HTTP Service in Confidential Contract</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
@@ -298,7 +341,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
       <ul>
@@ -310,7 +353,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-41-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-31-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">3.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#the-problem">The problem</a></li>
     <li><a href="#stateful-firewall">Stateful firewall</a>
@@ -335,7 +378,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-42-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-32-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
     <li><a href="#download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</a></li>
@@ -451,69 +494,12 @@
         <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
-      <section class="subsection" id="docs-archived-contract-development">
-        <h3 class="section_link"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment">Environment</a></li>
-    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
-    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
-    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link active"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment-and-build">Environment and Build</a></li>
-    <li><a href="#walk-through">Walk-through</a>
-      <ul>
-        <li><a href="#contract">Contract</a></li>
-        <li><a href="#frontend">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
-      <ul>
-        <li><a href="#contract-1">Contract</a></li>
-        <li><a href="#frontend-1">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#put-everything-together">Put everything together</a></li>
-    <li><a href="#summary">Summary</a>
-      <ul>
-        <li><a href="#submit-your-work">Submit your work</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
-      <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
-      </ul>
-    </li>
-    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
-      <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </section>
-  </section>
       </section>
   </section>
 </aside>
 
   <main class="content">
-    <h1>1.2 Hello World: your first confidential contract</h1><blockquote>
+    <h1>1.3 Guess Number: A Confidential Contract Example</h1><blockquote>
 <p>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
@@ -525,297 +511,271 @@
 </ul>
 <p>For a high-level overview of Phala Network, please check the previous chapters.</p>
 <h2 id="environment-and-build">Environment and Build</h2>
-<p>Please set up a development environment by following the previous chapter <a href="Run-a-Local-Development-Network">Run a Local Development Network</a>. Make sure you are at the <code>helloworld</code> branch on both <code>phala-blockchain</code> and <code>apps-ng</code> repo.</p>
+<p>Please set up a development environment by following the previous chapter <a href="/en-us/docs/developer/run-a-local-development-network/">Run a Local Development Network</a>. Make sure you are at the <code>encode-hackathon-2021</code> branch of the <code>phala-blockchain</code> and the <code>master</code> branch of the <code>js-sdk</code> repo.</p>
 <h2 id="walk-through">Walk-through</h2>
 <h3 id="contract">Contract</h3>
-<p>The HelloWorld contract commit is available at <a href="https://github.com/Phala-Network/phala-blockchain/commit/b9c576702ec1b9f0ee4a274b5d7aecc30e40fcb4">here</a>.</p>
-<p>HelloWorld contract stores a counter which can be incremented by anyone, but only authorized user can read it. The typical model of the confidential contracts in Phala Network is consisted of the following three components which we will discuss in detail.</p>
+<p>We have glanced at the main part of the contract in the previous chapter. The complete <code>GuessNumber</code> contract is available <a href="https://github.com/Phala-Network/phala-blockchain/blob/encode-hackathon-2021/crates/phactory/src/contracts/guess_number.rs">here</a>.</p>
+<p><code>GuessNumber</code> contract stores a secret for any participants to guess, and only authorized users can read it. The typical model of the confidential contracts in Phala Network consists of the following three components which we will discuss in detail.</p>
 <ul>
 <li>States</li>
 <li>Commands</li>
 <li>Queries</li>
 </ul>
-<p>The <strong>States</strong> of a contract is described by certain variables. In this case, we define a 32-bit unsigned variable as the counter, while you are free to use variables of any types in your contracts.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">2</span><span class="w">    </span><span class="n">counter</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span><span class="ln">3</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>There are two kinds of operations which can be used to interact with confidential contracts: <strong>Commands</strong> and <strong>Queries</strong>. The most significant difference between them is whether or not they change the states of the contracts, and we explain them separately.</p>
-<p>The <strong>Commands</strong> are supposed to change the states of contracts. They are also called <strong>Transactions</strong>, and they are just like the transactions on traditional smart contract blockchains like Ethereum: they must be sent to the blockchain first before their executions. In our HelloWorld contract, we define a <code>Increment</code> command which changes the value of counter.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">2</span><span class="w">    </span><span class="sd">/// Increments the counter in the contract by some number
-</span><span class="ln">3</span><span class="sd"></span><span class="w">    </span><span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">4</span><span class="w">        </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span><span class="ln">5</span><span class="w">    </span><span class="p">},</span><span class="w">
+<p>The <strong>States</strong> of a contract is described by certain variables. In this case, we define a 32-bit unsigned variable as the secret, while you are free to use variables of any type in your contracts.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">type</span> <span class="nc">RandomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w">
+</span><span class="ln">2</span><span class="w">
+</span><span class="ln">3</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">GuessNumber</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">4</span><span class="w">    </span><span class="n">random_number</span>: <span class="nc">RandomNumber</span><span class="p">,</span><span class="w">
+</span><span class="ln">5</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><p>There are two kinds of operations that can be used to interact with confidential contracts: <strong>Commands</strong> and <strong>Queries</strong>. The most significant difference between them is whether or not they can change the states of the contracts, and we explain them separately.</p>
+<p>The <strong>Commands</strong> are supposed to change the states of contracts. They are also called <strong>Transactions</strong>, and they are just like the transactions on traditional smart contract blockchains like Ethereum: they must be sent to the blockchain first before their executions. In our <code>GuessNumber</code> contract, we define a <code>NextRandom</code> command which changes the value of the secret.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">GuessNumberCommand</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">2</span><span class="w">    </span><span class="sd">/// Refresh the random number
+</span><span class="ln">3</span><span class="sd"></span><span class="w">    </span><span class="n">NextRandom</span><span class="p">,</span><span class="w">
+</span><span class="ln">4</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><blockquote>
+<p>It is worth noting that you can define more than one command for a contract. For example, we can add a <code>SetOwner</code> command to set the owner of the contract and enable him/her to conduct privileged operations.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">GuessNumberCommand</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">2</span><span class="w">    </span><span class="sd">/// Refresh the random number
+</span><span class="ln">3</span><span class="sd"></span><span class="w">    </span><span class="n">NextRandom</span><span class="p">,</span><span class="w">
+</span><span class="ln">4</span><span class="w">    </span><span class="sd">/// Set the contract owner
+</span><span class="ln">5</span><span class="sd"></span><span class="w">    </span><span class="n">SetOwner</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">owner</span>: <span class="nc">AccountId</span><span class="w"> </span><span class="p">},</span><span class="w">
 </span><span class="ln">6</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><blockquote>
-<p>It is worth noting that you can define more than one commands for a contract. For example, we can add a <code>Decrement</code> command to decrease the counter as follow.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Increments the counter in the contract by some number
-</span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">        </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 5</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">    </span><span class="sd">/// Decrements the counter in the contract by some number
-</span><span class="ln"> 7</span><span class="sd"></span><span class="w">    </span><span class="n">Decrement</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 8</span><span class="w">        </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln">10</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div></blockquote>
-<p>All the commands are processed by the <code>handle_command</code> method which must be implemented. In this case, we allow any user to use this command, so we just increase the counter without checking the <code>_origin</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="kp">&amp;</span><span class="nc">chain</span>::<span class="n">AccountId</span><span class="p">,</span><span class="w"> </span><span class="n">_txref</span>: <span class="kp">&amp;</span><span class="nc">TxRef</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionStatus</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 2</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 3</span><span class="w">        </span><span class="c1">// Handle the `Increment` command with one parameter
-</span><span class="ln"> 4</span><span class="c1"></span><span class="w">        </span><span class="n">Command</span>::<span class="n">Increment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 5</span><span class="w">            </span><span class="c1">// Simply increment the counter by some value.
-</span><span class="ln"> 6</span><span class="c1"></span><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
-</span><span class="ln"> 7</span><span class="w">            </span><span class="c1">// Returns TransactionStatus::Ok to indicate a successful transaction
-</span><span class="ln"> 8</span><span class="c1"></span><span class="w">            </span><span class="n">TransactionStatus</span>::<span class="nb">Ok</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">        </span><span class="p">},</span><span class="w">
-</span><span class="ln">10</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln">11</span><span class="w"></span><span class="p">}</span><span class="w">
+<p>All the commands are processed by the <code>handle_command</code> method which must be implemented. In this case, we only allow the contract owner and the pre-defined root account (i.e. ALICE) to change the secret, so we check the sender identity from <code>origin</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">context</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">NativeContext</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nc">MessageOrigin</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionResult</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// we want to limit the sender who can use the Commands to the pre-define root account
+</span><span class="ln"> 3</span><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="o">&amp;</span><span class="n">origin</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">        </span><span class="n">MessageOrigin</span>::<span class="n">AccountId</span><span class="p">(</span><span class="n">account</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">AccountId</span>::<span class="n">from</span><span class="p">(</span><span class="o">*</span><span class="n">account</span><span class="p">.</span><span class="n">as_fixed_bytes</span><span class="p">()),</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">TransactionError</span>::<span class="n">BadOrigin</span><span class="p">),</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">account_id_from_hex</span><span class="p">(</span><span class="n">ALICE</span><span class="p">)</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;should not failed with valid address; qed.&#34;</span><span class="p">);</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">10</span><span class="w">        </span><span class="n">Command</span>::<span class="n">NextRandom</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">11</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">owner</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">12</span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">TransactionError</span>::<span class="n">BadOrigin</span><span class="p">);</span><span class="w">
+</span><span class="ln">13</span><span class="w">            </span><span class="p">}</span><span class="w">
+</span><span class="ln">14</span><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">random_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GuessNumber</span>::<span class="n">gen_random_number</span><span class="p">(</span><span class="n">context</span><span class="p">);</span><span class="w">
+</span><span class="ln">15</span><span class="w">            </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span><span class="ln">16</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">17</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="ln">18</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><p>Opposed to commands, <strong>Queries</strong> shall not change the states of contacts. Queries are one of the innovations of Phala Network. They are designed to allow a quick examination of the states of contracts. To define a query, you need to define both the <code>Request</code> and the according <code>Response</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Ask for the value of the counter
-</span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">GetCount</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 4</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 5</span><span class="w">
-</span><span class="ln"> 6</span><span class="w"></span><span class="sd">/// Query responses.
-</span><span class="ln"> 7</span><span class="sd"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 8</span><span class="w">    </span><span class="sd">/// Returns the value of the counter
-</span><span class="ln"> 9</span><span class="sd"></span><span class="w">    </span><span class="n">GetCount</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">10</span><span class="w">        </span><span class="n">count</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span><span class="ln">11</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln">12</span><span class="w">    </span><span class="sd">/// Something wrong happened
-</span><span class="ln">13</span><span class="sd"></span><span class="w">    </span><span class="n">Error</span><span class="p">(</span><span class="n">Error</span><span class="p">)</span><span class="w">
-</span><span class="ln">14</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><code>handle_query</code> method is supposed to handle all the queries. Unlike commands, Queries go directly to the contracts without the necessity to be sent to the blockchain. In confidential contracts queries are usually required to be signed to indicate the identities of the requesters. Therefore queries can be responded conditionally, which gives the developer great flexible control over the data in confidential contracts. The identity of the requester can be accessed from <code>origin</code>, the second argument of <code>handle_query</code>.</p>
-<p>We are going to cover more about <code>origin</code> later in this tutorial, but it also supports anonymous queries where <code>origin</code> is <code>None</code> as shown below. The <code>GetCount</code> query simply returns the current value of the counter.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 2</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 3</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">            </span><span class="c1">// Handle the `GetCount` request.
-</span><span class="ln"> 5</span><span class="c1"></span><span class="w">            </span><span class="n">Request</span>::<span class="n">GetCount</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">                </span><span class="c1">// Respond with the counter in the contract states.
-</span><span class="ln"> 7</span><span class="c1"></span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GetCount</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">count</span>: <span class="nc">self</span><span class="p">.</span><span class="n">counter</span><span class="w"> </span><span class="p">})</span><span class="w">
-</span><span class="ln"> 8</span><span class="w">            </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">        </span><span class="p">}</span><span class="w">
-</span><span class="ln">10</span><span class="w">    </span><span class="p">};</span><span class="w">
-</span><span class="ln">11</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">inner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">12</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Response</span>::<span class="n">Error</span><span class="p">(</span><span class="n">error</span><span class="p">),</span><span class="w">
-</span><span class="ln">13</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">resp</span><span class="w">
-</span><span class="ln">14</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln">15</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><blockquote>
-<p>Unlike Ethereum, queries in confidential contracts are capable to carry arbitrary computation. So we recommend to introduce an authority check here to avoid potential Denial-of-Service attack with a huge amount of query requests.</p>
-</blockquote>
-<h3 id="frontend">Frontend</h3>
-<ul>
-<li>Web UI commit: <a href="https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56">https://github.com/Phala-Network/apps-ng/commit/4a806c8e49edb8f12bd5ed54d1700edf81a6af56</a></li>
-</ul>
-<p>Interact with the contract: how to send command and queries.</p>
-<h2 id="implement-a-secret-notebook">Implement a secret notebook</h2>
-<p>After a general understanding of the model of confidential contracts, let&rsquo;s make something practical and implement a contract which can store the secret note of each visitor. In this contract, we allow any user to store one note, and only the user himself is allowed to read his note.</p>
-<blockquote>
-<p>The SecretNote contract commit is available at <a href="https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61">https://github.com/Phala-Network/phala-blockchain/commit/d91f94c9ed21290b7353991899f7a6da18cfab61</a> <strong>(CHANGE THIS)</strong>. We thank <a href="https://github.com/LaurentTrk">Laurent</a> for his implementation of this contract.</p>
-</blockquote>
-<h3 id="contract-1">Contract</h3>
-<p>We use a map to store the users with their notes, and provide two interface <code>SetNote</code> and <code>GetNote</code> for them to operate their notes. We frist define the contract state structure <code>struct SecretNote</code>, with a map <code>notes</code> to store a mapping from the account to the notes. In Phala contracts, an account can be represented by an <code>AccountIdWrapper</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">1</span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">2</span><span class="w">    </span><span class="n">notes</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="n">AccountIdWrapper</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="ln">3</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><blockquote>
-<p>In Rust&rsquo;s std collection library, there are two map implementations: <code>HashMap</code> and <code>BTreeMap</code>. Since our <code>AccountIdWrapper</code> does not derive <code>Hash</code> needed by <code>HashMap</code>, we use <code>BTreeMap</code> to store the mapping between user accounts and their notes.</p>
-</blockquote>
-<p>Here we recall the difference between commands and queries. In SecretNote, <code>SetNote</code> changes the states, so it is a command, and <code>GetNote</code> is a query. For each user, we only keep the latest note. So in <code>SetNote</code>, we call the <code>insert</code> to add a note if no previous one exists or directly overwrite the existing one.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 2</span><span class="w">    </span><span class="sd">/// Set the note for current user
-</span><span class="ln"> 3</span><span class="sd"></span><span class="w">    </span><span class="n">SetNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">        </span><span class="n">note</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 5</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 6</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 7</span><span class="w">
-</span><span class="ln"> 8</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">Contract</span><span class="o">&lt;</span><span class="n">Command</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">    </span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="kp">&amp;</span><span class="nc">chain</span>::<span class="n">AccountId</span><span class="p">,</span><span class="w"> </span><span class="n">_txref</span>: <span class="kp">&amp;</span><span class="nc">TxRef</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionStatus</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">10</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">11</span><span class="w">            </span><span class="c1">// Handle the `SetNote` command with one parameter
-</span><span class="ln">12</span><span class="c1"></span><span class="w">            </span><span class="n">Command</span>::<span class="n">SetNote</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">13</span><span class="w">                </span><span class="c1">// Simply increment the counter by some value
-</span><span class="ln">14</span><span class="c1"></span><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="n">current_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountIdWrapper</span><span class="p">(</span><span class="n">origin</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
-</span><span class="ln">15</span><span class="w">                </span><span class="c1">// Insert the note, we only keep the latest note
-</span><span class="ln">16</span><span class="c1"></span><span class="w">                </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">current_user</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="p">);</span><span class="w">
-</span><span class="ln">17</span><span class="w">                </span><span class="c1">// Returns TransactionStatus::Ok to indicate a successful transaction
-</span><span class="ln">18</span><span class="c1"></span><span class="w">                </span><span class="n">TransactionStatus</span>::<span class="nb">Ok</span><span class="w">
-</span><span class="ln">19</span><span class="w">            </span><span class="p">},</span><span class="w">
-</span><span class="ln">20</span><span class="w">        </span><span class="p">}</span><span class="w">
-</span><span class="ln">21</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln">22</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Now we can move to the <code>GetNote</code> handler. It&rsquo;s a little tricky since we only allow the owner of the note to access his note. In other words, we need to ensure that the user has signed the query, and then we respond with his note. For a signed query, the <code>origin</code> argument in <code>handle_query</code> method contains the account id of requester.</p>
-<p>We implement <code>handle_query</code> as shown below. It first checks if the query is signed by checking <code>origin</code>, and then returns the note stored in the contract states. It returns an <code>NotAuthorized</code> response if the query is not signed.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="sd">/// Queries are not supposed to write to the contract states.
-</span><span class="ln"> 2</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug, Clone)]</span><span class="w">
-</span><span class="ln"> 3</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">    </span><span class="sd">/// Read the note for current user
-</span><span class="ln"> 5</span><span class="sd"></span><span class="w">    </span><span class="n">GetNote</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 6</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 7</span><span class="w">
-</span><span class="ln"> 8</span><span class="w"></span><span class="sd">/// Query responses.
-</span><span class="ln"> 9</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug)]</span><span class="w">
-</span><span class="ln">10</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">11</span><span class="w">    </span><span class="sd">/// Return the note for current user
-</span><span class="ln">12</span><span class="sd"></span><span class="w">    </span><span class="n">GetNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">13</span><span class="w">        </span><span class="n">note</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span><span class="ln">14</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln">15</span><span class="w">    </span><span class="sd">/// Something wrong happened
-</span><span class="ln">16</span><span class="sd"></span><span class="w">    </span><span class="n">Error</span><span class="p">(</span><span class="n">Error</span><span class="p">)</span><span class="w">
-</span><span class="ln">17</span><span class="w"></span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="sd">/// The Queries to this contract
+</span><span class="ln"> 2</span><span class="sd"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 3</span><span class="w">    </span><span class="sd">/// Query the current owner of the contract
+</span><span class="ln"> 4</span><span class="sd"></span><span class="w">    </span><span class="n">QueryOwner</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">    </span><span class="sd">/// Make a guess on the number
+</span><span class="ln"> 6</span><span class="sd"></span><span class="w">    </span><span class="n">Guess</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">guess_number</span>: <span class="nc">RandomNumber</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="sd">/// Peek random number (this should only be used by contract owner or root account)
+</span><span class="ln"> 8</span><span class="sd"></span><span class="w">    </span><span class="n">PeekRandomNumber</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 9</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="ln">10</span><span class="w">
+</span><span class="ln">11</span><span class="w"></span><span class="sd">/// The Query results
+</span><span class="ln">12</span><span class="sd"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">13</span><span class="w">    </span><span class="n">Owner</span><span class="p">(</span><span class="n">AccountId</span><span class="p">),</span><span class="w">
+</span><span class="ln">14</span><span class="w">    </span><span class="n">GuessResult</span><span class="p">(</span><span class="n">GuessResult</span><span class="p">),</span><span class="w">
+</span><span class="ln">15</span><span class="w">    </span><span class="n">RandomNumber</span><span class="p">(</span><span class="n">RandomNumber</span><span class="p">),</span><span class="w">
+</span><span class="ln">16</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><code>handle_query</code> method is supposed to handle all the queries. Unlike commands, Queries go directly to the contracts without the necessity to be sent to the blockchain. In confidential contracts, queries are usually required to be signed to indicate the identities of the requesters. Therefore queries can be responded to conditionally, which gives the developer great flexible control over the data in confidential contracts. The identity of the requester can be accessed from <code>origin</code>, the second argument of <code>handle_query</code>.</p>
+<p>We are going to cover more about <code>origin</code> later in this tutorial, but it also supports anonymous queries where <code>origin</code> is <code>None</code> as shown below. The <code>QueryOwner</code> query simply returns the current owner of the contract, the <code>Guess</code> query returns the guessing result and the <code>PeekRandomNumber</code> query only allows authorized users to peek at the secret.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 3</span><span class="w">        </span><span class="n">Request</span>::<span class="n">QueryOwner</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">Owner</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">owner</span><span class="p">.</span><span class="n">clone</span><span class="p">())),</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">        </span><span class="n">Request</span>::<span class="n">Guess</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">guess_number</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">guess_number</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">random_number</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GuessResult</span><span class="p">(</span><span class="n">GuessResult</span>::<span class="n">TooLarge</span><span class="p">))</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">guess_number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">random_number</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GuessResult</span><span class="p">(</span><span class="n">GuessResult</span>::<span class="n">TooSmall</span><span class="p">))</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">10</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GuessResult</span><span class="p">(</span><span class="n">GuessResult</span>::<span class="n">Correct</span><span class="p">))</span><span class="w">
+</span><span class="ln">11</span><span class="w">            </span><span class="p">}</span><span class="w">
+</span><span class="ln">12</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">13</span><span class="w">        </span><span class="n">Request</span>::<span class="n">PeekRandomNumber</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">14</span><span class="w">            </span><span class="c1">// also, we only allow Alice or contract owner to peek the number
+</span><span class="ln">15</span><span class="c1"></span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">origin</span><span class="p">.</span><span class="n">ok_or</span><span class="p">(</span><span class="n">Error</span>::<span class="n">OriginUnavailable</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span><span class="ln">16</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">account_id_from_hex</span><span class="p">(</span><span class="n">ALICE</span><span class="p">)</span><span class="w">
+</span><span class="ln">17</span><span class="w">                </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;should not failed with valid address; qed.&#34;</span><span class="p">);</span><span class="w">
 </span><span class="ln">18</span><span class="w">
-</span><span class="ln">19</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">Contract</span><span class="o">&lt;</span><span class="n">Command</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">19</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alice</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">owner</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">20</span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">Error</span>::<span class="n">NotAuthorized</span><span class="p">);</span><span class="w">
+</span><span class="ln">21</span><span class="w">            </span><span class="p">}</span><span class="w">
+</span><span class="ln">22</span><span class="w">
+</span><span class="ln">23</span><span class="w">            </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">RandomNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">random_number</span><span class="p">))</span><span class="w">
+</span><span class="ln">24</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">25</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="ln">26</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><blockquote>
+<p>Unlike Ethereum, Queries in confidential contracts are capable to carry arbitrary computation. So we recommend introducing an authority check here to avoid potential Denial-of-Service attacks with a huge amount of query requests.</p>
+</blockquote>
+<h3 id="frontend-sdk">Frontend SDK</h3>
+<p>Check our <a href="https://github.com/Phala-Network/js-sdk/tree/main/packages/sdk">SDK tutorial</a> and the <a href="https://github.com/Phala-Network/js-sdk/blob/main/packages/example/pages/guess-number.tsx">example frontend of <code>GuessGame</code></a> to see how to send Commands and Queries to interact with the contracts.</p>
+<p>The core of the frontend development is the definition of the type mapping between frontend and backend. We recommend reading the <a href="https://polkadot.js.org/docs/api/start/types.extend">Polkadot.js tutorials on type</a>.</p>
+<h2 id="access-http-service-in-confidential-contract">Access HTTP Service in Confidential Contract</h2>
+<p>In the traditional smart contract model, all the input data to the contract need to be sent from on-chain transactions. If a contract depends on some off-chain information, like the current price of BTC, it needs to get such information from a special kind of infrastructure called <a href="https://en.wikipedia.org/wiki/Blockchain_oracle">blockchain oracle</a>. What&rsquo;s more, a smart contract can&rsquo;t initiate a request to the off-chain service.</p>
+<p>Since Phala contracts are running in the off-chain <code>pRuntime</code>, it is possible for them to access the network service. While a challenge exists here about the state consistency across multiple instances of the same contract: we need to ensure that each instance performs exactly the same (their states and transaction-sending behavior are consistent at the same block height). Unfortunately, the HTTP request and response operate asynchronously. Even if we send the request at a determined block height, the response can come at any time and its contents may change.</p>
+<p>In this section, we use a <a href="https://github.com/Phala-Network/phala-blockchain/blob/encode-hackathon-2021/crates/phactory/src/contracts/btc_price_bot.rs"><code>BtcPriceBot</code> contract example</a> to show how these problems are solved with our <code>AsyncSideTask</code>. The <code>BtcPriceBot</code> first reads the latest BTC price from a web service, then posts an HTTP request to a Telegram bot for notification. Such behavior is triggered with a <code>ReportBtcPrice</code> Command, and we show how it is implemented.</p>
+<p>To define an <code>AsyncSideTask</code>, several arguments need to be specified. The current <code>block_number</code> determines when the task starts, and the <code>duration</code> determines when it ends. At the block height of (<code>block_number</code> + <code>duration</code>), the task must report the results to the chain, no matter succeeded or failed. After the results are first uploaded, they are finalized, which means when other instances try to replay the side task, they directly get the results from the chain instead of re-sending the request. These arguments make the side task deterministic from the view of the blockchain.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="kd">let</span><span class="w"> </span><span class="n">block_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">block</span><span class="p">.</span><span class="n">block_number</span><span class="p">;</span><span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span><span class="ln"> 3</span><span class="w">
+</span><span class="ln"> 4</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AsyncSideTask</span>::<span class="n">spawn</span><span class="p">(</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">    </span><span class="n">block_number</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">    </span><span class="n">duration</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">        </span><span class="c1">// async task
+</span><span class="ln"> 9</span><span class="c1"></span><span class="w">    </span><span class="p">},</span><span class="w">
+</span><span class="ln">10</span><span class="w">    </span><span class="o">|</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">11</span><span class="w">        </span><span class="c1">// result process
+</span><span class="ln">12</span><span class="c1"></span><span class="w">    </span><span class="p">},</span><span class="w">
+</span><span class="ln">13</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></div><p>In the side task body, you can send any asynchronous requests. In this case, our side task sends two HTTP requests: one to <a href="https://min-api.cryptocompare.com/data/price?fsym=BTC&amp;tsyms=USD">https://min-api.cryptocompare.com/data/price?fsym=BTC&amp;tsyms=USD</a> to get the BTC price, and another to <a href="https://api.telegram.org">https://api.telegram.org</a> to notify the Telegram bot.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="k">async</span><span class="w"> </span><span class="k">move</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">    </span><span class="c1">// Do network request in this block and return the result.
+</span><span class="ln"> 3</span><span class="c1"></span><span class="w">    </span><span class="c1">// Do NOT send mq message in this block.
+</span><span class="ln"> 4</span><span class="c1"></span><span class="w">    </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task starts to get BTC price&#34;</span><span class="p">);</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">surf</span>::<span class="n">get</span><span class="p">(</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">        </span><span class="s">&#34;https://min-api.cryptocompare.com/data/price?fsym=BTC&amp;tsyms=USD&#34;</span><span class="p">,</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="p">)</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">    </span><span class="p">.</span><span class="n">send</span><span class="p">()</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="p">.</span><span class="k">await</span><span class="w">
+</span><span class="ln">10</span><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="ln">11</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w">
+</span><span class="ln">12</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">13</span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span><span class="w">
+</span><span class="ln">14</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">15</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="ln">16</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">resp</span><span class="p">.</span><span class="n">body_string</span><span class="p">().</span><span class="k">await</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">17</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w">
+</span><span class="ln">18</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">19</span><span class="w">            </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w">
+</span><span class="ln">20</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">21</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="ln">22</span><span class="w">    </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task got BTC price: {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span><span class="ln">23</span><span class="w">
+</span><span class="ln">24</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">price</span>: <span class="nc">BtcPrice</span><span class="w"> </span><span class="o">=</span><span class="w">
+</span><span class="ln">25</span><span class="w">        </span><span class="n">serde_json</span>::<span class="n">from_str</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">as_str</span><span class="p">()).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;broken BTC price result&#34;</span><span class="p">);</span><span class="w">
+</span><span class="ln">26</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;BTC price: ${}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">.</span><span class="n">usd</span><span class="p">);</span><span class="w">
+</span><span class="ln">27</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="w">
+</span><span class="ln">28</span><span class="w">        </span><span class="s">&#34;https://api.telegram.org/bot{}/{}&#34;</span><span class="p">,</span><span class="w">
+</span><span class="ln">29</span><span class="w">        </span><span class="n">bot_token</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;sendMessage&#34;</span><span class="w">
+</span><span class="ln">30</span><span class="w">    </span><span class="p">);</span><span class="w">
+</span><span class="ln">31</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TgMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">chat_id</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span><span class="ln">32</span><span class="w">
+</span><span class="ln">33</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">surf</span>::<span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="w">
+</span><span class="ln">34</span><span class="w">        </span><span class="p">.</span><span class="n">body_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">
+</span><span class="ln">35</span><span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;should not fail with valid data; qed.&#34;</span><span class="p">)</span><span class="w">
+</span><span class="ln">36</span><span class="w">        </span><span class="p">.</span><span class="k">await</span><span class="w">
+</span><span class="ln">37</span><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="ln">38</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w">
+</span><span class="ln">39</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">40</span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span><span class="w">
+</span><span class="ln">41</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">42</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="ln">43</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">resp</span><span class="p">.</span><span class="n">body_string</span><span class="p">().</span><span class="k">await</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">44</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w">
+</span><span class="ln">45</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">46</span><span class="w">            </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w">
+</span><span class="ln">47</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="ln">48</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="ln">49</span><span class="w">    </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task sent BTC price: {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span><span class="ln">50</span><span class="w">    </span><span class="n">result</span><span class="w">
+</span><span class="ln">51</span><span class="w"></span><span class="p">},</span><span class="w">
+</span></code></pre></div><p>Finally, the resulting process defines the contract reaction to the side task result, and you can send transactions to the chain if needed. The limitation here is also about state consistency: the resulting process should behave the same given the identical result.
+In this case, we define an empty result process since the price is already reported to the bot through an HTTP request.</p>
+<p>To put all these together:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="ln"> 1</span><span class="n">Command</span>::<span class="n">ReportBtcPrice</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 2</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">owner</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln"> 3</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">TransactionError</span>::<span class="n">BadOrigin</span><span class="p">);</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">bot_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">bot_token</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">chat_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">chat_id</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="c1">// This Command triggers the use of `AsyncSideTask`, it first sends an HTTP request to get the current BTC
+</span><span class="ln">10</span><span class="c1"></span><span class="w">    </span><span class="c1">// price from https://min-api.cryptocompare.com/, then sends the price to a Telegram bot through another
+</span><span class="ln">11</span><span class="c1"></span><span class="w">    </span><span class="c1">// HTTP request
+</span><span class="ln">12</span><span class="c1"></span><span class="w">    </span><span class="c1">//
+</span><span class="ln">13</span><span class="c1"></span><span class="w">    </span><span class="c1">// To ensure the state consistency, the time to start the task and the time to upload the HTTP response
+</span><span class="ln">14</span><span class="c1"></span><span class="w">    </span><span class="c1">// to chain must be determined. In this case, we start the task in the current `block_number`, and report
+</span><span class="ln">15</span><span class="c1"></span><span class="w">    </span><span class="c1">// the result, whether succeeded or failed, to the chain after `duration`
+</span><span class="ln">16</span><span class="c1"></span><span class="w">    </span><span class="c1">//
+</span><span class="ln">17</span><span class="c1"></span><span class="w">    </span><span class="c1">// Report the result after 2 blocks no matter whether has received the HTTP response
+</span><span class="ln">18</span><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">block_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">block</span><span class="p">.</span><span class="n">block_number</span><span class="p">;</span><span class="w">
+</span><span class="ln">19</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
 </span><span class="ln">20</span><span class="w">
-</span><span class="ln">21</span><span class="w">    </span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">22</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">23</span><span class="w">            </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">24</span><span class="w">                </span><span class="c1">// Handle the `GetNote` request
-</span><span class="ln">25</span><span class="c1"></span><span class="w">                </span><span class="n">Request</span>::<span class="n">GetNote</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">26</span><span class="w">                    </span><span class="c1">// Unwrap the current user account
-</span><span class="ln">27</span><span class="c1"></span><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">account</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">28</span><span class="w">                        </span><span class="kd">let</span><span class="w"> </span><span class="n">current_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountIdWrapper</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
-</span><span class="ln">29</span><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">contains_key</span><span class="p">(</span><span class="o">&amp;</span><span class="n">current_user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">30</span><span class="w">                            </span><span class="c1">// Respond with the note in the notes
-</span><span class="ln">31</span><span class="c1"></span><span class="w">                            </span><span class="kd">let</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="n">current_user</span><span class="p">);</span><span class="w">
-</span><span class="ln">32</span><span class="w">                            </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GetNote</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">note</span>: <span class="nc">note</span><span class="p">.</span><span class="n">unwrap</span><span class="p">().</span><span class="n">clone</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w">
-</span><span class="ln">33</span><span class="w">                        </span><span class="p">}</span><span class="w">
-</span><span class="ln">34</span><span class="w">                    </span><span class="p">}</span><span class="w">
-</span><span class="ln">35</span><span class="w">
-</span><span class="ln">36</span><span class="w">                    </span><span class="c1">// Respond NotAuthorized when no account is specified
-</span><span class="ln">37</span><span class="c1"></span><span class="w">                    </span><span class="nb">Err</span><span class="p">(</span><span class="n">Error</span>::<span class="n">NotAuthorized</span><span class="p">)</span><span class="w">
-</span><span class="ln">38</span><span class="w">                </span><span class="p">},</span><span class="w">
-</span><span class="ln">39</span><span class="w">            </span><span class="p">}</span><span class="w">
-</span><span class="ln">40</span><span class="w">        </span><span class="p">};</span><span class="w">
-</span><span class="ln">41</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">inner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">42</span><span class="w">            </span><span class="nb">Err</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Response</span>::<span class="n">Error</span><span class="p">(</span><span class="n">error</span><span class="p">),</span><span class="w">
-</span><span class="ln">43</span><span class="w">            </span><span class="nb">Ok</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">resp</span><span class="w">
-</span><span class="ln">44</span><span class="w">        </span><span class="p">}</span><span class="w">
-</span><span class="ln">45</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln">46</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id="frontend-1">Frontend</h3>
-<ol>
-<li>Set note UI</li>
-<li>Query UI</li>
-<li>Handle error</li>
-</ol>
-<h2 id="put-everything-together">Put everything together</h2>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="ln">  1</span><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Serialize</span><span class="p">,</span><span class="w"> </span><span class="n">Deserialize</span><span class="p">};</span><span class="w">
-</span><span class="ln">  2</span><span class="w">
-</span><span class="ln">  3</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">contracts</span><span class="p">;</span><span class="w">
-</span><span class="ln">  4</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">types</span>::<span class="n">TxRef</span><span class="p">;</span><span class="w">
-</span><span class="ln">  5</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">TransactionStatus</span><span class="p">;</span><span class="w">
-</span><span class="ln">  6</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">contracts</span>::<span class="n">AccountIdWrapper</span><span class="p">;</span><span class="w">
-</span><span class="ln">  7</span><span class="w">
-</span><span class="ln">  8</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">std</span>::<span class="n">collections</span>::<span class="n">BTreeMap</span><span class="p">;</span><span class="w">
-</span><span class="ln">  9</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="n">std</span>::<span class="n">string</span>::<span class="nb">String</span><span class="p">;</span><span class="w">
-</span><span class="ln"> 10</span><span class="w">
-</span><span class="ln"> 11</span><span class="w"></span><span class="sd">/// SecretNote contract states.
-</span><span class="ln"> 12</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug, Default)]</span><span class="w">
-</span><span class="ln"> 13</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 14</span><span class="w">    </span><span class="n">notes</span>: <span class="nc">BTreeMap</span><span class="o">&lt;</span><span class="n">AccountIdWrapper</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 15</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 16</span><span class="w">
-</span><span class="ln"> 17</span><span class="w"></span><span class="sd">/// The commands that the contract accepts from the blockchain. Also called transactions.
-</span><span class="ln"> 18</span><span class="sd">/// Commands are supposed to update the states of the contract.
-</span><span class="ln"> 19</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug)]</span><span class="w">
-</span><span class="ln"> 20</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Command</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 21</span><span class="w">    </span><span class="sd">/// Set the note for current user
-</span><span class="ln"> 22</span><span class="sd"></span><span class="w">    </span><span class="n">SetNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 23</span><span class="w">        </span><span class="n">note</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 24</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 25</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 26</span><span class="w">
-</span><span class="ln"> 27</span><span class="w"></span><span class="sd">/// The errors that the contract could throw for some queries
-</span><span class="ln"> 28</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug)]</span><span class="w">
-</span><span class="ln"> 29</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Error</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 30</span><span class="w">    </span><span class="n">NotAuthorized</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 31</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 32</span><span class="w">
-</span><span class="ln"> 33</span><span class="w"></span><span class="sd">/// Query requests. The end users can only query the contract states by sending requests.
-</span><span class="ln"> 34</span><span class="sd">/// Queries are not supposed to write to the contract states.
-</span><span class="ln"> 35</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug, Clone)]</span><span class="w">
-</span><span class="ln"> 36</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Request</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 37</span><span class="w">    </span><span class="sd">/// Read the note for current user
-</span><span class="ln"> 38</span><span class="sd"></span><span class="w">    </span><span class="n">GetNote</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 39</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 40</span><span class="w">
-</span><span class="ln"> 41</span><span class="w"></span><span class="sd">/// Query responses.
-</span><span class="ln"> 42</span><span class="sd"></span><span class="cp">#[derive(Serialize, Deserialize, Debug)]</span><span class="w">
-</span><span class="ln"> 43</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 44</span><span class="w">    </span><span class="sd">/// Return the note for current user
-</span><span class="ln"> 45</span><span class="sd"></span><span class="w">    </span><span class="n">GetNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 46</span><span class="w">        </span><span class="n">note</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span><span class="ln"> 47</span><span class="w">    </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 48</span><span class="w">    </span><span class="sd">/// Something wrong happened
-</span><span class="ln"> 49</span><span class="sd"></span><span class="w">    </span><span class="n">Error</span><span class="p">(</span><span class="n">Error</span><span class="p">)</span><span class="w">
-</span><span class="ln"> 50</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 51</span><span class="w">
-</span><span class="ln"> 52</span><span class="w">
-</span><span class="ln"> 53</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 54</span><span class="w">    </span><span class="sd">/// Initializes the contract
-</span><span class="ln"> 55</span><span class="sd"></span><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 56</span><span class="w">        </span><span class="nb">Default</span>::<span class="n">default</span><span class="p">()</span><span class="w">
-</span><span class="ln"> 57</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 58</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="ln"> 59</span><span class="w">
-</span><span class="ln"> 60</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">Contract</span><span class="o">&lt;</span><span class="n">Command</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">SecretNote</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 61</span><span class="w">    </span><span class="c1">// Returns the contract id
-</span><span class="ln"> 62</span><span class="c1"></span><span class="w">    </span><span class="k">fn</span> <span class="nf">id</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">contracts</span>::<span class="n">ContractId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">contracts</span>::<span class="n">SECRET_NOTE</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 63</span><span class="w">
-</span><span class="ln"> 64</span><span class="w">    </span><span class="c1">// Handles the commands from transactions on the blockchain. This method doesn&#39;t respond.
-</span><span class="ln"> 65</span><span class="c1"></span><span class="w">    </span><span class="k">fn</span> <span class="nf">handle_command</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="kp">&amp;</span><span class="nc">chain</span>::<span class="n">AccountId</span><span class="p">,</span><span class="w"> </span><span class="n">_txref</span>: <span class="kp">&amp;</span><span class="nc">TxRef</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span>: <span class="nc">Command</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TransactionStatus</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 66</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 67</span><span class="w">            </span><span class="c1">// Handle the `SetNote` command with one parameter
-</span><span class="ln"> 68</span><span class="c1"></span><span class="w">            </span><span class="n">Command</span>::<span class="n">SetNote</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 69</span><span class="w">                </span><span class="c1">// Simply increment the counter by some value
-</span><span class="ln"> 70</span><span class="c1"></span><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="n">current_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountIdWrapper</span><span class="p">(</span><span class="n">origin</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
-</span><span class="ln"> 71</span><span class="w">                </span><span class="c1">// Insert the note, we only keep the latest note
-</span><span class="ln"> 72</span><span class="c1"></span><span class="w">                </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">current_user</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="p">);</span><span class="w">
-</span><span class="ln"> 73</span><span class="w">                </span><span class="c1">// Returns TransactionStatus::Ok to indicate a successful transaction
-</span><span class="ln"> 74</span><span class="c1"></span><span class="w">                </span><span class="n">TransactionStatus</span>::<span class="nb">Ok</span><span class="w">
-</span><span class="ln"> 75</span><span class="w">            </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 76</span><span class="w">        </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 77</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 78</span><span class="w">
-</span><span class="ln"> 79</span><span class="w">    </span><span class="c1">// Handles a direct query and responds to the query. It shouldn&#39;t modify the contract states.
-</span><span class="ln"> 80</span><span class="c1"></span><span class="w">    </span><span class="k">fn</span> <span class="nf">handle_query</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">origin</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">chain</span>::<span class="n">AccountId</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">req</span>: <span class="nc">Request</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 81</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 82</span><span class="w">            </span><span class="k">match</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 83</span><span class="w">                </span><span class="c1">// Handle the `GetNote` request
-</span><span class="ln"> 84</span><span class="c1"></span><span class="w">                </span><span class="n">Request</span>::<span class="n">GetNote</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 85</span><span class="w">                    </span><span class="c1">// Unwrap the current user account
-</span><span class="ln"> 86</span><span class="c1"></span><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">account</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 87</span><span class="w">                        </span><span class="kd">let</span><span class="w"> </span><span class="n">current_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountIdWrapper</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
-</span><span class="ln"> 88</span><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">contains_key</span><span class="p">(</span><span class="o">&amp;</span><span class="n">current_user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln"> 89</span><span class="w">                            </span><span class="c1">// Respond with the note in the notes
-</span><span class="ln"> 90</span><span class="c1"></span><span class="w">                            </span><span class="kd">let</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">notes</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="n">current_user</span><span class="p">);</span><span class="w">
-</span><span class="ln"> 91</span><span class="w">                            </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Response</span>::<span class="n">GetNote</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">note</span>: <span class="nc">note</span><span class="p">.</span><span class="n">unwrap</span><span class="p">().</span><span class="n">clone</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w">
-</span><span class="ln"> 92</span><span class="w">                        </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 93</span><span class="w">                    </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 94</span><span class="w">
-</span><span class="ln"> 95</span><span class="w">                    </span><span class="c1">// Respond NotAuthorized when no account is specified
-</span><span class="ln"> 96</span><span class="c1"></span><span class="w">                    </span><span class="nb">Err</span><span class="p">(</span><span class="n">Error</span>::<span class="n">NotAuthorized</span><span class="p">)</span><span class="w">
-</span><span class="ln"> 97</span><span class="w">                </span><span class="p">},</span><span class="w">
-</span><span class="ln"> 98</span><span class="w">            </span><span class="p">}</span><span class="w">
-</span><span class="ln"> 99</span><span class="w">        </span><span class="p">};</span><span class="w">
-</span><span class="ln">100</span><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">inner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="ln">101</span><span class="w">            </span><span class="nb">Err</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Response</span>::<span class="n">Error</span><span class="p">(</span><span class="n">error</span><span class="p">),</span><span class="w">
-</span><span class="ln">102</span><span class="w">            </span><span class="nb">Ok</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">resp</span><span class="w">
-</span><span class="ln">103</span><span class="w">        </span><span class="p">}</span><span class="w">
-</span><span class="ln">104</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="ln">105</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="ln">21</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AsyncSideTask</span>::<span class="n">spawn</span><span class="p">(</span><span class="w">
+</span><span class="ln">22</span><span class="w">        </span><span class="n">block_number</span><span class="p">,</span><span class="w">
+</span><span class="ln">23</span><span class="w">        </span><span class="n">duration</span><span class="p">,</span><span class="w">
+</span><span class="ln">24</span><span class="w">        </span><span class="k">async</span><span class="w"> </span><span class="k">move</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">25</span><span class="w">            </span><span class="c1">// Do network request in this block and return the result.
+</span><span class="ln">26</span><span class="c1"></span><span class="w">            </span><span class="c1">// Do NOT send mq message in this block.
+</span><span class="ln">27</span><span class="c1"></span><span class="w">            </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task starts to get BTC price&#34;</span><span class="p">);</span><span class="w">
+</span><span class="ln">28</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">surf</span>::<span class="n">get</span><span class="p">(</span><span class="w">
+</span><span class="ln">29</span><span class="w">                </span><span class="s">&#34;https://min-api.cryptocompare.com/data/price?fsym=BTC&amp;tsyms=USD&#34;</span><span class="p">,</span><span class="w">
+</span><span class="ln">30</span><span class="w">            </span><span class="p">)</span><span class="w">
+</span><span class="ln">31</span><span class="w">            </span><span class="p">.</span><span class="n">send</span><span class="p">()</span><span class="w">
+</span><span class="ln">32</span><span class="w">            </span><span class="p">.</span><span class="k">await</span><span class="w">
+</span><span class="ln">33</span><span class="w">            </span><span class="p">{</span><span class="w">
+</span><span class="ln">34</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w">
+</span><span class="ln">35</span><span class="w">                </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">36</span><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span><span class="w">
+</span><span class="ln">37</span><span class="w">                </span><span class="p">}</span><span class="w">
+</span><span class="ln">38</span><span class="w">            </span><span class="p">};</span><span class="w">
+</span><span class="ln">39</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">resp</span><span class="p">.</span><span class="n">body_string</span><span class="p">().</span><span class="k">await</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">40</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w">
+</span><span class="ln">41</span><span class="w">                </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">42</span><span class="w">                    </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w">
+</span><span class="ln">43</span><span class="w">                </span><span class="p">}</span><span class="w">
+</span><span class="ln">44</span><span class="w">            </span><span class="p">};</span><span class="w">
+</span><span class="ln">45</span><span class="w">            </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task got BTC price: {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span><span class="ln">46</span><span class="w">
+</span><span class="ln">47</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">price</span>: <span class="nc">BtcPrice</span><span class="w"> </span><span class="o">=</span><span class="w">
+</span><span class="ln">48</span><span class="w">                </span><span class="n">serde_json</span>::<span class="n">from_str</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">as_str</span><span class="p">()).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;broken BTC price result&#34;</span><span class="p">);</span><span class="w">
+</span><span class="ln">49</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;BTC price: ${}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">.</span><span class="n">usd</span><span class="p">);</span><span class="w">
+</span><span class="ln">50</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="w">
+</span><span class="ln">51</span><span class="w">                </span><span class="s">&#34;https://api.telegram.org/bot{}/{}&#34;</span><span class="p">,</span><span class="w">
+</span><span class="ln">52</span><span class="w">                </span><span class="n">bot_token</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;sendMessage&#34;</span><span class="w">
+</span><span class="ln">53</span><span class="w">            </span><span class="p">);</span><span class="w">
+</span><span class="ln">54</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TgMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">chat_id</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span><span class="ln">55</span><span class="w">
+</span><span class="ln">56</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">surf</span>::<span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="w">
+</span><span class="ln">57</span><span class="w">                </span><span class="p">.</span><span class="n">body_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">
+</span><span class="ln">58</span><span class="w">                </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;should not fail with valid data; qed.&#34;</span><span class="p">)</span><span class="w">
+</span><span class="ln">59</span><span class="w">                </span><span class="p">.</span><span class="k">await</span><span class="w">
+</span><span class="ln">60</span><span class="w">            </span><span class="p">{</span><span class="w">
+</span><span class="ln">61</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w">
+</span><span class="ln">62</span><span class="w">                </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">63</span><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span><span class="w">
+</span><span class="ln">64</span><span class="w">                </span><span class="p">}</span><span class="w">
+</span><span class="ln">65</span><span class="w">            </span><span class="p">};</span><span class="w">
+</span><span class="ln">66</span><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">resp</span><span class="p">.</span><span class="n">body_string</span><span class="p">().</span><span class="k">await</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">67</span><span class="w">                </span><span class="nb">Ok</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w">
+</span><span class="ln">68</span><span class="w">                </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">69</span><span class="w">                    </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Network error: {:?}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w">
+</span><span class="ln">70</span><span class="w">                </span><span class="p">}</span><span class="w">
+</span><span class="ln">71</span><span class="w">            </span><span class="p">};</span><span class="w">
+</span><span class="ln">72</span><span class="w">            </span><span class="n">log</span>::<span class="n">info</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Side task sent BTC price: {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span><span class="ln">73</span><span class="w">            </span><span class="n">result</span><span class="w">
+</span><span class="ln">74</span><span class="w">        </span><span class="p">},</span><span class="w">
+</span><span class="ln">75</span><span class="w">        </span><span class="o">|</span><span class="n">_result</span><span class="p">,</span><span class="w"> </span><span class="n">_context</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="ln">76</span><span class="w">            </span><span class="c1">// You can send deterministic number of transactions in the result process
+</span><span class="ln">77</span><span class="c1"></span><span class="w">            </span><span class="c1">// In this case, we don&#39;t send the price since it has already been reported to the TG bot above
+</span><span class="ln">78</span><span class="c1"></span><span class="w">        </span><span class="p">},</span><span class="w">
+</span><span class="ln">79</span><span class="w">    </span><span class="p">);</span><span class="w">
+</span><span class="ln">80</span><span class="w">    </span><span class="n">context</span><span class="p">.</span><span class="n">block</span><span class="p">.</span><span class="n">side_task_man</span><span class="p">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">task</span><span class="p">);</span><span class="w">
+</span><span class="ln">81</span><span class="w">
+</span><span class="ln">82</span><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span><span class="ln">83</span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="summary">Summary</h2>
-<p>In this tutorial, we have covered a walk-through for the <code>HelloWorld</code> contract template, and demostrate how we can build a bit more advanced contract <code>SecretNote</code> that leverages the confidentiality of Phala contract. Now it&rsquo;s your turn to build something new!</p>
+<p>In this tutorial, we have covered a walk-through for the basic <code>GuessNumber</code> contract template and the <code>BtcPriceBot</code> contract that leverages the advanced network access feature of Phala contracts. Now it&rsquo;s your turn to build something new!</p>
 <h3 id="submit-your-work">Submit your work</h3>
 <p>This tutorial is a part of <a href="https://gitcoin.co/hackathon/polkadot/onboard">Polkadot &ldquo;Hello World&rdquo; virtual hackathon challenge</a> at gitcoin.co. In order to win the task, please do the followings:</p>
 <ol>
 <li>Fork <a href="https://github.com/Phala-Network/phala-blockchain/tree/helloworld">the core blockchain</a> and <a href="https://github.com/Phala-Network/apps-ng/tree/helloworld">the Web UI</a> repo (helloworld branch) into your own GitHub account</li>
 <li>Develop your own contract on the templates at “helloworld” branch (must be a different one from existing submissions)</li>
-<li>Launch your full development stack and take screenshots of your dapps</li>
+<li>Launch your full development stack and take screenshots of your DApp</li>
 <li>Push your work to your forked repos. They must be open source</li>
 <li>Make a tweet with the link to your repos, the screenshots, and describe what you are building on Twitter</li>
 <li>Join our <a href="https://discord.gg/zQKNGv4">Discord server</a> and submit the the link to your tweet</li>
@@ -824,10 +784,10 @@
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" class="pager_link button" title="1.1 Run a Local Development Network">
+      <a href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" class="pager_link button" title="1.2 Run a Local Development Network">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">1.1 Run a Local Development Network</span>
+  <span class="pager_label">1.2 Run a Local Development Network</span>
 </a>
     
   </div>
@@ -836,14 +796,6 @@
   
         
   
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/" class="pager_link button" title="1.3 Troubleshooting">
-  <span class="pager_label">1.3 Troubleshooting</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
-        </div>
-      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

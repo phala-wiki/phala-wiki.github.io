@@ -9,35 +9,31 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet | Phala Network Wiki</title><meta property="og:title" content="3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet" />
-<meta property="og:description" content="Problem If your node is not up-to-date, a typical node log looks like
-2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
-This article shares a cheat way to accelerate your node syncing." />
+<title>1.1 Phala Blockchain in Detail | Phala Network Wiki</title><meta property="og:title" content="1.1 Phala Blockchain in Detail" />
+<meta property="og:description" content="Overview In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.
+ phala-node: The Substrate-based blockchain node pRuntime: The TEE runtime. Contracts run in pRuntime pherry: The Substrate-TEE bridge relayer." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet">
-<meta itemprop="description" content="Problem If your node is not up-to-date, a typical node log looks like
-2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
-This article shares a cheat way to accelerate your node syncing.">
+<meta itemprop="name" content="1.1 Phala Blockchain in Detail">
+<meta itemprop="description" content="Overview In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.
+ phala-node: The Substrate-based blockchain node pRuntime: The TEE runtime. Contracts run in pRuntime pherry: The Substrate-TEE bridge relayer.">
 
-<meta itemprop="wordCount" content="345">
+<meta itemprop="wordCount" content="307">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet"/>
-<meta name="twitter:description" content="Problem If your node is not up-to-date, a typical node log looks like
-2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
-This article shares a cheat way to accelerate your node syncing."/>
+<meta name="twitter:title" content="1.1 Phala Blockchain in Detail"/>
+<meta name="twitter:description" content="Overview In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.
+ phala-node: The Substrate-based blockchain node pRuntime: The TEE runtime. Contracts run in pRuntime pherry: The Substrate-TEE bridge relayer."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="Problem If your node is not up-to-date, a typical node log looks like
-2021-09-15 13:33:27 [Relaychain] ⚙️ Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s 2021-09-15 13:33:27 [Parachain] ⚙️ Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s and best is too far from target.
-This article shares a cheat way to accelerate your node syncing.">
+  <meta name="description" content="Overview In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.
+ phala-node: The Substrate-based blockchain node pRuntime: The TEE runtime. Contracts run in pRuntime pherry: The Substrate-TEE bridge relayer.">
 
 
 
@@ -126,7 +122,7 @@ This article shares a cheat way to accelerate your node syncing.">
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Developer Guide</a></h2>
       <section class="subsection" id="docs-developer-guide">
-        <h3 class="section_link"><a id="docs-11-phala-blockchain-in-detail" href="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/">1.1 Phala Blockchain in Detail</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-11-phala-blockchain-in-detail" href="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/">1.1 Phala Blockchain in Detail</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
   </ul>
@@ -378,7 +374,7 @@ This article shares a cheat way to accelerate your node syncing.">
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-32-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-32-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
     <li><a href="#download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</a></li>
@@ -499,52 +495,29 @@ This article shares a cheat way to accelerate your node syncing.">
 </aside>
 
   <main class="content">
-    <h1>3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</h1><h2 id="problem">Problem</h2>
-<p>If your node is not up-to-date, a typical node log looks like</p>
-<pre tabindex="0"><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
-2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
-</code></pre><p>and <code>best</code> is too far from <code>target</code>.</p>
-<p>This article shares a cheat way to accelerate your node syncing.</p>
-<p>ATTENTION: If your node is near the newest block height (about several hours to catch up) or has already caught up,
-you don&rsquo;t need to do anything, just sit and wait.</p>
-<h2 id="download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</h2>
-<p>We recommend to use the BT download with <a href="/files/khala-snapshot-2021-09-17.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
-<pre tabindex="0"><code>$ sha256sum khala-snapshot-2021-09-17.torrent
-595e448bfce90c6725de75d1f38462570d7142c41199375bc86d35f6809b733f  khala-snapshot-2021-09-17.torrent
-</code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
-<p>ATTENTION: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 600GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
-<p><strong>Updated in 9/18/2021</strong>: We have updated the snapshot which does not contain broken data anymore.</p>
-<blockquote>
-<p>There are community maintained snapshots updated more frequently. (Thanks to zozyo on our forum.) You may consider using at your own risk:</p>
+    <h1>1.1 Phala Blockchain in Detail</h1><h2 id="overview">Overview</h2>
+<p>In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.</p>
 <ul>
-<li><a href="https://forum.phala.network/t/topic/2852">https://forum.phala.network/t/topic/2852</a></li>
+<li><code>phala-node</code>: The Substrate-based blockchain node</li>
+<li><code>pRuntime</code>: The TEE runtime. Contracts run in <code>pRuntime</code></li>
+<li><code>pherry</code>: The Substrate-TEE bridge relayer. Connects the blockchain and <code>pRuntime</code></li>
 </ul>
-</blockquote>
-<h2 id="preparation">Preparation</h2>
-<p>Please ensure Phala services are stopped, especially the node, if you&rsquo;re using solo mining, use</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
-</code></pre></div><p>to stop Phala services.</p>
-<h2 id="replace-local-data-with-extracted-snapshot">Replace local data with extracted snapshot</h2>
-<h3 id="if-youre-a-solo-miner">If you&rsquo;re a solo miner</h3>
-<p>Delete all files and folders inside <code>/var/khala-dev-node</code>，move all files and folders from <code>khala-node</code> into <code>/var/khala-dev-node</code></p>
-<p>If you do things right, inside <code>/var/khala-dev-node</code> it looks like</p>
-<pre tabindex="0"><code>$ ls /var/khala-dev-node
-chains  polkadot
-</code></pre><h3 id="advanced-miner">Advanced miner</h3>
-<p>Find the node working directory, Delete all files and folders inside the directory, then move all files and folders from <code>khala-node</code> into it.</p>
-<h2 id="restart-phala-services">Restart Phala services</h2>
-<p>If you&rsquo;re a solo miner, do</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
-</code></pre></div><p>to restart services, then you shall find out your node has fast forward to a very close to latest status, then waiting few minutes or hours,  then the node will catch up, and you can start mining now.</p>
+<p>The core insight of our system design is that the blockchain can serve as a canonical input source for TEE. That is, although attackers cannot peek at TEE, they can trick the contracts in TEE by forging transactions or replaying/reordering valid transactions. It is important to ensure that confidential contracts only accept valid transactions and process transactions in an expected order. That&rsquo;s why we introduce Phala blockchain and connect it to the <code>pRuntime</code> via <code>pherry</code>.</p>
+<p>As illustrated, the Phala blockchain serves as a canonical source of valid transactions. Only submitted transactions can be accepted by <code>pRuntime</code>, and they will be processed in the same order as they are on the blockchain. We implement a light validation client in <code>pRuntime</code> so it can determine whether valid transactions are accepted in an expected order. Also, a key rotation mechanism will be introduced to prevent the replay of historical transactions. The great thing is that <code>pRuntime</code> hides all these complicated implementation details from you so you can just implement confidential contracts like developing ordinary programs.</p>
+<p><code>pherry</code> works as the bridge between Phala blockchain and <code>pRuntime</code>. It ensures that all the transactions on the blockchain are faithfully forwarded to <code>pRuntime</code> and all the TEE instances are running an unmodified version of <code>pRuntime</code>. While it is worth noting that <code>pRuntime</code> does not trust <code>pherry</code>: it will still validate every block and transaction it receives from <code>pherry</code>.</p>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/" class="pager_link button" title="3.1 How to get better peers connectivity">
+      
+        
+          <a href="https://wiki.phala.network/en-us/docs/developer/" class="pager_link button" title="Developer Guide">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">3.1 How to get better peers connectivity</span>
+  <span class="pager_label">Developer Guide</span>
 </a>
+        
+      
     
   </div>
 
@@ -552,6 +525,14 @@ chains  polkadot
   
         
   
+    <div class="pager_item next">
+      <a href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" class="pager_link button" title="1.2 Run a Local Development Network">
+  <span class="pager_label">1.2 Run a Local Development Network</span>
+  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
+  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
+</a>
+        </div>
+      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">

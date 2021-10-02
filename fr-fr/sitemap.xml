@@ -139,54 +139,6 @@
                 href="https://wiki.phala.network/fr-fr/docs/pdiem/"
                 />
   </url><url>
-    <loc>https://wiki.phala.network/fr-fr/docs/developer/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/run-a-local-development-network/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/your-first-confidential-contract/"
-                />
-  </url><url>
-    <loc>https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="https://wiki.phala.network/fr-fr/docs/developer/troubleshooting/"
-                />
-  </url><url>
     <loc>https://wiki.phala.network/fr-fr/categories/</loc>
     <xhtml:link
                 rel="alternate"

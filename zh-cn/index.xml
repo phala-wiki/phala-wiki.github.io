@@ -215,6 +215,17 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
+      <title>3 FAQ</title>
+      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</guid>
+      <description>陆续更新中。
+ I. 增加信任等级 目前等级 1、2、3 会被当作同样的信任等级来看待，因此如果你只是2或3级，无需去再去提升等级。但如果你的等级为4或5，则可以参考以下建议来操作。与此同时，我们鼓励加入我们的 Telegram 或 Discord 群来讨论与分享你的经验。
+遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs). The platform has not been identified as compromised and thus it is not revoked. It is up to the Service Provider to decide whether or not to trust the content of the QUOTE, and whether or not to trust the platform performing the attestation to protect specific sensitive information.</description>
+    </item>
+    
+    <item>
       <title>3 为理事会议员投票</title>
       <link>https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -236,18 +247,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>4 FAQ</title>
-      <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</guid>
-      <description>陆续更新中。
- I. 增加信任等级 目前等级 1、2、3 会被当作同样的信任等级来看待，因此如果你只是2或3级，无需去再去提升等级。但如果你的等级为4或5，则可以参考以下建议来操作。与此同时，我们鼓励加入我们的 Telegram 或 Discord 群来讨论与分享你的经验。
-遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs). The platform has not been identified as compromised and thus it is not revoked. It is up to the Service Provider to decide whether or not to trust the content of the QUOTE, and whether or not to trust the platform performing the attestation to protect specific sensitive information.</description>
-    </item>
-    
-    <item>
-      <title>4.1 如何提高和P2P节点的连接性</title>
+      <title>3.1 如何提高和P2P节点的连接性</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -269,7 +269,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>4.2 如果还没有同步好挖矿节点，快速追上的办法</title>
+      <title>3.2 如果还没有同步好挖矿节点，快速追上的办法</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

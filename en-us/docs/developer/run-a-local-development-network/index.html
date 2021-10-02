@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -9,35 +9,35 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>1.1 Run a Local Development Network | Phala Network Wiki</title><meta property="og:title" content="1.1 Run a Local Development Network" />
-<meta property="og:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI." />
+<title>1.2 Run a Local Development Network | Phala Network Wiki</title><meta property="og:title" content="1.2 Run a Local Development Network" />
+<meta property="og:description" content="Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
+ Overview In this tutorial, we&rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="1.1 Run a Local Development Network">
-<meta itemprop="description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
+<meta itemprop="name" content="1.2 Run a Local Development Network">
+<meta itemprop="description" content="Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
+ Overview In this tutorial, we&rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK.">
 
-<meta itemprop="wordCount" content="1706">
+<meta itemprop="wordCount" content="1547">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.1 Run a Local Development Network"/>
-<meta name="twitter:description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI."/>
+<meta name="twitter:title" content="1.2 Run a Local Development Network"/>
+<meta name="twitter:description" content="Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
+ Overview In this tutorial, we&rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&amp;rsquo;re going to set up a &amp;ldquo;Hello World&amp;rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.">
+  <meta name="description" content="Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
+ Overview In this tutorial, we&amp;rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK.">
 
 
 
@@ -122,6 +122,49 @@
       <section class="subsection" id="docs-phala-network">
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/spec/" class="group">Technical Specification</a></h2>
+  </section>
+  <section class="section aside_inner">
+    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Developer Guide</a></h2>
+      <section class="subsection" id="docs-developer-guide">
+        <h3 class="section_link"><a id="docs-11-phala-blockchain-in-detail" href="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/">1.1 Phala Blockchain in Detail</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link active"><a id="docs-12-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.2 Run a Local Development Network</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
+    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
+    <li><a href="#play-the-guessnumber">Play the <code>GuessNumber</code></a>
+      <ul>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#play-with-it">Play with it</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-13-guess-number-a-confidential-contract-example" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.3 Guess Number: A Confidential Contract Example</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#environment-and-build">Environment and Build</a></li>
+    <li><a href="#walk-through">Walk-through</a>
+      <ul>
+        <li><a href="#contract">Contract</a></li>
+        <li><a href="#frontend-sdk">Frontend SDK</a></li>
+      </ul>
+    </li>
+    <li><a href="#access-http-service-in-confidential-contract">Access HTTP Service in Confidential Contract</a></li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#submit-your-work">Submit your work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </section>
   </section>
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/tokenomic/" class="group">Understand Phala Tokenomics</a></h2>
@@ -298,7 +341,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-4-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">4 Frequently Asked Questions</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-3-frequently-asked-questions" href="https://wiki.phala.network/en-us/docs/khala-mining/4-faq/">3 Frequently Asked Questions</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#i-increase-confidence-level">I. Increase Confidence Level</a>
       <ul>
@@ -310,7 +353,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-41-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">4.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-31-how-to-get-better-peers-connectivity" href="https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/">3.1 How to get better peers connectivity</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#the-problem">The problem</a></li>
     <li><a href="#stateful-firewall">Stateful firewall</a>
@@ -335,7 +378,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-42-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-32-how-to-accelerate-your-node-syncing-if-you-havent-fully-synced-yet" href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#problem">Problem</a></li>
     <li><a href="#download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</a></li>
@@ -451,199 +494,129 @@
         <h3 class="section_link"><a id="docs-advanced-hardware-mode" href="https://wiki.phala.network/en-us/docs/pdiem/hardware-mode/">Advanced: Hardware Mode</a></h3><nav id="TableOfContents"></nav>
       </section>
   </section>
-  <section class="section aside_inner">
-    <h2 class="section_title"><a  href="https://wiki.phala.network/en-us/docs/developer/" class="group">Archived: Contract Development</a></h2>
-      <section class="subsection" id="docs-archived-contract-development">
-        <h3 class="section_link active"><a id="docs-11-run-a-local-development-network" href="https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/">1.1 Run a Local Development Network</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment">Environment</a></li>
-    <li><a href="#build-the-core-blockchain">Build the core blockchain</a></li>
-    <li><a href="#build-the-web-ui">Build the Web UI</a></li>
-    <li><a href="#send-some-secret-tokens">Send some secret tokens</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-12-hello-world-your-first-confidential-contract" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.2 Hello World: your first confidential contract</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#environment-and-build">Environment and Build</a></li>
-    <li><a href="#walk-through">Walk-through</a>
-      <ul>
-        <li><a href="#contract">Contract</a></li>
-        <li><a href="#frontend">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#implement-a-secret-notebook">Implement a secret notebook</a>
-      <ul>
-        <li><a href="#contract-1">Contract</a></li>
-        <li><a href="#frontend-1">Frontend</a></li>
-      </ul>
-    </li>
-    <li><a href="#put-everything-together">Put everything together</a></li>
-    <li><a href="#summary">Summary</a>
-      <ul>
-        <li><a href="#submit-your-work">Submit your work</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-13-troubleshooting" href="https://wiki.phala.network/en-us/docs/developer/troubleshooting/">1.3 Troubleshooting</a></h3><nav id="TableOfContents">
-  <ul>
-    <li><a href="#phala-blockchain"><code>phala-blockchain</code></a>
-      <ul>
-        <li><a href="#problem-the-wasm32-unknown-unknown-target-may-not-be-installed">Problem: &ldquo;the <code>wasm32-unknown-unknown</code> target may not be installed&rdquo;</a></li>
-        <li><a href="#problem-signal-9-sigkill-kill-when-building-substrate">Problem: &ldquo;(signal: 9, SIGKILL: kill)&rdquo; when building substrate</a></li>
-        <li><a href="#probelm-consider-giving-accuracy-a-type-when-building-substrate">Probelm: &ldquo;consider giving <code>accuracy</code> a type&rdquo; when building substrate</a></li>
-        <li><a href="#probelm-duplicate-lang-item">Probelm: &ldquo;duplicate lang item&rdquo;</a></li>
-        <li><a href="#ice-found-unstable-fingerprints-for-predicates_of">ICE: &ldquo;found unstable fingerprints for predicates_of&hellip;&rdquo;</a></li>
-      </ul>
-    </li>
-    <li><a href="#apps-ng-related"><code>apps-ng</code> related</a>
-      <ul>
-        <li><a href="#probelm-polkadotdevconfigtsconfig-not-found">Probelm: &lsquo;@polkadot/dev/config/tsconfig&rsquo; not found</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </section>
-  </section>
       </section>
   </section>
 </aside>
 
   <main class="content">
-    <h1>1.1 Run a Local Development Network</h1><blockquote>
-<p>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.</p>
+    <h1>1.2 Run a Local Development Network</h1><blockquote>
+<p>Basic understanding of Linux shell and compilation is necessary to follow this tutorial.</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
-<p>In this tutorial,  we&rsquo;re going to set up a &ldquo;Hello World&rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:</p>
+<p>In this tutorial, we&rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:</p>
 <ul>
-<li>Send confidential transactions</li>
-<li>Get a ready-to-hack version of Phala Network for building your own confidential Dapps</li>
+<li>Send confidential Commands and Queries</li>
+<li>Get a ready-to-hack version of Phala Network for building your confidential DApps</li>
 </ul>
-<p>A full Phala Network stack has three components plus a Web UI. The core components are at <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a>:</p>
+<p>A full Phala Network stack has three components, with an optional Javascript SDK. The core components are available at <a href="https://github.com/Phala-Network/phala-blockchain">Phala-Network/phala-blockchain</a>:</p>
 <ul>
 <li><code>phala-node</code>: The Substrate blockchain node</li>
-<li><code>pRuntime</code>: The TEE runtime. Contracts runs in pRuntime</li>
-<li><code>phost</code>: The Substrate-TEE bridge relayer. Connects the blockchain and pRuntime</li>
+<li><code>pRuntime</code>: The TEE runtime. Contracts run in <code>pRuntime</code></li>
+<li><code>pherry</code>: The Substrate-TEE bridge relayer. Connects the blockchain and <code>pRuntime</code></li>
 </ul>
-<p>The Web UI is at <a href="https://github.com/Phala-Network/apps-ng">Phala-Network/apps-ng</a>. The Web UI needs to connect to both the blockchain and the pRuntime in order to send transaction and queries.</p>
+<p>The Javascript SDK is at <a href="https://github.com/Phala-Network/js-sdk">Phala-Network/js-sdk</a>. The Web UI based on our SDK needs to connect to both the blockchain and the <code>pRuntime</code> to send Commands and Queries.</p>
 <h2 id="environment">Environment</h2>
-<p>The development environment of Phala Network requires Linux, because it relies on <a href="https://01.org/intel-software-guard-extensions/downloads">Linux Intel SGX SDK</a>. Virtual machines should generally work. Phala Network doesn&rsquo;t work on Windows or macOS natively (sorry, Mac lovers), however we haven&rsquo;t tested WLS yet. Please let us know if you are the first to run it on WLS successfully!</p>
-<p>In this tutorial we assume the operating system is <em>Ubuntu 18.04</em>. Though not tested yet, it should work with Ubuntu 20.04 out-of-box. Other Linux distributions should also work, but the instructions or command may vary.</p>
-<p>It&rsquo;s required to have at least 4 cores and 8GB ram to build the project including the core blockchain and the Web UI. Less than 4GB ram may fail to build the Web UI.</p>
+<p>The development environment of Phala Network requires Linux because it relies on <a href="https://01.org/intel-software-guard-extensions/downloads">Linux Intel SGX SDK</a>. Virtual machines should generally work. Phala Network doesn&rsquo;t work on Windows or macOS natively (sorry, Mac lovers), however, we haven&rsquo;t tested WLS yet. Please let us know if you are the first to run it on WLS successfully!</p>
+<p>In this tutorial, we assume the operating system is <em>Ubuntu 20.04</em>. Though not tested yet, it should work with Ubuntu 18.04 out-of-box. Other Linux distributions should also work, but the instructions or commands may vary.</p>
+<p>It&rsquo;s required to have at least 4 cores (or the compilation can take forever) and 8GB RAM to build the project including the core blockchain and the Web UI.</p>
 <p>Follow the commands below to prepare the environment. Some can be skipped if already installed.</p>
 <ul>
 <li>
 <p>Install the system level dependencies</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
-<span class="ln">2</span>sudo apt install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev git cmake perl pkg-config curl llvm-10 clang-10 libclang-10-dev
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
+<span class="ln">2</span>sudo apt install -y build-essential git autoconf libtool libssl-dev libclang-10-dev clang-10
+</code></pre></div><p>Ensure <code>clang</code> exists in your $PATH by executing</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>which clang
+<span class="ln">2</span><span class="c1"># /usr/bin/clang</span>
+<span class="ln">3</span>
+<span class="ln">4</span><span class="c1"># by default, the clang executable is installed as &#34;clang-10&#34;</span>
+<span class="ln">5</span><span class="c1"># if you got `clang not found`, you need to link the clang-10 to clang</span>
+<span class="ln">6</span>sudo ln -sf /usr/bin/clang-10 /usr/bin/clang
 </code></pre></div><blockquote>
-<p>Notes on LLVM: We require at least LLVM-9, but higher versions are also supported. Older version like LLVM 6.0 breaks the core blockchain compilation.</p>
+<p>Notes on LLVM: We require at least LLVM-9, but higher versions are also supported. An older version like LLVM 6.0 breaks the core blockchain compilation.</p>
 </blockquote>
 </li>
 <li>
 <p>Install Rust. Please choose the default toolchain</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
-<span class="ln">2</span><span class="nb">source</span> ~/.cargo/env
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+<span class="ln">2</span><span class="nb">source</span> <span class="nv">$HOME</span>/.cargo/env
 </code></pre></div></li>
 <li>
 <p>Install Intel SGX SDK</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.12/distro/ubuntu18.04-server/sgx_linux_x64_sdk_2.12.100.3.bin
-<span class="ln">2</span>chmod +x ./sgx_linux_x64_sdk_2.12.100.3.bin
-<span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.12.100.3.bin
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.15/distro/ubuntu20.04-server/sgx_linux_x64_sdk_2.15.100.3.bin
+<span class="ln">2</span>chmod +x sgx_linux_x64_sdk_2.15.100.3.bin
+<span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.15.100.3.bin
 <span class="ln">4</span><span class="nb">source</span> /opt/intel/sgxsdk/environment
 </code></pre></div><blockquote>
-<p>You can add <code>source /opt/sgxsdk/environment</code> to your <code>~/.bashrc</code> (or <code>~/.zshrc</code> depends on which shell you&rsquo;re using).</p>
+<p>You can add <code>source /opt/sgxsdk/environment</code> to your <code>~/.bashrc</code> (or <code>~/.zshrc</code>, depends on which shell you&rsquo;re using).</p>
 </blockquote>
 </li>
 <li>
-<p>Install Node.js (&gt;= v12) &amp; yarn 2</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<p>Install Node.js (&gt;= v12) &amp; yarn</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
 <span class="ln">2</span>sudo apt-get install -y nodejs
 <span class="ln">3</span>sudo npm install -g yarn
-<span class="ln">4</span>yarn <span class="nb">set</span> version berry
 </code></pre></div></li>
 </ul>
 <p>You can test the installation by running the following commands. The output should match the sample outputs, or with a slightly higher version.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
-<span class="ln"> 2</span><span class="c1"># rustup 1.22.1 (b01adbbc3 2020-07-08)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
+<span class="ln"> 2</span><span class="c1"># rustup 1.24.3 (ce5817a94 2021-05-31)</span>
 <span class="ln"> 3</span>
 <span class="ln"> 4</span>cargo --version
-<span class="ln"> 5</span><span class="c1"># cargo 1.46.0 (149022b1d 2020-07-17)</span>
+<span class="ln"> 5</span><span class="c1"># cargo 1.55.0 (32da73ab1 2021-08-23)</span>
 <span class="ln"> 6</span>
 <span class="ln"> 7</span><span class="nb">echo</span> <span class="nv">$SGX_SDK</span>
 <span class="ln"> 8</span><span class="c1"># /opt/intel/sgxsdk</span>
 <span class="ln"> 9</span>
 <span class="ln">10</span><span class="c1"># LLVM-9 or higher versions are fine</span>
-<span class="ln">11</span>llvm-ar-10 --version
-<span class="ln">12</span><span class="c1"># LLVM (http://llvm.org/):</span>
-<span class="ln">13</span><span class="c1">#   LLVM version 10.0.0</span>
-<span class="ln">14</span>
-<span class="ln">15</span>node --version
-<span class="ln">16</span><span class="c1"># v12.16.3</span>
-<span class="ln">17</span>
-<span class="ln">18</span>yarn --version
-<span class="ln">19</span><span class="c1"># 2.1.1</span>
-</code></pre></div><p>Finally let&rsquo;s clone the code and run the initialization script to update the Rust toolchain. Please note that the entire tutorial is on the <strong><code>helloworld</code> branch</strong> for both the blockchain and the Web UI repo.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Clone the core blockchain repo</span>
-<span class="ln"> 2</span>git clone --branch helloworld https://github.com/Phala-Network/phala-blockchain.git
-<span class="ln"> 3</span><span class="c1"># Clone the Web UI repo</span>
-<span class="ln"> 4</span>git clone --branch helloworld https://github.com/Phala-Network/apps-ng.git
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="c1"># Run the init script to update Rust toolchain and git submodule</span>
-<span class="ln"> 7</span><span class="nb">cd</span> phala-blockchain/
-<span class="ln"> 8</span>git submodule update --init
-<span class="ln"> 9</span>./scripts/init.sh
-<span class="ln">10</span><span class="nb">cd</span> ..
-<span class="ln">11</span>
-<span class="ln">12</span><span class="c1"># Update the git submodule</span>
-<span class="ln">13</span><span class="nb">cd</span> apps-ng/
-<span class="ln">14</span>git submodule update --init
-<span class="ln">15</span><span class="nb">cd</span> ..
+<span class="ln">11</span>clang --version
+<span class="ln">12</span><span class="c1"># clang version 10.0.0-4ubuntu1</span>
+<span class="ln">13</span><span class="c1"># Target: x86_64-pc-linux-gnu</span>
+<span class="ln">14</span><span class="c1"># Thread model: posix</span>
+<span class="ln">15</span><span class="c1"># InstalledDir: /usr/bin</span>
+<span class="ln">16</span>
+<span class="ln">17</span>node --version
+<span class="ln">18</span><span class="c1"># v16.10.0</span>
+<span class="ln">19</span>
+<span class="ln">20</span>yarn --version
+<span class="ln">21</span><span class="c1"># 1.22.15</span>
+</code></pre></div><p>Finally, let&rsquo;s clone the code. Notice that the entire tutorial is on the <strong><code>encode-hackathon-2021 </code> branch</strong> for the blockchain.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Clone the core blockchain repo</span>
+<span class="ln">2</span>git clone --recursive --branch encode-hackathon-2021 https://github.com/Phala-Network/phala-blockchain.git
+<span class="ln">3</span><span class="c1"># Clone the JS SDK repo</span>
+<span class="ln">4</span>git clone https://github.com/Phala-Network/js-sdk
 </code></pre></div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
-<p>Now we already have the both repos <code>phala-blockchain</code> and <code>apps-ng</code> in the working directory. Let&rsquo;s start to build the the core blockchain first. The blockchain on the <strong><code>helloworld</code> branch</strong> is based on an old version of Substrate, therefore we&rsquo;ll use an old version of Rust to build it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
-<span class="ln">2</span>rustup install nightly-2020-10-01-x86_64-unknown-linux-gnu
-<span class="ln">3</span>rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-01
-<span class="ln">4</span><span class="nb">cd</span> phala-blockchain/
-<span class="ln">5</span>cargo +nightly-2020-10-01 build --release
-<span class="ln">6</span>
-<span class="ln">7</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
-<span class="ln">8</span><span class="nb">cd</span> ./pruntime/
-<span class="ln">9</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
-</code></pre></div><blockquote>
-<p><strong>Notes on Build the core blockchain</strong></p>
-<p>You would usually use the latest version of Substrate and the Rust compiler to build the core blockchain. The build would therefore be simplified to:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<p>Now we have both repos <code>phala-blockchain</code> and <code>js-sdk</code> in the working directory. Let&rsquo;s start to build the core blockchain first.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
 <span class="ln">3</span>cargo build --release
-</code></pre></div></blockquote>
-<p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
+<span class="ln">4</span>
+<span class="ln">5</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
+<span class="ln">6</span><span class="nb">cd</span> ./pruntime/
+<span class="ln">7</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
+</code></pre></div><p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
 <ul>
 <li><code>./target/release/phala-node</code>: The Substrate node</li>
-<li><code>./target/release/phost</code>: The Substrate-to-TEE bridge relayer</li>
+<li><code>./target/release/pherry</code>: The Substrate-to-TEE bridge relayer</li>
 <li><code>./pruntime/bin/app</code>: The TEE worker</li>
 </ul>
 <blockquote>
 <p><strong>Notes on <code>SGX_MODE</code></strong></p>
-<p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD cpu. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.8/linux/distro/ubuntu18.04-server/">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
+<p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD CPU. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.12/linux/distro/ubuntu20.04-server">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
 </blockquote>
-<p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>phost</code> follows:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># In terminal window 1: phala-node</span>
-<span class="ln">2</span>./target/release/phala-node --dev
-<span class="ln">3</span>
-<span class="ln">4</span><span class="c1"># In terminal window 2: pruntime</span>
-<span class="ln">5</span><span class="nb">cd</span> pruntime/bin
-<span class="ln">6</span>./app
-<span class="ln">7</span>
-<span class="ln">8</span><span class="c1"># In terminal window 3: phost</span>
-<span class="ln">9</span>./target/release/phost --dev
-</code></pre></div><p><img src="/images/docs/core-terminal.gif" alt=""></p>
-<p>(Core components running and producing logs)</p>
-<p>Once they are launched successfully, they should output logs as shown in the GIF above. Notice that we pass the <code>--dev</code> flag to <code>phala-node</code> and <code>phost</code> to indicate we are in the development network.</p>
-<p>The three core blockchain components are connected via TCP (WebSocket and HTTP). Please ensure your system have the TCP ports not occupied with other programs. By default they use the following ports:</p>
+<p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>pherry</code> follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># In terminal window 1: phala-node</span>
+<span class="ln"> 2</span>./target/release/phala-node --dev --tmp
+<span class="ln"> 3</span>
+<span class="ln"> 4</span><span class="c1"># In terminal window 2: pruntime</span>
+<span class="ln"> 5</span><span class="nb">cd</span> pruntime/bin
+<span class="ln"> 6</span>./app -c <span class="m">0</span>
+<span class="ln"> 7</span><span class="nb">cd</span> ../..
+<span class="ln"> 8</span>
+<span class="ln"> 9</span><span class="c1"># In terminal window 3: pherry</span>
+<span class="ln">10</span>./target/release/pherry --dev --no-wait
+</code></pre></div><p>Once they are launched successfully, they should output logs. Notice that we pass the <code>--dev</code> flag to <code>phala-node</code> and <code>pherry</code> to indicate we are in the development network. This is important since for now, smart contract functionalities are only enabled under development mode.</p>
+<p>The three core blockchain components are connected via TCP (WebSocket and HTTP). Please ensure your system have the TCP ports not occupied by other programs. By default they use the following ports:</p>
 <ul>
 <li><code>phala-node</code>
 <ul>
@@ -657,29 +630,27 @@
 </ul>
 </li>
 </ul>
-<p><code>phost</code> doesn&rsquo;t listen to any ports but connect to <code>phala-node</code>&rsquo;s WebSocket port and <code>pruntime</code>&rsquo;s HTTP RPC port.</p>
-<p>You can safely shutdown the three program by <kbd>Ctrl</kbd> + <kbd>C</kbd>. <code>phala-node</code> saves the blockchain database on your disk. So if the blockchain gets messed up, you may want to reset it by:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>./target/release/phala-node purge-chain --dev
-</code></pre></div><h2 id="build-the-web-ui">Build the Web UI</h2>
-<p>The Web UI frontend is developed with <code>node.js</code>, <code>yarn</code> and <code>react</code>. It&rsquo;s easy to build and launch the frontend.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> apps-ng
-<span class="ln">2</span>yarn
-<span class="ln">3</span>yarn dev
-</code></pre></div><p>It may take a few minutes to download the dependencies and build the frontend. By default the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
-<pre><code class="language-log" data-lang="log">ready - started server on http://localhost:3000
-&gt; Using &quot;webpackDevMiddleware&quot; config function defined in default.
-&gt; Using external babel configuration
+<p><code>pherry</code> doesn&rsquo;t listen to any ports but connects to <code>phala-node</code>&rsquo;s WebSocket port and <code>pruntime</code>&rsquo;s HTTP RPC port. You can change the default ports of <code>phala-node</code> and <code>pherry</code> with command line arguments (check the latest argument list with <code>--help</code>). And for <code>pruntime</code>, just edit the <code>Rocket.toml</code> config file under <code>pruntime/bin</code> and restart it.</p>
+<p>You can safely shut down the three programs by <kbd>Ctrl</kbd> + <kbd>C</kbd>. Since <code>--tmp</code> is specified for <code>phala-node</code>, no database will be left after you shut it down. So a fresh start every time you run it!</p>
+<h2 id="build-the-web-ui">Build the Web UI</h2>
+<p>The Web UI frontend is developed with <code>node.js</code> and managed by <code>yarn</code>. It provides the frontend you need to interact with our <code>GuessNumber</code> and <code>BtcPriceBot</code> demo contracts. Just give it a try!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> js-sdk/packages/example
+<span class="ln">2</span><span class="c1"># you need to set the `NEXT_PUBLIC_BASE_URL` to the port of `pruntime`</span>
+<span class="ln">3</span><span class="c1"># and `NEXT_PUBLIC_WS_ENDPOINT` to `phala-node` ws port</span>
+<span class="ln">4</span>cp .env .env.local
+<span class="ln">5</span>
+<span class="ln">6</span>yarn
+<span class="ln">7</span>yarn dev
+</code></pre></div><p>It may take a few minutes to download the dependencies and build the frontend. By default, the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
+<pre tabindex="0"><code class="language-log" data-lang="log">ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+info  - Loaded env from /home/user/phala-network/js-sdk/packages/example/.env.local
+info  - Loaded env from /home/user/phala-network/js-sdk/packages/example/.env
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
 event - compiled successfully
-event - build page: /[...slug]
-event - build page: /
-event - compiled successfully
-</code></pre><p><img src="/images/docs/apps-ng-landing.png" alt="">
-(Web UI landing page)</p>
-<p>The Web UI connects to both <code>phala-node</code> and <code>pruntime</code> by their default RPC endpoints. If everything is configured correctly, you will see the wallet unlock screen in the landing page as shown above. You should be able to select the well-known development accounts (Alice, Bob, etc) in the drop box.</p>
-<blockquote>
+</code></pre><blockquote>
 <p><strong>Notes for Remote Access</strong></p>
 <p>In a case where you run your blockchain and WEB UI on your REMOTE_SERVER and try to access them elsewhere, you can forward the ports with <code>ssh</code> command. For example,</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
 </code></pre></div><p>This forwards all the necessary ports:</p>
 <ul>
 <li>3000: HTTP port of Web UI</li>
@@ -688,33 +659,39 @@ event - compiled successfully
 </ul>
 <p>and you can visit the Web UI at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 </blockquote>
-<h2 id="send-some-secret-tokens">Send some secret tokens</h2>
-<p>In the last two sections, we have built and launched <code>phala-node</code>, <code>pruntime</code>, and <code>phost</code> in development mode, and connect the Web UI to the development network. Now we are ready to try the secret wallet feature in Phala Network!</p>
-<p>Let&rsquo;s select Alice and unlock the wallet. Alice is a built-in test account with 10,000 PHA on the blockchain. This PHA token is the native token. It&rsquo;s transparent on-chain like a typical Substrate blockchain, managed by Balances pallet.</p>
-<p><img src="/images/docs/apps-ng-init-wallet.png" alt="">
-(Secret wallet dapp)</p>
-<p>However, the &ldquo;secret assets&rdquo; wallet below is very different. Secret assets are stored in confidential contracts inside TEE enclaves. Like what the name says, the secret assets are private and invisible on the blockchain.</p>
-<p>Click &ldquo;Convert to Secret PHA&rdquo; button to transfer <strong>PHA</strong> to <strong>Secret PHA</strong>. You will see your PHA balance reduced first, and after around ten seconds, the Secret PHA balance will increase by the same amount, except some transaction fee.</p>
-<blockquote>
-<p>What just happend?</p>
-<p>You created a Substrate transaction to send some funds to the Phala pallet. The funds are stored in the pallet, and it triggered a <strong>confidential transaction</strong> to issue the same amount of the token in the secret wallet in TEE enclaves.</p>
-<p>It takes ~6s to include a Substrate transaction in the blockchain, and then another 6s to finalize the block. Once the transaction is finalized, it triggers a &ldquo;TransferToTee&rdquo; event, relayed to <code>pruntime</code> via the relayer, and the confidential contract increases the balance. Finally the Web UI queries the confidential contract to get the updated balance.</p>
-</blockquote>
-<p>There are plenty of things you can play with the secret wallet:</p>
-<ul>
-<li>convert the secret assets back to on-chain assets;</li>
-<li>transfer secret assets just like ordinary assets on every Substrate blockchain;</li>
-<li>and even issue or destroy your own secret tokens</li>
-</ul>
-<p>All the above functions are made by confidential transaction. Nobody can see the content of the transaction because the body is encrypted. By clicking &ldquo;Polkadot UI&rdquo; button in the navigation bar, it will bring you to the polkadot.js apps you are familiar with. After sending an encrypted transaction by clicking the &ldquo;Secret Transfer&rdquo; button, you can find the encrypted transaction wrapped by <code>phalaModel.pushCommand</code> extrinsic from the block explorer as shown below.</p>
-<img src="/images/docs/polkadotjs-pushCommand.png" style="max-height: 200px;">
-<p>(An encrypted confidential transaction on a blockchain explorer)</p>
+<p>The main page of Web UI looks like this:</p>
+<p><img src="/images/docs/developer/js-sdk-1.png" alt=""></p>
+<p>To experience the demo contracts, you will need an account. For development, we recommend not to use your real Substrate account with funds. A good choice is for development to import <code>Alice</code> to your Polkadot.js extension since she is the pre-defined root account and is allowed to invoke privileged operations. <strong>DO NOT</strong> transfer real funds to your <code>Alice</code> account.</p>
+<p>You can get the secret seed of <code>Alice</code> with the following command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># in phala-blockchain folder</span>
+<span class="ln">2</span>./target/release/phala-node key inspect //Alice
+<span class="ln">3</span><span class="c1"># Secret Key URI `//Alice` is account:</span>
+<span class="ln">4</span><span class="c1">#   Secret seed:       0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a</span>
+<span class="ln">5</span><span class="c1">#   Public key (hex):  0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d</span>
+<span class="ln">6</span><span class="c1">#   Public key (SS58): 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY</span>
+<span class="ln">7</span><span class="c1">#   Account ID:        0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d</span>
+<span class="ln">8</span><span class="c1">#   SS58 Address:      5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY</span>
+</code></pre></div><p>Then import the secret seed into your Polkadot.js extension</p>
+<p><img src="/images/docs/developer/js-sdk-2.png" alt=""></p>
+<p>and paste the secret seed regardless of the mnemonic hint</p>
+<p><img src="/images/docs/developer/js-sdk-3.png" alt=""></p>
+<p>Now you are good to go.</p>
+<h2 id="play-the-guessnumber">Play the <code>GuessNumber</code></h2>
+<h3 id="authorization">Authorization</h3>
+<p>Now let&rsquo;s play with a contract. Recall the knowledge about Commands and Queries in <a href="/en-us/docs/developer/">previous chapter</a>. The first thing our contract propose is to sign a certificate. Such a temporary certificate is used to encrypt all the Queries. While every time you try to send a Command, the Polkadot.js extension will ask for your signature (since Commands can change the state, it is more critical than Queries).</p>
+<p><img src="/images/docs/developer/js-sdk-4.png" alt=""></p>
+<p>Don&rsquo;t miss the prompt since there are not always pop-ups.</p>
+<p><img src="/images/docs/developer/js-sdk-5.png" alt=""></p>
+<h3 id="play-with-it">Play with it</h3>
+<p><img src="/images/docs/developer/js-sdk-6.png" alt=""></p>
+<p>By default, the random number is 0. Click <code>Reset Number</code>, sign the Command, and start the game. If you log in as the root account or contract owner, there is a cheat button for you to peek at the secret. So no more spoiling, just play with it.</p>
+<p>If you are curious about how this contract is implemented, the following chapter will walk you through it.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Congratulations! Finally, you have followed the tutorial to:</p>
 <ul>
 <li>Prepare a ready-to-hack development environment</li>
-<li>Download, build, and started a full stack development mode Phala Network</li>
-<li>Connect to the network via the Web UI and try the secret wallet dapp</li>
+<li>Download, build and started a full-stack development-mode Phala Network</li>
+<li>Connect to the network via the Web UI and try the DApps</li>
 </ul>
 <p>Now you are familiar with building and running a development network. Hold tight! In the next chapter, we are going to build the first confidential contract together!</p>
 <p>Join our <a href="https://discord.gg/zzhfUjU">Discord server</a> and feel free to ask for help!</p>
@@ -722,15 +699,11 @@ event - compiled successfully
     <div class="pager">
   <div class="pager_item prev">
     
-      
-        
-          <a href="https://wiki.phala.network/en-us/docs/developer/" class="pager_link button" title="Archived: Contract Development">
+      <a href="https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/" class="pager_link button" title="1.1 Phala Blockchain in Detail">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">Archived: Contract Development</span>
+  <span class="pager_label">1.1 Phala Blockchain in Detail</span>
 </a>
-        
-      
     
   </div>
 
@@ -739,8 +712,8 @@ event - compiled successfully
         
   
     <div class="pager_item next">
-      <a href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/" class="pager_link button" title="1.2 Hello World: your first confidential contract">
-  <span class="pager_label">1.2 Hello World: your first confidential contract</span>
+      <a href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/" class="pager_link button" title="1.3 Guess Number: A Confidential Contract Example">
+  <span class="pager_label">1.3 Guess Number: A Confidential Contract Example</span>
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
 </a>

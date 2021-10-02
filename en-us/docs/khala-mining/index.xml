@@ -107,7 +107,7 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
     </item>
     
     <item>
-      <title>4 Frequently Asked Questions</title>
+      <title>3 Frequently Asked Questions</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -118,7 +118,7 @@ Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID sig
     </item>
     
     <item>
-      <title>4.1 How to get better peers connectivity</title>
+      <title>3.1 How to get better peers connectivity</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -128,7 +128,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
     </item>
     
     <item>
-      <title>4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</title>
+      <title>3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

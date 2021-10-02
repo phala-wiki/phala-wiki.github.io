@@ -163,25 +163,13 @@ Check Your CPU   Look up your computer&amp;rsquo;s Processor. On Windows, you ca
     </item>
     
     <item>
-      <title>1.1 Run a Local Development Network</title>
-      <link>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</link>
+      <title>1.1 Phala Blockchain in Detail</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
-      <description>Basic understanding of Linux shell and compiling is necessary to follow this tutorial.
- Overview In this tutorial, we&amp;rsquo;re going to set up a &amp;ldquo;Hello World&amp;rdquo; development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
- Send confidential transactions Get a ready-to-hack version of Phala Network for building your own confidential Dapps  A full Phala Network stack has three components plus a Web UI.</description>
-    </item>
-    
-    <item>
-      <title>1.2 Hello World: your first confidential contract</title>
-      <link>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</guid>
-      <description>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
- Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
- Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.</description>
+      <guid>https://wiki.phala.network/en-us/docs/developer/blockchain-in-detail/</guid>
+      <description>Overview In this chapter, we try to give a brief introduction to the structure of Phala blockchain. In general, Phala Network consists of the Phala blockchain and the off-chain TEE runtime. Also, we introduce a bridge relayer to connect them. So a full stack of a Phala node contains the following three components.
+ phala-node: The Substrate-based blockchain node pRuntime: The TEE runtime. Contracts run in pRuntime pherry: The Substrate-TEE bridge relayer.</description>
     </item>
     
     <item>
@@ -193,6 +181,17 @@ Check Your CPU   Look up your computer&amp;rsquo;s Processor. On Windows, you ca
       <description>Prerequisites Before you go further, please ensure that your have correct setup your hardware, BIOS and operating system according to the previous section.
 Download Phala Scripts The Phala tools are availbale at https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip, it can be downloaded with wget by executing the following commands in the terminal:
 1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y 2sudo apt install wget unzip 3cd ~ 4wget https://github.com/Phala-Network/solo-mining-scripts/archive/refs/heads/main.zip 5unzip main.</description>
+    </item>
+    
+    <item>
+      <title>1.2 Run a Local Development Network</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/developer/run-a-local-development-network/</guid>
+      <description>Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
+ Overview In this tutorial, we&amp;rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
+ Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK.</description>
     </item>
     
     <item>
@@ -208,13 +207,14 @@ Download Phala Scripts The Phala tools are availbale at https://github.com/Phala
     </item>
     
     <item>
-      <title>1.3 Troubleshooting</title>
-      <link>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</link>
+      <title>1.3 Guess Number: A Confidential Contract Example</title>
+      <link>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wiki.phala.network/en-us/docs/developer/troubleshooting/</guid>
-      <description>phala-blockchain Problem: &amp;ldquo;the wasm32-unknown-unknown target may not be installed&amp;rdquo; You need to add the wasm-unknown-unknown target to your rust toolchain. Do it by this (under the code repo):
-1rustup target add wasm32-unknown-unknown Problem: &amp;ldquo;(signal: 9, SIGKILL: kill)&amp;rdquo; when building substrate The compiler may run out-of-memory. Usually each thread takes up to 2GB RAM. If you don&amp;rsquo;t have enough memory, you can limit the concurrency specifying a smaller N than your available cores:</description>
+      <guid>https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/</guid>
+      <description>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
+ Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
+ Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.</description>
     </item>
     
     <item>
@@ -294,17 +294,7 @@ Console Manual Prerequisites  Create a Khala account as the pool Owner and Worke
     </item>
     
     <item>
-      <title>3 Voting for Councillors</title>
-      <link>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</guid>
-      <description>The council is an elected body of on-chain accounts that are intended to represent the passive stakeholders of Phala and/or Khala. The council has two major tasks in governance: proposing referenda and vetoing dangerous or malicious referenda. For more information on the council, see the Governance page. This guide will walk you through voting for councillors in the elections.
-Voting for Councillors Voting for councillors requires you to lock 5 PHA on Phala or 5 K-PHA on Khala for the duration of your vote.</description>
-    </item>
-    
-    <item>
-      <title>4 Frequently Asked Questions</title>
+      <title>3 Frequently Asked Questions</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -315,7 +305,17 @@ Got CONFIGURATION_NEEDED and CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID sig
     </item>
     
     <item>
-      <title>4.1 How to get better peers connectivity</title>
+      <title>3 Voting for Councillors</title>
+      <link>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/governance/3-voting-for-councillors/</guid>
+      <description>The council is an elected body of on-chain accounts that are intended to represent the passive stakeholders of Phala and/or Khala. The council has two major tasks in governance: proposing referenda and vetoing dangerous or malicious referenda. For more information on the council, see the Governance page. This guide will walk you through voting for councillors in the elections.
+Voting for Councillors Voting for councillors requires you to lock 5 PHA on Phala or 5 K-PHA on Khala for the duration of your vote.</description>
+    </item>
+    
+    <item>
+      <title>3.1 How to get better peers connectivity</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -325,7 +325,7 @@ Stateful firewall As IPv4 is exhausting, also as there are some security concern
     </item>
     
     <item>
-      <title>4.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</title>
+      <title>3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</title>
       <link>https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

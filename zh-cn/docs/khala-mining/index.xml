@@ -115,7 +115,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>4 FAQ</title>
+      <title>3 FAQ</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -126,7 +126,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>4.1 如何提高和P2P节点的连接性</title>
+      <title>3.1 如何提高和P2P节点的连接性</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-1-how-to-get-better-peers-connectivity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -148,7 +148,7 @@ SGX测试完毕后，输入ls /dev | grep sgx，如果运行有返回sgx或者is
     </item>
     
     <item>
-      <title>4.2 如果还没有同步好挖矿节点，快速追上的办法</title>
+      <title>3.2 如果还没有同步好挖矿节点，快速追上的办法</title>
       <link>https://wiki.phala.network/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
