@@ -9,7 +9,7 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>1.3 Guess Number: A Confidential Contract Example | Phala Network Wiki</title><meta property="og:title" content="1.3 Guess Number: A Confidential Contract Example" />
+<title>1.3 Confidential Contract Examples | Phala Network Wiki</title><meta property="og:title" content="1.3 Confidential Contract Examples" />
 <meta property="og:description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters." />
@@ -18,14 +18,14 @@
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
-<meta itemprop="name" content="1.3 Guess Number: A Confidential Contract Example">
+<meta itemprop="name" content="1.3 Confidential Contract Examples">
 <meta itemprop="description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters.">
 
-<meta itemprop="wordCount" content="1594">
+<meta itemprop="wordCount" content="1601">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.3 Guess Number: A Confidential Contract Example"/>
+<meta name="twitter:title" content="1.3 Confidential Contract Examples"/>
 <meta name="twitter:description" content="Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.
  Overview In this tutorial, we are going to continue on the development environment we have set up in the previous chapter, and explore how a confidential smart contract is made. By the end of this tutorial, you will:
  Learn how to develop a confidential contract Interact with the contract from the Web UI Build your own confidential contract  For a high-level overview of Phala Network, please check the previous chapters."/>
@@ -146,17 +146,17 @@
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-13-guess-number-a-confidential-contract-example" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.3 Guess Number: A Confidential Contract Example</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-13-confidential-contract-examples" href="https://wiki.phala.network/en-us/docs/developer/your-first-confidential-contract/">1.3 Confidential Contract Examples</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#environment-and-build">Environment and Build</a></li>
-    <li><a href="#walk-through">Walk-through</a>
+    <li><a href="#walk-through-of-the-basic-confidential-contract">Walk-through of the Basic Confidential Contract</a>
       <ul>
         <li><a href="#contract">Contract</a></li>
         <li><a href="#frontend-sdk">Frontend SDK</a></li>
       </ul>
     </li>
-    <li><a href="#access-http-service-in-confidential-contract">Access HTTP Service in Confidential Contract</a></li>
+    <li><a href="#advanced-feature-access-http-service-in-confidential-contracts">Advanced Feature: Access HTTP Service in Confidential Contracts</a></li>
     <li><a href="#summary">Summary</a>
       <ul>
         <li><a href="#submit-your-work">Submit Your Work</a></li>
@@ -499,7 +499,7 @@
 </aside>
 
   <main class="content">
-    <h1>1.3 Guess Number: A Confidential Contract Example</h1><blockquote>
+    <h1>1.3 Confidential Contract Examples</h1><blockquote>
 <p>Basic understanding of Rust language programming and smart contract development knowledge is necessary to follow this tutorial.</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
@@ -512,7 +512,7 @@
 <p>For a high-level overview of Phala Network, please check the previous chapters.</p>
 <h2 id="environment-and-build">Environment and Build</h2>
 <p>Please set up a development environment by following the previous chapter <a href="/en-us/docs/developer/run-a-local-development-network/">Run a Local Development Network</a>. Make sure you are at the <code>encode-hackathon-2021</code> branch of the <code>phala-blockchain</code> and the <code>master</code> branch of the <code>js-sdk</code> repo.</p>
-<h2 id="walk-through">Walk-through</h2>
+<h2 id="walk-through-of-the-basic-confidential-contract">Walk-through of the Basic Confidential Contract</h2>
 <h3 id="contract">Contract</h3>
 <p>We have glanced at the main part of the contract in the previous chapter. The complete <code>GuessNumber</code> contract is available <a href="https://github.com/Phala-Network/phala-blockchain/blob/encode-hackathon-2021/crates/phactory/src/contracts/guess_number.rs">here</a>.</p>
 <p><code>GuessNumber</code> contract stores a secret for any participants to guess, and only authorized users can read it. The typical model of the confidential contracts in Phala Network consists of the following three components which we will discuss in detail.</p>
@@ -612,7 +612,7 @@
 <h3 id="frontend-sdk">Frontend SDK</h3>
 <p>Check our <a href="https://github.com/Phala-Network/js-sdk/tree/main/packages/sdk">SDK tutorial</a> and the <a href="https://github.com/Phala-Network/js-sdk/blob/main/packages/example/pages/guess-number.tsx">example frontend of <code>GuessGame</code></a> to see how to send Commands and Queries to interact with the contracts.</p>
 <p>The core of the frontend development is the definition of the type mapping between frontend and backend. We recommend reading the <a href="https://polkadot.js.org/docs/api/start/types.extend">Polkadot.js tutorials on type</a>.</p>
-<h2 id="access-http-service-in-confidential-contract">Access HTTP Service in Confidential Contract</h2>
+<h2 id="advanced-feature-access-http-service-in-confidential-contracts">Advanced Feature: Access HTTP Service in Confidential Contracts</h2>
 <p>In the traditional smart contract model, all the input data to the contract need to be sent from on-chain transactions. If a contract depends on some off-chain information, like the current price of BTC, it needs to get such information from a special kind of infrastructure called <a href="https://en.wikipedia.org/wiki/Blockchain_oracle">blockchain oracle</a>. What&rsquo;s more, a smart contract can&rsquo;t initiate a request to the off-chain service.</p>
 <p>Since Phala contracts are running in the off-chain <code>pRuntime</code>, it is possible for them to access the network service. While a challenge exists here about the state consistency across multiple instances of the same contract: we need to ensure that each instance performs exactly the same (their states and transaction-sending behavior are consistent at the same block height). Unfortunately, the HTTP request and response operate asynchronously. Even if we send the request at a determined block height, the response can come at any time and its contents may change.</p>
 <p>In this section, we use a <a href="https://github.com/Phala-Network/phala-blockchain/blob/encode-hackathon-2021/crates/phactory/src/contracts/btc_price_bot.rs"><code>BtcPriceBot</code> contract example</a> to show how these problems are solved with our <code>AsyncSideTask</code>. The <code>BtcPriceBot</code> first reads the latest BTC price from a web service, then posts an HTTP request to a Telegram bot for notification. Such behavior is triggered with a <code>ReportBtcPrice</code> Command, and we show how it is implemented.</p>
