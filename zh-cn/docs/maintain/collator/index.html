@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -331,6 +331,7 @@
         <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
         <li><a href="#如何从para2切换到khala">如何从Para2切换到Khala</a></li>
         <li><a href="#基于snapshot数据同步时遇到unable-to-retrieve-header-and-parent-from-supplied-hash错误">基于snapshot数据同步时遇到“Unable to retrieve header and parent from supplied hash”错误</a></li>
+        <li><a href="#如何检查当前运行中节点的版本">如何检查当前运行中节点的版本</a></li>
       </ul>
     </li>
   </ul>
@@ -435,7 +436,7 @@
 
 <h2 id="concepts">Concepts</h2>
 <p>Phala Network is currently running its collators on Aura consensus. Aura is a simple block authoring engine that rotates the block producers among the registered collator candidates one by one.</p>
-<pre tabindex="0"><code>            Host              Session
+<pre><code>            Host              Session
             Api               Manager
  Collator &lt;===== [Session]  &lt;--------- [CollatorSelection]
    node            pallet                     pallet

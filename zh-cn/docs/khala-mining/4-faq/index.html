@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -23,7 +23,7 @@
  I. 增加信任等级 目前等级 1、2、3 会被当作同样的信任等级来看待，因此如果你只是2或3级，无需去再去提升等级。但如果你的等级为4或5，则可以参考以下建议来操作。与此同时，我们鼓励加入我们的 Telegram 或 Discord 群来讨论与分享你的经验。
 遇到提示 CONFIGURATION_NEEDED 或 CONFIGURATION_AND_SW_HARDENING_NEEDED  The EPID signature of the ISV enclave QUOTE has been verified correctly, but additional configuration of SGX platform may be needed (for further details see Advisory IDs). The platform has not been identified as compromised and thus it is not revoked. It is up to the Service Provider to decide whether or not to trust the content of the QUOTE, and whether or not to trust the platform performing the attestation to protect specific sensitive information.">
 
-<meta itemprop="wordCount" content="259">
+<meta itemprop="wordCount" content="280">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 FAQ"/>
 <meta name="twitter:description" content="陆续更新中。
@@ -335,6 +335,7 @@
         <li><a href="#遇到提示-group_out_of_date">遇到提示 GROUP_OUT_OF_DATE</a></li>
         <li><a href="#如何从para2切换到khala">如何从Para2切换到Khala</a></li>
         <li><a href="#基于snapshot数据同步时遇到unable-to-retrieve-header-and-parent-from-supplied-hash错误">基于snapshot数据同步时遇到“Unable to retrieve header and parent from supplied hash”错误</a></li>
+        <li><a href="#如何检查当前运行中节点的版本">如何检查当前运行中节点的版本</a></li>
       </ul>
     </li>
   </ul>
@@ -476,7 +477,12 @@ sudo phala update clean
 </code></pre></div><p>3 重新根据https://wiki.phala.network/zh-cn/docs/khala-mining/ 的指引下载并安装脚本</p>
 <h3 id="基于snapshot数据同步时遇到unable-to-retrieve-header-and-parent-from-supplied-hash错误">基于snapshot数据同步时遇到“Unable to retrieve header and parent from supplied hash”错误</h3>
 <p>请参照最新的<a href="/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">章节</a>解决这一问题。</p>
-
+<h3 id="如何检查当前运行中节点的版本">如何检查当前运行中节点的版本</h3>
+<p>如果默认的HTTP RPC端口9933已经打开，可以通过如下命令查询版本号：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -d <span class="s1">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;system_version&#34;, &#34;params&#34;: [], &#34;id&#34;: 83}&#39;</span> -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -X POST http://localhost:9933
+</code></pre></div><p>输出示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="ln">1</span><span class="p">{</span><span class="nt">&#34;jsonrpc&#34;</span><span class="p">:</span><span class="s2">&#34;2.0&#34;</span><span class="p">,</span><span class="nt">&#34;result&#34;</span><span class="p">:</span><span class="s2">&#34;0.1.5-250ab0b-x86_64-linux-gnu&#34;</span><span class="p">,</span><span class="nt">&#34;id&#34;</span><span class="p">:</span><span class="mi">83</span><span class="p">}</span>
+</code></pre></div>
     <div class="pager">
   <div class="pager_item prev">
     
