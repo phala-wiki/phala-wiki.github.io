@@ -638,7 +638,7 @@
 <p><img src="https://i.imgur.com/zKWAI1S.png" alt=""></p>
 <p>Each individual&rsquo;s $V$ is updated at every block:</p>
 <ul>
-<li>Increased by $\Delta V_t$ if the worker keeps mining</li>
+<li>Increased by $\Delta V_t$ if the worker keeps mining until it meets $V_{max}$</li>
 <li>Decreased by $w(V_t)$ if the miner got a payout</li>
 <li>Decreased according to the <em><strong>Slash Rules</strong></em> if the miner misbehaves</li>
 </ul>
@@ -699,10 +699,13 @@
 <li>$\gamma(V_t)h(V_t)$ represents a factor to compesate for accidental/unintentional slashing (ignored in simulated charts)</li>
 <li>$k_p = \min(\frac{P_t}{P}, 120\%)$, where $P_t$ is the instant performance score, and $P$ is the initial score</li>
 </ul>
+<p>The updated $V$ is capped by the maximum value $V_{max}$:</p>
+<p>$$ V_{t+1} = \min(V_t + \Delta V_t, V_{max}) $$</p>
 <p>Proposed parameters:</p>
 <ul>
 <li>$\rho^m_{\text{Khala}} = 1.00020$ (hourly)</li>
 <li>$\rho^m_{\text{Phala}} = 1.00020$ (hourly)</li>
+<li>$V_{max} = 300000$</li>
 </ul>
 <h3 id="payout-event">Payout event</h3>
 <p>In order to stay within the subsidy budget, at every block the budget is distributed proportionally based on the current <em><strong>Miner Shares</strong></em>. However, the payout is also capped to ensure the payout doesn&rsquo;t cause $V$ to drop lower than it in the last payout event:</p>
