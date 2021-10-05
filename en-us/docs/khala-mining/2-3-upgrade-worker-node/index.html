@@ -10,42 +10,38 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>2.3 Upgrade Worker Node | Phala Network Wiki</title><meta property="og:title" content="2.3 Upgrade Worker Node" />
-<meta property="og:description" content="To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
-1sudo phala update clean or with the data preserved
+<meta property="og:description" content="To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.
+1sudo phala stop The worker node can be updated in place:
 1sudo phala update Finally, restart your worker with:
-1sudo phala start " />
+1sudo phala start Update and wipe data This command will update the docker images AND removes all the saved data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="2.3 Upgrade Worker Node">
-<meta itemprop="description" content="To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
-1sudo phala update clean or with the data preserved
+<meta itemprop="description" content="To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.
+1sudo phala stop The worker node can be updated in place:
 1sudo phala update Finally, restart your worker with:
-1sudo phala start ">
+1sudo phala start Update and wipe data This command will update the docker images AND removes all the saved data.">
 
-<meta itemprop="wordCount" content="48">
+<meta itemprop="wordCount" content="162">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.3 Upgrade Worker Node"/>
-<meta name="twitter:description" content="To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
-1sudo phala update clean or with the data preserved
+<meta name="twitter:description" content="To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.
+1sudo phala stop The worker node can be updated in place:
 1sudo phala update Finally, restart your worker with:
-1sudo phala start "/>
+1sudo phala start Update and wipe data This command will update the docker images AND removes all the saved data."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
-1sudo phala update clean or with the data preserved
+  <meta name="description" content="To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.
+1sudo phala stop The worker node can be updated in place:
 1sudo phala update Finally, restart your worker with:
-1sudo phala start ">
+1sudo phala start Update and wipe data This command will update the docker images AND removes all the saved data.">
 
 
 
@@ -330,7 +326,15 @@
     <li><a href="#verify-worker-status">Verify Worker Status</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-23-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Upgrade Worker Node</a></h3><nav id="TableOfContents"></nav>
+        <h3 class="section_link active"><a id="docs-23-upgrade-worker-node" href="https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/">2.3 Upgrade Worker Node</a></h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#update-and-wipe-data">Update and wipe data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-24-use-console-to-manage-your-mining" href="https://wiki.phala.network/en-us/docs/khala-mining/2-4-console/">2.4 Use Console to Manage Your Mining</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#console-manual">Console Manual</a>
@@ -508,14 +512,20 @@
 </aside>
 
   <main class="content">
-    <h1>2.3 Upgrade Worker Node</h1><p>To upgrade your worker requires it to stop first.</p>
+    <h1>2.3 Upgrade Worker Node</h1><p>To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
-</code></pre></div><p>The worker node can be updated in a clean way which removes all the saved data</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update clean
-</code></pre></div><p>or with the data preserved</p>
+</code></pre></div><p>The worker node can be updated in place:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update
 </code></pre></div><p>Finally, restart your worker with:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+</code></pre></div><h3 id="update-and-wipe-data">Update and wipe data</h3>
+<p>This command will update the docker images AND removes all the saved data.</p>
+
+<div class="tip tip_warning">
+  This operation is dangerous because it removes the worker identity, causing the worker pubkey changed. When the identity key is lost, your miner will become unresponsive and bear the risk of slashing. You will need to manually stop the original worker, wait for a full cool down period, and then withdraw your stake and start over. This command also removes all the blockchain history, which takes a few days to sync. Unless you understand what you are doing, please don&rsquo;t run a clean update.
+</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update clean
 </code></pre></div>
     <div class="pager">
   <div class="pager_item prev">

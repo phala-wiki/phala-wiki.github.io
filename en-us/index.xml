@@ -274,11 +274,10 @@ Submit Candidacy Submitting your candidacy for the council requires a small bond
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/khala-mining/2-3-upgrade-worker-node/</guid>
-      <description>To upgrade your worker requires it to stop first.
-1sudo phala stop The worker node can be updated in a clean way which removes all the saved data
-1sudo phala update clean or with the data preserved
+      <description>To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.
+1sudo phala stop The worker node can be updated in place:
 1sudo phala update Finally, restart your worker with:
-1sudo phala start </description>
+1sudo phala start Update and wipe data This command will update the docker images AND removes all the saved data.</description>
     </item>
     
     <item>
