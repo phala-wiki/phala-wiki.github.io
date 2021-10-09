@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -510,7 +510,7 @@ This article shares a cheat way to accelerate your node syncing.">
   <main class="content">
     <h1>3.2 How to accelerate your node syncing if you haven&#39;t fully synced yet</h1><h2 id="problem">Problem</h2>
 <p>If your node is not up-to-date, a typical node log looks like</p>
-<pre><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
+<pre tabindex="0"><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
 2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
 </code></pre><p>and <code>best</code> is too far from <code>target</code>.</p>
 <p>This article shares a cheat way to accelerate your node syncing.</p>
@@ -518,7 +518,7 @@ This article shares a cheat way to accelerate your node syncing.">
 you don&rsquo;t need to do anything, just sit and wait.</p>
 <h2 id="download-latest-snapshot-updated-in-9182021">Download latest snapshot (Updated in 9/18/2021)</h2>
 <p>We recommend to use the BT download with <a href="/files/khala-snapshot-2021-09-17.torrent">torrent</a>. You can check the SHA256 checksum of the torrent</p>
-<pre><code>$ sha256sum khala-snapshot-2021-09-17.torrent
+<pre tabindex="0"><code>$ sha256sum khala-snapshot-2021-09-17.torrent
 595e448bfce90c6725de75d1f38462570d7142c41199375bc86d35f6809b733f  khala-snapshot-2021-09-17.torrent
 </code></pre><p>Extract when downloaded, you shall get <code>khala-node</code> folder.</p>
 <p>ATTENTION: snapshot archive is ~220GB, extract requires ~350GB, which means you require at least 600GB free disk space, if you don&rsquo;t have enough space, consider extract to external storage.</p>
@@ -537,7 +537,7 @@ you don&rsquo;t need to do anything, just sit and wait.</p>
 <h3 id="if-youre-a-solo-miner">If you&rsquo;re a solo miner</h3>
 <p>Delete all files and folders inside <code>/var/khala-dev-node</code>，move all files and folders from <code>khala-node</code> into <code>/var/khala-dev-node</code></p>
 <p>If you do things right, inside <code>/var/khala-dev-node</code> it looks like</p>
-<pre><code>$ ls /var/khala-dev-node
+<pre tabindex="0"><code>$ ls /var/khala-dev-node
 chains  polkadot
 </code></pre><h3 id="advanced-miner">Advanced miner</h3>
 <p>Find the node working directory, Delete all files and folders inside the directory, then move all files and folders from <code>khala-node</code> into it.</p>
