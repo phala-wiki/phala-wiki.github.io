@@ -23,7 +23,7 @@
  Overview In this tutorial, we&rsquo;re going to set up a development environment. We are going to deploy a full stack of the core blockchain and connect the Web UI to the blockchain. By the end of the tutorial, you will be able to:
  Send confidential Commands and Queries Get a ready-to-hack version of Phala Network for building your confidential DApps  A full Phala Network stack has three components, with an optional Javascript SDK.">
 
-<meta itemprop="wordCount" content="1549">
+<meta itemprop="wordCount" content="1692">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1.2 Run a Local Development Network"/>
 <meta name="twitter:description" content="Basic understanding of Linux shell and compilation is necessary to follow this tutorial.
@@ -529,10 +529,22 @@
 <p>In this tutorial, we assume the operating system is <em>Ubuntu 20.04</em>. Though not tested yet, it should work with Ubuntu 18.04 out-of-box. Other Linux distributions should also work, but the instructions or commands may vary.</p>
 <p>It&rsquo;s required to have at least 4 cores (or the compilation can take forever) and 8GB RAM to build the project including the core blockchain and the Web UI.</p>
 <p>Follow the commands below to prepare the environment. Some can be skipped if already installed.</p>
+<p>Instructions for (but not limited to) a relatively clean Windows11/WSL2 environment (Ubuntu 20.04LTS, and git correctly installed) are preceded by the mention &ldquo;For WSL2&rdquo;</p>
 <ul>
 <li>
+<p>Install WSL2 (Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11)</p>
+<p>More infos at: <a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
+<p>in PowerShell or Windows Command Prompt</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --install
+</code></pre></div><p>Ubuntu is the OS installed by default. Restart your machine, and in Powershell set WSL 2 as your default by doing the following</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --set-default-version <span class="m">2</span>
+</code></pre></div></li>
+<li>
 <p>Install the system level dependencies</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
+<p>For WSL2:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -fsSL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<span class="ln">2</span>sudo apt install ca-certificates
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
 <span class="ln">2</span>sudo apt install -y build-essential pkg-config ca-certificates git autoconf libtool libssl-dev libclang-10-dev clang-10
 </code></pre></div><p>Ensure <code>clang</code> exists in your $PATH by executing</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>which clang
@@ -599,10 +611,20 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
 <span class="ln">3</span>cargo build --release
-<span class="ln">4</span>
-<span class="ln">5</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
-<span class="ln">6</span><span class="nb">cd</span> ./standalone/pruntime/
-<span class="ln">7</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
+</code></pre></div><p>For WSL2:
+You might experience troubles with libssl-dev when trying to build the core blockchain.
+if this happens:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>dpkg -L libssl-dev <span class="p">|</span> grep lib
+<span class="ln">2</span>dpkg -L libssl-dev <span class="p">|</span> grep include
+<span class="ln">3</span><span class="nb">export</span> <span class="nv">OPENSSL_LIB_DIR</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/
+<span class="ln">4</span><span class="nb">export</span> <span class="nv">OPENSSL_INCLUDE_DIR</span><span class="o">=</span>/usr/include/openssl/
+</code></pre></div><p>and try to build again:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<span class="ln">2</span>cargo build --release
+</code></pre></div><p>Finally you can proceed with pruntime:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
+<span class="ln">2</span><span class="nb">cd</span> ./standalone/pruntime/
+<span class="ln">3</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
 </code></pre></div><p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
 <ul>
 <li><code>./target/release/phala-node</code>: The Substrate node</li>
@@ -618,7 +640,7 @@
 <span class="ln"> 2</span>./target/release/phala-node --dev --tmp
 <span class="ln"> 3</span>
 <span class="ln"> 4</span><span class="c1"># In terminal window 2: pruntime</span>
-<span class="ln"> 5</span><span class="nb">cd</span> pruntime/bin
+<span class="ln"> 5</span><span class="nb">cd</span> standalone/pruntime/bin
 <span class="ln"> 6</span>./app -c <span class="m">0</span>
 <span class="ln"> 7</span><span class="nb">cd</span> ../..
 <span class="ln"> 8</span>
