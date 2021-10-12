@@ -471,6 +471,18 @@
                 href="https://wiki.phala.network/en-us/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/"
                 />
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/governance/4-treasury/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/governance/4-treasury/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/governance/4-treasury/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/categories/</loc>
     <xhtml:link
                 rel="alternate"

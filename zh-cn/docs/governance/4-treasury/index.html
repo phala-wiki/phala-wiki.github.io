@@ -9,87 +9,75 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>Khala 链上身份 | Phala Network 百科</title><meta property="og:title" content="Khala 链上身份" />
-<meta property="og:description" content="Phala Network 提供了一个身份系统，允许参与者将个人信息添加到他们的链上账户，然后要求身份裁判验证这些信息。在你的身份被添加后，可以应用到Phala或Khala的很多应用场景中，比如在Secure Worker 挖矿的场景中，这对吸引委托人给你投票将起到一定的信任作用。
-设置链上身份 用户可以通过注册默认字段（例如真实姓名、显示名称、网站、Twitter 昵称、Riot 昵称等）以及一些他们想要证明的额外自定义字段来设置身份（请参阅身份验证）
-用户必须在绑定预留资金，才能将他们对于每个法定名称以外的字段信息存储在链上：identity_reserve_funds 和 identity_field_funds 这些资金是锁定而不是消耗——当身份被清除时，它们会被退回。
-金额数量也可以通过 polkadot.js/apps 上的 Chain state constants 功能查询来读取。
-首先选择identity 作为 selected constant query.
-然后在右侧可以通过单击栏末尾的“加号”图标来选择要查看的参数并将它们添加到网页上显示。
-每个字段最多可存储 32 个字节的信息，因此数据必须小于该值。通过 Extrinsics UI 手动输入数据时，UTF8 to bytes 转换器可以提供帮助。
-添加身份信息的最简单方法是单击帐户旁边的齿轮图标，然后选择设置链上身份。
-出现的弹窗会提供一些默认身份信息的选项。
-要添加默认字段之外的自定义字段，请使用 Extrinsics UI 功能。首先单击添加项目并添加你喜欢的任何字段名称来提交原始交易信息。下面的示例添加了一个字段 steam，它是用户的 Steam 昵称。第一个值是以字节为单位的字段名称（“steam”），第二个是以字节为单位的帐户名称（“theswader”）。你还必须提供显示名称，否则，如果我们在仍然选择无选项的情况下提交它，身份模块会认为它已被删除。也就是说，每次对字段进行更改时，都需要重新提交整个字段集：写入操作始终是覆盖，而不是追加。
-请注意任何自定义的身份字段在UI上都不是默认显示的。
-此类自定义身份信息的呈现最终取决于 UI/dapp 开发者。在 PolkadotJS 上，团队倾向于只显示官方字段。如果要检查自定义值是否仍然存储，请使用 Chain State UI 查询活跃帐户的身份信息：
-然后由你自己的 UI 或 dapp 来随心所欲地处理这些数据。数据仍可通过 Polkadot API 进行查询，因此您不必依赖 PolkadotJS UI。
-对于高级玩家，你最多可以定义100个身份字段。
-格式提醒 请注意以下提醒：
-因为字段支持不同的格式，从原始字节到各种散列，UI 无法告诉如何对遇到的给定字段进行编码。 PolkadotJS UI 当前将它遇到的原始字节编码为 UTF8 字符串，这使得这些值在屏幕上可读。但是，鉴于对可以放入这些字段的值没有限制，不同的 UI 可能会将它们解释为，例如 IPFS 哈希或编码位图。这意味着任何存储为原始字节的字段都将无法被该特定 UI 读取。随着格式标准的具体化，使用体验将变得更容易，但就目前而言，显示用户信息的每个自定义实现都可能必须对采用的方法做出主动操作，或者支持多种格式，然后尝试多种编码，直到输出内容合理为止." />
+<title>4 Khala国库 | Phala Network 百科</title><meta property="og:title" content="4 Khala国库" />
+<meta property="og:description" content="国库支出分类 国库支出提案: 国库资金可以用于资助社区成员提交的支出提案。这些提案需要得到理事会的批准，其目标是开发出能够推动网络、维持基础设施部署、安全运营和营销活动等的想法。
+小费: 任何持有PHA的用户都可以提出小费提议，并得到理事会成员的认可。小费没有固定的金额价值：最终的金额价值是根据理事会发布的所有小费的中位数来决定的。
+国库赏金机制 通过将支出提案的策展活动委托给一位称为管理人的专家来实现。
+国库 国库是通过交易手续费、惩罚、Secure Worker 挖矿 (20%) 等方式积累的一部分资金。用户可以通过提出“支出提案”来获取国库资金，如果该提案获得理事会的批准，分发前会进入等待期，此等待期称为预算期，其持续时间由治理机制约束，当前默认设置为 1 天。国库试图在不耗尽资金的情况下在队列中花费尽可能多的提案。
+如果国库结束一个预算期而没有花光所有的资金，它就会损失一部分资金——从而造成通缩压力。该百分比目前在 Phala 上为 0%。
+当提案人希望从国库中获取资金时，他们必须质押至少为提案资金的5%的存款（其他情况请参见下文）。如果提案被拒绝，这笔押金将被罚没，如果提案被批准，将退还给提案人。
+提案可能包括（但不限于）：
+ 基础设施部署和持续的运维。 网络安全运营（监控服务、持续审计）。 生态系统建设（与友好链的合作）。 营销活动（广告、付费功能、合作）。 社区活动和对外活动（聚会、披萨派对、黑客空间）。 软件开发（钱包和钱包集成、客户端和客户端升级）。  国库最终由 理事会 控制，资金的使用方式取决于他们的判断。
+国库的资金分别来自于以下的来源：
+ 罚没：当Secure矿工或守门人因任何原因被罚没时，惩罚金额将被发送到国库，随之发送的还有将发送给报告验证人的实体（另一个验证人）的奖励。 奖励来自罚没资金，并因违规原因和和报告人数而异。 交易手续费：每个区块的交易手续费有一部分上缴国库，其余部分上缴区块生产者。 Secure Worker Mining reward: 70%的PHA token将被用于Secure Worker Mining，且跟随Khala和Phala的网络进度，每个区块产生的挖矿奖励的20%将被用于资助国库。  创建国库支出提案 提案人必须存入提案金额的 5% 或 1 PHA（以较高价者为准）作为防止垃圾提案措施。 如果提案被拒绝，则此金额将被销毁，否则将予以退还。 这个质押数值受到治理 的约束，因此将来可能会发生变化。
+请注意，用户无法在提交支出提案后撤消。 理事会将选择接受或拒绝该提案，如果该提议被拒绝，则质押资金被烧毁。
+公布提案 为了尽量减少链上的存储，提案不包含具体文字信息。 当用户提交提案时，他们需要找到一种链下方式来解释他的提案。 大多数讨论发生在以下平台上：
+ 建议财政类提案先在Phala论坛发布文本内容，说明细节。不发布文本内容的将不会被作为严肃提案讨论。 将论坛的提案内容在 Phala Discord #Proposal 频道 或 Phala 论坛 中传播，以便更多的社区成员讨论 。  传播提案的解释最终由提案人决定 - 推荐的方式是使用官方 Discord 频道，如 Phala Discord #Proposal 频道。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/khala-user/set-up-identity/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/governance/4-treasury/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network 百科" />
 
-<meta itemprop="name" content="Khala 链上身份">
-<meta itemprop="description" content="Phala Network 提供了一个身份系统，允许参与者将个人信息添加到他们的链上账户，然后要求身份裁判验证这些信息。在你的身份被添加后，可以应用到Phala或Khala的很多应用场景中，比如在Secure Worker 挖矿的场景中，这对吸引委托人给你投票将起到一定的信任作用。
-设置链上身份 用户可以通过注册默认字段（例如真实姓名、显示名称、网站、Twitter 昵称、Riot 昵称等）以及一些他们想要证明的额外自定义字段来设置身份（请参阅身份验证）
-用户必须在绑定预留资金，才能将他们对于每个法定名称以外的字段信息存储在链上：identity_reserve_funds 和 identity_field_funds 这些资金是锁定而不是消耗——当身份被清除时，它们会被退回。
-金额数量也可以通过 polkadot.js/apps 上的 Chain state constants 功能查询来读取。
-首先选择identity 作为 selected constant query.
-然后在右侧可以通过单击栏末尾的“加号”图标来选择要查看的参数并将它们添加到网页上显示。
-每个字段最多可存储 32 个字节的信息，因此数据必须小于该值。通过 Extrinsics UI 手动输入数据时，UTF8 to bytes 转换器可以提供帮助。
-添加身份信息的最简单方法是单击帐户旁边的齿轮图标，然后选择设置链上身份。
-出现的弹窗会提供一些默认身份信息的选项。
-要添加默认字段之外的自定义字段，请使用 Extrinsics UI 功能。首先单击添加项目并添加你喜欢的任何字段名称来提交原始交易信息。下面的示例添加了一个字段 steam，它是用户的 Steam 昵称。第一个值是以字节为单位的字段名称（“steam”），第二个是以字节为单位的帐户名称（“theswader”）。你还必须提供显示名称，否则，如果我们在仍然选择无选项的情况下提交它，身份模块会认为它已被删除。也就是说，每次对字段进行更改时，都需要重新提交整个字段集：写入操作始终是覆盖，而不是追加。
-请注意任何自定义的身份字段在UI上都不是默认显示的。
-此类自定义身份信息的呈现最终取决于 UI/dapp 开发者。在 PolkadotJS 上，团队倾向于只显示官方字段。如果要检查自定义值是否仍然存储，请使用 Chain State UI 查询活跃帐户的身份信息：
-然后由你自己的 UI 或 dapp 来随心所欲地处理这些数据。数据仍可通过 Polkadot API 进行查询，因此您不必依赖 PolkadotJS UI。
-对于高级玩家，你最多可以定义100个身份字段。
-格式提醒 请注意以下提醒：
-因为字段支持不同的格式，从原始字节到各种散列，UI 无法告诉如何对遇到的给定字段进行编码。 PolkadotJS UI 当前将它遇到的原始字节编码为 UTF8 字符串，这使得这些值在屏幕上可读。但是，鉴于对可以放入这些字段的值没有限制，不同的 UI 可能会将它们解释为，例如 IPFS 哈希或编码位图。这意味着任何存储为原始字节的字段都将无法被该特定 UI 读取。随着格式标准的具体化，使用体验将变得更容易，但就目前而言，显示用户信息的每个自定义实现都可能必须对采用的方法做出主动操作，或者支持多种格式，然后尝试多种编码，直到输出内容合理为止.">
+<meta itemprop="name" content="4 Khala国库">
+<meta itemprop="description" content="国库支出分类 国库支出提案: 国库资金可以用于资助社区成员提交的支出提案。这些提案需要得到理事会的批准，其目标是开发出能够推动网络、维持基础设施部署、安全运营和营销活动等的想法。
+小费: 任何持有PHA的用户都可以提出小费提议，并得到理事会成员的认可。小费没有固定的金额价值：最终的金额价值是根据理事会发布的所有小费的中位数来决定的。
+国库赏金机制 通过将支出提案的策展活动委托给一位称为管理人的专家来实现。
+国库 国库是通过交易手续费、惩罚、Secure Worker 挖矿 (20%) 等方式积累的一部分资金。用户可以通过提出“支出提案”来获取国库资金，如果该提案获得理事会的批准，分发前会进入等待期，此等待期称为预算期，其持续时间由治理机制约束，当前默认设置为 1 天。国库试图在不耗尽资金的情况下在队列中花费尽可能多的提案。
+如果国库结束一个预算期而没有花光所有的资金，它就会损失一部分资金——从而造成通缩压力。该百分比目前在 Phala 上为 0%。
+当提案人希望从国库中获取资金时，他们必须质押至少为提案资金的5%的存款（其他情况请参见下文）。如果提案被拒绝，这笔押金将被罚没，如果提案被批准，将退还给提案人。
+提案可能包括（但不限于）：
+ 基础设施部署和持续的运维。 网络安全运营（监控服务、持续审计）。 生态系统建设（与友好链的合作）。 营销活动（广告、付费功能、合作）。 社区活动和对外活动（聚会、披萨派对、黑客空间）。 软件开发（钱包和钱包集成、客户端和客户端升级）。  国库最终由 理事会 控制，资金的使用方式取决于他们的判断。
+国库的资金分别来自于以下的来源：
+ 罚没：当Secure矿工或守门人因任何原因被罚没时，惩罚金额将被发送到国库，随之发送的还有将发送给报告验证人的实体（另一个验证人）的奖励。 奖励来自罚没资金，并因违规原因和和报告人数而异。 交易手续费：每个区块的交易手续费有一部分上缴国库，其余部分上缴区块生产者。 Secure Worker Mining reward: 70%的PHA token将被用于Secure Worker Mining，且跟随Khala和Phala的网络进度，每个区块产生的挖矿奖励的20%将被用于资助国库。  创建国库支出提案 提案人必须存入提案金额的 5% 或 1 PHA（以较高价者为准）作为防止垃圾提案措施。 如果提案被拒绝，则此金额将被销毁，否则将予以退还。 这个质押数值受到治理 的约束，因此将来可能会发生变化。
+请注意，用户无法在提交支出提案后撤消。 理事会将选择接受或拒绝该提案，如果该提议被拒绝，则质押资金被烧毁。
+公布提案 为了尽量减少链上的存储，提案不包含具体文字信息。 当用户提交提案时，他们需要找到一种链下方式来解释他的提案。 大多数讨论发生在以下平台上：
+ 建议财政类提案先在Phala论坛发布文本内容，说明细节。不发布文本内容的将不会被作为严肃提案讨论。 将论坛的提案内容在 Phala Discord #Proposal 频道 或 Phala 论坛 中传播，以便更多的社区成员讨论 。  传播提案的解释最终由提案人决定 - 推荐的方式是使用官方 Discord 频道，如 Phala Discord #Proposal 频道。">
 
-<meta itemprop="wordCount" content="197">
+<meta itemprop="wordCount" content="191">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Khala 链上身份"/>
-<meta name="twitter:description" content="Phala Network 提供了一个身份系统，允许参与者将个人信息添加到他们的链上账户，然后要求身份裁判验证这些信息。在你的身份被添加后，可以应用到Phala或Khala的很多应用场景中，比如在Secure Worker 挖矿的场景中，这对吸引委托人给你投票将起到一定的信任作用。
-设置链上身份 用户可以通过注册默认字段（例如真实姓名、显示名称、网站、Twitter 昵称、Riot 昵称等）以及一些他们想要证明的额外自定义字段来设置身份（请参阅身份验证）
-用户必须在绑定预留资金，才能将他们对于每个法定名称以外的字段信息存储在链上：identity_reserve_funds 和 identity_field_funds 这些资金是锁定而不是消耗——当身份被清除时，它们会被退回。
-金额数量也可以通过 polkadot.js/apps 上的 Chain state constants 功能查询来读取。
-首先选择identity 作为 selected constant query.
-然后在右侧可以通过单击栏末尾的“加号”图标来选择要查看的参数并将它们添加到网页上显示。
-每个字段最多可存储 32 个字节的信息，因此数据必须小于该值。通过 Extrinsics UI 手动输入数据时，UTF8 to bytes 转换器可以提供帮助。
-添加身份信息的最简单方法是单击帐户旁边的齿轮图标，然后选择设置链上身份。
-出现的弹窗会提供一些默认身份信息的选项。
-要添加默认字段之外的自定义字段，请使用 Extrinsics UI 功能。首先单击添加项目并添加你喜欢的任何字段名称来提交原始交易信息。下面的示例添加了一个字段 steam，它是用户的 Steam 昵称。第一个值是以字节为单位的字段名称（“steam”），第二个是以字节为单位的帐户名称（“theswader”）。你还必须提供显示名称，否则，如果我们在仍然选择无选项的情况下提交它，身份模块会认为它已被删除。也就是说，每次对字段进行更改时，都需要重新提交整个字段集：写入操作始终是覆盖，而不是追加。
-请注意任何自定义的身份字段在UI上都不是默认显示的。
-此类自定义身份信息的呈现最终取决于 UI/dapp 开发者。在 PolkadotJS 上，团队倾向于只显示官方字段。如果要检查自定义值是否仍然存储，请使用 Chain State UI 查询活跃帐户的身份信息：
-然后由你自己的 UI 或 dapp 来随心所欲地处理这些数据。数据仍可通过 Polkadot API 进行查询，因此您不必依赖 PolkadotJS UI。
-对于高级玩家，你最多可以定义100个身份字段。
-格式提醒 请注意以下提醒：
-因为字段支持不同的格式，从原始字节到各种散列，UI 无法告诉如何对遇到的给定字段进行编码。 PolkadotJS UI 当前将它遇到的原始字节编码为 UTF8 字符串，这使得这些值在屏幕上可读。但是，鉴于对可以放入这些字段的值没有限制，不同的 UI 可能会将它们解释为，例如 IPFS 哈希或编码位图。这意味着任何存储为原始字节的字段都将无法被该特定 UI 读取。随着格式标准的具体化，使用体验将变得更容易，但就目前而言，显示用户信息的每个自定义实现都可能必须对采用的方法做出主动操作，或者支持多种格式，然后尝试多种编码，直到输出内容合理为止."/>
+<meta name="twitter:title" content="4 Khala国库"/>
+<meta name="twitter:description" content="国库支出分类 国库支出提案: 国库资金可以用于资助社区成员提交的支出提案。这些提案需要得到理事会的批准，其目标是开发出能够推动网络、维持基础设施部署、安全运营和营销活动等的想法。
+小费: 任何持有PHA的用户都可以提出小费提议，并得到理事会成员的认可。小费没有固定的金额价值：最终的金额价值是根据理事会发布的所有小费的中位数来决定的。
+国库赏金机制 通过将支出提案的策展活动委托给一位称为管理人的专家来实现。
+国库 国库是通过交易手续费、惩罚、Secure Worker 挖矿 (20%) 等方式积累的一部分资金。用户可以通过提出“支出提案”来获取国库资金，如果该提案获得理事会的批准，分发前会进入等待期，此等待期称为预算期，其持续时间由治理机制约束，当前默认设置为 1 天。国库试图在不耗尽资金的情况下在队列中花费尽可能多的提案。
+如果国库结束一个预算期而没有花光所有的资金，它就会损失一部分资金——从而造成通缩压力。该百分比目前在 Phala 上为 0%。
+当提案人希望从国库中获取资金时，他们必须质押至少为提案资金的5%的存款（其他情况请参见下文）。如果提案被拒绝，这笔押金将被罚没，如果提案被批准，将退还给提案人。
+提案可能包括（但不限于）：
+ 基础设施部署和持续的运维。 网络安全运营（监控服务、持续审计）。 生态系统建设（与友好链的合作）。 营销活动（广告、付费功能、合作）。 社区活动和对外活动（聚会、披萨派对、黑客空间）。 软件开发（钱包和钱包集成、客户端和客户端升级）。  国库最终由 理事会 控制，资金的使用方式取决于他们的判断。
+国库的资金分别来自于以下的来源：
+ 罚没：当Secure矿工或守门人因任何原因被罚没时，惩罚金额将被发送到国库，随之发送的还有将发送给报告验证人的实体（另一个验证人）的奖励。 奖励来自罚没资金，并因违规原因和和报告人数而异。 交易手续费：每个区块的交易手续费有一部分上缴国库，其余部分上缴区块生产者。 Secure Worker Mining reward: 70%的PHA token将被用于Secure Worker Mining，且跟随Khala和Phala的网络进度，每个区块产生的挖矿奖励的20%将被用于资助国库。  创建国库支出提案 提案人必须存入提案金额的 5% 或 1 PHA（以较高价者为准）作为防止垃圾提案措施。 如果提案被拒绝，则此金额将被销毁，否则将予以退还。 这个质押数值受到治理 的约束，因此将来可能会发生变化。
+请注意，用户无法在提交支出提案后撤消。 理事会将选择接受或拒绝该提案，如果该提议被拒绝，则质押资金被烧毁。
+公布提案 为了尽量减少链上的存储，提案不包含具体文字信息。 当用户提交提案时，他们需要找到一种链下方式来解释他的提案。 大多数讨论发生在以下平台上：
+ 建议财政类提案先在Phala论坛发布文本内容，说明细节。不发布文本内容的将不会被作为严肃提案讨论。 将论坛的提案内容在 Phala Discord #Proposal 频道 或 Phala 论坛 中传播，以便更多的社区成员讨论 。  传播提案的解释最终由提案人决定 - 推荐的方式是使用官方 Discord 频道，如 Phala Discord #Proposal 频道。"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="Phala Network 提供了一个身份系统，允许参与者将个人信息添加到他们的链上账户，然后要求身份裁判验证这些信息。在你的身份被添加后，可以应用到Phala或Khala的很多应用场景中，比如在Secure Worker 挖矿的场景中，这对吸引委托人给你投票将起到一定的信任作用。
-设置链上身份 用户可以通过注册默认字段（例如真实姓名、显示名称、网站、Twitter 昵称、Riot 昵称等）以及一些他们想要证明的额外自定义字段来设置身份（请参阅身份验证）
-用户必须在绑定预留资金，才能将他们对于每个法定名称以外的字段信息存储在链上：identity_reserve_funds 和 identity_field_funds 这些资金是锁定而不是消耗——当身份被清除时，它们会被退回。
-金额数量也可以通过 polkadot.js/apps 上的 Chain state constants 功能查询来读取。
-首先选择identity 作为 selected constant query.
-然后在右侧可以通过单击栏末尾的“加号”图标来选择要查看的参数并将它们添加到网页上显示。
-每个字段最多可存储 32 个字节的信息，因此数据必须小于该值。通过 Extrinsics UI 手动输入数据时，UTF8 to bytes 转换器可以提供帮助。
-添加身份信息的最简单方法是单击帐户旁边的齿轮图标，然后选择设置链上身份。
-出现的弹窗会提供一些默认身份信息的选项。
-要添加默认字段之外的自定义字段，请使用 Extrinsics UI 功能。首先单击添加项目并添加你喜欢的任何字段名称来提交原始交易信息。下面的示例添加了一个字段 steam，它是用户的 Steam 昵称。第一个值是以字节为单位的字段名称（“steam”），第二个是以字节为单位的帐户名称（“theswader”）。你还必须提供显示名称，否则，如果我们在仍然选择无选项的情况下提交它，身份模块会认为它已被删除。也就是说，每次对字段进行更改时，都需要重新提交整个字段集：写入操作始终是覆盖，而不是追加。
-请注意任何自定义的身份字段在UI上都不是默认显示的。
-此类自定义身份信息的呈现最终取决于 UI/dapp 开发者。在 PolkadotJS 上，团队倾向于只显示官方字段。如果要检查自定义值是否仍然存储，请使用 Chain State UI 查询活跃帐户的身份信息：
-然后由你自己的 UI 或 dapp 来随心所欲地处理这些数据。数据仍可通过 Polkadot API 进行查询，因此您不必依赖 PolkadotJS UI。
-对于高级玩家，你最多可以定义100个身份字段。
-格式提醒 请注意以下提醒：
-因为字段支持不同的格式，从原始字节到各种散列，UI 无法告诉如何对遇到的给定字段进行编码。 PolkadotJS UI 当前将它遇到的原始字节编码为 UTF8 字符串，这使得这些值在屏幕上可读。但是，鉴于对可以放入这些字段的值没有限制，不同的 UI 可能会将它们解释为，例如 IPFS 哈希或编码位图。这意味着任何存储为原始字节的字段都将无法被该特定 UI 读取。随着格式标准的具体化，使用体验将变得更容易，但就目前而言，显示用户信息的每个自定义实现都可能必须对采用的方法做出主动操作，或者支持多种格式，然后尝试多种编码，直到输出内容合理为止.">
+  <meta name="description" content="国库支出分类 国库支出提案: 国库资金可以用于资助社区成员提交的支出提案。这些提案需要得到理事会的批准，其目标是开发出能够推动网络、维持基础设施部署、安全运营和营销活动等的想法。
+小费: 任何持有PHA的用户都可以提出小费提议，并得到理事会成员的认可。小费没有固定的金额价值：最终的金额价值是根据理事会发布的所有小费的中位数来决定的。
+国库赏金机制 通过将支出提案的策展活动委托给一位称为管理人的专家来实现。
+国库 国库是通过交易手续费、惩罚、Secure Worker 挖矿 (20%) 等方式积累的一部分资金。用户可以通过提出“支出提案”来获取国库资金，如果该提案获得理事会的批准，分发前会进入等待期，此等待期称为预算期，其持续时间由治理机制约束，当前默认设置为 1 天。国库试图在不耗尽资金的情况下在队列中花费尽可能多的提案。
+如果国库结束一个预算期而没有花光所有的资金，它就会损失一部分资金——从而造成通缩压力。该百分比目前在 Phala 上为 0%。
+当提案人希望从国库中获取资金时，他们必须质押至少为提案资金的5%的存款（其他情况请参见下文）。如果提案被拒绝，这笔押金将被罚没，如果提案被批准，将退还给提案人。
+提案可能包括（但不限于）：
+ 基础设施部署和持续的运维。 网络安全运营（监控服务、持续审计）。 生态系统建设（与友好链的合作）。 营销活动（广告、付费功能、合作）。 社区活动和对外活动（聚会、披萨派对、黑客空间）。 软件开发（钱包和钱包集成、客户端和客户端升级）。  国库最终由 理事会 控制，资金的使用方式取决于他们的判断。
+国库的资金分别来自于以下的来源：
+ 罚没：当Secure矿工或守门人因任何原因被罚没时，惩罚金额将被发送到国库，随之发送的还有将发送给报告验证人的实体（另一个验证人）的奖励。 奖励来自罚没资金，并因违规原因和和报告人数而异。 交易手续费：每个区块的交易手续费有一部分上缴国库，其余部分上缴区块生产者。 Secure Worker Mining reward: 70%的PHA token将被用于Secure Worker Mining，且跟随Khala和Phala的网络进度，每个区块产生的挖矿奖励的20%将被用于资助国库。  创建国库支出提案 提案人必须存入提案金额的 5% 或 1 PHA（以较高价者为准）作为防止垃圾提案措施。 如果提案被拒绝，则此金额将被销毁，否则将予以退还。 这个质押数值受到治理 的约束，因此将来可能会发生变化。
+请注意，用户无法在提交支出提案后撤消。 理事会将选择接受或拒绝该提案，如果该提议被拒绝，则质押资金被烧毁。
+公布提案 为了尽量减少链上的存储，提案不包含具体文字信息。 当用户提交提案时，他们需要找到一种链下方式来解释他的提案。 大多数讨论发生在以下平台上：
+ 建议财政类提案先在Phala论坛发布文本内容，说明细节。不发布文本内容的将不会被作为严肃提案讨论。 将论坛的提案内容在 Phala Discord #Proposal 频道 或 Phala 论坛 中传播，以便更多的社区成员讨论 。  传播提案的解释最终由提案人决定 - 推荐的方式是使用官方 Discord 频道，如 Phala Discord #Proposal 频道。">
 
 
 
@@ -239,7 +227,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-4-khala国库" href="https://wiki.phala.network/zh-cn/docs/governance/4-treasury/">4 Khala国库</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-4-khala国库" href="https://wiki.phala.network/zh-cn/docs/governance/4-treasury/">4 Khala国库</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -296,7 +284,7 @@
     <li><a href="#导入账户">导入账户</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-khala-链上身份" href="https://wiki.phala.network/zh-cn/docs/khala-user/set-up-identity/">Khala 链上身份</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-khala-链上身份" href="https://wiki.phala.network/zh-cn/docs/khala-user/set-up-identity/">Khala 链上身份</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#设置链上身份">设置链上身份</a>
       <ul>
@@ -533,100 +521,101 @@
 </aside>
 
   <main class="content">
-    <h1>Khala 链上身份</h1><p>Phala Network 提供了一个身份系统，允许参与者将个人信息添加到他们的链上账户，然后要求<a href="#%E8%BA%AB%E4%BB%BD%E8%A3%81%E5%88%A4">身份裁判</a>验证这些信息。在你的身份被添加后，可以应用到Phala或Khala的很多应用场景中，比如在Secure Worker 挖矿的场景中，这对吸引委托人给你投票将起到一定的信任作用。</p>
-<p><img src="/images/docs/khala-user/identity-0.png" alt=""></p>
-<h2 id="设置链上身份">设置链上身份</h2>
-<p>用户可以通过注册默认字段（例如真实姓名、显示名称、网站、Twitter 昵称、Riot 昵称等）以及一些他们想要证明的额外自定义字段来设置身份（请参阅<a href="#%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81">身份验证</a>）</p>
-<p>用户必须在绑定预留资金，才能将他们对于每个法定名称以外的字段信息存储在链上：<code>identity_reserve_funds</code> 和 <code>identity_field_funds</code>
-这些资金是锁定而不是消耗——当身份被清除时，它们会被退回。</p>
-<p>金额数量也可以通过 polkadot.js/apps 上的 <a href="https://polkadot.js.org/apps/#/chainstate/constants">Chain state constants</a> 功能查询来读取。</p>
-<p>首先选择<code>identity</code> 作为 <code>selected constant query</code>.</p>
-<p>然后在右侧可以通过单击栏末尾的“加号”图标来选择要查看的参数并将它们添加到网页上显示。</p>
-<p>每个字段最多可存储 32 个字节的信息，因此数据必须小于该值。通过 <a href="https://polkadot.js.org/apps/#/extrinsics">Extrinsics UI</a> 手动输入数据时，<a href="https://onlineutf8tools.com/convert-utf8-to-bytes">UTF8 to bytes</a> 转换器可以提供帮助。</p>
-<p>添加身份信息的最简单方法是单击帐户旁边的齿轮图标，然后选择<code>设置链上身份</code>。</p>
-<p><img src="/images/docs/khala-user/identity-1.png" alt=""></p>
-<p>出现的弹窗会提供一些默认身份信息的选项。</p>
-<p><img src="/images/docs/khala-user/identity-2.png" alt=""></p>
-<p>要添加默认字段之外的自定义字段，请使用 Extrinsics UI 功能。首先单击<code>添加项目</code>并添加你喜欢的任何字段名称来提交原始交易信息。下面的示例添加了一个字段 <code>steam</code>，它是用户的 <a href="https://store.steampowered.com">Steam</a> 昵称。第一个值是以字节为单位的字段名称（“steam”），第二个是以字节为单位的帐户名称（“theswader”）。你还必须提供显示名称，否则，如果我们在仍然选择<code>无</code>选项的情况下提交它，身份模块会认为它已被删除。也就是说，每次对字段进行更改时，都需要重新提交整个字段集：写入操作始终是<code>覆盖</code>，而不是<code>追加</code>。</p>
-<p><img src="/images/docs/khala-user/identity-3.png" alt=""></p>
-<p>请注意任何自定义的身份字段在UI上都不是默认显示的。</p>
-<p>此类自定义身份信息的呈现最终取决于 UI/dapp 开发者。在 PolkadotJS 上，团队倾向于只显示官方字段。如果要检查自定义值是否仍然存储，请使用 <a href="https://polkadot.js.org/apps/#/chainstate">Chain State UI</a> 查询活跃帐户的身份信息：</p>
-<p><img src="/images/docs/khala-user/identity-4.png" alt=""></p>
-<p>然后由你自己的 UI 或 dapp 来随心所欲地处理这些数据。数据仍可通过 Polkadot API 进行查询，因此您不必依赖 PolkadotJS UI。</p>
-<p>对于高级玩家，你最多可以定义100个身份字段。</p>
-<h3 id="格式提醒">格式提醒</h3>
-<p>请注意以下提醒：</p>
-<p>因为字段支持不同的格式，从原始字节到各种散列，UI 无法告诉如何对遇到的给定字段进行编码。 PolkadotJS UI 当前将它遇到的原始字节编码为 UTF8 字符串，这使得这些值在屏幕上可读。但是，鉴于对可以放入这些字段的值没有限制，不同的 UI 可能会将它们解释为，例如 IPFS 哈希或编码位图。这意味着任何存储为原始字节的字段都将无法被该特定 UI 读取。随着格式标准的具体化，使用体验将变得更容易，但就目前而言，显示用户信息的每个自定义实现都可能必须对采用的方法做出主动操作，或者支持多种格式，然后尝试多种编码，直到输出内容合理为止.</p>
-<h2 id="身份验证">身份验证</h2>
-<p>用户在链上提交身份信息后，可以向身份裁判请求判断。用户在链上声明自己愿意为判断支付的最高费用，比这个价格低的身份裁判可以提供身份验证。</p>
-<p>当身份裁判提供身份验证时，他们可以选择最多六档置信度：</p>
+    <h1>4 Khala国库</h1><h1 id="国库支出分类">国库支出分类</h1>
+<h3 id="国库支出提案">国库支出提案:</h3>
+<p>国库资金可以用于资助社区成员提交的支出提案。这些提案需要得到理事会的批准，其目标是开发出能够推动网络、维持基础设施部署、安全运营和营销活动等的想法。</p>
+<h3 id="小费">小费:</h3>
+<p>任何持有PHA的用户都可以提出小费提议，并得到理事会成员的认可。小费没有固定的金额价值：最终的金额价值是根据理事会发布的所有小费的中位数来决定的。</p>
+<h3 id="国库赏金机制">国库赏金机制</h3>
+<p>通过将支出提案的策展活动委托给一位称为管理人的专家来实现。</p>
+<h1 id="国库">国库</h1>
+<p>国库是通过交易手续费、惩罚、Secure Worker 挖矿 (20%) 等方式积累的一部分资金。用户可以通过提出“支出提案”来获取国库资金，如果该提案获得<a href="https://wiki.phala.network/zh-cn/docs/governance/2-join-the-council/">理事会</a>的批准，分发前会进入等待期，此等待期称为预算期，其持续时间由<a href="https://wiki.polkadot.network/docs/learn-governance">治理</a>机制约束，当前默认设置为 1 天。国库试图在不耗尽资金的情况下在队列中花费尽可能多的提案。</p>
+<p>如果国库结束一个预算期而没有花光所有的资金，它就会损失一部分资金——从而造成通缩压力。该百分比目前在 Phala 上为 0%。</p>
+<p>当提案人希望从国库中获取资金时，他们必须质押至少为提案资金的5%的存款（其他情况请参见下文）。如果提案被拒绝，这笔押金将被罚没，如果提案被批准，将退还给提案人。</p>
+<p>提案可能包括（但不限于）：</p>
 <ul>
-<li>未知：默认值，暂未判断。</li>
-<li>合理：数据看似合理，但没有进行深入检查（例如正式的 KYC 流程） 执行。</li>
-<li>已知良好：身份裁判已证明信息正确。</li>
-<li>过时：身份信息曾经很好，但现在已经过时了。</li>
-<li>低质量：身份信息质量低或不准确，但可以通过更新进行修复。</li>
-<li>错误：身份信息错误，可能是恶意申请。</li>
+<li>基础设施部署和持续的运维。</li>
+<li>网络安全运营（监控服务、持续审计）。</li>
+<li>生态系统建设（与友好链的合作）。</li>
+<li>营销活动（广告、付费功能、合作）。</li>
+<li>社区活动和对外活动（聚会、披萨派对、黑客空间）。</li>
+<li>软件开发（钱包和钱包集成、客户端和客户端升级）。</li>
 </ul>
-<p>第七个状态是<code>已付费用</code>，用于当用户请求验证并且正在进行中时的状态。处于这种状态或<code>错误</code>的信息是无法修改的；它只能通过完全去除身份来去除。</p>
-<p>身份裁判通过进行合理验证来才能获取社区信任，同时也可能会因发布错的验证而被其他人取代。 要在提交身份信息后进行身份验证，请转到 <a href="https://polkadot.js.org/apps/#/extrinsics">&ldquo;Extrinsics UI&rdquo;</a> 并选择 <code>identity</code> 模块，然后选择 <code>requestJudgement</code>。给<code>reg_index</code> 输入您想要被提供验证服务的身份裁判编号，给 <code>max_fee</code> 输入你愿意为这些验证确认支付的最高金额。 如果你不知道选择哪个身份裁判，请首先通过转到 <a href="#">&ldquo;Chain State UI&rdquo;</a> 并选择 <code>identity.registrars()</code> 来查看可用的身份裁判以获取完整列表。</p>
-<h3 id="申请验证">申请验证</h3>
-<p>无论你是在 Khala 还是 Phala 网络上，请求验证都遵循相同的过程。从你在上面进行的查询中选择身份裁判之一。</p>
-<p><img src="/images/docs/khala-user/identity-5.png" alt=""></p>
-<p>以上操作将使你的身份从未经验证变为<code>“等待验证”</code>： 此时，需要与身份裁判直接联系 - 联系信息应该已经在他们的身份中，如上所示。每个身份裁判都有自己的一套程序来验证您的身份和价值，只有在你满足他们的要求后，该过程才会继续。 身份裁判确认身份后，您的帐户名称旁边应该会出现一个绿色对勾，并展示对应的身份置信度：</p>
-<p><img src="/images/docs/khala-user/identity-6.png" alt=""></p>
-<p><em>请注意，即使在验证后更改单个字段的值也会取消你的帐户验证信息，你将需要重新开始验证过程。但是，你仍然可以在验证过程中更改字段 - 由身份裁判负责来关注是否被更改了。</em></p>
-<h3 id="取消身份验证">取消身份验证</h3>
-<p>当你决定不想接受身份裁判的验证时（例如你意识到输入了错误的数据或选择了错误的身份裁判）。在这种情况下，在提交验证请求后且在你的身份被验证之前，可以使用外部调用取消判决。</p>
-<p>首先跳到 <a href="https://polkadot.js.org/apps/#/extrinsics">&ldquo;Extrinsics UI&rdquo;</a> 并选择 <code>identity</code> 模块，然后选 <code>cancelRequest</code>。确保你从正确的帐户（你最初请求验证的帐户）调用这个交易函数。对于<code>reg_index</code>，输入你在使用的身份裁判编号。 提交交易后，之前请求的验证就会被取消。</p>
-<h3 id="身份裁判">身份裁判</h3>
-<p>Khala上将会存在多个身份裁判，但是当前只有一个身份裁判：</p>
-<ul>
-<li>身份裁判#0 :
-<ul>
-<li>名字：Marvin Tong</li>
-<li>联系方式: <a href="mailto:marvin@phala.network">marvin@phala.network</a></li>
-<li>地址: 42McARWf3FMrGa2RnhhVansbCHuRktiiyHpjsW5nDkDefwHr</li>
-<li>费用: 5 $PHA</li>
-</ul>
-</li>
-</ul>
-<p>在邮件申请中请遵循下面的格式:</p>
-<blockquote>
-<p>我在申请Khala网络的身份验证，信息如下:</p>
-</blockquote>
-<pre tabindex="0"><code>下面只是示例，实际只需提交你在链上已经更新的身份信息即可
-{
-  &quot;account&quot;: &quot;42McARWf3FMrGa2RnhhVansbCHuRktiiyHpjsW5nDkDefwHr&quot;,
-  &quot;display&quot;: &quot;Marvin Tong&quot;,
-  &quot;web&quot;: &quot;https://phala.network&quot;,
-  &quot;email&quot;: &quot;marvin@phala.network&quot;
-  &quot;twitter&quot;: &quot;https://twitter.com/marvin_tong&quot;
-}
-</code></pre><p>身份裁判#0 将会回复下一步怎么做</p>
-<h2 id="子账号">子账号</h2>
-<p>用户还可以通过在主账号下设置“子账号”来关联账号，每个子账号都有自己的身份。系统为每个子账户预留一部分保证金。比如你可以用子账号来运行多个Secure Worker。比如一个实体叫“未来云计算”，他可以注册多个子账户来代表每个验证者的 Stash 账户。</p>
-<p>一个账户最多可以有 100 个子账户。 要在现有帐户上注册子帐户，你当前需要使用 <a href="https://polkadot.js.org/apps/#/extrinsics">Extrinsics UI</a>。在那里，选择身份模块，然后选择<code>setSubs</code>作为要使用的交易函数。对于要添加到父发件人帐户的每个子帐户，单击<code> Add Item</code>。放入每个父级的身份数据字段的值是子帐户的可选名称。如果忽略，子账户将继承父名并显示为<code>parent/parent</code> 而不是<code>parent/child</code>。</p>
-<p><img src="/images/docs/khala-user/identity-7.png" alt=""></p>
-<p>请注意，每个子帐户都需要存入 <code>identity_sub_reserve_funds</code>。 您可以再次使用 <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/chainstate/constants">polkadot.js/apps</a> 通过查询来验证<code>identity.subAccountDeposit</code> 的金额数值。</p>
-<h2 id="清空和注销身份信息">清空和注销身份信息</h2>
-<p><strong>清空：</strong></p>
-<p>用户可以清空自己的身份信息，退还押金。清除身份也会清除所有子账户身份并返还对应的押金。</p>
-<p>要清除身份的步骤：</p>
+<p>国库最终由 <a href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/">理事会</a> 控制，资金的使用方式取决于他们的判断。</p>
+<p>国库的资金分别来自于以下的来源：</p>
 <ol>
-<li>导航到 <a href="https://polkadot.js.org/apps/#/accounts">帐户 UI</a>。</li>
-<li>点击您要清除的账户对应的三个点，然后选择<code>设置链上身份</code>。</li>
-<li>选择<code>清除身份</code>，并签署并提交交易。</li>
+<li>罚没：当Secure矿工或守门人因任何原因被罚没时，惩罚金额将被发送到国库，随之发送的还有将发送给报告验证人的实体（另一个验证人）的奖励。 奖励来自罚没资金，并因违规原因和和报告人数而异。</li>
+<li>交易手续费：每个区块的交易手续费有一部分上缴国库，其余部分上缴区块生产者。</li>
+<li>Secure Worker Mining reward: 70%的PHA token将被用于Secure Worker Mining，且跟随Khala和Phala的网络进度，每个区块产生的挖矿奖励的20%将被用于资助国库。</li>
 </ol>
-<p><strong>强制注销：</strong> 议会可以强制注销它认为是错误的身份。这导致押金被罚没。</p>
+<h1 id="创建国库支出提案">创建国库支出提案</h1>
+<p>提案人必须存入提案金额的 5% 或 1 PHA（以较高价者为准）作为防止垃圾提案措施。 如果提案被拒绝，则此金额将被销毁，否则将予以退还。 这个质押数值受到<a href="https://wiki.phala.network/zh-cn/docs/governance/">治理</a> 的约束，因此将来可能会发生变化。</p>
+<p>请注意，用户无法在提交支出提案后撤消。 理事会将选择接受或拒绝该提案，如果该提议被拒绝，则质押资金被烧毁。</p>
+<h3 id="公布提案">公布提案</h3>
+<p>为了尽量减少链上的存储，提案不包含具体文字信息。 当用户提交提案时，他们需要找到一种链下方式来解释他的提案。 大多数讨论发生在以下平台上：</p>
+<ul>
+<li>建议财政类提案先在Phala论坛发布文本内容，说明细节。不发布文本内容的将不会被作为严肃提案讨论。</li>
+<li>将论坛的提案内容在 <a href="https://discord.gg/YsRUMpvvxs">Phala Discord #Proposal 频道</a> 或 <a href="https://forum.phala.network/c/51-category/51">Phala 论坛</a> 中传播，以便更多的社区成员讨论 。</li>
+</ul>
+<p>传播提案的解释最终由提案人决定 - 推荐的方式是使用官方 Discord 频道，如 <a href="https://discord.gg/YsRUMpvvxs">Phala Discord #Proposal 频道</a>。</p>
+<h3 id="创建提案">创建提案</h3>
+<p>创建提案的一种方法是使用 Polkadot-JS 网站。 在网站上，可以选择两种方式创建提案。一种方式为：点击<a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkhala.api.onfinality.io%2Fpublic-ws#/extrinsics">extrinsics</a> 标签——选择“<code>Treasury</code>“——选择<code>proposeSpend</code>，然后支出并输入所需金额和收款人：</p>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e93580b2-3f2b-461d-b965-5052b3c289ec/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20211012T151234Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=7cf895d1494adccd6ed73afd2842c17054f1c4e2c9d38a577360bde8cba89306&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></p>
+<p>另一种方式为：点击Governance——<a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkhala.api.onfinality.io%2Fpublic-ws#/treasury">Treasury</a>标签，直接点击“提交提案”按钮：</p>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f02ba48-6e65-40df-9b3a-49e0bb916c58/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20211012T151311Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=f4eb43ec8cb952c5688448c41f6d11dc4f8694361d360b7242b317b98a82665e&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></p>
+<p>系统将自动收取<a href="">上述</a>两个值中较高的一个值作为质押金额。</p>
+<p>一旦提案被创建，您的提案将展示在国库板块，并且理事会可以开始对其进行投票。</p>
+<p>请记住，提案没有元数据，因此需要由提案人自行创建提案描述和提案目的，便于理事会研究本提案并根据其投票。</p>
+<p>此时，理事会成员可以提出动议来接受或拒绝支出提案。 有可能同时创建一个接受动议和另一个拒绝动议。 接受提案的比例和拒绝提案的比例不同，并且可能取决于财政部实施的网络。</p>
+<p>接受支出提案的门槛至少是理事会的五分之三，拒绝提案的门槛至少是理事会的一半。</p>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b2c92e99-901b-4d77-8b8a-60316105b95e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20211012T151334Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=632e4b71de957cfb823820681e131bc78d42890e24ae12cd872598559034dc6a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></p>
+<h1 id="小费-1">小费</h1>
+<p>除了支出提案，国库有支出小费的独立系统。小费请求可以由任何人提出，并由理事会支持。小费没有固定金额；小费的最终金额是根据小费发出者希望打赏的小费的中位数决定。</p>
+<p>目前，小费发出者即理事会成员。然而，成为小费发出者并不是理事会的直接责任，某些时间小费发出者可能与理事会属于不同账户组。</p>
+<p>当超过一半以上的小费组认可一个小费请求时，小费将进入结束阶段。在此期间，小费组的其他成员仍然可以发布他们希望打赏的小费，但不是必须的。技术窗口关闭后，任何人都可以调用外部的 <code>close_tip</code>请求，小费将被支付。</p>
+<p>小费有两种类型：公开小费和小费发出者发起的小费。对于公开小费，需要质押一小部分保证金。该保证金取决于小费消息的长度，以及链上定义的固定质押常数，目前为 1。公开小费有 20% 的发起人奖励，该奖励从小费的总金额中支付。小费发出者发起的小费请求，即理事会成员发起的小费请求，没有发起人费用也无需质押保证金。</p>
+<p>为了更好地理解小费在支付之前所经历的过程，让我们考虑一个例子。</p>
+<h3 id="案例">案例</h3>
+<p>Bob为 Phala 做了一些很棒的事情。 Alice注意到了这一点，并决定报告Bob应该得到一些国库小费。 理事会由Charlie、Dave和Eve三名成员组成。</p>
+<p>Alice通过发出 <code>report_awesome</code> 请求开始申请小费。 这个申请需要两个参数，一个是申请原因和接收小费的地址。 Alice提交了Bob收款地址，申请原因提交了 <a href="https://forum.phala.network/c/51-category/51">Phala 论坛</a> 上的帖子的 UTF-8 编码链接，链接中的内容解释了为什么 鲍勃值得获取小费。</p>
+<p>如上所述，为了发布小费申请报告，Alice还必须锁定一定的资金。 锁定资金是在链参数列表中设置的基础存款加上原因中包含的每字节额外存款。 这就是为什么Alice提交了一个外部链接作为申请原因而不是直接的文字说明，这样做的申请费更便宜。</p>
+<p>对她来说，如果小费得到小费发放者的批准，Alice可以申领到小费发起者奖励。</p>
+<p>由于小费小组与理事会相同，因此理事会现在必须集体（但也是独立地）决定Bob应得的小费价值。</p>
+<p>Charlie、Dave和Eve都查看了报告，他们根据自己对Bob为Phala 提供贡献的评估给出了小费估价。</p>
+<p>Charlie的小费估价为10 PHA，Dave的小费估价为30 PHA，Eve的小费估价为100 PHA。</p>
+<p>当三个小费发放者中的两位提供了小费估价后小费便可以进入关闭期。一旦小费小组中超过半数人发布了小费估价，关闭小费的倒计时将开始。在本案例中，第三个小费发放者在关闭期结束前发布了他们的小费，因此三个人都能够公开他们的小费估价。</p>
+<p>现在支付给Bob的实际小费是所有小费估价的中位数，因此Bob将从国库获得30 PHA小费。</p>
+<p>为了让Bob获得他的小费，一些帐户必须在小费的关闭期结束时调用外部的 <code>close_tip</code>请求。任何人都可以调用这个外部请求。</p>
+<h1 id="赏金支出">赏金支出</h1>
+<p>对于国库提案，理事会成员的管理能力存在实际限制：理事会成员可能不具备对所有提案中描述的活动进行适当评估的专业知识。即使个别议员具有这种专业知识，大多数成员也极不可能有能力处理如此多样化的主题。</p>
+<p>赏金支出提案旨在将支出提案的策划活动委托给称为赏金经理的专家：他们可以定义为在国库的一部分上具有代理权的地址，目标是修复错误或漏洞、制定策略或监控一组与特定主题相关的任务：所有这些都是为了 Phala 生态系统的利益。</p>
+<p>提议者可以提交赏金提议供理事会通过，随后指定赏金经理，这位赏金经理的背景和专业知识能够确定任务何时完成。赏金经理在赏金提案通过后由理事会选出，他需要增加押金才能担任该职位。如果他们有恶意行为，这笔存款可用于惩罚他们。然而，如果他们成功完成了让某人完成赏金工作的任务，他们将收到押金和赏金奖励的一部分。</p>
+<p>在提交赏金的价值时，提案人需要提交包含对愿意在任务中投入时间和专业知识的赏金经理奖励的赏金价值：赏金经理奖励包含在赏金的总价值中。 从这个意义上说，赏金经理奖励是从赏金总价值中减去赏金奖励后的结果。</p>
+<p>一般而言，赏金经理应该在悬赏计划试图解决的问题上拥有良好且平衡的背景和知识：他们至少应该了解悬赏计划涉及的主题，并同时展示项目管理技能或经验。 赏金经理拥有背景的这些推荐可以确保赏金计划的顺利进行。 赏金支出是对特定工作或特定目标集的奖励，需要执行以支付预定义的国库金额。 一旦指定的一组目标完成，分配支付地址的责任就委托给赏金经理。</p>
+<p>理事会激活一项赏金支出后，它将需要专业知识的工作委托给可以关闭活跃赏金的赏金经理。关闭活动赏金会延迟支付到支付地址和赏金经理的费用。延迟阶段允许理事会在出现任何问题时采取行动。</p>
+<p>为了将链上的任何提案以相同方式最小化链上存储，赏金提案中将不包含上下文信息。当用户提交赏金支出提案时，他们可能需要找到一种链下方式来解释该提案（任何可用的社区论坛都可以）。 <a href="https://docs.google.com/document/d/1dQtjfFTkOcTXTt8pIpH2GYLNc9vc03teYfR1r8NfGO0/edit?usp=sharing">此模板</a> 可以作为所有必要信息的核对清单，这将帮助委员会做出明智的决定。</p>
+<p>赏金的预定期限为 90 天，并有可能由赏金经理延长。为了保持任务管理的灵活性，赏金经理将能够在机制的下一次迭代中创建子赏金以将任务增加颗粒度和分配。</p>
+<h3 id="创建赏金提案">创建赏金提案</h3>
+<p>任何人都可以使用 Polkadot.JS 创建赏金提案：用户可以在治理标签下的专用赏金部分提交提案。 在 Phala 应用程序中查看和管理赏金的用户界面的开发仍在开发中，它将为理事会成员、赏金经理和赏金的受益人以及所有观察链上资金管理的用户提供服务。 目前，需要议员帮助发起理事会动议来开始赏金提案。</p>
+<p>要提交赏金，请访问 <a href="https://polkadot.js.org/apps/#/bounties">Polkadot JS</a>，然后点击网站顶部选项栏中的“治理”选项卡。之后，点击“赏金”并在界面的右上角找到“+添加赏金”按钮。 填写赏金标题、请求分配的金额（包括赏金经理费用）并确认。</p>
+<p>在此之后，理事会成员将协助您创建理事会动议并投票以赏金提案。 您可以通过加入 Discord 服务器中的 #Khala-Direction <a href="https://discord.gg/MsqTGfu5Uy">频道</a> 并发布对赏金提案的简短描述并附上论坛帖子链接方便理事会成员获取提案详情。</p>
+<p>可以通过删除特定国库金额的专项资金来取消赏金。如果任务已完成则关闭赏金。 另一方面，可以通过修改赏金的到期块数以保持活跃状态来延长赏金的 90 天生命周期。</p>
+<h3 id="关闭赏金">关闭赏金</h3>
+<p>赏金经理一旦批准完成任务，就可以关闭赏金。 赏金经理应确保事先在活动赏金上设置支付地址。 关闭活动赏金会延迟支付到支付地址和赏金经理费用。</p>
+<p>可以通过选择国库选项卡，然后选择<code>Award_bounty</code>来关闭赏金，确保关闭正确的赏金并最终签署交易。 需要注意的是，在赏金完成后获得奖励的人，必须在赏金经理关闭分配后通过调用<code>Claim_bounty</code>从支付地址领取特定金额的支付。</p>
+<h1 id="faq">FAQ</h1>
+<h3 id="是什么阻止了国库被理事会的大多数成员控制">是什么阻止了国库被理事会的大多数成员控制？</h3>
+<p>理事会的大多数成员可以决定国库支出提案的结果。如果一种敌对的心态出现，我们需要考虑到理事会可能会在某个时候作恶并试图窃取所有国库资金的可能性。有一种可能性是，随着国库的资金规模变得越来越大，会出现大量的金钱诱惑。</p>
+<p>在 Phala 中，理事会主要由社区的知名成员组成。请记住，理事会由代币持有者投票选出，因此他们必须进行一些竞选活动或以其他方式获得认可才能获得选票。在发生袭击的情况下，理事会成员将失去他们的社会信誉。此外，理事会成员通常受到Phala链正常运作的额外激励。这种额外激励要么是因为他们经营依赖于链的业务，要么是因为他们（通过他们持有的）代币而获得直接的经济收益。</p>
+<p>具体来说，有几种链上方法可以抵抗这种攻击。一，理事会的多数可能不是多数持币者。这意味着，如果他们试图进行攻击，多数持币者可以投票更换理事会——甚至扭转国库支出。他们将通过正常的公投来做到这一点。二，是资金支出存在时间延迟。它们仅在每个花费期间制定。这意味着将有一些时间来观察这种正在发生的攻击行为。然后，时间延迟允许链参与者有时间做出响应。响应可能以治理的形式出现，或者 - 在最极端的情况下，清算他们的资产并迁移到少数分叉上。但是出现这种情况的可能性非常低。</p>
 
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/zh-cn/docs/khala-user/polkadot-js-extension/" class="pager_link button" title="使用Polkadot.js插件">
+      <a href="https://wiki.phala.network/zh-cn/docs/governance/3-voting-for-councillors/" class="pager_link button" title="3 为理事会议员投票">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">使用Polkadot.js插件</span>
+  <span class="pager_label">3 为理事会议员投票</span>
 </a>
     
   </div>
@@ -635,14 +624,6 @@
   
         
   
-    <div class="pager_item next">
-      <a href="https://wiki.phala.network/zh-cn/docs/khala-user/stake-pool/" class="pager_link button" title="抵押池委托指南">
-  <span class="pager_label">抵押池委托指南</span>
-  <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
-  <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-</a>
-        </div>
-      
     </div>
 </div>
 <svg width="0" height="0" class="hidden">
