@@ -224,18 +224,16 @@ Tipping Tips can be suggested by anyone holding PH and are endorsed by Council m
 </nav>
         <h3 class="section_link active"><a id="docs-4-khala-treasury" href="https://wiki.phala.network/en-us/docs/governance/4-treasury/">4 Khala Treasury</a></h3><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#current-mechanisms">Current mechanisms</a>
       <ul>
         <li><a href="#spending-proposals">Spending Proposals</a></li>
         <li><a href="#tipping">Tipping</a></li>
         <li><a href="#bounty-spending">Bounty Spending</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#creating-a-treasury-proposal">Creating a Treasury Proposal</a>
+    <li><a href="#treasury">Treasury</a>
       <ul>
+        <li><a href="#creating-a-treasury-proposal">Creating a Treasury Proposal</a></li>
         <li><a href="#announcing-the-proposal">Announcing the Proposal</a></li>
         <li><a href="#creating-the-proposal">Creating the Proposal</a></li>
       </ul>
@@ -540,15 +538,15 @@ Tipping Tips can be suggested by anyone holding PH and are endorsed by Council m
 </aside>
 
   <main class="content">
-    <h1>4 Khala Treasury</h1><h1 id="current-mechanisms">Current mechanisms</h1>
+    <h1>4 Khala Treasury</h1><h2 id="current-mechanisms">Current mechanisms</h2>
 <h3 id="spending-proposals">Spending Proposals</h3>
 <p>The Treasury is also used to fund spending proposals submitted by community members. These need to be approved by the Council and have the goal of developing ideas that give traction to the network, maintaining infrastructure deployment, security operations, and marketing activities, among others.</p>
 <h3 id="tipping">Tipping</h3>
 <p>Tips can be suggested by anyone holding PH and are endorsed by Council members. Tips do not have any fixed value: The final value is decided based on the median of all tips issued by the councilors.</p>
 <h3 id="bounty-spending">Bounty Spending</h3>
 <p>Bounties Spending proposals aim to delegate the curation activity of spending proposals to experts called Curators</p>
-<h1 id="treasury">Treasury</h1>
-<p>The Treasury is a pot of funds collected through transaction fees, slashing, Secure Worker mining rate (20%) , etc. The funds held in the Treasury can be spent by making a spending proposal that, if approved by the <a href="https://wiki.polkadot.network/docs/learn-governance#council">Council</a>, will enter a waiting period before distribution. This waiting period is known as the budget period, and its duration is subject to <a href="https://wiki.polkadot.network/docs/learn-governance">governance</a>, with the current default set to 1 day. The Treasury attempts to spend as many proposals in the queue as it can without running out of funds.</p>
+<h2 id="treasury">Treasury</h2>
+<p>The Treasury is a pot of funds collected through transaction fees, slashing, Secure Worker mining rate (20%) , etc. The funds held in the Treasury can be spent by making a spending proposal that, if approved by the <a href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/">Council</a>, will enter a waiting period before distribution. This waiting period is known as the budget period, and its duration is subject to <a href="https://wiki.phala.network/en-us/docs/governance/">governance</a>, with the current default set to 1 day. The Treasury attempts to spend as many proposals in the queue as it can without running out of funds.</p>
 <p>If the Treasury ends a budget period without spending all of its funds, it suffers a burn of a percentage of its funds &ndash; thereby causing deflationary pressure. This percentage is currently at 0% on Phala.</p>
 <p>When a stakeholder wishes to propose a spend from the Treasury, they must reserve a deposit of at least 5% of the proposed spend (see below for variations). This deposit will be slashed if the proposal is rejected, and returned if it is accepted.</p>
 <p>Proposals may consist of (but are not limited to):</p>
@@ -560,14 +558,14 @@ Tipping Tips can be suggested by anyone holding PH and are endorsed by Council m
 <li>Community events and outreach (meetups, pizza parties, hackerspaces).</li>
 <li>Software development (wallets and wallet integration, clients and client upgrades).</li>
 </ul>
-<p>The Treasury is ultimately controlled by the <a href="https://wiki.polkadot.network/docs/learn-governance#council">Council</a>, and how the funds will be spent is up to their judgment.</p>
+<p>The Treasury is ultimately controlled by the <a href="https://wiki.phala.network/en-us/docs/governance/2-join-the-council/">Council</a>, and how the funds will be spent is up to their judgment.</p>
 <p>The Treasury is funded from different sources:</p>
 <ol>
 <li>Slashing: When a Secure Worker or Gatekeepers is slashed for any reason, the slashed amount is sent to the Treasury with a reward going to the entity that reported the validator (another validator). The reward is taken from the slash amount and varies per offence and number of reporters.</li>
 <li>Transaction fees: A portion of each block&rsquo;s transaction fees goes to the Treasury, with the remainder going to the block author.</li>
 <li>70% of the PHA will be used for Secure Worker Mining, and following the progress of the Khala and Phala networks, 20% of the mining rewards generated by each block will be used to fund treasury.</li>
 </ol>
-<h2 id="creating-a-treasury-proposal">Creating a Treasury Proposal</h2>
+<h3 id="creating-a-treasury-proposal">Creating a Treasury Proposal</h3>
 <p>The proposer has to deposit 5% of the requested amount or 1 PHA (whichever is higher) as an anti-spam measure. This amount is burned if the proposal is rejected, or refunded otherwise. These values are subject to <a href="https://wiki.phala.network/en-us/docs/governance/">governance</a> so they may change in the future.</p>
 <p>Please note that there is no way for a user to revoke a treasury proposal after it has been submitted. The Council will either accept or reject the proposal, and if the proposal is rejected, the bonded funds are burned.</p>
 <h3 id="announcing-the-proposal">Announcing the Proposal</h3>
