@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wiki.phala.network/en-us/docs/tokenomic/1-mining-staking/</guid>
-      <description>MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList += &#39;has-jax&#39;}) });   Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining.</description>
+      <description>Introduction To secure the cloud of Workers and the jobs they are assigned, the network will set Confidence Level for each worker’s CPU and will require Staking to enable mining. Each worker can only earn value $V$ if it first stakes several PHA tokens based on its CPU score, after which it can enter the mining system and start TEE Mining.
+If a worker misbehaves or fails to respond, it will be punished by slashing the $V$, which strongly incentivizes participants to ensure their workers are running properly and disincentivizes attempts to cheat.</description>
     </item>
     
   </channel>

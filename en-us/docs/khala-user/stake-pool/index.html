@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -10,26 +10,30 @@
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
 <title>Guidance of Delegation StakePool | Phala Network Wiki</title><meta property="og:title" content="Guidance of Delegation StakePool" />
-<meta property="og:description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network." />
+<meta property="og:description" content="Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.
+How to Delegate Introduction of Delegation Phala Network’s protocol allows token holders to delegate PHA into StakePool. The owner of the StakePool uses the PHA to mine and stake. The mining rewards will be distributed to the delegators according to the delegation share." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wiki.phala.network/en-us/docs/khala-user/stake-pool/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network Wiki" />
 
 <meta itemprop="name" content="Guidance of Delegation StakePool">
-<meta itemprop="description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.">
+<meta itemprop="description" content="Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.
+How to Delegate Introduction of Delegation Phala Network’s protocol allows token holders to delegate PHA into StakePool. The owner of the StakePool uses the PHA to mine and stake. The mining rewards will be distributed to the delegators according to the delegation share.">
 
 <meta itemprop="wordCount" content="490">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Guidance of Delegation StakePool"/>
-<meta name="twitter:description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network."/>
+<meta name="twitter:description" content="Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.
+How to Delegate Introduction of Delegation Phala Network’s protocol allows token holders to delegate PHA into StakePool. The owner of the StakePool uses the PHA to mine and stake. The mining rewards will be distributed to the delegators according to the delegation share."/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="MathJax = { tex: { inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]], processEscapes: true, processEnvironments: true }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;] } }; window.addEventListener(&#39;load&#39;, (event) = { document.querySelectorAll(&#34;mjx-container&#34;).forEach(function(x){ x.parentElement.classList &#43;= &#39;has-jax&#39;}) });   Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &amp;ldquo;depositing to earn interest&amp;rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.">
+  <meta name="description" content="Delegator Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &amp;ldquo;depositing to earn interest&amp;rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.
+How to Delegate Introduction of Delegation Phala Network’s protocol allows token holders to delegate PHA into StakePool. The owner of the StakePool uses the PHA to mine and stake. The mining rewards will be distributed to the delegators according to the delegation share.">
 
 
 
@@ -534,26 +538,7 @@
 </aside>
 
   <main class="content">
-    <h1>Guidance of Delegation StakePool</h1><script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
-    });
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<h2 id="delegator">Delegator</h2>
+    <h1>Guidance of Delegation StakePool</h1><h2 id="delegator">Delegator</h2>
 <p>Token holders (i.e. delegators) can obtain mining rewards by delegating PHA to the StakePool, which can be understood as &ldquo;depositing to earn interest&rdquo;. This guide will introduce how to earn rewards through delegation in Phala Network.</p>
 <h2 id="how-to-delegate">How to Delegate</h2>
 <h3 id="introduction-of-delegation">Introduction of Delegation</h3>
@@ -593,6 +578,25 @@ $$</p>
 <li>There might be a delay in token withdrawal from the StakePool. The length of the delay depends on the amount of Free Delegation in the StakePool. It can take up to 14 days for tokens to unlock.</li>
 <li>Under extreme conditions, if workers receive too many punishments, <strong>the number of tokens in StakePool will shrink</strong>, which will affect the initial delegation in the StakePool. However, <strong>the probability of such a situation is low</strong>.</li>
 </ol>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <div class="pager">
   <div class="pager_item prev">
