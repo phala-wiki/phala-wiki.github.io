@@ -595,8 +595,8 @@ To set up a Gatekeeper, you should follow the steps below:">
 <p>Please make sure you have meet all the above requirements, so that you can start to deploy the three components by Docker.</p>
 <p>First, run the full node and wait it to sync. If you already have a full node, this step can be skipped.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
-</span><span class="ln">2</span><span class="se"></span>    --name khala-dev-node <span class="se">\
-</span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">NODE_NAME</span><span class="o">=</span>khala-dev-node <span class="se">\
+</span><span class="ln">2</span><span class="se"></span>    --name khala-node <span class="se">\
+</span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">NODE_NAME</span><span class="o">=</span>khala-node <span class="se">\
 </span><span class="ln">4</span><span class="se"></span>    -e <span class="nv">NODE_ROLE</span><span class="o">=</span>MINER <span class="se">\
 </span><span class="ln">5</span><span class="se"></span>    -p 9933:9933 -p 9944:9944 -p 9615:9615 -p 30333:30333 <span class="se">\
 </span><span class="ln">6</span><span class="se"></span>    -p 9934:9934 -p 9945:9945 -p 9616:9616 -p 30334:30334 <span class="se">\
