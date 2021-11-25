@@ -69,6 +69,18 @@
   </url><url>
     <loc>https://wiki.phala.network/en-us/docs/developer/</loc>
   </url><url>
+    <loc>https://wiki.phala.network/en-us/docs/maintain/gatekeeper/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://wiki.phala.network/zh-cn/docs/maintain/gatekeeper/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://wiki.phala.network/en-us/docs/maintain/gatekeeper/"
+                />
+  </url><url>
     <loc>https://wiki.phala.network/en-us/docs/pdiem/play-with-pdiem/</loc>
     <xhtml:link
                 rel="alternate"

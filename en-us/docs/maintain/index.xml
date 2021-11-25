@@ -16,5 +16,15 @@
  Host Session Api Manager Collator &amp;lt;===== [Session] &amp;lt;--------- [CollatorSelection] node pallet pallet On the blockchain, the block authoring is handled collaboratively by Session and CollatorSelection pallets.</description>
     </item>
     
+    <item>
+      <title>Gatekeeper</title>
+      <link>https://wiki.phala.network/en-us/docs/maintain/gatekeeper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wiki.phala.network/en-us/docs/maintain/gatekeeper/</guid>
+      <description>Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.
+To set up a Gatekeeper, you should follow the steps below:</description>
+    </item>
+    
   </channel>
 </rss>

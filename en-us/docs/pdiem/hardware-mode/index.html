@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -480,6 +480,15 @@ Intel SGX SDK comes with three modes:
     <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-gatekeeper" href="https://wiki.phala.network/en-us/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</a></li>
+    <li><a href="#server-requirements">Server requirements</a></li>
+    <li><a href="#deploy-the-full-stack">Deploy the full stack</a></li>
+    <li><a href="#propose-to-join-the-gatekeeper-whitelist">Propose to join the Gatekeeper whitelist</a></li>
+    <li><a href="#monitor-the-gatekeeper">Monitor the Gatekeeper</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -562,7 +571,7 @@ Intel SGX SDK comes with three modes:
 </ul>
 <p><code>IAS</code> and <code>DCAP</code> are the two different SGX driver. Please choose the docker-compose file that matches your platform. Then, you can specify the config files when running any docker-compose command by <code>-f</code>.</p>
 <p>For example, run the following command to build the image for the IAS Driver:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker-compose -f docker-compose.hw.ias.yml build
 </code></pre></div><p>There are also HW version of <code>phala-console.sh</code>, which should be used according to your platform:</p>
 <ul>
 <li><code>phala-console.hw.ias.sh</code></li>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -480,6 +480,15 @@
     <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-gatekeeper" href="https://wiki.phala.network/en-us/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</a></li>
+    <li><a href="#server-requirements">Server requirements</a></li>
+    <li><a href="#deploy-the-full-stack">Deploy the full stack</a></li>
+    <li><a href="#propose-to-join-the-gatekeeper-whitelist">Propose to join the Gatekeeper whitelist</a></li>
+    <li><a href="#monitor-the-gatekeeper">Monitor the Gatekeeper</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -569,19 +578,19 @@
 <p>Install WSL2 (Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11)</p>
 <p>More infos at: <a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
 <p>in PowerShell or Windows Command Prompt</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --install
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --install
 </code></pre></div><p>Ubuntu is the OS installed by default. Restart your machine, and in Powershell set WSL 2 as your default by doing the following</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --set-default-version <span class="m">2</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wsl --set-default-version <span class="m">2</span>
 </code></pre></div></li>
 <li>
 <p>Install the system level dependencies</p>
 <p>For WSL2:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -fsSL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -fsSL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
 <span class="ln">2</span>sudo apt install ca-certificates
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt update
 <span class="ln">2</span>sudo apt install -y build-essential pkg-config ca-certificates git autoconf libtool libssl-dev libclang-10-dev clang-10
 </code></pre></div><p>Ensure <code>clang</code> exists in your $PATH by executing</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>which clang
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>which clang
 <span class="ln">2</span><span class="c1"># /usr/bin/clang</span>
 <span class="ln">3</span>
 <span class="ln">4</span><span class="c1"># by default, the clang executable is installed as &#34;clang-10&#34;</span>
@@ -593,12 +602,12 @@
 </li>
 <li>
 <p>Install Rust. Please choose the default toolchain</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
 <span class="ln">2</span><span class="nb">source</span> <span class="nv">$HOME</span>/.cargo/env
 </code></pre></div></li>
 <li>
 <p>Install Intel SGX SDK</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.15/distro/ubuntu20.04-server/sgx_linux_x64_sdk_2.15.100.3.bin
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://download.01.org/intel-sgx/sgx-linux/2.15/distro/ubuntu20.04-server/sgx_linux_x64_sdk_2.15.100.3.bin
 <span class="ln">2</span>chmod +x sgx_linux_x64_sdk_2.15.100.3.bin
 <span class="ln">3</span><span class="nb">echo</span> -e <span class="s1">&#39;no\n/opt/intel&#39;</span> <span class="p">|</span> sudo ./sgx_linux_x64_sdk_2.15.100.3.bin
 <span class="ln">4</span><span class="nb">source</span> /opt/intel/sgxsdk/environment
@@ -608,13 +617,13 @@
 </li>
 <li>
 <p>Install Node.js (&gt;= v12) &amp; yarn</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -sL https://deb.nodesource.com/setup_current.x <span class="p">|</span> sudo -E bash -
 <span class="ln">2</span>sudo apt-get install -y nodejs
 <span class="ln">3</span>sudo npm install -g yarn
 </code></pre></div></li>
 </ul>
 <p>You can test the installation by running the following commands. The output should match the sample outputs, or with a slightly higher version.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>rustup --version
 <span class="ln"> 2</span><span class="c1"># rustup 1.24.3 (ce5817a94 2021-05-31)</span>
 <span class="ln"> 3</span>
 <span class="ln"> 4</span>cargo --version
@@ -636,27 +645,27 @@
 <span class="ln">20</span>yarn --version
 <span class="ln">21</span><span class="c1"># 1.22.15</span>
 </code></pre></div><p>Finally, let&rsquo;s clone the code. Notice that the entire tutorial is on the <strong><code>encode-hackathon-2021 </code> branch</strong> for the blockchain.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Clone the core blockchain repo</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Clone the core blockchain repo</span>
 <span class="ln">2</span>git clone --recursive --branch encode-hackathon-2021 https://github.com/Phala-Network/phala-blockchain.git
 <span class="ln">3</span><span class="c1"># Clone the JS SDK repo</span>
 <span class="ln">4</span>git clone https://github.com/Phala-Network/js-sdk
 </code></pre></div><h2 id="build-the-core-blockchain">Build the core blockchain</h2>
 <p>Now we have both repos <code>phala-blockchain</code> and <code>js-sdk</code> in the working directory. Let&rsquo;s start to build the core blockchain first.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span><span class="nb">cd</span> phala-blockchain/
 <span class="ln">3</span>cargo build --release
 </code></pre></div><p>For WSL2:
 You might experience troubles with libssl-dev when trying to build the core blockchain.
 if this happens:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>dpkg -L libssl-dev <span class="p">|</span> grep lib
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>dpkg -L libssl-dev <span class="p">|</span> grep lib
 <span class="ln">2</span>dpkg -L libssl-dev <span class="p">|</span> grep include
 <span class="ln">3</span><span class="nb">export</span> <span class="nv">OPENSSL_LIB_DIR</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/
 <span class="ln">4</span><span class="nb">export</span> <span class="nv">OPENSSL_INCLUDE_DIR</span><span class="o">=</span>/usr/include/openssl/
 </code></pre></div><p>and try to build again:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build the core blockchain</span>
 <span class="ln">2</span>cargo build --release
 </code></pre></div><p>Finally you can proceed with pruntime:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Build pRuntime (TEE Enclave)</span>
 <span class="ln">2</span><span class="nb">cd</span> ./standalone/pruntime/
 <span class="ln">3</span><span class="nv">SGX_MODE</span><span class="o">=</span>SW make
 </code></pre></div><p>The compilation takes from 20 mins to 60 mins depending on your internet connection and CPU performance. After building, you will get the three binary files:</p>
@@ -670,7 +679,7 @@ if this happens:</p>
 <p>The SGX SDK supports software simulation mode and hardware mode. <code>SGX_MODE=SW</code> enables the simulation mode. The software mode is for easy development, where the hardware enclave is not required. You can even run it on a virtual machine or a computer with an AMD CPU. However, only the hardware mode can guarantee the security and the confidentiality of the trusted execution. To enable the hardware mode, you have to install <a href="https://download.01.org/intel-sgx/sgx-dcap/1.12/linux/distro/ubuntu20.04-server">Intel SGX DCAP Driver</a> and the platform software shipped with the driver, and pass <code>SGX_MODE=HW</code> to the toolchain.</p>
 </blockquote>
 <p>The three core blockchain components work together to bring the full functionalities. Among them, <code>phala-node</code> and <code>pruntime</code> should be launched first, and <code>pherry</code> follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># In terminal window 1: phala-node</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># In terminal window 1: phala-node</span>
 <span class="ln"> 2</span>./target/release/phala-node --dev --tmp
 <span class="ln"> 3</span>
 <span class="ln"> 4</span><span class="c1"># In terminal window 2: pruntime</span>
@@ -699,7 +708,7 @@ if this happens:</p>
 <p>You can safely shut down the three programs by <kbd>Ctrl</kbd> + <kbd>C</kbd>. Since <code>--tmp</code> is specified for <code>phala-node</code>, no database will be left after you shut it down. So a fresh start every time you run it!</p>
 <h2 id="build-the-web-ui">Build the Web UI</h2>
 <p>The Web UI frontend is developed with <code>node.js</code> and managed by <code>yarn</code>. It provides the frontend you need to interact with our <code>GuessNumber</code> and <code>BtcPriceBot</code> demo contracts. Just give it a try!</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> js-sdk/packages/example
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> js-sdk/packages/example
 <span class="ln">2</span><span class="c1"># you need to set the `NEXT_PUBLIC_BASE_URL` to the port of `pruntime`</span>
 <span class="ln">3</span><span class="c1"># and `NEXT_PUBLIC_WS_ENDPOINT` to `phala-node` ws port</span>
 <span class="ln">4</span>cp .env .env.local
@@ -707,7 +716,7 @@ if this happens:</p>
 <span class="ln">6</span>yarn
 <span class="ln">7</span>yarn dev
 </code></pre></div><p>It may take a few minutes to download the dependencies and build the frontend. By default, the page is served at <a href="http://localhost:3000">http://localhost:3000</a>. So make sure the port 3000 is available. Then it should produce some logs like below:</p>
-<pre tabindex="0"><code class="language-log" data-lang="log">ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+<pre><code class="language-log" data-lang="log">ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 info  - Loaded env from /home/user/phala-network/js-sdk/packages/example/.env.local
 info  - Loaded env from /home/user/phala-network/js-sdk/packages/example/.env
 info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
@@ -715,7 +724,7 @@ event - compiled successfully
 </code></pre><blockquote>
 <p><strong>Notes for Remote Access</strong></p>
 <p>In a case where you run your blockchain and WEB UI on your REMOTE_SERVER and try to access them elsewhere, you can forward the ports with <code>ssh</code> command. For example,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ssh -N -f USER@REMOTE_SERVER -L 3000:localhost:3000 -L 9944:localhost:9944 -L 8000:localhost:8000
 </code></pre></div><p>This forwards all the necessary ports:</p>
 <ul>
 <li>3000: HTTP port of Web UI</li>
@@ -728,7 +737,7 @@ event - compiled successfully
 <p><img src="/images/docs/developer/js-sdk-1.png" alt=""></p>
 <p>To experience the demo contracts, you will need an account. For development, we recommend not to use your real Substrate account with funds. A good choice is for development to import <code>Alice</code> to your Polkadot.js extension since she is the pre-defined root account and is allowed to invoke privileged operations. <strong>DO NOT</strong> transfer real funds to your <code>Alice</code> account.</p>
 <p>You can get the secret seed of <code>Alice</code> with the following command</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># in phala-blockchain folder</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># in phala-blockchain folder</span>
 <span class="ln">2</span>./target/release/phala-node key inspect //Alice
 <span class="ln">3</span><span class="c1"># Secret Key URI `//Alice` is account:</span>
 <span class="ln">4</span><span class="c1">#   Secret seed:       0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a</span>

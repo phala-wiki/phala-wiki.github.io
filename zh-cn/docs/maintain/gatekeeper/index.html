@@ -9,35 +9,31 @@
 <link rel="mask-icon" href='https://wiki.phala.network/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://wiki.phala.network/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://wiki.phala.network/favicons/browserconfig.xml'>
-<title>在Linux中直接部署 | Phala Network 百科</title><meta property="og:title" content="在Linux中直接部署" />
-<meta property="og:description" content="由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署prb。
-系统要求  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  安装依赖并生成Protobuf接口代码 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS 启动服务 使用pnpm start_module来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。
-1PHALA_MODULE=fetch # module to start 2NODE_ENV=development 3PHALA_DB_HOST=io # hostname/ip to io service 4PHALA_DB_PORT_BASE=9000 5PHALA_LOGGER_LEVEL=debug 6PHALA_PARENT_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parent chain substrate websocket endpoint 7PHALA_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parachain substrate websocket endpoint 8PHALA_REDIS_ENDPOINT=redis://127." />
+<title>Gatekeeper | Phala Network 百科</title><meta property="og:title" content="Gatekeeper" />
+<meta property="og:description" content="本条目正在征集翻译。  Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.
+To set up a Gatekeeper, you should follow the steps below:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/prb/running-directly/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://wiki.phala.network/zh-cn/docs/maintain/gatekeeper/" /><meta property="article:section" content="docs" />
 
 <meta property="og:site_name" content="Phala Network 百科" />
 
-<meta itemprop="name" content="在Linux中直接部署">
-<meta itemprop="description" content="由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署prb。
-系统要求  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  安装依赖并生成Protobuf接口代码 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS 启动服务 使用pnpm start_module来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。
-1PHALA_MODULE=fetch # module to start 2NODE_ENV=development 3PHALA_DB_HOST=io # hostname/ip to io service 4PHALA_DB_PORT_BASE=9000 5PHALA_LOGGER_LEVEL=debug 6PHALA_PARENT_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parent chain substrate websocket endpoint 7PHALA_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parachain substrate websocket endpoint 8PHALA_REDIS_ENDPOINT=redis://127.">
+<meta itemprop="name" content="Gatekeeper">
+<meta itemprop="description" content="本条目正在征集翻译。  Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.
+To set up a Gatekeeper, you should follow the steps below:">
 
-<meta itemprop="wordCount" content="91">
+<meta itemprop="wordCount" content="1246">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="在Linux中直接部署"/>
-<meta name="twitter:description" content="由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署prb。
-系统要求  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  安装依赖并生成Protobuf接口代码 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS 启动服务 使用pnpm start_module来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。
-1PHALA_MODULE=fetch # module to start 2NODE_ENV=development 3PHALA_DB_HOST=io # hostname/ip to io service 4PHALA_DB_PORT_BASE=9000 5PHALA_LOGGER_LEVEL=debug 6PHALA_PARENT_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parent chain substrate websocket endpoint 7PHALA_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parachain substrate websocket endpoint 8PHALA_REDIS_ENDPOINT=redis://127."/>
+<meta name="twitter:title" content="Gatekeeper"/>
+<meta name="twitter:description" content="本条目正在征集翻译。  Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.
+To set up a Gatekeeper, you should follow the steps below:"/>
 
 
 <link rel="stylesheet" href="https://wiki.phala.network/css/styles.1e7d152890d5ecbaf1af59d580d35c6656c8b30382e48d9f3ccd9cfb1b57ce0e7fcbe420bad4d3822b9e60c6bccfa68f1341665a52b80a837c106b510f57d294.css" integrity="sha512-Hn0VKJDV7Lrxr1nVgNNcZlbIswOC5I2fPM2c&#43;xtXzg5/y&#43;QgutTTgiueYMa8z6aPE0FmWlK4CoN8EGtRD1fSlA==">
 
 
 
-  <meta name="description" content="由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署prb。
-系统要求  git Redis 5 or newer Node.js 14 (Latest LTS) pnpm  安装依赖并生成Protobuf接口代码 1git submodule init 2git submodule update 3pnpm install 4pnpm proto:build # use `pnpm proto:darwin:build` in macOS 5pnpm proto:build_prpc # use `pnpm proto:darwin:build_prpc` in macOS 启动服务 使用pnpm start_module来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。
-1PHALA_MODULE=fetch # module to start 2NODE_ENV=development 3PHALA_DB_HOST=io # hostname/ip to io service 4PHALA_DB_PORT_BASE=9000 5PHALA_LOGGER_LEVEL=debug 6PHALA_PARENT_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parent chain substrate websocket endpoint 7PHALA_CHAIN_ENDPOINT=ws://127.0.0.0:9945 # parachain substrate websocket endpoint 8PHALA_REDIS_ENDPOINT=redis://127.">
+  <meta name="description" content="本条目正在征集翻译。  Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.
+To set up a Gatekeeper, you should follow the steps below:">
 
 
 
@@ -443,7 +439,7 @@
     <li><a href="#lifecycle服务"><code>lifecycle</code>服务</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-在linux中直接部署" href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/">在Linux中直接部署</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-在linux中直接部署" href="https://wiki.phala.network/zh-cn/docs/prb/running-directly/">在Linux中直接部署</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#系统要求">系统要求</a></li>
     <li><a href="#安装依赖并生成protobuf接口代码">安装依赖并生成Protobuf接口代码</a></li>
@@ -463,7 +459,7 @@
     <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</a></li>
     <li><a href="#server-requirements">Server requirements</a></li>
@@ -479,42 +475,106 @@
 </aside>
 
   <main class="content">
-    <h1>在Linux中直接部署</h1><p>由于无论是在开发环境还是生产环境中使用Docker部署都会更加方便，因此我们不建议直接在Linux中直接部署<code>prb</code>。</p>
-<h2 id="系统要求">系统要求</h2>
-<ul>
-<li>git</li>
-<li>Redis 5 or newer</li>
-<li>Node.js 14 (Latest LTS)</li>
-<li>pnpm</li>
-</ul>
-<h2 id="安装依赖并生成protobuf接口代码">安装依赖并生成Protobuf接口代码</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>git submodule init
-<span class="ln">2</span>git submodule update
-<span class="ln">3</span>pnpm install
-<span class="ln">4</span>pnpm proto:build <span class="c1"># use `pnpm proto:darwin:build` in macOS</span>
-<span class="ln">5</span>pnpm proto:build_prpc <span class="c1"># use `pnpm proto:darwin:build_prpc` in macOS</span>
-</code></pre></div><h2 id="启动服务">启动服务</h2>
-<p>使用<code>pnpm start_module</code>来启动prb进程, 所有参数都将从当前Shell中的环境变量读取。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">PHALA_MODULE</span><span class="o">=</span>fetch <span class="c1"># module to start</span>
-<span class="ln"> 2</span><span class="nv">NODE_ENV</span><span class="o">=</span>development
-<span class="ln"> 3</span><span class="nv">PHALA_DB_HOST</span><span class="o">=</span>io <span class="c1"># hostname/ip to io service</span>
-<span class="ln"> 4</span><span class="nv">PHALA_DB_PORT_BASE</span><span class="o">=</span><span class="m">9000</span>
-<span class="ln"> 5</span><span class="nv">PHALA_LOGGER_LEVEL</span><span class="o">=</span>debug
-<span class="ln"> 6</span><span class="nv">PHALA_PARENT_CHAIN_ENDPOINT</span><span class="o">=</span>ws://127.0.0.0:9945 <span class="c1"># parent chain substrate websocket endpoint</span>
-<span class="ln"> 7</span><span class="nv">PHALA_CHAIN_ENDPOINT</span><span class="o">=</span>ws://127.0.0.0:9945 <span class="c1"># parachain substrate websocket endpoint</span>
-<span class="ln"> 8</span><span class="nv">PHALA_REDIS_ENDPOINT</span><span class="o">=</span>redis://127.0.0.1:6379 <span class="c1"># redis endpoint for mq and rpc</span>
-<span class="ln"> 9</span>
-<span class="ln">10</span><span class="c1"># for `io`</span>
-<span class="ln">11</span><span class="nv">PHALA_DB_PREFIX</span><span class="o">=</span>/var/data <span class="c1"># path to data directory</span>
-<span class="ln">12</span><span class="nv">PHALA_DB_TYPE</span><span class="o">=</span>rocksdb <span class="c1"># rocksdb or leveldb</span>
-</code></pre></div>
+    <h1>Gatekeeper</h1>
+<div class="tip">
+  本条目正在征集翻译。
+</div>
+
+<p>Gatekeeper is a special role that manages the secrets in the network and runs the tokenomic model. Gatekeepers are supposed to be elected by the PHA token holders with NPoS, and should also run as a collator. However, as of now, Gatekeepers are designated by the council directly, not associated with collators, because collator binding and NPoS are still under development.</p>
+<p>To set up a Gatekeeper, you should follow the steps below:</p>
+<ol>
+<li>Prepare an account with some PHA token to pay for the transaction fee.</li>
+<li>Prepare a server with proper Intel SGX support</li>
+<li>Deploy a worker stack: full node, pherry, and pRuntime</li>
+<li>Make a council proposal to add the worker to the Gatekeeper list</li>
+<li>Finally, you Gatkeeper should be up and running. As the opereator, you should keep monitoring.</li>
+</ol>
+<h2 id="prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</h2>
+<p>To operate a Gatekeeper, an account with some PHA balance is required. The Gatekeeper program runs by pruntime in Secure Enclaves. It communicates with the blockchain in two directions. It reads the events from the blockchain, runs the algorithm, and periodically writes back to the blockchain by sending transactions. An account with some balances is used to pay the transaction fee.</p>
+<p>You may already have an account. Or you can create the account on Polkadot.js Extension, or some other wallets. In either way, you will need to keep the mnemonic (sometimes called SURI), or the raw private key, because it will be used in the next step.</p>
+<p>It&rsquo;s suggested to have at least 10 PHA in the account. The Gatekeepers may consume the transacion fee in different speed. It can burn up to 5-10 PHA per day, but can also have nearly zero transaction per day. Gatekeepers generate messages constantly, but only the first one who submits the message will be charged (other transactions are just de-duped). So theoritically each Gatekeeper has an even chance to pay for the transaction fee.</p>
+<h2 id="server-requirements">Server requirements</h2>
+<ol>
+<li>
+<p>500G SSD for running the Khala full node in Archive mode</p>
+<p>The large space is majorly for the Kusama full node, which takes more than 300 GiB. If you can run the full node on another server close to the Gatekeeper server, the disk requirement can be safely ignored. In such case, the network latency and bandwidth matters. SSD is always recommended because there will be a lot of random access to the database when syncing a Gatekeeper.</p>
+</li>
+<li>
+<p>Good internet connection</p>
+<p>A bandwidth of 50 Mbps or faster is recommended. Otherwise the initial block download will take a very long time. A public IP address is recommended because otherwise you may got too few peer connections, causing the full node got stuck for some period. A stable network is always required. Once Gatekeeper online detection is on, any detected offline event may cause significant slash. (So far it&rsquo;s still under the development.)</p>
+</li>
+<li>
+<p>Intel SGX compatible hardware with a confidence level &gt;= 3</p>
+<p>Gatekeeper runs its pRuntime inside the Secure Encalve (Intel SGX), which is the same requirement of mining on Khala Network. Please refer to the mining guide to learn more about Intel SGX compatability and the confidence score. Gatekeepers manage highly sensitive data. Therefore it requires the highest confidence level (1, 2, or 3).</p>
+<p>Although SGX is a feature in CPU, some configuration in BIOS is still needed. Please refer to the mining guide to tune the BIOS when necessary.</p>
+</li>
+<li>
+<p>Linux OS</p>
+<p>So far only Linux is supported. We suggest to deploy the Gatekeeper stack on Ubuntu 21.04. While other versions of Ubuntu or other Linxu distribution could be supported, this document will assume you are running on Ubuntu.</p>
+<p>The Intel SGX driver is required. However, you don&rsquo;t need to install it manually on Ubuntu 21.04 because it&rsquo;s shipped with the native kernel SGX driver. The kernel driver doesn&rsquo;t support all the legacy SGX CPUs though. For legacy CPUs, you may need to run an older Linux kernel without the native driver, and install the iSGX driver instead.</p>
+</li>
+<li>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script">Docker</a></p>
+</li>
+</ol>
+
+<div class="tip">
+  <p><strong>SGX virtualization (vSGX)</strong></p>
+<p>vSGX is supported. VMWare and KVM based vSGX are being tested successfully. However, the more instances to virtualize, the less EPC size each VM can get. Smaller EPC can cause a decrease of the performance. Please use with caution.</p>
+
+</div>
+
+<h2 id="deploy-the-full-stack">Deploy the full stack</h2>
+<p>Please make sure you have meet all the above requirements, so that you can start to deploy the three components by Docker.</p>
+<p>First, run the full node and wait it to sync. If you already have a full node, this step can be skipped.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+</span><span class="ln">2</span><span class="se"></span>    --name khala-dev-node <span class="se">\
+</span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">NODE_NAME</span><span class="o">=</span>khala-dev-node <span class="se">\
+</span><span class="ln">4</span><span class="se"></span>    -e <span class="nv">NODE_ROLE</span><span class="o">=</span>MINER <span class="se">\
+</span><span class="ln">5</span><span class="se"></span>    -p 9933:9933 -p 9944:9944 -p 9615:9615 -p 30333:30333 <span class="se">\
+</span><span class="ln">6</span><span class="se"></span>    -p 9934:9934 -p 9945:9945 -p 9616:9616 -p 30334:30334 <span class="se">\
+</span><span class="ln">7</span><span class="se"></span>    -v <span class="nv">$HOME</span>/data/khala-dev-node:/root/data phalanetwork/khala-node
+</code></pre></div><p>The command line above will start the Khala node docker image managed by the Phala team. The node runs in Archive mode (specified by <code>NODE_ROLE=MINER</code>). Then two sets of the ports are exported, including the p2p ports (30333, 30334), Prometheus metrics (9615, 9616), ws rpc (9944, 9945), and http rpc ports (9933, 9944). For each pair of the ports, the former one is Khala&rsquo;s and the later one is Kusama&rsquo;s. The data directory <code>/root/data</code> is mapped to the disk. Feel free to change it to somewhere better.</p>
+<p>The node may take a few days to be fully synced. Recovering from a backup can greatly reduce the time to sync, if you have one.</p>
+<p>Second, run pRuntime:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+</span><span class="ln">2</span><span class="se"></span>    --name phala-pruntime <span class="se">\
+</span><span class="ln">3</span><span class="se"></span>    -p 8000:8000 <span class="se">\
+</span><span class="ln">4</span><span class="se"></span>    -v <span class="nv">$HOME</span>/data/phala-pruntime:/root/data <span class="se">\
+</span><span class="ln">5</span><span class="se"></span>    -e <span class="nv">EXTRA_OPTS</span><span class="o">=</span><span class="s2">&#34;-c 0&#34;</span> <span class="se">\
+</span><span class="ln">6</span><span class="se"></span>    --device /dev/sgx/enclave --device /dev/sgx/provision <span class="se">\
+</span><span class="ln">7</span><span class="se"></span>    phalanetwork/phala-pruntime
+</code></pre></div><p>The command brings up a pRuntime instance with its RPC port 8000 exported. Please note that if you run with the iSGX driver (legacy driver), there&rsquo;s only one SGX device file <code>/etc/isgx</code>. Note that pruntime will store its credentials under <code>/root/data</code>, which is mapped to the locla disk. The credentials are encrypted with the CPU keys. It&rsquo;s important to backup the key in order to keep the identity of the worker (pRuntime instance). However, it&rsquo;s impossible to recover the credentials in another CPU (vCPU).</p>
+<p>Finally, run pherry, the relayer to connect the node and pRuntime (specify your own mnenomic).</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+</span><span class="ln">2</span><span class="se"></span>    --name phala-pherry <span class="se">\
+</span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">PRUNTIME_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;http://phala-pruntime:8000&#34;</span> <span class="se">\
+</span><span class="ln">4</span><span class="se"></span>    -e <span class="nv">PHALA_NODE_WS_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;ws://khala-node:9945&#34;</span> <span class="se">\
+</span><span class="ln">5</span><span class="se"></span>    -e <span class="nv">MNEMONIC</span><span class="o">=</span><span class="s2">&#34;&lt;Insert-Your-Mnemonic&gt;&#34;</span> <span class="se">\
+</span><span class="ln">6</span><span class="se"></span>    -e <span class="nv">EXTRA_OPTS</span><span class="o">=</span><span class="s2">&#34;-r --parachain --collator-ws-endpoint=ws://khala-node:9944&#34;</span> <span class="se">\
+</span><span class="ln">7</span><span class="se"></span>    --link khala-node --link phala-pruntime <span class="se">\
+</span><span class="ln">8</span><span class="se"></span>    phalanetwork/phala-pherry
+</code></pre></div><p>The command starts pherry, linked with <code>khala-node</code> and <code>phala-pruntime</code> containers. It reads the blokchain from <code>khala-node:9944</code> and sync the data to <code>phala-pruntime:8000</code>. If you run the full node remotely, just change the host name <code>khala-node</code> to the node rpc endpoint. The mnenomic is specified by the environment variable.</p>
+<p>pherry usually takes 1-2 days to sync the blockchain history. However, since pRuntime doesn&rsquo;t persist the state, if it exits, you will need to sync from scratch in the next time.</p>
+<p>The account you specified will be used to send transactions on behalf of the Gatekeeper. Once it&rsquo;s fully synced, it will initiate a <code>PhalaRegistry.registerWorker()</code> extrinsic to the blockchain. A Gatekeeper is identified by its worker public key (worker pubkey). You can find it from <code>http://phala-pruntime:8000/get_info</code> RPC, and check the registration status from the blockchain at <code>PhalaRegistry.workers()</code>.</p>
+<p>Summary:</p>
+<ol>
+<li>Run the full node in Archive mode and keep it in sync</li>
+<li>Run pRuntime with the SGX device set up correctly</li>
+<li>Run pherry to connect the full node and pRuntime</li>
+</ol>
+<h2 id="propose-to-join-the-gatekeeper-whitelist">Propose to join the Gatekeeper whitelist</h2>
+<p>(WIP)</p>
+<h2 id="monitor-the-gatekeeper">Monitor the Gatekeeper</h2>
+<p>(WIP)</p>
+
     <div class="pager">
   <div class="pager_item prev">
     
-      <a href="https://wiki.phala.network/zh-cn/docs/prb/docker-compose-example/" class="pager_link button" title="基于Docker Compose的部署示例">
+      <a href="https://wiki.phala.network/zh-cn/docs/maintain/collator/" class="pager_link button" title="Collator">
   <img class="pager_link_next light" src="https://wiki.phala.network/images/next.svg">
   <img class="pager_link_next dark" src="https://wiki.phala.network/images/next-dark.svg">
-  <span class="pager_label">基于Docker Compose的部署示例</span>
+  <span class="pager_label">Collator</span>
 </a>
     
   </div>

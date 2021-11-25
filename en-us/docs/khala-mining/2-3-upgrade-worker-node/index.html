@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -484,6 +484,15 @@
     <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-gatekeeper" href="https://wiki.phala.network/en-us/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</a></li>
+    <li><a href="#server-requirements">Server requirements</a></li>
+    <li><a href="#deploy-the-full-stack">Deploy the full stack</a></li>
+    <li><a href="#propose-to-join-the-gatekeeper-whitelist">Propose to join the Gatekeeper whitelist</a></li>
+    <li><a href="#monitor-the-gatekeeper">Monitor the Gatekeeper</a></li>
+  </ul>
+</nav>
       </section>
   </section>
   <section class="section aside_inner">
@@ -547,11 +556,11 @@
 
   <main class="content">
     <h1>2.3 Upgrade Worker Node</h1><p>To upgrade your worker requires it to stop first. Note that you may not want to stop mining on the blockchain (via Phala App). This command only stops the software rather than the on-chain state.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>The worker node can be updated in place:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update
 </code></pre></div><p>Finally, restart your worker with:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
 </code></pre></div><h3 id="update-and-wipe-data">Update and wipe data</h3>
 <p>This command will update the docker images AND removes all the saved data.</p>
 
@@ -559,7 +568,7 @@
   This operation is dangerous because it removes the worker identity, causing the worker pubkey changed. When the identity key is lost, your miner will become unresponsive and bear the risk of slashing. You will need to manually stop the original worker, wait for a full cool down period, and then withdraw your stake and start over. This command also removes all the blockchain history, which takes a few days to sync. Unless you understand what you are doing, please don&rsquo;t run a clean update.
 </div>
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update clean
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala update clean
 </code></pre></div>
     <div class="pager">
   <div class="pager_item prev">

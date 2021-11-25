@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.88.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -495,6 +495,15 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
     <li><a href="#apply-for-a-public-collator">Apply for a public collator</a></li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-gatekeeper" href="https://wiki.phala.network/zh-cn/docs/maintain/gatekeeper/">Gatekeeper</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prepare-the-gatekeeper-operator-account">Prepare the Gatekeeper operator account</a></li>
+    <li><a href="#server-requirements">Server requirements</a></li>
+    <li><a href="#deploy-the-full-stack">Deploy the full stack</a></li>
+    <li><a href="#propose-to-join-the-gatekeeper-whitelist">Propose to join the Gatekeeper whitelist</a></li>
+    <li><a href="#monitor-the-gatekeeper">Monitor the Gatekeeper</a></li>
+  </ul>
+</nav>
       </section>
   </section>
       </section>
@@ -505,14 +514,14 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
     <h1>3.2 如果还没有同步好挖矿节点，快速追上的办法</h1><h2 id="面临的问题">面临的问题</h2>
 <p>如果你的节点没有同步到最新状态，</p>
 <p>典型的没有同步到最新的现象是，在节点的日志中看到类似这样的显示</p>
-<pre tabindex="0"><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
+<pre><code>2021-09-15 13:33:27 [Relaychain] ⚙️  Syncing 10.4 bps, target=#9236775 (20 peers), best: #9227955 (0xa897…4f36), finalized #9227895 (0x1d6d…1527), ⬇ 1.7MiB/s ⬆ 657.8kiB/s
 2021-09-15 13:33:27 [Parachain] ⚙️  Syncing 40.4 bps, target=#400531 (1 peers), best: #396657 (0xb898…6c02), finalized #396443 (0xf470…2f54), ⬇ 378.7kiB/s ⬆ 1.6kiB/s
 </code></pre><p>并且 best 和 target 相差很大。</p>
 <p>此时你可以考虑使用这里介绍的方法快速追上最新的状态。</p>
 <p>注意：如果你的节点已经很接近最新的区块高度（大约推算几个小时就能追上）或者跟最新区块保持同步，请不要操作了，静待自行同步完成即可。</p>
 <h2 id="下载全量数据快照并解压缩最新更新日期2021年9月18日">下载全量数据快照并解压缩（最新更新日期：2021年9月18日）</h2>
 <p>我们推荐使用BT下载（<a href="/files/khala-snapshot-2021-09-17.torrent">种子文件</a>），请在下载完成后保持做种。种子文件的sha256校验和为</p>
-<pre tabindex="0"><code>$ sha256sum khala-snapshot-2021-09-17.torrent
+<pre><code>$ sha256sum khala-snapshot-2021-09-17.torrent
 595e448bfce90c6725de75d1f38462570d7142c41199375bc86d35f6809b733f  khala-snapshot-2021-09-17.torrent
 </code></pre><p>下载完成后解压缩，得到 <code>khala-node</code> 目录</p>
 <p>注意：全量数据文件约 220G，全量的数据文件解压缩后大约 350G，也就是说如果要解压缩到本地磁盘，你需要 600G 的磁盘可用空间，所以请预留好足够的空间，如果硬盘空间不够，可以考虑解压缩到其他存储，比如移动硬盘</p>
@@ -525,7 +534,7 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
 </blockquote>
 <h2 id="准备工作">准备工作</h2>
 <p>请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>关闭挖矿服务。</p>
 <h2 id="使用全量快照替换本地的数据">使用全量快照替换本地的数据</h2>
 <h3 id="如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</h3>
@@ -535,7 +544,7 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
 <p>找到节点的区块存储目录，清空里面的文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去</p>
 <h2 id="重新启动服务">重新启动服务</h2>
 <p>如果你是 Solo 挖矿，使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
 </code></pre></div><p>重新启动挖矿服务，此时你的挖矿节点将快速恢复到全量快照发布时的状态，再稍等几十分钟到几个小时不等（视网络情况而定）即可跟上最新状态，以便开始挖矿</p>
 
     <div class="pager">
