@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr-fr">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -254,7 +254,7 @@ Lorsque nous passons à sr25519, nous devrions adopter l&rsquo;algorithme de dé
 </ol>
 <h4 id="-exemple-de-charge-utile-client-worker">#### Exemple de charge utile client-worker</h4>
 <p>Un client communique avec un worker uniquement pour l&rsquo;invocation d&rsquo;un contrat. Un appel est composé d&rsquo;au moins des charges utiles suivantes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="ln">1</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="ln">1</span><span class="p">{</span>
 <span class="ln">2</span>    <span class="nx">from</span><span class="o">:</span> <span class="nx">Client_IdentityKey</span><span class="p">,</span>
 <span class="ln">3</span>    <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
 <span class="ln">4</span>        <span class="nx">to</span><span class="o">:</span> <span class="nx">Contract_IdentityKey</span><span class="p">,</span>

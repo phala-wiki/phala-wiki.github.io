@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -520,7 +520,7 @@
 sudo phala update clean
 检查您的/var文件夹，应该不会出现 phala-node-data phala-pruntime-data 两个文件夹</p>
 <p>2 根据您的自身情况，删除脚本，使用命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala uninstall
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala uninstall
 <span class="ln">2</span>sudo rm -R ~/solo-mining-scripts-para
 <span class="ln">3</span>sudo rm -R ~/solo-mining-scripts-main
 <span class="ln">4</span>sudo rm ~/main.zip
@@ -530,9 +530,9 @@ sudo phala update clean
 <p>请参照最新的<a href="/zh-cn/docs/khala-mining/4-2-how-to-fast-sync-node-use-snapshot/">章节</a>解决这一问题。</p>
 <h3 id="如何检查当前运行中节点的版本">如何检查当前运行中节点的版本</h3>
 <p>如果默认的HTTP RPC端口9933已经打开，可以通过如下命令查询版本号：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -d <span class="s1">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;system_version&#34;, &#34;params&#34;: [], &#34;id&#34;: 83}&#39;</span> -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -X POST http://localhost:9933
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>curl -d <span class="s1">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;system_version&#34;, &#34;params&#34;: [], &#34;id&#34;: 83}&#39;</span> -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -X POST http://localhost:9933
 </code></pre></div><p>输出示例：</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="ln">1</span><span class="p">{</span><span class="nt">&#34;jsonrpc&#34;</span><span class="p">:</span><span class="s2">&#34;2.0&#34;</span><span class="p">,</span><span class="nt">&#34;result&#34;</span><span class="p">:</span><span class="s2">&#34;0.1.5-250ab0b-x86_64-linux-gnu&#34;</span><span class="p">,</span><span class="nt">&#34;id&#34;</span><span class="p">:</span><span class="mi">83</span><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="ln">1</span><span class="p">{</span><span class="nt">&#34;jsonrpc&#34;</span><span class="p">:</span><span class="s2">&#34;2.0&#34;</span><span class="p">,</span><span class="nt">&#34;result&#34;</span><span class="p">:</span><span class="s2">&#34;0.1.5-250ab0b-x86_64-linux-gnu&#34;</span><span class="p">,</span><span class="nt">&#34;id&#34;</span><span class="p">:</span><span class="mi">83</span><span class="p">}</span>
 </code></pre></div>
     <div class="pager">
   <div class="pager_item prev">

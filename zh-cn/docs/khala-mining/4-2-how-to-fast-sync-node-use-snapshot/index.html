@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -534,7 +534,7 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
 </blockquote>
 <h2 id="准备工作">准备工作</h2>
 <p>请确保挖矿是停止的，包括节点都不在运行状态，如果你是 Solo 挖矿，务必在继续前运行</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala stop
 </code></pre></div><p>关闭挖矿服务。</p>
 <h2 id="使用全量快照替换本地的数据">使用全量快照替换本地的数据</h2>
 <h3 id="如果是-solo-挖矿矿工">如果是 Solo 挖矿矿工</h3>
@@ -544,7 +544,7 @@ $ sha256sum khala-snapshot-2021-09-17.torrent 595e448bfce90c6725de75d1f38462570d
 <p>找到节点的区块存储目录，清空里面的文件，将之前步骤解压缩得到的 <code>khala-node</code> 目录里的文件移动进去</p>
 <h2 id="重新启动服务">重新启动服务</h2>
 <p>如果你是 Solo 挖矿，使用</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo phala start
 </code></pre></div><p>重新启动挖矿服务，此时你的挖矿节点将快速恢复到全量快照发布时的状态，再稍等几十分钟到几个小时不等（视网络情况而定）即可跟上最新状态，以便开始挖矿</p>
 
     <div class="pager">

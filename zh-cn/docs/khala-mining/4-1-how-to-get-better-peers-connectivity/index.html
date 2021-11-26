@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -525,7 +525,7 @@
   <main class="content">
     <h1>3.1 如何提高和P2P节点的连接性</h1><h2 id="面临的问题">面临的问题</h2>
 <p>一些朋友在运行节点的时候发现他们的节点很难连接到其他的节点，比如日志中</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln">1</span><span class="p">[</span><span class="nx">Relaychain</span><span class="p">]</span> <span class="err">💤</span> <span class="nx">Idle</span> <span class="p">(</span><span class="mi">3</span> <span class="nx">peers</span><span class="p">),</span> <span class="nx">best</span><span class="o">:</span> <span class="err">#</span><span class="mi">8949573</span> <span class="p">(</span><span class="mh">0x1fbd</span><span class="err">…</span><span class="nx">efce</span><span class="p">),</span> <span class="nx">finalized</span> <span class="err">#</span><span class="mi">8949248</span> <span class="p">(</span><span class="mh">0x102e</span><span class="err">…</span><span class="mi">0032</span><span class="p">),</span> <span class="err">⬇</span> <span class="mf">1.1</span><span class="nx">kiB</span><span class="o">/</span><span class="nx">s</span> <span class="err">⬆</span> <span class="mf">1.0</span><span class="nx">kiB</span><span class="o">/</span><span class="nx">s</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln">1</span><span class="p">[</span><span class="nx">Relaychain</span><span class="p">]</span> <span class="err">💤</span> <span class="nx">Idle</span> <span class="p">(</span><span class="mi">3</span> <span class="nx">peers</span><span class="p">),</span> <span class="nx">best</span><span class="o">:</span> <span class="err">#</span><span class="mi">8949573</span> <span class="p">(</span><span class="mh">0x1fbd</span><span class="err">…</span><span class="nx">efce</span><span class="p">),</span> <span class="nx">finalized</span> <span class="err">#</span><span class="mi">8949248</span> <span class="p">(</span><span class="mh">0x102e</span><span class="err">…</span><span class="mi">0032</span><span class="p">),</span> <span class="err">⬇</span> <span class="mf">1.1</span><span class="nx">kiB</span><span class="o">/</span><span class="nx">s</span> <span class="err">⬆</span> <span class="mf">1.0</span><span class="nx">kiB</span><span class="o">/</span><span class="nx">s</span>
 </code></pre></div><p>这里 <code>3 peers</code> 意思是只连接到三个外部的节点，这种情况会遇到诸如节点卡住了不继续同步，甚至是报错的问题，遇到这些问题通常可以重启节点来解决，但是会影响到挖矿。</p>
 <p>这种情况可以检查网络是不是这篇技术文章你可以知道怎么做以及为什么。</p>
 <h2 id="太长不读">太长不读</h2>

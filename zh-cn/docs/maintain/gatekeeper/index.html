@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.87.0" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://wiki.phala.network/favicons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://wiki.phala.network/favicons/favicon-32x32.png'>
 <link rel="icon" type="image/png" sizes="16x16" href='https://wiki.phala.network/favicons/favicon-16x16.png'>
@@ -527,7 +527,7 @@ To set up a Gatekeeper, you should follow the steps below:">
 <h2 id="deploy-the-full-stack">Deploy the full stack</h2>
 <p>Please make sure you have meet all the above requirements, so that you can start to deploy the three components by Docker.</p>
 <p>First, run the full node and wait it to sync. If you already have a full node, this step can be skipped.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
 </span><span class="ln">2</span><span class="se"></span>    --name khala-dev-node <span class="se">\
 </span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">NODE_NAME</span><span class="o">=</span>khala-dev-node <span class="se">\
 </span><span class="ln">4</span><span class="se"></span>    -e <span class="nv">NODE_ROLE</span><span class="o">=</span>MINER <span class="se">\
@@ -537,7 +537,7 @@ To set up a Gatekeeper, you should follow the steps below:">
 </code></pre></div><p>The command line above will start the Khala node docker image managed by the Phala team. The node runs in Archive mode (specified by <code>NODE_ROLE=MINER</code>). Then two sets of the ports are exported, including the p2p ports (30333, 30334), Prometheus metrics (9615, 9616), ws rpc (9944, 9945), and http rpc ports (9933, 9944). For each pair of the ports, the former one is Khala&rsquo;s and the later one is Kusama&rsquo;s. The data directory <code>/root/data</code> is mapped to the disk. Feel free to change it to somewhere better.</p>
 <p>The node may take a few days to be fully synced. Recovering from a backup can greatly reduce the time to sync, if you have one.</p>
 <p>Second, run pRuntime:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
 </span><span class="ln">2</span><span class="se"></span>    --name phala-pruntime <span class="se">\
 </span><span class="ln">3</span><span class="se"></span>    -p 8000:8000 <span class="se">\
 </span><span class="ln">4</span><span class="se"></span>    -v <span class="nv">$HOME</span>/data/phala-pruntime:/root/data <span class="se">\
@@ -546,7 +546,7 @@ To set up a Gatekeeper, you should follow the steps below:">
 </span><span class="ln">7</span><span class="se"></span>    phalanetwork/phala-pruntime
 </code></pre></div><p>The command brings up a pRuntime instance with its RPC port 8000 exported. Please note that if you run with the iSGX driver (legacy driver), there&rsquo;s only one SGX device file <code>/etc/isgx</code>. Note that pruntime will store its credentials under <code>/root/data</code>, which is mapped to the locla disk. The credentials are encrypted with the CPU keys. It&rsquo;s important to backup the key in order to keep the identity of the worker (pRuntime instance). However, it&rsquo;s impossible to recover the credentials in another CPU (vCPU).</p>
 <p>Finally, run pherry, the relayer to connect the node and pRuntime (specify your own mnenomic).</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>docker run -dti --rm <span class="se">\
 </span><span class="ln">2</span><span class="se"></span>    --name phala-pherry <span class="se">\
 </span><span class="ln">3</span><span class="se"></span>    -e <span class="nv">PRUNTIME_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;http://phala-pruntime:8000&#34;</span> <span class="se">\
 </span><span class="ln">4</span><span class="se"></span>    -e <span class="nv">PHALA_NODE_WS_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;ws://khala-node:9945&#34;</span> <span class="se">\
